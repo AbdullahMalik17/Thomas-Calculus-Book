@@ -1,4 +1,4 @@
-# BRIEFING — 2026-10-05T07:55:50Z
+# BRIEFING — 2026-10-05T08:48:50Z
 
 ## Mission
 Build the foundational architecture for calculus-guide: interactive Next.js study platform for Thomas' Calculus (14th Edition) with verifiable math, automated validation pipelines, and verified Golden Example (Chapter 1, Section 1.1).
@@ -26,14 +26,14 @@ Build the foundational architecture for calculus-guide: interactive Next.js stud
 4. **Succession**: At 16 spawns, write handoff.md, cancel crons, spawn successor.
 - **Work items**:
   1. Survey & Initial Project Mapping [done]
-  2. M1: Project & Scaffolding (R1) [in-progress]
-  3. M2: Schemas & Content Validation (R2) [pending]
-  4. M3: SymPy Verification Engine (R3) [pending]
-  5. M4: Section 1.1 Golden Example (R4) [pending]
-  6. M5: Multi-Agent Prompts & Docs (R5) [pending]
+  2. M1: Project & Scaffolding (R1) [done - Gate PASSED]
+  3. M2: Schemas & Content Validation (R2) [done]
+  4. M3: SymPy Verification Engine (R3) [done]
+  5. M4: Section 1.1 Golden Example (R4) [in-progress]
+  6. M5: Multi-Agent Prompts & Docs (R5) [in-progress]
   7. M6: Final Verification & E2E Validation [pending]
-- **Current phase**: 2B (Iteration Loop - Milestone 1)
-- **Current focus**: Executing M1 Worker for scaffolding, routing, layout, and build verification
+- **Current phase**: 2B (Iteration Loop - Parallel Milestones 4 & 5)
+- **Current focus**: Concurrent execution of M4 Worker (Section 1.1 Content) and M5 Worker (Multi-Agent Infrastructure & Docs)
 
 ## 🔒 Key Constraints
 - Dispatch-only orchestrator: NEVER write source code, run builds, or test commands directly.
@@ -48,23 +48,31 @@ Build the foundational architecture for calculus-guide: interactive Next.js stud
 - Updated: 2026-10-05T07:54:06Z
 
 ## Key Decisions Made
-- Selected Project Pattern with Dual Track.
-- Completed Step 0 Survey with 3 Explorers. Created `PROJECT.md` and `TEST_INFRA.md`.
-- Integrated user directive to apply all environment skills across milestones.
-- Dispatched M1 Worker to implement scaffolding, Next.js App Router, footer attribution, and route placeholders.
+- Milestone 1 Gate passed cleanly.
+- Milestones 2 and 3 implemented and verified.
+- Dispatched Worker M4 and Worker M5 in parallel with disjoint write boundaries.
 
 ## Team Roster
 | Agent | Type | Work Item | Status | Conv ID |
 |-------|------|-----------|--------|---------|
-| Survey 1 | teamwork_preview_explorer | Environment & Setup Survey | completed | 0d5d6b80-eed4-417e-9772-53edfdf020b4 |
-| Survey 2 | teamwork_preview_explorer | Architecture & Content Schema Survey | completed | a8178a14-ff52-412c-a687-e71c40095876 |
-| Survey 3 | teamwork_preview_explorer | Math Verification & Agent Infrastructure Survey | completed | 05fd8f5c-31e3-493d-a04c-6157ef7861bd |
-| Worker M1 | teamwork_preview_worker | M1: Project & Scaffolding Implementation | in-progress | 8412994c-bed7-4fb9-b336-4507b4db16de |
+| Survey 1 | teamwork_preview_explorer | Environment Survey | completed | 0d5d6b80-eed4-417e-9772-53edfdf020b4 |
+| Survey 2 | teamwork_preview_explorer | Architecture Survey | completed | a8178a14-ff52-412c-a687-e71c40095876 |
+| Survey 3 | teamwork_preview_explorer | Math Verifier Survey | completed | 05fd8f5c-31e3-493d-a04c-6157ef7861bd |
+| Worker M1 | teamwork_preview_worker | M1 Implementation | completed | 8412994c-bed7-4fb9-b336-4507b4db16de |
+| Reviewer M1-1 | teamwork_preview_reviewer | M1 Build Review | completed (APPROVE) | 9555d5c4-1c9e-40d9-bfdb-a25f0ab967d5 |
+| Reviewer M1-2 | teamwork_preview_reviewer | M1 Guardrails Review | completed (APPROVE) | ef18d5a4-73da-4725-8dd0-0756e7cfde39 |
+| Challenger M1-1 | teamwork_preview_challenger | M1 Routes Challenge | completed (APPROVE) | 220a265e-8a10-47f5-91ea-acf39da5a3b2 |
+| Challenger M1-2 | teamwork_preview_challenger | M1 Tools Challenge | completed (APPROVE) | d465226f-d640-4afe-ae0e-4b0647de5080 |
+| Auditor M1 | teamwork_preview_auditor | M1 Integrity Audit | completed (CLEAN) | 64a2f501-6025-43bb-834a-13681554b16f |
+| Worker M2 | teamwork_preview_worker | M2 Schemas & Validation | completed | da26984b-3fbf-49c6-b7e9-946efd55314d |
+| Worker M3 | teamwork_preview_worker | M3 SymPy Math Engine | completed | 8defb42c-3739-4825-a304-013d7eddd157 |
+| Worker M4 | teamwork_preview_worker | M4 Section 1.1 Content | in-progress | ba0287ba-64e7-42ef-83c1-4b9fa8091b1a |
+| Worker M5 | teamwork_preview_worker | M5 Multi-Agent & Docs | in-progress | c0f7763e-61b6-48e0-afe5-019b254805a6 |
 
 ## Succession Status
 - Succession required: no
-- Spawn count: 4 / 16
-- Pending subagents: 8412994c-bed7-4fb9-b336-4507b4db16de
+- Spawn count: 13 / 16
+- Pending subagents: ba0287ba-64e7-42ef-83c1-4b9fa8091b1a, c0f7763e-61b6-48e0-afe5-019b254805a6
 - Predecessor: none
 - Successor: not yet spawned
 
@@ -77,6 +85,5 @@ Build the foundational architecture for calculus-guide: interactive Next.js stud
 ## Artifact Index
 - d:\Thomas-Calculus-Book\PROJECT.md — Global architecture, milestones, interfaces
 - d:\Thomas-Calculus-Book\TEST_INFRA.md — E2E test philosophy, feature inventory, scenarios
-- d:\Thomas-Calculus-Book\.agents\teamwork\ORIGINAL_REQUEST.md — Original User Request
-- d:\Thomas-Calculus-Book\.agents\teamwork\orchestrator_1\DISPATCH.md — Initial dispatch instructions & user directive
+- d:\Thomas-Calculus-Book\.agents\teamwork\orchestrator_1\GATE_STATUS.md — Gate verdicts
 - d:\Thomas-Calculus-Book\.agents\teamwork\orchestrator_1\progress.md — Progress and heartbeat log

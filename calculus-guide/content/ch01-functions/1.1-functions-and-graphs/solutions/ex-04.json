@@ -1,0 +1,53 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-04",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Natural Domain and Range of a Quadratic Radicand",
+  "exerciseReference": "Section 1.1, Exercise 4",
+  "originalTopic": "Functions and Graphs: Natural Domain and Range",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["functions", "domain", "range", "radicals", "quadratic-inequalities"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine the natural domain and range of the function g(x) = \\sqrt{x^2 - 3x}.",
+  "finalAnswer": "Domain: $(-\\infty, 0] \\cup [3, \\infty)$, Range: $[0, \\infty)$",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate the Non-Negativity Condition",
+      "mathExpression": "x^2 - 3x \\ge 0",
+      "explanation": "Because the expression is governed by a square root, the quadratic radicand x^2 - 3x must be non-negative in the real number system.",
+      "why": "Even-degree roots require non-negative radicands to evaluate to real numbers."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Factor the Quadratic Expression",
+      "mathExpression": "x(x - 3) \\ge 0",
+      "explanation": "Factor out x to find the real roots of the quadratic equation x(x - 3) = 0, which are x = 0 and x = 3.",
+      "why": "Factoring isolates the critical boundary points where the expression can change sign."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Perform Sign Analysis Across Intervals",
+      "mathExpression": "x \\in (-\\infty, 0] \\cup [3, \\infty)",
+      "explanation": "The critical points 0 and 3 partition the real line into three test intervals: (-inf, 0), (0, 3), and (3, inf). For x < 0, both factors are negative, so their product is positive. For 0 < x < 3, x is positive and x - 3 is negative, so their product is negative. For x > 3, both factors are positive, so their product is positive. Including endpoints gives (-inf, 0] U [3, inf).",
+      "why": "A continuous function changes sign only at its real roots."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Determine the Output Range",
+      "mathExpression": "\\text{Range} = [0, \\infty)",
+      "explanation": "At the endpoints x = 0 and x = 3, g(0) = g(3) = 0. As x approaches positive or negative infinity, x^2 - 3x grows without bound, so sqrt(x^2 - 3x) takes all non-negative real values, [0, inf).",
+      "why": "The principal square root is non-negative and continuous, mapping the unbounded radicand to [0, inf)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "type": "domain",
+    "expression": "sqrt(x**2 - 3*x)",
+    "expected": "(-oo, 0] U [3, oo)",
+    "expected_domain": "(-oo, 0] U [3, oo)",
+    "variable": "x"
+  }
+}

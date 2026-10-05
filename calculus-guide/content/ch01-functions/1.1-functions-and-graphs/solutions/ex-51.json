@@ -1,0 +1,53 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-51",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Symmetry and Parity of an Odd Polynomial",
+  "exerciseReference": "Section 1.1, Exercise 51",
+  "originalTopic": "Functions and Graphs: Symmetry and Parity",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["functions", "symmetry", "odd-functions", "polynomials", "parity"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Test the function g(x) = x^3 + x algebraically to determine whether it is even, odd, or neither, and state its geometric symmetry.",
+  "finalAnswer": "Odd function; symmetric with respect to the origin",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate the Function at -x",
+      "mathExpression": "g(-x) = (-x)^3 + (-x)",
+      "explanation": "Substitute -x into every instance of the independent variable x in the definition of g(x).",
+      "why": "Testing for symmetry requires computing the algebraic output under reflection across the y-axis."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Simplify Using Power Rules of Negative Quantities",
+      "mathExpression": "(-x)^3 + (-x) = -x^3 - x",
+      "explanation": "Because 3 is an odd exponent, (-x)^3 = -x^3, and the linear term simplifies directly to -x.",
+      "why": "Odd integer powers preserve the negative sign: (-1)^n = -1 for odd integers n."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Factor Out the Negative Sign",
+      "mathExpression": "-x^3 - x = -(x^3 + x) = -g(x)",
+      "explanation": "Factoring -1 from both terms reveals that g(-x) equals the exact negative of the original formula g(x).",
+      "why": "The algebraic definition of an odd function is that g(-x) = -g(x) for all x in its domain."
+    },
+    {
+      "stepNumber": 4,
+      "title": "State Geometric Symmetry Conclusion",
+      "mathExpression": "g(-x) = -g(x) \\implies \\text{Origin Symmetry}",
+      "explanation": "Since g(-x) = -g(x) holds for all real numbers x, the function is odd. Geometrically, its graph possesses 180-degree rotational symmetry about the origin.",
+      "why": "An odd function satisfies the condition that if (x, y) is on the graph, then (-x, -y) is also on the graph."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "type": "symmetry",
+    "expression": "x**3 + x",
+    "expected": "odd",
+    "expected_symmetry": "odd",
+    "variable": "x"
+  }
+}

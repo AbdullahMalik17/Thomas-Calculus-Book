@@ -1,0 +1,12 @@
+# Root gitignore
+node_modules/
+.next/
+source/
+extracted/
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.tsbuildinfo
+.DS_Store
+Thumbs.db

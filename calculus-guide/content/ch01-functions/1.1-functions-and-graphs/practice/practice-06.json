@@ -1,0 +1,55 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/practice/practice-06",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "practice",
+  "title": "Applied Geometric Modeling of an Inscribed Rectangle",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["practice", "modeling", "geometry", "area-function", "applied-domain"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A rectangle is inscribed under the parabola y = 9 - x^2 such that its base rests along the x-axis and its upper two vertices touch the parabola. Express the area A(x) of the rectangle as a function of the positive x-coordinate of its right vertex, and state the natural physical domain of A(x).",
+  "hints": [
+    "Use symmetry: if the right vertex on the x-axis has coordinate (x, 0), the left vertex is at (-x, 0), giving a total base width of 2x.",
+    "The height of the rectangle is given by the y-value of the parabola at that coordinate: y = 9 - x^2.",
+    "Formulate the area as width multiplied by height, and require both dimensions to be strictly positive for a non-degenerate geometric figure."
+  ],
+  "finalAnswer": "A(x) = 18x - 2x^3, Domain: $(0, 3)$",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine Rectangle Dimensions from Coordinates",
+      "mathExpression": "\\text{Width} = 2x, \\quad \\text{Height} = y = 9 - x^2",
+      "explanation": "Because the parabola y = 9 - x^2 is symmetric across the y-axis, placing the right vertex at x implies the left vertex is at -x. The distance between them is x - (-x) = 2x, and the vertical height is y = 9 - x^2.",
+      "why": "Even functions possess y-axis symmetry, guaranteeing that geometric inscriptions symmetric about the axis have horizontal width 2x."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Formulate the Area Function",
+      "mathExpression": "A(x) = (2x)(9 - x^2) = 18x - 2x^3",
+      "explanation": "Multiply width by height to obtain the polynomial formula for area: A(x) = 2x(9 - x^2) = 18x - 2x^3.",
+      "why": "The geometric area of a rectangle is the product of its base length and height."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Establish the Physical Domain Restrictions",
+      "mathExpression": "x > 0 \\quad \\text{and} \\quad 9 - x^2 > 0 \\implies 0 < x < 3",
+      "explanation": "For a physically realizable rectangle with positive area, both the width (2x > 0 ==> x > 0) and the height (9 - x^2 > 0 ==> x^2 < 9 ==> x < 3) must be strictly positive.",
+      "why": "Physical models restrict mathematical domains to intervals where lengths and areas remain strictly positive."
+    },
+    {
+      "stepNumber": 4,
+      "title": "State the Physical Domain in Interval Notation",
+      "mathExpression": "\\text{Domain of } A = (0, 3)",
+      "explanation": "The allowable inputs for x are all real numbers in the open interval (0, 3). At the endpoints x = 0 and x = 3, the rectangle collapses to zero area (degenerate).",
+      "why": "Open intervals exclude the degenerate boundary cases where width or height vanishes."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "2*x*(9 - x**2)",
+    "expected": "18*x - 2*x**3",
+    "variable": "x"
+  }
+}

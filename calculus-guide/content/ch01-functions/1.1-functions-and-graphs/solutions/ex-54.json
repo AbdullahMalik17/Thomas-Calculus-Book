@@ -1,0 +1,53 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-54",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Symmetry and Parity of a Rational Function",
+  "exerciseReference": "Section 1.1, Exercise 54",
+  "originalTopic": "Functions and Graphs: Symmetry and Parity",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["functions", "symmetry", "odd-functions", "rational-functions", "parity"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Test the function g(x) = \\frac{x}{x^2 - 1} algebraically for even and odd symmetry, and describe the geometric symmetry of its graph.",
+  "finalAnswer": "Odd function; symmetric with respect to the origin",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Substitute -x into the Formula",
+      "mathExpression": "g(-x) = \\frac{-x}{(-x)^2 - 1}",
+      "explanation": "Replace every occurrence of x in the rational formula with -x to evaluate the reflected output.",
+      "why": "Testing for function parity begins by computing the response of the rule to the negated input -x."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Simplify the Exponents",
+      "mathExpression": "(-x)^2 - 1 = x^2 - 1 \\implies g(-x) = \\frac{-x}{x^2 - 1}",
+      "explanation": "Because squaring a negative number yields a positive result, (-x)^2 = x^2, leaving the denominator unchanged while the numerator is negated.",
+      "why": "Even powers of real numbers are invariant under negation: (-x)^2 = x^2."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compare with -g(x)",
+      "mathExpression": "\\frac{-x}{x^2 - 1} = -\\left(\\frac{x}{x^2 - 1}\\right) = -g(x)",
+      "explanation": "Moving the negative sign in the numerator to the front of the entire fraction establishes that g(-x) = -g(x) for all x in the domain (x != 1 and x != -1).",
+      "why": "The quotient of an odd function (numerator x) and an even function (denominator x^2 - 1) is an odd function."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Conclude Symmetry",
+      "mathExpression": "g(-x) = -g(x) \\implies \\text{Symmetry with respect to the origin}",
+      "explanation": "Since g(-x) = -g(x), the function is odd. The graph is invariant under a 180-degree rotation about the origin.",
+      "why": "Origin symmetry is the characteristic geometric manifestation of every odd function."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "type": "symmetry",
+    "expression": "x/(x**2 - 1)",
+    "expected": "odd",
+    "expected_symmetry": "odd",
+    "variable": "x"
+  }
+}

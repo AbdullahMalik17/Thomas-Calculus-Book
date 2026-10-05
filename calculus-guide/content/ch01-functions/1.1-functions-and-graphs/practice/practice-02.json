@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/practice/practice-02",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "practice",
+  "title": "Natural Domain of a Rational Function with Quadratic Denominator",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["practice", "domain", "rational-functions", "factoring", "singularities"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the natural domain of the rational function g(x) = \\frac{3x + 1}{x^2 - 9}. Express the domain as a union of open intervals.",
+  "hints": [
+    "Identify any values of x that would cause division by zero in the denominator.",
+    "Factor the quadratic denominator x^2 - 9 as a difference of two squares.",
+    "Remove the real roots of the denominator from the real number line."
+  ],
+  "finalAnswer": "Domain: $(-\\infty, -3) \\cup (-3, 3) \\cup (3, \\infty)$",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate Denominator Singularity Condition",
+      "mathExpression": "x^2 - 9 \\ne 0",
+      "explanation": "A rational function is undefined precisely where its denominator equals zero.",
+      "why": "Division by zero is undefined in arithmetic and calculus."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Factor the Denominator",
+      "mathExpression": "(x - 3)(x + 3) \\ne 0 \\implies x \\ne 3 \\text{ and } x \\ne -3",
+      "explanation": "Factoring the difference of squares reveals two distinct real roots, x = 3 and x = -3, which must be excluded from the domain.",
+      "why": "The product of two real numbers is zero if and only if at least one factor is zero."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Express the Domain in Interval Notation",
+      "mathExpression": "\\text{Domain} = (-\\infty, -3) \\cup (-3, 3) \\cup (3, \\infty)",
+      "explanation": "Removing -3 and 3 from the real line partitions R into three open sub-intervals.",
+      "why": "Removing two isolated points from the real number line creates the union of three disjoint open intervals."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "type": "domain",
+    "expression": "(3*x + 1)/(x**2 - 9)",
+    "expected": "(-oo, -3) U (-3, 3) U (3, oo)",
+    "expected_domain": "(-oo, -3) U (-3, 3) U (3, oo)",
+    "variable": "x"
+  }
+}

@@ -60,9 +60,9 @@
 ## Milestones
 | # | Name | Scope | Dependencies | Status |
 |---|------|-------|-------------|--------|
-| 1 | M1: Project & Scaffolding | Next.js App Router, Tailwind, MDX, KaTeX, Footer, 7 Routes, scripts, .gitignore, PROGRESS.md, CLAUDE.md | none | PLANNED |
-| 2 | M2: Schema & Validation | `lib/content/schema.ts`, `scripts/validate-content.ts`, `scripts/content-stats.ts`, npm scripts | M1 | PLANNED |
-| 3 | M3: SymPy Verification CLI | `tools/verify/` CLI, algebraic cascade, MCQ verification, calculus payloads, 24 fixtures | none (Python runtime) | PLANNED |
+| 1 | M1: Project & Scaffolding | Next.js App Router, Tailwind, MDX, KaTeX, Footer, 7 Routes, scripts, .gitignore, PROGRESS.md, CLAUDE.md | none | DONE |
+| 2 | M2: Schema & Validation | `lib/content/schema.ts`, `scripts/validate-content.ts`, `scripts/content-stats.ts`, npm scripts | M1 | DONE |
+| 3 | M3: SymPy Verification CLI | `tools/verify/` CLI, algebraic cascade, MCQ verification, calculus payloads, 24 fixtures | none (Python runtime) | DONE |
 | 4 | M4: Section 1.1 Golden Example | `summary.mdx`, 8 solutions with "why", 8 practice (tiers 1-3) with hints, 8 MCQs with misconceptions | M2, M3 | PLANNED |
 | 5 | M5: Multi-Agent Prompts & Docs | `.claude/agents/*.md`, `docs/STYLE_GUIDE.md`, `docs/SOURCE_WORKFLOW.md` | M1, M4 | PLANNED |
 | 6 | M6: Final Verification & Hardening | Full build test, content validate, SymPy test pass, adversarial audit | M1, M2, M3, M4, M5 | PLANNED |

@@ -1,0 +1,53 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-01",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Natural Domain and Range of a Quadratic Polynomial",
+  "exerciseReference": "Section 1.1, Exercise 1",
+  "originalTopic": "Functions and Graphs: Natural Domain and Range",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["functions", "domain", "range", "quadratic", "polynomial"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine the natural domain and resulting range of the real-valued function defined by the formula f(x) = 1 + x^2.",
+  "finalAnswer": "Domain: $(-\\infty, \\infty)$, Range: $[1, \\infty)$",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Analyze Algebraic Domain Restrictions",
+      "mathExpression": "f(x) = 1 + x^2",
+      "explanation": "Inspect the formula f(x) = 1 + x^2 for potential algebraic singularities, such as denominators that could equal zero or even roots of negative numbers.",
+      "why": "The natural domain consists of all real numbers for which the algebraic operations in the expression yield well-defined real numbers."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Establish the Domain",
+      "mathExpression": "\\text{Domain} = (-\\infty, \\infty)",
+      "explanation": "Since squaring any real number and adding 1 is valid for all real numbers without restriction, the function is defined on the entire real line.",
+      "why": "Polynomial functions are continuous and well-defined across all real numbers."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Analyze Output Values for Range",
+      "mathExpression": "x^2 \\ge 0 \\implies 1 + x^2 \\ge 1",
+      "explanation": "For every real number x, the square x^2 is non-negative (x^2 >= 0). Adding 1 gives 1 + x^2 >= 1. The minimum output occurs at x = 0, giving f(0) = 1, and as x approaches positive or negative infinity, 1 + x^2 grows without bound.",
+      "why": "The square of any real number is non-negative, bounding the upward-opening parabola from below at its vertex."
+    },
+    {
+      "stepNumber": 4,
+      "title": "State the Range",
+      "mathExpression": "\\text{Range} = [1, \\infty)",
+      "explanation": "Since the function is continuous on R and attains all values greater than or equal to 1, the range in interval notation is [1, inf).",
+      "why": "Continuous functions map connected intervals to connected intervals by the Intermediate Value Theorem."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "type": "domain",
+    "expression": "1 + x**2",
+    "expected": "(-oo, oo)",
+    "expected_domain": "(-oo, oo)",
+    "variable": "x"
+  }
+}

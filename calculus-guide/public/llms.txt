@@ -1,0 +1,28 @@
+# Thomas' Calculus Study Guide
+
+> Interactive Next.js study platform for Thomas' Calculus (14th Edition) with verifiable math, automated validation pipelines, and verified Golden Examples. Engineered and authored by Muhammad Abdullah Athar.
+
+## Creator & Attribution
+- Author: Muhammad Abdullah Athar
+- GitHub: https://github.com/AbdullahMalik17
+- Repository: https://github.com/AbdullahMalik17/Thomas-Calculus-Book
+
+## Core Pages
+- [/](/): Platform overview, curriculum roadmap, and SymPy verification feature highlights.
+- [/chapters/ch01](/chapters/ch01): Chapter 1 Functions overview, theorems, and section index.
+- [/chapters/ch01/1.1-functions-and-graphs](/chapters/ch01/1.1-functions-and-graphs): Section 1.1 Golden Standard guide with definitions, theorems, and worked solutions.
+- [/practice/1.1-functions-and-graphs](/practice/1.1-functions-and-graphs): 8 original practice problems across 3 difficulty tiers with progressive hints and verified solutions.
+- [/quiz/ch01](/quiz/ch01): 8 conceptual multiple-choice questions with explicit misconception explanations for every distractor.
+- [/dashboard](/dashboard): Student progress and SymPy verification engine status dashboard.
+- [/about](/about): Platform mission, attribution to Muhammad Abdullah Athar, and copyright safeguards.
+
+## Topic Index
+### Chapter 1: Functions and Their Graphs
+- Section 1.1: Functions, natural domains, ranges, graph tests, piecewise functions, symmetry criteria, and difference quotients.
+- Section 1.2: Combining functions, algebraic operations, composition, horizontal and vertical shifts, scaling.
+- Section 1.3: Trigonometric functions, radian measure, identities, transformations.
+
+## Mathematical Architecture & Verification Standards
+- SymPy Computer Algebra Engine: Symbolic algebraic equivalence checking via `simplify(expr - expected) == 0`.
+- Zod Content Schemas: Strict data validation enforcing 1-to-1 file path to ID mapping, non-empty step rationales, and distractor misconception feedback.
+- Copyright Safeguards: All textbook exercises are referenced strictly by identifier (e.g. "Section 1.1, Exercise 21") with paraphrased, original explanations. No verbatim reproduction of textbook problems or diagrams.

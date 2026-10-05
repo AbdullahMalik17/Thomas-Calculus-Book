@@ -1,0 +1,34 @@
+# AI-Aware robots.txt for Thomas' Calculus Study Guide
+# Author: Muhammad Abdullah Athar (https://github.com/AbdullahMalik17)
+
+# Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI Search-Augmented & Citation Crawlers
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Default crawler rules
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+# Machine-Readable Discovery
+# LLMs discovery: /llms.txt

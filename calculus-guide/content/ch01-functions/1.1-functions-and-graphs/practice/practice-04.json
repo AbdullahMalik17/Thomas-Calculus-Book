@@ -1,0 +1,56 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/practice/practice-04",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "practice",
+  "title": "Natural Domain of a Radical Denominator",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["practice", "domain", "radicals", "quadratic-inequalities", "sign-chart"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine the natural domain of the function f(x) = \\frac{1}{\\sqrt{x^2 - 5x + 6}}. Use interval notation to state your final answer.",
+  "hints": [
+    "Note the dual restriction: the expression is inside an even root (requiring non-negativity) AND in a denominator (forbidding zero).",
+    "Combine both conditions into a single strict inequality: x^2 - 5x + 6 > 0.",
+    "Factor the quadratic expression and construct a sign chart across the resulting intervals."
+  ],
+  "finalAnswer": "Domain: $(-\\infty, 2) \\cup (3, \\infty)$",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Combine Radical and Denominator Restrictions",
+      "mathExpression": "x^2 - 5x + 6 > 0",
+      "explanation": "Because the radical is situated in the denominator, the radicand must be strictly positive: non-negative for the square root, and non-zero to avoid division by zero.",
+      "why": "Radicals in denominators require strict positivity (strictly greater than zero) rather than non-negativity."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Factor the Quadratic Radicand",
+      "mathExpression": "(x - 2)(x - 3) > 0",
+      "explanation": "Find two numbers whose product is 6 and sum is -5, yielding the factorization (x - 2)(x - 3).",
+      "why": "Factoring determines the critical transition numbers x = 2 and x = 3."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Construct a Sign Chart",
+      "mathExpression": "x \\in (-\\infty, 2) \\cup (3, \\infty)",
+      "explanation": "The numbers 2 and 3 divide the real line into three intervals: (-inf, 2), (2, 3), and (3, inf). On (-inf, 2), both factors are negative, giving a positive product. On (2, 3), the factors have opposite signs, giving a negative product. On (3, inf), both factors are positive, giving a positive product. We select the strictly positive intervals.",
+      "why": "A continuous polynomial changes sign only at its real roots."
+    },
+    {
+      "stepNumber": 4,
+      "title": "State the Domain with Strict Endpoints",
+      "mathExpression": "\\text{Domain} = (-\\infty, 2) \\cup (3, \\infty)",
+      "explanation": "Because x = 2 and x = 3 cause the denominator to equal zero, both endpoints must be excluded using open parentheses.",
+      "why": "Division by zero is undefined, strictly excluding the boundary roots."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "type": "domain",
+    "expression": "1/sqrt(x**2 - 5*x + 6)",
+    "expected": "(-oo, 2) U (3, oo)",
+    "expected_domain": "(-oo, 2) U (3, oo)",
+    "variable": "x"
+  }
+}

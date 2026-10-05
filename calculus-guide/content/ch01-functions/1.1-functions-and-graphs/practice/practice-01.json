@@ -1,0 +1,56 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/practice/practice-01",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "practice",
+  "title": "Natural Domain and Range of a Linear Radicand",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["practice", "domain", "range", "radicals", "linear-inequalities"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the natural domain and range of the function f(x) = \\sqrt{4 - 2x}. Express your results in standard interval notation.",
+  "hints": [
+    "Recall that an even-indexed radical requires its radicand to be non-negative in the real number system.",
+    "Set the expression under the square root 4 - 2x >= 0 and solve for x, remembering to reverse the inequality sign when dividing by a negative number.",
+    "For the range, observe the minimum value a principal square root can output and whether higher values are attainable."
+  ],
+  "finalAnswer": "Domain: $(-\\infty, 2]$, Range: $[0, \\infty)$",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate the Radicand Condition",
+      "mathExpression": "4 - 2x \\ge 0",
+      "explanation": "The square root function produces real values if and only if the expression inside is greater than or equal to zero.",
+      "why": "Negative numbers have imaginary square roots, which are outside the real number domain of single-variable calculus."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve the Linear Inequality",
+      "mathExpression": "-2x \\ge -4 \\implies x \\le 2",
+      "explanation": "Subtract 4 from both sides and divide by -2, reversing the inequality sign from >= to <=.",
+      "why": "Multiplying or dividing both sides of an inequality by a negative number reverses the direction of the inequality."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State the Natural Domain",
+      "mathExpression": "\\text{Domain} = (-\\infty, 2]",
+      "explanation": "The domain contains all real numbers less than or equal to 2, inclusive of the boundary endpoint x = 2.",
+      "why": "The square root of zero is zero, which is a well-defined real number."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Determine the Range",
+      "mathExpression": "\\text{Range} = [0, \\infty)",
+      "explanation": "The principal square root symbol denotes the non-negative root. As x decreases from 2 to -inf, 4 - 2x grows without bound, so sqrt(4 - 2x) covers all values in [0, inf).",
+      "why": "The principal square root function has a non-negative codomain [0, inf) and maps continuously to infinity."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "type": "domain",
+    "expression": "sqrt(4 - 2*x)",
+    "expected": "(-oo, 2]",
+    "expected_domain": "(-oo, 2]",
+    "variable": "x"
+  }
+}

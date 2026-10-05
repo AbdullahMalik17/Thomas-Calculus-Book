@@ -1,0 +1,193 @@
+# Section 1.1: Functions and Their Graphs
+
+*Authored by: Muhammad Abdullah Athar ([GitHub](https://github.com/AbdullahMalik17))*
+*Textbook Reference: Thomas' Calculus (14th Edition), Section 1.1*
+
+---
+
+## 1. Introduction & Physical Motivation
+
+Calculus is fundamentally the mathematics of change and motion. Whether we are calculating the velocity of an accelerating spacecraft, analyzing heat diffusion across a turbine blade, or forecasting financial risk, we describe the world by relating varying quantities.
+
+A **function** is the mathematical mechanism that formalizes how one quantity depends strictly and uniquely upon another. In this section, we lay the rigorous conceptual and analytical foundation for single-variable functions, their domains and ranges, graphical representations, piecewise formulations, algebraic symmetries, and the catalogue of elementary functions.
+
+---
+
+## 2. Formal Definition of a Function
+
+### Definition 1.1.1 (Function)
+Let $D$ and $Y$ be sets of real numbers. A **function** $f$ from $D$ to $Y$ is a rule that assigns to each element $x \in D$ a **unique** element $f(x) \in Y$.
+
+- **Domain ($D$):** The set of all allowable real inputs for which the function rule is defined. Symbolically, $\text{dom}(f) = D$.
+- **Codomain ($Y$):** The target set containing all possible outputs (for real functions, typically $\mathbb{R}$).
+- **Range ($R$):** The set of all actual output values attained by $f$ as $x$ varies over $D$:
+  $$\text{range}(f) = \{y \in Y \mid y = f(x) \text{ for some } x \in D\}$$
+- **Independent Variable:** The input variable $x$.
+- **Dependent Variable:** The output variable $y = f(x)$, whose value depends on the chosen input $x$.
+
+### The Uniqueness Criterion
+The hallmark of a function is **deterministic uniqueness**: for any single input $x$ in the domain, there is one and only one corresponding output $f(x)$. A single input mapping to multiple outputs does **not** define a function.
+
+---
+
+## 3. The Natural Domain
+
+In calculus, functions are usually defined by an algebraic formula without an explicit domain specified. In such cases, we adopt the following standard convention:
+
+> **The Natural Domain Convention:** The domain of a function given by an algebraic formula consists of the largest set of real numbers for which the formula evaluates to a well-defined real number.
+
+### Fundamental Arithmetic Domain Restrictions
+When determining the natural domain of a real-valued expression, we systematically enforce three core algebraic constraints:
+
+1. **Division by Zero is Undefined:**
+   Any denominator must not equal zero:
+   $$f(x) = \frac{p(x)}{q(x)} \implies q(x) \ne 0$$
+
+2. **Even-Indexed Radicals Require Non-Negative Radicands:**
+   Even roots (square roots, fourth roots, etc.) produce real outputs if and only if the expression inside is non-negative:
+   $$f(x) = \sqrt[2n]{g(x)} \implies g(x) \ge 0 \quad (n \in \mathbb{N})$$
+   *(Note: Odd-indexed roots like $\sqrt[3]{x}$ are defined for all real numbers without restriction).*
+
+3. **Logarithms Require Strictly Positive Arguments:**
+   $$f(x) = \ln(h(x)) \implies h(x) > 0$$
+
+### Critical Warning: Natural Domain vs. Algebraic Simplification
+A frequent source of student error is simplifying an algebraic fraction before determining its domain. 
+
+Consider the function:
+$$g(x) = \frac{x^2 - 1}{x - 1}$$
+Factoring the numerator yields:
+$$\frac{(x - 1)(x + 1)}{x - 1} = x + 1 \quad (\text{valid only when } x \ne 1)$$
+While $g(x)$ behaves identically to the linear function $f(x) = x + 1$ for all $x \ne 1$, the natural domain of $g$ is $\mathbb{R} \setminus \{1\} = (-\infty, 1) \cup (1, \infty)$. The point $x = 1$ is an excluded singularity (a "hole" in the graph), whereas the domain of $f(x) = x + 1$ is the entire real line $(-\infty, \infty)$. 
+
+**Rule:** Always evaluate domain restrictions on the *unsimplified* original formula.
+
+---
+
+## 4. Visualizing Functions & The Vertical Line Test
+
+### The Cartesian Graph
+The **graph** of a function $f$ with domain $D$ is the set of all ordered pairs $(x, f(x))$ plotted in the Cartesian coordinate plane:
+$$\text{Graph}(f) = \{(x, y) \in \mathbb{R}^2 \mid x \in D \text{ and } y = f(x)\}$$
+
+The horizontal axis represents the input domain, while the vertical axis displays the output values.
+
+### Theorem 1.1.1 (The Vertical Line Test)
+> A curve in the $xy$-plane represents the graph of a function of $x$ if and only if **no vertical line** intersects the curve more than once.
+
+- If a vertical line $x = a$ intersects a curve at two or more distinct points $(a, y_1)$ and $(a, y_2)$ with $y_1 \ne y_2$, then the single input $a$ corresponds to multiple outputs, violating Definition 1.1.1.
+- **Example:** The unit circle $x^2 + y^2 = 1$ is not the graph of a function because the vertical line $x = 0$ intersects the circle at $(0, 1)$ and $(0, -1)$. Solving for $y$ yields $y = \pm\sqrt{1 - x^2}$, which represents two distinct functions: the upper semicircle $y = \sqrt{1 - x^2}$ and the lower semicircle $y = -\sqrt{1 - x^2}$.
+
+---
+
+## 5. Piecewise-Defined Functions
+
+Often, a physical or mathematical law changes behavior across different intervals of its domain. Such relationships are represented by **piecewise-defined functions**, where different formulas apply to different subsets of the domain.
+
+### General Form
+$$f(x) = \begin{cases} g_1(x), & x \in I_1 \\ g_2(x), & x \in I_2 \\ \vdots & \vdots \\ g_k(x), & x \in I_k \end{cases}$$
+where the intervals $I_1, I_2, \dots, I_k$ are mutually disjoint subsets of the domain.
+
+### 5.1 The Absolute Value Function
+The quintessential piecewise function in calculus is the **absolute value** function $|x|$, representing the undirected distance from the origin on the real line:
+$$|x| = \begin{cases} x, & x \ge 0 \\ -x, & x < 0 \end{cases}$$
+
+Key algebraic properties:
+- $|-a| = |a|$
+- $|ab| = |a| \cdot |b|$
+- $|a / b| = |a| / |b|$ (for $b \ne 0$)
+- $\sqrt{a^2} = |a|$ (a crucial identity: $\sqrt{x^2} \ne x$ when $x < 0$)
+- **Triangle Inequality:** $|a + b| \le |a| + |b|$
+
+### 5.2 The Greatest Integer (Floor) Function
+The **greatest integer function**, denoted by $\lfloor x \rfloor$ or $[x]$, assigns to each real number $x$ the greatest integer less than or equal to $x$:
+$$\lfloor x \rfloor = n \iff n \le x < n + 1 \quad (n \in \mathbb{Z})$$
+
+For example:
+- $\lfloor 2.7 \rfloor = 2$
+- $\lfloor 3.0 \rfloor = 3$
+- $\lfloor -1.4 \rfloor = -2$ (note: not $-1$)
+
+The graph of $\lfloor x \rfloor$ is a "step function" with jump discontinuities at every integer.
+
+---
+
+## 6. Symmetry of Functions: Even and Odd
+
+Analyzing symmetry reduces computational work in graphing, limits, and integration.
+
+### 6.1 Even Functions ($y$-Axis Symmetry)
+A function $f$ is **even** if for every $x$ in its domain, $-x$ is also in the domain and:
+$$f(-x) = f(x)$$
+
+- **Geometric Interpretation:** The graph of an even function is symmetric with respect to the vertical $y$-axis. Reflecting the right half across the $y$-axis produces the left half.
+- **Canonical Examples:** $f(x) = x^2$, $f(x) = x^4$, $f(x) = |x|$, and $f(x) = \cos(x)$.
+
+### 6.2 Odd Functions (Origin Symmetry)
+A function $f$ is **odd** if for every $x$ in its domain, $-x$ is also in the domain and:
+$$f(-x) = -f(x)$$
+
+- **Geometric Interpretation:** The graph of an odd function is symmetric with respect to the **origin**. Rotating the graph by $180^\circ$ around $(0, 0)$ leaves it unchanged. If $(x, y)$ is on the graph, then $(-x, -y)$ is also on the graph.
+- **Canonical Examples:** $f(x) = x$, $f(x) = x^3$, $f(x) = \frac{1}{x}$, and $f(x) = \sin(x)$.
+
+### 6.3 Summary of Parity Rules
+
+| Combination | Even & Even | Odd & Odd | Even & Odd |
+| :--- | :--- | :--- | :--- |
+| **Sum / Difference** $f \pm g$ | Even | Odd | Neither (in general) |
+| **Product** $f \cdot g$ | Even | **Even** | Odd |
+| **Quotient** $f / g$ | Even | **Even** | Odd |
+
+*Notice the crucial rule:* The product of two odd functions is **even**, because $(-f(x))(-g(x)) = f(x)g(x)$.
+
+### 6.4 The Even-Odd Decomposition Theorem
+Every function $f$ whose domain is symmetric about the origin can be uniquely decomposed into the sum of an even component and an odd component:
+$$f(x) = f_{\text{even}}(x) + f_{\text{odd}}(x)$$
+where:
+$$f_{\text{even}}(x) = \frac{f(x) + f(-x)}{2}, \qquad f_{\text{odd}}(x) = \frac{f(x) - f(-x)}{2}$$
+
+---
+
+## 7. Catalogue of Basic Mathematical Functions
+
+Calculus models phenomena using standard families of functions:
+
+1. **Linear Functions:**
+   $$f(x) = mx + b$$
+   Graph is a straight line with slope $m$ and $y$-intercept $(0, b)$.
+
+2. **Power Functions:**
+   $$f(x) = x^a \quad (a \in \mathbb{R})$$
+   - Positive integers: Parabolas ($a = 2$), cubics ($a = 3$).
+   - Reciprocals: $a = -1 \implies f(x) = 1/x$ (hyperbola).
+   - Roots: $a = 1/2 \implies f(x) = \sqrt{x}$.
+
+3. **Polynomials:**
+   $$P(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0 \quad (a_n \ne 0)$$
+   Domain is always $(-\infty, \infty)$. Degree is $n$.
+
+4. **Rational Functions:**
+   Quotients of two polynomials:
+   $$R(x) = \frac{P(x)}{Q(x)}$$
+   Domain is all real numbers where $Q(x) \ne 0$.
+
+5. **Algebraic Functions:**
+   Functions constructed from polynomials using basic algebraic operations (addition, subtraction, multiplication, division, and extracting roots).
+
+6. **Transcendental Functions:**
+   Functions that cannot be expressed via finite algebraic operations: trigonometric ($\sin x, \cos x$), exponential ($e^x$), and logarithmic ($\ln x$) functions.
+
+---
+
+## 8. Common Pitfalls Alert
+
+Avoid these frequent conceptual and algebraic mistakes:
+
+1. **Canceling Before Domain Inspection:**
+   Simplifying $\frac{x(x-2)}{x-2}$ to $x$ obscures that $x = 2$ is outside the natural domain.
+2. **Treating "Not Even" as "Odd":**
+   Unlike integers, functions are not binary in parity. The vast majority of functions (e.g. $f(x) = x^2 + x$) are **neither** even nor odd.
+3. **Misinterpreting Negative Radicand Outputs:**
+   $\sqrt{-x}$ is perfectly real and valid whenever $x \le 0$. The negative sign reflects the domain across the origin, making the natural domain $(-\infty, 0]$.
+4. **Boundary Evaluation on Piecewise Functions:**
+   When evaluating $f(x)$ at a boundary point $x = c$, always verify whether the inequality is strict ($<$) or inclusive ($\le$). Do not evaluate a branch unless the point belongs to that branch's sub-domain.

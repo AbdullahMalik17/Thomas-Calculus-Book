@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js Build Output
+.next/
+out/
+build/
+dist/
+
+# Source Textbook Materials (Copyright Safeguard)
+source/
+*.pdf
+extracted/
+
+# Python Virtual Environments & Bytecode
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+
+# TypeScript & IDE
+*.tsbuildinfo
+next-env.d.ts
+.vscode/
+.idea/
+
+# Environment Variables & OS Files
+.env
+.env.local
+.env.*.local
+.DS_Store
+Thumbs.db

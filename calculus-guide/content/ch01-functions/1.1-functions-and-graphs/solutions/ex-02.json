@@ -1,0 +1,53 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-02",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Natural Domain and Range of a Radical Transformation",
+  "exerciseReference": "Section 1.1, Exercise 2",
+  "originalTopic": "Functions and Graphs: Natural Domain and Range",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["functions", "domain", "range", "radicals", "square-root"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the natural domain and range of the real-valued function f(x) = 1 - \\sqrt{x}.",
+  "finalAnswer": "Domain: $[0, \\infty)$, Range: $(-\\infty, 1]$",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate Radicand Non-Negativity Condition",
+      "mathExpression": "x \\ge 0",
+      "explanation": "The formula involves the principal square root sqrt(x). In the real number system, the square root of a negative number is undefined.",
+      "why": "Even-indexed roots are defined in R only when the radicand is non-negative."
+    },
+    {
+      "stepNumber": 2,
+      "title": "State the Domain",
+      "mathExpression": "\\text{Domain} = [0, \\infty)",
+      "explanation": "There are no other operations restricting the input, so the natural domain is all non-negative real numbers, [0, inf).",
+      "why": "The radical is the sole algebraic restriction governing the formula."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Analyze the Range",
+      "mathExpression": "\\sqrt{x} \\ge 0 \\implies -\\sqrt{x} \\le 0 \\implies 1 - \\sqrt{x} \\le 1",
+      "explanation": "The square root sqrt(x) outputs all values in [0, inf). Multiplying by -1 reverses the inequality, yielding values in (-inf, 0]. Adding 1 shifts the values up by 1, resulting in all values less than or equal to 1.",
+      "why": "Multiplying an inequality by a negative number reverses the direction of the inequality."
+    },
+    {
+      "stepNumber": 4,
+      "title": "State the Range in Interval Notation",
+      "mathExpression": "\\text{Range} = (-\\infty, 1]",
+      "explanation": "At x = 0, f(0) = 1 - 0 = 1. As x increases without bound, sqrt(x) grows without bound, so 1 - sqrt(x) approaches negative infinity, covering all values in (-inf, 1].",
+      "why": "The square root function is strictly increasing and unbounded above on its domain."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "type": "domain",
+    "expression": "1 - sqrt(x)",
+    "expected": "[0, oo)",
+    "expected_domain": "[0, oo)",
+    "variable": "x"
+  }
+}

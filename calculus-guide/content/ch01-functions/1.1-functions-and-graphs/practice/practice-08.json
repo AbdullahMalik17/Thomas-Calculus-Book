@@ -1,0 +1,57 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/practice/practice-08",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "practice",
+  "title": "Natural Domain of a Dual Radicand Inequality System",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": ["practice", "domain", "radicals", "inequality-system", "rational-inequalities", "advanced"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the natural domain of the function f(x) = \\sqrt{\\frac{x - 1}{x + 3}} + \\sqrt{\\frac{4 - x}{x + 1}} by solving the simultaneous system of rational inequalities and determining their intersection.",
+  "hints": [
+    "The sum of two functions is defined if and only if the input lies in the intersection of their individual domains: dom(f) = dom(f_1) intersect dom(f_2).",
+    "For the first radical, solve (x - 1)/(x + 3) >= 0 with x != -3 using a sign chart.",
+    "For the second radical, solve (4 - x)/(x + 1) >= 0 with x != -1 using a sign chart.",
+    "Find the set intersection of the two solution sets on the real number line."
+  ],
+  "finalAnswer": "Domain: $[1, 4]$",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "State the Simultaneous Domain Conditions",
+      "mathExpression": "\\text{dom}(f) = \\left\\{x \\in \\mathbb{R} \\;\\middle|\\; \\frac{x - 1}{x + 3} \\ge 0 \\;\\text{ and }\\; \\frac{4 - x}{x + 1} \\ge 0\\right\\}",
+      "explanation": "Both square roots must simultaneously evaluate to non-negative real numbers, and neither denominator may equal zero.",
+      "why": "The domain of a sum of functions is the intersection of their individual domains."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve the First Rational Inequality",
+      "mathExpression": "\\frac{x - 1}{x + 3} \\ge 0 \\implies x \\in (-\\infty, -3) \\cup [1, \\infty)",
+      "explanation": "Critical numbers are x = -3 (denominator singularity) and x = 1 (numerator zero). Testing signs: for x < -3, (-)/(-) = +; for -3 < x < 1, (-)/(+) = -; for x > 1, (+)/(+) = +. Including the valid root x = 1 gives D_1 = (-inf, -3) U [1, inf).",
+      "why": "Rational inequalities change sign only at real roots of the numerator and denominator."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Solve the Second Rational Inequality",
+      "mathExpression": "\\frac{4 - x}{x + 1} \\ge 0 \\implies x \\in (-1, 4]",
+      "explanation": "Critical numbers are x = -1 (denominator singularity) and x = 4 (numerator zero). Testing signs: for x < -1, (+)/(-) = -; for -1 < x < 4, (+)/(+) = +; for x > 4, (-)/(+) = -. Including the valid root x = 4 and excluding x = -1 gives D_2 = (-1, 4].",
+      "why": "Excluding denominator zeros prevents division by zero while preserving valid numerator roots."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Compute the Set Intersection",
+      "mathExpression": "D = D_1 \\cap D_2 = \\big((-\\infty, -3) \\cup [1, \\infty)\\big) \\cap (-1, 4] = [1, 4]",
+      "explanation": "The interval (-1, 4] has no overlap with (-inf, -3) because -1 > -3. The overlap between (-1, 4] and [1, inf) is precisely the closed interval [1, 4].",
+      "why": "An input must satisfy all component conditions simultaneously to belong to the domain of the combined function."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "type": "domain",
+    "expression": "sqrt((x - 1)/(x + 3)) + sqrt((4 - x)/(x + 1))",
+    "expected": "[1, 4]",
+    "expected_domain": "[1, 4]",
+    "variable": "x"
+  }
+}

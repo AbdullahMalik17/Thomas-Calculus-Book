@@ -1,0 +1,53 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-03",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Natural Domain and Range of a Linear Radicand",
+  "exerciseReference": "Section 1.1, Exercise 3",
+  "originalTopic": "Functions and Graphs: Natural Domain and Range",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["functions", "domain", "range", "radicals", "linear-inequalities"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the natural domain and range of the function defined by F(x) = \\sqrt{5x + 10}.",
+  "finalAnswer": "Domain: $[-2, \\infty)$, Range: $[0, \\infty)$",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up the Radicand Inequality",
+      "mathExpression": "5x + 10 \\ge 0",
+      "explanation": "To produce real outputs from the square root function, the radicand 5x + 10 must be greater than or equal to zero.",
+      "why": "The square root of a negative quantity is not a real number."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve the Linear Inequality",
+      "mathExpression": "5x \\ge -10 \\implies x \\ge -2",
+      "explanation": "Subtract 10 from both sides to obtain 5x >= -10, then divide both sides by 5. Because 5 is positive, the inequality sign is preserved, giving x >= -2.",
+      "why": "Dividing both sides of an inequality by a positive number preserves inequality direction."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State the Natural Domain",
+      "mathExpression": "\\text{Domain} = [-2, \\infty)",
+      "explanation": "The domain includes the endpoint x = -2, where the radicand vanishes, and all numbers to its right.",
+      "why": "Closed brackets denote inclusion of the endpoint where the radical evaluates to zero."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Determine the Range",
+      "mathExpression": "\\text{Range} = [0, \\infty)",
+      "explanation": "At x = -2, F(-2) = sqrt(0) = 0. As x increases without bound towards infinity, 5x + 10 increases without bound, so F(x) attains every non-negative real value in [0, inf).",
+      "why": "The principal square root function maps [0, inf) continuously onto [0, inf)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "type": "domain",
+    "expression": "sqrt(5*x + 10)",
+    "expected": "[-2, oo)",
+    "expected_domain": "[-2, oo)",
+    "variable": "x"
+  }
+}
