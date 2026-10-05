@@ -14,7 +14,9 @@
     "lint": "next lint",
     "content:validate": "tsx scripts/validate-content.ts",
     "content:stats": "tsx scripts/content-stats.ts",
-    "math:verify": "python tools/verify/verify.py"
+    "math:verify": "python tools/verify/verify.py",
+    "test": "tsx scripts/test-e2e.ts",
+    "test:e2e": "tsx scripts/test-e2e.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",

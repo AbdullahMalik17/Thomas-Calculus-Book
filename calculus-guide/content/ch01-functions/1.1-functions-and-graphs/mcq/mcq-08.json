@@ -1,0 +1,46 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/mcq/mcq-08",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "mcq",
+  "title": "Identifying Single-Valued Functions via the Vertical Line Test",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["mcq", "vertical-line-test", "relations-vs-functions", "algebraic-curves"],
+  "author": "Muhammad Abdullah Athar",
+  "question": "Which of the following algebraic equations defines y as a single-valued function of x according to the Vertical Line Test?",
+  "correctId": "C",
+  "options": [
+    {
+      "id": "A",
+      "text": "$x^2 + y^2 = 16$",
+      "explanation": "Incorrect. This represents a circle of radius 4; vertical lines x = c for -4 < c < 4 intersect the circle at two distinct points y = +-sqrt(16 - c^2).",
+      "misconception": "Student equates geometric symmetry and smoothness with being a function, failing to recognize that a circle fails the Vertical Line Test because vertical lines intersect it at two distinct points."
+    },
+    {
+      "id": "B",
+      "text": "$x = y^2 + 1$",
+      "explanation": "Incorrect. Solving for y gives y = +-sqrt(x - 1), so for any x > 1 there are two corresponding y-values.",
+      "misconception": "Student recognizes the quadratic relationship as a parabola but ignores the orientation, failing to see that a parabola opening horizontally along the x-axis fails the Vertical Line Test."
+    },
+    {
+      "id": "C",
+      "text": "$x^2 + y = 4$",
+      "explanation": "Correct! Solving for y yields y = 4 - x^2. For every real number x, there is exactly one unique real output y, so every vertical line intersects the parabola at most once."
+    },
+    {
+      "id": "D",
+      "text": "$|y| = 2x + 1$",
+      "explanation": "Incorrect. For any x > -1/2, the equation yields two distinct outputs y = +(2x + 1) and y = -(2x + 1).",
+      "misconception": "Student confuses the absolute value on y with an absolute value on x (y = |2x + 1|), overlooking that |y| produces two distinct outputs y = +-(2x + 1) for each positive input."
+    }
+  ],
+  "explanation": "A relation defines y as a function of x if and only if each allowable input x produces a unique output y. In x^2 + y = 4, we can isolate y unambiguously: y = 4 - x^2. This describes a standard downward-opening parabola, passing the Vertical Line Test. The other equations all assign two values of y to a single input x.",
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "4 - x**2",
+    "expected": "4 - x**2",
+    "variable": "x"
+  }
+}

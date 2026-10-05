@@ -1,0 +1,47 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/mcq/mcq-07",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "mcq",
+  "title": "Natural Domain of a Rational Function with Removable Discontinuity",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["mcq", "domain", "rational-functions", "removable-discontinuity", "algebraic-cancellation"],
+  "author": "Muhammad Abdullah Athar",
+  "question": "What is the natural domain of the rational function defined by the formula f(x) = \\frac{x^2 - 9}{x - 3}?",
+  "correctId": "D",
+  "options": [
+    {
+      "id": "A",
+      "text": "$(-\\infty, \\infty)$",
+      "explanation": "Incorrect. This results from simplifying the expression to x + 3 before evaluating the domain.",
+      "misconception": "Student simplifies the formula first as (x - 3)(x + 3)/(x - 3) = x + 3 and evaluates the domain of the simplified linear function, failing to preserve the singularity at x = 3."
+    },
+    {
+      "id": "B",
+      "text": "$[-3, 3]$",
+      "explanation": "Incorrect. This treats the roots of the numerator as endpoints of a closed interval.",
+      "misconception": "Student treats the factored numerator roots x = -3 and x = 3 as endpoints of a closed domain interval, confusing rational domain restrictions with square root inequalities."
+    },
+    {
+      "id": "C",
+      "text": "$(-\\infty, -3) \\cup (-3, 3) \\cup (3, \\infty)$",
+      "explanation": "Incorrect. The numerator root x = -3 produces 0 in the numerator, which is a perfectly valid output f(-3) = 0.",
+      "misconception": "Student excludes both numerator and denominator roots from the domain, incorrectly believing that roots of the numerator cannot be evaluated."
+    },
+    {
+      "id": "D",
+      "text": "$(-\\infty, 3) \\cup (3, \\infty)$",
+      "explanation": "Correct! The natural domain is determined by the original, unsimplified formula. The denominator x - 3 cannot equal zero, which excludes x = 3. All other real numbers are admissible."
+    }
+  ],
+  "explanation": "The natural domain must be inspected prior to algebraic cancellation. In f(x) = (x^2 - 9)/(x - 3), division by zero occurs if x - 3 = 0, meaning x = 3 is not in the domain. Although f(x) simplifies to x + 3 for all x != 3, the graph has a hole at (3, 6), and the natural domain is (-inf, 3) U (3, inf).",
+  "sympyVerification": {
+    "operation": "domain",
+    "type": "domain",
+    "expression": "(x**2 - 9)/(x - 3)",
+    "expected": "(-oo, 3) U (3, oo)",
+    "expected_domain": "(-oo, 3) U (3, oo)",
+    "variable": "x"
+  }
+}

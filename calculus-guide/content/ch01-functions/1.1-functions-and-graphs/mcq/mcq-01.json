@@ -1,0 +1,47 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/mcq/mcq-01",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "mcq",
+  "title": "Natural Domain with Radical Numerator and Rational Denominator",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["mcq", "domain", "radicals", "rational-functions", "inequalities"],
+  "author": "Muhammad Abdullah Athar",
+  "question": "What is the natural domain of the real-valued function f(x) = \\frac{\\sqrt{x + 4}}{x - 3}?",
+  "correctId": "C",
+  "options": [
+    {
+      "id": "A",
+      "text": "$[-4, \\infty)$",
+      "explanation": "Incorrect. This accounts only for the radical radicand restriction and ignores the denominator singularity.",
+      "misconception": "Student checked that the square root requires x >= -4, but completely forgot that the denominator cannot equal zero, missing the restriction x != 3."
+    },
+    {
+      "id": "B",
+      "text": "$(-4, 3) \\cup (3, \\infty)$",
+      "explanation": "Incorrect. This erroneously excludes the valid radical endpoint x = -4.",
+      "misconception": "Student erroneously assumed that square roots can never output zero or that the radicand must be strictly positive (x > -4), confusing numerator roots with denominator roots."
+    },
+    {
+      "id": "C",
+      "text": "$[-4, 3) \\cup (3, \\infty)$",
+      "explanation": "Correct! The numerator requires x + 4 >= 0, giving x >= -4. The denominator requires x - 3 != 0, giving x != 3. Combining both conditions gives [-4, 3) U (3, inf)."
+    },
+    {
+      "id": "D",
+      "text": "$(-\\infty, -4] \\cup (3, \\infty)$",
+      "explanation": "Incorrect. This inverts the inequality for the radical radicand.",
+      "misconception": "Student incorrectly solved x + 4 >= 0 as x <= -4, reversing the inequality without dividing by a negative number, and took the union with x > 3."
+    }
+  ],
+  "explanation": "To find the natural domain of f(x) = sqrt(x + 4) / (x - 3), we combine two algebraic restrictions: 1) The radicand must be non-negative: x + 4 >= 0 ==> x >= -4. 2) The denominator cannot be zero: x - 3 != 0 ==> x != 3. The intersection of [-4, inf) and {x in R | x != 3} is [-4, 3) U (3, inf).",
+  "sympyVerification": {
+    "operation": "domain",
+    "type": "domain",
+    "expression": "sqrt(x + 4)/(x - 3)",
+    "expected": "[-4, 3) U (3, oo)",
+    "expected_domain": "[-4, 3) U (3, oo)",
+    "variable": "x"
+  }
+}

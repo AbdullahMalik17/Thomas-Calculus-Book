@@ -1,0 +1,76 @@
+{
+  "timestamp": "2026-10-05T09:29:57.405Z",
+  "author": "Muhammad Abdullah Athar",
+  "github": "https://github.com/AbdullahMalik17",
+  "allPassed": true,
+  "totalChecks": 6,
+  "totalPassed": 6,
+  "results": [
+    {
+      "id": 1,
+      "name": "Next.js App Router Production Build",
+      "commandString": "npm run build",
+      "exitCode": 0,
+      "passed": true,
+      "durationMs": 0,
+      "stdout": "Executed as enclosing next build process.",
+      "stderr": "",
+      "notes": "Enclosing build context"
+    },
+    {
+      "id": 2,
+      "name": "Content Schema & Guardrails Validation",
+      "commandString": "npm run content:validate",
+      "exitCode": 0,
+      "passed": true,
+      "durationMs": 827,
+      "stdout": "\n> calculus-guide@0.1.0 content:validate\n> tsx scripts/validate-content.ts\n\n\n\u001b[1m\u001b[36m======================================================\u001b[0m\n\u001b[1m\u001b[36m    CALCULUS-GUIDE CONTENT VALIDATION PIPELINE       \u001b[0m\n\u001b[1m\u001b[36m======================================================\u001b[0m\n\nAuthor / Attribution : Muhammad Abdullah Athar (https://github.com/AbdullahMalik17)\nContent Directory    : D:\\Thomas-Calculus-Book\\calculus-guide\\content\n\n\u001b[1mValidation Metrics:\u001b[0m\n  - MDX Summaries Validated : 1\n  - Solutions Validated     : 8\n  - Practice Problems       : 8\n  - MCQs Validated          : 8\n  - Total Items Registered  : 24\n\n\u001b[1m\u001b[32mSUCCESS: All content passed strict schema guardrails with 0 errors!\u001b[0m\n\n",
+      "stderr": "",
+      "notes": ""
+    },
+    {
+      "id": 3,
+      "name": "Content Statistics & 100% Misconception Coverage",
+      "commandString": "npm run content:stats",
+      "exitCode": 0,
+      "passed": true,
+      "durationMs": 696,
+      "stdout": "\n> calculus-guide@0.1.0 content:stats\n> tsx scripts/content-stats.ts\n\n\n\u001b[1m\u001b[36m======================================================\u001b[0m\n\u001b[1m\u001b[36m         CALCULUS-GUIDE CONTENT REPOSITORY STATS      \u001b[0m\n\u001b[1m\u001b[36m======================================================\u001b[0m\n\n\u001b[1mAuthor / Attribution\u001b[0m   : Muhammad Abdullah Athar\n\u001b[1mGitHub Repository\u001b[0m      : https://github.com/AbdullahMalik17\n\u001b[36m------------------------------------------------------\u001b[0m\nChapters Represented   : \u001b[1m1\u001b[0m\nSections Represented   : \u001b[1m1\u001b[0m\nSummary MDX Modules    : \u001b[1m1\u001b[0m\n\u001b[36m------------------------------------------------------\u001b[0m\nTextbook Solutions     : \u001b[32m8\u001b[0m\nOriginal Practice Sets : \u001b[32m8\u001b[0m\nMCQ Assessment Items   : \u001b[32m8\u001b[0m\nTotal Content Items    : \u001b[1m\u001b[32m24\u001b[0m\n\u001b[36m------------------------------------------------------\u001b[0m\nDifficulty Tier Distribution:\n  - Tier 1 (Basic)     : 17\n  - Tier 2 (Applied)   : 5\n  - Tier 3 (Advanced)  : 2\n\u001b[36m------------------------------------------------------\u001b[0m\nPedagogical Rigor Metrics:\n  - Total Solution Steps        : \u001b[1m65\u001b[0m\n  - Average Steps per Problem   : \u001b[1m4.1\u001b[0m\n  - Distractor Misconceptions   : \u001b[1m\u001b[32m24 / 24\u001b[0m (\u001b[1m\u001b[32m100.0%\u001b[0m coverage)\n\u001b[36m------------------------------------------------------\u001b[0m\nContent Verification Lifecycle:\n  - Published                   : \u001b[32m0\u001b[0m\n  - Verified                    : \u001b[32m24\u001b[0m\n  - In Review                   : \u001b[33m0\u001b[0m\n  - Draft                       : 0\n\u001b[1m\u001b[36m======================================================\u001b[0m\n\n",
+      "stderr": "",
+      "notes": ""
+    },
+    {
+      "id": 4,
+      "name": "SymPy Math Engine 24 Fixtures & Section 1.1 Verification",
+      "commandString": "python tools/verify/verify.py",
+      "exitCode": 0,
+      "passed": true,
+      "durationMs": 3404,
+      "stdout": "\r\n================================================================================\r\n   THOMAS' CALCULUS MATHEMATICAL VERIFICATION ENGINE\r\n   Author: Muhammad Abdullah Athar (https://github.com/AbdullahMalik17)\r\n   SymPy Symbolic Simplification & Proof Verification Suite\r\n================================================================================\r\n\r\nExecuting automated test suite: 24 edge-case mathematical fixtures...\r\n\r\n#   | Category               | Fixture Name                        | Status\r\n---------------------------------------------------------------------------\r\n1   | Factoring              | Difference of Cubes                 | PASS\r\n2   | Factoring              | Quadratic Factoring                 | PASS\r\n3   | Expansion              | Binomial Cube Expansion             | PASS\r\n4   | Expansion              | Trinomial Square Expansion          | PASS\r\n5   | Rational               | Common Denominator Addition         | PASS\r\n6   | Rational               | Complex Fraction Simplification     | PASS\r\n7   | Rational               | Rational Factor Cancellation        | PASS\r\n8   | Trigonometry           | Pythagorean Trigonometric Identity  | PASS\r\n9   | Trigonometry           | Double Angle Sine Identity          | PASS\r\n10  | Trigonometry           | Double Angle Cosine Form 1          | PASS\r\n11  | Trigonometry           | Double Angle Cosine Form 2          | PASS\r\n12  | Trigonometry           | Tangent Addition Formula            | PASS\r\n13  | Radicals               | Conjugate Radical Rationalization   | PASS\r\n14  | Radicals               | Radical Absolute Value Identity     | PASS\r\n15  | Radicals               | Fractional Exponent Product         | PASS\r\n16  | Logarithms/Exponents   | Logarithm Product Rule              | PASS\r\n17  | Logarithms/Exponents   | Logarithm Power and Quotient Rule   | PASS\r\n18  | Logarithms/Exponents   | Exponential Addition Law            | PASS\r\n19  | Calculus Operations    | Quadratic Difference Quotient       | PASS\r\n20  | Calculus Operations    | Reciprocal Difference Quotient      | PASS\r\n21  | Calculus Operations    | Continuous Domain Set Equality      | PASS\r\n22  | Calculus Operations    | Function Symmetry Test              | PASS\r\n23  | MCQ Verification       | Valid MCQ Distractor Separation     | PASS\r\n24  | MCQ Verification       | MCQ Ambiguity Detection (Negative Test) | PASS\r\n---------------------------------------------------------------------------\r\nFixture Summary: 24/24 passed (0 failed)\r\n\r\nValidating Golden Example Section 1.1 content at: D:\\Thomas-Calculus-Book\\calculus-guide\\content\\ch01-functions\\1.1-functions-and-graphs\r\nValidation Report for Section: D:\\Thomas-Calculus-Book\\calculus-guide\\content\\ch01-functions\\1.1-functions-and-graphs\r\n  Status: PASS\r\n  Total Content Files Scanned: 24\r\n  MCQ Items: 8/8 passed\r\n  Solution Items: 8/8 passed\r\n  Practice Items: 8/8 passed\r\n  SymPy Verification Payloads: 16/16 passed\r\n\r\n\r\nSUCCESS: All mathematical verification checks passed cleanly (exit code 0).\r\n\r\n",
+      "stderr": "",
+      "notes": ""
+    },
+    {
+      "id": 5,
+      "name": "Section 1.1 Full Directory Mathematical Validation",
+      "commandString": "python tools/verify/verify.py validate-section --dir content/ch01-functions/1.1-functions-and-graphs/",
+      "exitCode": 0,
+      "passed": true,
+      "durationMs": 2779,
+      "stdout": "Validation Report for Section: content\\ch01-functions\\1.1-functions-and-graphs\r\n  Status: PASS\r\n  Total Content Files Scanned: 24\r\n  MCQ Items: 8/8 passed\r\n  Solution Items: 8/8 passed\r\n  Practice Items: 8/8 passed\r\n  SymPy Verification Payloads: 16/16 passed\r\n",
+      "stderr": "",
+      "notes": ""
+    },
+    {
+      "id": 6,
+      "name": "Pytest Verification Suite (test_verify.py)",
+      "commandString": "pytest tools/verify/test_verify.py",
+      "exitCode": 0,
+      "passed": true,
+      "durationMs": 4854,
+      "stdout": "============================= test session starts =============================\r\nplatform win32 -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0\r\nrootdir: D:\\Thomas-Calculus-Book\\calculus-guide\r\nplugins: anyio-4.14.2, asyncio-1.4.0\r\nasyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\r\ncollected 13 items\r\n\r\ntools\\verify\\test_verify.py .............                                [100%]\r\n\r\n============================= 13 passed in 3.57s ==============================\r\n",
+      "stderr": "",
+      "notes": ""
+    }
+  ]
+}

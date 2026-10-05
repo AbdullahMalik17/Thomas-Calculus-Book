@@ -1,0 +1,47 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/mcq/mcq-05",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "mcq",
+  "title": "Natural Domain of a Rational Radicand Quotient",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["mcq", "domain", "radicals", "rational-inequalities", "sign-chart"],
+  "author": "Muhammad Abdullah Athar",
+  "question": "What is the natural domain of the real-valued function f(x) = \\sqrt{\\frac{x - 2}{5 - x}}?",
+  "correctId": "B",
+  "options": [
+    {
+      "id": "A",
+      "text": "$[2, 5]$",
+      "explanation": "Incorrect. Including x = 5 causes division by zero in the denominator of the radicand.",
+      "misconception": "Student includes the right boundary point x = 5 where the denominator is zero, forgetting that division by zero is undefined even inside a square root."
+    },
+    {
+      "id": "B",
+      "text": "$[2, 5)$",
+      "explanation": "Correct! The radicand (x - 2)/(5 - x) must be non-negative. Testing signs on the intervals (-inf, 2), [2, 5), and (5, inf) shows the quotient is non-negative on [2, 5), with x = 5 excluded due to division by zero."
+    },
+    {
+      "id": "C",
+      "text": "$(2, 5)$",
+      "explanation": "Incorrect. The numerator root x = 2 is completely valid because sqrt(0) = 0.",
+      "misconception": "Student excludes the numerator zero x = 2, incorrectly believing that radicands must be strictly positive rather than non-negative."
+    },
+    {
+      "id": "D",
+      "text": "$(-\\infty, 2] \\cup (5, \\infty)$",
+      "explanation": "Incorrect. This selects the intervals where the radicand is negative.",
+      "misconception": "Student forgets that the quotient has opposite signs outside the roots and incorrectly selects the exterior intervals without constructing a proper sign chart."
+    }
+  ],
+  "explanation": "For f(x) to evaluate to a real number, the radicand must be non-negative: (x - 2)/(5 - x) >= 0, with 5 - x != 0 (so x != 5). Testing test points: for x < 2, (-)/(+) = -; for 2 <= x < 5, (+)/(+) = +; for x > 5, (+)/(-) = -. Hence the inequality holds for x in [2, 5).",
+  "sympyVerification": {
+    "operation": "domain",
+    "type": "domain",
+    "expression": "sqrt((x - 2)/(5 - x))",
+    "expected": "[2, 5)",
+    "expected_domain": "[2, 5)",
+    "variable": "x"
+  }
+}

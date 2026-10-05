@@ -1,0 +1,47 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/mcq/mcq-06",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "mcq",
+  "title": "Parity and Symmetry of the Product of Two Odd Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["mcq", "symmetry", "parity", "even-odd", "product-rule"],
+  "author": "Muhammad Abdullah Athar",
+  "question": "Suppose f(x) and g(x) are both odd functions defined on the entire real line. What can be definitively concluded regarding the symmetry and parity of the product function h(x) = f(x)g(x)?",
+  "correctId": "A",
+  "options": [
+    {
+      "id": "A",
+      "text": "h(x) is an even function with y-axis symmetry",
+      "explanation": "Correct! Evaluating h(-x) = f(-x)g(-x) = [-f(x)][-g(x)] = f(x)g(x) = h(x). Because h(-x) = h(x), the product is an even function and its graph is symmetric across the y-axis."
+    },
+    {
+      "id": "B",
+      "text": "h(x) is an odd function with origin symmetry",
+      "explanation": "Incorrect. Multiplying two negative factors yields a positive product, producing even parity rather than odd.",
+      "misconception": "Student uses additive thinking ('odd plus odd is odd, so odd times odd must be odd'), confusing the addition of odd functions with their algebraic product."
+    },
+    {
+      "id": "C",
+      "text": "h(x) is neither even nor odd",
+      "explanation": "Incorrect. The product of two odd functions always possesses definite even symmetry.",
+      "misconception": "Student assumes that multiplying two symmetric functions destroys their symmetry properties, failing to carry out the algebraic sign test h(-x) = (-f(x))(-g(x))."
+    },
+    {
+      "id": "D",
+      "text": "h(x) is both even and odd",
+      "explanation": "Incorrect. The only function that is both even and odd on R is the zero function, but the product of two arbitrary non-zero odd functions is not identically zero.",
+      "misconception": "Student confuses parity product rules with the zero function, falsely believing that combining two symmetries causes the function to vanish identically."
+    }
+  ],
+  "explanation": "By definition of odd functions, f(-x) = -f(x) and g(-x) = -g(x). For the product function h(x) = f(x)g(x), we evaluate h(-x) = f(-x)g(-x) = (-f(x))(-g(x)) = f(x)g(x) = h(x). Since h(-x) = h(x) for all x, h is an even function with y-axis reflection symmetry.",
+  "sympyVerification": {
+    "operation": "symmetry",
+    "type": "symmetry",
+    "expression": "x * x**3",
+    "expected": "even",
+    "expected_symmetry": "even",
+    "variable": "x"
+  }
+}

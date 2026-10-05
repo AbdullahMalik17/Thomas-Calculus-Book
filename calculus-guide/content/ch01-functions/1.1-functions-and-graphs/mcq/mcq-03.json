@@ -1,0 +1,47 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/mcq/mcq-03",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "mcq",
+  "title": "Symmetry and Geometric Classification of an Odd Rational Function",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["mcq", "symmetry", "odd-functions", "origin-symmetry", "rational-functions"],
+  "author": "Muhammad Abdullah Athar",
+  "question": "Determine whether the function f(x) = \\frac{x^5 - 3x}{x^4 + 1} is even, odd, or neither, and identify the geometric symmetry of its graph.",
+  "correctId": "A",
+  "options": [
+    {
+      "id": "A",
+      "text": "Odd function with symmetry with respect to the origin",
+      "explanation": "Correct! Evaluating f(-x) gives [(-x)^5 - 3(-x)] / [(-x)^4 + 1] = [-x^5 + 3x] / [x^4 + 1] = -f(x). Since f(-x) = -f(x), the function is odd and its graph is symmetric with respect to the origin."
+    },
+    {
+      "id": "B",
+      "text": "Even function with symmetry with respect to the y-axis",
+      "explanation": "Incorrect. An even function requires f(-x) = f(x), but here the sign of the numerator is negated.",
+      "misconception": "Student observes the constant +1 in the denominator and erroneously concludes that any function containing even constant terms must possess even parity."
+    },
+    {
+      "id": "C",
+      "text": "Odd function with symmetry with respect to the y-axis",
+      "explanation": "Incorrect. Odd functions exhibit origin symmetry, not y-axis symmetry.",
+      "misconception": "Student correctly identifies the odd algebraic parity condition f(-x) = -f(x) but confuses geometric symmetries, assigning y-axis reflection symmetry to an odd function instead of origin rotation."
+    },
+    {
+      "id": "D",
+      "text": "Neither even nor odd with no symmetry",
+      "explanation": "Incorrect. The function satisfies the exact algebraic identity for odd symmetry f(-x) = -f(x).",
+      "misconception": "Student fails to factor out the negative sign from the numerator, concluding that -x^5 + 3x is unrelated to x^5 - 3x and therefore possesses no symmetry."
+    }
+  ],
+  "explanation": "We test f(-x) = [(-x)^5 - 3(-x)] / [(-x)^4 + 1] = [-x^5 + 3x] / [x^4 + 1] = -[(x^5 - 3x) / (x^4 + 1)] = -f(x). Because f(-x) = -f(x) for all real x, f is an odd function. The graph of an odd function possesses 180-degree rotational symmetry with respect to the origin.",
+  "sympyVerification": {
+    "operation": "symmetry",
+    "type": "symmetry",
+    "expression": "(x**5 - 3*x)/(x**4 + 1)",
+    "expected": "odd",
+    "expected_symmetry": "odd",
+    "variable": "x"
+  }
+}

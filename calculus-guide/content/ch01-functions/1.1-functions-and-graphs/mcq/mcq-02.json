@@ -1,0 +1,46 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/mcq/mcq-02",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "mcq",
+  "title": "Range of a Downward-Opening Quadratic Function",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["mcq", "range", "quadratic-functions", "parabola", "vertex"],
+  "author": "Muhammad Abdullah Athar",
+  "question": "What is the range of the real-valued function f(x) = 3 - (x - 2)^2 defined on the entire real line?",
+  "correctId": "B",
+  "options": [
+    {
+      "id": "A",
+      "text": "$[3, \\infty)$",
+      "explanation": "Incorrect. This treats the parabola as opening upward from the vertex y = 3.",
+      "misconception": "Student assumes all quadratic parabolas open upward, forgetting that the negative sign in front of the squared term reflects the parabola across the horizontal axis."
+    },
+    {
+      "id": "B",
+      "text": "$(-\\infty, 3]$",
+      "explanation": "Correct! Since (x - 2)^2 >= 0 for all real x, -(x - 2)^2 <= 0, which implies 3 - (x - 2)^2 <= 3. The maximum value is 3 attained at x = 2, and outputs decrease without bound, giving (-inf, 3]."
+    },
+    {
+      "id": "C",
+      "text": "$[2, \\infty)$",
+      "explanation": "Incorrect. This confuses the horizontal vertex coordinate x = 2 with the vertical range output bound.",
+      "misconception": "Student confuses the horizontal vertex coordinate x = 2 with the vertical output bound, mistaking the input shift for the range boundary."
+    },
+    {
+      "id": "D",
+      "text": "$(-\\infty, \\infty)$",
+      "explanation": "Incorrect. Quadratic polynomials are bounded on one side and do not attain all real values.",
+      "misconception": "Student assumes that polynomial functions have an unrestricted range spanning all real numbers, failing to recognize that even-degree polynomials are bounded on one side."
+    }
+  ],
+  "explanation": "For any real x, the squared quantity (x - 2)^2 is non-negative: (x - 2)^2 >= 0. Multiplying by -1 yields -(x - 2)^2 <= 0, and adding 3 gives f(x) = 3 - (x - 2)^2 <= 3. The maximum value of 3 occurs at the vertex x = 2, and the parabola opens downward towards negative infinity, making the range (-inf, 3].",
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "3 - (x - 2)**2",
+    "expected": "-x**2 + 4*x - 1",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/mcq/mcq-04",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "mcq",
+  "title": "Piecewise Point Evaluation at an Isolated Boundary",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["mcq", "piecewise-functions", "boundary-evaluation", "limits-vs-values"],
+  "author": "Muhammad Abdullah Athar",
+  "question": "Given the piecewise-defined function\n$$f(x) = \\begin{cases} 2x + 3, & x < 2 \\\\ 11, & x = 2 \\\\ x^2 + 4, & x > 2 \\end{cases}$$\nwhat is the exact value of f(2)?",
+  "correctId": "C",
+  "options": [
+    {
+      "id": "A",
+      "text": "$7$",
+      "explanation": "Incorrect. This evaluates the left branch 2x + 3 at x = 2, ignoring the strict inequality x < 2.",
+      "misconception": "Student evaluated the left branch formula 2x + 3 at x = 2, ignoring the strict inequality x < 2 and overlooking the isolated point rule explicitly defined at x = 2."
+    },
+    {
+      "id": "B",
+      "text": "$8$",
+      "explanation": "Incorrect. This evaluates the right branch x^2 + 4 at x = 2, ignoring the strict inequality x > 2.",
+      "misconception": "Student evaluated the right branch formula x^2 + 4 at x = 2, ignoring the strict inequality x > 2 and assuming right-sided limits determine function values."
+    },
+    {
+      "id": "C",
+      "text": "$11$",
+      "explanation": "Correct! The piecewise rule explicitly specifies that when x = 2, the function output is 11."
+    },
+    {
+      "id": "D",
+      "text": "Undefined",
+      "explanation": "Incorrect. The point x = 2 is explicitly included in the domain with assigned value 11.",
+      "misconception": "Student observes that the left-hand limit 7 and right-hand limit 8 do not match, mistakenly concluding that a jump discontinuity means the function value itself is undefined."
+    }
+  ],
+  "explanation": "To evaluate a piecewise function at a specific input x = c, one must locate the branch condition that contains c. Here, the condition x = 2 is explicitly assigned the value 11. Therefore, f(2) = 11, regardless of the values approached by the adjacent branches as x approaches 2.",
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "11",
+    "expected": "11",
+    "variable": "x"
+  }
+}

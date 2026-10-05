@@ -26,9 +26,11 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-# Ensure package directory and project root are in sys.path
+# Ensure project root and package directory are in sys.path
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 if str(SCRIPT_DIR.parent) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR.parent))
 if str(SCRIPT_DIR) not in sys.path:
