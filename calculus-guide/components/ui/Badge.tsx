@@ -10,6 +10,8 @@ interface BadgeProps {
   className?: string;
 }
 
+import { cn } from '@/lib/utils';
+
 export function Badge({ children, variant = 'default', size = 'md', className = '' }: BadgeProps) {
   const variantStyles: Record<BadgeVariant, string> = {
     default: 'bg-slate-100 text-slate-800 border-slate-200',
@@ -28,7 +30,12 @@ export function Badge({ children, variant = 'default', size = 'md', className = 
 
   return (
     <span
-      className={`inline-flex items-center rounded-full font-semibold border ${sizeStyles[size]} ${variantStyles[variant]} ${className}`}
+      className={cn(
+        'inline-flex items-center rounded-full font-semibold border',
+        sizeStyles[size],
+        variantStyles[variant],
+        className
+      )}
     >
       {children}
     </span>

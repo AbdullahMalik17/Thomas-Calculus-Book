@@ -148,6 +148,20 @@ const CHECKS: CheckDefinition[] = [
       };
     },
   },
+  {
+    id: 7,
+    name: 'Curriculum Navigation, Slugs & Adjacent Section Verification',
+    command: 'npm',
+    args: ['run', 'navigation:verify'],
+    validateOutput: (stdout, stderr) => {
+      const output = stripAnsi(stdout + '\n' + stderr);
+      const passed = output.includes('SUCCESS: All curriculum and navigation checks passed cleanly');
+      return {
+        passed,
+        reason: passed ? undefined : 'Navigation verification reported failure',
+      };
+    },
+  },
 ];
 
 export function runE2ESuite(options: { skipBuild?: boolean; filterIds?: number[] } = {}): {

@@ -11,8 +11,8 @@ export function Footer() {
               Thomas&apos; Calculus (14th Edition) Interactive Study Guide
             </span>
             <span className="hidden sm:inline text-slate-300">|</span>
-            <span className="text-xs text-slate-500">
-              Verifiable Math &amp; Automated Evaluation Engine
+            <span className="text-sm text-slate-600">
+              Clear notes, worked examples, and practice
             </span>
           </div>
 
@@ -35,7 +35,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-4 pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2">
+        <div className="mt-4 pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-600 gap-2">
           <p>
             Educational study companion. All problems are original or paraphrased with identifiers (no verbatim textbook text).
           </p>

@@ -13,6 +13,8 @@ import {
   DefinitionsFileSchema,
 } from './schema';
 
+import { normalizeChapterKey } from './curriculum';
+
 const CONTENT_DIR = path.resolve(process.cwd(), 'content');
 
 export interface SectionContentData {
@@ -28,19 +30,33 @@ export interface SectionContentData {
 
 export function getSectionDirectory(ch: string, section: string): string | null {
   const chapterDirs = fs.existsSync(CONTENT_DIR) ? fs.readdirSync(CONTENT_DIR) : [];
-  const matchedCh = chapterDirs.find(
-    (d) => d.toLowerCase() === ch.toLowerCase() || d.startsWith(ch.toLowerCase())
-  );
+  const normalizedCh = normalizeChapterKey(ch);
+  const matchedCh = chapterDirs.find((d) => {
+    const dLower = d.toLowerCase();
+    return (
+      dLower === ch.toLowerCase() ||
+      dLower === normalizedCh ||
+      dLower.startsWith(normalizedCh + '-') ||
+      dLower.startsWith(normalizedCh) ||
+      dLower.startsWith(ch.toLowerCase())
+    );
+  });
   if (!matchedCh) return null;
 
   const chPath = path.join(CONTENT_DIR, matchedCh);
   const sectionDirs = fs.readdirSync(chPath);
-  const matchedSection = sectionDirs.find(
-    (s) =>
-      s.toLowerCase() === section.toLowerCase() ||
-      s.startsWith(section.toLowerCase()) ||
-      s.includes(section.toLowerCase())
-  );
+  const cleanSection = section.toLowerCase();
+  const cleanSectionWithDot = cleanSection.replace(/[-_]/g, '.');
+  const matchedSection = sectionDirs.find((s) => {
+    const sLower = s.toLowerCase();
+    return (
+      sLower === cleanSection ||
+      sLower.startsWith(cleanSection + '-') ||
+      sLower.startsWith(cleanSection) ||
+      sLower.includes(cleanSection) ||
+      sLower.startsWith(cleanSectionWithDot + '-')
+    );
+  });
 
   if (!matchedSection) return null;
   return path.join(chPath, matchedSection);
@@ -111,7 +127,7 @@ export function loadSectionContent(ch: string, section: string): SectionContentD
   const cleanTitle = definitionsFile?.title || dirName.replace(/^\d+\.\d+-/, '').replace(/-/g, ' ');
 
   return {
-    chapterKey: parentName,
+    chapterKey: normalizeChapterKey(parentName),
     sectionKey: dirName,
     sectionNumber,
     title: cleanTitle,

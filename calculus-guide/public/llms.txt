@@ -9,20 +9,55 @@
 
 ## Core Pages
 - [/](/): Platform overview, curriculum roadmap, and SymPy verification feature highlights.
+- [/chapters](/chapters): Complete Curriculum Directory and Table of Contents covering all 4 chapters, 27 sections, and 153 worked solutions.
 - [/chapters/ch01](/chapters/ch01): Chapter 1 Functions overview, theorems, and section index.
+- [/chapters/ch02](/chapters/ch02): Chapter 2 Limits and Continuity overview, theorems, and section index.
+- [/chapters/ch03](/chapters/ch03): Chapter 3 Derivatives overview, differentiation rules, and section index.
+- [/chapters/ch04](/chapters/ch04): Chapter 4 Applications of Derivatives overview, optimization, and section index.
 - [/chapters/ch01/1.1-functions-and-graphs](/chapters/ch01/1.1-functions-and-graphs): Section 1.1 Golden Standard guide with definitions, theorems, and worked solutions.
 - [/practice/1.1-functions-and-graphs](/practice/1.1-functions-and-graphs): 8 original practice problems across 3 difficulty tiers with progressive hints and verified solutions.
 - [/quiz/ch01](/quiz/ch01): 8 conceptual multiple-choice questions with explicit misconception explanations for every distractor.
-- [/dashboard](/dashboard): Student progress and SymPy verification engine status dashboard.
+- [/dashboard](/dashboard): Student mastery and SymPy verification engine status dashboard tracking all 27 sections.
 - [/about](/about): Platform mission, attribution to Muhammad Abdullah Athar, and copyright safeguards.
 
-## Topic Index
-### Chapter 1: Functions and Their Graphs
-- Section 1.1: Functions, natural domains, ranges, graph tests, piecewise functions, symmetry criteria, and difference quotients.
-- Section 1.2: Combining functions, algebraic operations, composition, horizontal and vertical shifts, scaling.
-- Section 1.3: Trigonometric functions, radian measure, identities, transformations.
+## Complete Curriculum & Section Directory (27 Sections, 153 Solutions)
+
+### Chapter 1: Functions (4 Sections, 38 Solutions)
+- Section 1.1: Functions and Their Graphs - Natural domains, ranges, piecewise functions, symmetry criteria, difference quotients (8 solutions).
+- Section 1.2: Combining Functions; Shifting and Scaling Graphs - Algebra of functions, composition, horizontal/vertical shifts, scaling, reflection (10 solutions).
+- Section 1.3: Trigonometric Functions - Radian measure, circular functions, identities, transformations (10 solutions).
+- Section 1.4: Graphing with Software - Viewing windows, graphing technology, parametric equations, graph artifacts (10 solutions).
+
+### Chapter 2: Limits and Continuity (6 Sections, 30 Solutions)
+- Section 2.1: Rates of Change and Tangents to Curves - Average rates of change, secant slopes, instantaneous rates (5 solutions).
+- Section 2.2: Limit of a Function and Limit Laws - Limit laws, 0/0 indeterminate forms, conjugate rationalization, Sandwich Theorem (5 solutions).
+- Section 2.3: The Precise Definition of a Limit - Epsilon-delta definitions, delta calculations, formal proofs (5 solutions).
+- Section 2.4: One-Sided Limits - Right-hand and left-hand limits, absolute values, floor function, trig limits (5 solutions).
+- Section 2.5: Continuity - Three continuity conditions, classification of discontinuities, Intermediate Value Theorem (5 solutions).
+- Section 2.6: Limits Involving Infinity; Asymptotes of Graphs - Horizontal, vertical, and oblique asymptotes, infinite limits (5 solutions).
+
+### Chapter 3: Derivatives (9 Sections, 45 Solutions)
+- Section 3.1: Tangents and the Derivative at a Point - Difference quotients, tangent slopes, normal line equations (5 solutions).
+- Section 3.2: The Derivative as a Function - First principles differentiation, differentiability implies continuity (5 solutions).
+- Section 3.3: Differentiation Rules - Power rule, product rule, quotient rule, higher-order derivatives (5 solutions).
+- Section 3.4: The Derivative as a Rate of Change - Motion, velocity, acceleration, jerk, economics marginal cost (5 solutions).
+- Section 3.5: Derivatives of Trigonometric Functions - Sine, cosine, tangent, secant derivatives, 4-cycle periodicity (5 solutions).
+- Section 3.6: The Chain Rule - Composite functions, generalized power rule, nested differentiation (5 solutions).
+- Section 3.7: Implicit Differentiation - Implicit curves, circle/ellipse tangents, second derivatives implicitly (5 solutions).
+- Section 3.8: Related Rates - Time derivatives of geometric relations, expanding balloons, sliding ladders, conical tanks (5 solutions).
+- Section 3.9: Linearization and Differentials - Tangent line approximations, standard linear formulas, differentials (5 solutions).
+
+### Chapter 4: Applications of Derivatives (8 Sections, 40 Solutions)
+- Section 4.1: Extreme Values of Functions on Closed Intervals - Absolute and local extrema, critical points, Extreme Value Theorem (5 solutions).
+- Section 4.2: The Mean Value Theorem - Rolle's Theorem, Mean Value Theorem, constant derivative corollaries, root uniqueness (5 solutions).
+- Section 4.3: Monotonic Functions and the First Derivative Test - Increasing/decreasing tests, First Derivative Test (5 solutions).
+- Section 4.4: Concavity and Curve Sketching - Concavity test, inflection points, Second Derivative Test, curve sketching (5 solutions).
+- Section 4.5: Indeterminate Forms and L'Hôpital's Rule - Forms 0/0 and inf/inf, products, differences, and powers (5 solutions).
+- Section 4.6: Applied Optimization - Geometric and physical optimization: box volume, pastures, cylinders, Snell's Law (5 solutions).
+- Section 4.7: Newton's Method - Newton-Raphson iteration, tangent line root approximations, failure modes (5 solutions).
+- Section 4.8: Antiderivatives - Indefinite integrals, power rule for integration, trigonometric antiderivatives, IVPs (5 solutions).
 
 ## Mathematical Architecture & Verification Standards
-- SymPy Computer Algebra Engine: Symbolic algebraic equivalence checking via `simplify(expr - expected) == 0`.
-- Zod Content Schemas: Strict data validation enforcing 1-to-1 file path to ID mapping, non-empty step rationales, and distractor misconception feedback.
+- SymPy Computer Algebra Engine: Symbolic algebraic equivalence checking via `simplify(expr - expected) == 0` for all 153 solutions.
+- Zod Content Schemas: Strict data validation enforcing 1-to-1 file path to ID mapping, non-empty step rationales, and distractor misconception feedback across all 196 items.
 - Copyright Safeguards: All textbook exercises are referenced strictly by identifier (e.g. "Section 1.1, Exercise 21") with paraphrased, original explanations. No verbatim reproduction of textbook problems or diagrams.

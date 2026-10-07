@@ -32,20 +32,20 @@ export function MathBlock({
       : '';
 
   return (
-    <div className={`my-2 overflow-x-auto text-center ${themeClass} ${className}`}>
+    <figure className={`my-2 min-w-0 text-center ${themeClass} ${className}`}>
       <div
+        className="math-block-scroll"
         dangerouslySetInnerHTML={{ __html: html }}
-        aria-label={`Math equation: ${math}`}
       />
       {caption && (
-        <p
+        <figcaption
           className={`mt-1 text-xs italic text-center ${
             theme === 'dark' ? 'text-slate-400' : 'text-slate-500'
           }`}
         >
           {caption}
-        </p>
+        </figcaption>
       )}
-    </div>
+    </figure>
   );
 }

@@ -7,7 +7,7 @@ import { Footer } from '@/components/layout/Footer';
 export const metadata: Metadata = {
   title: "Thomas' Calculus Study Guide | Interactive & Verifiable",
   description:
-    "Interactive Next.js study platform for Thomas' Calculus (14th Edition) with verifiable math, automated validation pipelines, and verified Golden Examples.",
+    "A clear, step-by-step study companion for Thomas' Calculus with concept notes, worked examples, progressive hints, and practice.",
   authors: [
     {
       name: 'Muhammad Abdullah Athar',
@@ -42,7 +42,7 @@ export default function RootLayout({
     name: "Thomas' Calculus Study Guide",
     url: 'https://github.com/AbdullahMalik17/Thomas-Calculus-Book',
     description:
-      "Interactive study guide and verifiable math platform for Thomas' Calculus 14th Edition with automated validation pipelines.",
+      "A clear study companion with section notes, worked examples, progressive practice hints, and symbolic math checks.",
     author: {
       '@type': 'Person',
       name: 'Muhammad Abdullah Athar',
@@ -69,8 +69,14 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col bg-slate-50 text-slate-900 antialiased font-sans">
+        <a
+          href="#main-content"
+          className="sr-only z-[100] rounded-md bg-white px-4 py-3 text-sm font-semibold text-slate-900 shadow focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+        >
+          Skip to main content
+        </a>
         <Header />
-        <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <main id="main-content" tabIndex={-1} className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 outline-none">
           {children}
         </main>
         <Footer />

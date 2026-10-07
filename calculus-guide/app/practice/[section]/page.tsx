@@ -1,11 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
-import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { Button } from '@/components/ui/Button';
-import { MathBlock } from '@/components/math/MathBlock';
-import { InlineMath } from '@/components/math/InlineMath';
-import { ArrowLeft, CheckCircle2, HelpCircle, Layers, ShieldCheck } from 'lucide-react';
+import { Layers, ShieldCheck } from 'lucide-react';
+import { PracticeProblemCard } from '@/components/practice/PracticeProblemCard';
 
 interface PracticePageProps {
   params: {
@@ -67,7 +64,7 @@ export default function PracticePage({ params }: PracticePageProps) {
   return (
     <div className="space-y-8">
       {/* Breadcrumbs */}
-      <div className="flex items-center gap-2 text-sm text-slate-500">
+      <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-slate-600">
         <Link href="/" className="hover:text-blue-700">Home</Link>
         <span>/</span>
         <Link href="/chapters/ch01" className="hover:text-blue-700">Chapter 1</Link>
@@ -75,22 +72,22 @@ export default function PracticePage({ params }: PracticePageProps) {
         <Link href={`/chapters/ch01/${section}`} className="hover:text-blue-700">Section Guide</Link>
         <span>/</span>
         <span className="text-slate-800 font-medium">Practice</span>
-      </div>
+      </nav>
 
       {/* Header */}
-      <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-4">
+      <div className="bg-white rounded-2xl border border-slate-200 p-5 sm:p-8 shadow-sm space-y-4">
         <div className="flex flex-wrap items-center gap-2">
-          <Badge variant="primary">Interactive Practice Engine</Badge>
-          <Badge variant="info">{section}</Badge>
-          <Badge variant="success">SymPy Validated Solutions</Badge>
+          <Badge variant="primary">Practice</Badge>
+          <Badge variant="info">Section {section}</Badge>
+          <Badge variant="success">Solutions checked</Badge>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#172b43]">
           Section 1.1 Practice Problems
         </h1>
 
-        <p className="text-slate-600 max-w-3xl leading-relaxed">
-          Master function domains, ranges, symmetries, and difference quotients with multi-tiered difficulty exercises, progressive hint revelations, and step-by-step verified explanations.
+        <p className="reading-copy text-slate-600">
+          Work through each problem at your own pace. Reveal hints one at a time, then check the solution and reasoning when you are ready.
         </p>
 
         <div className="flex flex-wrap items-center gap-4 text-xs text-slate-500 pt-1">
@@ -100,8 +97,8 @@ export default function PracticePage({ params }: PracticePageProps) {
           </span>
           <span>&bull;</span>
           <span className="flex items-center gap-1 font-medium text-slate-700">
-            <ShieldCheck className="w-4 h-4 text-emerald-600" />
-            Verified with SymPy Computer Algebra
+            <ShieldCheck className="w-4 h-4 text-emerald-700" />
+            Answers checked with symbolic math
           </span>
         </div>
       </div>
@@ -109,48 +106,7 @@ export default function PracticePage({ params }: PracticePageProps) {
       {/* Practice Problems List */}
       <div className="space-y-6">
         {samplePracticeProblems.map((prob) => (
-          <Card key={prob.id} className="border-l-4 border-l-blue-600">
-            <div className="space-y-4">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
-                <h2 className="text-lg font-bold text-slate-900">{prob.title}</h2>
-                <Badge variant={prob.badgeVariant}>{prob.difficulty}</Badge>
-              </div>
-
-              <div className="space-y-2">
-                <p className="text-sm text-slate-700 font-medium">{prob.prompt}</p>
-                <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
-                  <MathBlock math={prob.math} />
-                </div>
-              </div>
-
-              {/* Hints Accordion Preview */}
-              <div className="bg-blue-50/60 rounded-xl p-4 border border-blue-100 space-y-2">
-                <div className="flex items-center gap-2 text-xs font-bold text-blue-900">
-                  <HelpCircle className="w-4 h-4 text-blue-600" />
-                  Progressive Hints
-                </div>
-                <ul className="list-disc list-inside text-xs text-blue-800 space-y-1 pl-1">
-                  {prob.hints.map((hint, i) => (
-                    <li key={i}>{hint}</li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Verified Solution & Step Explanation */}
-              <div className="bg-emerald-50/60 rounded-xl p-4 border border-emerald-200 space-y-2">
-                <div className="flex items-center gap-2 text-xs font-bold text-emerald-900">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                  Verified Solution &amp; Mathematical Rationale:
-                </div>
-                <div className="text-center py-1">
-                  <MathBlock math={prob.solution} />
-                </div>
-                <p className="text-xs text-emerald-800 font-medium bg-white/70 p-2.5 rounded-lg border border-emerald-100">
-                  <strong>Why:</strong> {prob.why}
-                </p>
-              </div>
-            </div>
-          </Card>
+          <PracticeProblemCard key={prob.id} problem={prob} />
         ))}
       </div>
     </div>
