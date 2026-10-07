@@ -1,0 +1,54 @@
+# Section 2.2: Limit of a Function and Limit Laws
+
+The concept of a limit is the cornerstone of calculus. It allows us to examine the behavior of a function near a point of interest, even when the function cannot be directly evaluated at that point.
+
+---
+
+## 1. The Limit Concept
+
+When we write:
+
+$$
+\lim_{x \to c} f(x) = L
+$$
+
+we mean that we can make the output values $f(x)$ as close to $L$ as desired by choosing $x$ sufficiently close to $c$, with $x \neq c$.
+
+### Critical Principle:
+The value of $f(c)$ has **zero influence** on whether $\lim_{x \to c} f(x)$ exists or what its value is:
+- $f(c)$ can equal $L$.
+- $f(c)$ can be completely different from $L$.
+- $f(c)$ may be completely undefined!
+
+---
+
+## 2. The Limit Laws
+
+Suppose $\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$, where $L$ and $M$ are finite real numbers. Then:
+
+1. **Sum & Difference Rule**:
+   $$
+   \lim_{x \to c} [f(x) \pm g(x)] = L \pm M
+   $$
+2. **Product Rule**:
+   $$
+   \lim_{x \to c} [f(x) g(x)] = L \cdot M
+   $$
+3. **Quotient Rule**:
+   $$
+   \lim_{x \to c} \frac{f(x)}{g(x)} = \frac{L}{M}, \quad \text{provided } M \neq 0
+   $$
+4. **Power & Root Rules**:
+   $$
+   \lim_{x \to c} [f(x)]^n = L^n, \quad \lim_{x \to c} \sqrt[n]{f(x)} = \sqrt[n]{L} \quad (L > 0 \text{ if } n \text{ is even})
+   $$
+
+---
+
+## 3. Techniques for Indeterminate Forms $\frac{0}{0}$
+
+When direct substitution yields $\frac{0}{0}$, the limit is an **indeterminate form**:
+
+- **Factoring and Cancellation**: Factor $(x - c)$ from polynomial expressions.
+- **Conjugate Rationalization**: For square roots, multiply numerator and denominator by the conjugate $(\sqrt{A} + B)$.
+- **Sandwich (Squeeze) Theorem**: For bounded oscillatory terms like $\sin(1/x)$, bound between $-x^2$ and $x^2$.

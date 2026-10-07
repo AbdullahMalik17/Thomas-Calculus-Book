@@ -1,0 +1,49 @@
+{
+  "id": "ch04-applications-of-derivatives/4.3-monotonic-functions-and-the-first-derivative-test/solutions/ex-02",
+  "chapter": "ch04",
+  "section": "4.3",
+  "type": "solution",
+  "title": "Monotonicity of a Rational Function",
+  "exerciseReference": "Section 4.3, Exercise 2",
+  "originalTopic": "Rational Monotonicity",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "rational-function",
+    "first-derivative-test",
+    "extrema"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find intervals of increase/decrease and local extrema for f(x) = x^2 / (x - 1).",
+  "finalAnswer": "\\text{Increasing on } (-\\infty, 0) \\cup (2, \\infty); \\; \\text{Decreasing on } (0, 1) \\cup (1, 2); \\; \\text{Local Max at } (0, 0); \\; \\text{Local Min at } (2, 4)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Derivative via Quotient Rule",
+      "mathExpression": "f'(x) = \\frac{2x(x - 1) - x^2(1)}{(x - 1)^2} = \\frac{2x^2 - 2x - x^2}{(x - 1)^2} = \\frac{x(x - 2)}{(x - 1)^2}",
+      "explanation": "Differentiate and factor numerator.",
+      "why": "Quotient rule."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify Partition Points",
+      "mathExpression": "f'(x) = 0 \\implies x = 0, \\; 2; \\quad f' \\text{ undefined at } x = 1 \\text{ (vertical asymptote)}",
+      "explanation": "Partition points are 0, 1, and 2.",
+      "why": "Critical points and domain boundary."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Classify Extrema",
+      "mathExpression": "x = 0: (+ \\to -) \\implies \\text{Local Max at } (0, 0); \\quad x = 2: (- \\to +) \\implies \\text{Local Min at } (2, 4)",
+      "explanation": "Apply First Derivative Test.",
+      "why": "Local extrema classification."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "x**2/(x - 1)",
+    "expected": "x*(x - 2)/(x - 1)**2",
+    "variable": "x"
+  }
+}

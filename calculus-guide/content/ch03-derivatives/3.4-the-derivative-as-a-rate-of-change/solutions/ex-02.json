@@ -1,0 +1,56 @@
+{
+  "id": "ch03-derivatives/3.4-the-derivative-as-a-rate-of-change/solutions/ex-02",
+  "chapter": "ch03",
+  "section": "3.4",
+  "type": "solution",
+  "title": "Vertical Projectile Motion",
+  "exerciseReference": "Section 3.4, Exercise 2",
+  "originalTopic": "Projectile Kinematics",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "projectile",
+    "free-fall",
+    "maximum-height"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A projectile launched upward has height s(t) = -16t^2 + 96t + 112 feet. Find its maximum height and impact velocity.",
+  "finalAnswer": "\\text{Max height: } 256 \\text{ ft at } t = 3 \\text{ s}; \\quad \\text{Impact velocity: } -128 \\text{ ft/s at } t = 7 \\text{ s}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Velocity Function",
+      "mathExpression": "v(t) = s'(t) = -32t + 96",
+      "explanation": "Differentiate position function s(t).",
+      "why": "Velocity is the derivative of position."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find Time of Maximum Height",
+      "mathExpression": "v(t) = 0 \\implies -32t + 96 = 0 \\implies t = 3 \\text{ s}",
+      "explanation": "The projectile peaks when upward velocity reaches zero.",
+      "why": "Peak occurs at v = 0 before reversal."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Calculate Maximum Height",
+      "mathExpression": "s(3) = -16(9) + 96(3) + 112 = -144 + 288 + 112 = 256 \\text{ ft}",
+      "explanation": "Evaluate s(3).",
+      "why": "Peak position."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Find Ground Impact Time and Velocity",
+      "mathExpression": "s(t) = 0 \\implies -16(t^2 - 6t - 7) = 0 \\implies (t - 7)(t + 1) = 0 \\implies t = 7 \\text{ s}; \\quad v(7) = -32(7) + 96 = -128 \\text{ ft/s}",
+      "explanation": "Solve s(t) = 0 for positive t, then compute v(7).",
+      "why": "Impact occurs at s = 0."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "-16*t**2 + 96*t + 112",
+    "expected": "-32*t + 96",
+    "variable": "t"
+  }
+}

@@ -1,0 +1,36 @@
+# Section 2.5: Continuity
+
+Continuity is one of the central concepts of analysis. Intuitively, a function is continuous on an interval if its graph can be drawn without lifting the pencil from the paper.
+
+---
+
+## 1. The Three-Part Definition of Continuity
+
+A function $f$ is continuous at an interior point $c$ if and only if:
+
+1. **$f(c)$ is defined** ($c$ is in the domain of $f$).
+2. **$\lim_{x \to c} f(x)$ exists** (the two-sided limit is a finite number).
+3. **$\lim_{x \to c} f(x) = f(c)$** (the limit equals the function value).
+
+If any of these three conditions fails, $f$ is **discontinuous** at $c$.
+
+---
+
+## 2. Types of Discontinuities
+
+- **Removable Discontinuity**: $\lim_{x \to c} f(x) = L$ exists, but either $f(c)$ is undefined or $f(c) \neq L$. A simple "hole" in the graph.
+- **Jump Discontinuity**: Both $\lim_{x \to c^-} f(x)$ and $\lim_{x \to c^+} f(x)$ exist, but they are not equal.
+- **Infinite Discontinuity**: The function grows without bound ($+\infty$ or $-\infty$) as $x \to c$.
+
+---
+
+## 3. The Intermediate Value Theorem (IVT)
+
+If $f$ is continuous on $[a, b]$, then $f$ takes on every value between $f(a)$ and $f(b)$.
+
+### Root-Finding Corollary:
+If $f$ is continuous on $[a, b]$ and $f(a)$ and $f(b)$ have **opposite signs** ($f(a) \cdot f(b) < 0$), then there exists at least one root $c \in (a, b)$ such that:
+
+$$
+f(c) = 0
+$$

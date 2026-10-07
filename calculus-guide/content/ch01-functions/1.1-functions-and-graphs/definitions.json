@@ -1,0 +1,100 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/definitions",
+  "chapter": "ch01",
+  "section": "1.1",
+  "title": "Core Definitions: Functions and Their Graphs",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-function",
+      "title": "Definition of a Function",
+      "category": "definition",
+      "latex": "f: D \\to Y, \\quad x \\mapsto f(x)",
+      "statement": "A function f from a set D to a set Y is a rule that assigns a unique (single) element f(x) in Y to each element x in D.",
+      "conditions": [
+        "Every element in the domain D must have an image in Y",
+        "No element in D can map to more than one distinct element in Y"
+      ],
+      "explanation": "A function represents a single-valued deterministic dependency. The set D is the domain, while the set of all resulting output values {f(x) : x in D} constitutes the range.",
+      "keyTakeaway": "Single-valued mapping: one input produces exactly one output."
+    },
+    {
+      "id": "def-natural-domain",
+      "title": "The Natural Domain Convention",
+      "category": "rule",
+      "latex": "D = \\{x \\in \\mathbb{R} : f(x) \\in \\mathbb{R}\\}",
+      "statement": "When a function is defined by an algebraic formula without an explicit domain, the domain is understood to be the largest subset of real numbers for which the formula yields real output values.",
+      "conditions": [
+        "Denominators cannot equal zero (no division by zero)",
+        "Radicands of even roots must be non-negative (>= 0)",
+        "Arguments of real logarithmic functions must be strictly positive (> 0)"
+      ],
+      "explanation": "To determine the natural domain, examine the unsimplified algebraic expression for all potential singularities and solve the corresponding inequality constraints simultaneously.",
+      "keyTakeaway": "Never cancel algebraic factors before finding domain restrictions."
+    },
+    {
+      "id": "def-piecewise-function",
+      "title": "Piecewise-Defined Functions",
+      "category": "definition",
+      "latex": "f(x) = \\begin{cases} f_1(x), & x \\in D_1 \\\\ f_2(x), & x \\in D_2 \\end{cases}",
+      "statement": "A function that is defined by different formulas on disjoint intervals or partitions of its domain.",
+      "conditions": [
+        "Domain partitions D_i must be mutually disjoint to guarantee single-valued output",
+        "Boundary values must be evaluated using the specific sub-domain branch that contains them"
+      ],
+      "explanation": "The standard example is the absolute value function |x|, which is equal to x for x >= 0 and -x for x < 0. Other common examples include step functions like the greatest integer function.",
+      "keyTakeaway": "Identify which branch interval an input belongs to before applying the formula."
+    },
+    {
+      "id": "test-vertical-line",
+      "title": "The Vertical Line Test",
+      "category": "test",
+      "latex": "x = c \\cap \\text{Graph}(f) \\le 1 \\text{ point}",
+      "statement": "A curve in the coordinate plane is the graph of a function of x if and only if no vertical line intersects the curve at more than one point.",
+      "conditions": [
+        "If any vertical line x = c touches the curve at two or more points, the curve cannot represent a function y = f(x)"
+      ],
+      "explanation": "Geometrically enforces the uniqueness requirement of functions: an input value c cannot correspond to multiple distinct y-coordinates.",
+      "keyTakeaway": "Geometric check for single-valued functional dependency."
+    },
+    {
+      "id": "def-even-function",
+      "title": "Even Function (Symmetry with Respect to the y-Axis)",
+      "category": "definition",
+      "latex": "f(-x) = f(x) \\quad \\forall x \\in D",
+      "statement": "A function y = f(x) is even if f(-x) = f(x) for every number x in its domain. The graph of an even function is symmetric with respect to the y-axis.",
+      "conditions": [
+        "Domain must be symmetric about the origin (if x in D, then -x in D)",
+        "Replacing x with -x yields an algebraically identical formula"
+      ],
+      "explanation": "Points (x, y) and (-x, y) lie on the graph simultaneously. Typical examples include f(x) = x^2, f(x) = x^4, and f(x) = cos(x).",
+      "keyTakeaway": "f(-x) = f(x) reflects across the y-axis."
+    },
+    {
+      "id": "def-odd-function",
+      "title": "Odd Function (Symmetry with Respect to the Origin)",
+      "category": "definition",
+      "latex": "f(-x) = -f(x) \\quad \\forall x \\in D",
+      "statement": "A function y = f(x) is odd if f(-x) = -f(x) for every number x in its domain. The graph of an odd function is symmetric with respect to the origin (180-degree rotational symmetry).",
+      "conditions": [
+        "Domain must be symmetric about the origin",
+        "Reflecting through both axes returns the curve to itself"
+      ],
+      "explanation": "Points (x, y) and (-x, -y) lie on the graph simultaneously. Typical examples include f(x) = x, f(x) = x^3, and f(x) = sin(x).",
+      "keyTakeaway": "f(-x) = -f(x) provides 180-degree rotational symmetry about the origin."
+    },
+    {
+      "id": "formula-difference-quotient",
+      "title": "The Difference Quotient",
+      "category": "formula",
+      "latex": "\\frac{f(x+h) - f(x)}{h}, \\quad h \\neq 0",
+      "statement": "The ratio representing the average rate of change of f over the interval [x, x+h], or geometrically the slope of the secant line passing through (x, f(x)) and (x+h, f(x+h)).",
+      "conditions": [
+        "h must be nonzero during simplification",
+        "Both x and x+h must lie in the domain of f"
+      ],
+      "explanation": "Algebraic simplification aims to cancel the denominator factor h, laying the foundation for the derivative definition as h approaches 0.",
+      "keyTakeaway": "Always factor and cancel h from numerator and denominator."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "ch03-derivatives/3.4-the-derivative-as-a-rate-of-change/solutions/ex-03",
+  "chapter": "ch03",
+  "section": "3.4",
+  "type": "solution",
+  "title": "Rate of Change of Volume of a Sphere",
+  "exerciseReference": "Section 3.4, Exercise 3",
+  "originalTopic": "Geometric Rate of Change",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "geometry",
+    "sphere",
+    "surface-area"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Show that the rate of change of the volume of a sphere with respect to its radius equals its surface area.",
+  "finalAnswer": "\\frac{dV}{dr} = 4\\pi r^2 = A(r)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "State Sphere Volume Formula",
+      "mathExpression": "V(r) = \\frac{4}{3}\\pi r^3",
+      "explanation": "Standard geometric formula for sphere volume.",
+      "why": "Starting functional relation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate with Respect to Radius r",
+      "mathExpression": "\\frac{dV}{dr} = \\frac{4}{3}\\pi \\frac{d}{dr}[r^3] = \\frac{4}{3}\\pi (3r^2) = 4\\pi r^2",
+      "explanation": "Apply power rule to r^3.",
+      "why": "The 3 in the exponent cancels the denominator 3."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Identify with Surface Area",
+      "mathExpression": "4\\pi r^2 = A(r) \\quad (\\text{Surface Area of the sphere})",
+      "explanation": "Recognize that 4*pi*r^2 is precisely the surface area of a sphere of radius r.",
+      "why": "Geometric theorem: d/dr[Volume] = Surface Area."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "Rational(4,3)*pi*r**3",
+    "expected": "4*pi*r**2",
+    "variable": "r"
+  }
+}

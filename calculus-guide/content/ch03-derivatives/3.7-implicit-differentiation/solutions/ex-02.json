@@ -1,0 +1,48 @@
+{
+  "id": "ch03-derivatives/3.7-implicit-differentiation/solutions/ex-02",
+  "chapter": "ch03",
+  "section": "3.7",
+  "type": "solution",
+  "title": "Tangent to the Folium of Descartes",
+  "exerciseReference": "Section 3.7, Exercise 2",
+  "originalTopic": "Folium of Descartes",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "implicit-differentiation",
+    "product-rule",
+    "folium"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find dy/dx for x^3 + y^3 = 6xy, and determine the tangent slope at (3, 3).",
+  "finalAnswer": "\\frac{dy}{dx} = \\frac{2y - x^2}{y^2 - 2x}; \\quad \\text{Slope at (3, 3) } = -1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Differentiate Both Sides Term-by-Term",
+      "mathExpression": "3x^2 + 3y^2\\frac{dy}{dx} = 6\\left(1 \\cdot y + x\\frac{dy}{dx}\\right) = 6y + 6x\\frac{dy}{dx}",
+      "explanation": "Apply product rule to 6xy: d/dx[6xy] = 6y + 6x(dy/dx).",
+      "why": "Product rule combined with chain rule."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Group dy/dx Terms and Factor",
+      "mathExpression": "3y^2\\frac{dy}{dx} - 6x\\frac{dy}{dx} = 6y - 3x^2 \\implies 3(y^2 - 2x)\\frac{dy}{dx} = 3(2y - x^2)",
+      "explanation": "Collect dy/dx terms on the left.",
+      "why": "Linear grouping for isolation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Solve for dy/dx and Evaluate at (3, 3)",
+      "mathExpression": "\\frac{dy}{dx} = \\frac{2y - x^2}{y^2 - 2x} \\implies \\frac{dy}{dx}\\Big|_{(3,3)} = \\frac{2(3) - 3^2}{3^2 - 2(3)} = \\frac{6 - 9}{9 - 6} = \\frac{-3}{3} = -1",
+      "explanation": "Divide by (y^2 - 2x) and evaluate at point (3, 3).",
+      "why": "Tangent slope at specified point."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(2*3 - 3**2)/(3**2 - 2*3)",
+    "expected": "-1"
+  }
+}

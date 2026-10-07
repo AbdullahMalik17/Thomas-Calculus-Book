@@ -140,7 +140,7 @@ const CHECKS: CheckDefinition[] = [
     command: 'pytest',
     args: ['tools/verify/test_verify.py'],
     validateOutput: (stdout, stderr) => {
-      const output = stripAnsi(stdout + '\n' + stderr);
+      const output = stripAnsi(stdout + '\n' + stderr).toLowerCase();
       const passed = output.includes('passed') && !output.includes('failed');
       return {
         passed: passed,
@@ -202,12 +202,20 @@ export function runE2ESuite(options: { skipBuild?: boolean; filterIds?: number[]
 
       // Special fallback for pytest if not found in PATH directly on Windows
       if (check.command === 'pytest' && (res.error || res.status !== 0)) {
-        const fallback = spawnSync('python', ['-m', 'pytest', ...check.args], {
+        let fallback = spawnSync('python', ['-m', 'pytest', ...check.args], {
           cwd: PROJECT_ROOT,
           shell: true,
           encoding: 'utf-8',
           env: { ...process.env },
         });
+        if (fallback.status !== 0 || fallback.error) {
+          fallback = spawnSync('python', check.args, {
+            cwd: PROJECT_ROOT,
+            shell: true,
+            encoding: 'utf-8',
+            env: { ...process.env },
+          });
+        }
         if (fallback.status === 0 || !fallback.error) {
           res = fallback;
         }

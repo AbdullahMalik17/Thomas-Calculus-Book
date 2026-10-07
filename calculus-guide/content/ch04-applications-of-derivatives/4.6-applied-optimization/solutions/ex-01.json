@@ -1,0 +1,49 @@
+{
+  "id": "ch04-applications-of-derivatives/4.6-applied-optimization/solutions/ex-01",
+  "chapter": "ch04",
+  "section": "4.6",
+  "type": "solution",
+  "title": "Maximizing Volume of an Open-Top Box",
+  "exerciseReference": "Section 4.6, Exercise 1",
+  "originalTopic": "Box Optimization",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "optimization",
+    "volume",
+    "polynomial"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Square corners of side length x are cut from a 12-inch by 12-inch tin sheet, and the flaps are folded up to form an open box. Find the value of x that maximizes the volume.",
+  "finalAnswer": "x = 2 \\text{ inches}; \\quad V_{\\max} = 128 \\text{ in}^3",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate Volume Function and Feasible Domain",
+      "mathExpression": "V(x) = x(12 - 2x)^2, \\quad \\text{Feasible Domain: } [0, 6]",
+      "explanation": "Base is (12 - 2x) by (12 - 2x) and height is x.",
+      "why": "Geometric formulation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Expand and Differentiate",
+      "mathExpression": "V(x) = x(144 - 48x + 4x^2) = 4x^3 - 48x^2 + 144x \\implies V'(x) = 12x^2 - 96x + 144 = 12(x^2 - 8x + 12) = 12(x - 2)(x - 6)",
+      "explanation": "Differentiate to find critical points.",
+      "why": "Critical point search."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate at Critical Points and Endpoints",
+      "mathExpression": "V(0) = 0, \\quad V(6) = 0, \\quad V(2) = 2(12 - 4)^2 = 2(64) = 128 \\text{ in}^3",
+      "explanation": "x = 2 gives the absolute maximum volume of 128 cubic inches.",
+      "why": "Closed Interval Method."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "x*(12 - 2*x)**2",
+    "expected": "12*(x - 2)*(x - 6)",
+    "variable": "x"
+  }
+}

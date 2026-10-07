@@ -1,0 +1,49 @@
+{
+  "id": "ch03-derivatives/3.5-derivatives-of-trigonometric-functions/solutions/ex-03",
+  "chapter": "ch03",
+  "section": "3.5",
+  "type": "solution",
+  "title": "Tangent Line to a Trigonometric Curve",
+  "exerciseReference": "Section 3.5, Exercise 3",
+  "originalTopic": "Trigonometric Tangents",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "tangent-line",
+    "trigonometry",
+    "slope"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the equation of the tangent line to y = 3*tan(x) - 2*cos(x) at x = 0.",
+  "finalAnswer": "y = 3x - 2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find y-Coordinate at x = 0",
+      "mathExpression": "y(0) = 3\\tan(0) - 2\\cos(0) = 3(0) - 2(1) = -2",
+      "explanation": "Evaluate the function at x = 0 to get point (0, -2).",
+      "why": "Point of tangency."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Derivative y'",
+      "mathExpression": "y' = 3\\sec^2 x - 2(-\\sin x) = 3\\sec^2 x + 2\\sin x",
+      "explanation": "Differentiate each trigonometric term.",
+      "why": "Standard trigonometric derivatives."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Slope at x = 0 and Form Line Equation",
+      "mathExpression": "m = y'(0) = 3\\sec^2(0) + 2\\sin(0) = 3(1) + 0 = 3; \\quad y - (-2) = 3(x - 0) \\implies y = 3x - 2",
+      "explanation": "Substitute slope m = 3 and point (0, -2) into point-slope form.",
+      "why": "Tangent line equation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "3*tan(x) - 2*cos(x)",
+    "expected": "3*sec(x)**2 + 2*sin(x)",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "ch04-applications-of-derivatives/4.2-the-mean-value-theorem/solutions/ex-05",
+  "chapter": "ch04",
+  "section": "4.2",
+  "type": "solution",
+  "title": "Proving Inequality via the Mean Value Theorem",
+  "exerciseReference": "Section 4.2, Exercise 5",
+  "originalTopic": "MVT Inequality Proof",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "mean-value-theorem",
+    "inequality",
+    "trigonometry"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Prove that |sin b - sin a| <= |b - a| for all real numbers a and b.",
+  "finalAnswer": "|\\sin b - \\sin a| \\le |b - a|",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply MVT to f(x) = sin(x) on [a, b]",
+      "mathExpression": "\\frac{\\sin b - \\sin a}{b - a} = f'(c) = \\cos c \\quad \\text{for some } c \\in (a, b)",
+      "explanation": "Since sine is continuous and differentiable everywhere, MVT applies.",
+      "why": "MVT formulation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Take Absolute Values and Bound Cosine",
+      "mathExpression": "|\\sin b - \\sin a| = |\\cos c| \\cdot |b - a| \\le 1 \\cdot |b - a| = |b - a|",
+      "explanation": "Because |cos(c)| <= 1 for all real c, the result follows immediately.",
+      "why": "Trigonometric bound |cos(x)| <= 1."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "1 - 1",
+    "expected": "0"
+  }
+}

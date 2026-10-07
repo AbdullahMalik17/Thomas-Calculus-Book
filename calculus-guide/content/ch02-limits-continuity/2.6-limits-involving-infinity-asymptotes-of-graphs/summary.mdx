@@ -1,0 +1,48 @@
+# Section 2.6: Limits Involving Infinity; Asymptotes of Graphs
+
+Limits involving infinity describe two distinct phenomena:
+1. **End Behavior**: What happens to $f(x)$ as $x$ moves arbitrarily far to the right ($x \to \infty$) or to the left ($x \to -\infty$)? This gives rise to **horizontal** and **oblique asymptotes**.
+2. **Unbounded Growth**: What happens when $f(x)$ grows arbitrarily large ($+\infty$ or $-\infty$) near a finite point $x = c$? This produces **vertical asymptotes**.
+
+---
+
+## 1. Limits at Infinity and Horizontal Asymptotes
+
+The line $y = L$ is a **horizontal asymptote** if:
+
+$$
+\lim_{x \to \infty} f(x) = L \quad \text{or} \quad \lim_{x \to -\infty} f(x) = L
+$$
+
+### Fundamental Rule for Reciprocals:
+For any rational number $r > 0$:
+
+$$
+\lim_{x \to \infty} \frac{1}{x^r} = 0
+$$
+
+To evaluate limits at infinity for rational expressions, divide every term in the numerator and denominator by the highest power of $x$ present in the denominator.
+
+---
+
+## 2. Infinite Limits and Vertical Asymptotes
+
+The vertical line $x = c$ is a **vertical asymptote** if:
+
+$$
+\lim_{x \to c^+} f(x) = \pm \infty \quad \text{or} \quad \lim_{x \to c^-} f(x) = \pm \infty
+$$
+
+For a rational function $f(x) = \frac{P(x)}{Q(x)}$ in lowest terms, vertical asymptotes occur at every real zero of the denominator $Q(x) = 0$.
+
+---
+
+## 3. Oblique (Slant) Asymptotes
+
+When $\deg(P) = \deg(Q) + 1$, polynomial long division yields:
+
+$$
+\frac{P(x)}{Q(x)} = (mx + b) + \frac{R(x)}{Q(x)}
+$$
+
+Because $\lim_{x \to \pm \infty} \frac{R(x)}{Q(x)} = 0$, the line $y = mx + b$ is an **oblique (slant) asymptote**.

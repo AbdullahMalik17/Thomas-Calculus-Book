@@ -1,0 +1,34 @@
+{
+  "id": "ch04-applications-of-derivatives/4.5-indeterminate-forms-and-lhospitals-rule/definitions",
+  "chapter": "ch04",
+  "section": "4.5",
+  "title": "Indeterminate Forms and L'Hôpital's Rule",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-lhospitals-rule",
+      "title": "L'Hôpital's Rule for 0/0 and inf/inf",
+      "category": "theorem",
+      "latex": "\\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\lim_{x \\to c} \\frac{f'(x)}{g'(x)} \\quad \\left(\\text{for forms } \\frac{0}{0} \\text{ or } \\frac{\\pm \\infty}{\\pm \\infty}\\right)",
+      "statement": "Suppose f and g are differentiable near c (except possibly at c) and g'(x) != 0 near c. If lim_{x->c} f(x)/g(x) produces an indeterminate form 0/0 or inf/inf, then the limit equals lim_{x->c} f'(x)/g'(x), provided this limit exists or is infinite.",
+      "conditions": [
+        "Form must be strictly 0/0 or +-oo/+-oo",
+        "Differentiate numerator and denominator separately (do NOT use quotient rule!)"
+      ],
+      "explanation": "Derived rigorously from Cauchy's Mean Value Theorem: [f(x) - f(c)]/[g(x) - g(c)] = f'(xi)/g'(xi).",
+      "keyTakeaway": "Differentiate top and bottom separately ONLY when indeterminate 0/0 or inf/inf."
+    },
+    {
+      "id": "rule-indeterminate-powers",
+      "title": "Logarithmic Transformation for Indeterminate Powers",
+      "category": "rule",
+      "latex": "y = [f(x)]^{g(x)} \\implies \\ln y = g(x) \\ln[f(x)], \\quad \\lim y = e^{\\lim \\ln y}",
+      "statement": "Indeterminate powers of the forms 0^0, oo^0, and 1^oo are evaluated by taking the natural logarithm, converting the exponent into a product g(x)*ln(f(x)), evaluating that limit L, and taking e^L.",
+      "conditions": [
+        "f(x) > 0 near c"
+      ],
+      "explanation": "Transforms indeterminate powers into 0*oo, which in turn becomes 0/0 or inf/inf.",
+      "keyTakeaway": "Use natural logarithms to pull down the exponent for 0^0, inf^0, and 1^inf."
+    }
+  ]
+}

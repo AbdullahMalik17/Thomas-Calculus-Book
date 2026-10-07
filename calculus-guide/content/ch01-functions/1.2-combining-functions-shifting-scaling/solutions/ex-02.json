@@ -1,0 +1,46 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-02",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Quotient Functions and Denominator Exclusions",
+  "exerciseReference": "Section 1.2, Exercise 2",
+  "originalTopic": "Combining Functions: Quotients",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["combining-functions", "quotient", "domain", "radical"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Given f(x) = sqrt(x + 1) and g(x) = sqrt(x - 1), determine the formula and natural domain for the quotient function (f / g)(x).",
+  "finalAnswer": "\\left(\\frac{f}{g}\\right)(x) = \\frac{\\sqrt{x+1}}{\\sqrt{x-1}} = \\sqrt{\\frac{x+1}{x-1}}; \\quad \\text{Domain: } (1, \\infty)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine Individual Domains",
+      "mathExpression": "D(f) = [-1, \\infty), \\quad D(g) = [1, \\infty)",
+      "explanation": "f(x) requires x + 1 >= 0, so x >= -1. g(x) requires x - 1 >= 0, so x >= 1.",
+      "why": "Even roots must have non-negative radicands to evaluate to real numbers."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify Denominator Zeroes",
+      "mathExpression": "g(x) = 0 \\iff \\sqrt{x - 1} = 0 \\iff x = 1",
+      "explanation": "Division by zero is undefined, so any root of the denominator equation must be removed from the domain.",
+      "why": "Quotients f/g are undefined where the denominator function vanishes."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Form the Intersection Domain",
+      "mathExpression": "D(f/g) = \\{x \\in [-1, \\infty) \\cap [1, \\infty) : x \\neq 1\\} = (1, \\infty)",
+      "explanation": "Intersecting [-1, inf) and [1, inf) yields [1, inf). Removing x = 1 leaves the open interval (1, inf).",
+      "why": "Definition of quotient domain requires simultaneous validity and non-zero denominator."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "type": "domain",
+    "expression": "sqrt(x + 1) / sqrt(x - 1)",
+    "expected": "(1, oo)",
+    "expected_domain": "(1, oo)",
+    "variable": "x"
+  }
+}

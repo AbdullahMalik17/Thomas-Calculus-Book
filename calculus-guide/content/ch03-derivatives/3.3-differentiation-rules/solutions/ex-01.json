@@ -1,0 +1,42 @@
+{
+  "id": "ch03-derivatives/3.3-differentiation-rules/solutions/ex-01",
+  "chapter": "ch03",
+  "section": "3.3",
+  "type": "solution",
+  "title": "Differentiating a Polynomial Expression",
+  "exerciseReference": "Section 3.3, Exercise 1",
+  "originalTopic": "Power and Sum Rules",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "power-rule",
+    "polynomial",
+    "derivative"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find dy/dx for y = 4x^5 - 3x^3 + 7x - 9.",
+  "finalAnswer": "\\frac{dy}{dx} = 20x^4 - 9x^2 + 7",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Sum and Constant Multiple Rules",
+      "mathExpression": "\\frac{dy}{dx} = 4\\frac{d}{dx}[x^5] - 3\\frac{d}{dx}[x^3] + 7\\frac{d}{dx}[x] - \\frac{d}{dx}[9]",
+      "explanation": "Distribute the derivative operator term-by-term.",
+      "why": "Linearity of differentiation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Power Rule and Constant Rule",
+      "mathExpression": "4(5x^4) - 3(3x^2) + 7(1) - 0 = 20x^4 - 9x^2 + 7",
+      "explanation": "Differentiate each power using d/dx[x^n] = n*x^(n-1).",
+      "why": "Power rule and constant rule."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "4*x**5 - 3*x**3 + 7*x - 9",
+    "expected": "20*x**4 - 9*x**2 + 7",
+    "variable": "x"
+  }
+}

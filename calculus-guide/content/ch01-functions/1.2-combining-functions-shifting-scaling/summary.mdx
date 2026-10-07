@@ -1,0 +1,102 @@
+# Section 1.2: Combining Functions; Shifting and Scaling Graphs
+
+Welcome to the definitive study guide for **Section 1.2** of *Thomas' Calculus (14th Edition)*, authored by **Muhammad Abdullah Athar** ([GitHub](https://github.com/AbdullahMalik17)).
+
+In this section, we study how to build sophisticated mathematical models from elementary functions by algebraic combination and composition, and how geometric transformations—shifting, stretching, compressing, and reflecting—systematically alter functional equations and their graphs.
+
+---
+
+## 1. Algebraic Combinations of Functions
+
+Just as numbers can be added, subtracted, multiplied, and divided, functions can be combined algebraically to form new functions.
+
+### Definitions and Natural Domains
+
+Let $f$ and $g$ be real-valued functions with natural domains $D(f)$ and $D(g)$ respectively. For any real number $x$ residing in both domains, we define:
+
+1. **Sum**:
+   $$(f + g)(x) = f(x) + g(x)$$
+   Domain: $D(f + g) = D(f) \cap D(g)$
+
+2. **Difference**:
+   $$(f - g)(x) = f(x) - g(x)$$
+   Domain: $D(f - g) = D(f) \cap D(g)$
+
+3. **Product**:
+   $$(f \cdot g)(x) = f(x) \cdot g(x)$$
+   Domain: $D(f \cdot g) = D(f) \cap D(g)$
+
+4. **Quotient**:
+   $$\left(\frac{f}{g}\right)(x) = \frac{f(x)}{g(x)}$$
+   Domain: $D(f / g) = \{x \in D(f) \cap D(g) : g(x) \neq 0\}$
+
+> **Key Rule on Domain Intersection**: An algebraic combination is defined only where *both* component functions produce well-defined real outputs. For quotients, you must additionally exclude all roots of the denominator equation $g(x) = 0$.
+
+---
+
+## 2. Composite Functions: Sequential Functional Evaluation
+
+Composition is an operation unique to functions that has no direct analog in basic arithmetic.
+
+### Formal Definition
+Given two functions $f$ and $g$, the **composite function** $f \circ g$ (read "$f$ composed with $g$", or "$f$ of $g$") is defined by:
+$$(f \circ g)(x) = f(g(x))$$
+
+The domain of $f \circ g$ consists of all numbers $x$ in the domain of $g$ for which the value $g(x)$ lies in the domain of $f$:
+$$D(f \circ g) = \{x \in D(g) : g(x) \in D(f)\}$$
+
+### Step-by-Step Domain Determination Algorithm for $f(g(x))$
+1. **Find $D(g)$**: Determine the natural domain of the inner function $g$.
+2. **Find $D(f)$**: Determine the natural domain of the outer function $f$.
+3. **Form the Inner Condition**: Set the expression for $g(x)$ to satisfy the requirements of $D(f)$.
+4. **Intersect**: Solve the resulting inequality for $x$, and intersect that solution set with $D(g)$.
+
+> **Warning on Non-Commutativity**: Function composition is **not** commutative: in almost all cases, $(f \circ g)(x) \neq (g \circ f)(x)$. Order matters fundamentally.
+
+---
+
+## 3. Shifting Graphs of Functions
+
+Adding or subtracting constants shifts the location of a graph in the coordinate plane without changing its fundamental geometry.
+
+### Vertical Shifts
+To shift the graph of $y = f(x)$:
+- **Upward by $k$ units** ($k > 0$): Add $k$ to the function:
+  $$y = f(x) + k$$
+- **Downward by $k$ units** ($k > 0$): Subtract $k$ from the function:
+  $$y = f(x) - k$$
+
+### Horizontal Shifts
+To shift the graph of $y = f(x)$:
+- **Rightward by $h$ units** ($h > 0$): Subtract $h$ from the variable inside the function:
+  $$y = f(x - h)$$
+- **Leftward by $h$ units** ($h > 0$): Add $h$ to the variable inside the function:
+  $$y = f(x + h)$$
+
+---
+
+## 4. Scaling and Reflecting Graphs
+
+Multiplying by constants changes the size or orientation of a graph.
+
+### Vertical Scaling and Reflection
+Let $c > 0$ be a positive constant. For the equation $y = c f(x)$:
+- If $c > 1$: The graph is **stretched vertically** away from the $x$-axis by a factor of $c$.
+- If $0 < c < 1$: The graph is **compressed vertically** toward the $x$-axis by a factor of $c$.
+- **Reflection over $x$-axis**: $y = -f(x)$ negates every $y$-coordinate, reflecting the graph across the horizontal axis.
+
+### Horizontal Scaling and Reflection
+Let $c > 0$ be a positive constant. For the equation $y = f(c x)$:
+- If $c > 1$: The graph is **compressed horizontally** toward the $y$-axis by a factor of $1/c$.
+- If $0 < c < 1$: The graph is **stretched horizontally** away from the $y$-axis by a factor of $1/c$.
+- **Reflection over $y$-axis**: $y = f(-x)$ negates every $x$-coordinate, reflecting the graph across the vertical axis.
+
+---
+
+## 5. Common Student Pitfalls
+
+1. **Order of Operations in Multiple Transformations**:
+   When transforming $y = f(x)$ to $y = a f(b(x - h)) + k$:
+   Always factor the horizontal term as $b(x - h)$ to see the true horizontal shift $h$. If written as $f(bx - d)$, the horizontal shift is $d/b$, not $d$.
+2. **Composition Domain Shortcuts**:
+   Simplifying an algebraic expression for $(f \circ g)(x)$ before checking the domain of $g(x)$ frequently leads to erroneous domains. If $f(u) = u^2$ and $g(x) = \sqrt{x}$, then $(f \circ g)(x) = (\sqrt{x})^2 = x$. However, the domain is $[0, \infty)$, **not** $(-\infty, \infty)$, because the inner function $\sqrt{x}$ is undefined for negative $x$.

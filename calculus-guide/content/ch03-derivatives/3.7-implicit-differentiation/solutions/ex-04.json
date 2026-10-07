@@ -1,0 +1,49 @@
+{
+  "id": "ch03-derivatives/3.7-implicit-differentiation/solutions/ex-04",
+  "chapter": "ch03",
+  "section": "3.7",
+  "type": "solution",
+  "title": "Implicit Second Derivative of an Ellipse",
+  "exerciseReference": "Section 3.7, Exercise 4",
+  "originalTopic": "Implicit Second Derivative",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "second-derivative",
+    "implicit-differentiation",
+    "ellipse"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find d^2y/dx^2 for the ellipse 2x^2 + 3y^2 = 6 in terms of y alone.",
+  "finalAnswer": "\\frac{d^2y}{dx^2} = -\\frac{4}{3y^3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find First Derivative dy/dx",
+      "mathExpression": "4x + 6y\\frac{dy}{dx} = 0 \\implies \\frac{dy}{dx} = -\\frac{2x}{3y}",
+      "explanation": "Differentiate implicitly once.",
+      "why": "First derivative calculation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate dy/dx via Quotient Rule",
+      "mathExpression": "\\frac{d^2y}{dx^2} = -\\frac{2}{3}\\frac{1 \\cdot y - x \\frac{dy}{dx}}{y^2} = -\\frac{2}{3}\\frac{y - x\\left(-\\frac{2x}{3y}\\right)}{y^2} = -\\frac{2}{3}\\frac{3y^2 + 2x^2}{3y^3}",
+      "explanation": "Apply quotient rule and substitute dy/dx = -2x/(3y).",
+      "why": "Second derivative via chain and quotient rules."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Substitute the Original Curve Equation",
+      "mathExpression": "2x^2 + 3y^2 = 6 \\implies \\frac{d^2y}{dx^2} = -\\frac{2}{3}\\frac{6}{3y^3} = -\\frac{12}{9y^3} = -\\frac{4}{3y^3}",
+      "explanation": "Replace 2x^2 + 3y^2 with 6 from the original equation.",
+      "why": "Simplifies second derivative to depend purely on y."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "Rational(-2,3) * 6 / (3*y**3) - (-Rational(4,3)/y**3)",
+    "expected": "0",
+    "variable": "y"
+  }
+}

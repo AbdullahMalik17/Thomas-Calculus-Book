@@ -1,0 +1,33 @@
+# Section 2.3: The Precise Definition of a Limit
+
+While the informal limit concept ("$f(x)$ approaches $L$ as $x$ approaches $c$") provides strong geometric intuition, rigorous mathematics demands an unequivocal, testable definition. This was achieved by Augustin-Louis Cauchy and Karl Weierstrass through the **$\epsilon$-$\delta$ definition**.
+
+---
+
+## 1. The $\epsilon$-$\delta$ Definition
+
+Let $f(x)$ be defined on an open interval containing $c$, except possibly at $c$ itself. We write:
+
+$$
+\lim_{x \to c} f(x) = L
+$$
+
+if for every $\epsilon > 0$ (no matter how small), there exists a corresponding $\delta > 0$ such that:
+
+$$
+0 < |x - c| < \delta \implies |f(x) - L| < \epsilon
+$$
+
+### Meaning of the Inequalities:
+- **$|x - c| < \delta$**: $x$ lies in the interval $(c - \delta, c + \delta)$.
+- **$0 < |x - c|$**: $x \neq c$ (we never evaluate at the point $c$).
+- **$|f(x) - L| < \epsilon$**: $f(x)$ lies in the target interval $(L - \epsilon, L + \epsilon)$.
+
+---
+
+## 2. Two-Step Proof Strategy
+
+1. **Scratchwork (Finding $\delta$)**:
+   Start with the target inequality $|f(x) - L| < \epsilon$. Manipulate it to isolate $|x - c| < \text{expression}(\epsilon)$. Set $\delta$ equal to that expression.
+2. **Formal Proof (Verifying $\delta$)**:
+   State "Given $\epsilon > 0$, choose $\delta = \dots$". Assume $0 < |x - c| < \delta$, and deduce that $|f(x) - L| < \epsilon$.

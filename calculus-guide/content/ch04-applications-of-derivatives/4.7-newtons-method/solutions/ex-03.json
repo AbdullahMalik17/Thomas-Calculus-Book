@@ -1,0 +1,49 @@
+{
+  "id": "ch04-applications-of-derivatives/4.7-newtons-method/solutions/ex-03",
+  "chapter": "ch04",
+  "section": "4.7",
+  "type": "solution",
+  "title": "Approximating Fixed Point of Cosine",
+  "exerciseReference": "Section 4.7, Exercise 3",
+  "originalTopic": "Trigonometric Root Finding",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "newtons-method",
+    "cosine",
+    "fixed-point"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the Newton iteration formula for solving cos(x) = x, and compute x_1 starting with x_0 = 1.",
+  "finalAnswer": "x_1 = 1 - \\frac{\\cos(1) - 1}{-\\sin(1) - 1} = \\frac{\\sin(1) + \\cos(1)}{1 + \\sin(1)} \\approx 0.75036",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set up Root Function",
+      "mathExpression": "f(x) = \\cos x - x = 0 \\implies f'(x) = -\\sin x - 1",
+      "explanation": "Rewrite equation as f(x) = 0.",
+      "why": "Standard form for root finding."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Newton's Formula",
+      "mathExpression": "x_{n+1} = x_n - \\frac{\\cos(x_n) - x_n}{-\\sin(x_n) - 1} = x_n + \\frac{\\cos(x_n) - x_n}{\\sin(x_n) + 1}",
+      "explanation": "Simplify the minus signs.",
+      "why": "Clean iteration rule."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate at x_0 = 1",
+      "mathExpression": "x_1 = 1 + \\frac{\\cos(1) - 1}{\\sin(1) + 1} = 1 + \\frac{0.54030 - 1}{0.84147 + 1} = 1 - \\frac{0.45970}{1.84147} \\approx 0.75036",
+      "explanation": "Evaluate trigonometric functions in radians.",
+      "why": "First iteration value."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "x - (cos(x) - x)/(-sin(x) - 1) - (x*sin(x) + cos(x))/(sin(x) + 1)",
+    "expected": "0",
+    "variable": "x"
+  }
+}

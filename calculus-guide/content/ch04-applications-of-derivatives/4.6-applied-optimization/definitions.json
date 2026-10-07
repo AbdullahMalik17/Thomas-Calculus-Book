@@ -1,0 +1,21 @@
+{
+  "id": "ch04-applications-of-derivatives/4.6-applied-optimization/definitions",
+  "chapter": "ch04",
+  "section": "4.6",
+  "title": "Applied Optimization",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-optimization-workflow",
+      "title": "Applied Optimization Protocol",
+      "category": "rule",
+      "latex": "\\max / \\min Q(x) \\quad \\text{subject to } g(x) = 0 \\text{ on feasible domain } [a, b]",
+      "statement": "To solve an applied optimization problem: (1) Identify primary objective quantity to be maximized or minimized, (2) Sketch diagram and label variables, (3) Write primary equation, (4) Use constraint equations to eliminate extra variables, (5) Determine feasible domain, (6) Apply calculus extrema tests.",
+      "conditions": [
+        "Feasible domain derived from physical/geometric constraints (e.g. lengths >= 0)"
+      ],
+      "explanation": "Bridges practical real-world problems with mathematical extreme value theorems.",
+      "keyTakeaway": "Express objective function in a single variable over its physical domain."
+    }
+  ]
+}

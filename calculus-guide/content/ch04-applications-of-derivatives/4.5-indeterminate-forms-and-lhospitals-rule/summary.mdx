@@ -1,0 +1,26 @@
+# Section 4.5: Indeterminate Forms and L'Hôpital's Rule
+
+When direct substitution yields an indeterminate form, algebraic factoring or conjugates may fail. L'Hôpital's Rule provides a systematic derivative-based method.
+
+---
+
+## 1. Primary Indeterminate Forms: $\frac{0}{0}$ and $\frac{\infty}{\infty}$
+
+If $\lim_{x \to c} \frac{f(x)}{g(x)}$ yields $\frac{0}{0}$ or $\frac{\pm \infty}{\pm \infty}$:
+
+$$
+\lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{f'(x)}{g'(x)}
+$$
+
+**Critical Warning**: Differentiate the numerator and denominator **separately**. Do **NOT** use the Quotient Rule!
+
+---
+
+## 2. Other Indeterminate Forms
+
+- **Indeterminate Products ($0 \cdot \infty$)**: Rewrite as a fraction:
+  $$
+  f \cdot g = \frac{f}{1/g} \quad \text{or} \quad \frac{g}{1/f}
+  $$
+- **Indeterminate Differences ($\infty - \infty$)**: Combine fractions over a common denominator or multiply by a conjugate.
+- **Indeterminate Powers ($1^\infty, 0^0, \infty^0$)**: Let $y = [f(x)]^{g(x)}$, take $\ln y = g(x) \ln(f(x))$, evaluate $\lim \ln y = L$, then answer is $e^L$.

@@ -1,0 +1,49 @@
+{
+  "id": "ch02-limits-continuity/2.5-continuity/solutions/ex-01",
+  "chapter": "ch02",
+  "section": "2.5",
+  "type": "solution",
+  "title": "Removable Discontinuity and Function Extension",
+  "exerciseReference": "Section 2.5, Exercise 1",
+  "originalTopic": "Removable Discontinuity",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "continuity",
+    "removable-discontinuity",
+    "continuous-extension"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine where f(x) = (x^2 - 4)/(x - 2) is discontinuous. Classify the discontinuity and define f(2) to make the extended function continuous at x = 2.",
+  "finalAnswer": "\\text{Discontinuous at } x = 2 \\text{ (removable)}; \\quad \\text{Define } f(2) = 4",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Check Domain and Continuity Conditions",
+      "mathExpression": "f(2) = \\frac{2^2 - 4}{2 - 2} = \\frac{0}{0} \\implies 2 \\notin \\text{Domain}(f)",
+      "explanation": "The denominator is zero at x = 2, so f(2) is undefined.",
+      "why": "Condition 1 of continuity fails because f(2) does not exist."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute the Limit as x Approaches 2",
+      "mathExpression": "\\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2} = \\lim_{x \\to 2} \\frac{(x - 2)(x + 2)}{x - 2} = \\lim_{x \\to 2} (x + 2) = 2 + 2 = 4",
+      "explanation": "Factor the difference of squares and cancel (x - 2) to evaluate the limit.",
+      "why": "The limit exists and equals 4, proving the discontinuity is removable."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Construct the Continuous Extension",
+      "mathExpression": "F(x) = \\begin{cases} \\frac{x^2 - 4}{x - 2}, & x \\neq 2 \\\\ 4, & x = 2 \\end{cases}",
+      "explanation": "Define the value at x = 2 to match the limiting value 4.",
+      "why": "Setting F(2) equal to the limit satisfies lim F(x) = F(2)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(x**2 - 4)/(x - 2)",
+    "expected": "x + 2",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "ch02-limits-continuity/2.2-limit-of-a-function-and-limit-laws/solutions/ex-04",
+  "chapter": "ch02",
+  "section": "2.2",
+  "type": "solution",
+  "title": "Conjugate Rationalization of a Square Root Limit",
+  "exerciseReference": "Section 2.2, Exercise 4",
+  "originalTopic": "Conjugate Multiplication",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "conjugate",
+    "radicals",
+    "indeterminate-form"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate the limit: lim_{x -> 0} (sqrt(x + 4) - 2) / x.",
+  "finalAnswer": "\\lim_{x \\to 0} \\frac{\\sqrt{x + 4} - 2}{x} = \\frac{1}{4}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Multiply by the Conjugate",
+      "mathExpression": "\\frac{\\sqrt{x + 4} - 2}{x} \\cdot \\frac{\\sqrt{x + 4} + 2}{\\sqrt{x + 4} + 2} = \\frac{(x + 4) - 4}{x(\\sqrt{x + 4} + 2)} = \\frac{x}{x(\\sqrt{x + 4} + 2)}",
+      "explanation": "Multiply numerator and denominator by the radical conjugate sqrt(x+4) + 2.",
+      "why": "Conjugate multiplication rationalizes the numerator via (A - B)(A + B) = A^2 - B^2."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Cancel Common Factor x",
+      "mathExpression": "\\frac{x}{x(\\sqrt{x + 4} + 2)} = \\frac{1}{\\sqrt{x + 4} + 2} \\quad (x \\neq 0)",
+      "explanation": "Cancel the variable x from numerator and denominator.",
+      "why": "Removing x eliminates the 0 in the denominator."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute the Limit via Direct Substitution",
+      "mathExpression": "\\lim_{x \\to 0} \\frac{1}{\\sqrt{x + 4} + 2} = \\frac{1}{\\sqrt{0 + 4} + 2} = \\frac{1}{2 + 2} = \\frac{1}{4}",
+      "explanation": "Substitute x = 0 into the rationalized expression.",
+      "why": "The rationalized function is continuous at x = 0."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "((sqrt(x + 4) - 2)/x) * (sqrt(x + 4) + 2)",
+    "expected": "1",
+    "variable": "x"
+  }
+}

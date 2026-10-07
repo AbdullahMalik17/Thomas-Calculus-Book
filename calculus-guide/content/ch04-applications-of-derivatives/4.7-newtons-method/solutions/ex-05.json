@@ -1,0 +1,42 @@
+{
+  "id": "ch04-applications-of-derivatives/4.7-newtons-method/solutions/ex-05",
+  "chapter": "ch04",
+  "section": "4.7",
+  "type": "solution",
+  "title": "Division-Free Reciprocal Algorithm via Newton's Method",
+  "exerciseReference": "Section 4.7, Exercise 5",
+  "originalTopic": "Division-Free Reciprocal",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "newtons-method",
+    "computer-arithmetic",
+    "reciprocal"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Derive Newton's iteration formula to compute 1/a without performing division by finding the root of f(x) = 1/x - a.",
+  "finalAnswer": "x_{n+1} = x_n(2 - ax_n)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Derivative of f(x) = 1/x - a",
+      "mathExpression": "f'(x) = -\\frac{1}{x^2}",
+      "explanation": "Differentiate with respect to x.",
+      "why": "Derivative calculation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Newton's Formula",
+      "mathExpression": "x_{n+1} = x_n - \\frac{\\frac{1}{x_n} - a}{-\\frac{1}{x_n^2}} = x_n + x_n^2\\left(\\frac{1}{x_n} - a\\right) = x_n + x_n - ax_n^2 = 2x_n - ax_n^2 = x_n(2 - ax_n)",
+      "explanation": "The resulting formula requires only addition, subtraction, and multiplication (no division!).",
+      "why": "Used in computer processor arithmetic units for hardware division."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "x - (1/x - a)/(-1/x**2)",
+    "expected": "x*(2 - a*x)",
+    "variable": "x"
+  }
+}

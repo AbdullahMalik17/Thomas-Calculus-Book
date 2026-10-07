@@ -1,0 +1,49 @@
+{
+  "id": "ch02-limits-continuity/2.3-the-precise-definition-of-a-limit/solutions/ex-01",
+  "chapter": "ch02",
+  "section": "2.3",
+  "type": "solution",
+  "title": "Epsilon-Delta Proof for a Linear Function",
+  "exerciseReference": "Section 2.3, Exercise 1",
+  "originalTopic": "Linear Limit Proof",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "epsilon-delta",
+    "proof",
+    "linear-function"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Prove using the epsilon-delta definition that lim_{x -> 3} (4x - 5) = 7.",
+  "finalAnswer": "\\text{Given } \\epsilon > 0, \\text{ choose } \\delta = \\frac{\\epsilon}{4}.",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Analyze the Target Distance",
+      "mathExpression": "|f(x) - L| = |(4x - 5) - 7| = |4x - 12| = 4|x - 3|",
+      "explanation": "Evaluate the absolute difference between f(x) and the claimed limit L = 7.",
+      "why": "The goal is to bound |f(x) - L| in terms of |x - c|."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve for the Input Tolerance Delta",
+      "mathExpression": "4|x - 3| < \\epsilon \\iff |x - 3| < \\frac{\\epsilon}{4}",
+      "explanation": "Set 4|x - 3| < epsilon to find the required bound on |x - 3|.",
+      "why": "Delta must ensure that whenever |x - 3| < delta, the target inequality holds."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Write the Formal Verification",
+      "mathExpression": "\\text{Let } \\epsilon > 0. \\text{ Choose } \\delta = \\frac{\\epsilon}{4}. \\text{ If } 0 < |x - 3| < \\delta, \\text{ then } |(4x - 5) - 7| = 4|x - 3| < 4\\left(\\frac{\\epsilon}{4}\\right) = \\epsilon.",
+      "explanation": "State the formal implication demonstrating that the chosen delta satisfies the definition.",
+      "why": "A rigorous mathematical proof must proceed from hypothesis to conclusion."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "4 * (eps / 4)",
+    "expected": "eps",
+    "variable": "eps"
+  }
+}

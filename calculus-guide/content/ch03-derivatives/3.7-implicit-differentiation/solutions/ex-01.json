@@ -1,0 +1,49 @@
+{
+  "id": "ch03-derivatives/3.7-implicit-differentiation/solutions/ex-01",
+  "chapter": "ch03",
+  "section": "3.7",
+  "type": "solution",
+  "title": "Tangent Line to a Circle via Implicit Differentiation",
+  "exerciseReference": "Section 3.7, Exercise 1",
+  "originalTopic": "Implicit Circle Tangent",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "implicit-differentiation",
+    "circle",
+    "tangent-line"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find dy/dx for the circle x^2 + y^2 = 25, and find the equation of the tangent line at (3, 4).",
+  "finalAnswer": "\\frac{dy}{dx} = -\\frac{x}{y}; \\quad \\text{Tangent at (3, 4): } y - 4 = -\\frac{3}{4}(x - 3) \\iff 3x + 4y = 25",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Differentiate Both Sides with Respect to x",
+      "mathExpression": "\\frac{d}{dx}[x^2] + \\frac{d}{dx}[y^2] = \\frac{d}{dx}[25] \\implies 2x + 2y\\frac{dy}{dx} = 0",
+      "explanation": "Apply chain rule to y^2, producing 2y dy/dx.",
+      "why": "Implicit differentiation rule."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve Algebraically for dy/dx",
+      "mathExpression": "2y\\frac{dy}{dx} = -2x \\implies \\frac{dy}{dx} = -\\frac{x}{y} \\quad (y \\neq 0)",
+      "explanation": "Subtract 2x and divide by 2y.",
+      "why": "Isolating dy/dx."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Slope at (3, 4) and Write Line Equation",
+      "mathExpression": "m = -\\frac{3}{4}; \\quad y - 4 = -\\frac{3}{4}(x - 3) \\implies 4y - 16 = -3x + 9 \\implies 3x + 4y = 25",
+      "explanation": "Substitute (3, 4) into dy/dx and apply point-slope form.",
+      "why": "Tangent line equation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "2*x + 2*y*(-x/y)",
+    "expected": "0",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "ch02-limits-continuity/2.5-continuity/solutions/ex-03",
+  "chapter": "ch02",
+  "section": "2.5",
+  "type": "solution",
+  "title": "Continuity of Composite Functions",
+  "exerciseReference": "Section 2.5, Exercise 3",
+  "originalTopic": "Composite Continuity",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "composite-functions",
+    "domain",
+    "continuity-interval"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine the interval on which h(x) = sqrt(9 - x^2) is continuous.",
+  "finalAnswer": "\\text{Continuous on } [-3, 3]",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find the Natural Domain",
+      "mathExpression": "9 - x^2 \\ge 0 \\iff x^2 \\le 9 \\iff -3 \\le x \\le 3",
+      "explanation": "Square root requires a non-negative radicand.",
+      "why": "Real radical domain constraint."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Examine Interior Continuity via Composition",
+      "mathExpression": "g(x) = 9 - x^2 \\text{ is continuous on } \\mathbb{R}, \\quad f(u) = \\sqrt{u} \\text{ is continuous for } u \\ge 0",
+      "explanation": "A composition f(g(x)) of continuous functions is continuous on its domain.",
+      "why": "Theorem on continuity of composite functions."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Check One-Sided Boundary Continuity",
+      "mathExpression": "\\lim_{x \\to -3^+} \\sqrt{9 - x^2} = 0 = h(-3), \\quad \\lim_{x \\to 3^-} \\sqrt{9 - x^2} = 0 = h(3)",
+      "explanation": "The right-hand limit matches at -3 and the left-hand limit matches at 3.",
+      "why": "Endpoint continuity requires one-sided limit matching."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "type": "domain",
+    "expression": "sqrt(9 - x**2)",
+    "expected": "[-3, 3]",
+    "variable": "x"
+  }
+}

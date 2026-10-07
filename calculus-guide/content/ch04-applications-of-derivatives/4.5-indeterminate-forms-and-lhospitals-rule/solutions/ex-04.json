@@ -1,0 +1,41 @@
+{
+  "id": "ch04-applications-of-derivatives/4.5-indeterminate-forms-and-lhospitals-rule/solutions/ex-04",
+  "chapter": "ch04",
+  "section": "4.5",
+  "type": "solution",
+  "title": "Indeterminate Difference infinity - infinity",
+  "exerciseReference": "Section 4.5, Exercise 4",
+  "originalTopic": "Indeterminate Difference",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "lhopital",
+    "trigonometry",
+    "common-denominator"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate: lim_{x -> 0} (1/sin(x) - 1/x).",
+  "finalAnswer": "\\lim_{x \\to 0} \\left(\\frac{1}{\\sin x} - \\frac{1}{x}\\right) = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Combine over Common Denominator",
+      "mathExpression": "\\frac{1}{\\sin x} - \\frac{1}{x} = \\frac{x - \\sin x}{x \\sin x} \\quad \\implies \\text{Form } \\frac{0}{0}",
+      "explanation": "Combine the two fractions.",
+      "why": "Converts oo - oo to 0/0."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply L'Hôpital's Rule Twice",
+      "mathExpression": "\\lim_{x \\to 0} \\frac{1 - \\cos x}{\\sin x + x\\cos x} \\stackrel{\\text{H}}{=} \\lim_{x \\to 0} \\frac{\\sin x}{\\cos x + \\cos x - x\\sin x} = \\frac{0}{1 + 1 - 0} = \\frac{0}{2} = 0",
+      "explanation": "Apply L'Hôpital's Rule twice and evaluate at x = 0.",
+      "why": "Standard limit evaluation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "0 / 2",
+    "expected": "0"
+  }
+}

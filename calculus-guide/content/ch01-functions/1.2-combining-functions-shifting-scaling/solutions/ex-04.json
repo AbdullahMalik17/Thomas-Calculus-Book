@@ -1,0 +1,45 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-04",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Subtle Domain Restrictions in Radical Compositions",
+  "exerciseReference": "Section 1.2, Exercise 7",
+  "originalTopic": "Composite Functions: Domain Constraints",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["composite-functions", "domain", "radical", "pitfall"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Let u(x) = x^2 and v(x) = sqrt(x). Form the composition (u o v)(x) and determine its natural domain, contrasting it with the domain of the simplified formula.",
+  "finalAnswer": "(u \\circ v)(x) = x \\quad \\text{for } x \\in [0, \\infty); \\quad \\text{Domain: } [0, \\infty)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find the Domain of the Inner Function",
+      "mathExpression": "v(x) = \\sqrt{x} \\implies D(v) = [0, \\infty)",
+      "explanation": "Any input x to the composite function u(v(x)) must first be eligible to enter the inner function v. Because the square root requires non-negative radicands, x must satisfy x >= 0.",
+      "why": "The input to a composite function must lie in the domain of the first function evaluated."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate the Composition Expression",
+      "mathExpression": "(u \\circ v)(x) = u(v(x)) = (\\sqrt{x})^2 = x",
+      "explanation": "For any non-negative number x, squaring the principal square root returns x.",
+      "why": "Definition of the principal square root function for non-negative real numbers."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Establish the True Composite Domain",
+      "mathExpression": "D(u \\circ v) = \\{x \\in [0, \\infty) : \\sqrt{x} \\in (-\\infty, \\infty)\\} = [0, \\infty)",
+      "explanation": "Although the simplified formula y = x appears defined on all of R, the composite function cannot accept negative numbers because v(x) would fail to evaluate in the real number system.",
+      "why": "Domain constraints established by inner functions cannot be erased by subsequent algebraic cancellation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "sqrt(x)**2",
+    "expected": "x",
+    "variable": "x"
+  }
+}

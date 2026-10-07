@@ -1,0 +1,49 @@
+{
+  "id": "ch04-applications-of-derivatives/4.6-applied-optimization/solutions/ex-02",
+  "chapter": "ch04",
+  "section": "4.6",
+  "type": "solution",
+  "title": "Maximizing Fenced Pasture Along a River",
+  "exerciseReference": "Section 4.6, Exercise 2",
+  "originalTopic": "Perimeter and Area Constraint",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "optimization",
+    "area",
+    "quadratic"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A farmer encloses a rectangular field along a straight river using 1200 meters of fencing (no fence needed along the river). Find the dimensions that maximize the enclosed area.",
+  "finalAnswer": "\\text{Dimensions: } 300 \\text{ m (perpendicular)} \\times 600 \\text{ m (parallel)}; \\quad A_{\\max} = 180{,}000 \\text{ m}^2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set up Constraint and Objective Equations",
+      "mathExpression": "2x + y = 1200 \\implies y = 1200 - 2x; \\quad A(x) = xy = x(1200 - 2x) = 1200x - 2x^2",
+      "explanation": "Two sides of length x perpendicular to river, one side y parallel.",
+      "why": "Constraint equation elimination."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate and Solve for Critical Point",
+      "mathExpression": "A'(x) = 1200 - 4x = 0 \\implies 4x = 1200 \\implies x = 300 \\text{ m}",
+      "explanation": "Set derivative of area to zero.",
+      "why": "Critical point."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Verify Maximum and State Dimensions",
+      "mathExpression": "A''(x) = -4 < 0 \\implies \\text{Concave Down (Absolute Max)}; \\quad y = 1200 - 2(300) = 600 \\text{ m}",
+      "explanation": "Area is 300 * 600 = 180,000 square meters.",
+      "why": "Second derivative test."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "x*(1200 - 2*x)",
+    "expected": "1200 - 4*x",
+    "variable": "x"
+  }
+}

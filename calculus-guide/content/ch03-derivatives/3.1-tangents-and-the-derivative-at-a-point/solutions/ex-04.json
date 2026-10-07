@@ -1,0 +1,49 @@
+{
+  "id": "ch03-derivatives/3.1-tangents-and-the-derivative-at-a-point/solutions/ex-04",
+  "chapter": "ch03",
+  "section": "3.1",
+  "type": "solution",
+  "title": "Horizontal Tangents of a Cubic Curve",
+  "exerciseReference": "Section 3.1, Exercise 4",
+  "originalTopic": "Horizontal Tangents",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "horizontal-tangents",
+    "cubic",
+    "critical-points"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find all points on the curve f(x) = 2x^3 - 3x^2 - 12x + 5 where the tangent line is horizontal.",
+  "finalAnswer": "(-1, 12) \\quad \\text{and} \\quad (2, -15)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Derivative Function f'(x)",
+      "mathExpression": "f'(x) = 6x^2 - 6x - 12",
+      "explanation": "Apply power rule to differentiate each term.",
+      "why": "Derivative gives the slope of the tangent at any x."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Set Derivative Equal to Zero for Horizontal Tangents",
+      "mathExpression": "6x^2 - 6x - 12 = 0 \\implies 6(x^2 - x - 2) = 0 \\implies 6(x - 2)(x + 1) = 0",
+      "explanation": "Horizontal tangent means slope m = 0. Factor the quadratic.",
+      "why": "Horizontal lines have slope zero."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Solve for x and Find Corresponding y-values",
+      "mathExpression": "x = 2 \\implies f(2) = 16 - 12 - 24 + 5 = -15; \\quad x = -1 \\implies f(-1) = -2 - 3 + 12 + 5 = 12",
+      "explanation": "Substitute critical x-values back into original curve f(x).",
+      "why": "Points on the curve require coordinates (x, f(x))."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "2*x**3 - 3*x**2 - 12*x + 5",
+    "expected": "6*x**2 - 6*x - 12",
+    "variable": "x"
+  }
+}

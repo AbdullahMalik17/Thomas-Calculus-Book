@@ -1,0 +1,48 @@
+{
+  "id": "ch03-derivatives/3.8-related-rates/solutions/ex-04",
+  "chapter": "ch03",
+  "section": "3.8",
+  "type": "solution",
+  "title": "Speed of Shadow Cast by a Streetlight",
+  "exerciseReference": "Section 3.8, Exercise 4",
+  "originalTopic": "Shadow Rates",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "related-rates",
+    "shadow",
+    "similar-triangles"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A 6-ft person walks away from a 15-ft streetlight at 4 ft/s. How fast is the tip of the person's shadow moving along the ground?",
+  "finalAnswer": "\\frac{ds}{dt} = \\frac{20}{3} \\approx 6.67 \\text{ ft/s}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set up Geometry via Similar Triangles",
+      "mathExpression": "\\frac{s}{15} = \\frac{s - x}{6}",
+      "explanation": "Let x be the person's distance from the pole, and s be the distance from the pole to the tip of the shadow.",
+      "why": "Similar triangles formed by the light pole and the person."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Cross-Multiply and Simplify the Relation",
+      "mathExpression": "6s = 15(s - x) = 15s - 15x \\implies 9s = 15x \\implies s = \\frac{5}{3}x",
+      "explanation": "Isolate shadow tip position s in terms of person position x.",
+      "why": "Direct linear relationship between positions."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Differentiate with Respect to Time",
+      "mathExpression": "\\frac{ds}{dt} = \\frac{5}{3}\\frac{dx}{dt} = \\frac{5}{3}(4) = \\frac{20}{3} \\text{ ft/s}",
+      "explanation": "Substitute dx/dt = 4 ft/s.",
+      "why": "Rate of change of shadow tip."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "Rational(5,3) * 4",
+    "expected": "Rational(20,3)"
+  }
+}

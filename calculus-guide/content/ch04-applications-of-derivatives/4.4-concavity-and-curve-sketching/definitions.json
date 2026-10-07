@@ -1,0 +1,47 @@
+{
+  "id": "ch04-applications-of-derivatives/4.4-concavity-and-curve-sketching/definitions",
+  "chapter": "ch04",
+  "section": "4.4",
+  "title": "Concavity and Curve Sketching",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-concavity-test",
+      "title": "The Concavity Test",
+      "category": "theorem",
+      "latex": "f''(x) > 0 \\implies \\text{Concave Up (CU)}; \\quad f''(x) < 0 \\implies \\text{Concave Down (CD)}",
+      "statement": "If f''(x) > 0 for all x on an interval, the graph of f is concave upward (lies above its tangent lines). If f''(x) < 0, the graph is concave downward (lies below its tangent lines).",
+      "conditions": [
+        "f is twice differentiable on the interval"
+      ],
+      "explanation": "f'' > 0 means the derivative f' is increasing (tangent slopes become more positive).",
+      "keyTakeaway": "Positive second derivative means bowl holds water (concave up)."
+    },
+    {
+      "id": "def-point-of-inflection",
+      "title": "Point of Inflection",
+      "category": "definition",
+      "latex": "(c, f(c)) \\quad \\text{where concavity changes sign and tangent line exists}",
+      "statement": "A point (c, f(c)) on a curve is a point of inflection if f is continuous there and the curve changes from concave up to concave down, or from concave down to concave up.",
+      "conditions": [
+        "f is continuous at c",
+        "Concavity strictly changes sign across c"
+      ],
+      "explanation": "At an inflection point, f''(c) = 0 or f''(c) does not exist (and the tangent line crosses the curve).",
+      "keyTakeaway": "Inflection points are where the curve transitions between curving upward and downward."
+    },
+    {
+      "id": "test-second-derivative-test",
+      "title": "The Second Derivative Test for Local Extrema",
+      "category": "test",
+      "latex": "f'(c) = 0 \\text{ and } f''(c) < 0 \\implies \\text{Local Max}; \\quad f'(c) = 0 \\text{ and } f''(c) > 0 \\implies \\text{Local Min}",
+      "statement": "Suppose f''(x) is continuous near c with f'(c) = 0. If f''(c) < 0, f has a local maximum at c. If f''(c) > 0, f has a local minimum. If f''(c) = 0, the test is inconclusive.",
+      "conditions": [
+        "f'(c) = 0 (horizontal tangent)",
+        "f''(c) is non-zero"
+      ],
+      "explanation": "If f''(c) = 0, revert to the First Derivative Test.",
+      "keyTakeaway": "Negative second derivative at critical point -> local maximum."
+    }
+  ]
+}

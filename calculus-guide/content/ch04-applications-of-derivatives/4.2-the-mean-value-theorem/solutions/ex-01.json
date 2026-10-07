@@ -1,0 +1,42 @@
+{
+  "id": "ch04-applications-of-derivatives/4.2-the-mean-value-theorem/solutions/ex-01",
+  "chapter": "ch04",
+  "section": "4.2",
+  "type": "solution",
+  "title": "Verifying Rolle's Theorem for a Cubic",
+  "exerciseReference": "Section 4.2, Exercise 1",
+  "originalTopic": "Rolle's Theorem Verification",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "rolles-theorem",
+    "cubic",
+    "horizontal-tangent"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Verify the hypotheses of Rolle's Theorem for f(x) = x^3 - 4x on [-2, 2], and find all numbers c that satisfy the conclusion.",
+  "finalAnswer": "c = \\pm \\frac{2}{\\sqrt{3}} = \\pm \\frac{2\\sqrt{3}}{3} \\approx \\pm 1.155",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Check Hypotheses",
+      "mathExpression": "f \\text{ is continuous on } [-2, 2], \\; f \\text{ is differentiable on } (-2, 2); \\quad f(-2) = -8 + 8 = 0, \\; f(2) = 8 - 8 = 0",
+      "explanation": "Polynomials are everywhere continuous and differentiable, and f(-2) = f(2) = 0.",
+      "why": "All 3 hypotheses of Rolle's Theorem are satisfied."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve f'(c) = 0",
+      "mathExpression": "f'(x) = 3x^2 - 4 = 0 \\implies x^2 = \\frac{4}{3} \\implies c = \\pm \\frac{2}{\\sqrt{3}}",
+      "explanation": "Differentiate and set to zero.",
+      "why": "Both points lie strictly within (-2, 2)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "x**3 - 4*x",
+    "expected": "3*x**2 - 4",
+    "variable": "x"
+  }
+}

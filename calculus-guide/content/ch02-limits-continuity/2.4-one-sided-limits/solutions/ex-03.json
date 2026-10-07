@@ -1,0 +1,55 @@
+{
+  "id": "ch02-limits-continuity/2.4-one-sided-limits/solutions/ex-03",
+  "chapter": "ch02",
+  "section": "2.4",
+  "type": "solution",
+  "title": "Limits of the Greatest Integer Function",
+  "exerciseReference": "Section 2.4, Exercise 3",
+  "originalTopic": "Floor Function Limits",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "floor-function",
+    "step-function",
+    "one-sided-limits"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate lim_{x -> 3^+} floor(x) and lim_{x -> 3^-} floor(x).",
+  "finalAnswer": "\\lim_{x \\to 3^+} \\lfloor x \\rfloor = 3, \\quad \\lim_{x \\to 3^-} \\lfloor x \\rfloor = 2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Examine Values to the Right of 3",
+      "mathExpression": "3 < x < 4 \\implies \\lfloor x \\rfloor = 3",
+      "explanation": "For any x just greater than 3 (e.g. 3.01, 3.001), the greatest integer less than or equal to x is 3.",
+      "why": "Definition of the floor function for values in [3, 4)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate the Right-Hand Limit",
+      "mathExpression": "\\lim_{x \\to 3^+} \\lfloor x \\rfloor = \\lim_{x \\to 3^+} 3 = 3",
+      "explanation": "The function is constant with value 3 on (3, 4).",
+      "why": "Limit of a constant function equals that constant."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Examine Values to the Left of 3",
+      "mathExpression": "2 < x < 3 \\implies \\lfloor x \\rfloor = 2",
+      "explanation": "For any x just less than 3 (e.g. 2.99, 2.999), the greatest integer less than or equal to x is 2.",
+      "why": "Definition of the floor function for values in [2, 3)."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Evaluate the Left-Hand Limit",
+      "mathExpression": "\\lim_{x \\to 3^-} \\lfloor x \\rfloor = \\lim_{x \\to 3^-} 2 = 2",
+      "explanation": "The function is constant with value 2 on (2, 3).",
+      "why": "Limit of a constant function equals that constant."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "3 - 2",
+    "expected": "1"
+  }
+}

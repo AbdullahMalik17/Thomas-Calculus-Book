@@ -1,0 +1,47 @@
+{
+  "id": "ch03-derivatives/3.3-differentiation-rules/definitions",
+  "chapter": "ch03",
+  "section": "3.3",
+  "title": "Differentiation Rules",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "rule-power-rule",
+      "title": "The Power Rule for Differentiation",
+      "category": "rule",
+      "latex": "\\frac{d}{dx}[x^n] = n x^{n-1} \\quad (n \\in \\mathbb{R})",
+      "statement": "For any real number n, the derivative of x^n with respect to x is n*x^(n-1).",
+      "conditions": [
+        "x > 0 if n is not an integer",
+        "Domain exclusions at x = 0 if n < 1"
+      ],
+      "explanation": "One of the most widely used rules in calculus, valid for positive integers, negatives, fractions, and irrational exponents.",
+      "keyTakeaway": "Multiply by the exponent, then decrement the exponent by 1."
+    },
+    {
+      "id": "rule-product-rule",
+      "title": "The Product Rule",
+      "category": "rule",
+      "latex": "\\frac{d}{dx}[u(x)v(x)] = u'(x)v(x) + u(x)v'(x)",
+      "statement": "The derivative of a product of two differentiable functions is the derivative of the first times the second, plus the first times the derivative of the second.",
+      "conditions": [
+        "Both u and v must be differentiable at x"
+      ],
+      "explanation": "Derived geometrically from the expansion of a rectangle's area: Delta(uv) = u*Delta(v) + v*Delta(u) + Delta(u)*Delta(v).",
+      "keyTakeaway": "Derivative of a product is NOT the product of derivatives: (uv)' = u'v + uv'."
+    },
+    {
+      "id": "rule-quotient-rule",
+      "title": "The Quotient Rule",
+      "category": "rule",
+      "latex": "\\frac{d}{dx}\\left[\\frac{u(x)}{v(x)}\\right] = \\frac{u'(x)v(x) - u(x)v'(x)}{[v(x)]^2}",
+      "statement": "The derivative of a quotient of two differentiable functions is low d-high minus high d-low over the square of what's below.",
+      "conditions": [
+        "Both u and v differentiable at x",
+        "v(x) != 0"
+      ],
+      "explanation": "Notice the minus sign in the numerator; the order of differentiation is critical.",
+      "keyTakeaway": "Quotient rule numerator has subtraction: (u/v)' = (u'v - uv') / v^2."
+    }
+  ]
+}

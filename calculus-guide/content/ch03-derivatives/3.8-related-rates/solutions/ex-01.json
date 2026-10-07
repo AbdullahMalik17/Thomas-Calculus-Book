@@ -1,0 +1,48 @@
+{
+  "id": "ch03-derivatives/3.8-related-rates/solutions/ex-01",
+  "chapter": "ch03",
+  "section": "3.8",
+  "type": "solution",
+  "title": "Expanding Spherical Balloon",
+  "exerciseReference": "Section 3.8, Exercise 1",
+  "originalTopic": "Spherical Volume Rate",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "related-rates",
+    "sphere",
+    "volume"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Air is pumped into a spherical balloon at a rate of 100 cm^3/s. How fast is the radius of the balloon increasing when the radius is 5 cm?",
+  "finalAnswer": "\\frac{dr}{dt} = \\frac{1}{\\pi} \\approx 0.318 \\text{ cm/s}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Rates and Relation",
+      "mathExpression": "\\frac{dV}{dt} = 100 \\text{ cm}^3/\\text{s}, \\quad r = 5 \\text{ cm}, \\quad V = \\frac{4}{3}\\pi r^3",
+      "explanation": "Record given volume rate dV/dt and sphere volume equation.",
+      "why": "Problem setup."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate with Respect to Time t",
+      "mathExpression": "\\frac{d}{dt}[V] = \\frac{d}{dt}\\left[\\frac{4}{3}\\pi r^3\\right] \\implies \\frac{dV}{dt} = 4\\pi r^2 \\frac{dr}{dt}",
+      "explanation": "Apply chain rule: d/dt[r^3] = 3r^2 (dr/dt).",
+      "why": "Related rates differentiation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Substitute Known Values and Solve for dr/dt",
+      "mathExpression": "100 = 4\\pi (5^2) \\frac{dr}{dt} = 100\\pi \\frac{dr}{dt} \\implies \\frac{dr}{dt} = \\frac{100}{100\\pi} = \\frac{1}{\\pi} \\text{ cm/s}",
+      "explanation": "Substitute r = 5 and dV/dt = 100.",
+      "why": "Numerical evaluation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "100 / (4*pi * 5**2)",
+    "expected": "1/pi"
+  }
+}

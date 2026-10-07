@@ -1,0 +1,49 @@
+{
+  "id": "ch03-derivatives/3.6-the-chain-rule/solutions/ex-05",
+  "chapter": "ch03",
+  "section": "3.6",
+  "type": "solution",
+  "title": "Tangent Line to a High-Power Polynomial",
+  "exerciseReference": "Section 3.6, Exercise 5",
+  "originalTopic": "Chain Rule Tangent Line",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "tangent-line",
+    "chain-rule",
+    "power-rule"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the equation of the tangent line to y = (2x - 1)^5 at x = 1.",
+  "finalAnswer": "y = 10x - 9",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find y-Coordinate at x = 1",
+      "mathExpression": "y(1) = (2(1) - 1)^5 = 1^5 = 1",
+      "explanation": "Point of tangency is (1, 1).",
+      "why": "Contact point evaluation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate via Chain Rule",
+      "mathExpression": "y' = 5(2x - 1)^4 \\cdot \\frac{d}{dx}[2x - 1] = 5(2x - 1)^4 (2) = 10(2x - 1)^4",
+      "explanation": "Apply generalized power rule.",
+      "why": "Derivative function."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Slope and Construct Tangent Line",
+      "mathExpression": "m = y'(1) = 10(1)^4 = 10; \\quad y - 1 = 10(x - 1) \\implies y = 10x - 9",
+      "explanation": "Apply point-slope formula with m = 10 and (1, 1).",
+      "why": "Tangent line equation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "(2*x - 1)**5",
+    "expected": "10*(2*x - 1)**4",
+    "variable": "x"
+  }
+}

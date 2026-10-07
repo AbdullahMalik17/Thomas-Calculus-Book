@@ -1,0 +1,49 @@
+{
+  "id": "ch02-limits-continuity/2.2-limit-of-a-function-and-limit-laws/solutions/ex-02",
+  "chapter": "ch02",
+  "section": "2.2",
+  "type": "solution",
+  "title": "Evaluating 0/0 by Factoring a Difference of Squares",
+  "exerciseReference": "Section 2.2, Exercise 2",
+  "originalTopic": "Factoring Indeterminate Forms",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "factoring",
+    "difference-of-squares",
+    "indeterminate-form"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate the limit: lim_{x -> 3} (x^2 - 9)/(x - 3).",
+  "finalAnswer": "\\lim_{x \\to 3} \\frac{x^2 - 9}{x - 3} = 6",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify the Indeterminate Form",
+      "mathExpression": "\\frac{3^2 - 9}{3 - 3} = \\frac{0}{0}",
+      "explanation": "Direct substitution yields 0/0, indicating the presence of a common factor (x - 3).",
+      "why": "The form 0/0 proves that x = 3 is a root of both numerator and denominator."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Factor the Numerator",
+      "mathExpression": "\\frac{x^2 - 9}{x - 3} = \\frac{(x - 3)(x + 3)}{x - 3}",
+      "explanation": "Factor the difference of squares x^2 - 9 into (x - 3)(x + 3).",
+      "why": "Standard algebraic factorization identity a^2 - b^2 = (a - b)(a + b)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Cancel Common Factor and Evaluate",
+      "mathExpression": "\\lim_{x \\to 3} (x + 3) = 3 + 3 = 6",
+      "explanation": "Cancel (x - 3) since x approaches 3 but x != 3, then substitute x = 3.",
+      "why": "If two functions agree everywhere except at x = c, their limits as x -> c are identical."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(x**2 - 9)/(x - 3)",
+    "expected": "x + 3",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "ch04-applications-of-derivatives/4.6-applied-optimization/solutions/ex-04",
+  "chapter": "ch04",
+  "section": "4.6",
+  "type": "solution",
+  "title": "Shortest Distance from a Point to a Parabola",
+  "exerciseReference": "Section 4.6, Exercise 4",
+  "originalTopic": "Distance Optimization",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "optimization",
+    "distance",
+    "parabola"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the point on the parabola y = x^2 closest to the point (0, 2).",
+  "finalAnswer": "\\left(-\\sqrt{\\frac{3}{2}}, \\frac{3}{2}\\right) \\quad \\text{and} \\quad \\left(\\sqrt{\\frac{3}{2}}, \\frac{3}{2}\\right)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Minimize Squared Distance Function",
+      "mathExpression": "D^2 = (x - 0)^2 + (y - 2)^2 = x^2 + (x^2 - 2)^2 = x^2 + x^4 - 4x^2 + 4 = x^4 - 3x^2 + 4",
+      "explanation": "Minimizing the square of distance D^2 avoids square roots while yielding identical extrema.",
+      "why": "Squared distance optimization trick."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate with Respect to x",
+      "mathExpression": "f'(x) = 4x^3 - 6x = 2x(2x^2 - 3) = 0 \\implies x = 0, \\; x = \\pm \\sqrt{\\frac{3}{2}}",
+      "explanation": "Critical points are x = 0 and x = +-sqrt(3/2).",
+      "why": "Stationary points."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Test and Classify Points",
+      "mathExpression": "x = 0 \\implies D^2 = 4; \\quad x = \\pm \\sqrt{3/2} \\implies D^2 = 9/4 - 9/2 + 4 = 7/4 = 1.75 < 4",
+      "explanation": "x = +-sqrt(3/2) gives the global minimum distance. y = (sqrt(3/2))^2 = 3/2.",
+      "why": "Global minimum verification."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "x**4 - 3*x**2 + 4",
+    "expected": "4*x**3 - 6*x",
+    "variable": "x"
+  }
+}

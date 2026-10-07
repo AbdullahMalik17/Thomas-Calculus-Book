@@ -1,0 +1,45 @@
+{
+  "id": "ch02-limits-continuity/2.1-rates-of-change-and-tangents-to-curves/solutions/ex-05",
+  "chapter": "ch02",
+  "section": "2.1",
+  "type": "solution",
+  "title": "Tangent Slope of a Radical Function via Conjugates",
+  "exerciseReference": "Section 2.1, Exercise 5",
+  "originalTopic": "Instantaneous Rate with Radicals",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["tangent-slope", "radical", "conjugate-rationalization"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the slope of the curve f(x) = sqrt(2x + 1) at the point (4, 3) using the limit definition of the slope.",
+  "finalAnswer": "m = \\frac{1}{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set up the Difference Quotient",
+      "mathExpression": "m = \\lim_{h \\to 0} \\frac{f(4 + h) - f(4)}{h} = \\lim_{h \\to 0} \\frac{\\sqrt{2(4 + h) + 1} - 3}{h} = \\lim_{h \\to 0} \\frac{\\sqrt{2h + 9} - 3}{h}",
+      "explanation": "Evaluate the function at 4+h and 4, noting that f(4) = sqrt(9) = 3.",
+      "why": "Definition of slope as the limit of difference quotient."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Multiply Numerator and Denominator by the Conjugate",
+      "mathExpression": "\\frac{\\sqrt{2h + 9} - 3}{h} \\cdot \\frac{\\sqrt{2h + 9} + 3}{\\sqrt{2h + 9} + 3} = \\frac{(2h + 9) - 9}{h(\\sqrt{2h + 9} + 3)} = \\frac{2h}{h(\\sqrt{2h + 9} + 3)}",
+      "explanation": "Apply the difference of squares identity (a - b)(a + b) = a^2 - b^2 to clear the radical.",
+      "why": "Conjugate multiplication rationalizes the numerator and exposes the factor h."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Cancel the Factor h and Evaluate the Limit",
+      "mathExpression": "m = \\lim_{h \\to 0} \\frac{2}{\\sqrt{2h + 9} + 3} = \\frac{2}{\\sqrt{2(0) + 9} + 3} = \\frac{2}{3 + 3} = \\frac{2}{6} = \\frac{1}{3}",
+      "explanation": "Cancel h from numerator and denominator and evaluate by direct substitution as h approaches 0.",
+      "why": "Canceling the common factor h eliminates the 0/0 indeterminate form."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "((sqrt(2*h + 9) - 3) / h) * (sqrt(2*h + 9) + 3)",
+    "expected": "2",
+    "variable": "h"
+  }
+}

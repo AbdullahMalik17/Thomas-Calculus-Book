@@ -1,0 +1,34 @@
+{
+  "id": "ch04-applications-of-derivatives/4.3-monotonic-functions-and-the-first-derivative-test/definitions",
+  "chapter": "ch04",
+  "section": "4.3",
+  "title": "Monotonic Functions and the First Derivative Test",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-increasing-decreasing-test",
+      "title": "Increasing and Decreasing Test",
+      "category": "theorem",
+      "latex": "f'(x) > 0 \\implies f \\text{ is strictly increasing}; \\quad f'(x) < 0 \\implies f \\text{ is strictly decreasing}",
+      "statement": "Let f be continuous on [a, b] and differentiable on (a, b). If f'(x) > 0 for all x in (a, b), then f is increasing on [a, b]. If f'(x) < 0, f is decreasing.",
+      "conditions": [
+        "Continuous on closed interval, differentiable on open interior"
+      ],
+      "explanation": "Positive slope means the curve rises from left to right; negative slope means it falls.",
+      "keyTakeaway": "Sign of f'(x) dictates whether f(x) is rising or falling."
+    },
+    {
+      "id": "test-first-derivative-test",
+      "title": "The First Derivative Test for Local Extrema",
+      "category": "test",
+      "latex": "+ \\to - \\implies \\text{Local Max}; \\quad - \\to + \\implies \\text{Local Min}; \\quad \\text{No sign change} \\implies \\text{No Extrema}",
+      "statement": "At a critical point c: if f' changes sign from positive to negative as x increases through c, f has a local max at c. If f' changes from negative to positive, f has a local min. If f' does not change sign, c is not a local extremum.",
+      "conditions": [
+        "f is continuous at c",
+        "f' exists in an open interval around c (except possibly at c)"
+      ],
+      "explanation": "Tests whether the curve peaks, valleys, or continues through an inflection.",
+      "keyTakeaway": "Sign changes of f' classify local peaks (+ to -) and valleys (- to +)."
+    }
+  ]
+}

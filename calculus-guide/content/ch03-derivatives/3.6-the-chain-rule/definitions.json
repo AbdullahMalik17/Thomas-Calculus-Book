@@ -1,0 +1,35 @@
+{
+  "id": "ch03-derivatives/3.6-the-chain-rule/definitions",
+  "chapter": "ch03",
+  "section": "3.6",
+  "title": "The Chain Rule",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-chain-rule",
+      "title": "The Chain Rule for Composite Functions",
+      "category": "theorem",
+      "latex": "\\frac{d}{dx}[f(g(x))] = f'(g(x)) \\cdot g'(x), \\qquad \\frac{dy}{dx} = \\frac{dy}{du} \\cdot \\frac{du}{dx}",
+      "statement": "If g is differentiable at x and f is differentiable at g(x), then the composite function F(x) = f(g(x)) is differentiable at x, and its derivative is the derivative of the outer function evaluated at the inner function times the derivative of the inner function.",
+      "conditions": [
+        "Inner function g differentiable at x",
+        "Outer function f differentiable at g(x)"
+      ],
+      "explanation": "Rate of change multiplies across successive transformations: if y changes twice as fast as u, and u changes three times as fast as x, y changes 6 times as fast as x.",
+      "keyTakeaway": "Differentiate outside leaving inside alone, then multiply by derivative of inside."
+    },
+    {
+      "id": "rule-generalized-power-rule",
+      "title": "The Generalized Power Rule",
+      "category": "rule",
+      "latex": "\\frac{d}{dx}[u(x)^n] = n [u(x)]^{n-1} \\cdot u'(x)",
+      "statement": "The derivative of any differentiable function raised to a real power n is n times the function to the power (n-1) times the derivative of the function.",
+      "conditions": [
+        "u(x) is differentiable",
+        "u(x) > 0 if n is not an integer"
+      ],
+      "explanation": "Specialization of the chain rule where outer function is f(u) = u^n.",
+      "keyTakeaway": "Never forget to multiply by u'(x) when differentiating [u(x)]^n."
+    }
+  ]
+}

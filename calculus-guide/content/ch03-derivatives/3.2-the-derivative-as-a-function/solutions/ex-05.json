@@ -1,0 +1,48 @@
+{
+  "id": "ch03-derivatives/3.2-the-derivative-as-a-function/solutions/ex-05",
+  "chapter": "ch03",
+  "section": "3.2",
+  "type": "solution",
+  "title": "One-Sided Differentiability of Piecewise Join",
+  "exerciseReference": "Section 3.2, Exercise 5",
+  "originalTopic": "Piecewise Differentiability",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "piecewise",
+    "differentiability",
+    "smoothness"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether f(x) = x^2 for x <= 0 and f(x) = x for x > 0 is differentiable at x = 0.",
+  "finalAnswer": "f \\text{ is continuous at } x = 0, \\text{ but not differentiable because } f'_-(0) = 0 \\neq 1 = f'_+(0)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Left-Hand Derivative at 0",
+      "mathExpression": "f'_-(0) = \\lim_{h \\to 0^-} \\frac{f(h) - f(0)}{h} = \\lim_{h \\to 0^-} \\frac{h^2 - 0}{h} = \\lim_{h \\to 0^-} h = 0",
+      "explanation": "Use the left parabola branch x^2 for h < 0.",
+      "why": "Left-hand derivative uses values strictly less than 0."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Right-Hand Derivative at 0",
+      "mathExpression": "f'_+(0) = \\lim_{h \\to 0^+} \\frac{f(h) - f(0)}{h} = \\lim_{h \\to 0^+} \\frac{h - 0}{h} = \\lim_{h \\to 0^+} (1) = 1",
+      "explanation": "Use the right linear branch x for h > 0.",
+      "why": "Right-hand derivative uses values strictly greater than 0."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude",
+      "mathExpression": "f'_-(0) = 0 \\neq 1 = f'_+(0) \\implies f'(0) \\text{ does not exist}",
+      "explanation": "The tangent slope jumps abruptly from 0 to 1 at x = 0.",
+      "why": "Differentiability requires left and right derivatives to match."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "1 - 0",
+    "expected": "1"
+  }
+}

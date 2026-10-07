@@ -1,0 +1,49 @@
+{
+  "id": "ch03-derivatives/3.1-tangents-and-the-derivative-at-a-point/solutions/ex-02",
+  "chapter": "ch03",
+  "section": "3.1",
+  "type": "solution",
+  "title": "Tangent and Normal Lines to Square Root Curve",
+  "exerciseReference": "Section 3.1, Exercise 2",
+  "originalTopic": "Normal Lines",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "tangent-line",
+    "normal-line",
+    "radical"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find equations of the tangent and normal lines to y = sqrt(x) at (4, 2).",
+  "finalAnswer": "\\text{Tangent: } y = \\frac{1}{4}x + 1; \\quad \\text{Normal: } y = -4x + 18",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Derivative at x = 4 via Limit",
+      "mathExpression": "f'(4) = \\lim_{h \\to 0} \\frac{\\sqrt{4 + h} - 2}{h} = \\lim_{h \\to 0} \\frac{(4 + h) - 4}{h(\\sqrt{4 + h} + 2)} = \\lim_{h \\to 0} \\frac{1}{\\sqrt{4 + h} + 2} = \\frac{1}{4}",
+      "explanation": "Multiply numerator and denominator by conjugate sqrt(4+h) + 2.",
+      "why": "Conjugate rationalization eliminates radical difference."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Write Tangent Line Equation",
+      "mathExpression": "y - 2 = \\frac{1}{4}(x - 4) \\implies y = \\frac{1}{4}x - 1 + 2 = \\frac{1}{4}x + 1",
+      "explanation": "Apply point-slope formula with slope 1/4 and point (4, 2).",
+      "why": "Standard tangent equation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Write Normal Line Equation",
+      "mathExpression": "m_{\\text{normal}} = -\\frac{1}{1/4} = -4 \\implies y - 2 = -4(x - 4) \\implies y = -4x + 18",
+      "explanation": "The normal slope is the negative reciprocal -4.",
+      "why": "Normal line is perpendicular to the tangent line."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "sqrt(x)",
+    "expected": "1/(2*sqrt(x))",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "ch03-derivatives/3.7-implicit-differentiation/solutions/ex-03",
+  "chapter": "ch03",
+  "section": "3.7",
+  "type": "solution",
+  "title": "Implicit Differentiation with Symmetrical Product",
+  "exerciseReference": "Section 3.7, Exercise 3",
+  "originalTopic": "Mixed Products",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "implicit-differentiation",
+    "mixed-terms",
+    "product-rule"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find dy/dx for x^2*y + y^2*x = 6.",
+  "finalAnswer": "\\frac{dy}{dx} = -\\frac{2xy + y^2}{x^2 + 2xy}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Differentiate Each Product Term",
+      "mathExpression": "\\frac{d}{dx}[x^2 y] = 2xy + x^2\\frac{dy}{dx}; \\quad \\frac{d}{dx}[y^2 x] = 2y\\frac{dy}{dx}x + y^2(1) = y^2 + 2xy\\frac{dy}{dx}",
+      "explanation": "Apply product rule to both terms.",
+      "why": "Both terms involve products of functions of x."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Assemble and Solve for dy/dx",
+      "mathExpression": "(2xy + y^2) + (x^2 + 2xy)\\frac{dy}{dx} = 0 \\implies \\frac{dy}{dx} = -\\frac{2xy + y^2}{x^2 + 2xy}",
+      "explanation": "Isolate dy/dx.",
+      "why": "Standard algebraic solving."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(2*x*y + y**2) + (x**2 + 2*x*y)*(- (2*x*y + y**2)/(x**2 + 2*x*y))",
+    "expected": "0",
+    "variable": "x"
+  }
+}

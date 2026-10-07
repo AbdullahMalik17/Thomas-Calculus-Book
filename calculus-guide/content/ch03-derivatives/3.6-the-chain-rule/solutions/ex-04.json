@@ -1,0 +1,49 @@
+{
+  "id": "ch03-derivatives/3.6-the-chain-rule/solutions/ex-04",
+  "chapter": "ch03",
+  "section": "3.6",
+  "type": "solution",
+  "title": "Chain Rule with Nested Trigonometric Functions",
+  "exerciseReference": "Section 3.6, Exercise 4",
+  "originalTopic": "Nested Trigonometry",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "chain-rule",
+    "trigonometry",
+    "nested"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Differentiate y = tan(cos(2x)).",
+  "finalAnswer": "\\frac{dy}{dx} = -2\\sec^2(\\cos(2x))\\sin(2x)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Differentiate Outer Tangent Function",
+      "mathExpression": "\\frac{dy}{dx} = \\sec^2(\\cos(2x)) \\cdot \\frac{d}{dx}[\\cos(2x)]",
+      "explanation": "d/du[tan u] = sec^2(u) with u = cos(2x).",
+      "why": "Outer derivative."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate Middle Cosine Function",
+      "mathExpression": "\\frac{d}{dx}[\\cos(2x)] = -\\sin(2x) \\cdot \\frac{d}{dx}[2x] = -2\\sin(2x)",
+      "explanation": "Chain rule on cos(2x).",
+      "why": "Middle derivative times inner derivative."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Combine",
+      "mathExpression": "\\frac{dy}{dx} = -2\\sec^2(\\cos(2x))\\sin(2x)",
+      "explanation": "Multiply the chain of derivatives.",
+      "why": "Complete chain rule result."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "tan(cos(2*x))",
+    "expected": "-2*sin(2*x)*sec(cos(2*x))**2",
+    "variable": "x"
+  }
+}

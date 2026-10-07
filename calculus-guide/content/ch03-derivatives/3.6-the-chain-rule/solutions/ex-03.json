@@ -1,0 +1,49 @@
+{
+  "id": "ch03-derivatives/3.6-the-chain-rule/solutions/ex-03",
+  "chapter": "ch03",
+  "section": "3.6",
+  "type": "solution",
+  "title": "Chain Rule on Square Root of a Quotient",
+  "exerciseReference": "Section 3.6, Exercise 3",
+  "originalTopic": "Radical Quotient Chain Rule",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "chain-rule",
+    "quotient-rule",
+    "radicals"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find dy/dx for y = sqrt((x + 1)/(x - 1)).",
+  "finalAnswer": "\\frac{dy}{dx} = -\\frac{1}{(x - 1)^2 \\sqrt{\\frac{x + 1}{x - 1}}} = -\\frac{1}{(x - 1)\\sqrt{x^2 - 1}}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Outer Power Rule (Exponent 1/2)",
+      "mathExpression": "\\frac{dy}{dx} = \\frac{1}{2}\\left(\\frac{x + 1}{x - 1}\\right)^{-1/2} \\cdot \\frac{d}{dx}\\left[\\frac{x + 1}{x - 1}\\right]",
+      "explanation": "Differentiate the outer square root.",
+      "why": "Power rule for outer function."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate the Inner Quotient",
+      "mathExpression": "\\frac{d}{dx}\\left[\\frac{x + 1}{x - 1}\\right] = \\frac{1(x - 1) - (x + 1)(1)}{(x - 1)^2} = \\frac{-2}{(x - 1)^2}",
+      "explanation": "Apply quotient rule to the inner rational function.",
+      "why": "Quotient rule for inner derivative."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Combine Factors",
+      "mathExpression": "\\frac{1}{2}\\left(\\frac{x + 1}{x - 1}\\right)^{-1/2} \\cdot \\frac{-2}{(x - 1)^2} = -\\frac{1}{(x - 1)^2}\\sqrt{\\frac{x - 1}{x + 1}}",
+      "explanation": "Multiply and cancel factor of 2.",
+      "why": "Final algebraic consolidation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "sqrt((x + 1)/(x - 1))",
+    "expected": "-1/((x - 1)**2*sqrt((x + 1)/(x - 1)))",
+    "variable": "x"
+  }
+}

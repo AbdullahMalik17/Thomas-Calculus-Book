@@ -1,0 +1,50 @@
+{
+  "id": "ch04-applications-of-derivatives/4.4-concavity-and-curve-sketching/solutions/ex-05",
+  "chapter": "ch04",
+  "section": "4.4",
+  "type": "solution",
+  "title": "Concavity and Inflection of a Trigonometric Function",
+  "exerciseReference": "Section 4.4, Exercise 5",
+  "originalTopic": "Trigonometric Concavity",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "concavity",
+    "inflection-points"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the inflection points of f(x) = x + 2*sin(x) on [0, 2*pi].",
+  "finalAnswer": "(0, 0), \\; (\\pi, \\pi), \\; (2\\pi, 2\\pi)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute First and Second Derivatives",
+      "mathExpression": "f'(x) = 1 + 2\\cos x, \\quad f''(x) = -2\\sin x",
+      "explanation": "Differentiate twice.",
+      "why": "Second derivative."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve f''(x) = 0 on [0, 2*pi]",
+      "mathExpression": "-2\\sin x = 0 \\implies \\sin x = 0 \\implies x = 0, \\; \\pi, \\; 2\\pi",
+      "explanation": "Zeroes of sine.",
+      "why": "Candidates for inflection."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Verify Sign Change across pi",
+      "mathExpression": "x \\in (0, \\pi) \\implies f'' < 0 \\text{ (CD)}; \\quad x \\in (\\pi, 2\\pi) \\implies f'' > 0 \\text{ (CU)}",
+      "explanation": "Concavity strictly changes sign across x = pi. Point: (pi, pi).",
+      "why": "Verified inflection point."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "x + 2*sin(x)",
+    "expected": "-2*sin(x)",
+    "variable": "x",
+    "order": 2
+  }
+}

@@ -1,0 +1,46 @@
+# Section 2.4: One-Sided Limits
+
+In many practical situations, functions exhibit different behaviors when approached from the left versus from the right. This occurs frequently with:
+- Piecewise-defined functions
+- Absolute value quotients: $\frac{|x - c|}{x - c}$
+- Step functions: $\lfloor x \rfloor$
+- Domain boundaries: $f(x) = \sqrt{x}$ at $x = 0$
+
+---
+
+## 1. One-Sided Limits Definitions
+
+- **Right-Hand Limit**:
+  $$
+  \lim_{x \to c^+} f(x) = L_1
+  $$
+  Here $x \to c$ with the restriction $x > c$.
+- **Left-Hand Limit**:
+  $$
+  \lim_{x \to c^-} f(x) = L_2
+  $$
+  Here $x \to c$ with the restriction $x < c$.
+
+---
+
+## 2. The Two-Sided Limit Existence Theorem
+
+A function possesses a regular two-sided limit at $c$ if and only if both one-sided limits exist and coincide:
+
+$$
+\lim_{x \to c} f(x) = L \iff \lim_{x \to c^+} f(x) = \lim_{x \to c^-} f(x) = L
+$$
+
+If $\lim_{x \to c^+} f(x) \neq \lim_{x \to c^-} f(x)$, the two-sided limit **does not exist (DNE)**.
+
+---
+
+## 3. Fundamental Trigonometric Limits (Radian Measure)
+
+Two foundational limits underpin all of trigonometric calculus:
+
+$$
+\lim_{\theta \to 0} \frac{\sin \theta}{\theta} = 1, \qquad \lim_{\theta \to 0} \frac{1 - \cos \theta}{\theta} = 0
+$$
+
+**Crucial Note**: These limits are strictly valid **only when $\theta$ is expressed in radians**.

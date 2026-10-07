@@ -1,0 +1,45 @@
+{
+  "id": "ch01-functions/1.3-trigonometric-functions/solutions/ex-03",
+  "chapter": "ch01",
+  "section": "1.3",
+  "type": "solution",
+  "title": "Period, Domain, and Range of a Scaled Sine Function",
+  "exerciseReference": "Section 1.3, Exercise 9",
+  "originalTopic": "Trigonometric Graphs: Amplitude and Period",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["trigonometry", "sine", "domain", "range", "amplitude"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the natural domain, range, amplitude, and period of the function f(x) = 2*sin(3x) - 1.",
+  "finalAnswer": "\\text{Domain: } (-\\infty, \\infty), \\quad \\text{Range: } [-3, 1], \\quad \\text{Amplitude: } 2, \\quad \\text{Period: } \\frac{2\\pi}{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine the Domain and Period",
+      "mathExpression": "D(f) = (-\\infty, \\infty), \\quad T = \\frac{2\\pi}{|B|} = \\frac{2\\pi}{3}",
+      "explanation": "The sine function accepts any real number input, so 3x can be any real number, giving domain (-inf, inf). With frequency coefficient B = 3, the period is compressed to 2*pi/3.",
+      "why": "Sine is defined everywhere on R; multiplying input by B compresses the fundamental 2*pi period."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Determine the Amplitude",
+      "mathExpression": "\\text{Amplitude} = |A| = |2| = 2",
+      "explanation": "The leading coefficient A = 2 stretches the oscillation vertically so that it oscillates 2 units above and below its midline.",
+      "why": "Amplitude represents half the distance between minimum and maximum functional outputs."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Calculate the Range via Extrema",
+      "mathExpression": "-1 \\le \\sin(3x) \\le 1 \\implies -2 \\le 2\\sin(3x) \\le 2 \\implies -3 \\le 2\\sin(3x) - 1 \\le 1",
+      "explanation": "Because sine is bounded within [-1, 1], scaling by 2 gives [-2, 2], and subtracting 1 shifts the interval down to [-3, 1].",
+      "why": "Linear transformations preserve order and map closed intervals continuously to closed intervals."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "2*sin(3*x) - 1",
+    "expected": "2*sin(3*x) - 1",
+    "variable": "x"
+  }
+}

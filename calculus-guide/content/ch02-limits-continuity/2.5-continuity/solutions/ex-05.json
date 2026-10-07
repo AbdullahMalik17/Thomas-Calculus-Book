@@ -1,0 +1,42 @@
+{
+  "id": "ch02-limits-continuity/2.5-continuity/solutions/ex-05",
+  "chapter": "ch02",
+  "section": "2.5",
+  "type": "solution",
+  "title": "Classifying Discontinuities of Rational and Step Functions",
+  "exerciseReference": "Section 2.5, Exercise 5",
+  "originalTopic": "Discontinuity Classification",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "infinite-discontinuity",
+    "jump-discontinuity",
+    "classification"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Classify the discontinuities of f(x) = 1/(x - 3) at x = 3 and g(x) = floor(x) at integer values x = n.",
+  "finalAnswer": "f \\text{ has an infinite discontinuity at } x = 3; \\quad g \\text{ has jump discontinuities at all } x \\in \\mathbb{Z}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Analyze f(x) = 1/(x - 3) near x = 3",
+      "mathExpression": "\\lim_{x \\to 3^+} \\frac{1}{x - 3} = +\\infty, \\quad \\lim_{x \\to 3^-} \\frac{1}{x - 3} = -\\infty",
+      "explanation": "The denominator approaches 0 through positive values from the right and negative from the left.",
+      "why": "Infinite limit signifies a vertical asymptote, hence an infinite discontinuity."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Analyze g(x) = floor(x) near integer n",
+      "mathExpression": "\\lim_{x \\to n^+} \\lfloor x \\rfloor = n, \\quad \\lim_{x \\to n^-} \\lfloor x \\rfloor = n - 1",
+      "explanation": "Both one-sided limits are finite but differ by 1.",
+      "why": "When left and right limits are finite and unequal, the discontinuity is a jump discontinuity."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "n - (n - 1)",
+    "expected": "1",
+    "variable": "n"
+  }
+}

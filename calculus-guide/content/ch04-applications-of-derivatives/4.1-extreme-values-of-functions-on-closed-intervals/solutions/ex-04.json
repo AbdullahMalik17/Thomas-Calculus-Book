@@ -1,0 +1,49 @@
+{
+  "id": "ch04-applications-of-derivatives/4.1-extreme-values-of-functions-on-closed-intervals/solutions/ex-04",
+  "chapter": "ch04",
+  "section": "4.1",
+  "type": "solution",
+  "title": "Extrema of a Rational Function",
+  "exerciseReference": "Section 4.1, Exercise 4",
+  "originalTopic": "Rational Extrema",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "rational-function",
+    "extrema",
+    "closed-interval"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the absolute extrema of f(x) = x / (x^2 + 1) on [0, 3].",
+  "finalAnswer": "\\text{Absolute Maximum: } \\frac{1}{2} \\text{ at } x = 1; \\quad \\text{Absolute Minimum: } 0 \\text{ at } x = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Derivative via Quotient Rule",
+      "mathExpression": "f'(x) = \\frac{1(x^2 + 1) - x(2x)}{(x^2 + 1)^2} = \\frac{1 - x^2}{(x^2 + 1)^2}",
+      "explanation": "Differentiate f(x).",
+      "why": "Quotient rule."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find Critical Points in (0, 3)",
+      "mathExpression": "1 - x^2 = 0 \\implies x = 1 \\quad (x = -1 \\text{ is outside } [0, 3])",
+      "explanation": "Only x = 1 belongs to the interval [0, 3].",
+      "why": "Domain restriction."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate f at Candidates",
+      "mathExpression": "f(0) = 0; \\quad f(1) = \\frac{1}{1 + 1} = \\frac{1}{2}; \\quad f(3) = \\frac{3}{3^2 + 1} = \\frac{3}{10} = 0.3",
+      "explanation": "Compare 0, 0.5, and 0.3.",
+      "why": "Global maximum is 1/2; global minimum is 0."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "x/(x**2 + 1)",
+    "expected": "(1 - x**2)/(x**2 + 1)**2",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/definitions",
+  "chapter": "ch01",
+  "section": "1.4",
+  "title": "Graphing with Software and Function Modeling",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-viewing-window",
+      "title": "Viewing Window and Graphical Resolution",
+      "category": "definition",
+      "latex": "[x_{\\min}, x_{\\max}] \\times [y_{\\min}, y_{\\max}]",
+      "statement": "The rectangular display window of a computer graphics screen or graphing calculator defined by horizontal bounds [x_min, x_max] and vertical bounds [y_min, y_max].",
+      "conditions": [
+        "x_min < x_max and y_min < y_max",
+        "Aspect ratio (scale ratio between x and y units) determines geometric distortion"
+      ],
+      "explanation": "Selecting an inappropriate window can hide significant local extrema, global behavior, or vertical asymptotes, or falsely suggest false features.",
+      "keyTakeaway": "Choose viewing windows that capture all intercepts, turning points, and asymptotic trends."
+    },
+    {
+      "id": "def-graphical-distortion",
+      "title": "Grapher Artifacts and Rapid Oscillations",
+      "category": "rule",
+      "latex": "f(x) = \\sin(1/x), \\quad x \\to 0",
+      "statement": "Digital graphing utilities sample a finite grid of pixels. When a function oscillates faster than the pixel sampling rate (aliasing), or near vertical asymptotes, graphers can display erratic or spurious lines.",
+      "conditions": [
+        "Sampling rate Nyquist limit applies to digital rendering",
+        "Discontinuities may appear erroneously connected by vertical segments"
+      ],
+      "explanation": "Analytic analysis must always accompany machine plotting to prevent misinterpreting sampling artifacts as genuine mathematical behavior.",
+      "keyTakeaway": "Never rely solely on digital plots without algebraic verification of limits and singularities."
+    },
+    {
+      "id": "def-parametric-curve",
+      "title": "Parametric Curve in the Coordinate Plane",
+      "category": "definition",
+      "latex": "x = f(t), \\quad y = g(t), \\quad t \\in I",
+      "statement": "If x and y are continuous functions of a third variable t (the parameter) defined on an interval I, the set of points (x, y) = (f(t), g(t)) forms a parametric curve in the coordinate plane.",
+      "conditions": [
+        "Parameter t frequently represents time, orientation, or angle",
+        "Curves trace out a definite direction of motion as t increases"
+      ],
+      "explanation": "Parametric equations generalize functional curves, allowing curves that fail the vertical line test (e.g. self-intersecting loops and circles) to be represented algebraically.",
+      "keyTakeaway": "Parametric equations describe both the path of motion and the time/direction of traversal."
+    },
+    {
+      "id": "rule-eliminating-parameter",
+      "title": "Eliminating the Parameter",
+      "category": "rule",
+      "latex": "x = r\\cos t, \\ y = r\\sin t \\implies x^2 + y^2 = r^2",
+      "statement": "The process of solving one parametric equation for t (or applying a trigonometric/algebraic identity) to derive an equivalent Cartesian relation in x and y.",
+      "conditions": [
+        "Care must be taken to retain the domain and range restrictions imposed by the original parameter interval"
+      ],
+      "explanation": "Eliminating t reveals the underlying geometric shape while verifying that the parametric trajectory covers all or part of the Cartesian curve.",
+      "keyTakeaway": "Apply identities like cos^2(t) + sin^2(t) = 1 to eliminate circular trigonometric parameters."
+    },
+    {
+      "id": "def-empirical-modeling",
+      "title": "Empirical Mathematical Modeling",
+      "category": "definition",
+      "latex": "y = ax^b \\quad (\\text{Power}), \\qquad y = a e^{kx} \\quad (\\text{Exponential})",
+      "statement": "The process of fitting functional equations to experimentally measured data sets using regression, log-log transformations, or semi-log transformations.",
+      "conditions": [
+        "Semi-log plot (log y vs x) linearizes exponential growth",
+        "Log-log plot (log y vs log x) linearizes power-law models"
+      ],
+      "explanation": "Logarithmic transformations convert non-linear power and exponential laws into linear forms, facilitating parameter estimation.",
+      "keyTakeaway": "Log-log lines represent power functions; semi-log lines represent exponential functions."
+    }
+  ]
+}

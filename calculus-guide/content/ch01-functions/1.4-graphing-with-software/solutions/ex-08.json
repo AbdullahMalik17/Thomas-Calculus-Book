@@ -1,0 +1,45 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-08",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "Parametric Representation of a Translated Circle",
+  "exerciseReference": "Section 1.4, Exercise 37",
+  "originalTopic": "Parametric Curves: Circular Motion",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["parametric-equations", "circle", "trigonometric", "orientation"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find a set of parametric equations and an appropriate parameter interval to represent a circle of radius r = 5 centered at (2, -3), traversed once counterclockwise starting at (7, -3).",
+  "finalAnswer": "x = 2 + 5\\cos t, \\quad y = -3 + 5\\sin t, \\quad 0 \\le t \\le 2\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Recall the Standard Circular Parametrization",
+      "mathExpression": "x_0(t) = r\\cos t, \\quad y_0(t) = r\\sin t, \\quad t \\in [0, 2\\pi]",
+      "explanation": "A circle of radius r centered at the origin starting at (r, 0) and traversed counterclockwise is parametrized by r*cos(t) and r*sin(t).",
+      "why": "Unit circle coordinates (cos t, sin t) scaled by r trace a circle of radius r counterclockwise."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Incorporate the Center Translation",
+      "mathExpression": "(h, k) = (2, -3) \\implies x(t) = 2 + 5\\cos t, \\quad y(t) = -3 + 5\\sin t",
+      "explanation": "Adding the coordinates of the center shifts the origin of the circle to (h, k) = (2, -3).",
+      "why": "Vector translation adds displacement (h, k) to position coordinates."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Verify Starting Point and Cartesian Form",
+      "mathExpression": "(x - 2)^2 + (y + 3)^2 = (5\\cos t)^2 + (5\\sin t)^2 = 25(\\cos^2 t + \\sin^2 t) = 25",
+      "explanation": "At t = 0, x(0) = 2 + 5(1) = 7 and y(0) = -3 + 5(0) = -3, matching the starting point. Squaring and summing confirms the standard circle equation.",
+      "why": "Pythagorean identity cos^2(t) + sin^2(t) = 1 confirms the Cartesian radius constraint."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(2 + 5*cos(x) - 2)**2 + (-3 + 5*sin(x) + 3)**2",
+    "expected": "25",
+    "variable": "x"
+  }
+}

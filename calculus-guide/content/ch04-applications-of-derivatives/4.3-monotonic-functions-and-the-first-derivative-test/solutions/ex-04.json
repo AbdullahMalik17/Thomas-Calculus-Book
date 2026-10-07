@@ -1,0 +1,49 @@
+{
+  "id": "ch04-applications-of-derivatives/4.3-monotonic-functions-and-the-first-derivative-test/solutions/ex-04",
+  "chapter": "ch04",
+  "section": "4.3",
+  "type": "solution",
+  "title": "Trigonometric Extrema via First Derivative",
+  "exerciseReference": "Section 4.3, Exercise 4",
+  "originalTopic": "Trigonometric Monotonicity",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "extrema",
+    "first-derivative"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find all local extrema of f(x) = cos^2(x) - 2*sin(x) on [0, 2*pi].",
+  "finalAnswer": "\\text{Local Max at } x = \\frac{3\\pi}{2} \\text{ with value } 2; \\quad \\text{Local Min at } x = \\frac{\\pi}{2} \\text{ with value } -2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Derivative",
+      "mathExpression": "f'(x) = 2\\cos x(-\\sin x) - 2\\cos x = -2\\cos x(\\sin x + 1)",
+      "explanation": "Factor out -2*cos(x).",
+      "why": "Differentiation and factoring."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find Critical Points on [0, 2*pi]",
+      "mathExpression": "\\cos x = 0 \\implies x = \\frac{\\pi}{2}, \\; \\frac{3\\pi}{2}; \\quad \\sin x + 1 = 0 \\implies \\sin x = -1 \\implies x = \\frac{3\\pi}{2}",
+      "explanation": "Critical points are pi/2 and 3*pi/2.",
+      "why": "Zeroes of derivative."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate and Classify",
+      "mathExpression": "f(\\pi/2) = 0 - 2(1) = -2 \\text{ (Min)}; \\quad f(3\\pi/2) = 0 - 2(-1) = 2 \\text{ (Max)}",
+      "explanation": "Compare values.",
+      "why": "First derivative test."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "cos(x)**2 - 2*sin(x)",
+    "expected": "-2*cos(x)*(sin(x) + 1)",
+    "variable": "x"
+  }
+}

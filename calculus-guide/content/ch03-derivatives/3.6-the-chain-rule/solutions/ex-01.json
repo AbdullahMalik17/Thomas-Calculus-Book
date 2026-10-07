@@ -1,0 +1,49 @@
+{
+  "id": "ch03-derivatives/3.6-the-chain-rule/solutions/ex-01",
+  "chapter": "ch03",
+  "section": "3.6",
+  "type": "solution",
+  "title": "Generalized Power Rule on a Polynomial",
+  "exerciseReference": "Section 3.6, Exercise 1",
+  "originalTopic": "Generalized Power Rule",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "chain-rule",
+    "power-rule",
+    "composite"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Differentiate y = (3x^2 - 5x + 1)^4.",
+  "finalAnswer": "\\frac{dy}{dx} = 4(3x^2 - 5x + 1)^3(6x - 5)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Inner Function u and Outer Function f",
+      "mathExpression": "u = 3x^2 - 5x + 1, \\quad y = u^4",
+      "explanation": "Set u equal to the inside polynomial.",
+      "why": "Chain rule decomposition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate Inner and Outer Functions",
+      "mathExpression": "\\frac{dy}{du} = 4u^3, \\quad \\frac{du}{dx} = 6x - 5",
+      "explanation": "Differentiate y with respect to u and u with respect to x.",
+      "why": "Component derivatives."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Multiply and Substitute Back u",
+      "mathExpression": "\\frac{dy}{dx} = 4u^3 \\frac{du}{dx} = 4(3x^2 - 5x + 1)^3(6x - 5)",
+      "explanation": "Assemble via chain rule dy/dx = (dy/du)(du/dx).",
+      "why": "Chain rule formula."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "(3*x**2 - 5*x + 1)**4",
+    "expected": "4*(3*x**2 - 5*x + 1)**3*(6*x - 5)",
+    "variable": "x"
+  }
+}

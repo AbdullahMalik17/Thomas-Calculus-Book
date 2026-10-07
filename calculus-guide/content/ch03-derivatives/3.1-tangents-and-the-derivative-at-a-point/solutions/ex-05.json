@@ -1,0 +1,42 @@
+{
+  "id": "ch03-derivatives/3.1-tangents-and-the-derivative-at-a-point/solutions/ex-05",
+  "chapter": "ch03",
+  "section": "3.1",
+  "type": "solution",
+  "title": "Instantaneous Rate of a Cubic at a Point",
+  "exerciseReference": "Section 3.1, Exercise 5",
+  "originalTopic": "Rate of Change",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "rate-of-change",
+    "cubic",
+    "derivative"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the instantaneous rate of change of f(x) = x^3 at x = -1.",
+  "finalAnswer": "f'(-1) = 3",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate Difference Quotient at x = -1",
+      "mathExpression": "\\frac{f(-1 + h) - f(-1)}{h} = \\frac{(-1 + h)^3 - (-1)}{h} = \\frac{(-1 + 3h - 3h^2 + h^3) + 1}{h}",
+      "explanation": "Expand the binomial cube (-1 + h)^3.",
+      "why": "Definition of difference quotient for cubic polynomial."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Cancel h and Take Limit",
+      "mathExpression": "\\lim_{h \\to 0} \\frac{3h - 3h^2 + h^3}{h} = \\lim_{h \\to 0} (3 - 3h + h^2) = 3",
+      "explanation": "Divide through by h and evaluate at h = 0.",
+      "why": "Canceling h resolves 0/0."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "x**3",
+    "expected": "3*x**2",
+    "variable": "x"
+  }
+}

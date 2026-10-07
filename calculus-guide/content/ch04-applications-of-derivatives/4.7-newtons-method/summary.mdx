@@ -1,0 +1,28 @@
+# Section 4.7: Newton's Method
+
+Newton's method (the Newton-Raphson algorithm) is a rapid numerical method for approximating real solutions of $f(x) = 0$.
+
+---
+
+## 1. Geometric Derivation
+
+At the current estimate $x_n$, the tangent line to $y = f(x)$ is:
+
+$$
+y - f(x_n) = f'(x_n)(x - x_n)
+$$
+
+Setting $y = 0$ to find the $x$-intercept $x_{n+1}$:
+
+$$
+0 - f(x_n) = f'(x_n)(x_{n+1} - x_n) \implies x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
+$$
+
+---
+
+## 2. Failure Modes
+
+Newton's method may fail if:
+1. **$f'(x_n) = 0$**: The tangent line is horizontal and has no $x$-intercept.
+2. **Cycle / Oscillation**: Estimates alternate indefinitely without converging.
+3. **Divergence**: The sequence shoots off to infinity.

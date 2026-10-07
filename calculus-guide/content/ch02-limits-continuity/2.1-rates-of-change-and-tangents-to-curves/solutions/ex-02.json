@@ -1,0 +1,45 @@
+{
+  "id": "ch02-limits-continuity/2.1-rates-of-change-and-tangents-to-curves/solutions/ex-02",
+  "chapter": "ch02",
+  "section": "2.1",
+  "type": "solution",
+  "title": "Instantaneous Velocity of a Falling Object",
+  "exerciseReference": "Section 2.1, Exercise 2",
+  "originalTopic": "Velocity and Motion",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["velocity", "free-fall", "instantaneous-rate"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A stone dropped from a high cliff falls s(t) = 16t^2 feet in t seconds. Compute the average velocity over the time interval [2, 2+h], and determine the instantaneous velocity at t = 2 seconds.",
+  "finalAnswer": "v_{\\text{avg}} = 32 + 16h \\text{ ft/s}; \\quad v(2) = 64 \\text{ ft/s}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set up the Position Values",
+      "mathExpression": "s(2) = 16(2^2) = 64, \\quad s(2 + h) = 16(2 + h)^2 = 16(4 + 4h + h^2) = 64 + 64h + 16h^2",
+      "explanation": "Evaluate the position function at the base time t = 2 and at the elapsed time t = 2+h.",
+      "why": "Evaluation of position at both endpoints is prerequisite for average velocity."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Calculate the Average Velocity Difference Quotient",
+      "mathExpression": "v_{\\text{avg}} = \\frac{s(2 + h) - s(2)}{h} = \\frac{(64 + 64h + 16h^2) - 64}{h} = \\frac{64h + 16h^2}{h} = 64 + 16h",
+      "explanation": "Compute displacement Delta s over elapsed time h, factoring out h from the numerator.",
+      "why": "Average velocity is displacement divided by elapsed time."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Take the Limit as Elapsed Time Approaches Zero",
+      "mathExpression": "v(2) = \\lim_{h \\to 0} (64 + 16h) = 64 + 16(0) = 64 \\text{ ft/s}",
+      "explanation": "Let h approach 0 in the simplified rate expression to find the instantaneous rate of change.",
+      "why": "Instantaneous velocity is defined as the time limit of average velocity as elapsed time approaches zero."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(16*(2 + h)**2 - 16*4) / h",
+    "expected": "64 + 16*h",
+    "variable": "h"
+  }
+}

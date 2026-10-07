@@ -1,0 +1,48 @@
+{
+  "id": "ch04-applications-of-derivatives/4.1-extreme-values-of-functions-on-closed-intervals/solutions/ex-05",
+  "chapter": "ch04",
+  "section": "4.1",
+  "type": "solution",
+  "title": "Extrema with Absolute Value Piecewise Corners",
+  "exerciseReference": "Section 4.1, Exercise 5",
+  "originalTopic": "Piecewise Absolute Value Extrema",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "absolute-value",
+    "critical-points",
+    "corners"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the absolute extrema of f(x) = |x^2 - 4| on [-3, 3].",
+  "finalAnswer": "\\text{Absolute Maximum: } 5 \\text{ at } x = \\pm 3; \\quad \\text{Absolute Minimum: } 0 \\text{ at } x = \\pm 2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Locate Points of Non-Differentiability",
+      "mathExpression": "x^2 - 4 = 0 \\implies x = \\pm 2 \\implies f'(x) \\text{ does not exist at } x = \\pm 2",
+      "explanation": "The corners of the absolute value occur where the interior is zero.",
+      "why": "Points where f' DNE are critical points."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Locate Zero-Slope Critical Points",
+      "mathExpression": "\\text{For } x \\in (-2, 2), \\; f(x) = 4 - x^2 \\implies f'(x) = -2x = 0 \\implies x = 0",
+      "explanation": "Differentiate the inverted parabola branch.",
+      "why": "Interior zero-slope point."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate All Candidates",
+      "mathExpression": "f(\\pm 3) = |9 - 4| = 5; \\quad f(\\pm 2) = 0; \\quad f(0) = |0 - 4| = 4",
+      "explanation": "Compare candidate values: min is 0, max is 5.",
+      "why": "Closed interval method."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "abs(3**2 - 4) - 5",
+    "expected": "0"
+  }
+}

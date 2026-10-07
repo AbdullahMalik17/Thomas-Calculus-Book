@@ -1,0 +1,28 @@
+# Section 3.2: The Derivative as a Function
+
+Rather than calculating the derivative at a single numerical point $x_0$, we treat the independent variable $x$ as arbitrary. This transforms differentiation into an **operator** that inputs a function $f$ and outputs its derivative function $f'$.
+
+---
+
+## 1. Definition and Notation
+
+$$
+f'(x) = \frac{dy}{dx} = \frac{d}{dx}[f(x)] = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}
+$$
+
+Common notations:
+- **Lagrange**: $y'$, $f'(x)$
+- **Leibniz**: $\frac{dy}{dx}$, $\frac{df}{dx}$
+- **Euler / Cauchy**: $D_x y$, $Df(x)$
+
+---
+
+## 2. Differentiability vs Continuity
+
+**Theorem**: If $f$ is differentiable at $c$, then $f$ is continuous at $c$.
+
+### Crucial Warning (Converse is FALSE):
+Continuity does **NOT** guarantee differentiability:
+- $f(x) = |x|$ is continuous at $x = 0$, but has a sharp **corner** where $f'_+(0) = 1$ and $f'_-(0) = -1$. Hence $f'(0)$ does not exist.
+- $f(x) = x^{1/3}$ has a **vertical tangent** at $x = 0$ ($f'(x) \to \infty$).
+- $f(x) = x^{2/3}$ has a **cusp** at $x = 0$.

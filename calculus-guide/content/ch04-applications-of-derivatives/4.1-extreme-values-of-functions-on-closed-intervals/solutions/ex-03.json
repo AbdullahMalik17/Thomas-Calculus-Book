@@ -1,0 +1,49 @@
+{
+  "id": "ch04-applications-of-derivatives/4.1-extreme-values-of-functions-on-closed-intervals/solutions/ex-03",
+  "chapter": "ch04",
+  "section": "4.1",
+  "type": "solution",
+  "title": "Absolute Extrema of a Trigonometric Function",
+  "exerciseReference": "Section 4.1, Exercise 3",
+  "originalTopic": "Trigonometric Extrema",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "closed-interval",
+    "extrema"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the absolute extrema of f(x) = x - 2*sin(x) on [0, 2*pi].",
+  "finalAnswer": "\\text{Absolute Maximum: } 2\\pi \\approx 6.28 \\text{ at } x = 2\\pi; \\quad \\text{Absolute Minimum: } \\frac{\\pi}{3} - \\sqrt{3} \\approx -0.684 \\text{ at } x = \\frac{\\pi}{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Critical Points in (0, 2*pi)",
+      "mathExpression": "f'(x) = 1 - 2\\cos x = 0 \\implies \\cos x = \\frac{1}{2} \\implies x = \\frac{\\pi}{3}, \\; \\frac{5\\pi}{3}",
+      "explanation": "Solve f'(x) = 0 for angles in [0, 2*pi].",
+      "why": "Critical points."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate f at Critical Points",
+      "mathExpression": "f(\\pi/3) = \\frac{\\pi}{3} - 2\\sin(\\pi/3) = \\frac{\\pi}{3} - \\sqrt{3} \\approx -0.684; \\quad f(5\\pi/3) = \\frac{5\\pi}{3} - 2\\left(-\\frac{\\sqrt{3}}{2}\\right) = \\frac{5\\pi}{3} + \\sqrt{3} \\approx 6.968",
+      "explanation": "Calculate values at pi/3 and 5*pi/3.",
+      "why": "Interior candidate values."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate f at Endpoints",
+      "mathExpression": "f(0) = 0 - 2\\sin(0) = 0; \\quad f(2\\pi) = 2\\pi - 2\\sin(2\\pi) = 2\\pi \\approx 6.283",
+      "explanation": "Endpoint evaluations.",
+      "why": "Endpoint candidate values."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "x - 2*sin(x)",
+    "expected": "1 - 2*cos(x)",
+    "variable": "x"
+  }
+}

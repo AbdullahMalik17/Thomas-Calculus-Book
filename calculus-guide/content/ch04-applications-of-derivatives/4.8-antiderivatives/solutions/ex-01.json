@@ -1,0 +1,50 @@
+{
+  "id": "ch04-applications-of-derivatives/4.8-antiderivatives/solutions/ex-01",
+  "chapter": "ch04",
+  "section": "4.8",
+  "type": "solution",
+  "title": "General Antiderivative of a Polynomial",
+  "exerciseReference": "Section 4.8, Exercise 1",
+  "originalTopic": "Polynomial Antiderivatives",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "antiderivative",
+    "indefinite-integral",
+    "power-rule"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the most general antiderivative of f(x) = 6x^5 - 8x^3 + 9x^2 - 4x + 7.",
+  "finalAnswer": "\\int f(x) \\, dx = x^6 - 2x^4 + 3x^3 - 2x^2 + 7x + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Power Rule to Each Term",
+      "mathExpression": "\\int 6x^5 \\, dx = 6\\frac{x^6}{6} = x^6; \\quad \\int -8x^3 \\, dx = -8\\frac{x^4}{4} = -2x^4; \\quad \\int 9x^2 \\, dx = 9\\frac{x^3}{3} = 3x^3",
+      "explanation": "Increment exponent and divide by new exponent.",
+      "why": "Power rule for integration."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate Linear and Constant Terms",
+      "mathExpression": "\\int -4x \\, dx = -4\\frac{x^2}{2} = -2x^2; \\quad \\int 7 \\, dx = 7x",
+      "explanation": "Constant integrates to 7x.",
+      "why": "Integral of constant c is cx."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Add Constant of Integration C",
+      "mathExpression": "F(x) = x^6 - 2x^4 + 3x^3 - 2x^2 + 7x + C",
+      "explanation": "Assemble complete general antiderivative.",
+      "why": "Constant C represents the family of all antiderivatives."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "type": "integral",
+    "expression": "6*x**5 - 8*x**3 + 9*x**2 - 4*x + 7",
+    "expected": "x**6 - 2*x**4 + 3*x**3 - 2*x**2 + 7*x",
+    "variable": "x",
+    "kind": "indefinite"
+  }
+}

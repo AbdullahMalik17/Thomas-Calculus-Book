@@ -1,0 +1,50 @@
+{
+  "id": "ch04-applications-of-derivatives/4.4-concavity-and-curve-sketching/solutions/ex-01",
+  "chapter": "ch04",
+  "section": "4.4",
+  "type": "solution",
+  "title": "Concavity and Inflection Points of a Quartic",
+  "exerciseReference": "Section 4.4, Exercise 1",
+  "originalTopic": "Inflection Points",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "concavity",
+    "inflection-points",
+    "second-derivative"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the intervals of concavity and inflection points for f(x) = x^4 - 4x^3 + 10.",
+  "finalAnswer": "\\text{Concave Up on } (-\\infty, 0) \\cup (2, \\infty); \\; \\text{Concave Down on } (0, 2); \\; \\text{Inflection Points at } (0, 10) \\text{ and } (2, -6)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute First and Second Derivatives",
+      "mathExpression": "f'(x) = 4x^3 - 12x^2, \\quad f''(x) = 12x^2 - 24x = 12x(x - 2)",
+      "explanation": "Differentiate twice.",
+      "why": "Second derivative governs concavity."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find Candidate Inflection Points",
+      "mathExpression": "f''(x) = 0 \\implies 12x(x - 2) = 0 \\implies x = 0, \\; x = 2",
+      "explanation": "Locate zeroes of f''(x).",
+      "why": "Candidates for inflection."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Determine Sign of f''(x) and Points of Inflection",
+      "mathExpression": "x < 0 \\implies f'' > 0 \\text{ (CU)}; \\quad 0 < x < 2 \\implies f'' < 0 \\text{ (CD)}; \\quad x > 2 \\implies f'' > 0 \\text{ (CU)}",
+      "explanation": "Sign changes at both 0 and 2. f(0) = 10 and f(2) = 16 - 32 + 10 = -6.",
+      "why": "Both points are verified inflection points."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "x**4 - 4*x**3 + 10",
+    "expected": "12*x*(x - 2)",
+    "variable": "x",
+    "order": 2
+  }
+}

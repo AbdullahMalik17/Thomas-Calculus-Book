@@ -70,6 +70,26 @@ def print_banner() -> None:
     print(APP_BANNER)
 
 
+def locate_all_sections() -> List[Path]:
+    """Search common paths for all chapter/section content directories."""
+    content_dirs = [
+        PROJECT_ROOT / "content",
+        Path.cwd() / "content",
+        Path.cwd() / "calculus-guide" / "content",
+    ]
+    for cdir in content_dirs:
+        if cdir.exists() and cdir.is_dir():
+            sections = []
+            for ch in sorted(cdir.glob("ch*")):
+                if ch.is_dir():
+                    for sec in sorted(ch.iterdir()):
+                        if sec.is_dir() and any(sec.glob("**/*.json")):
+                            sections.append(sec.resolve())
+            if sections:
+                return sections
+    return []
+
+
 def locate_section_1_1() -> Optional[Path]:
     """Search common paths for the Section 1.1 content directory."""
     candidates = [
@@ -87,7 +107,7 @@ def run_default_workflow() -> int:
     """
     Default workflow when CLI is invoked with zero arguments:
     1. Runs all 24 edge-case test fixtures
-    2. Validates Section 1.1 content if present
+    2. Validates all content sections across Chapters 1-4 if present
     3. Exits with 0 on total success, 1 on failure
     """
     print_banner()
@@ -113,19 +133,34 @@ def run_default_workflow() -> int:
         print("FAIL: One or more test fixtures failed.")
         return 1
 
-    # Check for Section 1.1 content
-    sec_path = locate_section_1_1()
-    if sec_path and any(sec_path.glob("**/*.json")):
-        print(f"Validating Golden Example Section 1.1 content at: {sec_path}")
-        sec_report = validate_section_dir(sec_path)
-        print(sec_report.summary())
-        print()
-        if not sec_report.valid:
-            print("FAIL: Section 1.1 content validation failed.")
+    # Validate all discovered sections
+    all_sections = locate_all_sections()
+    if all_sections:
+        print(f"Discovered {len(all_sections)} content section(s) to mathematically validate:")
+        failed_sections = []
+        total_payloads = 0
+        total_payloads_passed = 0
+        for sec_path in all_sections:
+            sec_report = validate_section_dir(sec_path)
+            total_payloads += sec_report.payload_count
+            total_payloads_passed += sec_report.payload_passed
+            if not sec_report.valid:
+                print(f"[FAIL] {sec_path.name}")
+                for err in sec_report.errors:
+                    print(f"    --> ERROR: {err}")
+                failed_sections.append(sec_path.name)
+            else:
+                print(f"[PASS] {sec_path.name} ({sec_report.solution_count} solutions, {sec_report.payload_passed}/{sec_report.payload_count} payloads)")
+
+        print("-" * 75)
+        print(f"Section Summary: {len(all_sections) - len(failed_sections)}/{len(all_sections)} sections passed.")
+        print(f"Total Payloads Evaluated: {total_payloads_passed}/{total_payloads} passed.")
+
+        if failed_sections:
+            print(f"FAIL: {len(failed_sections)} section(s) failed validation: {', '.join(failed_sections)}")
             return 1
     else:
-        print("Note: Section 1.1 JSON content not found or empty (pending Milestone 4 content build).")
-        print("Fixture verification complete.")
+        print("Note: No section JSON content found.")
 
     print("\nSUCCESS: All mathematical verification checks passed cleanly (exit code 0).\n")
     return 0

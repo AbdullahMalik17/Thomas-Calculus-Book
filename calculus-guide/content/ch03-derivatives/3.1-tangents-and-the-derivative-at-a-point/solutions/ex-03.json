@@ -1,0 +1,49 @@
+{
+  "id": "ch03-derivatives/3.1-tangents-and-the-derivative-at-a-point/solutions/ex-03",
+  "chapter": "ch03",
+  "section": "3.1",
+  "type": "solution",
+  "title": "Derivative of Reciprocal Function at a Point",
+  "exerciseReference": "Section 3.1, Exercise 3",
+  "originalTopic": "Reciprocal Derivative",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "reciprocal",
+    "derivative",
+    "difference-quotient"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute f'(1) for f(x) = 1/(x + 1) using the limit definition.",
+  "finalAnswer": "f'(1) = -\\frac{1}{4}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set up Difference Quotient",
+      "mathExpression": "\\frac{f(1 + h) - f(1)}{h} = \\frac{\\frac{1}{1 + h + 1} - \\frac{1}{2}}{h} = \\frac{\\frac{1}{2 + h} - \\frac{1}{2}}{h}",
+      "explanation": "Substitute into the difference quotient definition.",
+      "why": "Evaluation of reciprocal function at 1+h and 1."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Simplify Common Denominator",
+      "mathExpression": "\\frac{2 - (2 + h)}{2h(2 + h)} = \\frac{-h}{2h(2 + h)} = \\frac{-1}{2(2 + h)}",
+      "explanation": "Combine terms in numerator and cancel h.",
+      "why": "Removing factor h eliminates the 0/0 singularity."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Limit",
+      "mathExpression": "f'(1) = \\lim_{h \\to 0} \\frac{-1}{2(2 + h)} = -\\frac{1}{4}",
+      "explanation": "Substitute h = 0 into the simplified expression.",
+      "why": "Direct substitution yields the derivative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "1/(x + 1)",
+    "expected": "-1/(x + 1)**2",
+    "variable": "x"
+  }
+}

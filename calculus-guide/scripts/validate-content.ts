@@ -22,7 +22,9 @@ import {
   SolutionSchema,
   MCQSchema,
   PracticeProblemSchema,
+  DefinitionsFileSchema,
 } from '../lib/content/schema';
+import { buildCurriculumFiles } from './build-curriculum';
 
 const CONTENT_DIR = path.resolve(process.cwd(), 'content');
 
@@ -40,6 +42,7 @@ let solutionsCount = 0;
 let practiceCount = 0;
 let mcqCount = 0;
 let mdxCount = 0;
+let definitionsCount = 0;
 
 function walkDir(dir: string, fileList: string[] = []): string[] {
   if (!fs.existsSync(dir)) return fileList;
@@ -111,7 +114,19 @@ function validateJSONContent(filePath: string): void {
   }
 
   // 3. Schema validation based on item type
-  if (data.type === 'solution') {
+  if (filePath.endsWith('definitions.json') || data.type === 'definitions') {
+    definitionsCount++;
+    const result = DefinitionsFileSchema.safeParse(data);
+    if (!result.success) {
+      for (const issue of result.error.issues) {
+        errors.push({
+          file: filePath,
+          field: issue.path.join('.'),
+          message: issue.message,
+        });
+      }
+    }
+  } else if (data.type === 'solution') {
     solutionsCount++;
     const result = SolutionSchema.safeParse(data);
     if (!result.success) {
@@ -151,7 +166,7 @@ function validateJSONContent(filePath: string): void {
     errors.push({
       file: filePath,
       field: 'type',
-      message: `Unknown or missing content type "${data.type}". Expected 'solution', 'mcq', or 'practice'`,
+      message: `Unknown or missing content type "${data.type}". Expected 'solution', 'mcq', 'practice', or definitions.json`,
     });
   }
 }
@@ -168,6 +183,9 @@ export function runValidation(): { errorCount: number; warningCount: number } {
     fs.mkdirSync(CONTENT_DIR, { recursive: true });
   }
 
+  // Ensure all curriculum content is synchronized
+  buildCurriculumFiles();
+
   const allFiles = walkDir(CONTENT_DIR);
 
   for (const file of allFiles) {
@@ -180,6 +198,7 @@ export function runValidation(): { errorCount: number; warningCount: number } {
 
   console.log('\x1b[1mValidation Metrics:\x1b[0m');
   console.log(`  - MDX Summaries Validated : ${mdxCount}`);
+  console.log(`  - Definitions Files       : ${definitionsCount}`);
   console.log(`  - Solutions Validated     : ${solutionsCount}`);
   console.log(`  - Practice Problems       : ${practiceCount}`);
   console.log(`  - MCQs Validated          : ${mcqCount}`);

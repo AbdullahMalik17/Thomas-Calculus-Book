@@ -1,0 +1,49 @@
+{
+  "id": "ch02-limits-continuity/2.6-limits-involving-infinity-asymptotes-of-graphs/solutions/ex-04",
+  "chapter": "ch02",
+  "section": "2.6",
+  "type": "solution",
+  "title": "Vertical Asymptotes and One-Sided Infinite Limits",
+  "exerciseReference": "Section 2.6, Exercise 4",
+  "originalTopic": "Vertical Asymptote Analysis",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "vertical-asymptote",
+    "infinite-limits",
+    "one-sided"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the vertical asymptotes of f(x) = 2x / (x^2 - 4) and analyze one-sided limits around x = 2.",
+  "finalAnswer": "\\text{Vertical asymptotes at } x = 2 \\text{ and } x = -2; \\quad \\lim_{x \\to 2^+} f(x) = +\\infty, \\; \\lim_{x \\to 2^-} f(x) = -\\infty",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Factor Denominator and Find Singular Points",
+      "mathExpression": "x^2 - 4 = 0 \\implies (x - 2)(x + 2) = 0 \\implies x = 2, \\; x = -2",
+      "explanation": "Set the simplified denominator to zero to locate candidate vertical asymptotes.",
+      "why": "A rational function in lowest terms has vertical asymptotes at the zeroes of its denominator."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Analyze One-Sided Limit as x -> 2^+",
+      "mathExpression": "x \\to 2^+ \\implies x > 2 \\implies x - 2 > 0 \\implies \\frac{2(2)}{(x - 2)(4)} = \\frac{4}{0^+} = +\\infty",
+      "explanation": "As x approaches 2 from the right, the numerator is positive and the denominator is small and positive.",
+      "why": "A positive finite numerator divided by a positive infinitesimal yields +oo."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Analyze One-Sided Limit as x -> 2^-",
+      "mathExpression": "x \\to 2^- \\implies x < 2 \\implies x - 2 < 0 \\implies \\frac{2(2)}{(x - 2)(4)} = \\frac{4}{0^-} = -\\infty",
+      "explanation": "As x approaches 2 from the left, x - 2 is negative, making the denominator small and negative.",
+      "why": "A positive finite numerator divided by a negative infinitesimal yields -oo."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "2*x / ((x - 2)*(x + 2)) - 2*x / (x**2 - 4)",
+    "expected": "0",
+    "variable": "x"
+  }
+}

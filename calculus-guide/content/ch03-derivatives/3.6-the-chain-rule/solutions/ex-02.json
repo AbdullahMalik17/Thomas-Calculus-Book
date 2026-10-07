@@ -1,0 +1,49 @@
+{
+  "id": "ch03-derivatives/3.6-the-chain-rule/solutions/ex-02",
+  "chapter": "ch03",
+  "section": "3.6",
+  "type": "solution",
+  "title": "Repeated Chain Rule with Trigonometric Powers",
+  "exerciseReference": "Section 3.6, Exercise 2",
+  "originalTopic": "Repeated Chain Rule",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "chain-rule",
+    "trigonometry",
+    "repeated-composition"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Differentiate y = sin^3(4x) = (sin(4x))^3.",
+  "finalAnswer": "\\frac{dy}{dx} = 12\\sin^2(4x)\\cos(4x)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify the Three-Stage Composition",
+      "mathExpression": "y = u^3, \\quad u = \\sin(v), \\quad v = 4x",
+      "explanation": "Decompose into outer cube, middle sine, and inner linear function.",
+      "why": "Three-tier composite structure."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate Each Stage",
+      "mathExpression": "\\frac{dy}{du} = 3u^2, \\quad \\frac{du}{v} = \\cos v, \\quad \\frac{dv}{dx} = 4",
+      "explanation": "Compute the three intermediate derivatives.",
+      "why": "Leibniz chain rule components."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Multiply Chain Factors",
+      "mathExpression": "\\frac{dy}{dx} = 3(\\sin(4x))^2 \\cdot \\cos(4x) \\cdot 4 = 12\\sin^2(4x)\\cos(4x)",
+      "explanation": "Multiply factors together.",
+      "why": "Repeated chain rule."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "sin(4*x)**3",
+    "expected": "12*sin(4*x)**2*cos(4*x)",
+    "variable": "x"
+  }
+}

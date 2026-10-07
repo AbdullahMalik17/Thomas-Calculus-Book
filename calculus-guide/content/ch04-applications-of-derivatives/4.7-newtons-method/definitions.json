@@ -1,0 +1,22 @@
+{
+  "id": "ch04-applications-of-derivatives/4.7-newtons-method/definitions",
+  "chapter": "ch04",
+  "section": "4.7",
+  "title": "Newton's Method",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "formula-newtons-method",
+      "title": "Newton-Raphson Iteration Formula",
+      "category": "formula",
+      "latex": "x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)} \\quad (f'(x_n) \\neq 0)",
+      "statement": "Newton's method approximates a real root of f(x) = 0 by replacing the curve with its tangent line at x_n and taking the x-intercept of the tangent line as the next estimate x_{n+1}.",
+      "conditions": [
+        "f is differentiable",
+        "f'(x_n) != 0 at every iteration step"
+      ],
+      "explanation": "Exhibits quadratic convergence near simple roots: the number of accurate decimal places roughly doubles with each iteration.",
+      "keyTakeaway": "x_{n+1} is the x-intercept of the tangent line to f at x_n."
+    }
+  ]
+}

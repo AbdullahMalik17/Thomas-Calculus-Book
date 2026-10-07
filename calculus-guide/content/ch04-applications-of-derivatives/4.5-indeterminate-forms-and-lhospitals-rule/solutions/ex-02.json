@@ -1,0 +1,41 @@
+{
+  "id": "ch04-applications-of-derivatives/4.5-indeterminate-forms-and-lhospitals-rule/solutions/ex-02",
+  "chapter": "ch04",
+  "section": "4.5",
+  "type": "solution",
+  "title": "Evaluating Infinity over Infinity",
+  "exerciseReference": "Section 4.5, Exercise 2",
+  "originalTopic": "Exponential Growth Dominance",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "lhopital",
+    "exponentials",
+    "growth-rates"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate: lim_{x -> oo} x^2 / e^x.",
+  "finalAnswer": "\\lim_{x \\to \\infty} \\frac{x^2}{e^x} = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Check Indeterminate Form (oo/oo)",
+      "mathExpression": "\\lim_{x \\to \\infty} \\frac{x^2}{e^x} = \\frac{\\infty}{\\infty}",
+      "explanation": "Both numerator and denominator grow unbounded.",
+      "why": "Condition for L'Hôpital's Rule."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply L'Hôpital's Rule Twice",
+      "mathExpression": "\\lim_{x \\to \\infty} \\frac{2x}{e^x} \\stackrel{\\text{H}}{=} \\lim_{x \\to \\infty} \\frac{2}{e^x} = \\frac{2}{\\infty} = 0",
+      "explanation": "Differentiate numerator and denominator twice.",
+      "why": "Exponential e^x dominates any polynomial x^n as x -> oo."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

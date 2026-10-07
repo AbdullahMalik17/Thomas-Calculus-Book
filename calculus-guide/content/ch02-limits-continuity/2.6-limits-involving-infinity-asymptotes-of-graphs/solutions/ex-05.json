@@ -1,0 +1,42 @@
+{
+  "id": "ch02-limits-continuity/2.6-limits-involving-infinity-asymptotes-of-graphs/solutions/ex-05",
+  "chapter": "ch02",
+  "section": "2.6",
+  "type": "solution",
+  "title": "Finding an Oblique (Slant) Asymptote",
+  "exerciseReference": "Section 2.6, Exercise 5",
+  "originalTopic": "Oblique Asymptotes",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "oblique-asymptote",
+    "polynomial-division",
+    "slant-asymptote"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the oblique asymptote of f(x) = (2x^2 + 3x - 1) / (x + 1) using polynomial long division.",
+  "finalAnswer": "y = 2x + 1 \\text{ is the oblique asymptote}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Perform Polynomial Long Division",
+      "mathExpression": "\\frac{2x^2 + 3x - 1}{x + 1} = 2x + 1 - \\frac{2}{x + 1}",
+      "explanation": "Divide (2x^2 + 3x - 1) by (x + 1): quotient is 2x + 1 with remainder -2.",
+      "why": "Long division separates the linear asymptote from the decaying remainder."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Remainder Limit at Infinity",
+      "mathExpression": "\\lim_{x \\to \\pm \\infty} \\left[ f(x) - (2x + 1) \\right] = \\lim_{x \\to \\pm \\infty} \\left( -\\frac{2}{x + 1} \\right) = 0",
+      "explanation": "The vertical distance between the curve and the line 2x + 1 approaches zero as |x| -> oo.",
+      "why": "By definition, y = mx + b is an oblique asymptote if lim [f(x) - (mx + b)] = 0."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(2*x**2 + 3*x - 1)/(x + 1) - (2*x + 1 - 2/(x + 1))",
+    "expected": "0",
+    "variable": "x"
+  }
+}

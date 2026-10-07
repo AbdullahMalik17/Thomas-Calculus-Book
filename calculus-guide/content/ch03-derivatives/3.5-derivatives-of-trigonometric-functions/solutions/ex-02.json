@@ -1,0 +1,49 @@
+{
+  "id": "ch03-derivatives/3.5-derivatives-of-trigonometric-functions/solutions/ex-02",
+  "chapter": "ch03",
+  "section": "3.5",
+  "type": "solution",
+  "title": "Quotient Rule with Secant and Tangent",
+  "exerciseReference": "Section 3.5, Exercise 2",
+  "originalTopic": "Trigonometric Quotient Rule",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "quotient-rule",
+    "secant"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Differentiate y = sec(x) / (1 + tan(x)).",
+  "finalAnswer": "\\frac{dy}{dx} = \\frac{\\sec(x)(\\tan(x) - 1)}{(1 + \\tan(x))^2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Quotient Rule",
+      "mathExpression": "y' = \\frac{\\frac{d}{dx}[\\sec x](1 + \\tan x) - \\sec x \\frac{d}{dx}[1 + \\tan x]}{(1 + \\tan x)^2}",
+      "explanation": "Set up the quotient rule formula.",
+      "why": "Quotient rule structure."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute Derivatives and Factor",
+      "mathExpression": "\\frac{(\\sec x \\tan x)(1 + \\tan x) - \\sec x(\\sec^2 x)}{(1 + \\tan x)^2} = \\frac{\\sec x [\\tan x + \\tan^2 x - \\sec^2 x]}{(1 + \\tan x)^2}",
+      "explanation": "Factor out sec(x) from both terms in the numerator.",
+      "why": "Factoring exposes trigonometric identities."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Use Pythagorean Identity tan^2(x) - sec^2(x) = -1",
+      "mathExpression": "\\tan^2 x - \\sec^2 x = -1 \\implies y' = \\frac{\\sec x (\\tan x - 1)}{(1 + \\tan x)^2}",
+      "explanation": "Replace tan^2(x) - sec^2(x) with -1.",
+      "why": "Fundamental Pythagorean identity 1 + tan^2(x) = sec^2(x)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "sec(x)/(1 + tan(x))",
+    "expected": "sec(x)*(tan(x) - 1)/(1 + tan(x))**2",
+    "variable": "x"
+  }
+}

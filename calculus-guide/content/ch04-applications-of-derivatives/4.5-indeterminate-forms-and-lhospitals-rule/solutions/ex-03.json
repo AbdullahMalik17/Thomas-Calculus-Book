@@ -1,0 +1,48 @@
+{
+  "id": "ch04-applications-of-derivatives/4.5-indeterminate-forms-and-lhospitals-rule/solutions/ex-03",
+  "chapter": "ch04",
+  "section": "4.5",
+  "type": "solution",
+  "title": "Indeterminate Product 0 * infinity",
+  "exerciseReference": "Section 4.5, Exercise 3",
+  "originalTopic": "Indeterminate Product Transformation",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "lhopital",
+    "logarithm",
+    "product-transformation"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate: lim_{x -> 0^+} x * ln(x).",
+  "finalAnswer": "\\lim_{x \\to 0^+} x \\ln x = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Rewrite Product as a Quotient",
+      "mathExpression": "x \\ln x = \\frac{\\ln x}{1/x} \\quad \\implies \\text{Form } \\frac{-\\infty}{+\\infty}",
+      "explanation": "Place x into the denominator as 1/x.",
+      "why": "Converts 0*oo into inf/inf to apply L'Hôpital's Rule."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply L'Hôpital's Rule",
+      "mathExpression": "\\lim_{x \\to 0^+} \\frac{\\frac{d}{dx}[\\ln x]}{\\frac{d}{dx}[x^{-1}]} = \\lim_{x \\to 0^+} \\frac{1/x}{-1/x^2}",
+      "explanation": "Differentiate top (1/x) and bottom (-1/x^2).",
+      "why": "L'Hôpital's Rule."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Simplify and Evaluate",
+      "mathExpression": "\\lim_{x \\to 0^+} \\left( \\frac{1}{x} \\cdot (-x^2) \\right) = \\lim_{x \\to 0^+} (-x) = 0",
+      "explanation": "Invert and multiply fractions.",
+      "why": "Direct substitution yields 0."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

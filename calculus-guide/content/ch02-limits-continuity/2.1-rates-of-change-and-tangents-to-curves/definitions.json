@@ -1,0 +1,61 @@
+{
+  "id": "ch02-limits-continuity/2.1-rates-of-change-and-tangents-to-curves/definitions",
+  "chapter": "ch02",
+  "section": "2.1",
+  "title": "Rates of Change and Tangents to Curves",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-average-rate-of-change",
+      "title": "Average Rate of Change",
+      "category": "definition",
+      "latex": "\\text{avg rate} = \\frac{\\Delta y}{\\Delta x} = \\frac{f(x_2) - f(x_1)}{x_2 - x_1} = \\frac{f(x_1 + h) - f(x_1)}{h}",
+      "statement": "The average rate of change of a quantity y = f(x) over an interval [x1, x2] is the ratio of the change in y to the change in x.",
+      "conditions": [
+        "x1 and x2 must belong to the domain of f",
+        "h = x2 - x1 != 0"
+      ],
+      "explanation": "Geometrically, the average rate of change represents the slope of the secant line connecting points P(x1, f(x1)) and Q(x2, f(x2)) on the graph of f.",
+      "keyTakeaway": "Average rate of change equals the slope of the secant line across the interval."
+    },
+    {
+      "id": "def-tangent-slope",
+      "title": "Slope of a Curve at a Point (Instantaneous Rate of Change)",
+      "category": "definition",
+      "latex": "m = \\lim_{h \\to 0} \\frac{f(x_0 + h) - f(x_0)}{h}",
+      "statement": "The slope of the curve y = f(x) at the point P(x0, f(x0)) is the limit of the secant line slopes as the increment h approaches 0, provided this limit exists.",
+      "conditions": [
+        "The two-sided limit as h -> 0 must exist as a finite real number",
+        "f must be defined in an open interval containing x0"
+      ],
+      "explanation": "As point Q(x0+h, f(x0+h)) slides along the curve toward P(x0, f(x0)), the secant line PQ rotates into the tangent line at P.",
+      "keyTakeaway": "The tangent slope is the instantaneous rate of change and the limit of difference quotients."
+    },
+    {
+      "id": "formula-tangent-line",
+      "title": "Point-Slope Equation of the Tangent Line",
+      "category": "formula",
+      "latex": "y - f(x_0) = m (x - x_0)",
+      "statement": "The tangent line to the curve y = f(x) at point (x0, f(x0)) with slope m is given by y - f(x0) = m(x - x0).",
+      "conditions": [
+        "Slope m = lim_{h->0} [f(x0+h) - f(x0)]/h is finite",
+        "If m is infinite and curve is continuous at x0, the tangent line is vertical: x = x0"
+      ],
+      "explanation": "This linear equation provides the best local straight-line approximation to the curve near x0.",
+      "keyTakeaway": "Equation of tangent line requires the contact point (x0, f(x0)) and the limiting slope m."
+    },
+    {
+      "id": "def-average-velocity",
+      "title": "Average and Instantaneous Velocity",
+      "category": "definition",
+      "latex": "v_{\\text{avg}} = \\frac{\\Delta s}{\\Delta t} = \\frac{s(t + \\Delta t) - s(t)}{\\Delta t}, \\quad v(t) = \\lim_{\\Delta t \\to 0} \\frac{s(t + \\Delta t) - s(t)}{\\Delta t}",
+      "statement": "For an object whose position along a coordinate line is s(t), average velocity is displacement over elapsed time, and instantaneous velocity is the time limit of average velocity.",
+      "conditions": [
+        "Position function s(t) is defined over the observation interval",
+        "Time increment Delta t != 0"
+      ],
+      "explanation": "Instantaneous velocity indicates both the speed (magnitude) and direction of motion at an exact instant.",
+      "keyTakeaway": "Instantaneous velocity is the derivative of the position function with respect to time."
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "ch03-derivatives/3.8-related-rates/solutions/ex-02",
+  "chapter": "ch03",
+  "section": "3.8",
+  "type": "solution",
+  "title": "The Sliding Ladder",
+  "exerciseReference": "Section 3.8, Exercise 2",
+  "originalTopic": "Pythagorean Related Rates",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "related-rates",
+    "ladder",
+    "pythagorean-theorem"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A 10-ft ladder leans against a vertical wall. If the base slides away from the wall at 2 ft/s, how fast is the top of the ladder sliding down when the base is 6 ft from the wall?",
+  "finalAnswer": "\\frac{dy}{dt} = -\\frac{3}{2} \\text{ ft/s} \\quad (\\text{sliding down at } 1.5 \\text{ ft/s})",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "State Pythagorean Relation",
+      "mathExpression": "x^2 + y^2 = 10^2 = 100",
+      "explanation": "Let x be distance from wall to base, y be height of top on wall.",
+      "why": "Geometric constraint."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find y When x = 6",
+      "mathExpression": "6^2 + y^2 = 100 \\implies y^2 = 64 \\implies y = 8 \\text{ ft}",
+      "explanation": "Solve for instantaneous height y.",
+      "why": "Instantaneous triangle geometry."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Differentiate with Respect to Time t",
+      "mathExpression": "2x\\frac{dx}{dt} + 2y\\frac{dy}{dt} = 0 \\implies x\\frac{dx}{dt} + y\\frac{dy}{dt} = 0",
+      "explanation": "Ladder length 10 is constant, so its derivative is zero.",
+      "why": "Constant length constraint."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Substitute and Solve for dy/dt",
+      "mathExpression": "6(2) + 8\\frac{dy}{dt} = 0 \\implies 12 + 8\\frac{dy}{dt} = 0 \\implies \\frac{dy}{dt} = -\\frac{12}{8} = -\\frac{3}{2} \\text{ ft/s}",
+      "explanation": "The negative sign confirms the top of the ladder is moving downwards.",
+      "why": "Negative rate corresponds to decreasing vertical distance."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "-(6 * 2) / 8",
+    "expected": "-3/2"
+  }
+}

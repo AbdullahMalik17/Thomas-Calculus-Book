@@ -1,0 +1,49 @@
+{
+  "id": "ch04-applications-of-derivatives/4.8-antiderivatives/solutions/ex-05",
+  "chapter": "ch04",
+  "section": "4.8",
+  "type": "solution",
+  "title": "Motion with Constant Gravity Acceleration",
+  "exerciseReference": "Section 4.8, Exercise 5",
+  "originalTopic": "Kinematics with Antiderivatives",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "kinematics",
+    "gravity",
+    "initial-value-problem"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "An object is launched vertically with acceleration a(t) = -32 ft/s^2, initial velocity v(0) = 48 ft/s, and initial position s(0) = 64 ft. Find v(t), s(t), and the maximum height.",
+  "finalAnswer": "v(t) = -32t + 48; \\quad s(t) = -16t^2 + 48t + 64; \\quad \\text{Max height } = 100 \\text{ ft at } t = 1.5 \\text{ s}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Antidifferentiate a(t) to Find v(t)",
+      "mathExpression": "v(t) = \\int (-32) \\, dt = -32t + C_1; \\quad v(0) = 48 \\implies C_1 = 48 \\implies v(t) = -32t + 48",
+      "explanation": "Integrate constant acceleration and apply initial velocity.",
+      "why": "Velocity is the antiderivative of acceleration."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Antidifferentiate v(t) to Find s(t)",
+      "mathExpression": "s(t) = \\int (-32t + 48) \\, dt = -16t^2 + 48t + C_2; \\quad s(0) = 64 \\implies C_2 = 64 \\implies s(t) = -16t^2 + 48t + 64",
+      "explanation": "Integrate velocity and apply initial position.",
+      "why": "Position is the antiderivative of velocity."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Calculate Maximum Height",
+      "mathExpression": "v(t) = 0 \\implies -32t + 48 = 0 \\implies t = 1.5 \\text{ s}; \\quad s(1.5) = -16(2.25) + 48(1.5) + 64 = -36 + 72 + 64 = 100 \\text{ ft}",
+      "explanation": "Peak occurs when velocity reaches zero.",
+      "why": "Maximum height evaluation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "-16*t**2 + 48*t + 64",
+    "expected": "-32*t + 48",
+    "variable": "t"
+  }
+}

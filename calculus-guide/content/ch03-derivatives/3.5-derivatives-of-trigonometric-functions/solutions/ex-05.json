@@ -1,0 +1,50 @@
+{
+  "id": "ch03-derivatives/3.5-derivatives-of-trigonometric-functions/solutions/ex-05",
+  "chapter": "ch03",
+  "section": "3.5",
+  "type": "solution",
+  "title": "Higher-Order Derivatives of Sine (Cyclic Pattern)",
+  "exerciseReference": "Section 3.5, Exercise 5",
+  "originalTopic": "Higher Order Trig Derivatives",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "higher-derivatives",
+    "periodicity",
+    "sine"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine the 50th derivative of f(x) = sin(x).",
+  "finalAnswer": "f^{(50)}(x) = -\\sin x",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Establish the 4-Cycle Pattern of Derivatives",
+      "mathExpression": "f'(x) = \\cos x, \\quad f''(x) = -\\sin x, \\quad f'''(x) = -\\cos x, \\quad f^{(4)}(x) = \\sin x",
+      "explanation": "The derivatives of sin(x) repeat in a cycle of length 4.",
+      "why": "Differentiation cycle of circular functions."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Reduce Exponent Modulo 4",
+      "mathExpression": "50 = 4 \\times 12 + 2 \\implies 50 \\equiv 2 \\pmod 4",
+      "explanation": "Divide 50 by the cycle length 4; the remainder is 2.",
+      "why": "Cyclic repetition allows modular reduction."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude with the Second Derivative",
+      "mathExpression": "f^{(50)}(x) = f''(x) = -\\sin x",
+      "explanation": "The 50th derivative is identical to the second derivative.",
+      "why": "Cycle alignment."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "sin(x)",
+    "expected": "-sin(x)",
+    "variable": "x",
+    "order": 2
+  }
+}

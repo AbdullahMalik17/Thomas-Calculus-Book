@@ -1,0 +1,49 @@
+{
+  "id": "ch02-limits-continuity/2.3-the-precise-definition-of-a-limit/solutions/ex-05",
+  "chapter": "ch02",
+  "section": "2.3",
+  "type": "solution",
+  "title": "Epsilon-Delta Proof for a Square Root Function",
+  "exerciseReference": "Section 2.3, Exercise 5",
+  "originalTopic": "Radical Limit Proof",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "radicals",
+    "epsilon-delta",
+    "conjugate"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Prove using the epsilon-delta definition that lim_{x -> 4} sqrt(x) = 2.",
+  "finalAnswer": "\\delta = 2\\epsilon",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Rationalize the Distance Expression",
+      "mathExpression": "|\\sqrt{x} - 2| = \\left|\\frac{(\\sqrt{x} - 2)(\\sqrt{x} + 2)}{\\sqrt{x} + 2}\\right| = \\frac{|x - 4|}{\\sqrt{x} + 2}",
+      "explanation": "Multiply and divide by the conjugate sqrt(x) + 2.",
+      "why": "Conjugate multiplication relates |sqrt(x) - 2| to |x - 4|."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Bound the Denominator",
+      "mathExpression": "\\sqrt{x} \\ge 0 \\implies \\sqrt{x} + 2 \\ge 2 \\implies \\frac{1}{\\sqrt{x} + 2} \\le \\frac{1}{2}",
+      "explanation": "Since sqrt(x) is non-negative for all x in the domain, the denominator is at least 2.",
+      "why": "Bounding the denominator from below bounds the entire fraction from above."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Choose Delta",
+      "mathExpression": "|\\sqrt{x} - 2| \\le \\frac{|x - 4|}{2} < \\frac{\\delta}{2} = \\epsilon \\implies \\delta = 2\\epsilon",
+      "explanation": "Setting delta/2 = epsilon gives delta = 2*epsilon.",
+      "why": "Guaranteeing |x - 4| < 2*epsilon ensures |sqrt(x) - 2| < epsilon."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(2*eps) / 2",
+    "expected": "eps",
+    "variable": "eps"
+  }
+}

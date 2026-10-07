@@ -1,0 +1,48 @@
+{
+  "id": "ch02-limits-continuity/2.5-continuity/solutions/ex-02",
+  "chapter": "ch02",
+  "section": "2.5",
+  "type": "solution",
+  "title": "Finding Parameter for Global Continuity",
+  "exerciseReference": "Section 2.5, Exercise 2",
+  "originalTopic": "Piecewise Continuity Parameter",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "continuity",
+    "piecewise",
+    "parameter"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the value of constant k that makes f(x) = k*x^2 for x <= 2 and f(x) = 2x + k for x > 2 continuous everywhere.",
+  "finalAnswer": "k = \\frac{4}{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate Left-Hand Limit and Function Value at x = 2",
+      "mathExpression": "f(2) = k(2^2) = 4k, \\quad \\lim_{x \\to 2^-} f(x) = 4k",
+      "explanation": "Substitute x = 2 into the left branch k*x^2.",
+      "why": "Polynomials are continuous on their domain."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Right-Hand Limit at x = 2",
+      "mathExpression": "\\lim_{x \\to 2^+} f(x) = \\lim_{x \\to 2^+} (2x + k) = 2(2) + k = 4 + k",
+      "explanation": "Substitute x = 2 into the right branch 2x + k.",
+      "why": "Linear functions are continuous on their domain."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Equate Left and Right Limits for Continuity",
+      "mathExpression": "4k = 4 + k \\implies 3k = 4 \\implies k = \\frac{4}{3}",
+      "explanation": "Set left-hand limit equal to right-hand limit and solve for k.",
+      "why": "Continuity at x = 2 requires left and right limits to be equal to f(2)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "4*(4/3) - (4 + 4/3)",
+    "expected": "0"
+  }
+}

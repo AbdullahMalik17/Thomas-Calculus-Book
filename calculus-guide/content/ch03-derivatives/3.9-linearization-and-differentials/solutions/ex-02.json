@@ -1,0 +1,41 @@
+{
+  "id": "ch03-derivatives/3.9-linearization-and-differentials/solutions/ex-02",
+  "chapter": "ch03",
+  "section": "3.9",
+  "type": "solution",
+  "title": "Linearization of Power Function near Zero",
+  "exerciseReference": "Section 3.9, Exercise 2",
+  "originalTopic": "Binomial Linearization",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "linearization",
+    "binomial",
+    "powers"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Use the standard linear approximation (1 + x)^k approx 1 + kx to approximate (1.02)^5.",
+  "finalAnswer": "(1.02)^5 \\approx 1 + 5(0.02) = 1.10",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Base Parameters",
+      "mathExpression": "f(x) = (1 + x)^5, \\quad k = 5, \\quad x = 0.02",
+      "explanation": "Represent 1.02 as 1 + 0.02.",
+      "why": "Expansion around a = 0."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Linear Approximation",
+      "mathExpression": "(1 + x)^k \\approx 1 + kx \\implies (1 + 0.02)^5 \\approx 1 + 5(0.02) = 1 + 0.10 = 1.10",
+      "explanation": "Substitute k = 5 and x = 0.02.",
+      "why": "First order Taylor/linear polynomial."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "1 + 5 * Rational(2, 100)",
+    "expected": "Rational(11, 10)"
+  }
+}

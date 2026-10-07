@@ -1,0 +1,42 @@
+{
+  "id": "ch04-applications-of-derivatives/4.2-the-mean-value-theorem/solutions/ex-03",
+  "chapter": "ch04",
+  "section": "4.2",
+  "type": "solution",
+  "title": "Applying MVT to a Square Root Function",
+  "exerciseReference": "Section 4.2, Exercise 3",
+  "originalTopic": "MVT with Radicals",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "mean-value-theorem",
+    "radicals",
+    "tangent-secant"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the value of c guaranteed by the Mean Value Theorem for f(x) = sqrt(x) on [1, 9].",
+  "finalAnswer": "c = 4",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Average Rate of Change on [1, 9]",
+      "mathExpression": "\\frac{f(9) - f(1)}{9 - 1} = \\frac{3 - 1}{8} = \\frac{2}{8} = \\frac{1}{4}",
+      "explanation": "Evaluate secant slope.",
+      "why": "Secant line slope."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve f'(c) = 1/4",
+      "mathExpression": "f'(x) = \\frac{1}{2\\sqrt{x}} \\implies \\frac{1}{2\\sqrt{c}} = \\frac{1}{4} \\implies 2\\sqrt{c} = 4 \\implies \\sqrt{c} = 2 \\implies c = 4",
+      "explanation": "Set derivative equal to 1/4 and solve for c.",
+      "why": "c = 4 lies strictly in (1, 9)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "sqrt(x)",
+    "expected": "1/(2*sqrt(x))",
+    "variable": "x"
+  }
+}

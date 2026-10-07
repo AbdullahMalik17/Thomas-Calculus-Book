@@ -1,0 +1,84 @@
+# Section 1.3: Trigonometric Functions
+
+Authored by **Muhammad Abdullah Athar** ([GitHub Profile](https://github.com/AbdullahMalik17)), this module provides comprehensive mathematical foundations for **Section 1.3** of *Thomas' Calculus (14th Edition)*.
+
+Trigonometric functions are fundamental throughout calculus for modeling periodic oscillations, waves, alternating currents, and rotational kinematics.
+
+---
+
+## 1. Radian Measure and Geometry
+
+Calculus requires angles to be measured in **radians**, not degrees.
+
+### Why Radians?
+By definition, a central angle $\theta$ in a circle of radius $r$ that subtends an arc of length $s$ satisfies:
+$$\theta = \frac{s}{r}$$
+
+When $r = 1$ (the unit circle), the angle measure equals the subtended arc length directly ($s = \theta$).
+- **Conversion Factor**: $\pi\text{ rad} = 180^\circ$
+  $$1\text{ rad} = \left(\frac{180}{\pi}\right)^\circ \approx 57.296^\circ, \qquad 1^\circ = \frac{\pi}{180}\text{ rad} \approx 0.01745\text{ rad}$$
+- Crucially, differentiation formulas like $\frac{d}{dx}\sin x = \cos x$ and the limit $\lim_{x \to 0}\frac{\sin x}{x} = 1$ hold **only** when $x$ is in radians.
+
+---
+
+## 2. Unit Circle Definitions and Natural Domains
+
+For any angle $\theta$, let $P(x, y)$ be the terminal point on the unit circle $x^2 + y^2 = 1$. The circular trigonometric definitions are:
+
+$$\cos \theta = x, \qquad \sin \theta = y$$
+$$\tan \theta = \frac{y}{x} = \frac{\sin \theta}{\cos \theta}, \qquad \cot \theta = \frac{x}{y} = \frac{\cos \theta}{\sin \theta}$$
+$$\sec \theta = \frac{1}{x} = \frac{1}{\cos \theta}, \qquad \csc \theta = \frac{1}{y} = \frac{1}{\sin \theta}$$
+
+### Domain and Range Summary Table
+
+| Function | Domain | Range | Period | Parity |
+| :--- | :--- | :--- | :---: | :---: |
+| $\sin x$ | $(-\infty, \infty)$ | $[-1, 1]$ | $2\pi$ | Odd ($\sin(-x) = -\sin x$) |
+| $\cos x$ | $(-\infty, \infty)$ | $[-1, 1]$ | $2\pi$ | Even ($\cos(-x) = \cos x$) |
+| $\tan x$ | $x \neq \frac{\pi}{2} + k\pi$ | $(-\infty, \infty)$ | $\pi$ | Odd ($\tan(-x) = -\tan x$) |
+| $\csc x$ | $x \neq k\pi$ | $(-\infty, -1] \cup [1, \infty)$ | $2\pi$ | Odd |
+| $\sec x$ | $x \neq \frac{\pi}{2} + k\pi$ | $(-\infty, -1] \cup [1, \infty)$ | $2\pi$ | Even |
+| $\cot x$ | $x \neq k\pi$ | $(-\infty, \infty)$ | $\pi$ | Odd |
+
+---
+
+## 3. General Sinusoids and Wave Modeling
+
+Any real-world harmonic oscillator can be modeled by a sinusoidal wave:
+$$y = A \sin\left(B(x - C)\right) + D \quad \text{or} \quad y = A \cos\left(B(x - C)\right) + D$$
+
+Where:
+- **Amplitude**: $|A|$ (half the vertical distance between peak and trough)
+- **Period**: $T = \frac{2\pi}{|B|}$ (horizontal distance for one full cycle)
+- **Frequency**: $f = \frac{1}{T} = \frac{|B|}{2\pi}$ (cycles per unit time)
+- **Phase Shift**: $C$ (horizontal translation: right if $C > 0$, left if $C < 0$)
+- **Midline (Vertical Shift)**: $y = D$ (centerline of the oscillation)
+
+---
+
+## 4. Trigonometric Identities Essential for Calculus
+
+### The Pythagorean Trio
+$$\cos^2 \theta + \sin^2 \theta = 1$$
+$$1 + \tan^2 \theta = \sec^2 \theta$$
+$$1 + \cot^2 \theta = \csc^2 \theta$$
+
+### Angle Sum and Difference
+$$\cos(A \pm B) = \cos A \cos B \mp \sin A \sin B$$
+$$\sin(A \pm B) = \sin A \cos B \pm \cos A \sin B$$
+
+### Double-Angle and Power-Reduction
+$$\sin(2\theta) = 2\sin\theta\cos\theta$$
+$$\cos(2\theta) = \cos^2\theta - \sin^2\theta = 2\cos^2\theta - 1 = 1 - 2\sin^2\theta$$
+$$\cos^2\theta = \frac{1 + \cos(2\theta)}{2}, \qquad \sin^2\theta = \frac{1 - \cos(2\theta)}{2}$$
+
+---
+
+## 5. Common Student Pitfalls
+
+1. **Confusing Degrees and Radians in Evaluation**:
+   Treating $\sin(30)$ as $1/2$ is an error in calculus; $\sin(30)$ means the sine of $30$ radians ($\approx -0.988$). The angle $30^\circ$ must be written as $\sin(\pi/6) = 1/2$.
+2. **Phase Shift Factoring**:
+   In $y = \sin(2x - \pi)$, the phase shift is **not** $\pi$. Factor out the coefficient: $y = \sin\left(2\left(x - \frac{\pi}{2}\right)\right)$, revealing the true phase shift is $\pi/2$ units to the right.
+3. **Canceling Non-Factors inside Arguments**:
+   Writing $\frac{\sin(2x)}{2} = \sin(x)$ is algebraically false; the argument $2x$ is bound to the sine function and cannot be divided by an external scalar.

@@ -271,13 +271,14 @@ class CalculusVerifier:
         expr_input: Union[str, sp.Expr],
         var_name: str = "x",
         expected_derivative: Union[str, sp.Expr] = "",
+        order: int = 1,
         item_id: Optional[str] = None,
     ) -> CalculusVerificationResult:
         """Verify symbolic derivative of an expression."""
         errors = []
         x = sp.Symbol(var_name, real=True)
         expr = self.engine.parse(expr_input, extra_symbols={var_name: x})
-        computed = sp.diff(expr, x)
+        computed = sp.diff(expr, x, order)
 
         is_equiv, method = self.engine.are_equivalent(
             computed, expected_derivative, extra_symbols={var_name: x}
@@ -294,7 +295,7 @@ class CalculusVerifier:
             computed=str(computed),
             expected=str(expected_derivative),
             errors=errors,
-            details={"method": method},
+            details={"method": method, "order": order},
         )
 
     def verify_integral(
@@ -434,14 +435,14 @@ class CalculusVerifier:
         - 'symmetry'
         - 'equivalence'
         """
-        p_type = payload.get("type", "").lower()
+        p_type = (payload.get("type") or payload.get("operation") or "").lower()
         item_id = payload.get("id")
 
         if p_type == "domain":
             return self.verify_domain(
                 expr_input=payload["expression"],
                 var_name=payload.get("variable", "x"),
-                expected_domain_str=payload.get("expected_domain"),
+                expected_domain_str=payload.get("expected_domain") or payload.get("expected"),
                 intervals=payload.get("intervals"),
                 item_id=item_id,
             )
@@ -452,15 +453,17 @@ class CalculusVerifier:
                 var_name=payload.get("variable", "x"),
                 h_name=payload.get("h_var", "h"),
                 expected_quotient=payload.get("expected_quotient"),
-                expected_derivative=payload.get("expected_derivative"),
+                expected_derivative=payload.get("expected_derivative") or payload.get("expected"),
                 item_id=item_id,
             )
 
         elif p_type == "derivative":
+            order = int(payload.get("order", 1))
             return self.verify_derivative(
                 expr_input=payload["expression"],
                 var_name=payload.get("variable", "x"),
-                expected_derivative=payload["expected_derivative"],
+                expected_derivative=payload.get("expected_derivative") or payload.get("expected", ""),
+                order=order,
                 item_id=item_id,
             )
 
@@ -469,7 +472,7 @@ class CalculusVerifier:
                 expr_input=payload["expression"],
                 var_name=payload.get("variable", "x"),
                 kind=payload.get("kind", "indefinite"),
-                expected=payload["expected"],
+                expected=payload.get("expected") or payload.get("expected_integral", ""),
                 lower=payload.get("lower"),
                 upper=payload.get("upper"),
                 item_id=item_id,
@@ -479,14 +482,16 @@ class CalculusVerifier:
             return self.verify_symmetry(
                 expr_input=payload["expression"],
                 var_name=payload.get("variable", "x"),
-                expected_symmetry=payload["expected_symmetry"],
+                expected_symmetry=payload.get("expected_symmetry") or payload.get("expected", "odd"),
                 item_id=item_id,
             )
 
         elif p_type in ("equivalence", "algebraic_equivalence"):
             expr1 = payload.get("expression") or payload.get("expr")
             expr2 = payload.get("expected") or payload.get("expr2")
-            is_equiv, method = self.engine.are_equivalent(expr1, expr2)
+            var_name = payload.get("variable")
+            extra_syms = {var_name: sp.Symbol(var_name, real=True)} if var_name else {}
+            is_equiv, method = self.engine.are_equivalent(expr1, expr2, extra_symbols=extra_syms)
             errors = [] if is_equiv else [f"Expressions '{expr1}' and '{expr2}' are not equivalent"]
             return CalculusVerificationResult(
                 valid=is_equiv,

@@ -1,0 +1,52 @@
+{
+  "id": "ch02-limits-continuity/2.1-rates-of-change-and-tangents-to-curves/solutions/ex-01",
+  "chapter": "ch02",
+  "section": "2.1",
+  "type": "solution",
+  "title": "Average Rate of Change of a Quadratic Function",
+  "exerciseReference": "Section 2.1, Exercise 1",
+  "originalTopic": "Average Rate of Change",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["rates-of-change", "quadratic", "secant-slope"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the average rate of change of f(x) = x^2 + 3x over the interval [1, 3], and compute the general difference quotient over [1, 1+h].",
+  "finalAnswer": "\\text{Average rate on } [1, 3] = 7; \\quad \\frac{\\Delta y}{\\Delta x} = h + 5",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate Endpoint Values on [1, 3]",
+      "mathExpression": "f(1) = 1^2 + 3(1) = 4, \\quad f(3) = 3^2 + 3(3) = 18",
+      "explanation": "Substitute the interval endpoints into the function to obtain corresponding y-values.",
+      "why": "Endpoint function values are required to compute net change Delta y."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Average Rate over [1, 3]",
+      "mathExpression": "\\frac{\\Delta y}{\\Delta x} = \\frac{f(3) - f(1)}{3 - 1} = \\frac{18 - 4}{2} = \\frac{14}{2} = 7",
+      "explanation": "Divide the total vertical change by the horizontal width of the interval.",
+      "why": "Definition of average rate of change over a closed interval [a, b]."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Expand f(1 + h) and Form the Difference Quotient",
+      "mathExpression": "f(1 + h) = (1 + h)^2 + 3(1 + h) = 1 + 2h + h^2 + 3 + 3h = h^2 + 5h + 4",
+      "explanation": "Substitute 1+h into the quadratic function and expand algebraically.",
+      "why": "Difference quotient requires evaluating the function at the perturbed coordinate."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Simplify the Difference Quotient",
+      "mathExpression": "\\frac{f(1 + h) - f(1)}{h} = \\frac{(h^2 + 5h + 4) - 4}{h} = \\frac{h(h + 5)}{h} = h + 5 \\quad (h \\neq 0)",
+      "explanation": "Subtract f(1) = 4, factor out h from the numerator, and cancel the non-zero denominator h.",
+      "why": "Factoring allows removal of the removable singularity at h = 0."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "((1 + h)**2 + 3*(1 + h) - 4) / h",
+    "expected": "h + 5",
+    "variable": "h"
+  }
+}

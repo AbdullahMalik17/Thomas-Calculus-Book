@@ -1,0 +1,34 @@
+{
+  "id": "ch03-derivatives/3.9-linearization-and-differentials/definitions",
+  "chapter": "ch03",
+  "section": "3.9",
+  "title": "Linearization and Differentials",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-linearization",
+      "title": "Linearization (Tangent Line Approximation)",
+      "category": "definition",
+      "latex": "L(x) = f(a) + f'(a)(x - a)",
+      "statement": "If f is differentiable at x = a, the approximating function L(x) = f(a) + f'(a)(x - a) is the linearization of f at a. The approximation f(x) approx L(x) is the standard linear approximation.",
+      "conditions": [
+        "f differentiable at a",
+        "x is near a"
+      ],
+      "explanation": "Replaces complicated non-linear functions with their tangent line locally around a.",
+      "keyTakeaway": "L(x) is the tangent line equation used as a local estimator for f(x)."
+    },
+    {
+      "id": "def-differentials",
+      "title": "Differentials and Propagated Error",
+      "category": "definition",
+      "latex": "dy = f'(x) dx, \\qquad \\text{Relative Error} = \\frac{dy}{y}, \\quad \\text{Percentage Error} = \\frac{dy}{y} \\times 100\\%",
+      "statement": "Let y = f(x) be differentiable. The differential dx is an independent variable (the increment Delta x); the differential dy is defined by dy = f'(x) dx.",
+      "conditions": [
+        "dx is small"
+      ],
+      "explanation": "dy represents the change along the tangent line, which approximates the true change Delta y along the curve.",
+      "keyTakeaway": "dy = f'(x)dx estimates the true change Delta y."
+    }
+  ]
+}

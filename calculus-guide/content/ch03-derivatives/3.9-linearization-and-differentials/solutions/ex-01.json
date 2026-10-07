@@ -1,0 +1,48 @@
+{
+  "id": "ch03-derivatives/3.9-linearization-and-differentials/solutions/ex-01",
+  "chapter": "ch03",
+  "section": "3.9",
+  "type": "solution",
+  "title": "Approximating Square Roots via Linearization",
+  "exerciseReference": "Section 3.9, Exercise 1",
+  "originalTopic": "Radical Linearization",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "linearization",
+    "approximation",
+    "radicals"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the linearization of f(x) = sqrt(x) at a = 25, and use it to approximate sqrt(26).",
+  "finalAnswer": "L(x) = 5 + \\frac{1}{10}(x - 25); \\quad \\sqrt{26} \\approx L(26) = 5.1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute f(25) and f'(25)",
+      "mathExpression": "f(25) = \\sqrt{25} = 5, \\quad f'(x) = \\frac{1}{2\\sqrt{x}} \\implies f'(25) = \\frac{1}{2(5)} = \\frac{1}{10}",
+      "explanation": "Evaluate the function and its derivative at center a = 25.",
+      "why": "Linearization coefficients."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Construct Linearization Formula",
+      "mathExpression": "L(x) = f(25) + f'(25)(x - 25) = 5 + \\frac{1}{10}(x - 25)",
+      "explanation": "Assemble L(x) = f(a) + f'(a)(x - a).",
+      "why": "Definition of linearization."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate at x = 26",
+      "mathExpression": "L(26) = 5 + \\frac{1}{10}(26 - 25) = 5 + 0.1 = 5.1",
+      "explanation": "Substitute x = 26. Note exact sqrt(26) approx 5.0990, error < 0.001.",
+      "why": "Linear estimation of sqrt(26)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "5 + Rational(1,10)*(26 - 25)",
+    "expected": "Rational(51,10)"
+  }
+}

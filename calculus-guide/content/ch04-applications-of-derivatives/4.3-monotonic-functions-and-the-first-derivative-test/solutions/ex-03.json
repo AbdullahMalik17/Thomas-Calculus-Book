@@ -1,0 +1,49 @@
+{
+  "id": "ch04-applications-of-derivatives/4.3-monotonic-functions-and-the-first-derivative-test/solutions/ex-03",
+  "chapter": "ch04",
+  "section": "4.3",
+  "type": "solution",
+  "title": "Monotonicity with Semicircular Radical",
+  "exerciseReference": "Section 4.3, Exercise 3",
+  "originalTopic": "Radical First Derivative Test",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "radicals",
+    "first-derivative-test",
+    "domain"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the local extrema of f(x) = x * sqrt(4 - x^2) on its domain [-2, 2].",
+  "finalAnswer": "\\text{Local Max at } (\\sqrt{2}, 2); \\quad \\text{Local Min at } (-\\sqrt{2}, -2)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Differentiate via Product Rule",
+      "mathExpression": "f'(x) = 1\\sqrt{4 - x^2} + x\\left(\\frac{-x}{\\sqrt{4 - x^2}}\\right) = \\frac{(4 - x^2) - x^2}{\\sqrt{4 - x^2}} = \\frac{4 - 2x^2}{\\sqrt{4 - x^2}}",
+      "explanation": "Combine terms over common denominator.",
+      "why": "Product and chain rules."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find Critical Points",
+      "mathExpression": "4 - 2x^2 = 0 \\implies x^2 = 2 \\implies x = \\pm \\sqrt{2}",
+      "explanation": "Zeroes of numerator in (-2, 2).",
+      "why": "Critical points."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Classify Extrema",
+      "mathExpression": "f(-\\sqrt{2}) = -\\sqrt{2}(2 - 0)^{1/2} = -2 \\text{ (Min)}; \\quad f(\\sqrt{2}) = \\sqrt{2}(2) = 2 \\text{ (Max)}",
+      "explanation": "Sign changes - to + at -sqrt(2), and + to - at sqrt(2).",
+      "why": "First derivative test."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "x*sqrt(4 - x**2)",
+    "expected": "(4 - 2*x**2)/sqrt(4 - x**2)",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-06",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "Log-Log Linearization of Power Function Models",
+  "exerciseReference": "Section 1.4, Exercise 27",
+  "originalTopic": "Function Modeling: Power Laws and Log-Log Regression",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["modeling", "power-law", "logarithms", "linearization"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Given a power function model y = a*x^b (with a > 0, x > 0), show how taking logarithms linearizes the equation, and explain how the constants a and b are determined from the slope and intercept of the resulting line.",
+  "finalAnswer": "\\ln y = b \\ln x + \\ln a; \\quad \\text{Slope } m = b, \\quad y\\text{-intercept } B = \\ln a \\implies a = e^B",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Take the Natural Logarithm of Both Sides",
+      "mathExpression": "\\ln y = \\ln(a x^b)",
+      "explanation": "Apply the natural logarithm to both sides of the power function equation, which is valid for positive x and a.",
+      "why": "Logarithmic functions are strictly monotonic, preserving equivalence for positive arguments."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Logarithmic Product and Power Rules",
+      "mathExpression": "\\ln(a x^b) = \\ln a + \\ln(x^b) = \\ln a + b \\ln x = b \\ln x + \\ln a",
+      "explanation": "Use ln(uv) = ln u + ln v and ln(u^b) = b ln u to separate constants and exponents into linear coefficients.",
+      "why": "Fundamental properties of logarithms convert multiplicative powers into additive linear products."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Interpret in Linear Form Y = mX + B",
+      "mathExpression": "Y = m X + B \\quad \\text{where } Y = \\ln y, \\ X = \\ln x, \\ m = b, \\ B = \\ln a",
+      "explanation": "Plotting ln y against ln x yields a straight line where the slope m directly equals the power exponent b, and the vertical intercept B gives the scale factor a = e^B.",
+      "why": "Linear regression analysis on transformed coordinate variables determines power-law parameters."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "log(a * x**b) - (log(a) + b * log(x))",
+    "expected": "0",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "ch03-derivatives/3.2-the-derivative-as-a-function/definitions",
+  "chapter": "ch03",
+  "section": "3.2",
+  "title": "The Derivative as a Function",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-derivative-function",
+      "title": "The Derivative as a Function",
+      "category": "definition",
+      "latex": "f'(x) = \\lim_{h \\to 0} \\frac{f(x + h) - f(x)}{h}",
+      "statement": "The derivative of f with respect to x is the function f' whose value at x is the limit of the difference quotient. The domain of f' is the set of all x for which this limit exists.",
+      "conditions": [
+        "x is an interior point of domain of f",
+        "Limit exists as a real number"
+      ],
+      "explanation": "Differentiating a function produces a new function that assigns to each input x the instantaneous slope of the original graph at x.",
+      "keyTakeaway": "Differentiation is an operation that maps a function f to a new function f'."
+    },
+    {
+      "id": "theorem-differentiability-implies-continuity",
+      "title": "Differentiability Implies Continuity",
+      "category": "theorem",
+      "latex": "f \\text{ is differentiable at } c \\implies f \\text{ is continuous at } c",
+      "statement": "If f has a derivative at x = c, then f is continuous at x = c.",
+      "conditions": [
+        "f'(c) exists"
+      ],
+      "explanation": "Since f(x) - f(c) = [(f(x) - f(c))/(x - c)] * (x - c), taking the limit gives f'(c) * 0 = 0, which proves lim f(x) = f(c). The converse is FALSE: f(x) = |x| is continuous at 0 but not differentiable.",
+      "keyTakeaway": "Differentiability is a strictly stronger smoothness condition than continuity."
+    },
+    {
+      "id": "rule-failure-of-differentiability",
+      "title": "Modes of Non-Differentiability",
+      "category": "rule",
+      "latex": "\\text{Corner } (f'_+ \\neq f'_-), \\quad \\text{Cusp } (f' \\to \\pm \\infty), \\quad \\text{Vertical Tangent } (|f'| \\to \\infty), \\quad \\text{Discontinuity}",
+      "statement": "A function fails to be differentiable at x = c if: (1) it has a corner (one-sided derivatives exist but differ), (2) a cusp, (3) a vertical tangent, or (4) a discontinuity.",
+      "conditions": [
+        "c in domain of f or boundary"
+      ],
+      "explanation": "Smoothness requires the graph to have a well-defined non-vertical tangent line with matching left and right slopes.",
+      "keyTakeaway": "Corners, cusps, vertical tangents, and discontinuities prevent differentiability."
+    }
+  ]
+}

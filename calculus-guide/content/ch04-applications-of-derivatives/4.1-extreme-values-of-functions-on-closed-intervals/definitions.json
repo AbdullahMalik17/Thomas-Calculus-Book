@@ -1,0 +1,47 @@
+{
+  "id": "ch04-applications-of-derivatives/4.1-extreme-values-of-functions-on-closed-intervals/definitions",
+  "chapter": "ch04",
+  "section": "4.1",
+  "title": "Extreme Values of Functions on Closed Intervals",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-extreme-value-theorem",
+      "title": "The Extreme Value Theorem (EVT)",
+      "category": "theorem",
+      "latex": "f \\in C[a, b] \\implies \\exists c, d \\in [a, b] \\text{ s.t. } f(c) \\le f(x) \\le f(d) \\; \\forall x \\in [a, b]",
+      "statement": "If f is continuous on a closed, bounded interval [a, b], then f attains both an absolute maximum value M and an absolute minimum value m at least once in [a, b].",
+      "conditions": [
+        "f must be continuous on [a, b]",
+        "The interval [a, b] must be both closed and bounded"
+      ],
+      "explanation": "If the interval is open (e.g. (0, 1)) or f is discontinuous, the function may fail to attain extreme values.",
+      "keyTakeaway": "Continuous functions on closed bounded intervals always attain maximum and minimum values."
+    },
+    {
+      "id": "def-critical-point",
+      "title": "Critical Point of a Function",
+      "category": "definition",
+      "latex": "x_0 \\in \\text{Domain}(f) \\quad \\text{where } f'(x_0) = 0 \\quad \\text{or } f'(x_0) \\text{ is undefined}",
+      "statement": "An interior point c of the domain of f is a critical point if either f'(c) = 0 or f'(c) does not exist.",
+      "conditions": [
+        "c must belong to the interior of domain of f"
+      ],
+      "explanation": "Fermat's Theorem states that local extrema can occur ONLY at critical points or boundary endpoints.",
+      "keyTakeaway": "Candidates for local extrema are points where f' is zero or undefined."
+    },
+    {
+      "id": "rule-closed-interval-method",
+      "title": "The Closed Interval Method",
+      "category": "rule",
+      "latex": "\\text{Absolute Extrema} = \\max / \\min \\{ f(c_i), f(a), f(b) \\}",
+      "statement": "To find absolute extrema of a continuous function on [a, b]: (1) Find all critical points in (a, b), (2) Evaluate f at all critical points, (3) Evaluate f at endpoints a and b, (4) The largest value is the absolute max; the smallest is the absolute min.",
+      "conditions": [
+        "Interval [a, b] is closed and bounded",
+        "f is continuous on [a, b]"
+      ],
+      "explanation": "Guaranteed to locate global extrema without needing second derivative tests.",
+      "keyTakeaway": "Evaluate f only at interior critical points and boundary endpoints."
+    }
+  ]
+}

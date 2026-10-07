@@ -1,0 +1,113 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/definitions",
+  "chapter": "ch01",
+  "section": "1.2",
+  "title": "Combining Functions; Shifting and Scaling Graphs",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-algebra-of-functions",
+      "title": "Algebraic Combinations of Functions",
+      "category": "definition",
+      "latex": "(f \\pm g)(x) = f(x) \\pm g(x), \\quad (f \\cdot g)(x) = f(x)g(x), \\quad \\left(\\frac{f}{g}\\right)(x) = \\frac{f(x)}{g(x)}",
+      "statement": "If f and g are functions with domains D(f) and D(g), their sum, difference, and product are defined on the intersection D(f) \\cap D(g). Their quotient f/g is defined on the intersection excluding points where g(x) = 0.",
+      "conditions": [
+        "Domain of f + g, f - g, f * g is D(f) \\cap D(g)",
+        "Domain of f / g is {x \\in D(f) \\cap D(g) : g(x) \\neq 0}"
+      ],
+      "explanation": "Inputs must be valid for both functions simultaneously. For quotients, zeroes of the denominator function create additional domain exclusions.",
+      "keyTakeaway": "Always intersect the domains of individual functions before evaluating combinations."
+    },
+    {
+      "id": "def-composite-function",
+      "title": "Composition of Functions",
+      "category": "definition",
+      "latex": "(f \\circ g)(x) = f(g(x))",
+      "statement": "Given two functions f and g, the composite function f \\circ g (also read 'f circle g' or 'f of g') is defined by (f \\circ g)(x) = f(g(x)).",
+      "conditions": [
+        "x must be in the domain of the inner function g",
+        "g(x) must be in the domain of the outer function f"
+      ],
+      "explanation": "Function composition represents a sequential evaluation: input x first passes through g to produce g(x), which then serves as the input to f. In general, composition is non-commutative: (f \\circ g)(x) \\neq (g \\circ f)(x).",
+      "keyTakeaway": "Domain of f(g(x)) requires both x in Domain(g) AND g(x) in Domain(f)."
+    },
+    {
+      "id": "rule-vertical-shift",
+      "title": "Vertical Shift of a Graph",
+      "category": "rule",
+      "latex": "y = f(x) + k",
+      "statement": "Adding a constant k to a function shifts its graph vertically: upward by k units if k > 0, and downward by |k| units if k < 0.",
+      "conditions": [
+        "x-coordinates remain unchanged",
+        "Every y-coordinate becomes y + k"
+      ],
+      "explanation": "The shape, width, and domain of the graph remain identical; the range shifts by k units: [a, b] -> [a+k, b+k].",
+      "keyTakeaway": "Adding outside the function shifts vertically."
+    },
+    {
+      "id": "rule-horizontal-shift",
+      "title": "Horizontal Shift of a Graph",
+      "category": "rule",
+      "latex": "y = f(x - h)",
+      "statement": "Subtracting a constant h from the input x shifts the graph horizontally: to the right by h units if h > 0, and to the left by |h| units if h < 0.",
+      "conditions": [
+        "y-coordinates remain unchanged",
+        "Points (x, y) move to (x + h, y)"
+      ],
+      "explanation": "To achieve the same output value, the new input x must be h units larger than the original input.",
+      "keyTakeaway": "Subtracting inside shifts right; adding inside shifts left."
+    },
+    {
+      "id": "rule-vertical-scaling",
+      "title": "Vertical Stretching and Compressing",
+      "category": "rule",
+      "latex": "y = c \\cdot f(x), \\quad c > 0",
+      "statement": "Multiplying f(x) by a positive constant c stretches the graph vertically away from the x-axis by a factor of c if c > 1, and compresses it toward the x-axis by a factor of c if 0 < c < 1.",
+      "conditions": [
+        "x-intercepts remain invariant (f(x) = 0 implies c * f(x) = 0)",
+        "Every y-coordinate is scaled by c"
+      ],
+      "explanation": "Vertical scaling affects only the output values without altering the horizontal spacing or the domain.",
+      "keyTakeaway": "Multiplying by c > 1 stretches vertically; 0 < c < 1 compresses vertically."
+    },
+    {
+      "id": "rule-horizontal-scaling",
+      "title": "Horizontal Stretching and Compressing",
+      "category": "rule",
+      "latex": "y = f(c \\cdot x), \\quad c > 0",
+      "statement": "Multiplying the input x by a positive constant c compresses the graph horizontally toward the y-axis by a factor of 1/c if c > 1, and stretches it away from the y-axis by a factor of 1/c if 0 < c < 1.",
+      "conditions": [
+        "y-intercept remains invariant (f(c * 0) = f(0))",
+        "Every x-coordinate is divided by c"
+      ],
+      "explanation": "Multiplying input x by c causes the function to experience its variations c times faster along the x-axis.",
+      "keyTakeaway": "Multiplying by c > 1 compresses horizontally by 1/c; 0 < c < 1 stretches horizontally."
+    },
+    {
+      "id": "rule-reflections",
+      "title": "Reflections Across Coordinate Axes",
+      "category": "rule",
+      "latex": "y = -f(x) \\quad (\\text{x-axis}), \\qquad y = f(-x) \\quad (\\text{y-axis})",
+      "statement": "The graph of y = -f(x) is the reflection of y = f(x) across the x-axis. The graph of y = f(-x) is the reflection of y = f(x) across the y-axis.",
+      "conditions": [
+        "-f(x) negates every output y",
+        "f(-x) negates every input x"
+      ],
+      "explanation": "Simultaneously applying both reflections y = -f(-x) produces a point reflection through the origin.",
+      "keyTakeaway": "Negative outside reflects over x-axis; negative inside reflects over y-axis."
+    },
+    {
+      "id": "formula-ellipse-scaling",
+      "title": "Standard Equation of an Ellipse via Scaling",
+      "category": "formula",
+      "latex": "\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1",
+      "statement": "An ellipse centered at the origin with semi-major axis a along x and semi-minor axis b along y is obtained by scaling the unit circle x^2 + y^2 = 1 horizontally by factor a and vertically by factor b.",
+      "conditions": [
+        "a > 0, b > 0",
+        "When a = b = r, the ellipse reduces to the circle of radius r"
+      ],
+      "explanation": "Substituting x/a for x and y/b for y in the circle equation demonstrates that stretching a circle by unequal factors along the coordinate axes generates an ellipse.",
+      "keyTakeaway": "Ellipses are circles whose coordinate axes have undergone independent horizontal and vertical scalings."
+    }
+  ]
+}

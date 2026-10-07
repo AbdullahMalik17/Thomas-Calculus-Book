@@ -207,3 +207,31 @@ export const ContentItemSchema = z.discriminatedUnion('type', [
   }
 });
 export type ContentItem = z.infer<typeof ContentItemSchema>;
+
+/**
+ * Schema for an individual mathematical definition, theorem, rule, or test.
+ */
+export const DefinitionItemSchema = z.object({
+  id: z.string().min(1, 'Definition ID must not be empty'),
+  title: z.string().min(3, 'Definition title is required'),
+  category: z.enum(['definition', 'theorem', 'formula', 'rule', 'test']),
+  latex: z.string().optional(),
+  statement: z.string().min(10, 'Mathematical statement must be at least 10 characters'),
+  conditions: z.array(z.string()).optional(),
+  explanation: z.string().min(10, 'Pedagogical explanation must be at least 10 characters'),
+  keyTakeaway: z.string().optional(),
+});
+export type DefinitionItem = z.infer<typeof DefinitionItemSchema>;
+
+/**
+ * Schema for definitions.json file in each section.
+ */
+export const DefinitionsFileSchema = z.object({
+  id: z.string().min(1),
+  chapter: z.string().regex(/^ch\d{2}$/, 'Chapter must follow format chNN (e.g. ch01)'),
+  section: z.string().regex(/^\d+\.\d+$/, 'Section must follow format N.N (e.g. 1.2)'),
+  title: z.string().min(3),
+  author: z.string().default('Muhammad Abdullah Athar'),
+  definitions: z.array(DefinitionItemSchema).min(1, 'Must include at least one definition'),
+});
+export type DefinitionsFile = z.infer<typeof DefinitionsFileSchema>;

@@ -1,0 +1,30 @@
+# Section 3.9: Linearization and Differentials
+
+Linearization harnesses the tangent line as an analytical computing tool, replacing complex non-linear functions with simple linear ones near a reference point $a$.
+
+---
+
+## 1. Linearization Formula
+
+$$
+f(x) \approx L(x) = f(a) + f'(a)(x - a)
+$$
+
+### Important Standard Linear Approximations near $x = 0$:
+- $\sqrt{1 + x} \approx 1 + \frac{1}{2}x$
+- $\sin x \approx x$
+- $\cos x \approx 1$
+- $(1 + x)^k \approx 1 + kx$
+
+---
+
+## 2. Differentials and Error Propagation
+
+If an input $x$ is measured with an uncertainty $dx$, the resulting propagated error in $y = f(x)$ is estimated by the differential:
+
+$$
+dy = f'(x) dx
+$$
+
+- **Relative Error**: $\frac{dy}{y}$
+- **Percentage Error**: $\frac{dy}{y} \times 100\%$

@@ -1,0 +1,48 @@
+{
+  "id": "ch04-applications-of-derivatives/4.7-newtons-method/solutions/ex-01",
+  "chapter": "ch04",
+  "section": "4.7",
+  "type": "solution",
+  "title": "Approximating Square Root of 5 via Newton's Method",
+  "exerciseReference": "Section 4.7, Exercise 1",
+  "originalTopic": "Square Root Approximation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "newtons-method",
+    "numerical",
+    "square-root"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Use Newton's method to approximate sqrt(5) by finding the positive root of f(x) = x^2 - 5 with initial guess x_0 = 2, computing x_1 and x_2.",
+  "finalAnswer": "x_1 = \\frac{9}{4} = 2.25, \\quad x_2 = \\frac{161}{72} \\approx 2.236111",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Derive Iteration Formula",
+      "mathExpression": "f(x) = x^2 - 5 \\implies f'(x) = 2x \\implies x_{n+1} = x_n - \\frac{x_n^2 - 5}{2x_n} = \\frac{x_n^2 + 5}{2x_n} = \\frac{1}{2}\\left(x_n + \\frac{5}{x_n}\\right)",
+      "explanation": "Apply Newton's formula.",
+      "why": "Babylonian square root algorithm."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute First Iteration x_1",
+      "mathExpression": "x_1 = \\frac{1}{2}\\left(2 + \\frac{5}{2}\\right) = \\frac{1}{2}\\left(\\frac{9}{2}\\right) = \\frac{9}{4} = 2.25",
+      "explanation": "Substitute x_0 = 2.",
+      "why": "First iteration."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Second Iteration x_2",
+      "mathExpression": "x_2 = \\frac{1}{2}\\left(\\frac{9}{4} + \\frac{5}{9/4}\\right) = \\frac{1}{2}\\left(\\frac{9}{4} + \\frac{20}{9}\\right) = \\frac{1}{2}\\left(\\frac{81 + 80}{36}\\right) = \\frac{161}{72} \\approx 2.236111",
+      "explanation": "Accurate to 5 decimal places (true sqrt(5) = 2.236068...).",
+      "why": "Second iteration."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "Rational(1,2)*(Rational(9,4) + 5/Rational(9,4))",
+    "expected": "Rational(161,72)"
+  }
+}

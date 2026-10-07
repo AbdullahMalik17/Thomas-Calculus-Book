@@ -1,0 +1,52 @@
+{
+  "id": "ch02-limits-continuity/2.1-rates-of-change-and-tangents-to-curves/solutions/ex-04",
+  "chapter": "ch02",
+  "section": "2.1",
+  "type": "solution",
+  "title": "Rate of Change of Area of a Circle",
+  "exerciseReference": "Section 2.1, Exercise 4",
+  "originalTopic": "Geometric Rates of Change",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["geometric-rate", "circle-area", "circumference"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Let A(r) = pi*r^2 be the area of a circle with radius r. Find the average rate of change of area when r increases from 3 to 3.5, and compute the instantaneous rate of change of area with respect to radius at r = 3.",
+  "finalAnswer": "\\text{Average rate } = 6.5\\pi; \\quad \\frac{dA}{dr}\\Big|_{r=3} = 6\\pi = 2\\pi(3)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Average Rate of Change on [3, 3.5]",
+      "mathExpression": "\\frac{\\Delta A}{\\Delta r} = \\frac{\\pi(3.5)^2 - \\pi(3)^2}{3.5 - 3} = \\frac{\\pi(12.25 - 9)}{0.5} = \\frac{3.25\\pi}{0.5} = 6.5\\pi",
+      "explanation": "Evaluate the area at r = 3 and r = 3.5 and divide the change in area by the radius change Delta r = 0.5.",
+      "why": "Average rate is the ratio of area increment to radius increment."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Formulate the Instantaneous Rate of Change",
+      "mathExpression": "\\frac{dA}{dr} = \\lim_{h \\to 0} \\frac{A(r + h) - A(r)}{h} = \\lim_{h \\to 0} \\frac{\\pi(r + h)^2 - \\pi r^2}{h}",
+      "explanation": "Express the instantaneous rate of change at arbitrary radius r as the limit of the difference quotient.",
+      "why": "Instantaneous rate of change is the derivative defined by the difference quotient limit."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Expand and Cancel the Parameter h",
+      "mathExpression": "\\lim_{h \\to 0} \\frac{\\pi(r^2 + 2rh + h^2) - \\pi r^2}{h} = \\lim_{h \\to 0} \\frac{\\pi(2rh + h^2)}{h} = \\lim_{h \\to 0} \\pi(2r + h) = 2\\pi r",
+      "explanation": "Expand the squared binomial, subtract the original area, and factor out h.",
+      "why": "Canceling h eliminates the indeterminate form and reveals the circumference formula."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Evaluate at r = 3",
+      "mathExpression": "\\frac{dA}{dr}\\Big|_{r=3} = 2\\pi(3) = 6\\pi",
+      "explanation": "Substitute r = 3 into the derived rate formula 2*pi*r.",
+      "why": "The instantaneous rate of change of circular area with respect to radius equals its circumference."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(pi*(r + h)**2 - pi*r**2) / h",
+    "expected": "pi*(2*r + h)",
+    "variable": "h"
+  }
+}

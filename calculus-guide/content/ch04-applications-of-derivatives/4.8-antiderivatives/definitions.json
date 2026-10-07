@@ -1,0 +1,34 @@
+{
+  "id": "ch04-applications-of-derivatives/4.8-antiderivatives/definitions",
+  "chapter": "ch04",
+  "section": "4.8",
+  "title": "Antiderivatives",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-antiderivative",
+      "title": "Definition of an Antiderivative",
+      "category": "definition",
+      "latex": "F'(x) = f(x) \\implies \\int f(x) \\, dx = F(x) + C",
+      "statement": "A function F is an antiderivative of f on an interval I if F'(x) = f(x) for all x in I. The collection of all antiderivatives of f is its indefinite integral, denoted int f(x) dx = F(x) + C where C is an arbitrary constant of integration.",
+      "conditions": [
+        "F'(x) = f(x) on interval I",
+        "C is an arbitrary real constant"
+      ],
+      "explanation": "Two antiderivatives of the same function on an interval differ by at most a constant: F(x) - G(x) = C.",
+      "keyTakeaway": "Antidifferentiation is the inverse operation of differentiation."
+    },
+    {
+      "id": "rule-power-rule-integration",
+      "title": "Power Rule for Antiderivatives",
+      "category": "rule",
+      "latex": "\\int x^n \\, dx = \\frac{x^{n+1}}{n + 1} + C \\quad (n \\neq -1)",
+      "statement": "To antidifferentiate a power of x (other than -1), increment the exponent by 1 and divide by the new exponent.",
+      "conditions": [
+        "n != -1 (when n = -1, int (1/x) dx = ln|x| + C)"
+      ],
+      "explanation": "Direct inverse of the differentiation power rule.",
+      "keyTakeaway": "Add 1 to the exponent and divide by the new exponent."
+    }
+  ]
+}

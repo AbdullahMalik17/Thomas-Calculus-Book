@@ -1,0 +1,45 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-07",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "Semi-Log Linearization of Exponential Decay",
+  "exerciseReference": "Section 1.4, Exercise 31",
+  "originalTopic": "Function Modeling: Exponential Growth and Decay",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["modeling", "exponential-decay", "semi-log", "linearization"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Demonstrate how the exponential model y = A*e^(k*x) is linearized on a semi-log plot, and express the growth constant k and initial amount A in terms of the linear regression parameters.",
+  "finalAnswer": "\\ln y = kx + \\ln A; \\quad \\text{Slope } m = k, \\quad y\\text{-intercept } B = \\ln A \\implies A = e^B",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Natural Logarithms",
+      "mathExpression": "\\ln y = \\ln\\left(A e^{kx}\\right) = \\ln A + \\ln\\left(e^{kx}\\right)",
+      "explanation": "Take natural logs of both sides and apply the logarithmic product rule.",
+      "why": "Natural logarithms uncouple multiplicative exponential factors."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Simplify Using Inverse Properties",
+      "mathExpression": "\\ln\\left(e^{kx}\\right) = kx \\implies \\ln y = kx + \\ln A",
+      "explanation": "Because ln and the exponential base e are mutual inverses, ln(e^(kx)) = kx.",
+      "why": "Inverse identity ln(e^u) = u for all real u."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Identify Semi-Log Coordinate Linearity",
+      "mathExpression": "Y = m x + B \\quad \\text{where } Y = \\ln y, \\ m = k, \\ B = \\ln A",
+      "explanation": "Plotting ln y versus untransformed x yields a straight line with slope equal to the exponential growth/decay constant k and vertical intercept ln A.",
+      "why": "Semi-log transformations linearize exponential models directly against linear time or space."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "log(A * exp(k*x)) - (k*x + log(A))",
+    "expected": "0",
+    "variable": "x"
+  }
+}

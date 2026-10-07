@@ -1,0 +1,43 @@
+{
+  "id": "ch04-applications-of-derivatives/4.8-antiderivatives/solutions/ex-03",
+  "chapter": "ch04",
+  "section": "4.8",
+  "type": "solution",
+  "title": "Indefinite Integral of Trigonometric Linear Combination",
+  "exerciseReference": "Section 4.8, Exercise 3",
+  "originalTopic": "Trigonometric Antiderivatives",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "indefinite-integral",
+    "antiderivative"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate: int (3*sec^2(x) - 4*sin(x) + 2*cos(x)) dx.",
+  "finalAnswer": "3\\tan x + 4\\cos x + 2\\sin x + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Integrate Each Trigonometric Term",
+      "mathExpression": "\\int 3\\sec^2 x \\, dx = 3\\tan x; \\quad \\int -4\\sin x \\, dx = -4(-\\cos x) = 4\\cos x; \\quad \\int 2\\cos x \\, dx = 2\\sin x",
+      "explanation": "Use basic trigonometric antiderivative rules.",
+      "why": "Antiderivatives of standard circular functions."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Assemble General Antiderivative",
+      "mathExpression": "3\\tan x + 4\\cos x + 2\\sin x + C",
+      "explanation": "Add constant C.",
+      "why": "Complete indefinite integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "type": "integral",
+    "expression": "3*sec(x)**2 - 4*sin(x) + 2*cos(x)",
+    "expected": "3*tan(x) + 4*cos(x) + 2*sin(x)",
+    "variable": "x",
+    "kind": "indefinite"
+  }
+}

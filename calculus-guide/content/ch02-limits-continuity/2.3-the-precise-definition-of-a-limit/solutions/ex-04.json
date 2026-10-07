@@ -1,0 +1,42 @@
+{
+  "id": "ch02-limits-continuity/2.3-the-precise-definition-of-a-limit/solutions/ex-04",
+  "chapter": "ch02",
+  "section": "2.3",
+  "type": "solution",
+  "title": "Formal Proof for a Constant Function",
+  "exerciseReference": "Section 2.3, Exercise 4",
+  "originalTopic": "Constant Limit Proof",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "constant",
+    "epsilon-delta",
+    "proof"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Prove using the epsilon-delta definition that lim_{x -> c} k = k for any real constant k.",
+  "finalAnswer": "\\text{For any } \\epsilon > 0, \\text{ choose any } \\delta > 0 \\text{ (e.g., } \\delta = 1).",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate the Output Distance",
+      "mathExpression": "|f(x) - L| = |k - k| = 0",
+      "explanation": "Since the function value is identically k for all x, the distance to L = k is zero.",
+      "why": "A constant function produces the exact same output for all inputs."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Conclude for Any Positive Delta",
+      "mathExpression": "0 < \\epsilon \\quad \\text{holds trivially for any } \\epsilon > 0",
+      "explanation": "Since |f(x) - L| = 0 is less than any positive epsilon, any positive delta satisfies the condition.",
+      "why": "Zero is strictly less than every positive real number epsilon."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "k - k",
+    "expected": "0",
+    "variable": "k"
+  }
+}

@@ -1,0 +1,60 @@
+# Section 1.4: Graphing with Software and Function Modeling
+
+Authored by **Muhammad Abdullah Athar** ([GitHub Profile](https://github.com/AbdullahMalik17)), this study module covers **Section 1.4** of *Thomas' Calculus (14th Edition)*.
+
+Modern calculus utilizes digital graphing utilities (computer algebra systems, graphing calculators, Desmos, GeoGebra) to explore functions and visualize complex phenomena. However, understanding the mathematical principles behind digital plotting and parametric representations is essential to avoid falling prey to computational artifacts.
+
+---
+
+## 1. Viewing Windows and Digital Artifacts
+
+A graphing display presents a window defined by $[x_{\min}, x_{\max}]$ by $[y_{\min}, y_{\max}]$.
+
+### The Anatomy of Graphical Distortion
+1. **Aspect Ratio Distortion**: If the visual distance per unit along the horizontal axis differs from that along the vertical axis, circles appear as ellipses, and perpendicular lines appear oblique.
+2. **Hidden Local Extrema**: If the viewing window is too narrow or too wide, turning points and local roots can fall entirely outside the display area.
+3. **Aliasing and Sampling Errors**: Graphing software evaluates a function at a finite number of equally spaced pixel columns. If a function oscillates rapidly (such as $f(x) = \sin(50x)$ or $f(x) = \sin(1/x)$ near $x = 0$), the plotted curve connects disjoint points arbitrarily, creating deceptive moiré patterns.
+4. **Discontinuity Segment Artifacts**: In non-adaptive plotters, a function with a vertical asymptote like $y = \frac{1}{x - 2}$ may display a nearly vertical line connecting the extreme positive and negative values across the asymptote.
+
+---
+
+## 2. Parametric Equations: Curves in Motion
+
+Many curves in physics and engineering cannot be expressed as a single function $y = f(x)$ because they double back and fail the Vertical Line Test.
+
+### Defining a Parametric Curve
+We express both $x$ and $y$ as functions of an independent parameter $t$:
+$$x = f(t), \qquad y = g(t), \qquad t \in [a, b]$$
+
+As $t$ increases from $a$ to $b$, the point $(x(t), y(t))$ traces out a curve with a specific **orientation** (direction of motion).
+
+### Eliminating the Parameter
+To uncover the Cartesian equation:
+1. **Algebraic Substitution**: Solve one equation for $t$ (e.g. $t = \frac{x - x_0}{v_x}$) and substitute into the second equation.
+2. **Trigonometric Elimination**: For circular or elliptical trajectories involving sine and cosine, apply the Pythagorean identity:
+   $$x = h + a\cos t, \quad y = k + b\sin t \implies \frac{(x - h)^2}{a^2} + \frac{(y - k)^2}{b^2} = \cos^2 t + \sin^2 t = 1$$
+
+---
+
+## 3. Empirical Modeling and Logarithmic Scales
+
+When working with experimental data, transforming variables linearizes power and exponential laws:
+
+1. **Power Function Models**: $y = a x^b$
+   Taking natural logarithms of both sides yields:
+   $$\ln y = \ln a + b \ln x$$
+   Plotting $\ln y$ versus $\ln x$ (a **log-log plot**) produces a straight line whose slope is the power $b$ and whose vertical intercept is $\ln a$.
+
+2. **Exponential Models**: $y = a e^{kx}$
+   Taking natural logarithms:
+   $$\ln y = \ln a + kx$$
+   Plotting $\ln y$ versus $x$ (a **semi-log plot**) produces a straight line whose slope is the growth/decay rate $k$.
+
+---
+
+## 4. Common Student Pitfalls
+
+1. **Ignoring Parametric Orientation and Domain Truncation**:
+   Eliminating $t$ from $x = t^2, y = t$ yields $x = y^2$. However, because $x = t^2 \ge 0$, the parametric curve only traces the right half of the parabola ($x \ge 0$). Failing to retain parameter restrictions leads to incorrect geometric domains.
+2. **Confusing Window Bounds with Domain/Range**:
+   Setting $[x_{\min}, x_{\max}] = [-10, 10]$ on a grapher does not change the mathematical domain of $f(x) = \sqrt{x}$; the display simply leaves $x < 0$ blank.

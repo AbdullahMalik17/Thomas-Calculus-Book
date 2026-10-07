@@ -7,24 +7,52 @@ Powered by SymPy
 
 from __future__ import annotations
 
-import pytest
-from tools.verify.engine import SymPyEngine, are_algebraically_equivalent
-from tools.verify.mcq_verifier import MCQVerifier, verify_mcq_data
-from tools.verify.calculus_verifier import CalculusVerifier, verify_calculus_payload
-from tools.verify.fixtures import create_fixtures, run_all_fixtures
+import os
+import sys
+from pathlib import Path
+
+# Ensure project root and tools package are in sys.path
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = SCRIPT_DIR.parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+if str(SCRIPT_DIR.parent) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIR.parent))
+
+try:
+    import pytest
+except ImportError:
+    pytest = None
+
+try:
+    from tools.verify.engine import SymPyEngine, are_algebraically_equivalent
+    from tools.verify.mcq_verifier import MCQVerifier, verify_mcq_data
+    from tools.verify.calculus_verifier import CalculusVerifier, verify_calculus_payload
+    from tools.verify.fixtures import create_fixtures, run_all_fixtures
+except ImportError:
+    from engine import SymPyEngine, are_algebraically_equivalent
+    from mcq_verifier import MCQVerifier, verify_mcq_data
+    from calculus_verifier import CalculusVerifier, verify_calculus_payload
+    from fixtures import create_fixtures, run_all_fixtures
 
 
-@pytest.fixture
+def _dummy_fixture(fn):
+    return fn
+
+fixture = pytest.fixture if pytest is not None else _dummy_fixture
+
+
+@fixture
 def engine():
     return SymPyEngine()
 
 
-@pytest.fixture
+@fixture
 def mcq_verifier():
     return MCQVerifier()
 
 
-@pytest.fixture
+@fixture
 def calculus_verifier():
     return CalculusVerifier()
 
@@ -193,3 +221,40 @@ def test_calculus_ftc_integral(calculus_verifier):
         expected="log(x**2 + 1)",
     )
     assert res.valid is True
+
+
+def test_all_sections_mathematical_validation():
+    """Verify that all content sections across Chapters 1-4 pass mathematical validation."""
+    from tools.verify.section_validator import validate_section_dir
+    from tools.verify.verify import locate_all_sections
+
+    sections = locate_all_sections()
+    assert len(sections) >= 27, f"Expected at least 27 sections, found {len(sections)}"
+    failures = []
+    for sec in sections:
+        rep = validate_section_dir(sec)
+        if not rep.valid:
+            failures.append(f"{sec.name}: {rep.errors}")
+    assert len(failures) == 0, f"Section validation failed in: {failures}"
+
+
+if __name__ == "__main__":
+    eng = SymPyEngine()
+    mcq_v = MCQVerifier()
+    calc_v = CalculusVerifier()
+
+    test_all_24_fixtures_pass()
+    test_algebraic_equivalence_polynomials(eng)
+    test_algebraic_equivalence_trig(eng)
+    test_algebraic_equivalence_radicals(eng)
+    test_algebraic_equivalence_logs_and_powers(eng)
+    test_mcq_valid_passes(mcq_v)
+    test_mcq_rejects_equivalent_distractor(mcq_v)
+    test_mcq_rejects_duplicate_distractors(mcq_v)
+    test_mcq_rejects_missing_misconceptions(mcq_v)
+    test_calculus_continuous_domain(calc_v)
+    test_calculus_difference_quotient(calc_v)
+    test_calculus_symmetry_odd_and_even(calc_v)
+    test_calculus_ftc_integral(calc_v)
+    test_all_sections_mathematical_validation()
+    print("ALL TEST_VERIFY CHECKS PASSED (including all 27 curriculum sections)!")

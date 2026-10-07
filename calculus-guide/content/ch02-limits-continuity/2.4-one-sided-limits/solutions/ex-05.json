@@ -1,0 +1,48 @@
+{
+  "id": "ch02-limits-continuity/2.4-one-sided-limits/solutions/ex-05",
+  "chapter": "ch02",
+  "section": "2.4",
+  "type": "solution",
+  "title": "Trigonometric Limit with Conjugate Multiplication",
+  "exerciseReference": "Section 2.4, Exercise 5",
+  "originalTopic": "Cosine Conjugates",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "conjugate",
+    "pythagorean-identity"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate: lim_{x -> 0} (1 - cos x) / x^2.",
+  "finalAnswer": "\\lim_{x \\to 0} \\frac{1 - \\cos x}{x^2} = \\frac{1}{2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Multiply by the Trigonometric Conjugate",
+      "mathExpression": "\\frac{1 - \\cos x}{x^2} \\cdot \\frac{1 + \\cos x}{1 + \\cos x} = \\frac{1 - \\cos^2 x}{x^2(1 + \\cos x)}",
+      "explanation": "Multiply numerator and denominator by 1 + cos(x).",
+      "why": "Conjugate multiplication allows applying the Pythagorean identity."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Pythagorean Identity",
+      "mathExpression": "1 - \\cos^2 x = \\sin^2 x \\implies \\frac{\\sin^2 x}{x^2(1 + \\cos x)} = \\left(\\frac{\\sin x}{x}\\right)^2 \\cdot \\frac{1}{1 + \\cos x}",
+      "explanation": "Replace 1 - cos^2(x) with sin^2(x) and group terms.",
+      "why": "Pythagorean identity sin^2(x) + cos^2(x) = 1."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Using Limit Laws",
+      "mathExpression": "\\lim_{x \\to 0} \\left(\\frac{\\sin x}{x}\\right)^2 \\cdot \\lim_{x \\to 0} \\frac{1}{1 + \\cos x} = (1)^2 \\cdot \\frac{1}{1 + 1} = \\frac{1}{2}",
+      "explanation": "Apply product rule of limits and the fundamental limit lim_{x->0} sin(x)/x = 1.",
+      "why": "Cosine is continuous at 0 with cos(0) = 1."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "1**2 * (1 / (1 + 1))",
+    "expected": "1/2"
+  }
+}

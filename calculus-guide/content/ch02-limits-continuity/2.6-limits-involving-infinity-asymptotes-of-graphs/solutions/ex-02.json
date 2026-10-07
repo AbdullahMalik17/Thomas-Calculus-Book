@@ -1,0 +1,55 @@
+{
+  "id": "ch02-limits-continuity/2.6-limits-involving-infinity-asymptotes-of-graphs/solutions/ex-02",
+  "chapter": "ch02",
+  "section": "2.6",
+  "type": "solution",
+  "title": "Limits at Infinity with Radicals",
+  "exerciseReference": "Section 2.6, Exercise 2",
+  "originalTopic": "Radical End Behavior",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "radicals",
+    "limits-at-infinity",
+    "asymmetry"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate lim_{x -> oo} sqrt(4x^2 + 1) / (3x - 2) and lim_{x -> -oo} sqrt(4x^2 + 1) / (3x - 2).",
+  "finalAnswer": "\\lim_{x \\to \\infty} = \\frac{2}{3}, \\quad \\lim_{x \\to -\\infty} = -\\frac{2}{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Factor x from the Radical for x > 0",
+      "mathExpression": "x > 0 \\implies \\sqrt{4x^2 + 1} = \\sqrt{x^2(4 + 1/x^2)} = |x|\\sqrt{4 + 1/x^2} = x\\sqrt{4 + 1/x^2}",
+      "explanation": "Since x is positive as x -> oo, |x| = x.",
+      "why": "Square root of x^2 equals absolute value |x|."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Limit as x -> +oo",
+      "mathExpression": "\\lim_{x \\to \\infty} \\frac{x\\sqrt{4 + 1/x^2}}{x(3 - 2/x)} = \\lim_{x \\to \\infty} \\frac{\\sqrt{4 + 1/x^2}}{3 - 2/x} = \\frac{\\sqrt{4 + 0}}{3 - 0} = \\frac{2}{3}",
+      "explanation": "Cancel factor x and evaluate limits of reciprocal terms.",
+      "why": "Reciprocal terms 1/x^2 and 2/x approach 0."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Factor x from the Radical for x < 0",
+      "mathExpression": "x < 0 \\implies \\sqrt{4x^2 + 1} = |x|\\sqrt{4 + 1/x^2} = -x\\sqrt{4 + 1/x^2}",
+      "explanation": "Since x is negative as x -> -oo, |x| = -x.",
+      "why": "Crucial identity: sqrt(x^2) = -x whenever x < 0."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Evaluate Limit as x -> -oo",
+      "mathExpression": "\\lim_{x \\to -\\infty} \\frac{-x\\sqrt{4 + 1/x^2}}{x(3 - 2/x)} = \\frac{-\\sqrt{4}}{3} = -\\frac{2}{3}",
+      "explanation": "Cancel factor x, leaving a negative sign from |-x|.",
+      "why": "The negative sign arises from the direction of approach toward -oo."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "2/3 - (-2/3)",
+    "expected": "4/3"
+  }
+}

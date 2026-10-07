@@ -1,0 +1,49 @@
+{
+  "id": "ch03-derivatives/3.2-the-derivative-as-a-function/solutions/ex-01",
+  "chapter": "ch03",
+  "section": "3.2",
+  "type": "solution",
+  "title": "Derivative of a Quadratic from First Principles",
+  "exerciseReference": "Section 3.2, Exercise 1",
+  "originalTopic": "First Principles Differentiation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "first-principles",
+    "difference-quotient",
+    "quadratic"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the derivative function f'(x) for f(x) = 3x^2 - 5x + 2 directly from the definition.",
+  "finalAnswer": "f'(x) = 6x - 5",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set up the General Difference Quotient",
+      "mathExpression": "f'(x) = \\lim_{h \\to 0} \\frac{[3(x + h)^2 - 5(x + h) + 2] - [3x^2 - 5x + 2]}{h}",
+      "explanation": "Apply the definition of the derivative function with variable x.",
+      "why": "Definition of derivative as a function."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Expand and Group Terms",
+      "mathExpression": "3(x^2 + 2xh + h^2) - 5x - 5h + 2 - 3x^2 + 5x - 2 = 6xh + 3h^2 - 5h",
+      "explanation": "Expand the squared binomial and cancel opposite terms.",
+      "why": "Polynomial expansion clears constant and quadratic terms."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Cancel h and Take Limit",
+      "mathExpression": "\\lim_{h \\to 0} \\frac{h(6x + 3h - 5)}{h} = \\lim_{h \\to 0} (6x + 3h - 5) = 6x - 5",
+      "explanation": "Factor out h, cancel the denominator, and evaluate at h = 0.",
+      "why": "Canceling h resolves the indeterminate form."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "3*x**2 - 5*x + 2",
+    "expected": "6*x - 5",
+    "variable": "x"
+  }
+}

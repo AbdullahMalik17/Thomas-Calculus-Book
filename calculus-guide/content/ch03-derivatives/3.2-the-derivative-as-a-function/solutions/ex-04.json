@@ -1,0 +1,49 @@
+{
+  "id": "ch03-derivatives/3.2-the-derivative-as-a-function/solutions/ex-04",
+  "chapter": "ch03",
+  "section": "3.2",
+  "type": "solution",
+  "title": "Derivative and Domain of a Rational Function",
+  "exerciseReference": "Section 3.2, Exercise 4",
+  "originalTopic": "Rational Derivative from Definition",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "rational-function",
+    "domain",
+    "quotient"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find f'(x) for f(x) = x/(x + 2) from first principles and state its domain.",
+  "finalAnswer": "f'(x) = \\frac{2}{(x + 2)^2}; \\quad \\text{Domain of } f' = \\mathbb{R} \\setminus \\{-2\\}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set up Difference Quotient",
+      "mathExpression": "\\frac{\\frac{x + h}{x + h + 2} - \\frac{x}{x + 2}}{h} = \\frac{(x + h)(x + 2) - x(x + h + 2)}{h(x + h + 2)(x + 2)}",
+      "explanation": "Put numerator over common denominator (x + h + 2)(x + 2).",
+      "why": "Rational function arithmetic."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Expand Numerator and Cancel Terms",
+      "mathExpression": "(x^2 + 2x + hx + 2h) - (x^2 + hx + 2x) = 2h",
+      "explanation": "Expand and cancel identical terms.",
+      "why": "All terms not containing h drop out."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Limit",
+      "mathExpression": "f'(x) = \\lim_{h \\to 0} \\frac{2h}{h(x + h + 2)(x + 2)} = \\lim_{h \\to 0} \\frac{2}{(x + h + 2)(x + 2)} = \\frac{2}{(x + 2)^2}",
+      "explanation": "Cancel h and evaluate at h = 0.",
+      "why": "Canceling h produces the continuous quotient."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "x/(x + 2)",
+    "expected": "2/(x + 2)**2",
+    "variable": "x"
+  }
+}

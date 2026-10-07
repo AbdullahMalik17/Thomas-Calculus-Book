@@ -1,0 +1,55 @@
+{
+  "id": "ch03-derivatives/3.2-the-derivative-as-a-function/solutions/ex-03",
+  "chapter": "ch03",
+  "section": "3.2",
+  "type": "solution",
+  "title": "Non-Differentiability of Absolute Value at a Corner",
+  "exerciseReference": "Section 3.2, Exercise 3",
+  "originalTopic": "Corners and One-Sided Derivatives",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "absolute-value",
+    "corner",
+    "non-differentiable"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Show that f(x) = |x - 3| is continuous at x = 3, but fails to be differentiable at x = 3.",
+  "finalAnswer": "f \\text{ is continuous at } x = 3, \\text{ but } f'(3) \\text{ does not exist because } f'_+(3) = 1 \\neq -1 = f'_-(3)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Verify Continuity at x = 3",
+      "mathExpression": "\\lim_{x \\to 3} |x - 3| = |3 - 3| = 0 = f(3)",
+      "explanation": "Direct substitution demonstrates that the limit equals the function value.",
+      "why": "Proves continuity at x = 3."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Right-Hand Derivative at x = 3",
+      "mathExpression": "f'_+(3) = \\lim_{h \\to 0^+} \\frac{|(3 + h) - 3| - 0}{h} = \\lim_{h \\to 0^+} \\frac{|h|}{h} = \\lim_{h \\to 0^+} \\frac{h}{h} = 1",
+      "explanation": "For h > 0, |h| = h.",
+      "why": "Definition of right-hand derivative."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Left-Hand Derivative at x = 3",
+      "mathExpression": "f'_-(3) = \\lim_{h \\to 0^-} \\frac{|(3 + h) - 3| - 0}{h} = \\lim_{h \\to 0^-} \\frac{|h|}{h} = \\lim_{h \\to 0^-} \\frac{-h}{h} = -1",
+      "explanation": "For h < 0, |h| = -h.",
+      "why": "Definition of left-hand derivative."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Conclude Failure of Differentiability",
+      "mathExpression": "f'_+(3) = 1 \\neq -1 = f'_-(3) \\implies f'(3) \\text{ DNE}",
+      "explanation": "The two one-sided derivatives disagree, creating a sharp corner.",
+      "why": "A derivative exists if and only if both one-sided derivatives agree."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "1 - (-1)",
+    "expected": "2"
+  }
+}

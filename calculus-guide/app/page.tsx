@@ -171,13 +171,13 @@ export default function HomePage() {
             <div className="space-y-1">
               <div className="flex items-center gap-2">
                 <Badge variant="primary">Chapter 1</Badge>
-                <Badge variant="success">Golden Standard Ready</Badge>
+                <Badge variant="success">38 Solutions Verified</Badge>
               </div>
               <h3 className="font-bold text-slate-900 pt-1">
                 Functions &amp; Their Graphs
               </h3>
               <p className="text-xs text-slate-600">
-                1.1 Functions and Their Graphs, Domain, Range, Piecewise Functions, Symmetry.
+                1.1 Functions and Graphs, 1.2 Combining Functions, 1.3 Trigonometry, 1.4 Software Graphing.
               </p>
             </div>
             <Button href="/chapters/ch01" size="sm" variant="primary">
@@ -185,21 +185,57 @@ export default function HomePage() {
             </Button>
           </div>
 
-          <div className="p-5 rounded-xl border border-slate-200 bg-slate-50/50 flex items-start justify-between">
+          <div className="p-5 rounded-xl border border-blue-200 bg-blue-50/50 flex items-start justify-between">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
-                <Badge variant="default">Chapter 2</Badge>
-                <Badge variant="info">Planned</Badge>
+                <Badge variant="primary">Chapter 2</Badge>
+                <Badge variant="success">30 Solutions Verified</Badge>
               </div>
               <h3 className="font-bold text-slate-900 pt-1">
                 Limits and Continuity
               </h3>
               <p className="text-xs text-slate-600">
-                2.1 Rates of Change and Tangent Lines to Curves, 2.2 Limit of a Function.
+                2.1 Rates of Change, 2.2 Limit Laws, 2.3 &epsilon;-&delta;, 2.4 One-Sided, 2.5 Continuity, 2.6 Asymptotes.
               </p>
             </div>
-            <Button href="/chapters/ch02" size="sm" variant="secondary">
-              Preview
+            <Button href="/chapters/ch02" size="sm" variant="primary">
+              Open Chapter 2
+            </Button>
+          </div>
+
+          <div className="p-5 rounded-xl border border-blue-200 bg-blue-50/50 flex items-start justify-between">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <Badge variant="primary">Chapter 3</Badge>
+                <Badge variant="success">45 Solutions Verified</Badge>
+              </div>
+              <h3 className="font-bold text-slate-900 pt-1">
+                Derivatives
+              </h3>
+              <p className="text-xs text-slate-600">
+                3.1 Tangents, 3.2 Derivative Function, 3.3 Rules, 3.4 Rates of Change, 3.5 Trig, 3.6 Chain Rule, 3.7 Implicit, 3.8 Related Rates, 3.9 Differentials.
+              </p>
+            </div>
+            <Button href="/chapters/ch03" size="sm" variant="primary">
+              Open Chapter 3
+            </Button>
+          </div>
+
+          <div className="p-5 rounded-xl border border-blue-200 bg-blue-50/50 flex items-start justify-between">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <Badge variant="primary">Chapter 4</Badge>
+                <Badge variant="success">40 Solutions Verified</Badge>
+              </div>
+              <h3 className="font-bold text-slate-900 pt-1">
+                Applications of Derivatives
+              </h3>
+              <p className="text-xs text-slate-600">
+                4.1 Extreme Values, 4.2 Mean Value Theorem, 4.3 Monotonicity, 4.4 Concavity, 4.5 L&apos;H&ocirc;pital&apos;s Rule, 4.6 Optimization, 4.7 Newton&apos;s Method, 4.8 Antiderivatives.
+              </p>
+            </div>
+            <Button href="/chapters/ch04" size="sm" variant="primary">
+              Open Chapter 4
             </Button>
           </div>
         </div>

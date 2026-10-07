@@ -1,0 +1,61 @@
+{
+  "id": "ch02-limits-continuity/2.6-limits-involving-infinity-asymptotes-of-graphs/definitions",
+  "chapter": "ch02",
+  "section": "2.6",
+  "title": "Limits Involving Infinity; Asymptotes of Graphs",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-horizontal-asymptote",
+      "title": "Horizontal Asymptote",
+      "category": "definition",
+      "latex": "\\lim_{x \\to \\infty} f(x) = L \\quad \\text{or} \\quad \\lim_{x \\to -\\infty} f(x) = L \\implies y = L",
+      "statement": "A horizontal line y = L is a horizontal asymptote of the graph of y = f(x) if either lim_{x->oo} f(x) = L or lim_{x->-oo} f(x) = L.",
+      "conditions": [
+        "L must be a finite real number",
+        "Evaluated as x grows without bound in either direction"
+      ],
+      "explanation": "Describes end behavior of functions at extreme horizontal distances.",
+      "keyTakeaway": "A curve can cross its horizontal asymptote multiple times; it dictates behavior only at infinity."
+    },
+    {
+      "id": "def-vertical-asymptote",
+      "title": "Vertical Asymptote",
+      "category": "definition",
+      "latex": "\\lim_{x \\to c^+} f(x) = \\pm \\infty \\quad \\text{or} \\quad \\lim_{x \\to c^-} f(x) = \\pm \\infty \\implies x = c",
+      "statement": "A vertical line x = c is a vertical asymptote of the graph of y = f(x) if at least one of the one-sided limits of f(x) as x approaches c is +oo or -oo.",
+      "conditions": [
+        "c is a real number",
+        "Function values grow unbounded near c"
+      ],
+      "explanation": "Commonly arises at zeroes of the simplified denominator of rational functions.",
+      "keyTakeaway": "Vertical asymptotes represent infinite discontinuities where curves diverge."
+    },
+    {
+      "id": "rule-rational-end-behavior",
+      "title": "Degree Comparison Rule for Rational Functions",
+      "category": "rule",
+      "latex": "f(x) = \\frac{a_n x^n + \\dots}{b_m x^m + \\dots} \\implies \\lim_{x \\to \\pm \\infty} f(x) = \\begin{cases} 0, & n < m \\\\ \\frac{a_n}{b_m}, & n = m \\\\ \\pm \\infty, & n > m \\end{cases}",
+      "statement": "The limit at infinity of a rational function depends entirely on the leading terms of numerator and denominator.",
+      "conditions": [
+        "Degrees n and m are non-negative integers",
+        "Leading coefficients an and bm are non-zero"
+      ],
+      "explanation": "Dividing every term by the highest power of x in the denominator reduces lower-order terms to zero.",
+      "keyTakeaway": "Higher degree in denominator -> 0; equal degrees -> ratio of leading coefficients."
+    },
+    {
+      "id": "def-oblique-asymptote",
+      "title": "Oblique (Slant) Asymptote",
+      "category": "definition",
+      "latex": "f(x) = (mx + b) + \\frac{R(x)}{Q(x)} \\implies y = mx + b \\quad (m \\neq 0)",
+      "statement": "If the degree of the numerator of a rational function exceeds the degree of the denominator by exactly 1, polynomial long division yields y = mx + b as an oblique asymptote.",
+      "conditions": [
+        "deg(P) = deg(Q) + 1",
+        "Remainder term R(x)/Q(x) -> 0 as x -> +-oo"
+      ],
+      "explanation": "The graph approaches the slanted line y = mx + b as |x| becomes large.",
+      "keyTakeaway": "Oblique asymptotes occur when numerator degree is exactly one higher than denominator degree."
+    }
+  ]
+}

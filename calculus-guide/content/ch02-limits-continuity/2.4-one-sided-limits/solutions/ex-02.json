@@ -1,0 +1,55 @@
+{
+  "id": "ch02-limits-continuity/2.4-one-sided-limits/solutions/ex-02",
+  "chapter": "ch02",
+  "section": "2.4",
+  "type": "solution",
+  "title": "Limits Involving the Absolute Value Quotient",
+  "exerciseReference": "Section 2.4, Exercise 2",
+  "originalTopic": "Absolute Value Signs",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "absolute-value",
+    "one-sided-limits",
+    "step-function"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate lim_{x -> 2^+} |x - 2|/(x - 2) and lim_{x -> 2^-} |x - 2|/(x - 2).",
+  "finalAnswer": "\\lim_{x \\to 2^+} \\frac{|x - 2|}{x - 2} = 1, \\quad \\lim_{x \\to 2^-} \\frac{|x - 2|}{x - 2} = -1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Resolve Absolute Value for x > 2",
+      "mathExpression": "x > 2 \\implies x - 2 > 0 \\implies |x - 2| = x - 2",
+      "explanation": "For inputs to the right of 2, x - 2 is positive, so |x - 2| = x - 2.",
+      "why": "Definition of absolute value: |u| = u when u > 0."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Right-Hand Limit",
+      "mathExpression": "\\lim_{x \\to 2^+} \\frac{x - 2}{x - 2} = \\lim_{x \\to 2^+} (1) = 1",
+      "explanation": "The ratio reduces identically to 1 for all x > 2.",
+      "why": "Quotient of identical non-zero quantities equals 1."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Resolve Absolute Value for x < 2",
+      "mathExpression": "x < 2 \\implies x - 2 < 0 \\implies |x - 2| = -(x - 2)",
+      "explanation": "For inputs to the left of 2, x - 2 is negative, so |x - 2| = -(x - 2).",
+      "why": "Definition of absolute value: |u| = -u when u < 0."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Evaluate Left-Hand Limit",
+      "mathExpression": "\\lim_{x \\to 2^-} \\frac{-(x - 2)}{x - 2} = \\lim_{x \\to 2^-} (-1) = -1",
+      "explanation": "The ratio reduces identically to -1 for all x < 2.",
+      "why": "Quotient of opposites equals -1."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "1 - (-1)",
+    "expected": "2"
+  }
+}

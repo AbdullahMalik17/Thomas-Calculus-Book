@@ -1,0 +1,49 @@
+{
+  "id": "ch03-derivatives/3.2-the-derivative-as-a-function/solutions/ex-02",
+  "chapter": "ch03",
+  "section": "3.2",
+  "type": "solution",
+  "title": "Derivative of Reciprocal Square Root from First Principles",
+  "exerciseReference": "Section 3.2, Exercise 2",
+  "originalTopic": "Radical First Principles",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "radicals",
+    "first-principles",
+    "conjugate"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find f'(x) for f(x) = 1/sqrt(x) for x > 0 using the definition of derivative.",
+  "finalAnswer": "f'(x) = -\\frac{1}{2x^{3/2}} = -\\frac{1}{2x\\sqrt{x}}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate the Difference Quotient",
+      "mathExpression": "\\frac{f(x + h) - f(x)}{h} = \\frac{\\frac{1}{\\sqrt{x + h}} - \\frac{1}{\\sqrt{x}}}{h} = \\frac{\\sqrt{x} - \\sqrt{x + h}}{h\\sqrt{x}\\sqrt{x + h}}",
+      "explanation": "Combine the fractions in the numerator with common denominator sqrt(x)*sqrt(x+h).",
+      "why": "Standard algebraic fraction simplification."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Rationalize Using the Conjugate",
+      "mathExpression": "\\frac{(\\sqrt{x} - \\sqrt{x + h})(\\sqrt{x} + \\sqrt{x + h})}{h\\sqrt{x}\\sqrt{x + h}(\\sqrt{x} + \\sqrt{x + h})} = \\frac{x - (x + h)}{h\\sqrt{x}\\sqrt{x + h}(\\sqrt{x} + \\sqrt{x + h})} = \\frac{-h}{h\\dots} = \\frac{-1}{\\sqrt{x}\\sqrt{x + h}(\\sqrt{x} + \\sqrt{x + h})}",
+      "explanation": "Multiply numerator and denominator by sqrt(x) + sqrt(x+h) and cancel h.",
+      "why": "Conjugate multiplication rationalizes the radical numerator."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Limit as h -> 0",
+      "mathExpression": "\\lim_{h \\to 0} \\frac{-1}{\\sqrt{x}\\sqrt{x + 0}(\\sqrt{x} + \\sqrt{x})} = \\frac{-1}{x(2\\sqrt{x})} = -\\frac{1}{2x\\sqrt{x}} = -\\frac{1}{2}x^{-3/2}",
+      "explanation": "Substitute h = 0 into the continuous simplified expression.",
+      "why": "Taking the limit produces the power rule derivative for n = -1/2."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "1/sqrt(x)",
+    "expected": "-1/(2*x**(3/2))",
+    "variable": "x"
+  }
+}

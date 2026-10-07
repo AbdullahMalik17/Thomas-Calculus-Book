@@ -1,0 +1,48 @@
+{
+  "id": "ch03-derivatives/3.9-linearization-and-differentials/solutions/ex-04",
+  "chapter": "ch03",
+  "section": "3.9",
+  "type": "solution",
+  "title": "Differentials vs True Change Delta y",
+  "exerciseReference": "Section 3.9, Exercise 4",
+  "originalTopic": "Differentials Comparison",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "differentials",
+    "delta-y",
+    "error-analysis"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For y = 3x^2 - 5x + 2, compute dy and compare with Delta y when x changes from 2 to 2.01.",
+  "finalAnswer": "dy = 0.07; \\quad \\Delta y = 0.0703; \\quad |\\Delta y - dy| = 0.0003",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Differential dy",
+      "mathExpression": "dy = f'(x)dx = (6x - 5)dx = [6(2) - 5](0.01) = (7)(0.01) = 0.07",
+      "explanation": "Substitute x = 2 and dx = 0.01 into dy = f'(x)dx.",
+      "why": "Differential along tangent line."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute True Change Delta y",
+      "mathExpression": "\\Delta y = f(2.01) - f(2) = [3(2.01)^2 - 5(2.01) + 2] - [3(4) - 10 + 2] = 4.0703 - 4 = 0.0703",
+      "explanation": "Calculate exact difference between function values.",
+      "why": "True increment along curve."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compare Accuracy",
+      "mathExpression": "\\Delta y - dy = 0.0703 - 0.0700 = 0.0003",
+      "explanation": "The differential approximates Delta y to within 3 parts in ten thousand.",
+      "why": "Demonstrates that dy is the principal linear part of Delta y."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(6*2 - 5)*Rational(1, 100)",
+    "expected": "Rational(7, 100)"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "ch03-derivatives/3.4-the-derivative-as-a-rate-of-change/solutions/ex-04",
+  "chapter": "ch03",
+  "section": "3.4",
+  "type": "solution",
+  "title": "Marginal Cost Analysis in Economics",
+  "exerciseReference": "Section 3.4, Exercise 4",
+  "originalTopic": "Marginal Cost",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "economics",
+    "marginal-cost",
+    "approximation"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A company's cost to produce x units is C(x) = 2000 + 10x + 0.1x^2 dollars. Find the marginal cost function C'(x), evaluate it at x = 100, and compare with the actual cost of the 101st unit.",
+  "finalAnswer": "C'(x) = 10 + 0.2x; \\quad C'(100) = \\$30; \\quad \\text{Actual cost of 101st unit } = \\$30.10",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Marginal Cost Function",
+      "mathExpression": "C'(x) = \\frac{d}{dx}[2000 + 10x + 0.1x^2] = 10 + 0.2x",
+      "explanation": "Differentiate cost function C(x).",
+      "why": "Marginal cost is defined as the derivative of total cost."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate at Production Level x = 100",
+      "mathExpression": "C'(100) = 10 + 0.2(100) = 10 + 20 = \\$30",
+      "explanation": "Substitute x = 100 into C'(x).",
+      "why": "Estimates the marginal cost of producing the 101st item."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Calculate Exact Cost of 101st Unit",
+      "mathExpression": "C(101) - C(100) = [2000 + 10(101) + 0.1(101)^2] - [2000 + 10(100) + 0.1(100)^2] = 10 + 0.1(10201 - 10000) = 10 + 20.1 = \\$30.10",
+      "explanation": "Compute Delta C = C(101) - C(100).",
+      "why": "Demonstrates that marginal cost ($30) closely approximates discrete incremental cost ($30.10)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "2000 + 10*x + Rational(1,10)*x**2",
+    "expected": "10 + x/5",
+    "variable": "x"
+  }
+}

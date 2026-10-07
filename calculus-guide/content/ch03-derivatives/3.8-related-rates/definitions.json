@@ -1,0 +1,22 @@
+{
+  "id": "ch03-derivatives/3.8-related-rates/definitions",
+  "chapter": "ch03",
+  "section": "3.8",
+  "title": "Related Rates",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-related-rates-strategy",
+      "title": "Related Rates Problem-Solving Strategy",
+      "category": "rule",
+      "latex": "\\frac{d}{dt}[F(x(t), y(t))] = 0 \\implies F_x \\frac{dx}{dt} + F_y \\frac{dy}{dt} = 0",
+      "statement": "To solve a related rates problem: (1) Assign variables and sketch a diagram, (2) State given numerical rates and required rate, (3) Write an equation relating the variables, (4) Differentiate implicitly with respect to time t, (5) Substitute known values and solve.",
+      "conditions": [
+        "All geometric and physical relations hold for all t",
+        "Never substitute static instantaneous values before differentiating!"
+      ],
+      "explanation": "Substituting numerical values before differentiation turns dynamic variables into constants, falsely resulting in zero derivatives.",
+      "keyTakeaway": "Differentiate first with respect to time t; substitute numerical values last."
+    }
+  ]
+}

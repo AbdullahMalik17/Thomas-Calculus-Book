@@ -1,0 +1,61 @@
+{
+  "id": "ch02-limits-continuity/2.2-limit-of-a-function-and-limit-laws/definitions",
+  "chapter": "ch02",
+  "section": "2.2",
+  "title": "Limit of a Function and Limit Laws",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-informal-limit",
+      "title": "Informal Definition of a Limit",
+      "category": "definition",
+      "latex": "\\lim_{x \\to c} f(x) = L",
+      "statement": "If f(x) becomes arbitrarily close to a single number L as x approaches c from both sides (without ever requiring x = c), we say that the limit of f(x) as x approaches c is L.",
+      "conditions": [
+        "f must be defined in an open interval containing c, except possibly at c itself",
+        "L must be a unique, finite real number"
+      ],
+      "explanation": "The value of f at x = c is completely irrelevant to the existence or value of the limit. The limit describes local behavior near c, not at c.",
+      "keyTakeaway": "Limits describe the target value of f(x) near c, independent of f(c)."
+    },
+    {
+      "id": "theorem-limit-laws",
+      "title": "Algebraic Limit Laws",
+      "category": "theorem",
+      "latex": "\\lim_{x \\to c} [f(x) \\pm g(x)] = L \\pm M, \\quad \\lim_{x \\to c} [f(x)g(x)] = LM, \\quad \\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\frac{L}{M} \\quad (M \\neq 0)",
+      "statement": "If lim_{x->c} f(x) = L and lim_{x->c} g(x) = M exist, then limits distribute linearly across sums, differences, constant multiples, products, quotients (with non-zero denominator), powers, and roots.",
+      "conditions": [
+        "Both individual limits must exist as finite numbers",
+        "In quotient law, the limit of the denominator M must be non-zero"
+      ],
+      "explanation": "These laws allow evaluation of complicated expressions term-by-term without recurring to epsilon-delta proofs.",
+      "keyTakeaway": "Limits distribute over standard algebraic operations provided each individual limit exists."
+    },
+    {
+      "id": "theorem-sandwich-theorem",
+      "title": "The Sandwich (Squeeze) Theorem",
+      "category": "theorem",
+      "latex": "g(x) \\le f(x) \\le h(x) \\implies \\lim_{x \\to c} f(x) = L \\quad \\text{when } \\lim_{x \\to c} g(x) = \\lim_{x \\to c} h(x) = L",
+      "statement": "If g(x) <= f(x) <= h(x) for all x in an open interval containing c (except possibly c), and lim_{x->c} g(x) = lim_{x->c} h(x) = L, then lim_{x->c} f(x) = L.",
+      "conditions": [
+        "Inequality holds in a punctured neighborhood of c",
+        "Both bounding functions converge to the exact same limit L"
+      ],
+      "explanation": "Essential for evaluating oscillatory limits such as x^2 * sin(1/x) near 0 where direct substitution fails.",
+      "keyTakeaway": "Trap an unknown function between two known bounds that converge to the same limit."
+    },
+    {
+      "id": "rule-indeterminate-factoring",
+      "title": "Cancellation Rule for 0/0 Forms",
+      "category": "rule",
+      "latex": "\\frac{P(x)}{Q(x)} = \\frac{(x - c)P_1(x)}{(x - c)Q_1(x)} = \\frac{P_1(x)}{Q_1(x)} \\quad \\text{for } x \\neq c",
+      "statement": "If direct substitution into a rational function yields 0/0, (x - c) is a common factor of both numerator and denominator. Factoring and canceling (x - c) produces an identical function near c.",
+      "conditions": [
+        "P(c) = 0 and Q(c) = 0",
+        "Cancellation is valid because x approaches c but never equals c"
+      ],
+      "explanation": "By the Factor Theorem, c being a zero implies (x - c) divides the polynomial.",
+      "keyTakeaway": "Always factor and cancel common linear factors (x - c) when encountering 0/0 in rational functions."
+    }
+  ]
+}

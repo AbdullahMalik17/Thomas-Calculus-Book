@@ -1,0 +1,45 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-05",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "Domain Truncation in Parametric Elimination",
+  "exerciseReference": "Section 1.4, Exercise 21",
+  "originalTopic": "Parametric Curves: Domain and Range Restrictions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["parametric-equations", "domain-restriction", "parabola", "radical"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Eliminate the parameter t from x = sqrt(t), y = 2t - 1 (t >= 0). Describe the resulting Cartesian curve, highlighting all domain constraints.",
+  "finalAnswer": "y = 2x^2 - 1 \\quad \\text{for } x \\ge 0; \\quad \\text{Right half of an upward-opening parabola}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Solve for Parameter t",
+      "mathExpression": "x = \\sqrt{t} \\implies t = x^2, \\quad \\text{subject to } x \\ge 0",
+      "explanation": "Because x is the principal square root of t (where t >= 0), x cannot take negative values: x in [0, inf).",
+      "why": "The range of the principal square root function is [0, inf), imposing a strict domain restriction on x."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute into the y-Equation",
+      "mathExpression": "y = 2t - 1 = 2(x^2) - 1 = 2x^2 - 1",
+      "explanation": "Substituting t = x^2 yields the quadratic equation y = 2x^2 - 1.",
+      "why": "Algebraic substitution yields the governing Cartesian relation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State the Restricted Cartesian Curve",
+      "mathExpression": "y = 2x^2 - 1, \\quad x \\in [0, \\infty)",
+      "explanation": "The graph is not the full parabola; it is only the right branch beginning at vertex (0, -1) and extending upward and to the right.",
+      "why": "Parameter restrictions must be faithfully transferred to the Cartesian domain to prevent geometric distortion."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "2*(x**2) - 1",
+    "expected": "2*x**2 - 1",
+    "variable": "x"
+  }
+}

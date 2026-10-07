@@ -1,0 +1,50 @@
+{
+  "id": "ch03-derivatives/3.4-the-derivative-as-a-rate-of-change/solutions/ex-05",
+  "chapter": "ch03",
+  "section": "3.4",
+  "type": "solution",
+  "title": "Harmonic Oscillation and Jerk",
+  "exerciseReference": "Section 3.4, Exercise 5",
+  "originalTopic": "Simple Harmonic Motion",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "harmonic-motion",
+    "trigonometric",
+    "jerk"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A mass on a spring has displacement s(t) = 4*cos(2t). Find velocity, acceleration, and jerk as functions of t.",
+  "finalAnswer": "v(t) = -8\\sin(2t), \\quad a(t) = -16\\cos(2t) = -4s(t), \\quad j(t) = 32\\sin(2t)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Differentiate to Find Velocity",
+      "mathExpression": "v(t) = s'(t) = 4(-\\sin(2t) \\cdot 2) = -8\\sin(2t)",
+      "explanation": "Apply chain rule: d/dt[cos(2t)] = -2*sin(2t).",
+      "why": "Velocity is the derivative of position."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate to Find Acceleration",
+      "mathExpression": "a(t) = v'(t) = -8(\\cos(2t) \\cdot 2) = -16\\cos(2t)",
+      "explanation": "Differentiate velocity.",
+      "why": "Acceleration is the derivative of velocity. Notice a(t) = -4s(t)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Differentiate to Find Jerk",
+      "mathExpression": "j(t) = a'(t) = -16(-\\sin(2t) \\cdot 2) = 32\\sin(2t)",
+      "explanation": "Differentiate acceleration.",
+      "why": "Jerk is the third time derivative of position."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "4*cos(2*t)",
+    "expected": "-16*cos(2*t)",
+    "variable": "t",
+    "order": 2
+  }
+}

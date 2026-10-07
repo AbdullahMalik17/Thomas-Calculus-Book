@@ -1,0 +1,52 @@
+{
+  "id": "ch02-limits-continuity/2.1-rates-of-change-and-tangents-to-curves/solutions/ex-03",
+  "chapter": "ch02",
+  "section": "2.1",
+  "type": "solution",
+  "title": "Tangent Line to a Reciprocal Curve",
+  "exerciseReference": "Section 2.1, Exercise 3",
+  "originalTopic": "Tangents and Secant Slopes",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["tangent-line", "reciprocal-function", "limit-definition"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the slope of the curve y = 1/x at the point P(2, 1/2), and find the equation of the tangent line to the curve at this point.",
+  "finalAnswer": "m = -\\frac{1}{4}; \\quad y - \\frac{1}{2} = -\\frac{1}{4}(x - 2) \\implies y = -\\frac{1}{4}x + 1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate the Slope as a Limit of Difference Quotient",
+      "mathExpression": "m = \\lim_{h \\to 0} \\frac{f(2 + h) - f(2)}{h} = \\lim_{h \\to 0} \\frac{\\frac{1}{2 + h} - \\frac{1}{2}}{h}",
+      "explanation": "Substitute x0 = 2 into the definition of curve slope using f(x) = 1/x.",
+      "why": "The slope of the tangent line is the limit of secant line slopes."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Combine Fractions with Common Denominator",
+      "mathExpression": "\\frac{1}{2 + h} - \\frac{1}{2} = \\frac{2 - (2 + h)}{2(2 + h)} = \\frac{-h}{2(2 + h)}",
+      "explanation": "Find a common denominator of 2(2+h) in the numerator.",
+      "why": "Simplifying rational expressions enables cancellation of the division-by-zero factor."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Cancel h and Evaluate the Limit",
+      "mathExpression": "m = \\lim_{h \\to 0} \\frac{-h}{2h(2 + h)} = \\lim_{h \\to 0} \\frac{-1}{2(2 + h)} = \\frac{-1}{2(2 + 0)} = -\\frac{1}{4}",
+      "explanation": "Divide numerator and denominator by h and evaluate at h = 0.",
+      "why": "Canceling the factor of h removes the indeterminate form 0/0."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Write the Tangent Line Equation",
+      "mathExpression": "y - \\frac{1}{2} = -\\frac{1}{4}(x - 2) \\iff y = -\\frac{1}{4}x + \\frac{1}{2} + \\frac{1}{2} \\iff y = -\\frac{1}{4}x + 1",
+      "explanation": "Apply the point-slope form with point (2, 1/2) and slope m = -1/4.",
+      "why": "Point-slope equation defines a unique straight line passing through a given point with given slope."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "((1/(2 + h) - 1/2) / h)",
+    "expected": "-1 / (2 * (2 + h))",
+    "variable": "h"
+  }
+}

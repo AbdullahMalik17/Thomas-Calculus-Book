@@ -1,0 +1,49 @@
+{
+  "id": "ch04-applications-of-derivatives/4.4-concavity-and-curve-sketching/solutions/ex-04",
+  "chapter": "ch04",
+  "section": "4.4",
+  "type": "solution",
+  "title": "Full Curve Sketch Analysis of a Rational Function",
+  "exerciseReference": "Section 4.4, Exercise 4",
+  "originalTopic": "Curve Sketching",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "curve-sketching",
+    "asymptotes",
+    "inflection-points"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine the domain, asymptotes, local extrema, and inflection points for f(x) = (x - 1)/x^2.",
+  "finalAnswer": "\\text{VA: } x = 0, \\; \\text{HA: } y = 0; \\; \\text{Local Max at } (2, 1/4); \\; \\text{Inflection Point at } (3, 2/9)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Domain and Asymptotes",
+      "mathExpression": "\\text{Domain: } \\mathbb{R} \\setminus \\{0\\}; \\quad \\lim_{x \\to 0} f(x) = -\\infty \\implies x = 0 \\text{ (VA)}; \\quad \\lim_{x \\to \\pm \\infty} f(x) = 0 \\implies y = 0 \\text{ (HA)}",
+      "explanation": "Analyze denominator zero and limits at infinity.",
+      "why": "Foundational graph frame."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find Local Extrema via f'(x)",
+      "mathExpression": "f(x) = x^{-1} - x^{-2} \\implies f'(x) = -x^{-2} + 2x^{-3} = \\frac{2 - x}{x^3} = 0 \\implies x = 2",
+      "explanation": "x = 2 gives local max f(2) = 1/4.",
+      "why": "First derivative critical points."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Find Inflection Points via f''(x)",
+      "mathExpression": "f''(x) = 2x^{-3} - 6x^{-4} = \\frac{2(x - 3)}{x^4} = 0 \\implies x = 3",
+      "explanation": "f''(x) changes sign from negative to positive at x = 3. Point: (3, 2/9).",
+      "why": "Second derivative inflection."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "(x - 1)/x**2",
+    "expected": "(2 - x)/x**3",
+    "variable": "x"
+  }
+}

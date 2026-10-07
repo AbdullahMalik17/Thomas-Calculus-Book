@@ -1,0 +1,50 @@
+{
+  "id": "ch03-derivatives/3.3-differentiation-rules/solutions/ex-05",
+  "chapter": "ch03",
+  "section": "3.3",
+  "type": "solution",
+  "title": "Higher-Order Derivatives of a Quartic Polynomial",
+  "exerciseReference": "Section 3.3, Exercise 5",
+  "originalTopic": "Higher Order Derivatives",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "higher-derivatives",
+    "second-derivative",
+    "polynomial"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the first four derivatives of f(x) = x^4 - 2x^3 + 5x^2 - x + 7.",
+  "finalAnswer": "f'(x) = 4x^3 - 6x^2 + 10x - 1; \\; f''(x) = 12x^2 - 12x + 10; \\; f'''(x) = 24x - 12; \\; f^{(4)}(x) = 24",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute First Derivative f'(x)",
+      "mathExpression": "f'(x) = 4x^3 - 6x^2 + 10x - 1",
+      "explanation": "Apply power rule to f(x).",
+      "why": "First derivative gives slope."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Second Derivative f''(x)",
+      "mathExpression": "f''(x) = \\frac{d}{dx}[4x^3 - 6x^2 + 10x - 1] = 12x^2 - 12x + 10",
+      "explanation": "Differentiate f'(x).",
+      "why": "Second derivative gives concavity and acceleration."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Third and Fourth Derivatives",
+      "mathExpression": "f'''(x) = 24x - 12, \\quad f^{(4)}(x) = 24",
+      "explanation": "Differentiate successively until degree reaches zero.",
+      "why": "The nth derivative of an nth degree polynomial is constant n!*a_n."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "x**4 - 2*x**3 + 5*x**2 - x + 7",
+    "expected": "12*x**2 - 12*x + 10",
+    "variable": "x",
+    "order": 2
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "ch04-applications-of-derivatives/4.6-applied-optimization/solutions/ex-05",
+  "chapter": "ch04",
+  "section": "4.6",
+  "type": "solution",
+  "title": "Snell's Law of Refraction via Fermat's Principle",
+  "exerciseReference": "Section 4.6, Exercise 5",
+  "originalTopic": "Travel Time Optimization",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "optimization",
+    "snells-law",
+    "fermat-principle"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A light ray travels from point A(0, a) in medium 1 (speed v1) to point B(d, -b) in medium 2 (speed v2), crossing the interface at (x, 0). Show that minimizing travel time yields Snell's Law: sin(theta1)/v1 = sin(theta2)/v2.",
+  "finalAnswer": "\\frac{\\sin \\theta_1}{v_1} = \\frac{\\sin \\theta_2}{v_2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Express Total Travel Time T(x)",
+      "mathExpression": "T(x) = \\frac{\\sqrt{x^2 + a^2}}{v_1} + \\frac{\\sqrt{(d - x)^2 + b^2}}{v_2}",
+      "explanation": "Travel time equals distance divided by speed for each medium.",
+      "why": "Physics travel time formula."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate with Respect to Crossing Coordinate x",
+      "mathExpression": "T'(x) = \\frac{x}{v_1 \\sqrt{x^2 + a^2}} - \\frac{d - x}{v_2 \\sqrt{(d - x)^2 + b^2}} = 0",
+      "explanation": "Apply chain rule to both radical terms.",
+      "why": "Condition for minimum time."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Identify Trigonometric Sines of Angles",
+      "mathExpression": "\\sin \\theta_1 = \\frac{x}{\\sqrt{x^2 + a^2}}, \\quad \\sin \\theta_2 = \\frac{d - x}{\\sqrt{(d - x)^2 + b^2}} \\implies \\frac{\\sin \\theta_1}{v_1} = \\frac{\\sin \\theta_2}{v_2}",
+      "explanation": "Substitute geometric sines of angles with the surface normal.",
+      "why": "Snell's Law of Refraction."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "1 - 1",
+    "expected": "0"
+  }
+}

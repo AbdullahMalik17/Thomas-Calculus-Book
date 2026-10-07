@@ -1,0 +1,49 @@
+{
+  "id": "ch04-applications-of-derivatives/4.7-newtons-method/solutions/ex-04",
+  "chapter": "ch04",
+  "section": "4.7",
+  "type": "solution",
+  "title": "Demonstrating Divergence of Newton's Method",
+  "exerciseReference": "Section 4.7, Exercise 4",
+  "originalTopic": "Newton Method Failure",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "newtons-method",
+    "divergence",
+    "failure-mode"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Show that Newton's method fails to converge for f(x) = x^(1/3) for any initial guess x_0 != 0.",
+  "finalAnswer": "x_{n+1} = -2x_n \\implies x_n = (-2)^n x_0 \\implies |x_n| \\to \\infty \\text{ (diverges)}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute f'(x)",
+      "mathExpression": "f'(x) = \\frac{1}{3}x^{-2/3}",
+      "explanation": "Power rule derivative.",
+      "why": "Derivative calculation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Newton's Iteration Formula",
+      "mathExpression": "x_{n+1} = x_n - \\frac{x_n^{1/3}}{\\frac{1}{3}x_n^{-2/3}} = x_n - 3x_n^{1/3}x_n^{2/3} = x_n - 3x_n = -2x_n",
+      "explanation": "The ratio simplifies directly to -3*x_n.",
+      "why": "Exact closed-form recurrence relation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Analyze Recurrence Behavior",
+      "mathExpression": "x_n = (-2)^n x_0 \\implies |x_n| = 2^n |x_0| \\to \\infty \\text{ as } n \\to \\infty",
+      "explanation": "Each iteration doubles the distance from the true root 0 and alternates signs, diverging catastrophically.",
+      "why": "Proves divergence."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "x - x**(Rational(1,3)) / (Rational(1,3)*x**(-Rational(2,3)))",
+    "expected": "-2*x",
+    "variable": "x"
+  }
+}

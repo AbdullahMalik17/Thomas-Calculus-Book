@@ -1,0 +1,56 @@
+{
+  "id": "ch02-limits-continuity/2.2-limit-of-a-function-and-limit-laws/solutions/ex-05",
+  "chapter": "ch02",
+  "section": "2.2",
+  "type": "solution",
+  "title": "Applying the Sandwich (Squeeze) Theorem",
+  "exerciseReference": "Section 2.2, Exercise 5",
+  "originalTopic": "Sandwich Theorem",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "squeeze-theorem",
+    "trigonometry",
+    "oscillatory"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Prove using the Sandwich Theorem that lim_{x -> 0} x^2 sin(1/x) = 0.",
+  "finalAnswer": "\\lim_{x \\to 0} x^2 \\sin\\left(\\frac{1}{x}\\right) = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Bound the Sine Function",
+      "mathExpression": "-1 \\le \\sin\\left(\\frac{1}{x}\\right) \\le 1 \\quad \\forall x \\neq 0",
+      "explanation": "Recall that the range of the sine function is bounded strictly within [-1, 1].",
+      "why": "The sine function is bounded for all real arguments regardless of how rapidly the argument oscillates."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Multiply the Inequality by x^2",
+      "mathExpression": "-x^2 \\le x^2 \\sin\\left(\\frac{1}{x}\\right) \\le x^2",
+      "explanation": "Multiply through by x^2. Since x^2 > 0 for all x != 0, the inequality directions are preserved.",
+      "why": "Multiplying an inequality by a strictly positive quantity maintains the order of inequalities."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate the Limits of the Bounding Functions",
+      "mathExpression": "\\lim_{x \\to 0} (-x^2) = 0 \\quad \\text{and} \\quad \\lim_{x \\to 0} (x^2) = 0",
+      "explanation": "Both the lower bound -x^2 and upper bound x^2 converge to 0 as x -> 0.",
+      "why": "Direct substitution into the quadratic bounding functions gives zero."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Conclude via the Sandwich Theorem",
+      "mathExpression": "\\lim_{x \\to 0} (-x^2) = 0 = \\lim_{x \\to 0} x^2 \\implies \\lim_{x \\to 0} x^2 \\sin\\left(\\frac{1}{x}\\right) = 0",
+      "explanation": "Because the middle function is trapped between bounds converging to 0, it must also converge to 0.",
+      "why": "Statement and conclusion of the Sandwich (Squeeze) Theorem."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "x**2 - x**2",
+    "expected": "0",
+    "variable": "x"
+  }
+}

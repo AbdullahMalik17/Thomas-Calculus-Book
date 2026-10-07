@@ -1,0 +1,42 @@
+{
+  "id": "ch03-derivatives/3.9-linearization-and-differentials/solutions/ex-03",
+  "chapter": "ch03",
+  "section": "3.9",
+  "type": "solution",
+  "title": "Linearization of Cosine Function",
+  "exerciseReference": "Section 3.9, Exercise 3",
+  "originalTopic": "Trigonometric Linearization",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "linearization",
+    "cosine"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the linearization of f(x) = cos(x) at a = pi/3.",
+  "finalAnswer": "L(x) = \\frac{1}{2} - \\frac{\\sqrt{3}}{2}\\left(x - \\frac{\\pi}{3}\\right)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate Function and Derivative at a = pi/3",
+      "mathExpression": "f(\\pi/3) = \\cos(\\pi/3) = \\frac{1}{2}, \\quad f'(x) = -\\sin x \\implies f'(\\pi/3) = -\\sin(\\pi/3) = -\\frac{\\sqrt{3}}{2}",
+      "explanation": "Special trigonometric angles.",
+      "why": "Coefficients of the tangent line."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Write Linearization Formula",
+      "mathExpression": "L(x) = \\frac{1}{2} - \\frac{\\sqrt{3}}{2}\\left(x - \\frac{\\pi}{3}\\right)",
+      "explanation": "Apply L(x) = f(a) + f'(a)(x - a).",
+      "why": "Tangent approximation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "Rational(1,2) - (sqrt(3)/2)*(x - pi/3)",
+    "expected": "1/2 - sqrt(3)*(x - pi/3)/2",
+    "variable": "x"
+  }
+}

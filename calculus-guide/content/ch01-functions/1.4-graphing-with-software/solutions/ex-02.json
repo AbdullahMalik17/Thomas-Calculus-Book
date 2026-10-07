@@ -1,0 +1,45 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-02",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "Sampling Rates and Digital Aliasing Artifacts",
+  "exerciseReference": "Section 1.4, Exercise 5",
+  "originalTopic": "Graphing Technology: Aliasing and Resolution",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["graphing-software", "aliasing", "sampling", "oscillations"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Explain why plotting f(x) = sin(20*pi*x) on the window [0, 5] using an under-sampled grid of 20 equally spaced points produces a misleading flat line or false frequency.",
+  "finalAnswer": "\\text{Period } T = 0.1; \\quad \\Delta x = 0.25 > T; \\quad \\text{Violates the Nyquist sampling theorem, creating severe aliasing.}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Calculate the True Period of the Function",
+      "mathExpression": "T = \\frac{2\\pi}{B} = \\frac{2\\pi}{20\\pi} = \\frac{1}{10} = 0.1",
+      "explanation": "The function completes 10 full cycles for every 1 unit of x, meaning there are 50 complete oscillations across the interval [0, 5].",
+      "why": "The fundamental period is 2*pi divided by the frequency coefficient B."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Analyze the Sampling Step Size",
+      "mathExpression": "\\Delta x = \\frac{x_{\\max} - x_{\\min}}{N} = \\frac{5 - 0}{20} = 0.25",
+      "explanation": "Evaluating at 20 points means sampling occurs every 0.25 units. Since Delta x = 0.25 is 2.5 times larger than the full period T = 0.1, the sampler misses entire wave cycles between adjacent pixels.",
+      "why": "Accurate digital plotting requires step size Delta x to be significantly smaller than half the period."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Identify the Resulting Artifact",
+      "mathExpression": "x_k = 0.25k \\implies f(x_k) = \\sin(20\\pi(0.25k)) = \\sin(5\\pi k) = 0 \\quad \\forall k \\in \\mathbb{Z}",
+      "explanation": "Every sampled point evaluates to 0 because 5*pi*k is an integer multiple of pi. Consequently, connecting these sample points renders a completely flat horizontal line y = 0, misrepresenting the high-frequency oscillation.",
+      "why": "Aliasing occurs when sample frequencies coincide with integer multiple nodes of the true periodic signal."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "sin(20*pi*(1/4))",
+    "expected": "0",
+    "variable": "x"
+  }
+}

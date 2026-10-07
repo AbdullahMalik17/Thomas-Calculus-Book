@@ -1,0 +1,36 @@
+{
+  "id": "ch02-limits-continuity/2.3-the-precise-definition-of-a-limit/definitions",
+  "chapter": "ch02",
+  "section": "2.3",
+  "title": "The Precise Definition of a Limit",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-epsilon-delta",
+      "title": "Precise (Epsilon-Delta) Definition of a Limit",
+      "category": "definition",
+      "latex": "\\forall \\epsilon > 0, \\; \\exists \\delta > 0 \\text{ s.t. } 0 < |x - c| < \\delta \\implies |f(x) - L| < \\epsilon",
+      "statement": "We say lim_{x->c} f(x) = L if for every real number epsilon > 0, there exists a corresponding real number delta > 0 such that for all x with 0 < |x - c| < delta, the distance |f(x) - L| < epsilon.",
+      "conditions": [
+        "epsilon is an arbitrary positive tolerance",
+        "delta is a response radius depending on epsilon and c",
+        "0 < |x - c| ensures x != c"
+      ],
+      "explanation": "This formalizes the intuition that f(x) can be kept within any specified margin of error epsilon around L by choosing x sufficiently close to c within radius delta.",
+      "keyTakeaway": "For any target error epsilon > 0, we can find an input tolerance delta > 0."
+    },
+    {
+      "id": "rule-finding-delta-linear",
+      "title": "Delta Choice for Linear Functions",
+      "category": "rule",
+      "latex": "f(x) = mx + b \\implies \\delta = \\frac{\\epsilon}{|m|} \\quad (m \\neq 0)",
+      "statement": "For a linear function f(x) = mx + b, |f(x) - L| = |m(x - c)| = |m| |x - c|. Choosing delta = epsilon / |m| guarantees |f(x) - L| < epsilon.",
+      "conditions": [
+        "Slope m is non-zero",
+        "If m = 0, any delta > 0 works because |f(x) - L| = 0 < epsilon"
+      ],
+      "explanation": "The linearity ensures a constant scale factor between input variations and output variations.",
+      "keyTakeaway": "For linear functions, delta is directly proportional to epsilon: delta = epsilon / |m|."
+    }
+  ]
+}

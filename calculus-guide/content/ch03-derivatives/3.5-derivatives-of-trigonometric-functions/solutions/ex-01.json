@@ -1,0 +1,42 @@
+{
+  "id": "ch03-derivatives/3.5-derivatives-of-trigonometric-functions/solutions/ex-01",
+  "chapter": "ch03",
+  "section": "3.5",
+  "type": "solution",
+  "title": "Product Rule with Sine and Cosine",
+  "exerciseReference": "Section 3.5, Exercise 1",
+  "originalTopic": "Trigonometric Product Rule",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "product-rule",
+    "derivative"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Differentiate y = x^2*sin(x) + 2x*cos(x) - 2*sin(x).",
+  "finalAnswer": "\\frac{dy}{dx} = x^2 \\cos x",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Differentiate Each Group Using Product Rule",
+      "mathExpression": "\\frac{d}{dx}[x^2 \\sin x] = 2x\\sin x + x^2\\cos x; \\quad \\frac{d}{dx}[2x\\cos x] = 2\\cos x - 2x\\sin x; \\quad \\frac{d}{dx}[-2\\sin x] = -2\\cos x",
+      "explanation": "Differentiate each term individually.",
+      "why": "Linearity of derivative operator."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Combine and Cancel Terms",
+      "mathExpression": "(2x\\sin x + x^2\\cos x) + (2\\cos x - 2x\\sin x) - 2\\cos x = x^2\\cos x",
+      "explanation": "Notice that 2x*sin(x) cancels with -2x*sin(x), and 2*cos(x) cancels with -2*cos(x).",
+      "why": "Algebraic cancellation yields a single term."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "x**2*sin(x) + 2*x*cos(x) - 2*sin(x)",
+    "expected": "x**2*cos(x)",
+    "variable": "x"
+  }
+}

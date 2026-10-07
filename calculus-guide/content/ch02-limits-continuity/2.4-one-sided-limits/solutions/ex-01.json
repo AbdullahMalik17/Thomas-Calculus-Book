@@ -1,0 +1,48 @@
+{
+  "id": "ch02-limits-continuity/2.4-one-sided-limits/solutions/ex-01",
+  "chapter": "ch02",
+  "section": "2.4",
+  "type": "solution",
+  "title": "One-Sided Limits of a Piecewise Function",
+  "exerciseReference": "Section 2.4, Exercise 1",
+  "originalTopic": "Piecewise One-Sided Limits",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "piecewise",
+    "one-sided-limits",
+    "jump-discontinuity"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Let f(x) = x^2 for x <= 1 and f(x) = 3 - x for x > 1. Find lim_{x -> 1^-} f(x), lim_{x -> 1^+} f(x), and determine whether lim_{x -> 1} f(x) exists.",
+  "finalAnswer": "\\lim_{x \\to 1^-} f(x) = 1, \\quad \\lim_{x \\to 1^+} f(x) = 2; \\quad \\lim_{x \\to 1} f(x) \\text{ does not exist (DNE)}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute the Left-Hand Limit",
+      "mathExpression": "\\lim_{x \\to 1^-} f(x) = \\lim_{x \\to 1^-} (x^2) = 1^2 = 1",
+      "explanation": "For x < 1, the rule f(x) = x^2 applies. Substitute x = 1.",
+      "why": "When evaluating from the left (x < 1), use the left branch."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute the Right-Hand Limit",
+      "mathExpression": "\\lim_{x \\to 1^+} f(x) = \\lim_{x \\to 1^+} (3 - x) = 3 - 1 = 2",
+      "explanation": "For x > 1, the rule f(x) = 3 - x applies. Substitute x = 1.",
+      "why": "When evaluating from the right (x > 1), use the right branch."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compare One-Sided Limits",
+      "mathExpression": "\\lim_{x \\to 1^-} f(x) = 1 \\neq 2 = \\lim_{x \\to 1^+} f(x)",
+      "explanation": "Because the left-hand limit (1) does not equal the right-hand limit (2), the two-sided limit does not exist.",
+      "why": "Two-sided limit theorem asserts existence if and only if both one-sided limits are equal."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "3 - 1 - 1",
+    "expected": "1"
+  }
+}

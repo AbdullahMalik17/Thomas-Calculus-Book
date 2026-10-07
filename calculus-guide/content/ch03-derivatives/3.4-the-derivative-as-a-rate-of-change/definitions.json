@@ -1,0 +1,33 @@
+{
+  "id": "ch03-derivatives/3.4-the-derivative-as-a-rate-of-change/definitions",
+  "chapter": "ch03",
+  "section": "3.4",
+  "title": "The Derivative as a Rate of Change",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-motion-derivatives",
+      "title": "Kinematics: Velocity, Speed, Acceleration, and Jerk",
+      "category": "definition",
+      "latex": "v(t) = s'(t), \\quad \\text{Speed} = |v(t)|, \\quad a(t) = v'(t) = s''(t), \\quad j(t) = a'(t) = s'''(t)",
+      "statement": "For an object with position s(t): velocity is the rate of change of position, speed is the absolute magnitude of velocity, acceleration is the rate of change of velocity, and jerk is the rate of change of acceleration.",
+      "conditions": [
+        "Position function s(t) is three times differentiable"
+      ],
+      "explanation": "When velocity and acceleration have the same sign, the object is speeding up; when they have opposite signs, it is slowing down.",
+      "keyTakeaway": "Speeding up: v and a have same sign; Slowing down: v and a have opposite signs."
+    },
+    {
+      "id": "def-marginal-functions",
+      "title": "Marginal Cost, Revenue, and Profit",
+      "category": "definition",
+      "latex": "MC(x) = C'(x), \\quad MR(x) = R'(x), \\quad MP(x) = P'(x) = R'(x) - C'(x)",
+      "statement": "In economics, marginal cost C'(x) is the instantaneous rate of change of total cost with respect to output x. It approximates the cost of producing one additional unit.",
+      "conditions": [
+        "Cost function C(x) is differentiable"
+      ],
+      "explanation": "C'(x) approx C(x+1) - C(x) by linear approximation.",
+      "keyTakeaway": "Marginal analysis uses derivatives to approximate the effect of adding one unit."
+    }
+  ]
+}

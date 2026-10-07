@@ -1,0 +1,52 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-09",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Vertex and Intercepts of a Transformed Absolute Value Graph",
+  "exerciseReference": "Section 1.2, Exercise 35",
+  "originalTopic": "Graph Transformations: Absolute Value Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["graph-transformations", "absolute-value", "vertex", "intercepts"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the vertex, axis of symmetry, and x-intercepts of the transformed absolute value function f(x) = -3|x - 2| + 4.",
+  "finalAnswer": "\\text{Vertex: } (2, 4), \\quad \\text{Axis: } x = 2, \\quad x\\text{-intercepts: } x = \\frac{2}{3}, \\ x = \\frac{10}{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify the Vertex via Translations",
+      "mathExpression": "y = a|x - h| + k \\implies (h, k) = (2, 4)",
+      "explanation": "The parent absolute value graph y = |x| has its vertex at (0,0). The horizontal shift h = 2 and vertical shift k = 4 translate the vertex to (2, 4). Since a = -3 < 0, the V-shape opens downward.",
+      "why": "Standard vertex form of an absolute value function places the peak or trough at (h, k)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find the Axis of Symmetry",
+      "mathExpression": "x = 2",
+      "explanation": "Absolute value functions are symmetric about the vertical line passing through their vertex.",
+      "why": "Reflection symmetry of |x - h| across the vertical line x = h."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Calculate the x-Intercepts",
+      "mathExpression": "-3|x - 2| + 4 = 0 \\implies |x - 2| = \\frac{4}{3}",
+      "explanation": "Set f(x) = 0 and isolate the absolute value term to solve for the intersection points with the horizontal axis.",
+      "why": "The x-intercepts correspond precisely to the real roots of the equation f(x) = 0."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Solve the Absolute Value Equation",
+      "mathExpression": "x - 2 = \\frac{4}{3} \\implies x = \\frac{10}{3}; \\quad x - 2 = -\\frac{4}{3} \\implies x = \\frac{2}{3}",
+      "explanation": "Splitting |u| = c into u = c and u = -c yields two distinct symmetric x-intercepts equidistant from the axis of symmetry x = 2.",
+      "why": "Definition of absolute value as distance on the real coordinate line."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "-3*abs(x - 2) + 4",
+    "expected": "4 - 3*abs(x - 2)",
+    "variable": "x"
+  }
+}

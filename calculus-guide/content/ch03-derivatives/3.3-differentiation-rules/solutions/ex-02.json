@@ -1,0 +1,48 @@
+{
+  "id": "ch03-derivatives/3.3-differentiation-rules/solutions/ex-02",
+  "chapter": "ch03",
+  "section": "3.3",
+  "type": "solution",
+  "title": "Applying the Product Rule",
+  "exerciseReference": "Section 3.3, Exercise 2",
+  "originalTopic": "Product Rule",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "product-rule",
+    "polynomial"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Differentiate f(x) = (3x^2 - 2)(x^3 + 4x) using the Product Rule.",
+  "finalAnswer": "f'(x) = 15x^4 + 30x^2 - 8",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Component Functions and Their Derivatives",
+      "mathExpression": "u(x) = 3x^2 - 2 \\implies u'(x) = 6x; \\quad v(x) = x^3 + 4x \\implies v'(x) = 3x^2 + 4",
+      "explanation": "Label the two factors as u and v and differentiate each individually.",
+      "why": "Product rule formula setup."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Product Rule Formula",
+      "mathExpression": "f'(x) = u'v + uv' = (6x)(x^3 + 4x) + (3x^2 - 2)(3x^2 + 4)",
+      "explanation": "Assemble factors according to (uv)' = u'v + uv'.",
+      "why": "Product rule definition."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Expand and Combine Like Terms",
+      "mathExpression": "(6x^4 + 24x^2) + (9x^4 + 12x^2 - 6x^2 - 8) = 15x^4 + 30x^2 - 8",
+      "explanation": "Expand products and group powers of x.",
+      "why": "Algebraic simplification to standard form."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "(3*x**2 - 2)*(x**3 + 4*x)",
+    "expected": "15*x**4 + 30*x**2 - 8",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "ch03-derivatives/3.8-related-rates/solutions/ex-05",
+  "chapter": "ch03",
+  "section": "3.8",
+  "type": "solution",
+  "title": "Separation Rate of Two Ships",
+  "exerciseReference": "Section 3.8, Exercise 5",
+  "originalTopic": "Separating Vehicles",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "related-rates",
+    "ships",
+    "distance"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Ship A sails south at 20 knots, Ship B sails east at 15 knots, both leaving the same port at noon. At 2:00 PM, at what rate is the distance between them increasing?",
+  "finalAnswer": "\\frac{dz}{dt} = 25 \\text{ knots}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Calculate Positions at t = 2 Hours",
+      "mathExpression": "x = 15(2) = 30 \\text{ nautical miles}, \\quad y = 20(2) = 40 \\text{ nautical miles}",
+      "explanation": "Determine distances traveled in 2 hours.",
+      "why": "Instantaneous coordinates."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Distance z via Pythagorean Theorem",
+      "mathExpression": "z = \\sqrt{x^2 + y^2} = \\sqrt{30^2 + 40^2} = \\sqrt{900 + 1600} = \\sqrt{2500} = 50 \\text{ nm}",
+      "explanation": "3-4-5 right triangle scaled by 10.",
+      "why": "Current distance."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Differentiate Distance Equation",
+      "mathExpression": "z^2 = x^2 + y^2 \\implies 2z\\frac{dz}{dt} = 2x\\frac{dx}{dt} + 2y\\frac{dy}{dt} \\implies \\frac{dz}{dt} = \\frac{x\\frac{dx}{dt} + y\\frac{dy}{dt}}{z}",
+      "explanation": "Implicit differentiation with respect to time.",
+      "why": "Related rates equation."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Substitute Known Values",
+      "mathExpression": "\\frac{dz}{dt} = \\frac{30(15) + 40(20)}{50} = \\frac{450 + 800}{50} = \\frac{1250}{50} = 25 \\text{ knots}",
+      "explanation": "Substitute positions and velocities.",
+      "why": "Rate of separation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(30*15 + 40*20) / 50",
+    "expected": "25"
+  }
+}

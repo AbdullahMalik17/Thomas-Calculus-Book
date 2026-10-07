@@ -1,0 +1,45 @@
+{
+  "id": "ch01-functions/1.3-trigonometric-functions/solutions/ex-09",
+  "chapter": "ch01",
+  "section": "1.3",
+  "type": "solution",
+  "title": "Applying the Law of Cosines to Oblique Triangles",
+  "exerciseReference": "Section 1.3, Exercise 43",
+  "originalTopic": "Triangles and Geometry: Law of Cosines",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["trigonometry", "law-of-cosines", "geometry", "triangles"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "In a triangle with side lengths a = 5 and b = 8, and included angle C = pi/3 (60 degrees), compute the exact length of the third side c.",
+  "finalAnswer": "c = 7",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "State the Law of Cosines",
+      "mathExpression": "c^2 = a^2 + b^2 - 2ab\\cos C",
+      "explanation": "Identify the formula relating three sides of an oblique triangle and one included angle.",
+      "why": "The Law of Cosines generalizes the Pythagorean theorem for non-right triangles."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute the Given Values",
+      "mathExpression": "c^2 = 5^2 + 8^2 - 2(5)(8)\\cos\\left(\\frac{\\pi}{3}\\right) = 25 + 64 - 80\\left(\\frac{1}{2}\\right)",
+      "explanation": "Substitute a = 5, b = 8, and the exact special angle value cos(pi/3) = 1/2.",
+      "why": "Standard cosine evaluation at pi/3 rad (60 degrees)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Solve for Side Length c",
+      "mathExpression": "c^2 = 89 - 40 = 49 \\implies c = \\sqrt{49} = 7",
+      "explanation": "Taking the positive square root gives the exact geometric side length c = 7.",
+      "why": "Geometric lengths must be strictly positive real quantities."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "sqrt(5**2 + 8**2 - 2*5*8*cos(pi/3))",
+    "expected": "7",
+    "variable": "x"
+  }
+}

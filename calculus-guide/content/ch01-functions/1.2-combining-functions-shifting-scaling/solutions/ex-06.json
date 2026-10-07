@@ -1,0 +1,45 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-06",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Decomposition of Functions into Outer and Inner Components",
+  "exerciseReference": "Section 1.2, Exercise 17",
+  "originalTopic": "Composite Functions: Decomposition",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["composite-functions", "decomposition", "chain-rule-prep"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Express the function h(x) = (x^2 - 1)^4 as a composition of an outer function f(u) and an inner function g(x), so that h(x) = f(g(x)).",
+  "finalAnswer": "f(u) = u^4, \\quad g(x) = x^2 - 1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify the Inner Sub-expression",
+      "mathExpression": "g(x) = x^2 - 1",
+      "explanation": "Look for the innermost operation acting directly on the independent variable x. The quantity inside the parentheses is the polynomial x^2 - 1.",
+      "why": "Functional decomposition identifies intermediate variables to simplify multi-step algebraic structures."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Define the Outer Function",
+      "mathExpression": "f(u) = u^4",
+      "explanation": "Let u = g(x) = x^2 - 1. The outermost operation performed on this intermediate quantity is raising it to the fourth power, producing f(u) = u^4.",
+      "why": "The outer function represents the final operation in the sequential calculation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Verify by Composition",
+      "mathExpression": "(f \\circ g)(x) = f(g(x)) = f(x^2 - 1) = (x^2 - 1)^4 = h(x)",
+      "explanation": "Evaluating f at g(x) recreates the original composite function h(x), confirming the decomposition is mathematically valid.",
+      "why": "Composition verification confirms that f(g(x)) is identical to h(x)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(x**2 - 1)**4",
+    "expected": "(x**2 - 1)**4",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "ch02-limits-continuity/2.4-one-sided-limits/solutions/ex-04",
+  "chapter": "ch02",
+  "section": "2.4",
+  "type": "solution",
+  "title": "Trigonometric Limit with Frequency Scaling",
+  "exerciseReference": "Section 2.4, Exercise 4",
+  "originalTopic": "Fundamental Trig Limit",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "trigonometric-limit",
+    "sin-x-over-x",
+    "frequency-scaling"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate: lim_{x -> 0} sin(5x) / (3x).",
+  "finalAnswer": "\\lim_{x \\to 0} \\frac{\\sin(5x)}{3x} = \\frac{5}{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Factor out Constant Multipliers",
+      "mathExpression": "\\frac{\\sin(5x)}{3x} = \\frac{1}{3} \\cdot \\frac{\\sin(5x)}{x}",
+      "explanation": "Pull the denominator constant factor 3 out of the fraction.",
+      "why": "Linearity of scalar multiplication."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Scale to Match the Argument of Sine",
+      "mathExpression": "\\frac{1}{3} \\cdot \\frac{\\sin(5x)}{x} = \\frac{5}{3} \\cdot \\frac{\\sin(5x)}{5x}",
+      "explanation": "Multiply and divide by 5 so the denominator matches the argument 5x.",
+      "why": "To apply lim_{u->0} sin(u)/u = 1, the denominator must match the argument of the sine function."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Substitute Variable u = 5x and Evaluate Limit",
+      "mathExpression": "u = 5x \\implies u \\to 0 \\text{ as } x \\to 0 \\implies \\lim_{x \\to 0} \\frac{5}{3} \\frac{\\sin(5x)}{5x} = \\frac{5}{3} \\lim_{u \\to 0} \\frac{\\sin u}{u} = \\frac{5}{3}(1) = \\frac{5}{3}",
+      "explanation": "Apply the fundamental trigonometric limit theorem with u = 5x.",
+      "why": "Standard limit theorem lim_{u->0} sin(u)/u = 1."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(5/3) * 1",
+    "expected": "5/3"
+  }
+}

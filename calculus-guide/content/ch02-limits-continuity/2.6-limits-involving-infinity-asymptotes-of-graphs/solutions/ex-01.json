@@ -1,0 +1,48 @@
+{
+  "id": "ch02-limits-continuity/2.6-limits-involving-infinity-asymptotes-of-graphs/solutions/ex-01",
+  "chapter": "ch02",
+  "section": "2.6",
+  "type": "solution",
+  "title": "Horizontal Asymptote of a Rational Function",
+  "exerciseReference": "Section 2.6, Exercise 1",
+  "originalTopic": "Rational Limits at Infinity",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "horizontal-asymptote",
+    "rational-function",
+    "limits-at-infinity"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the horizontal asymptotes of f(x) = (3x^2 - 5x + 2) / (5x^2 + 4x - 1) by evaluating limits as x -> +-oo.",
+  "finalAnswer": "\\lim_{x \\to \\pm \\infty} f(x) = \\frac{3}{5} \\implies y = \\frac{3}{5} \\text{ is a horizontal asymptote}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Divide Numerator and Denominator by Highest Power x^2",
+      "mathExpression": "\\frac{3x^2 - 5x + 2}{5x^2 + 4x - 1} = \\frac{3 - \\frac{5}{x} + \\frac{2}{x^2}}{5 + \\frac{4}{x} - \\frac{1}{x^2}} \\quad (x \\neq 0)",
+      "explanation": "Divide every term by x^2 to expose terms that approach zero.",
+      "why": "Standard technique for rational limits at infinity."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply the Reciprocal Limit Theorem",
+      "mathExpression": "\\lim_{x \\to \\infty} \\frac{1}{x} = 0, \\quad \\lim_{x \\to \\infty} \\frac{1}{x^2} = 0",
+      "explanation": "Every term with x in the denominator approaches zero as x -> infinity.",
+      "why": "Reciprocal limit rule lim 1/x^r = 0 for r > 0."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute the Limit",
+      "mathExpression": "\\lim_{x \\to \\infty} \\frac{3 - 0 + 0}{5 + 0 - 0} = \\frac{3}{5}",
+      "explanation": "Substitute the zero limits into the expression.",
+      "why": "The limit of a quotient is the quotient of limits."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "3/5",
+    "expected": "3/5"
+  }
+}

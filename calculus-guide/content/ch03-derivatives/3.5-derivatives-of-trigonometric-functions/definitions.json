@@ -1,0 +1,22 @@
+{
+  "id": "ch03-derivatives/3.5-derivatives-of-trigonometric-functions/definitions",
+  "chapter": "ch03",
+  "section": "3.5",
+  "title": "Derivatives of Trigonometric Functions",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-six-trig-derivatives",
+      "title": "Derivatives of the Six Trigonometric Functions",
+      "category": "theorem",
+      "latex": "\\frac{d}{dx}[\\sin x] = \\cos x, \\; \\frac{d}{dx}[\\cos x] = -\\sin x, \\; \\frac{d}{dx}[\\tan x] = \\sec^2 x, \\; \\frac{d}{dx}[\\sec x] = \\sec x \\tan x, \\; \\frac{d}{dx}[\\csc x] = -\\csc x \\cot x, \\; \\frac{d}{dx}[\\cot x] = -\\csc^2 x",
+      "statement": "The derivatives of all six trigonometric functions exist wherever the functions are defined, with radian measure assumed throughout.",
+      "conditions": [
+        "x measured in radians",
+        "x is in the domain of the respective trig function"
+      ],
+      "explanation": "Notice the cofunction pattern: every 'co' function (cosine, cotangent, cosecant) has a negative sign in its derivative.",
+      "keyTakeaway": "All 'co' trigonometric derivatives have a negative sign."
+    }
+  ]
+}

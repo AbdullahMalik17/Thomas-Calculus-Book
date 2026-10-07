@@ -1,0 +1,48 @@
+{
+  "id": "ch04-applications-of-derivatives/4.5-indeterminate-forms-and-lhospitals-rule/solutions/ex-01",
+  "chapter": "ch04",
+  "section": "4.5",
+  "type": "solution",
+  "title": "Repeated L'Hôpital's Rule on a Trigonometric Limit",
+  "exerciseReference": "Section 4.5, Exercise 1",
+  "originalTopic": "Repeated L'Hopital",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "lhopital",
+    "trigonometric-limit",
+    "repeated-application"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate: lim_{x -> 0} (sin x - x) / x^3.",
+  "finalAnswer": "\\lim_{x \\to 0} \\frac{\\sin x - x}{x^3} = -\\frac{1}{6}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Check Indeterminate Form (Form 0/0)",
+      "mathExpression": "\\frac{\\sin(0) - 0}{0^3} = \\frac{0}{0}",
+      "explanation": "Direct substitution produces 0/0. Apply L'Hôpital's Rule.",
+      "why": "Prerequisite condition for L'Hôpital's Rule."
+    },
+    {
+      "stepNumber": 2,
+      "title": "First Application of L'Hôpital's Rule",
+      "mathExpression": "\\lim_{x \\to 0} \\frac{\\cos x - 1}{3x^2} = \\frac{1 - 1}{0} = \\frac{0}{0}",
+      "explanation": "Differentiate numerator and denominator; result is still 0/0.",
+      "why": "Second application needed."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Second Application of L'Hôpital's Rule",
+      "mathExpression": "\\lim_{x \\to 0} \\frac{-\\sin x}{6x} = -\\frac{1}{6}\\lim_{x \\to 0}\\frac{\\sin x}{x} = -\\frac{1}{6}(1) = -\\frac{1}{6}",
+      "explanation": "Apply standard limit lim_{x->0} sin(x)/x = 1 (or differentiate once more).",
+      "why": "Concludes the evaluation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "Rational(-1,6)",
+    "expected": "-1/6"
+  }
+}

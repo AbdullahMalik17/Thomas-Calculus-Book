@@ -1,0 +1,48 @@
+{
+  "id": "ch02-limits-continuity/2.6-limits-involving-infinity-asymptotes-of-graphs/solutions/ex-03",
+  "chapter": "ch02",
+  "section": "2.6",
+  "type": "solution",
+  "title": "Difference of Radicals at Infinity",
+  "exerciseReference": "Section 2.6, Exercise 3",
+  "originalTopic": "Conjugate at Infinity",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "radicals",
+    "infinity-minus-infinity",
+    "conjugate"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate: lim_{x -> oo} (sqrt(x^2 + 4x) - x).",
+  "finalAnswer": "\\lim_{x \\to \\infty} (\\sqrt{x^2 + 4x} - x) = 2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Multiply by the Radical Conjugate",
+      "mathExpression": "\\frac{(\\sqrt{x^2 + 4x} - x)(\\sqrt{x^2 + 4x} + x)}{\\sqrt{x^2 + 4x} + x} = \\frac{(x^2 + 4x) - x^2}{\\sqrt{x^2 + 4x} + x} = \\frac{4x}{\\sqrt{x^2 + 4x} + x}",
+      "explanation": "Multiply and divide by sqrt(x^2 + 4x) + x to resolve the oo - oo form.",
+      "why": "Conjugate multiplication converts oo - oo into an algebraically manageable fraction."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Divide Numerator and Denominator by x",
+      "mathExpression": "\\frac{4x}{x\\left(\\sqrt{1 + \\frac{4}{x}} + 1\\right)} = \\frac{4}{\\sqrt{1 + \\frac{4}{x}} + 1}",
+      "explanation": "Factor x out of both the numerator and the denominator.",
+      "why": "Since x > 0, sqrt(x^2 + 4x) = x*sqrt(1 + 4/x)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate the Limit as x -> oo",
+      "mathExpression": "\\lim_{x \\to \\infty} \\frac{4}{\\sqrt{1 + \\frac{4}{x}} + 1} = \\frac{4}{\\sqrt{1 + 0} + 1} = \\frac{4}{2} = 2",
+      "explanation": "Substitute 4/x -> 0 into the expression.",
+      "why": "Direct evaluation of the continuous expression after reciprocal cancellation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "4 / (1 + 1)",
+    "expected": "2"
+  }
+}

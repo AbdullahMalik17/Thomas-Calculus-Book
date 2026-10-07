@@ -1,0 +1,48 @@
+{
+  "id": "ch02-limits-continuity/2.5-continuity/definitions",
+  "chapter": "ch02",
+  "section": "2.5",
+  "title": "Continuity",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-continuity-at-a-point",
+      "title": "Continuity at an Interior Point",
+      "category": "definition",
+      "latex": "\\lim_{x \\to c} f(x) = f(c)",
+      "statement": "A function f is continuous at an interior point c of its domain if: (1) f(c) is defined, (2) lim_{x->c} f(x) exists, and (3) lim_{x->c} f(x) = f(c).",
+      "conditions": [
+        "c must be in the domain of f",
+        "Two-sided limit exists as a finite real number",
+        "Limit equals function value"
+      ],
+      "explanation": "Continuity means there is no interruption, break, jump, or hole in the graph at x = c.",
+      "keyTakeaway": "Continuity requires value exists, limit exists, and value equals limit."
+    },
+    {
+      "id": "theorem-intermediate-value-theorem",
+      "title": "Intermediate Value Theorem (IVT)",
+      "category": "theorem",
+      "latex": "f(a) < y_0 < f(b) \\implies \\exists c \\in (a, b) \\text{ s.t. } f(c) = y_0",
+      "statement": "If f is continuous on a closed interval [a, b], and y0 is any value strictly between f(a) and f(b), then there exists at least one value c in (a, b) such that f(c) = y0.",
+      "conditions": [
+        "f must be continuous on the entire closed interval [a, b]",
+        "y0 is strictly between f(a) and f(b)"
+      ],
+      "explanation": "A continuous curve cannot jump over any intermediate value. Applied frequently to guarantee roots when f(a) and f(b) have opposite signs.",
+      "keyTakeaway": "Continuous functions attain every intermediate value between their endpoint values."
+    },
+    {
+      "id": "rule-classification-discontinuities",
+      "title": "Classification of Discontinuities",
+      "category": "rule",
+      "latex": "\\text{Removable: } \\lim f(x) \\neq f(c); \\quad \\text{Jump: } \\lim_{x \\to c^+} f \\neq \\lim_{x \\to c^-} f; \\quad \\text{Infinite: } \\lim f = \\pm \\infty",
+      "statement": "Discontinuities are classified as: (1) Removable (limit exists but != f(c)), (2) Jump (left and right limits exist but are unequal), (3) Infinite (one or both one-sided limits are infinite).",
+      "conditions": [
+        "At least one of the three continuity conditions fails at c"
+      ],
+      "explanation": "Removable discontinuities can be fixed by defining or redefining a single point. Jump and infinite discontinuities cannot be removed.",
+      "keyTakeaway": "Discontinuities are either removable (holes) or essential (jumps and vertical asymptotes)."
+    }
+  ]
+}

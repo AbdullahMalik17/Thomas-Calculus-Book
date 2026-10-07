@@ -1,0 +1,22 @@
+{
+  "id": "ch03-derivatives/3.7-implicit-differentiation/definitions",
+  "chapter": "ch03",
+  "section": "3.7",
+  "title": "Implicit Differentiation",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-implicit-differentiation",
+      "title": "Implicit Differentiation Technique",
+      "category": "rule",
+      "latex": "\\frac{d}{dx}[F(x, y)] = 0 \\implies \\text{apply chain rule with } \\frac{d}{dx}[g(y)] = g'(y)\\frac{dy}{dx}, \\text{ then solve for } \\frac{dy}{dx}",
+      "statement": "When an equation F(x, y) = 0 defines y implicitly as a differentiable function of x, differentiate both sides with respect to x treating y as a function of x, then isolate dy/dx algebraically.",
+      "conditions": [
+        "Equation defines y as a locally differentiable function of x",
+        "Denominator in dy/dx expression is non-zero"
+      ],
+      "explanation": "Avoids having to solve explicitly for y, which is often difficult or impossible.",
+      "keyTakeaway": "Every time you differentiate a term with y with respect to x, append dy/dx."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "ch04-applications-of-derivatives/4.8-antiderivatives/solutions/ex-02",
+  "chapter": "ch04",
+  "section": "4.8",
+  "type": "solution",
+  "title": "Antiderivative of Fractional and Negative Powers",
+  "exerciseReference": "Section 4.8, Exercise 2",
+  "originalTopic": "General Power Antiderivative",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "antiderivative",
+    "fractional-powers",
+    "radicals"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the general antiderivative of f(x) = 3/sqrt(x) - 2/x^3 + 5*x^(1/4).",
+  "finalAnswer": "F(x) = 6\\sqrt{x} + \\frac{1}{x^2} + 4x^{5/4} + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Rewrite in Power Form",
+      "mathExpression": "f(x) = 3x^{-1/2} - 2x^{-3} + 5x^{1/4}",
+      "explanation": "Convert terms to power format.",
+      "why": "Preparation for power rule."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate Term-by-Term",
+      "mathExpression": "3\\frac{x^{1/2}}{1/2} - 2\\frac{x^{-2}}{-2} + 5\\frac{x^{5/4}}{5/4} = 6x^{1/2} + x^{-2} + 4x^{5/4}",
+      "explanation": "Multiply by reciprocals of new exponents: 3 * 2 = 6; -2 / -2 = 1; 5 * (4/5) = 4.",
+      "why": "Integration power rule."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Add Constant of Integration",
+      "mathExpression": "F(x) = 6\\sqrt{x} + \\frac{1}{x^2} + 4x^{5/4} + C",
+      "explanation": "Combine and append C.",
+      "why": "General indefinite integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "type": "integral",
+    "expression": "3*x**(-Rational(1,2)) - 2*x**(-3) + 5*x**(Rational(1,4))",
+    "expected": "6*sqrt(x) + 1/x**2 + 4*x**(Rational(5,4))",
+    "variable": "x",
+    "kind": "indefinite"
+  }
+}

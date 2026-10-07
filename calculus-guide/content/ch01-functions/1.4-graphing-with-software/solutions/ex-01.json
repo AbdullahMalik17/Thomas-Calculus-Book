@@ -1,0 +1,45 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-01",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "Optimal Viewing Window Selection for Polynomials",
+  "exerciseReference": "Section 1.4, Exercise 1",
+  "originalTopic": "Graphing Technology: Viewing Window Analysis",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["graphing-software", "viewing-window", "cubic", "extrema"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find a suitable viewing window [x_min, x_max] by [y_min, y_max] that clearly displays all local extrema, intercepts, and inflection trends of the cubic polynomial f(x) = x^3 - 3x^2 - 9x + 2.",
+  "finalAnswer": "[-4, 5] \\times [-30, 15]",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Analyze Polynomial Behavior and Extrema",
+      "mathExpression": "f'(x) = 3x^2 - 6x - 9 = 3(x - 3)(x + 1) = 0",
+      "explanation": "Critical points occur at x = -1 and x = 3. Evaluating f gives f(-1) = (-1)^3 - 3(-1)^2 - 9(-1) + 2 = 7 (local maximum) and f(3) = 3^3 - 3(3)^2 - 9(3) + 2 = -25 (local minimum).",
+      "why": "Local turning points establish the minimum required vertical span of the graph."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Analyze y-Intercept and Inflection",
+      "mathExpression": "f(0) = 2, \\quad x_{\\text{inflection}} = 1, \\quad f(1) = -9",
+      "explanation": "The y-intercept is at (0, 2), and the inflection point lies at x = 1, y = -9.",
+      "why": "The central feature coordinates must fall well inside the window margins."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Select Symmetrical Margins",
+      "mathExpression": "x \\in [-4, 5], \\quad y \\in [-30, 15]",
+      "explanation": "An x-span of [-4, 5] captures both critical values x = -1 and x = 3 with sufficient room to observe end behavior. A y-span of [-30, 15] accommodates the minimum at -25 and maximum at 7 with comfortable margins.",
+      "why": "A standard viewing window should include all critical points plus 20-30% boundary margins."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "x**3 - 3*x**2 - 9*x + 2",
+    "expected": "x**3 - 3*x**2 - 9*x + 2",
+    "variable": "x"
+  }
+}

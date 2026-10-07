@@ -1,0 +1,49 @@
+{
+  "id": "ch02-limits-continuity/2.2-limit-of-a-function-and-limit-laws/solutions/ex-03",
+  "chapter": "ch02",
+  "section": "2.2",
+  "type": "solution",
+  "title": "Factoring a Difference of Cubes",
+  "exerciseReference": "Section 2.2, Exercise 3",
+  "originalTopic": "Cubic Factoring",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "factoring",
+    "difference-of-cubes",
+    "rational-function"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate the limit: lim_{x -> 1} (x^3 - 1)/(x^2 - 1).",
+  "finalAnswer": "\\lim_{x \\to 1} \\frac{x^3 - 1}{x^2 - 1} = \\frac{3}{2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Factor Numerator and Denominator",
+      "mathExpression": "x^3 - 1 = (x - 1)(x^2 + x + 1), \\quad x^2 - 1 = (x - 1)(x + 1)",
+      "explanation": "Apply difference of cubes to numerator and difference of squares to denominator.",
+      "why": "Difference of cubes identity: a^3 - b^3 = (a - b)(a^2 + ab + b^2)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Cancel Common Factor (x - 1)",
+      "mathExpression": "\\frac{x^3 - 1}{x^2 - 1} = \\frac{(x - 1)(x^2 + x + 1)}{(x - 1)(x + 1)} = \\frac{x^2 + x + 1}{x + 1} \\quad (x \\neq 1)",
+      "explanation": "Cancel the common factor (x - 1) which caused the 0/0 form.",
+      "why": "In limit evaluation, x approaches 1 but is never equal to 1."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Limit of Simplified Expression",
+      "mathExpression": "\\lim_{x \\to 1} \\frac{x^2 + x + 1}{x + 1} = \\frac{1^2 + 1 + 1}{1 + 1} = \\frac{3}{2}",
+      "explanation": "Substitute x = 1 into the simplified continuous rational function.",
+      "why": "Direct substitution is valid when denominator does not equal zero."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(x**3 - 1)/(x**2 - 1) - (x**2 + x + 1)/(x + 1)",
+    "expected": "0",
+    "variable": "x"
+  }
+}

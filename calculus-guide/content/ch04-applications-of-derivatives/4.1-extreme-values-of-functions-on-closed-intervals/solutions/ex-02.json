@@ -1,0 +1,49 @@
+{
+  "id": "ch04-applications-of-derivatives/4.1-extreme-values-of-functions-on-closed-intervals/solutions/ex-02",
+  "chapter": "ch04",
+  "section": "4.1",
+  "type": "solution",
+  "title": "Extrema with Fractional Exponent and Undefined Derivative",
+  "exerciseReference": "Section 4.1, Exercise 2",
+  "originalTopic": "Non-Differentiable Critical Points",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "fractional-powers",
+    "critical-points",
+    "cusp"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the absolute extrema of f(x) = x^(2/3) * (5 - 2x) on [-1, 2].",
+  "finalAnswer": "\\text{Absolute Maximum: } 7 \\text{ at } x = -1; \\quad \\text{Absolute Minimum: } 0 \\text{ at } x = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Differentiate f(x) via Product Rule",
+      "mathExpression": "f(x) = 5x^{2/3} - 2x^{5/3} \\implies f'(x) = \\frac{10}{3}x^{-1/3} - \\frac{10}{3}x^{2/3} = \\frac{10}{3x^{1/3}}(1 - x)",
+      "explanation": "Expand and differentiate.",
+      "why": "Locating critical points."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify Critical Points",
+      "mathExpression": "f'(x) = 0 \\implies 1 - x = 0 \\implies x = 1; \\quad f'(x) \\text{ undefined at } x = 0",
+      "explanation": "x = 1 makes numerator zero; x = 0 makes denominator zero.",
+      "why": "Both x = 1 and x = 0 are critical points in (-1, 2)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate f at All Candidates",
+      "mathExpression": "f(-1) = (-1)^{2/3}(5 + 2) = 7, \\; f(0) = 0, \\; f(1) = 1(5 - 2) = 3, \\; f(2) = 2^{2/3}(5 - 4) = \\sqrt[3]{4} \\approx 1.59",
+      "explanation": "Evaluate f at endpoints and critical points. The maximum value is 7 at x = -1, and minimum is 0 at x = 0.",
+      "why": "Extreme value theorem guarantees maximum and minimum occur at critical points or endpoints."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "type": "derivative",
+    "expression": "5*x**(Rational(2,3)) - 2*x**(Rational(5,3))",
+    "expected": "Rational(10,3)*x**(-Rational(1,3)) - Rational(10,3)*x**(Rational(2,3))",
+    "variable": "x"
+  }
+}

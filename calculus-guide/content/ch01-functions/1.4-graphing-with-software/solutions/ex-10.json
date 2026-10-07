@@ -1,0 +1,45 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-10",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "Eliminating Time to Derive the Parabolic Projectile Trajectory",
+  "exerciseReference": "Section 1.4, Exercise 49",
+  "originalTopic": "Parametric Motion: Projectile Trajectories",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["parametric-equations", "projectile-motion", "kinematics", "parabola"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A projectile is launched from the origin with initial velocity v0 at launch angle alpha. Its coordinates at time t are given by x(t) = (v0*cos alpha)*t and y(t) = (v0*sin alpha)*t - (1/2)*g*t^2. Eliminate the parameter t to find the Cartesian trajectory equation.",
+  "finalAnswer": "y = (\\tan\\alpha)x - \\frac{g}{2v_0^2\\cos^2\\alpha}x^2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Express Parameter t in Terms of Horizontal Position x",
+      "mathExpression": "x = (v_0\\cos\\alpha)t \\implies t = \\frac{x}{v_0\\cos\\alpha}",
+      "explanation": "Assuming the launch angle is not vertical (alpha != pi/2), divide by the constant horizontal velocity component v0*cos(alpha).",
+      "why": "Linear uniform motion horizontally enables direct expression of time as distance divided by speed."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute t into the Vertical Position Equation",
+      "mathExpression": "y = (v_0\\sin\\alpha)\\left(\\frac{x}{v_0\\cos\\alpha}\\right) - \\frac{1}{2}g\\left(\\frac{x}{v_0\\cos\\alpha}\\right)^2",
+      "explanation": "Substitute the expression for t into both the linear and quadratic terms of y(t).",
+      "why": "Direct substitution maps the kinematic trajectory into spatial coordinates."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Simplify Coefficients to Standard Form",
+      "mathExpression": "y = \\left(\\frac{\\sin\\alpha}{\\cos\\alpha}\\right)x - \\frac{g}{2v_0^2\\cos^2\\alpha}x^2 = (\\tan\\alpha)x - \\left(\\frac{g}{2v_0^2}\\sec^2\\alpha\\right)x^2",
+      "explanation": "The initial velocity v0 cancels in the first term, leaving sin(alpha)/cos(alpha) = tan(alpha). The second term reveals that y is a downward-opening quadratic in x, mathematically proving that ideal projectile motion follows a parabolic path.",
+      "why": "Trigonometric definition of tangent and quadratic polynomial structure."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "x*tan(alpha) - (g/(2*v0**2*cos(alpha)**2))*x**2",
+    "expected": "x*tan(alpha) - (g*x**2/(2*v0**2*cos(alpha)**2))",
+    "variable": "x"
+  }
+}

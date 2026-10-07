@@ -1,0 +1,36 @@
+{
+  "id": "ch04-applications-of-derivatives/4.2-the-mean-value-theorem/definitions",
+  "chapter": "ch04",
+  "section": "4.2",
+  "title": "The Mean Value Theorem",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-rolles-theorem",
+      "title": "Rolle's Theorem",
+      "category": "theorem",
+      "latex": "f(a) = f(b) \\implies \\exists c \\in (a, b) \\text{ s.t. } f'(c) = 0",
+      "statement": "Suppose f is continuous on [a, b] and differentiable on (a, b). If f(a) = f(b), then there exists at least one point c in (a, b) where f'(c) = 0.",
+      "conditions": [
+        "f continuous on [a, b]",
+        "f differentiable on (a, b)",
+        "f(a) = f(b)"
+      ],
+      "explanation": "If a smooth curve starts and ends at the same horizontal level, it must have at least one horizontal tangent in between.",
+      "keyTakeaway": "Matching endpoints on a smooth curve guarantee a horizontal tangent."
+    },
+    {
+      "id": "theorem-mean-value-theorem",
+      "title": "The Mean Value Theorem (MVT)",
+      "category": "theorem",
+      "latex": "f'(c) = \\frac{f(b) - f(a)}{b - a}",
+      "statement": "If f is continuous on [a, b] and differentiable on (a, b), then there exists at least one point c in (a, b) where the instantaneous rate of change f'(c) equals the average rate of change [f(b) - f(a)] / (b - a).",
+      "conditions": [
+        "f continuous on [a, b]",
+        "f differentiable on (a, b)"
+      ],
+      "explanation": "Geometrically, there is at least one tangent line parallel to the secant line joining endpoints (a, f(a)) and (b, f(b)).",
+      "keyTakeaway": "Instantaneous slope must equal average slope at some interior point."
+    }
+  ]
+}
