@@ -1,0 +1,40 @@
+{
+  "id": "ch09-first-order-differential-equations/9.1-solutions-slope-fields-and-eulers-method/solutions/ex-04",
+  "chapter": "ch09",
+  "section": "9.1",
+  "type": "solution",
+  "title": "Euler's Method with Negative Slope",
+  "exerciseReference": "Section 9.1, Exercise 4",
+  "originalTopic": "Euler Step for Decay",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "euler",
+    "decay",
+    "numerical"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Use Euler's method with step size h = 0.5 to approximate y(1) for dy/dx = -2y with y(0) = 3.",
+  "finalAnswer": "y(1) \\approx 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "First Step: x = 0 to x = 0.5",
+      "mathExpression": "y_1 = y_0 + h(-2y_0) = 3 + 0.5(-2 \\cdot 3) = 3 - 3 = 0",
+      "explanation": "Advance one step.",
+      "why": "Euler method step."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Second Step: x = 0.5 to x = 1.0",
+      "mathExpression": "y_2 = y_1 + h(-2y_1) = 0 + 0.5(0) = 0",
+      "explanation": "At y = 0, slope is zero.",
+      "why": "Next Euler iteration."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "3 + 0.5*(-6)",
+    "expected": "0"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.3-polar-coordinates/solutions/ex-01",
+  "chapter": "ch11",
+  "section": "11.3",
+  "type": "solution",
+  "title": "Polar to Cartesian Coordinate Conversion",
+  "exerciseReference": "Section 11.3, Exercise 1",
+  "originalTopic": "Coordinate Conversion",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "polar-coordinates",
+    "conversion",
+    "trigonometry"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Convert the polar coordinates (4, 2pi/3) to Cartesian coordinates (x, y).",
+  "finalAnswer": "(x, y) = (-2, 2\\sqrt{3})",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute x-Coordinate",
+      "mathExpression": "x = r\\cos(\\theta) = 4\\cos(2\\pi/3) = 4\\left(-\\frac{1}{2}\\right) = -2",
+      "explanation": "cos(2pi/3) = -1/2.",
+      "why": "x = r cos(theta)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute y-Coordinate",
+      "mathExpression": "y = r\\sin(\\theta) = 4\\sin(2\\pi/3) = 4\\left(\\frac{\\sqrt{3}}{2}\\right) = 2\\sqrt{3}",
+      "explanation": "sin(2pi/3) = sqrt(3)/2.",
+      "why": "y = r sin(theta)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "4*cos(2*pi/3) - (-2)",
+    "expected": "0"
+  }
+}

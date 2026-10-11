@@ -1,0 +1,47 @@
+{
+  "id": "ch14-partial-derivatives/14.4-the-chain-rule/solutions/ex-02",
+  "chapter": "ch14",
+  "section": "14.4",
+  "type": "solution",
+  "title": "Chain Rule with Two Independent Parameters",
+  "exerciseReference": "Section 14.4, Exercise 2",
+  "originalTopic": "Two-Parameter Chain Rule",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "two-parameters",
+    "chain-rule",
+    "partial-derivatives"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For z = exp(x) sin(y) with x = u^2 - v^2 and y = 2uv, find dz/du at (u, v) = (1, 1).",
+  "finalAnswer": "\\frac{\\partial z}{\\partial u} = 2\\sin(2) + 2\\cos(2)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate Intermediate Variables and Derivatives at (1, 1)",
+      "mathExpression": "x(1, 1) = 1 - 1 = 0, \\; y(1, 1) = 2(1)(1) = 2; \\quad \\frac{\\partial x}{\\partial u} = 2u = 2, \\; \\frac{\\partial y}{\\partial u} = 2v = 2",
+      "explanation": "Evaluate coordinates and u-derivatives at (1, 1).",
+      "why": "Finding values for chain rule tree."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Partial Derivatives of z",
+      "mathExpression": "\\frac{\\partial z}{\\partial x} = e^x \\sin y \\implies e^0 \\sin 2 = \\sin 2; \\quad \\frac{\\partial z}{\\partial y} = e^x \\cos y \\implies e^0 \\cos 2 = \\cos 2",
+      "explanation": "Evaluate z_x and z_y at (0, 2).",
+      "why": "Evaluating outer partial derivatives."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Apply Chain Rule",
+      "mathExpression": "\\frac{\\partial z}{\\partial u} = (\\sin 2)(2) + (\\cos 2)(2) = 2\\sin 2 + 2\\cos 2",
+      "explanation": "Sum products of partials.",
+      "why": "Computing total partial rate dz/du."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(exp(0)*sin(2))*(2*1) + (exp(0)*cos(2))*(2*1)",
+    "expected": "2*sin(2) + 2*cos(2)"
+  }
+}

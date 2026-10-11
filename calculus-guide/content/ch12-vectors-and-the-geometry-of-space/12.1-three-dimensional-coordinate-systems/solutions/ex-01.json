@@ -1,0 +1,40 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.1-three-dimensional-coordinate-systems/solutions/ex-01",
+  "chapter": "ch12",
+  "section": "12.1",
+  "type": "solution",
+  "title": "Distance Between Points in 3D Space",
+  "exerciseReference": "Section 12.1, Exercise 1",
+  "originalTopic": "Distance in Space",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "3D-distance",
+    "analytic-geometry",
+    "Euclidean-space"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the distance between the two points P_1(1, -2, 4) and P_2(3, 2, -1) in three-dimensional space.",
+  "finalAnswer": "3\\sqrt{5}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Coordinate Differences",
+      "mathExpression": "\\Delta x = 3 - 1 = 2, \\quad \\Delta y = 2 - (-2) = 4, \\quad \\Delta z = -1 - 4 = -5",
+      "explanation": "Compute the difference along each orthogonal axis.",
+      "why": "Determining orthogonal displacement components."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply 3D Distance Formula",
+      "mathExpression": "d = \\sqrt{2^2 + 4^2 + (-5)^2} = \\sqrt{4 + 16 + 25} = \\sqrt{45} = 3\\sqrt{5}",
+      "explanation": "Sum the squared coordinate differences and take the positive square root.",
+      "why": "Evaluating Euclidean distance in 3-space."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt((3 - 1)**2 + (2 - (-2))**2 + (-1 - 4)**2)",
+    "expected": "3*sqrt(5)"
+  }
+}

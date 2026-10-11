@@ -1,0 +1,47 @@
+{
+  "id": "ch05-integrals/5.1-area-and-estimating-with-finite-sums/solutions/ex-03",
+  "chapter": "ch05",
+  "section": "5.1",
+  "type": "solution",
+  "title": "Distance Traveled from Velocity Function via Finite Sums",
+  "exerciseReference": "Section 5.1, Exercise 3",
+  "originalTopic": "Applied Rectilinear Distance Estimation",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "distance",
+    "velocity",
+    "riemann-sum"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A particle travels with velocity v(t) = 3t^2 meters/second over the interval t in [0, 3]. Approximate the total distance traveled using RRAM with n = 3 subintervals.",
+  "finalAnswer": "\\text{Distance} \\approx R_3 = 42 \\text{ meters}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Delta t and Subintervals",
+      "mathExpression": "\\Delta t = \\frac{3 - 0}{3} = 1; \\quad t_1 = 1, \\; t_2 = 2, \\; t_3 = 3",
+      "explanation": "Grid spacing is 1 second.",
+      "why": "Equal time partition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Velocity at Right Endpoints",
+      "mathExpression": "v(1) = 3(1)^2 = 3, \\quad v(2) = 3(2)^2 = 12, \\quad v(3) = 3(3)^2 = 27",
+      "explanation": "Evaluate v(t) = 3t^2 at right endpoints.",
+      "why": "Right endpoint velocity values."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Sum Distance Increments",
+      "mathExpression": "R_3 = \\Delta t [v(1) + v(2) + v(3)] = 1 \\cdot (3 + 12 + 27) = 42",
+      "explanation": "Total estimated displacement is 42 m.",
+      "why": "Distance = velocity times time increment."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1 * (3 + 12 + 27)",
+    "expected": "42"
+  }
+}

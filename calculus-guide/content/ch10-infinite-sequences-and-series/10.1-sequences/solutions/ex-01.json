@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.1-sequences/solutions/ex-01",
+  "chapter": "ch10",
+  "section": "10.1",
+  "type": "solution",
+  "title": "Limit of a Rational Sequence",
+  "exerciseReference": "Section 10.1, Exercise 1",
+  "originalTopic": "Rational Sequence Limit",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "sequences",
+    "limits",
+    "rational"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether the sequence a_n = (3n^2 - 5n) / (2n^2 + 7) converges, and find its limit.",
+  "finalAnswer": "\\lim_{n \\to \\infty} a_n = \\frac{3}{2} \\quad (\\text{Converges})",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Divide by Highest Power of n",
+      "mathExpression": "\\frac{3n^2 - 5n}{2n^2 + 7} = \\frac{3 - 5/n}{2 + 7/n^2}",
+      "explanation": "Divide numerator and denominator by n^2.",
+      "why": "Standard limit evaluation for rational sequences."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Limits of Reciprocals",
+      "mathExpression": "\\lim_{n \\to \\infty} \\frac{5}{n} = 0, \\quad \\lim_{n \\to \\infty} \\frac{7}{n^2} = 0",
+      "explanation": "Reciprocal terms vanish.",
+      "why": "Elementary sequence limits."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Sequence Limit",
+      "mathExpression": "\\frac{3 - 0}{2 + 0} = \\frac{3}{2}",
+      "explanation": "Ratio of leading coefficients.",
+      "why": "Final evaluated limit."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "Rational(3, 2) - 3/2",
+    "expected": "0"
+  }
+}

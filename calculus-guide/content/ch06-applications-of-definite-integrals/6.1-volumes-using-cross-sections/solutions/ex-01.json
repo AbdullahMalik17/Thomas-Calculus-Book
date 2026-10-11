@@ -1,0 +1,43 @@
+{
+  "id": "ch06-applications-of-definite-integrals/6.1-volumes-using-cross-sections/solutions/ex-01",
+  "chapter": "ch06",
+  "section": "6.1",
+  "type": "solution",
+  "title": "Volume of Solid with Square Cross-Sections",
+  "exerciseReference": "Section 6.1, Exercise 1",
+  "originalTopic": "General Slicing Method",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "volume",
+    "slicing",
+    "square-cross-sections"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A solid has base bounded by y = sqrt(x), the x-axis, and x = 4. Cross-sections perpendicular to the x-axis are squares. Find the volume.",
+  "finalAnswer": "V = 8",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine Cross-Sectional Area A(x)",
+      "mathExpression": "s(x) = \\sqrt{x} \\implies A(x) = [s(x)]^2 = (\\sqrt{x})^2 = x",
+      "explanation": "Side length of square is s = sqrt(x), so area is s^2.",
+      "why": "Area formula for a square."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Set Up and Evaluate Volume Integral",
+      "mathExpression": "V = \\int_0^4 A(x) dx = \\int_0^4 x \\, dx = \\left[ \\frac{x^2}{2} \\right]_0^4 = \\frac{16}{2} = 8",
+      "explanation": "Integrate A(x) from x = 0 to x = 4.",
+      "why": "General slicing volume formula."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "x",
+    "expected": "8",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "4"
+  }
+}

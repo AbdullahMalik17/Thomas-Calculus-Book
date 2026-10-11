@@ -1,0 +1,40 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.9-convergence-of-taylor-series/solutions/ex-02",
+  "chapter": "ch10",
+  "section": "10.9",
+  "type": "solution",
+  "title": "Error Bounding for Cosine Approximation",
+  "exerciseReference": "Section 10.9, Exercise 2",
+  "originalTopic": "Taylor Error Bound",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "cosine",
+    "error-bound",
+    "lagrange-remainder"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Estimate the maximum error in approximating cos(0.2) by P_4(0.2) = 1 - (0.2)^2/2 + (0.2)^4/24.",
+  "finalAnswer": "|R_4(0.2)| \\le \\frac{(0.2)^6}{720} \\approx 8.89 \\times 10^{-8}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Next Derivative and Bound M",
+      "mathExpression": "f(x) = \\cos(x) \\implies |f^{(6)}(c)| = |-\\cos(c)| \\le 1 = M",
+      "explanation": "Since P_4 is also P_5 (odd terms are 0), next non-zero term is degree 6.",
+      "why": "Cosine derivative bound."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Remainder Formula",
+      "mathExpression": "|R_5(0.2)| = \\frac{|f^{(6)}(c)|}{6!} (0.2)^6 \\le \\frac{1}{720} (0.000064) = \\frac{6.4 \\times 10^{-5}}{720} \\approx 8.89 \\times 10^{-8}",
+      "explanation": "Calculate 6! = 720.",
+      "why": "Lagrange error bound."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(0.2)**6 / 720 - 0.000064/720",
+    "expected": "0"
+  }
+}

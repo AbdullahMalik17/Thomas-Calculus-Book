@@ -1,0 +1,34 @@
+{
+  "id": "ch05-integrals/5.3-the-definite-integral/definitions",
+  "chapter": "ch05",
+  "section": "5.3",
+  "title": "The Definite Integral",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-definite-integral",
+      "title": "The Definite Integral",
+      "category": "definition",
+      "latex": "\\int_a^b f(x) dx = \\lim_{\\|P\\| \\to 0} \\sum_{k=1}^n f(c_k) \\Delta x_k",
+      "statement": "If f is defined on [a, b] and the limit of Riemann sums exists for every partition whose norm approaches 0 regardless of sample point choice, f is integrable on [a, b] and the limit is called the definite integral.",
+      "conditions": [
+        "Norm of partition ||P|| -> 0",
+        "f is bounded on [a, b]"
+      ],
+      "explanation": "Every continuous function on a closed interval [a, b] is Riemann integrable.",
+      "keyTakeaway": "Continuous functions are guaranteed to be integrable."
+    },
+    {
+      "id": "rule-properties-of-definite-integrals",
+      "title": "Algebraic Properties of Definite Integrals",
+      "category": "rule",
+      "latex": "\\int_a^b (k_1 f + k_2 g) dx = k_1 \\int_a^b f dx + k_2 \\int_a^b g dx, \\quad \\int_a^b f dx = \\int_a^c f dx + \\int_c^b f dx",
+      "statement": "Definite integrals satisfy linearity, interval additivity, reversing limits sign reversal (int_b^a f = - int_a^b f), and domination (f <= g implies int f <= int g).",
+      "conditions": [
+        "Integrands are integrable on relevant intervals"
+      ],
+      "explanation": "These properties allow decomposition of complicated regions into simpler geometric components.",
+      "keyTakeaway": "The integral operator is linear and additive across subintervals."
+    }
+  ]
+}

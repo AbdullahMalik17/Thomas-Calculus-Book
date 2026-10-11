@@ -1,0 +1,24 @@
+# Section 14.7: Extreme Values and Saddle Points
+
+Optimization of multivariable functions involves identifying critical points and classifying their geometric behavior.
+
+---
+
+## 1. The Second Derivative Test
+
+Let $(a, b)$ be a critical point ($f_x = 0, f_y = 0$). Evaluate the **discriminant** (Hessian determinant):
+$$D = f_{xx} f_{yy} - (f_{xy})^2$$
+
+1. **Local Minimum**: $D > 0$ and $f_{xx} > 0$ (or $f_{yy} > 0$)
+2. **Local Maximum**: $D > 0$ and $f_{xx} < 0$ (or $f_{yy} < 0$)
+3. **Saddle Point**: $D < 0$
+4. **Inconclusive**: $D = 0$
+
+---
+
+## 2. Absolute Extrema on Closed Bounded Regions
+
+To find absolute extrema on a closed, bounded set $R$:
+1. Find all critical points in the interior of $R$ and evaluate $f$.
+2. Find the extreme values of $f$ on the boundary of $R$.
+3. The largest and smallest values from steps 1 and 2 are the absolute maximum and minimum.

@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.4-comparison-tests/solutions/ex-01",
+  "chapter": "ch10",
+  "section": "10.4",
+  "type": "solution",
+  "title": "Direct Comparison with a Geometric Series",
+  "exerciseReference": "Section 10.4, Exercise 1",
+  "originalTopic": "Direct Comparison Test",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "DCT",
+    "geometric-comparison",
+    "convergence"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether sum_{n=1}^oo 1 / (2^n + 1) converges or diverges.",
+  "finalAnswer": "\\sum_{n=1}^\\infty \\frac{1}{2^n + 1} \\quad \\text{Converges by Direct Comparison}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Establish Term Inequality",
+      "mathExpression": "2^n + 1 > 2^n \\implies \\frac{1}{2^n + 1} < \\frac{1}{2^n} \\quad \\forall n \\ge 1",
+      "explanation": "Larger denominator makes the fraction smaller.",
+      "why": "Direct inequality."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify Benchmark Series",
+      "mathExpression": "\\sum_{n=1}^\\infty \\frac{1}{2^n} = \\sum_{n=1}^\\infty \\left(\\frac{1}{2}\\right)^n \\text{ is a convergent geometric series } (r = 1/2 < 1)",
+      "explanation": "Standard geometric series benchmark.",
+      "why": "Known convergence."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude by DCT",
+      "mathExpression": "\\text{Since } 0 < a_n < b_n \\text{ and } \\sum b_n \\text{ converges, } \\sum a_n \\text{ converges}",
+      "explanation": "Direct comparison test criterion.",
+      "why": "Convergence proven."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

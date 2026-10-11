@@ -1,0 +1,23 @@
+# Section 8.8: Improper Integrals
+
+Extending integration to infinite domains (Type I) or functions with infinite asymptotes (Type II).
+
+---
+
+## 1. Type I: Infinite Limits of Integration
+
+$$
+\int_a^\infty f(x) dx = \lim_{t \to \infty} \int_a^t f(x) dx
+$$
+
+$$
+\int_{-\infty}^\infty f(x) dx = \int_{-\infty}^c f(x) dx + \int_c^\infty f(x) dx
+$$
+
+---
+
+## 2. Direct Comparison Test
+
+If $0 \le f(x) \le g(x)$ for all $x \ge a$:
+- If $\int_a^\infty g(x) dx$ **converges**, then $\int_a^\infty f(x) dx$ **converges**.
+- If $\int_a^\infty f(x) dx$ **diverges**, then $\int_a^\infty g(x) dx$ **diverges**.

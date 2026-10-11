@@ -1,0 +1,47 @@
+{
+  "id": "ch15-multiple-integrals/15.4-double-integrals-in-polar-form/solutions/ex-05",
+  "chapter": "ch15",
+  "section": "15.4",
+  "type": "solution",
+  "title": "Integration over an Off-Center Circle",
+  "exerciseReference": "Section 15.4, Exercise 5",
+  "originalTopic": "Off-Center Circular Region",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "off-center-circle",
+    "polar-integral",
+    "cosine-powers"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate iint_R x dA where R is the disk bounded by x^2 + y^2 = 2x.",
+  "finalAnswer": "\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Convert Boundary Equation to Polar Coordinates",
+      "mathExpression": "r^2 = 2r\\cos\\theta \\implies r = 2\\cos\\theta \\quad \\text{for } -\\frac{\\pi}{2} \\le \\theta \\le \\frac{\\pi}{2}",
+      "explanation": "Substitute x^2 + y^2 = r^2 and x = r cos(theta).",
+      "why": "Determining polar boundary function."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Set Up Iterated Integral",
+      "mathExpression": "\\int_{-\\pi/2}^{\\pi/2} \\int_0^{2\\cos\\theta} (r\\cos\\theta) r \\, dr \\, d\\theta = \\int_{-\\pi/2}^{\\pi/2} \\cos\\theta \\left[ \\frac{r^3}{3} \\right]_0^{2\\cos\\theta} d\\theta = \\frac{8}{3}\\int_{-\\pi/2}^{\\pi/2} \\cos^4\\theta \\, d\\theta",
+      "explanation": "Integrate r^2 with respect to r.",
+      "why": "Evaluating radial component."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Fourth-Power Cosine Integral",
+      "mathExpression": "\\frac{8}{3} \\times 2 \\left( \\frac{3\\pi}{16} \\right) = \\frac{16}{3} \\left( \\frac{3\\pi}{16} \\right) = \\pi",
+      "explanation": "Use standard Wallis formula int_0^(pi/2) cos^4(theta) dtheta = 3pi/16.",
+      "why": "Evaluating final integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(8/3) * 2 * (3*pi/16)",
+    "expected": "pi"
+  }
+}

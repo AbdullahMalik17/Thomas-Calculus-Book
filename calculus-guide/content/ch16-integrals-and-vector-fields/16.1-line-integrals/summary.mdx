@@ -1,0 +1,17 @@
+# Section 16.1: Line Integrals
+
+Scalar line integrals accumulate quantities along curves in the plane and space.
+
+---
+
+## 1. Computational Formula
+
+For a smooth curve $C$ parametrized by $\mathbf{r}(t) = \langle x(t), y(t), z(t) \rangle$ for $a \le t \le b$:
+$$\int_C f(x, y, z) \, ds = \int_a^b f(x(t), y(t), z(t)) \sqrt{x'(t)^2 + y'(t)^2 + z'(t)^2} \, dt$$
+
+---
+
+## 2. Piecewise Smooth Curves
+
+If $C$ is composed of smooth segments $C_1, C_2, \dots, C_k$ joined end-to-end:
+$$\int_C f \, ds = \int_{C_1} f \, ds + \int_{C_2} f \, ds + \dots + \int_{C_k} f \, ds$$

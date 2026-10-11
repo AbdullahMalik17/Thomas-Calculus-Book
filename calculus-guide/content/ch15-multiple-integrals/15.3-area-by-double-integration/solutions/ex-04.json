@@ -1,0 +1,40 @@
+{
+  "id": "ch15-multiple-integrals/15.3-area-by-double-integration/solutions/ex-04",
+  "chapter": "ch15",
+  "section": "15.3",
+  "type": "solution",
+  "title": "Average Height of a Bilinear Surface",
+  "exerciseReference": "Section 15.3, Exercise 4",
+  "originalTopic": "Average Value Calculation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "average-value",
+    "bilinear",
+    "unit-square"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the average height of the surface z = xy over the unit square [0, 1] x [0, 1].",
+  "finalAnswer": "\\frac{1}{4}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Calculate Area and Double Integral",
+      "mathExpression": "\\text{Area}(R) = 1; \\quad \\iint_R xy \\, dA = \\left(\\int_0^1 x \\, dx\\right)\\left(\\int_0^1 y \\, dy\\right) = \\left(\\frac{1}{2}\\right)\\left(\\frac{1}{2}\\right) = \\frac{1}{4}",
+      "explanation": "Evaluate the double integral over the unit square.",
+      "why": "Finding integral of function."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Average Height",
+      "mathExpression": "\\bar{z} = \\frac{1}{1} \\left(\\frac{1}{4}\\right) = \\frac{1}{4}",
+      "explanation": "Divide the integral by the unit area.",
+      "why": "Evaluating average value."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(1/2)*(1/2)",
+    "expected": "1/4"
+  }
+}

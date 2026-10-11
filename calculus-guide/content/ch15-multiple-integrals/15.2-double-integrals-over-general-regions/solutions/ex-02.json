@@ -1,0 +1,54 @@
+{
+  "id": "ch15-multiple-integrals/15.2-double-integrals-over-general-regions/solutions/ex-02",
+  "chapter": "ch15",
+  "section": "15.2",
+  "type": "solution",
+  "title": "Reversing Order of Integration for a Non-Elementary Function",
+  "exerciseReference": "Section 15.2, Exercise 2",
+  "originalTopic": "Reversing Order of Integration",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "reversing-order",
+    "non-elementary",
+    "sine-integral"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_0^1 int_y^1 sin(x^2) dx dy by reversing the order of integration.",
+  "finalAnswer": "\\frac{1 - \\cos(1)}{2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify and Sketch Region of Integration",
+      "mathExpression": "D = \\{(x, y) \\mid 0 \\le y \\le 1, \\; y \\le x \\le 1\\} = \\{(x, y) \\mid 0 \\le x \\le 1, \\; 0 \\le y \\le x\\}",
+      "explanation": "The region is a triangle bounded by y = 0, x = 1, and the diagonal line y = x.",
+      "why": "Translating Type II limits into Type I form."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Set Up Reversed Iterated Integral",
+      "mathExpression": "\\int_0^1 \\int_0^x \\sin(x^2) \\, dy \\, dx",
+      "explanation": "Integrate over y first from 0 to x.",
+      "why": "Eliminating intractable single-variable antiderivative."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Inner Integral",
+      "mathExpression": "\\int_0^x \\sin(x^2) \\, dy = [y\\sin(x^2)]_0^x = x\\sin(x^2)",
+      "explanation": "Since sin(x^2) is constant with respect to y, the inner integral produces factor x.",
+      "why": "Generating the required derivative factor x."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Evaluate Outer Integral via Substitution",
+      "mathExpression": "\\int_0^1 x\\sin(x^2) \\, dx = \\left[ -\\frac{1}{2}\\cos(x^2) \\right]_0^1 = -\\frac{1}{2}\\cos(1) - \\left(-\\frac{1}{2}\\right) = \\frac{1 - \\cos(1)}{2}",
+      "explanation": "Use substitution u = x^2, du = 2x dx.",
+      "why": "Evaluating outer integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(1 - cos(1)) / 2",
+    "expected": "(1 - cos(1))/2"
+  }
+}

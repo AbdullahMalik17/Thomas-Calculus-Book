@@ -1,0 +1,47 @@
+{
+  "id": "ch05-integrals/5.3-the-definite-integral/solutions/ex-04",
+  "chapter": "ch05",
+  "section": "5.3",
+  "type": "solution",
+  "title": "Bounding an Integral using the Max-Min Inequality",
+  "exerciseReference": "Section 5.3, Exercise 4",
+  "originalTopic": "Max-Min Bounding of Definite Integrals",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "inequalities",
+    "bounding",
+    "max-min"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Show that 1 <= int_0^1 sqrt(1 + x^3) dx <= sqrt(2) using the Max-Min Inequality for definite integrals.",
+  "finalAnswer": "1 \\le \\int_0^1 \\sqrt{1 + x^3} dx \\le \\sqrt{2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Absolute Extrema on [0, 1]",
+      "mathExpression": "g(x) = \\sqrt{1 + x^3} \\text{ is strictly increasing on } [0, 1] \\implies m = g(0) = 1, \\quad M = g(1) = \\sqrt{2}",
+      "explanation": "Since x^3 increases, the minimum occurs at x = 0 and maximum at x = 1.",
+      "why": "Extreme Value Theorem on closed intervals."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply the Max-Min Inequality",
+      "mathExpression": "m(b - a) \\le \\int_a^b f(x) dx \\le M(b - a) \\implies 1(1 - 0) \\le \\int_0^1 \\sqrt{1 + x^3} dx \\le \\sqrt{2}(1 - 0)",
+      "explanation": "Multiply minimum and maximum values by interval length 1.",
+      "why": "Integral Domination Law."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude Bounds",
+      "mathExpression": "1 \\le \\int_0^1 \\sqrt{1 + x^3} dx \\le \\sqrt{2}",
+      "explanation": "The integral is strictly bounded between 1 and sqrt(2).",
+      "why": "Rigorous analytical estimation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(2) - sqrt(2)",
+    "expected": "0"
+  }
+}

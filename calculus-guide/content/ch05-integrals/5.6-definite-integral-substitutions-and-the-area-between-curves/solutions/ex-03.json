@@ -1,0 +1,50 @@
+{
+  "id": "ch05-integrals/5.6-definite-integral-substitutions-and-the-area-between-curves/solutions/ex-03",
+  "chapter": "ch05",
+  "section": "5.6",
+  "type": "solution",
+  "title": "Area Enclosed by Parabola and Line",
+  "exerciseReference": "Section 5.6, Exercise 3",
+  "originalTopic": "Area Between Curves",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "area-between-curves",
+    "parabola",
+    "intersection"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the area of the region enclosed by the parabola y = 2x - x^2 and the line y = 0.",
+  "finalAnswer": "\\text{Area} = \\frac{4}{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Intersection Points",
+      "mathExpression": "2x - x^2 = 0 \\implies x(2 - x) = 0 \\implies x = 0, \\; x = 2",
+      "explanation": "The boundaries of the enclosed region are x = 0 and x = 2.",
+      "why": "Locating integration limits."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify Top and Bottom Curves",
+      "mathExpression": "y_{\\text{top}} = 2x - x^2, \\quad y_{\\text{bottom}} = 0 \\quad \\text{on } [0, 2]",
+      "explanation": "Parabola opens downward and lies above the x-axis on (0, 2).",
+      "why": "Area = int (top - bottom) dx."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate to Find Area",
+      "mathExpression": "A = \\int_0^2 (2x - x^2) dx = \\left[ x^2 - \\frac{x^3}{3} \\right]_0^2 = 4 - \\frac{8}{3} = \\frac{4}{3}",
+      "explanation": "Evaluate antiderivative at limits.",
+      "why": "Final exact enclosed area."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "2*x - x**2",
+    "expected": "4/3",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "2"
+  }
+}

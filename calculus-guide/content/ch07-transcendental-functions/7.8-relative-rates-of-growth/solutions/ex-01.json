@@ -1,0 +1,47 @@
+{
+  "id": "ch07-transcendental-functions/7.8-relative-rates-of-growth/solutions/ex-01",
+  "chapter": "ch07",
+  "section": "7.8",
+  "type": "solution",
+  "title": "Comparing Logarithmic and Polynomial Growth",
+  "exerciseReference": "Section 7.8, Exercise 1",
+  "originalTopic": "Logarithmic vs Polynomial Growth",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "growth-rates",
+    "logarithm",
+    "asymptotics"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether f(x) = (ln x)^5 or g(x) = x^(0.1) grows faster as x -> oo.",
+  "finalAnswer": "g(x) = x^{0.1} \\text{ grows faster than } f(x) = (\\ln x)^5",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up Limit Quotient",
+      "mathExpression": "\\lim_{x \\to \\infty} \\frac{(\\ln x)^5}{x^{0.1}}",
+      "explanation": "Evaluate the ratio of the two functions as x approaches infinity.",
+      "why": "Growth rate comparison criterion."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Repeated L'Hopital or Power Substitution",
+      "mathExpression": "u = x^{0.1/5} = x^{0.02} \\implies \\ln(x) = 50 \\ln(u) \\implies \\lim_{u \\to \\infty} \\frac{50^5 (\\ln u)^5}{u^5} = 0",
+      "explanation": "Any positive power of x eventually dominates any power of ln(x).",
+      "why": "Fundamental growth hierarchy theorem."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude Dominance",
+      "mathExpression": "\\lim_{x \\to \\infty} \\frac{f(x)}{g(x)} = 0 \\implies g(x) \\text{ grows faster than } f(x)",
+      "explanation": "The limit is 0, proving g(x) dominates.",
+      "why": "Definition of relative growth rate."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

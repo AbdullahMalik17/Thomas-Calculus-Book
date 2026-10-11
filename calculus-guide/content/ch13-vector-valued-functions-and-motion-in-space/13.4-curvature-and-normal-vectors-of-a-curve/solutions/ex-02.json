@@ -1,0 +1,47 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.4-curvature-and-normal-vectors-of-a-curve/solutions/ex-02",
+  "chapter": "ch13",
+  "section": "13.4",
+  "type": "solution",
+  "title": "Curvature of a Circular Helix",
+  "exerciseReference": "Section 13.4, Exercise 2",
+  "originalTopic": "Helix Curvature",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "helix",
+    "curvature",
+    "cross-product"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the curvature kappa of the helix r(t) = <3 cos(t), 3 sin(t), 4t>.",
+  "finalAnswer": "\\kappa = \\frac{3}{25}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Velocity and Acceleration Vectors",
+      "mathExpression": "\\mathbf{v}(t) = \\langle -3\\sin t, 3\\cos t, 4 \\rangle, \\quad \\mathbf{a}(t) = \\langle -3\\cos t, -3\\sin t, 0 \\rangle",
+      "explanation": "Compute first and second derivatives of the helix position vector.",
+      "why": "Finding kinematic inputs."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Cross Product v x a",
+      "mathExpression": "\\mathbf{v} \\times \\mathbf{a} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ -3\\sin t & 3\\cos t & 4 \\\\ -3\\cos t & -3\\sin t & 0 \\end{vmatrix} = \\langle 12\\sin t, -12\\cos t, 9 \\rangle",
+      "explanation": "Evaluate the determinant to find the orthogonal vector.",
+      "why": "Formulating cross product numerator."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Magnitudes and Curvature",
+      "mathExpression": "|\\mathbf{v} \\times \\mathbf{a}| = \\sqrt{144 + 81} = \\sqrt{225} = 15; \\quad |\\mathbf{v}| = \\sqrt{9 + 16} = 5 \\implies \\kappa = \\frac{15}{5^3} = \\frac{15}{125} = \\frac{3}{25}",
+      "explanation": "Apply formula kappa = |v x a| / |v|^3.",
+      "why": "Computing helix curvature."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "15 / (5**3)",
+    "expected": "3/25"
+  }
+}

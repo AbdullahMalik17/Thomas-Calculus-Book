@@ -1,0 +1,44 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.2-integrals-of-vector-functions-projectile-motion/solutions/ex-01",
+  "chapter": "ch13",
+  "section": "13.2",
+  "type": "solution",
+  "title": "Definite Integral of a Vector Function",
+  "exerciseReference": "Section 13.2, Exercise 1",
+  "originalTopic": "Definite Vector Integration",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "vector-integral",
+    "definite-integral",
+    "calculus"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate the definite integral int_0^1 <2t, 3t^2, 4t^3> dt.",
+  "finalAnswer": "\\langle 1, 1, 1 \\rangle",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Integrate Each Component",
+      "mathExpression": "\\int_0^1 2t \\, dt = [t^2]_0^1 = 1, \\quad \\int_0^1 3t^2 \\, dt = [t^3]_0^1 = 1, \\quad \\int_0^1 4t^3 \\, dt = [t^4]_0^1 = 1",
+      "explanation": "Evaluate the definite integral of each scalar component over [0, 1].",
+      "why": "Integrating component-wise."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Assemble Resulting Vector",
+      "mathExpression": "\\int_0^1 \\langle 2t, 3t^2, 4t^3 \\rangle \\, dt = \\langle 1, 1, 1 \\rangle",
+      "explanation": "Combine scalar integrals into resulting vector.",
+      "why": "Formulating vector integral value."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "kind": "definite",
+    "expression": "2*t + 3*t**2 + 4*t**3",
+    "lower": "0",
+    "upper": "1",
+    "expected": "3",
+    "variable": "t"
+  }
+}

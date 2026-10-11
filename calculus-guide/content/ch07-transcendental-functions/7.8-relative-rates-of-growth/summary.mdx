@@ -1,0 +1,26 @@
+# Section 7.8: Relative Rates of Growth
+
+Comparing the asymptotic behavior of transcendental and polynomial functions as $x \to \infty$.
+
+---
+
+## 1. Asymptotic Dominance Hierarchy
+
+As $x \to \infty$, for any positive constants $a, b, c$:
+
+$$
+(\ln x)^a \ll x^b \ll e^{cx} \ll x!
+$$
+
+---
+
+## 2. Little-o and Big-O Definitions
+
+- **$f = o(g)$**: $f$ grows strictly slower than $g$:
+  $$
+  \lim_{x \to \infty} \frac{f(x)}{g(x)} = 0
+  $$
+- **$f = O(g)$**: $f$ grows at most as fast as $g$:
+  $$
+  \frac{f(x)}{g(x)} \le M \quad \text{for large } x
+  $$

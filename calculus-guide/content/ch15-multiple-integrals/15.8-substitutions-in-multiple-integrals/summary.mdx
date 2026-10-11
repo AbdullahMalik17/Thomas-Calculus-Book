@@ -1,0 +1,18 @@
+# Section 15.8: Substitutions in Multiple Integrals
+
+Coordinate transformations simplify regions with tilted, curved, or skewed boundaries.
+
+---
+
+## 1. The Jacobian Determinant
+
+For $x = x(u, v)$ and $y = y(u, v)$:
+$$J(u, v) = \frac{\partial(x, y)}{\partial(u, v)} = \begin{vmatrix} x_u & x_v \\ y_u & y_v \end{vmatrix} = x_u y_v - x_v y_u$$
+
+- **Inverse Property**: $\frac{\partial(x, y)}{\partial(u, v)} = \frac{1}{\frac{\partial(u, v)}{\partial(x, y)}}$
+
+---
+
+## 2. General Substitution Formula
+
+$$\iint_R f(x, y) \, dA = \iint_G f(x(u, v), y(u, v)) \left| J(u, v) \right| du \, dv$$

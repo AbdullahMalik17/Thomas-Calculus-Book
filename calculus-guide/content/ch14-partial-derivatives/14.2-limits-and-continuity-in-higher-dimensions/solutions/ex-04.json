@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.2-limits-and-continuity-in-higher-dimensions/solutions/ex-04",
+  "chapter": "ch14",
+  "section": "14.2",
+  "type": "solution",
+  "title": "Proving Limit Existence Using the Squeeze Theorem",
+  "exerciseReference": "Section 14.2, Exercise 4",
+  "originalTopic": "Squeeze Theorem",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "squeeze-theorem",
+    "inequalities",
+    "limits"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Prove that lim_{(x, y) -> (0, 0)} (x^2 y^2) / (x^2 + y^2) = 0 using the Squeeze Theorem.",
+  "finalAnswer": "0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Establish Upper Bound Inequality",
+      "mathExpression": "x^2 \\le x^2 + y^2 \\implies \\frac{x^2}{x^2 + y^2} \\le 1 \\implies 0 \\le \\frac{x^2 y^2}{x^2 + y^2} \\le y^2",
+      "explanation": "Multiply the bounded quotient x^2/(x^2+y^2) <= 1 by non-negative factor y^2.",
+      "why": "Bounding the function."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Take Limits of Bounding Functions",
+      "mathExpression": "\\lim_{(x, y) \\to (0, 0)} 0 = 0, \\quad \\lim_{(x, y) \\to (0, 0)} y^2 = 0 \\implies \\lim_{(x, y) \\to (0, 0)} \\frac{x^2 y^2}{x^2 + y^2} = 0",
+      "explanation": "Since both outer bounds approach 0, the inner expression is squeezed to 0.",
+      "why": "Applying Squeeze Theorem."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

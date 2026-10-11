@@ -1,0 +1,47 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.6-conic-sections/solutions/ex-02",
+  "chapter": "ch11",
+  "section": "11.6",
+  "type": "solution",
+  "title": "Foci and Eccentricity of an Ellipse",
+  "exerciseReference": "Section 11.6, Exercise 2",
+  "originalTopic": "Ellipse Parameters",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "ellipse",
+    "foci",
+    "eccentricity"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the foci, vertices, and eccentricity of 9x^2 + 25y^2 = 225.",
+  "finalAnswer": "\\text{Vertices}: (\\pm 5, 0), \\quad \\text{Foci}: (\\pm 4, 0), \\quad e = \\frac{4}{5} = 0.8",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Convert to Standard Form",
+      "mathExpression": "\\frac{9x^2}{225} + \\frac{25y^2}{225} = 1 \\implies \\frac{x^2}{25} + \\frac{y^2}{9} = 1",
+      "explanation": "Divide by 225.",
+      "why": "Standard ellipse form."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify Semi-Axes and Focal Distance c",
+      "mathExpression": "a^2 = 25 \\implies a = 5; \\quad b^2 = 9 \\implies b = 3; \\quad c^2 = a^2 - b^2 = 25 - 9 = 16 \\implies c = 4",
+      "explanation": "Major axis lies along x-axis.",
+      "why": "Focal distance formula."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Eccentricity",
+      "mathExpression": "e = \\frac{c}{a} = \\frac{4}{5} = 0.8",
+      "explanation": "Foci at (+-4, 0), vertices at (+-5, 0).",
+      "why": "Eccentricity ratio."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(25 - 9) - 4",
+    "expected": "0"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.5-lines-and-planes-in-space/solutions/ex-05",
+  "chapter": "ch12",
+  "section": "12.5",
+  "type": "solution",
+  "title": "Line of Intersection of Two Planes",
+  "exerciseReference": "Section 12.5, Exercise 5",
+  "originalTopic": "Intersecting Planes",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "intersecting-planes",
+    "line-of-intersection",
+    "cross-product"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the direction vector v for the line of intersection of the two planes x + y + z = 1 and x - 2y + 3z = 2.",
+  "finalAnswer": "\\mathbf{v} = \\langle 5, -2, -3 \\rangle",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Normal Vectors of Both Planes",
+      "mathExpression": "\\mathbf{n}_1 = \\langle 1, 1, 1 \\rangle, \\quad \\mathbf{n}_2 = \\langle 1, -2, 3 \\rangle",
+      "explanation": "Read coefficients of x, y, and z for each plane equation.",
+      "why": "Extracting normal vectors."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Cross Product of Normal Vectors",
+      "mathExpression": "\\mathbf{v} = \\mathbf{n}_1 \\times \\mathbf{n}_2 = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ 1 & 1 & 1 \\\\ 1 & -2 & 3 \\end{vmatrix} = \\mathbf{i}(3 - (-2)) - \\mathbf{j}(3 - 1) + \\mathbf{k}(-2 - 1) = \\langle 5, -2, -3 \\rangle",
+      "explanation": "The line of intersection lies in both planes, so its direction is orthogonal to both normal vectors.",
+      "why": "Determining line direction via cross product."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(1*3 - 1*(-2))**2 + (-(1*3 - 1*1))**2 + (1*(-2) - 1*1)**2",
+    "expected": "5**2 + (-2)**2 + (-3)**2"
+  }
+}

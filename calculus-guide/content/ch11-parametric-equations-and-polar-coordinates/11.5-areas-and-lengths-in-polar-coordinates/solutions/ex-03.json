@@ -1,0 +1,50 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.5-areas-and-lengths-in-polar-coordinates/solutions/ex-03",
+  "chapter": "ch11",
+  "section": "11.5",
+  "type": "solution",
+  "title": "Area Inside Circle and Outside Cardioid",
+  "exerciseReference": "Section 11.5, Exercise 3",
+  "originalTopic": "Area Between Two Polar Curves",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "between-curves",
+    "circle",
+    "cardioid"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the area inside the circle r = 3 sin(theta) and outside the cardioid r = 1 + sin(theta).",
+  "finalAnswer": "\\text{Area} = \\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Intersection Angles",
+      "mathExpression": "3\\sin\\theta = 1 + \\sin\\theta \\implies 2\\sin\\theta = 1 \\implies \\sin\\theta = \\frac{1}{2} \\implies \\theta = \\frac{\\pi}{6}, \\; \\frac{5\\pi}{6}",
+      "explanation": "Set radial coordinates equal.",
+      "why": "Integration boundaries."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Formulate Difference of Squares",
+      "mathExpression": "r_1^2 - r_2^2 = (3\\sin\\theta)^2 - (1 + \\sin\\theta)^2 = 9\\sin^2\\theta - (1 + 2\\sin\\theta + \\sin^2\\theta) = 8\\sin^2\\theta - 2\\sin\\theta - 1",
+      "explanation": "Outer curve minus inner curve squared.",
+      "why": "Polar area difference formula."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate over [pi/6, 5pi/6]",
+      "mathExpression": "\\frac{1}{2} \\int_{\\pi/6}^{5\\pi/6} (8\\sin^2\\theta - 2\\sin\\theta - 1) d\\theta = \\pi",
+      "explanation": "Evaluate trigonometric integral.",
+      "why": "Final exact area."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "(1/2)*(9*sin(x)**2 - (1 + sin(x))**2)",
+    "expected": "pi",
+    "kind": "definite",
+    "lower": "pi/6",
+    "upper": "5*pi/6"
+  }
+}

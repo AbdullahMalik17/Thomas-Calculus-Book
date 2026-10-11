@@ -1,0 +1,34 @@
+{
+  "id": "ch14-partial-derivatives/14.1-functions-of-several-variables/definitions",
+  "chapter": "ch14",
+  "section": "14.1",
+  "title": "Functions of Several Variables",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-multivariable-function",
+      "title": "Function of Two or Three Variables",
+      "category": "definition",
+      "latex": "z = f(x, y), \\quad w = f(x, y, z)",
+      "statement": "A real-valued function of two variables f is a rule that assigns a unique real number z to each ordered pair (x, y) in a subset D of R^2 called the domain. The set of all resulting output values is the range.",
+      "conditions": [
+        "Domain D is a subset of R^2 (or R^n)",
+        "Range is a subset of R"
+      ],
+      "explanation": "The graph of z = f(x, y) is a surface S in Euclidean 3-space consisting of all points (x, y, f(x, y)) for (x, y) in D.",
+      "keyTakeaway": "Generalizes single-variable curves to surfaces and scalar fields in higher dimensions."
+    },
+    {
+      "id": "def-level-curves-surfaces",
+      "title": "Level Curves and Level Surfaces",
+      "category": "definition",
+      "latex": "f(x, y) = c, \\quad f(x, y, z) = c",
+      "statement": "The level curves of a function of two variables f(x, y) are the curves in the xy-plane with equations f(x, y) = c, where c is a constant in the range of f. For three variables, f(x, y, z) = c forms level surfaces in R^3.",
+      "conditions": [
+        "Constant c is in the range of f"
+      ],
+      "explanation": "Analogous to contour lines on a topographical map, level curves show where the function maintains constant height or potential.",
+      "keyTakeaway": "Level curves map 3D surfaces onto 2D contour representations."
+    }
+  ]
+}

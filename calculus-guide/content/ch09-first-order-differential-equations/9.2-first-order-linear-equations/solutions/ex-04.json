@@ -1,0 +1,48 @@
+{
+  "id": "ch09-first-order-differential-equations/9.2-first-order-linear-equations/solutions/ex-04",
+  "chapter": "ch09",
+  "section": "9.2",
+  "type": "solution",
+  "title": "Linear ODE with Discontinuous Forcing",
+  "exerciseReference": "Section 9.2, Exercise 4",
+  "originalTopic": "Piecewise Forcing Function",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "piecewise",
+    "linear-ode",
+    "continuity"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Solve dy/dx + y = 1 for 0 <= x <= 1 with y(0) = 0.",
+  "finalAnswer": "y(x) = 1 - e^{-x}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Integrating Factor",
+      "mathExpression": "\\mu(x) = e^{\\int 1 dx} = e^x",
+      "explanation": "Simple exponential factor.",
+      "why": "Integrating factor."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate Equation",
+      "mathExpression": "\\frac{d}{dx}[e^x y] = e^x \\implies e^x y = e^x + C \\implies y(x) = 1 + C e^{-x}",
+      "explanation": "General solution.",
+      "why": "Antiderivative of e^x."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Apply Initial Condition y(0) = 0",
+      "mathExpression": "0 = 1 + C(1) \\implies C = -1 \\implies y(x) = 1 - e^{-x}",
+      "explanation": "Particular solution.",
+      "why": "Initial value condition."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "1 - exp(-x)",
+    "expected": "exp(-x)",
+    "variable": "x"
+  }
+}

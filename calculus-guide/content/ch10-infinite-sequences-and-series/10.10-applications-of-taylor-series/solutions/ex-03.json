@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.10-applications-of-taylor-series/solutions/ex-03",
+  "chapter": "ch10",
+  "section": "10.10",
+  "type": "solution",
+  "title": "Evaluating an Indeterminate Limit using Series",
+  "exerciseReference": "Section 10.10, Exercise 3",
+  "originalTopic": "Limit Evaluation via Series",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "limits",
+    "series-expansion",
+    "lhopital-alternative"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate lim_{x -> 0} (sin(x) - x + x^3/6) / x^5 using Taylor series.",
+  "finalAnswer": "\\lim_{x \\to 0} \\frac{\\sin(x) - x + x^3/6}{x^5} = \\frac{1}{120}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Substitute Sine Series Expansion",
+      "mathExpression": "\\sin(x) = x - \\frac{x^3}{6} + \\frac{x^5}{120} - \\frac{x^7}{5040} + \\dots",
+      "explanation": "Replace sin(x) with its Maclaurin series.",
+      "why": "Series substitution."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Cancel Leading Polynomial Terms",
+      "mathExpression": "\\sin(x) - x + \\frac{x^3}{6} = \\frac{x^5}{120} - \\frac{x^7}{5040} + \\dots",
+      "explanation": "Degree 1 and degree 3 terms cancel completely.",
+      "why": "Algebraic cancellation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Divide by x^5 and Evaluate Limit",
+      "mathExpression": "\\lim_{x \\to 0} \\frac{x^5/120 - x^7/5040 + \\dots}{x^5} = \\lim_{x \\to 0} \\left( \\frac{1}{120} - \\frac{x^2}{5040} + \\dots \\right) = \\frac{1}{120}",
+      "explanation": "Higher order terms vanish as x -> 0.",
+      "why": "Final evaluated limit."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "Rational(1, 120) - 1/120",
+    "expected": "0"
+  }
+}

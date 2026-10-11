@@ -1,0 +1,21 @@
+{
+  "id": "ch08-techniques-of-integration/8.3-trigonometric-integrals/definitions",
+  "chapter": "ch08",
+  "section": "8.3",
+  "title": "Trigonometric Integrals",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "rule-sin-cos-powers",
+      "title": "Integration Rules for Products of Powers of Sine and Cosine",
+      "category": "rule",
+      "latex": "\\int \\sin^m(x) \\cos^n(x) dx",
+      "statement": "1. If power of cosine n is odd, save one cos(x) factor (du = cos(x) dx) and express remaining cosines as 1 - sin^2(x).\n2. If power of sine m is odd, save one sin(x) factor and express remaining sines as 1 - cos^2(x).\n3. If both m and n are even, reduce powers using half-angle identities sin^2(x) = (1 - cos(2x))/2 and cos^2(x) = (1 + cos(2x))/2.",
+      "conditions": [
+        "m, n non-negative integers"
+      ],
+      "explanation": "Converts high trigonometric powers into polynomial substitutions.",
+      "keyTakeaway": "Odd power -> save one factor for du; All even powers -> apply half-angle identities."
+    }
+  ]
+}

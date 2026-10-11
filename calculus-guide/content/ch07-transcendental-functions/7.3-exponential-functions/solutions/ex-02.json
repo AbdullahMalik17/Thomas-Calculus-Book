@@ -1,0 +1,50 @@
+{
+  "id": "ch07-transcendental-functions/7.3-exponential-functions/solutions/ex-02",
+  "chapter": "ch07",
+  "section": "7.3",
+  "type": "solution",
+  "title": "Definite Integral of an Exponential Substitution",
+  "exerciseReference": "Section 7.3, Exercise 2",
+  "originalTopic": "Definite Exponential Integration",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "exponential",
+    "u-substitution",
+    "definite-integral"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_0^1 x e^(-x^2) dx.",
+  "finalAnswer": "\\int_0^1 x e^{-x^2} dx = \\frac{1 - e^{-1}}{2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Substitute u = -x^2",
+      "mathExpression": "u = -x^2 \\implies du = -2x \\, dx \\implies x \\, dx = -\\frac{1}{2} du",
+      "explanation": "Isolate x dx.",
+      "why": "Substitution setup."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Transform Limits",
+      "mathExpression": "x = 0 \\implies u = 0; \\quad x = 1 \\implies u = -1",
+      "explanation": "Find transformed integration limits.",
+      "why": "Definite integral limits."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate and Evaluate",
+      "mathExpression": "-\\frac{1}{2} \\int_0^{-1} e^u du = \\frac{1}{2} \\int_{-1}^0 e^u du = \\frac{1}{2} [e^0 - e^{-1}] = \\frac{1 - e^{-1}}{2}",
+      "explanation": "Evaluate at limits.",
+      "why": "Final exact value."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "x*exp(-x**2)",
+    "expected": "(1 - exp(-1))/2",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "1"
+  }
+}

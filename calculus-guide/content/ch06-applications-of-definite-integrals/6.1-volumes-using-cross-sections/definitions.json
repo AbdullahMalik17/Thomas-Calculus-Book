@@ -1,0 +1,33 @@
+{
+  "id": "ch06-applications-of-definite-integrals/6.1-volumes-using-cross-sections/definitions",
+  "chapter": "ch06",
+  "section": "6.1",
+  "title": "Volumes Using Cross-Sections",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "formula-slicing-volume",
+      "title": "Volume by Slicing Formula",
+      "category": "formula",
+      "latex": "V = \\int_a^b A(x) dx, \\quad \\text{where } A(x) \\text{ is cross-sectional area}",
+      "statement": "The volume of a solid of integrable cross-sectional area A(x) from x = a to x = b is the integral of A(x) with respect to x.",
+      "conditions": [
+        "A(x) is continuous or piecewise continuous on [a, b]"
+      ],
+      "explanation": "Slicing slices the 3D solid into thin slabs of thickness dx and base area A(x).",
+      "keyTakeaway": "Volume equals the integral of cross-sectional area along the perpendicular axis."
+    },
+    {
+      "id": "formula-disk-washer-method",
+      "title": "The Disk and Washer Methods",
+      "category": "formula",
+      "latex": "V = \\pi \\int_a^b [R(x)]^2 dx \\quad (\\text{Disk}); \\quad V = \\pi \\int_a^b ([R(x)]^2 - [r(x)]^2) dx \\quad (\\text{Washer})",
+      "statement": "When a planar region is revolved about an axis, the cross-sections perpendicular to the axis of revolution are disks (solid) or washers (with circular holes). R(x) is the outer radius and r(x) is the inner radius.",
+      "conditions": [
+        "Rotation axis is perpendicular to cross-sections"
+      ],
+      "explanation": "Disk method applies when the region touches the axis of rotation; washer method applies when there is a gap.",
+      "keyTakeaway": "Integrate pi times the difference of squared radii."
+    }
+  ]
+}

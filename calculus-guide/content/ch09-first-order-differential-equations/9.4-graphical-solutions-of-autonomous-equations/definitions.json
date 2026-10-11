@@ -1,0 +1,21 @@
+{
+  "id": "ch09-first-order-differential-equations/9.4-graphical-solutions-of-autonomous-equations/definitions",
+  "chapter": "ch09",
+  "section": "9.4",
+  "title": "Graphical Solutions of Autonomous Equations",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-autonomous-differential-equation",
+      "title": "Autonomous Differential Equations and Equilibrium Points",
+      "category": "definition",
+      "latex": "\\frac{dy}{dt} = f(y), \\quad f(y_*) = 0 \\implies y(t) = y_* \\text{ is an equilibrium solution}",
+      "statement": "An autonomous equation has rate of change depending only on y, not time t. Equilibrium points occur at the zeros of f(y).",
+      "conditions": [
+        "f depends only on state variable y"
+      ],
+      "explanation": "Equilibrium points are classified on the phase line as stable (attractor), unstable (repeller), or semi-stable.",
+      "keyTakeaway": "Phase line arrows point toward stable equilibria and away from unstable equilibria."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ch05-integrals/5.2-sigma-notation-and-limits-of-finite-sums/solutions/ex-02",
+  "chapter": "ch05",
+  "section": "5.2",
+  "type": "solution",
+  "title": "Sum of Squares Evaluation",
+  "exerciseReference": "Section 5.2, Exercise 2",
+  "originalTopic": "Quadratic Sum Formula",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "sum-of-squares",
+    "sigma-formula",
+    "finite-sums"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate the sum sum_{k=1}^{10} (2k^2 - k + 1).",
+  "finalAnswer": "\\sum_{k=1}^{10} (2k^2 - k + 1) = 725",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Decompose into Elementary Power Sums",
+      "mathExpression": "2 \\sum_{k=1}^{10} k^2 - \\sum_{k=1}^{10} k + \\sum_{k=1}^{10} 1",
+      "explanation": "Apply linearity to isolate k^2, k, and constant.",
+      "why": "Isolating standard integer power sums."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Each Component",
+      "mathExpression": "\\sum_{k=1}^{10} k^2 = \\frac{10(11)(21)}{6} = 385; \\quad \\sum_{k=1}^{10} k = 55; \\quad \\sum_{k=1}^{10} 1 = 10",
+      "explanation": "Substitute n = 10 into closed forms.",
+      "why": "Standard summation formulas."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Calculate Total",
+      "mathExpression": "2(385) - 55 + 10 = 770 - 55 + 10 = 725",
+      "explanation": "Combine all evaluated terms.",
+      "why": "Final exact integer value."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 * (10*11*21/6) - 55 + 10",
+    "expected": "725"
+  }
+}

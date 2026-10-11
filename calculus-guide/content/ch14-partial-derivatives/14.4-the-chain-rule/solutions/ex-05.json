@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.4-the-chain-rule/solutions/ex-05",
+  "chapter": "ch14",
+  "section": "14.4",
+  "type": "solution",
+  "title": "Slope of the Folium of Descartes via Implicit Chain Rule",
+  "exerciseReference": "Section 14.4, Exercise 5",
+  "originalTopic": "Implicit Differentiation via Chain Rule",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "Folium-of-Descartes",
+    "implicit-derivative",
+    "chain-rule"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the slope dy/dx of the Folium of Descartes x^3 + y^3 - 6xy = 0 at the symmetric point (3, 3).",
+  "finalAnswer": "\\frac{dy}{dx} = -1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Implicit Derivative Formula",
+      "mathExpression": "F(x, y) = x^3 + y^3 - 6xy = 0 \\implies \\frac{dy}{dx} = -\\frac{F_x}{F_y} = -\\frac{3x^2 - 6y}{3y^2 - 6x} = -\\frac{x^2 - 2y}{y^2 - 2x}",
+      "explanation": "Differentiate implicitly using Chain Rule: F_x + F_y (dy/dx) = 0.",
+      "why": "Formulating implicit derivative formula."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute Point Coordinates (3, 3)",
+      "mathExpression": "\\left.\\frac{dy}{dx}\\right|_{(3,3)} = -\\frac{3^2 - 2(3)}{3^2 - 2(3)} = -\\frac{9 - 6}{9 - 6} = -\\frac{3}{3} = -1",
+      "explanation": "Substitute x = 3 and y = 3.",
+      "why": "Computing numerical slope at point."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "-(3**2 - 2*3)/(3**2 - 2*3)",
+    "expected": "-1"
+  }
+}

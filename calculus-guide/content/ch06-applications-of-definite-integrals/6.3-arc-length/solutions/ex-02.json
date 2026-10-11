@@ -1,0 +1,50 @@
+{
+  "id": "ch06-applications-of-definite-integrals/6.3-arc-length/solutions/ex-02",
+  "chapter": "ch06",
+  "section": "6.3",
+  "type": "solution",
+  "title": "Arc Length with a Perfect Square Trinomial",
+  "exerciseReference": "Section 6.3, Exercise 2",
+  "originalTopic": "Perfect Square Radical Simplification",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "perfect-square",
+    "arc-length",
+    "rational-simplification"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the length of the curve y = (x^3)/6 + 1/(2x) from x = 1 to x = 2.",
+  "finalAnswer": "L = \\frac{17}{12}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute the Derivative",
+      "mathExpression": "y' = \\frac{x^2}{2} - \\frac{1}{2x^2}",
+      "explanation": "Differentiate both terms.",
+      "why": "Derivative calculation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Show 1 + (y')^2 is a Perfect Square",
+      "mathExpression": "1 + (y')^2 = 1 + \\left( \\frac{x^4}{4} - \\frac{1}{2} + \\frac{1}{4x^4} \\right) = \\frac{x^4}{4} + \\frac{1}{2} + \\frac{1}{4x^4} = \\left( \\frac{x^2}{2} + \\frac{1}{2x^2} \\right)^2",
+      "explanation": "Adding 1 flips the middle cross term from -1/2 to +1/2.",
+      "why": "Classic calculus perfect square identity."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate the Simplified Expression",
+      "mathExpression": "L = \\int_1^2 \\left( \\frac{x^2}{2} + \\frac{1}{2x^2} \\right) dx = \\left[ \\frac{x^3}{6} - \\frac{1}{2x} \\right]_1^2 = \\left( \\frac{8}{6} - \\frac{1}{4} \\right) - \\left( \\frac{1}{6} - \\frac{1}{2} \\right) = \\frac{7}{6} + \\frac{1}{4} = \\frac{17}{12}",
+      "explanation": "Evaluate the antiderivative between limits.",
+      "why": "Exact rational length."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "x**2 / 2 + 1/(2*x**2)",
+    "expected": "17/12",
+    "kind": "definite",
+    "lower": "1",
+    "upper": "2"
+  }
+}

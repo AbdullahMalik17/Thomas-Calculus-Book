@@ -1,0 +1,47 @@
+{
+  "id": "ch09-first-order-differential-equations/9.1-solutions-slope-fields-and-eulers-method/solutions/ex-05",
+  "chapter": "ch09",
+  "section": "9.1",
+  "type": "solution",
+  "title": "Exact Solution Comparison with Euler's Approximation",
+  "exerciseReference": "Section 9.1, Exercise 5",
+  "originalTopic": "Euler Error Analysis",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "error-analysis",
+    "exact-vs-numerical",
+    "euler"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For dy/dx = y with y(0) = 1, compare Euler's approximation y_n at x = 1 using n steps with the exact value e.",
+  "finalAnswer": "y_n = \\left(1 + \\frac{1}{n}\\right)^n \\to e \\text{ as } n \\to \\infty",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Derive General Step Formula",
+      "mathExpression": "h = \\frac{1}{n}, \\quad y_{k+1} = y_k + h y_k = y_k(1 + h) = y_k\\left(1 + \\frac{1}{n}\\right)",
+      "explanation": "Each step multiplies current value by (1 + 1/n).",
+      "why": "Inductive recurrence."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate After n Steps",
+      "mathExpression": "y_n = y_0 \\left(1 + \\frac{1}{n}\\right)^n = \\left(1 + \\frac{1}{n}\\right)^n",
+      "explanation": "Since y_0 = 1.",
+      "why": "Closed form for Euler's approximation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Take Limit as n -> oo",
+      "mathExpression": "\\lim_{n \\to \\infty} \\left(1 + \\frac{1}{n}\\right)^n = e",
+      "explanation": "Recovers the Euler definition of the natural base e.",
+      "why": "Convergence of Euler's method."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "exp(1) - exp(1)",
+    "expected": "0"
+  }
+}

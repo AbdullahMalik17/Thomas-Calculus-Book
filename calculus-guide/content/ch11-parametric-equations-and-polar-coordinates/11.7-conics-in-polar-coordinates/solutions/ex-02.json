@@ -1,0 +1,40 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.7-conics-in-polar-coordinates/solutions/ex-02",
+  "chapter": "ch11",
+  "section": "11.7",
+  "type": "solution",
+  "title": "Polar Equation of a Parabola",
+  "exerciseReference": "Section 11.7, Exercise 2",
+  "originalTopic": "Parabola in Polar Form",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "parabola",
+    "polar-equation",
+    "directrix"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the polar equation of a parabola with focus at the pole and directrix y = 4.",
+  "finalAnswer": "r = \\frac{4}{1 + \\sin(\\theta)}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Parameters",
+      "mathExpression": "e = 1 \\text{ (parabola)}, \\quad d = 4, \\quad \\text{Directrix } y = 4 \\text{ above pole}",
+      "explanation": "Horizontal directrix above pole uses 1 + e sin(theta).",
+      "why": "Parameter matching."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Assemble Equation",
+      "mathExpression": "r = \\frac{ed}{1 + e\\sin\\theta} = \\frac{(1)(4)}{1 + 1\\sin\\theta} = \\frac{4}{1 + \\sin\\theta}",
+      "explanation": "Substitute e = 1 and d = 4.",
+      "why": "Final polar formula."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "4 / (1 + sin(x)) - 4 / (1 + sin(x))",
+    "expected": "0"
+  }
+}

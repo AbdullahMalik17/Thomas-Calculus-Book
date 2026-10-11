@@ -1,0 +1,40 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.6-velocity-and-acceleration-in-polar-coordinates/solutions/ex-02",
+  "chapter": "ch13",
+  "section": "13.6",
+  "type": "solution",
+  "title": "Centripetal Acceleration on a Circular Orbit",
+  "exerciseReference": "Section 13.6, Exercise 2",
+  "originalTopic": "Circular Orbit Acceleration",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "centripetal",
+    "circular-orbit",
+    "polar-acceleration"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A satellite orbits on circle r = 4 with constant angular velocity d(theta)/dt = 5 rad/s. Find its acceleration vector in polar coordinates.",
+  "finalAnswer": "\\mathbf{a} = -100\\mathbf{u}_r",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine Radial and Angular Derivatives",
+      "mathExpression": "r = 4, \\quad \\dot{r} = 0, \\quad \\ddot{r} = 0; \\quad \\dot{\\theta} = 5, \\quad \\ddot{\\theta} = 0",
+      "explanation": "Since radius and angular velocity are constant, all higher time derivatives vanish.",
+      "why": "Identifying kinematic derivatives."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Polar Acceleration Formula",
+      "mathExpression": "a_r = \\ddot{r} - r\\dot{\\theta}^2 = 0 - 4(5^2) = -100; \\quad a_\\theta = r\\ddot{\\theta} + 2\\dot{r}\\dot{\\theta} = 0 + 0 = 0",
+      "explanation": "Evaluate radial and transverse components.",
+      "why": "Demonstrating purely centripetal nature of acceleration."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "4 * 5**2",
+    "expected": "100"
+  }
+}

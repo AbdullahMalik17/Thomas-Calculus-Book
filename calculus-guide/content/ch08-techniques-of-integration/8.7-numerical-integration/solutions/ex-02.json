@@ -1,0 +1,47 @@
+{
+  "id": "ch08-techniques-of-integration/8.7-numerical-integration/solutions/ex-02",
+  "chapter": "ch08",
+  "section": "8.7",
+  "type": "solution",
+  "title": "Simpson's Rule for Reciprocal Curve",
+  "exerciseReference": "Section 8.7, Exercise 2",
+  "originalTopic": "Simpson's Rule Calculation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "simpsons-rule",
+    "numerical-quadrature",
+    "logarithm"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Use Simpson's Rule with n = 4 to approximate int_1^2 1/x dx.",
+  "finalAnswer": "S_4 = \\frac{1}{12}\\left( 1 + 4\\left(\\frac{4}{5}\\right) + 2\\left(\\frac{2}{3}\\right) + 4\\left(\\frac{4}{7}\\right) + \\frac{1}{2} \\right) = \\frac{1747}{2520} \\approx 0.69325",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Ordinates and Weights",
+      "mathExpression": "\\Delta x = \\frac{1}{4}, \\quad \\text{Weights: } 1, 4, 2, 4, 1",
+      "explanation": "Simpson's 1-4-2-4-1 pattern.",
+      "why": "Simpson's quadrature rule."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Formula",
+      "mathExpression": "S_4 = \\frac{1/4}{3} \\left[ 1 + 4\\left(\\frac{4}{5}\\right) + 2\\left(\\frac{2}{3}\\right) + 4\\left(\\frac{4}{7}\\right) + \\frac{1}{2} \\right] = \\frac{1}{12} \\left( 1 + \\frac{16}{5} + \\frac{4}{3} + \\frac{16}{7} + \\frac{1}{2} \\right)",
+      "explanation": "Multiply sum by Delta x / 3.",
+      "why": "Simpson's sum evaluation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Calculate Rational Value",
+      "mathExpression": "\\frac{1}{12} \\left( \\frac{1747}{210} \\right) = \\frac{1747}{2520} \\approx 0.693254 \\dots \\text{(True value } \\ln(2) \\approx 0.693147)",
+      "explanation": "Simpson's rule matches ln(2) to 3 decimal places.",
+      "why": "High-order accuracy demonstration."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(1/12)*(1 + 4*(4/5) + 2*(2/3) + 4*(4/7) + 1/2) - 1747/2520",
+    "expected": "0"
+  }
+}

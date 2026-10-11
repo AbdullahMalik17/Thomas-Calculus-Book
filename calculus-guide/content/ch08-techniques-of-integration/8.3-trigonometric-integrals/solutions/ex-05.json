@@ -1,0 +1,50 @@
+{
+  "id": "ch08-techniques-of-integration/8.3-trigonometric-integrals/solutions/ex-05",
+  "chapter": "ch08",
+  "section": "8.3",
+  "type": "solution",
+  "title": "Definite Integral of Cosine Cubed",
+  "exerciseReference": "Section 8.3, Exercise 5",
+  "originalTopic": "Definite Trigonometric Integral",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "cosine-cubed",
+    "definite-integral",
+    "trig"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_0^{pi/2} cos^3(x) dx.",
+  "finalAnswer": "\\int_0^{\\pi/2} \\cos^3(x) dx = \\frac{2}{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Rewrite Integrand",
+      "mathExpression": "\\cos^3(x) = (1 - \\sin^2(x)) \\cos(x)",
+      "explanation": "Isolate one factor of cos(x).",
+      "why": "u-substitution preparation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute u = sin(x) with Limits",
+      "mathExpression": "u = \\sin(x); \\quad x = 0 \\implies u = 0, \\; x = \\pi/2 \\implies u = 1",
+      "explanation": "Limits transform from [0, pi/2] to [0, 1].",
+      "why": "Definite limits."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Transformed Integral",
+      "mathExpression": "\\int_0^1 (1 - u^2) du = \\left[ u - \\frac{u^3}{3} \\right]_0^1 = 1 - \\frac{1}{3} = \\frac{2}{3}",
+      "explanation": "Evaluate power antiderivative.",
+      "why": "Final exact value."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "cos(x)**3",
+    "expected": "2/3",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "pi/2"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ch07-transcendental-functions/7.5-indeterminate-forms-and-lhospitals-rule/solutions/ex-05",
+  "chapter": "ch07",
+  "section": "7.5",
+  "type": "solution",
+  "title": "Indeterminate Difference infinity - infinity",
+  "exerciseReference": "Section 7.5, Exercise 5",
+  "originalTopic": "Indeterminate Difference",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "infinity-minus-infinity",
+    "lhopital",
+    "trigonometry"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate lim_{x -> 0} (1/x - 1/sin(x)).",
+  "finalAnswer": "\\lim_{x \\to 0} \\left( \\frac{1}{x} - \\frac{1}{\\sin(x)} \\right) = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Combine Fractions over Common Denominator",
+      "mathExpression": "\\frac{1}{x} - \\frac{1}{\\sin(x)} = \\frac{\\sin(x) - x}{x \\sin(x)} \\quad \\left( \\frac{0}{0} \\right)",
+      "explanation": "Common denominator is x sin(x).",
+      "why": "Converts difference to 0/0 quotient."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply L'Hopital's Rule",
+      "mathExpression": "\\lim_{x \\to 0} \\frac{\\cos(x) - 1}{\\sin(x) + x \\cos(x)} \\quad \\left( \\frac{0}{0} \\right)",
+      "explanation": "Differentiate top and bottom (using product rule on bottom).",
+      "why": "First L'Hopital application."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Apply L'Hopital's Rule a Second Time",
+      "mathExpression": "\\lim_{x \\to 0} \\frac{-\\sin(x)}{\\cos(x) + \\cos(x) - x\\sin(x)} = \\frac{0}{1 + 1 - 0} = \\frac{0}{2} = 0",
+      "explanation": "Differentiate once more to obtain non-zero denominator.",
+      "why": "Final evaluated limit."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

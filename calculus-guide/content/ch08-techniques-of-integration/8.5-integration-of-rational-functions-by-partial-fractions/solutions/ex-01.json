@@ -1,0 +1,48 @@
+{
+  "id": "ch08-techniques-of-integration/8.5-integration-of-rational-functions-by-partial-fractions/solutions/ex-01",
+  "chapter": "ch08",
+  "section": "8.5",
+  "type": "solution",
+  "title": "Partial Fractions with Distinct Linear Factors",
+  "exerciseReference": "Section 8.5, Exercise 1",
+  "originalTopic": "Distinct Linear Factors",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "partial-fractions",
+    "linear-factors",
+    "rational"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int (5x - 3) / (x^2 - 2x - 3) dx.",
+  "finalAnswer": "3\\ln|x - 3| + 2\\ln|x + 1| + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Factor Denominator and Set Up Decomposition",
+      "mathExpression": "x^2 - 2x - 3 = (x - 3)(x + 1) \\implies \\frac{5x - 3}{(x - 3)(x + 1)} = \\frac{A}{x - 3} + \\frac{B}{x + 1}",
+      "explanation": "Distinct linear factors.",
+      "why": "Partial fractions form."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve for A and B via Heaviside Cover-Up",
+      "mathExpression": "5x - 3 = A(x + 1) + B(x - 3); \\quad x = 3 \\implies 12 = 4A \\implies A = 3; \\quad x = -1 \\implies -8 = -4B \\implies B = 2",
+      "explanation": "Substitute roots of factors.",
+      "why": "Evaluating undetermined coefficients."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate Term by Term",
+      "mathExpression": "\\int \\left( \\frac{3}{x - 3} + \\frac{2}{x + 1} \\right) dx = 3\\ln|x - 3| + 2\\ln|x + 1| + C",
+      "explanation": "Direct logarithmic antiderivatives.",
+      "why": "Final evaluated antiderivative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "(5*x - 3)/(x**2 - 2*x - 3)",
+    "expected": "3*log(x - 3) + 2*log(x + 1)",
+    "kind": "indefinite"
+  }
+}

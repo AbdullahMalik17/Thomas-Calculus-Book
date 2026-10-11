@@ -1,0 +1,47 @@
+{
+  "id": "ch15-multiple-integrals/15.4-double-integrals-in-polar-form/solutions/ex-02",
+  "chapter": "ch15",
+  "section": "15.4",
+  "type": "solution",
+  "title": "Evaluating the Gaussian First-Quadrant Integral",
+  "exerciseReference": "Section 15.4, Exercise 2",
+  "originalTopic": "Gaussian Integral",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "Gaussian-integral",
+    "improper-integral",
+    "polar-conversion"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the value of iint_Q exp(-(x^2 + y^2)) dA where Q is the first quadrant.",
+  "finalAnswer": "\\frac{\\pi}{4}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate in Polar Coordinates",
+      "mathExpression": "\\int_0^{\\pi/2} \\int_0^\\infty e^{-r^2} r \\, dr \\, d\\theta",
+      "explanation": "In the first quadrant, theta varies from 0 to pi/2, and r from 0 to infinity.",
+      "why": "Converting first-quadrant integral to polar."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Radial Improper Integral",
+      "mathExpression": "\\int_0^\\infty e^{-r^2} r \\, dr = \\lim_{b \\to \\infty} \\left[ -\\frac{1}{2} e^{-r^2} \\right]_0^b = 0 - \\left(-\\frac{1}{2}\\right) = \\frac{1}{2}",
+      "explanation": "Use substitution u = -r^2, du = -2r dr.",
+      "why": "Computing radial integral."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Multiply by Angular Integral",
+      "mathExpression": "\\left( \\frac{\\pi}{2} \\right) \\left( \\frac{1}{2} \\right) = \\frac{\\pi}{4}",
+      "explanation": "Multiply by angular measure pi/2.",
+      "why": "Evaluating quadrant integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(pi / 2) * (1 / 2)",
+    "expected": "pi / 4"
+  }
+}

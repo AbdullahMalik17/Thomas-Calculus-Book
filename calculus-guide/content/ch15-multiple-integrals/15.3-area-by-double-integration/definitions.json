@@ -1,0 +1,33 @@
+{
+  "id": "ch15-multiple-integrals/15.3-area-by-double-integration/definitions",
+  "chapter": "ch15",
+  "section": "15.3",
+  "title": "Area by Double Integration",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-area-double-integral",
+      "title": "Area of a Planar Region via Double Integration",
+      "category": "definition",
+      "latex": "\\text{Area}(R) = \\iint_R 1 \\, dA = \\iint_R dx \\, dy",
+      "statement": "The area of a closed, bounded plane region R is the double integral of the constant function f(x, y) = 1 over R.",
+      "conditions": [
+        "R is a Jordan-measurable bounded region in R^2"
+      ],
+      "explanation": "Setting height z = 1 produces a solid cylinder whose numerical volume equals the numerical area of the base.",
+      "keyTakeaway": "Unifies single-variable area formulas into a single conceptual framework."
+    },
+    {
+      "id": "formula-average-value-general",
+      "title": "Average Value over General Planar Regions",
+      "category": "formula",
+      "latex": "\\bar{f} = \\frac{1}{\\text{Area}(R)} \\iint_R f(x, y) \\, dA",
+      "statement": "The mean or average value of a continuous function f over region R is the ratio of its total double integral to the area of R.",
+      "conditions": [
+        "Area(R) > 0"
+      ],
+      "explanation": "Represents the constant uniform height of a prism over R that has the identical volume as the solid under z = f(x, y).",
+      "keyTakeaway": "Computes spatial averages across non-rectangular geometric domains."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ch07-transcendental-functions/7.1-inverse-functions-and-their-derivatives/solutions/ex-05",
+  "chapter": "ch07",
+  "section": "7.1",
+  "type": "solution",
+  "title": "Second Derivative of an Inverse Function",
+  "exerciseReference": "Section 7.1, Exercise 5",
+  "originalTopic": "Higher Derivatives of Inverse Functions",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "second-derivative",
+    "inverse-function",
+    "chain-rule"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Derive the formula for (f^(-1))''(b) in terms of derivatives of f.",
+  "finalAnswer": "(f^{-1})''(b) = -\\frac{f''(a)}{[f'(a)]^3}, \\quad \\text{where } b = f(a)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Differentiate First Derivative Formula",
+      "mathExpression": "\\frac{d}{db}[(f^{-1})'(b)] = \\frac{d}{db} \\left[ \\frac{1}{f'(f^{-1}(b))} \\right]",
+      "explanation": "Differentiate with respect to b.",
+      "why": "Second derivative definition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Chain Rule and Quotient Rule",
+      "mathExpression": "-\\frac{1}{[f'(f^{-1}(b))]^2} \\cdot f''(f^{-1}(b)) \\cdot (f^{-1})'(b)",
+      "explanation": "Inner derivative of f'(f^(-1)(b)) with respect to b is f''(f^(-1)(b)) * (f^(-1))'(b).",
+      "why": "Chain Rule on composite inverse."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Substitute (f^(-1))'(b) = 1/f'(a)",
+      "mathExpression": "-\\frac{f''(a)}{[f'(a)]^2} \\cdot \\frac{1}{f'(a)} = -\\frac{f''(a)}{[f'(a)]^3}",
+      "explanation": "Combine denominator powers.",
+      "why": "General second derivative formula for inverse functions."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "-1 / (y**2) * (1/y) - (-1 / y**3)",
+    "expected": "0"
+  }
+}

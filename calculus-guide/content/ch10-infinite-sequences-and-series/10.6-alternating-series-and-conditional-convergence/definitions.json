@@ -1,0 +1,35 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.6-alternating-series-and-conditional-convergence/definitions",
+  "chapter": "ch10",
+  "section": "10.6",
+  "title": "Alternating Series and Conditional Convergence",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-alternating-series-test",
+      "title": "The Alternating Series Test (Leibniz's Theorem)",
+      "category": "theorem",
+      "latex": "\\sum (-1)^{n-1} u_n \\text{ converges if: } (1) \\; u_{n+1} \\le u_n \\; \\forall n, \\quad \\text{and } (2) \\; \\lim_{n \\to \\infty} u_n = 0",
+      "statement": "An alternating series sum (-1)^(n-1) u_n with positive terms u_n converges if the terms decrease monotonically and approach zero.",
+      "conditions": [
+        "u_n > 0",
+        "u_{n+1} <= u_n",
+        "lim u_n = 0"
+      ],
+      "explanation": "Partial sums oscillate between upper and lower bounds that tighten around a single limit point.",
+      "keyTakeaway": "Alternating signs + decreasing terms + terms -> 0 = Convergence."
+    },
+    {
+      "id": "formula-alternating-series-estimation",
+      "title": "Alternating Series Estimation Theorem",
+      "category": "formula",
+      "latex": "|R_n| = |S - s_n| \\le u_{n+1}",
+      "statement": "If an alternating series satisfies the conditions of the Alternating Series Test, the truncation error R_n after n terms does not exceed the absolute value of the first unused term u_{n+1}.",
+      "conditions": [
+        "Alternating Series Test conditions satisfied"
+      ],
+      "explanation": "Provides instant computable error bounds without needing improper integrals.",
+      "keyTakeaway": "Truncation error is strictly bounded by the magnitude of the next term."
+    }
+  ]
+}

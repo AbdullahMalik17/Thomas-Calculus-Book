@@ -1,0 +1,47 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.4-the-cross-product/solutions/ex-04",
+  "chapter": "ch12",
+  "section": "12.4",
+  "type": "solution",
+  "title": "Volume of a Parallelepiped via Scalar Triple Product",
+  "exerciseReference": "Section 12.4, Exercise 4",
+  "originalTopic": "Scalar Triple Product",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "volume",
+    "parallelepiped",
+    "scalar-triple-product"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the volume of the parallelepiped determined by u = <1, 2, 3>, v = <-1, 1, 2>, and w = <2, 1, 4>.",
+  "finalAnswer": "9",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up 3x3 Determinant",
+      "mathExpression": "(\\mathbf{u} \\times \\mathbf{v}) \\cdot \\mathbf{w} = \\begin{vmatrix} 1 & 2 & 3 \\\\ -1 & 1 & 2 \\\\ 2 & 1 & 4 \\end{vmatrix}",
+      "explanation": "Write the components of the three vectors as rows of a 3x3 matrix.",
+      "why": "Formulating scalar triple product."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Determinant",
+      "mathExpression": "= 1(4 - 2) - 2(-4 - 4) + 3(-1 - 2) = 1(2) - 2(-8) + 3(-3) = 2 + 16 - 9 = 9",
+      "explanation": "Expand across the first row and sum terms.",
+      "why": "Evaluating signed volume."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Take Absolute Value",
+      "mathExpression": "V = |9| = 9",
+      "explanation": "Volume is the magnitude of the scalar triple product.",
+      "why": "Obtaining geometric volume."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1*(4 - 2) - 2*(-4 - 4) + 3*(-1 - 2)",
+    "expected": "9"
+  }
+}

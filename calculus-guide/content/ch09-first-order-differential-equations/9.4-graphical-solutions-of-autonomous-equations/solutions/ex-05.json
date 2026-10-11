@@ -1,0 +1,48 @@
+{
+  "id": "ch09-first-order-differential-equations/9.4-graphical-solutions-of-autonomous-equations/solutions/ex-05",
+  "chapter": "ch09",
+  "section": "9.4",
+  "type": "solution",
+  "title": "Exact Solution of Logistic Differential Equation",
+  "exerciseReference": "Section 9.4, Exercise 5",
+  "originalTopic": "Analytical Logistic Integration",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "logistic",
+    "partial-fractions",
+    "exact-solution"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Solve dy/dt = y(1 - y) with initial condition y(0) = y_0 (where 0 < y_0 < 1).",
+  "finalAnswer": "y(t) = \\frac{y_0}{y_0 + (1 - y_0)e^{-t}}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Separate Variables",
+      "mathExpression": "\\frac{dy}{y(1 - y)} = dt \\implies \\left( \\frac{1}{y} + \\frac{1}{1 - y} \\right) dy = dt",
+      "explanation": "Decompose into partial fractions.",
+      "why": "Separation of variables."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate Both Sides",
+      "mathExpression": "\\ln\\left(\\frac{y}{1 - y}\\right) = t + C \\implies \\frac{y}{1 - y} = A e^t, \\quad A = \\frac{y_0}{1 - y_0}",
+      "explanation": "Solve for A using t = 0.",
+      "why": "Constant evaluation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Solve Algebraically for y(t)",
+      "mathExpression": "y(t) = \\frac{A e^t}{1 + A e^t} = \\frac{A}{e^{-t} + A} = \\frac{y_0}{y_0 + (1 - y_0)e^{-t}}",
+      "explanation": "Multiply numerator and denominator by (1 - y_0) e^(-t).",
+      "why": "Closed form logistic trajectory."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "1 / (1 + exp(-x))",
+    "expected": "exp(-x) / (1 + exp(-x))**2",
+    "variable": "x"
+  }
+}

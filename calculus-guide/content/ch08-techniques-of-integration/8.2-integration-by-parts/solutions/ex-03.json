@@ -1,0 +1,48 @@
+{
+  "id": "ch08-techniques-of-integration/8.2-integration-by-parts/solutions/ex-03",
+  "chapter": "ch08",
+  "section": "8.2",
+  "type": "solution",
+  "title": "Repeated Integration by Parts via Tabular Method",
+  "exerciseReference": "Section 8.2, Exercise 3",
+  "originalTopic": "Tabular Integration by Parts",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "tabular-integration",
+    "polynomial-trig",
+    "repeated-parts"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int x^2 sin(x) dx using tabular integration.",
+  "finalAnswer": "-x^2 \\cos(x) + 2x \\sin(x) + 2\\cos(x) + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Build Differentiation and Integration Columns",
+      "mathExpression": "\\begin{array}{ccc} \\text{Sign} & D & I \\\\ + & x^2 & \\sin(x) \\\\ - & 2x & -\\cos(x) \\\\ + & 2 & -\\sin(x) \\\\ - & 0 & \\cos(x) \\end{array}",
+      "explanation": "Repeatedly differentiate x^2 to 0 and repeatedly integrate sin(x).",
+      "why": "Tabular method construction."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Sum Diagonal Products",
+      "mathExpression": "(+)(x^2)(-\\cos(x)) + (-)(2x)(-\\sin(x)) + (+)(2)(\\cos(x))",
+      "explanation": "Multiply along descending diagonals with alternating signs.",
+      "why": "Tabular evaluation rule."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State Result",
+      "mathExpression": "-x^2 \\cos(x) + 2x \\sin(x) + 2\\cos(x) + C",
+      "explanation": "Combine terms and add integration constant.",
+      "why": "Final evaluated antiderivative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "x**2 * sin(x)",
+    "expected": "-x**2*cos(x) + 2*x*sin(x) + 2*cos(x)",
+    "kind": "indefinite"
+  }
+}

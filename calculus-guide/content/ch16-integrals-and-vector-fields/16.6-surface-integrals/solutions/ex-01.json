@@ -1,0 +1,47 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.6-surface-integrals/solutions/ex-01",
+  "chapter": "ch16",
+  "section": "16.6",
+  "type": "solution",
+  "title": "Scalar Surface Integral over a Hemisphere",
+  "exerciseReference": "Section 16.6, Exercise 1",
+  "originalTopic": "Scalar Surface Integral",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "scalar-surface-integral",
+    "hemisphere",
+    "polar-coordinates"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate iint_S z d sigma over the upper hemisphere x^2 + y^2 + z^2 = 4 (z >= 0).",
+  "finalAnswer": "8\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Express d sigma for Sphere",
+      "mathExpression": "z = \\sqrt{4 - x^2 - y^2} \\implies d\\sigma = \\frac{a}{z} \\, dA = \\frac{2}{z} \\, dA",
+      "explanation": "On a sphere of radius a = 2, the area element satisfies d sigma = (2/z) dA.",
+      "why": "Finding surface area metric for spherical cap."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Simplify Integrand",
+      "mathExpression": "z \\, d\\sigma = z \\left( \\frac{2}{z} \\, dA \\right) = 2 \\, dA",
+      "explanation": "The variable height z cancels exactly with the denominator.",
+      "why": "Canceling height variable."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate Over Base Disk",
+      "mathExpression": "\\iint_S z \\, d\\sigma = 2 \\iint_{x^2+y^2 \\le 4} 1 \\, dA = 2 \\times \\pi(2^2) = 8\\pi",
+      "explanation": "Multiply 2 by area of base circular disk 4*pi.",
+      "why": "Evaluating final surface integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 * 4*pi",
+    "expected": "8*pi"
+  }
+}

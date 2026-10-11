@@ -1,0 +1,40 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.4-the-cross-product/solutions/ex-05",
+  "chapter": "ch12",
+  "section": "12.4",
+  "type": "solution",
+  "title": "Torque Vector on a Mechanical Lever",
+  "exerciseReference": "Section 12.4, Exercise 5",
+  "originalTopic": "Physical Torque",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "torque",
+    "physics",
+    "cross-product"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A force F = <0, 20, 10> is applied at point r = <3, 0, 0>. Find the torque vector tau = r x F and its magnitude.",
+  "finalAnswer": "\\boldsymbol{\\tau} = \\langle 0, -30, 60 \\rangle, \\quad |\\boldsymbol{\\tau}| = 30\\sqrt{5}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Torque Cross Product",
+      "mathExpression": "\\boldsymbol{\\tau} = \\mathbf{r} \\times \\mathbf{F} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ 3 & 0 & 0 \\\\ 0 & 20 & 10 \\end{vmatrix} = \\mathbf{i}(0) - \\mathbf{j}(30 - 0) + \\mathbf{k}(60 - 0) = \\langle 0, -30, 60 \\rangle",
+      "explanation": "Evaluate the cross product of lever arm r and force F.",
+      "why": "Calculating moment of force."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Torque Magnitude",
+      "mathExpression": "|\\boldsymbol{\\tau}| = \\sqrt{0^2 + (-30)^2 + 60^2} = \\sqrt{0 + 900 + 3600} = \\sqrt{4500} = 30\\sqrt{5}",
+      "explanation": "Compute Euclidean norm of torque vector.",
+      "why": "Determining net turning moment magnitude."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt((-30)**2 + 60**2)",
+    "expected": "30*sqrt(5)"
+  }
+}

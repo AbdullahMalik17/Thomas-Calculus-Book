@@ -1,0 +1,50 @@
+{
+  "id": "ch05-integrals/5.1-area-and-estimating-with-finite-sums/solutions/ex-05",
+  "chapter": "ch05",
+  "section": "5.1",
+  "type": "solution",
+  "title": "Exact Area via Limit of Right Riemann Sums",
+  "exerciseReference": "Section 5.1, Exercise 5",
+  "originalTopic": "Limit of Finite Sums",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "riemann-limit",
+    "exact-area",
+    "finite-sums"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the exact area under f(x) = 2x over the interval [0, 3] by evaluating the limit of right-endpoint Riemann sums as n approaches infinity.",
+  "finalAnswer": "\\text{Area} = \\lim_{n \\to \\infty} R_n = 9",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Express Grid Points and Delta x",
+      "mathExpression": "\\Delta x = \\frac{3}{n}, \\quad c_k = \\frac{3k}{n}",
+      "explanation": "Subinterval width and k-th right endpoint.",
+      "why": "Standard uniform partition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Write Sum Expression",
+      "mathExpression": "R_n = \\sum_{k=1}^n f(c_k) \\Delta x = \\sum_{k=1}^n 2\\left(\\frac{3k}{n}\\right) \\frac{3}{n} = \\frac{18}{n^2} \\sum_{k=1}^n k",
+      "explanation": "Factor out constants from the summation.",
+      "why": "Linearity of summation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Substitute Sum Formula and Take Limit",
+      "mathExpression": "R_n = \\frac{18}{n^2} \\cdot \\frac{n(n+1)}{2} = 9 \\left( 1 + \\frac{1}{n} \\right) \\implies \\lim_{n \\to \\infty} 9\\left(1 + \\frac{1}{n}\\right) = 9",
+      "explanation": "Apply sum k = n(n+1)/2 and evaluate limit as n -> oo.",
+      "why": "Convergence to the definite integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "2*x",
+    "expected": "9",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "3"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.2-infinite-series/solutions/ex-04",
+  "chapter": "ch10",
+  "section": "10.2",
+  "type": "solution",
+  "title": "Expressing a Repeating Decimal as a Rational Fraction",
+  "exerciseReference": "Section 10.2, Exercise 4",
+  "originalTopic": "Repeating Decimal to Fraction",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "repeating-decimal",
+    "geometric-series",
+    "fractions"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Express the repeating decimal 0.272727... as a ratio of integers using a geometric series.",
+  "finalAnswer": "0.\\overline{27} = \\frac{3}{11}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Write as a Geometric Series",
+      "mathExpression": "0.272727\\dots = \\frac{27}{100} + \\frac{27}{10000} + \\frac{27}{1000000} + \\dots",
+      "explanation": "Expand in powers of 1/100.",
+      "why": "Geometric series representation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify a and r",
+      "mathExpression": "a = \\frac{27}{100}, \\quad r = \\frac{1}{100}",
+      "explanation": "Common ratio is 1/100.",
+      "why": "Geometric parameters."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Sum",
+      "mathExpression": "S = \\frac{27/100}{1 - 1/100} = \\frac{27/100}{99/100} = \\frac{27}{99} = \\frac{3}{11}",
+      "explanation": "Reduce fraction by dividing by 9.",
+      "why": "Exact rational representation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "Rational(27, 99) - Rational(3, 11)",
+    "expected": "0"
+  }
+}

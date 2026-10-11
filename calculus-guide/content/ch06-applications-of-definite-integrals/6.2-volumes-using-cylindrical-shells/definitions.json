@@ -1,0 +1,21 @@
+{
+  "id": "ch06-applications-of-definite-integrals/6.2-volumes-using-cylindrical-shells/definitions",
+  "chapter": "ch06",
+  "section": "6.2",
+  "title": "Volumes Using Cylindrical Shells",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "formula-cylindrical-shell-method",
+      "title": "The Shell Method Formula",
+      "category": "formula",
+      "latex": "V = 2\\pi \\int_a^b (\\text{shell radius})(\\text{shell height}) dx = 2\\pi \\int_a^b x \\, f(x) \\, dx",
+      "statement": "When revolving a region about a vertical axis, the solid can be sliced into concentric cylindrical shells of radius r(x), height h(x), and thickness dx.",
+      "conditions": [
+        "Axis of rotation is parallel to the height of the cylindrical shell"
+      ],
+      "explanation": "The shell method avoids having to invert equations when solving for x in terms of y is algebraically intractable.",
+      "keyTakeaway": "Shell volume = 2pi times integral of (radius)(height) times thickness."
+    }
+  ]
+}

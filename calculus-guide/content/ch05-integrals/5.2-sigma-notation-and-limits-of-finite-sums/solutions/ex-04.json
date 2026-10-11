@@ -1,0 +1,50 @@
+{
+  "id": "ch05-integrals/5.2-sigma-notation-and-limits-of-finite-sums/solutions/ex-04",
+  "chapter": "ch05",
+  "section": "5.2",
+  "type": "solution",
+  "title": "Riemann Sum Limit for a Mixed Polynomial",
+  "exerciseReference": "Section 5.2, Exercise 4",
+  "originalTopic": "Riemann Limit of Linear-Quadratic Expression",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "riemann-limit",
+    "polynomial-area",
+    "sigma-calculus"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the area under f(x) = 3x^2 - 2x on [0, 2] by evaluating lim_{n -> oo} sum_{k=1}^n f(c_k) Delta x.",
+  "finalAnswer": "\\text{Area} = 4",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Partition and Grid Points",
+      "mathExpression": "\\Delta x = \\frac{2}{n}, \\quad c_k = \\frac{2k}{n}",
+      "explanation": "Subinterval width and k-th point on [0, 2].",
+      "why": "Uniform partition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Formulate Riemann Sum",
+      "mathExpression": "R_n = \\sum_{k=1}^n \\left[ 3\\left(\\frac{2k}{n}\\right)^2 - 2\\left(\\frac{2k}{n}\\right) \\right] \\frac{2}{n} = \\frac{24}{n^3} \\sum_{k=1}^n k^2 - \\frac{8}{n^2} \\sum_{k=1}^n k",
+      "explanation": "Expand and distribute factor 2/n.",
+      "why": "Separating into standard power sums."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Limit",
+      "mathExpression": "\\lim_{n \\to \\infty} \\left[ \\frac{24}{n^3} \\frac{n(n+1)(2n+1)}{6} - \\frac{8}{n^2} \\frac{n(n+1)}{2} \\right] = 24 \\cdot \\frac{2}{6} - 8 \\cdot \\frac{1}{2} = 8 - 4 = 4",
+      "explanation": "Evaluate each component limit as n -> oo.",
+      "why": "Definite integral evaluation via limit of sums."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "3*x**2 - 2*x",
+    "expected": "4",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "2"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "ch08-techniques-of-integration/8.1-using-basic-integration-formulas/solutions/ex-02",
+  "chapter": "ch08",
+  "section": "8.1",
+  "type": "solution",
+  "title": "Completing the Square in the Denominator",
+  "exerciseReference": "Section 8.1, Exercise 2",
+  "originalTopic": "Completing the Square Integration",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "completing-the-square",
+    "arctan",
+    "rational"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int 1 / (x^2 + 6x + 13) dx.",
+  "finalAnswer": "\\frac{1}{2} \\arctan\\left(\\frac{x + 3}{2}\\right) + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Complete the Square",
+      "mathExpression": "x^2 + 6x + 13 = (x^2 + 6x + 9) + 4 = (x + 3)^2 + 2^2",
+      "explanation": "Add and subtract 9 to form perfect square.",
+      "why": "Prepares for arctan integral formula."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Arctan Formula",
+      "mathExpression": "\\int \\frac{1}{u^2 + a^2} du = \\frac{1}{a} \\arctan(u/a) + C, \\quad u = x + 3, \\; a = 2",
+      "explanation": "Evaluate using standard table rule.",
+      "why": "Direct integral matching."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State Final Antiderivative",
+      "mathExpression": "\\frac{1}{2} \\arctan\\left(\\frac{x + 3}{2}\\right) + C",
+      "explanation": "Substitute parameters.",
+      "why": "Final evaluated result."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "1/(x**2 + 6*x + 13)",
+    "expected": "atan((x + 3)/2)/2",
+    "kind": "indefinite"
+  }
+}

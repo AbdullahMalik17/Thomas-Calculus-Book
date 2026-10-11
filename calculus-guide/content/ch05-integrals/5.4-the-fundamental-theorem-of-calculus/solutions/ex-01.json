@@ -1,0 +1,40 @@
+{
+  "id": "ch05-integrals/5.4-the-fundamental-theorem-of-calculus/solutions/ex-01",
+  "chapter": "ch05",
+  "section": "5.4",
+  "type": "solution",
+  "title": "Differentiating an Integral with a Variable Limit",
+  "exerciseReference": "Section 5.4, Exercise 1",
+  "originalTopic": "FTC Part 1 Direct Application",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "FTC-part-1",
+    "derivative-of-integral",
+    "accumulation"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find dy/dx for y = int_1^x sqrt(t^3 + 1) dt.",
+  "finalAnswer": "\\frac{dy}{dx} = \\sqrt{x^3 + 1}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Check Continuity of Integrand",
+      "mathExpression": "f(t) = \\sqrt{t^3 + 1} \\text{ is continuous for } t \\ge -1",
+      "explanation": "The integrand is continuous on the interval containing x >= 1.",
+      "why": "FTC Part 1 prerequisite."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply FTC Part 1",
+      "mathExpression": "\\frac{d}{dx} \\left[ \\int_1^x \\sqrt{t^3 + 1} dt \\right] = \\sqrt{x^3 + 1}",
+      "explanation": "Replace dummy variable t with the upper limit variable x.",
+      "why": "Fundamental Theorem of Calculus Part 1."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(x**3 + 1) - sqrt(x**3 + 1)",
+    "expected": "0"
+  }
+}

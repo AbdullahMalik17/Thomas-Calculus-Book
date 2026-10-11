@@ -1,0 +1,48 @@
+{
+  "id": "ch08-techniques-of-integration/8.4-trigonometric-substitutions/solutions/ex-02",
+  "chapter": "ch08",
+  "section": "8.4",
+  "type": "solution",
+  "title": "Tangent Substitution for sqrt(a^2 + x^2)",
+  "exerciseReference": "Section 8.4, Exercise 2",
+  "originalTopic": "Tangent Substitution",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "tangent-substitution",
+    "trig-sub",
+    "radicals"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int 1 / (x^2 sqrt(x^2 + 4)) dx.",
+  "finalAnswer": "-\\frac{\\sqrt{x^2 + 4}}{4x} + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up Tangent Substitution",
+      "mathExpression": "x = 2\\tan(\\theta) \\implies dx = 2\\sec^2(\\theta) d\\theta, \\quad \\sqrt{x^2 + 4} = 2\\sec(\\theta)",
+      "explanation": "Use x = a tan(theta) with a = 2.",
+      "why": "1 + tan^2 = sec^2."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute into Integrand",
+      "mathExpression": "\\int \\frac{2\\sec^2(\\theta) d\\theta}{(4\\tan^2(\\theta))(2\\sec(\\theta))} = \\frac{1}{4} \\int \\frac{\\sec(\\theta)}{\\tan^2(\\theta)} d\\theta = \\frac{1}{4} \\int \\frac{1/\\cos}{\\sin^2/\\cos^2} d\\theta = \\frac{1}{4} \\int \\frac{\\cos(\\theta)}{\\sin^2(\\theta)} d\\theta",
+      "explanation": "Simplify trigonometric powers into sine and cosine.",
+      "why": "Prepares for simple substitution."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate and Back-Substitute",
+      "mathExpression": "\\frac{1}{4} \\left( -\\frac{1}{\\sin(\\theta)} \\right) + C = -\\frac{1}{4}\\csc(\\theta) + C = -\\frac{\\sqrt{x^2 + 4}}{4x} + C",
+      "explanation": "From triangle, csc(theta) = hypotenuse/opposite = sqrt(x^2 + 4)/x.",
+      "why": "Final evaluated antiderivative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "1 / (x**2 * sqrt(x**2 + 4))",
+    "expected": "-sqrt(x**2 + 4)/(4*x)",
+    "kind": "indefinite"
+  }
+}

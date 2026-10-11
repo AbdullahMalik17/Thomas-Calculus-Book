@@ -1,0 +1,33 @@
+{
+  "id": "ch15-multiple-integrals/15.6-moments-and-centers-of-mass/solutions/ex-04",
+  "chapter": "ch15",
+  "section": "15.6",
+  "type": "solution",
+  "title": "Radius of Gyration of a Rotating Disk",
+  "exerciseReference": "Section 15.6, Exercise 4",
+  "originalTopic": "Radius of Gyration",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "radius-of-gyration",
+    "rotational-dynamics",
+    "inertia"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For a disk with mass M = 12*pi and moment of inertia I_z = 24*pi, find its radius of gyration R_z.",
+  "finalAnswer": "R_z = \\sqrt{2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Definition of Radius of Gyration",
+      "mathExpression": "R_z = \\sqrt{\\frac{I_z}{M}} = \\sqrt{\\frac{24\\pi}{12\\pi}} = \\sqrt{2}",
+      "explanation": "Take the square root of the ratio of moment of inertia to total mass.",
+      "why": "Computing equivalent mass radius."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(24*pi / (12*pi))",
+    "expected": "sqrt(2)"
+  }
+}

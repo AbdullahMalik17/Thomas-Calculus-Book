@@ -1,0 +1,50 @@
+{
+  "id": "ch05-integrals/5.6-definite-integral-substitutions-and-the-area-between-curves/solutions/ex-05",
+  "chapter": "ch05",
+  "section": "5.6",
+  "type": "solution",
+  "title": "Area by Integrating with Respect to y",
+  "exerciseReference": "Section 5.6, Exercise 5",
+  "originalTopic": "Integration along y-axis",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "horizontal-slicing",
+    "dy-integration",
+    "area"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the area enclosed by the curves x = 2 - y^2 and x = y.",
+  "finalAnswer": "\\text{Area} = \\frac{9}{2} = 4.5",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find y-Intersection Limits",
+      "mathExpression": "2 - y^2 = y \\implies y^2 + y - 2 = 0 \\implies (y + 2)(y - 1) = 0 \\implies y = -2, \\; y = 1",
+      "explanation": "Set horizontal coordinates equal to find y-limits.",
+      "why": "Horizontal slicing boundaries."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify Right and Left Curves",
+      "mathExpression": "x_{\\text{right}} = 2 - y^2, \\quad x_{\\text{left}} = y \\quad \\text{for } y \\in [-2, 1]",
+      "explanation": "The parabola lies to the right of the line.",
+      "why": "Area = int (x_right - x_left) dy."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate with Respect to y",
+      "mathExpression": "A = \\int_{-2}^1 (2 - y^2 - y) dy = \\left[ 2y - \\frac{y^3}{3} - \\frac{y^2}{2} \\right]_{-2}^1 = \\left( 2 - \\frac{1}{3} - \\frac{1}{2} \\right) - \\left( -4 + \\frac{8}{3} - 2 \\right) = \\frac{7}{6} - \\left( -\\frac{10}{3} \\right) = \\frac{27}{6} = \\frac{9}{2}",
+      "explanation": "Evaluate the antiderivative between y = -2 and y = 1.",
+      "why": "Final exact area."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "2 - x**2 - x",
+    "expected": "9/2",
+    "kind": "definite",
+    "lower": "-2",
+    "upper": "1"
+  }
+}

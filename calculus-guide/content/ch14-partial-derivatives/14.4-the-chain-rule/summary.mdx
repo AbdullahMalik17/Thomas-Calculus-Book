@@ -1,0 +1,18 @@
+# Section 14.4: The Chain Rule
+
+The multivariable Chain Rule computes rates of change along composite functions and parameterized paths.
+
+---
+
+## 1. Case 1: One Independent Parameter ($t$)
+
+For $z = f(x, y)$ where $x = x(t)$ and $y = y(t)$:
+$$\frac{dz}{dt} = \frac{\partial z}{\partial x} \frac{dx}{dt} + \frac{\partial z}{\partial y} \frac{dy}{dt} = \nabla f \cdot \mathbf{r}'(t)$$
+
+---
+
+## 2. Case 2: Several Independent Parameters ($u, v$)
+
+For $z = f(x, y)$ where $x = g(u, v)$ and $y = h(u, v)$:
+$$\frac{\partial z}{\partial u} = \frac{\partial z}{\partial x} \frac{\partial x}{\partial u} + \frac{\partial z}{\partial y} \frac{\partial y}{\partial u}$$
+$$\frac{\partial z}{\partial v} = \frac{\partial z}{\partial x} \frac{\partial x}{\partial v} + \frac{\partial z}{\partial y} \frac{\partial y}{\partial v}$$

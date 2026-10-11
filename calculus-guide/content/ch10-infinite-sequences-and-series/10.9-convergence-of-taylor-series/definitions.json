@@ -1,0 +1,21 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.9-convergence-of-taylor-series/definitions",
+  "chapter": "ch10",
+  "section": "10.9",
+  "title": "Convergence of Taylor Series",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-taylors-theorem",
+      "title": "Taylor's Theorem with Remainder (Lagrange Form)",
+      "category": "theorem",
+      "latex": "f(x) = P_n(x) + R_n(x), \\quad R_n(x) = \\frac{f^{(n+1)}(c)}{(n+1)!} (x - a)^{n+1}",
+      "statement": "If f has continuous derivatives through order n + 1 on an interval containing a and x, then the error R_n(x) in approximating f(x) by its n-th Taylor polynomial P_n(x) equals the (n+1)-th derivative evaluated at some point c strictly between a and x.",
+      "conditions": [
+        "c is between a and x"
+      ],
+      "explanation": "Generalizes the Mean Value Theorem to higher-order polynomial approximations.",
+      "keyTakeaway": "A Taylor series converges to f(x) if and only if lim R_n(x) = 0."
+    }
+  ]
+}

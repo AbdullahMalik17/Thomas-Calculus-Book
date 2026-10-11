@@ -1,0 +1,40 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.3-the-dot-product/solutions/ex-03",
+  "chapter": "ch12",
+  "section": "12.3",
+  "type": "solution",
+  "title": "Orthogonal Vector Projection",
+  "exerciseReference": "Section 12.3, Exercise 3",
+  "originalTopic": "Vector Projection",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "projection",
+    "shadow",
+    "components"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the vector projection of u = <2, 1, -1> onto v = <1, 0, -2>.",
+  "finalAnswer": "\\text{proj}_{\\mathbf{v}} \\mathbf{u} = \\left\\langle \\frac{4}{5}, 0, -\\frac{8}{5} \\right\\rangle",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute u . v and |v|^2",
+      "mathExpression": "\\mathbf{u} \\cdot \\mathbf{v} = 2(1) + 1(0) + (-1)(-2) = 2 + 0 + 2 = 4; \\quad |\\mathbf{v}|^2 = 1^2 + 0^2 + (-2)^2 = 5",
+      "explanation": "Calculate scalar numerator and squared denominator.",
+      "why": "Formulating scalar projection factor."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Multiply Scalar Factor by v",
+      "mathExpression": "\\text{proj}_{\\mathbf{v}} \\mathbf{u} = \\frac{4}{5} \\langle 1, 0, -2 \\rangle = \\left\\langle \\frac{4}{5}, 0, -\\frac{8}{5} \\right\\rangle",
+      "explanation": "Scale the vector v by (u . v) / |v|^2.",
+      "why": "Constructing projection vector."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(2*1 + 1*0 + (-1)*(-2)) / (1**2 + 0**2 + (-2)**2)",
+    "expected": "4/5"
+  }
+}

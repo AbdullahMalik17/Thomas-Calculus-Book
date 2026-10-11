@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.1-functions-of-several-variables/solutions/ex-02",
+  "chapter": "ch14",
+  "section": "14.1",
+  "type": "solution",
+  "title": "Level Curves of a Circular Paraboloid",
+  "exerciseReference": "Section 14.1, Exercise 2",
+  "originalTopic": "Level Curves",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "level-curves",
+    "paraboloid",
+    "circles"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Describe the level curves of z = x^2 + y^2 and find the radius of the level curve corresponding to c = 16.",
+  "finalAnswer": "\\text{Concentric circles; radius } r = 4 \\text{ at } c = 16",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Function Equal to Constant c",
+      "mathExpression": "x^2 + y^2 = c",
+      "explanation": "For c > 0, the equation describes a circle centered at the origin of radius sqrt(c).",
+      "why": "Characterizing contour curves."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate for c = 16",
+      "mathExpression": "x^2 + y^2 = 16 \\implies r = \\sqrt{16} = 4",
+      "explanation": "Substitute c = 16 to find the specific contour radius.",
+      "why": "Finding radius of contour."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(16)",
+    "expected": "4"
+  }
+}

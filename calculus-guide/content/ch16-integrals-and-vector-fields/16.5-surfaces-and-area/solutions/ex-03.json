@@ -1,0 +1,40 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.5-surfaces-and-area/solutions/ex-03",
+  "chapter": "ch16",
+  "section": "16.5",
+  "type": "solution",
+  "title": "Surface Area of a Cylinder from Parametric Equations",
+  "exerciseReference": "Section 16.5, Exercise 3",
+  "originalTopic": "Parametric Surface Area",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "parametric-surface",
+    "cylinder",
+    "cross-product"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the lateral area of the cylinder r(u, v) = <2 cos(u), 2 sin(u), v> for 0 <= u <= 2*pi and 0 <= v <= 5.",
+  "finalAnswer": "20\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Tangent Vectors and Normal Cross Product",
+      "mathExpression": "\\mathbf{r}_u = \\langle -2\\sin u, 2\\cos u, 0 \\rangle, \\quad \\mathbf{r}_v = \\langle 0, 0, 1 \\rangle \\implies \\mathbf{r}_u \\times \\mathbf{r}_v = \\langle 2\\cos u, 2\\sin u, 0 \\rangle",
+      "explanation": "Take cross product of tangent vectors.",
+      "why": "Finding normal vector."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Magnitude and Integrate",
+      "mathExpression": "|\\mathbf{r}_u \\times \\mathbf{r}_v| = \\sqrt{4\\cos^2 u + 4\\sin^2 u} = 2; \\quad \\text{Area} = \\int_0^{2\\pi} \\int_0^5 2 \\, dv \\, du = 2(5)(2\\pi) = 20\\pi",
+      "explanation": "Integrate constant magnitude 2 over rectangular parameter domain.",
+      "why": "Evaluating cylindrical surface area."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 * 5 * 2*pi",
+    "expected": "20*pi"
+  }
+}

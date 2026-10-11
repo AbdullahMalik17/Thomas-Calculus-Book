@@ -1,0 +1,47 @@
+{
+  "id": "ch08-techniques-of-integration/8.7-numerical-integration/solutions/ex-03",
+  "chapter": "ch08",
+  "section": "8.7",
+  "type": "solution",
+  "title": "Error Bound Estimation for Trapezoidal Rule",
+  "exerciseReference": "Section 8.7, Exercise 3",
+  "originalTopic": "Trapezoidal Error Bound",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "error-bound",
+    "trapezoidal",
+    "second-derivative"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine the minimum number of subintervals n required to ensure the Trapezoidal Rule approximation of int_1^2 1/x dx has error <= 10^(-4).",
+  "finalAnswer": "n \\ge 41",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Maximum of Second Derivative M_2",
+      "mathExpression": "f(x) = x^{-1} \\implies f'(x) = -x^{-2} \\implies f''(x) = 2x^{-3} = \\frac{2}{x^3}",
+      "explanation": "On [1, 2], f''(x) achieves its maximum at x = 1.",
+      "why": "Locating upper bound M_2."
+    },
+    {
+      "stepNumber": 2,
+      "title": "State M_2 and Error Bound Inequality",
+      "mathExpression": "M_2 = 2; \\quad |E_T| \\le \\frac{M_2 (b - a)^3}{12 n^2} = \\frac{2(1)^3}{12 n^2} = \\frac{1}{6n^2} \\le 10^{-4}",
+      "explanation": "Substitute M_2 = 2 and b - a = 1.",
+      "why": "Trapezoidal error bound formula."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Solve for n",
+      "mathExpression": "6n^2 \\ge 10^4 \\implies n^2 \\ge \\frac{10000}{6} \\approx 1666.67 \\implies n \\ge \\sqrt{1666.67} \\approx 40.82 \\implies n \\ge 41",
+      "explanation": "Round up to the nearest integer.",
+      "why": "Integer subinterval constraint."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "ceiling(sqrt(10000/6))",
+    "expected": "41"
+  }
+}

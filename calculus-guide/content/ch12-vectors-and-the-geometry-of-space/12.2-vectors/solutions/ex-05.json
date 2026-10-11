@@ -1,0 +1,40 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.2-vectors/solutions/ex-05",
+  "chapter": "ch12",
+  "section": "12.2",
+  "type": "solution",
+  "title": "Resultant of Concurrent Force Vectors",
+  "exerciseReference": "Section 12.2, Exercise 5",
+  "originalTopic": "Resultant Forces",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "physics-application",
+    "resultant-force",
+    "vector-sum"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Two forces F_1 = <10, -5, 20> and F_2 = <-4, 12, -8> act on a particle. Find the resultant force F and its magnitude.",
+  "finalAnswer": "\\mathbf{F} = \\langle 6, 7, 12 \\rangle, \\quad |\\mathbf{F}| = \\sqrt{229}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Sum Component-Wise for Resultant Force",
+      "mathExpression": "\\mathbf{F} = \\mathbf{F}_1 + \\mathbf{F}_2 = \\langle 10 - 4, -5 + 12, 20 - 8 \\rangle = \\langle 6, 7, 12 \\rangle",
+      "explanation": "Add corresponding force components according to Newton's law of superposition.",
+      "why": "Applying principle of vector superposition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Calculate Resultant Magnitude",
+      "mathExpression": "|\\mathbf{F}| = \\sqrt{6^2 + 7^2 + 12^2} = \\sqrt{36 + 49 + 144} = \\sqrt{229}",
+      "explanation": "Compute the norm of the resultant force vector.",
+      "why": "Evaluating net force magnitude."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(6**2 + 7**2 + 12**2)",
+    "expected": "sqrt(229)"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "ch06-applications-of-definite-integrals/6.5-work-and-fluid-forces/solutions/ex-03",
+  "chapter": "ch06",
+  "section": "6.5",
+  "type": "solution",
+  "title": "Work Done Lifting a Heavy Hanging Cable",
+  "exerciseReference": "Section 6.5, Exercise 3",
+  "originalTopic": "Variable Weight Lifting Work",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "hanging-cable",
+    "lifting-work",
+    "variable-mass"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A uniform cable 50 m long with linear density 2 kg/m hangs vertically from the top of a building. How much work is required to haul the entire cable to the top (take g = 9.8 m/s^2)?",
+  "finalAnswer": "W = 24500 \\text{ Joules}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine Force Needed to Lift Cable Remaining",
+      "mathExpression": "F(x) = \\rho g (L - x) = (2)(9.8)(50 - x) = 19.6(50 - x)",
+      "explanation": "When x meters have been hauled in, the remaining hanging length is 50 - x.",
+      "why": "Weight of remaining hanging cable."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate Force over Distance x from 0 to 50",
+      "mathExpression": "W = \\int_0^{50} 19.6(50 - x) dx = 19.6 \\left[ 50x - \\frac{x^2}{2} \\right]_0^{50}",
+      "explanation": "Set up definite work integral.",
+      "why": "Work integral formula."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Definite Integral",
+      "mathExpression": "19.6 \\left( 2500 - 1250 \\right) = 19.6(1250) = 24500 \\text{ Joules}",
+      "explanation": "Perform arithmetic.",
+      "why": "Total mechanical work."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "19.6*(50 - x)",
+    "expected": "24500",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "50"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.1-line-integrals/solutions/ex-04",
+  "chapter": "ch16",
+  "section": "16.1",
+  "type": "solution",
+  "title": "Line Integral Along a Piecewise Smooth Path",
+  "exerciseReference": "Section 16.1, Exercise 4",
+  "originalTopic": "Piecewise Smooth Line Integral",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "piecewise-smooth",
+    "line-integral",
+    "path-decomposition"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_C (2x + y) ds where C consists of C_1 from (0, 0) to (1, 0) followed by C_2 from (1, 0) to (1, 2).",
+  "finalAnswer": "7",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate Integral on Segment C_1",
+      "mathExpression": "C_1: y = 0, \\; 0 \\le x \\le 1, \\; ds = dx \\implies \\int_{C_1} (2x + 0) \\, dx = \\left[ x^2 \\right]_0^1 = 1",
+      "explanation": "Parametrize horizontal segment along x-axis.",
+      "why": "Integrating along first path segment."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Integral on Segment C_2",
+      "mathExpression": "C_2: x = 1, \\; 0 \\le y \\le 2, \\; ds = dy \\implies \\int_{C_2} (2(1) + y) \\, dy = \\left[ 2y + \\frac{y^2}{2} \\right]_0^2 = 4 + 2 = 6",
+      "explanation": "Parametrize vertical segment.",
+      "why": "Integrating along second path segment."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Sum Segment Integrals",
+      "mathExpression": "\\int_C (2x + y) \\, ds = 1 + 6 = 7",
+      "explanation": "Add contributions from both subpaths.",
+      "why": "Evaluating total piecewise line integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1 + 6",
+    "expected": "7"
+  }
+}

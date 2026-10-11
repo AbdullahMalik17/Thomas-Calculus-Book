@@ -1,0 +1,40 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.6-velocity-and-acceleration-in-polar-coordinates/solutions/ex-04",
+  "chapter": "ch13",
+  "section": "13.6",
+  "type": "solution",
+  "title": "Areal Velocity in a Central Force Field",
+  "exerciseReference": "Section 13.6, Exercise 4",
+  "originalTopic": "Kepler's Second Law",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "areal-velocity",
+    "Kepler",
+    "central-force"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the rate at which area is swept out by a planet at r = 10 AU with angular velocity d(theta)/dt = 0.4 rad/year.",
+  "finalAnswer": "\\frac{dA}{dt} = 20 \\text{ AU}^2/\\text{year}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Recall Areal Velocity Formula",
+      "mathExpression": "\\frac{dA}{dt} = \\frac{1}{2} r^2 \\dot{\\theta}",
+      "explanation": "The area swept by the radius vector in time dt is dA = (1/2) r (r dtheta).",
+      "why": "Applying geometric sector area rate."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute Given Parameters",
+      "mathExpression": "\\frac{dA}{dt} = \\frac{1}{2} (10^2) (0.4) = \\frac{1}{2}(100)(0.4) = 20",
+      "explanation": "Evaluate the product.",
+      "why": "Calculating constant areal rate."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(1/2) * 10**2 * 0.4",
+    "expected": "20"
+  }
+}

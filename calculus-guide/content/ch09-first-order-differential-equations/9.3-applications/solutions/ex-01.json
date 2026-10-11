@@ -1,0 +1,48 @@
+{
+  "id": "ch09-first-order-differential-equations/9.3-applications/solutions/ex-01",
+  "chapter": "ch09",
+  "section": "9.3",
+  "type": "solution",
+  "title": "Salt Solution Mixture Tank Problem",
+  "exerciseReference": "Section 9.3, Exercise 1",
+  "originalTopic": "Mixture Tank Modeling",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "mixture-tank",
+    "linear-ode",
+    "applications"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A 100-liter tank initially contains pure water. Brine containing 0.5 kg of salt per liter enters at 2 L/min, and the well-stirred mixture leaves at 2 L/min. Find the amount of salt y(t) in the tank at time t.",
+  "finalAnswer": "y(t) = 50(1 - e^{-t/50}) \\text{ kg}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate Differential Equation",
+      "mathExpression": "\\frac{dy}{dt} = \\text{Rate In} - \\text{Rate Out} = (0.5)(2) - \\frac{y}{100}(2) = 1 - \\frac{y}{50} \\implies \\frac{dy}{dt} + \\frac{1}{50} y = 1",
+      "explanation": "Constant volume V = 100 L.",
+      "why": "Mixture model."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve via Integrating Factor",
+      "mathExpression": "\\mu(t) = e^{t/50} \\implies \\frac{d}{dt}[e^{t/50} y] = e^{t/50} \\implies e^{t/50} y = 50e^{t/50} + C \\implies y(t) = 50 + C e^{-t/50}",
+      "explanation": "Integrate e^(t/50).",
+      "why": "Integrating factor."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Apply Initial Condition y(0) = 0",
+      "mathExpression": "0 = 50 + C \\implies C = -50 \\implies y(t) = 50(1 - e^{-t/50})",
+      "explanation": "Initially pure water has 0 kg salt.",
+      "why": "Particular solution."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "50*(1 - exp(-x/50))",
+    "expected": "exp(-x/50)",
+    "variable": "x"
+  }
+}

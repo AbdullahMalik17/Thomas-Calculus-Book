@@ -1,0 +1,40 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.3-the-integral-test/solutions/ex-02",
+  "chapter": "ch10",
+  "section": "10.3",
+  "type": "solution",
+  "title": "Testing Convergence of 1 / (n (ln n)^2)",
+  "exerciseReference": "Section 10.3, Exercise 2",
+  "originalTopic": "Convergent Logarithmic p-Series",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "integral-test",
+    "logarithm",
+    "convergence"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether sum_{n=2}^oo 1 / (n (ln n)^2) converges or diverges.",
+  "finalAnswer": "\\sum_{n=2}^\\infty \\frac{1}{n (\\ln n)^2} \\quad \\text{Converges by the Integral Test}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate Improper Integral",
+      "mathExpression": "\\int_2^\\infty \\frac{1}{x (\\ln x)^2} dx; \\quad u = \\ln(x) \\implies \\int_{\\ln 2}^\\infty u^{-2} du = \\left[ -\\frac{1}{u} \\right]_{\\ln 2}^\\infty = 0 - \\left(-\\frac{1}{\\ln 2}\\right) = \\frac{1}{\\ln 2}",
+      "explanation": "Evaluate power integral in u.",
+      "why": "Improper integral convergence."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Conclude",
+      "mathExpression": "\\text{The integral converges to } \\frac{1}{\\ln 2} \\implies \\text{the series converges}",
+      "explanation": "Finite integral value proves convergence.",
+      "why": "Integral test."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1/log(2) - 1/log(2)",
+    "expected": "0"
+  }
+}

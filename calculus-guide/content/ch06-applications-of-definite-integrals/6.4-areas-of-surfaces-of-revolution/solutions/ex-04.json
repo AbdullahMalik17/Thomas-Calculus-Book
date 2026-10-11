@@ -1,0 +1,47 @@
+{
+  "id": "ch06-applications-of-definite-integrals/6.4-areas-of-surfaces-of-revolution/solutions/ex-04",
+  "chapter": "ch06",
+  "section": "6.4",
+  "type": "solution",
+  "title": "Surface Area of a Right Circular Cone",
+  "exerciseReference": "Section 6.4, Exercise 4",
+  "originalTopic": "Geometric Verification: Cone Area",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "cone",
+    "surface-area",
+    "geometric-proof"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Show that revolving the line segment y = (r/h) x from x = 0 to x = h about the x-axis yields the lateral surface area of a cone S = pi r sqrt(r^2 + h^2).",
+  "finalAnswer": "S = \\pi r \\sqrt{r^2 + h^2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Derivative and ds",
+      "mathExpression": "y' = \\frac{r}{h} \\implies \\sqrt{1 + (y')^2} = \\sqrt{1 + \\frac{r^2}{h^2}} = \\frac{\\sqrt{h^2 + r^2}}{h}",
+      "explanation": "Constant slope yields constant arc length factor.",
+      "why": "Linear segment derivative."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Set Up Integral",
+      "mathExpression": "S = 2\\pi \\int_0^h \\left(\\frac{r}{h} x\\right) \\frac{\\sqrt{r^2 + h^2}}{h} dx = \\frac{2\\pi r \\sqrt{r^2 + h^2}}{h^2} \\int_0^h x \\, dx",
+      "explanation": "Factor out constant factors.",
+      "why": "Linear integration."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Definite Integral",
+      "mathExpression": "\\frac{2\\pi r \\sqrt{r^2 + h^2}}{h^2} \\left( \\frac{h^2}{2} \\right) = \\pi r \\sqrt{r^2 + h^2}",
+      "explanation": "h^2/2 cancels with 2/h^2.",
+      "why": "Classical lateral cone surface area formula."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "pi*r*sqrt(r**2 + h**2) - pi*r*sqrt(r**2 + h**2)",
+    "expected": "0"
+  }
+}

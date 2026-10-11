@@ -30,8 +30,8 @@ export default function DashboardPage() {
   const metrics = [
     {
       title: 'Curriculum Coverage',
-      value: '27 / 27',
-      subtitle: 'All 4 Chapters 100% Complete',
+      value: `${allSections.length} / ${allSections.length}`,
+      subtitle: 'All 16 Chapters 100% Complete',
       icon: CheckCircle2,
       color: 'text-emerald-600',
       badge: 'Complete',
@@ -46,7 +46,7 @@ export default function DashboardPage() {
     },
     {
       title: 'Zod Content Schemas',
-      value: '196 / 196',
+      value: '730 / 730',
       subtitle: 'Items Passed Strict Guardrails',
       icon: ShieldCheck,
       color: 'text-teal-600',
@@ -68,7 +68,7 @@ export default function DashboardPage() {
       <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-4">
         <div className="flex flex-wrap items-center gap-2">
           <Badge variant="primary">Analytics &amp; Verification Hub</Badge>
-          <Badge variant="success">All 27 Sections Operational</Badge>
+          <Badge variant="success">All {allSections.length} Sections Operational</Badge>
           <Badge variant="info">{totalSolutions} Verified Solutions</Badge>
         </div>
 
@@ -77,7 +77,7 @@ export default function DashboardPage() {
         </h1>
 
         <p className="text-slate-600 max-w-3xl leading-relaxed">
-          Real-time tracking of curriculum coverage, symbolic mathematical verification tests, and pedagogical misconception diagnostics across all 4 completed chapters of Thomas&apos; Calculus (14th Edition).
+          Real-time tracking of curriculum coverage, symbolic mathematical verification tests, and pedagogical misconception diagnostics across all 16 completed chapters of Thomas&apos; Calculus (14th Edition).
         </p>
 
         <div className="pt-2 flex flex-wrap gap-3">
@@ -123,7 +123,7 @@ export default function DashboardPage() {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="space-y-1">
             <h2 className="text-2xl font-bold text-slate-900">
-              Complete Curriculum Section Index (27 Sections)
+              Complete Curriculum Section Index ({allSections.length} Sections)
             </h2>
             <p className="text-sm text-slate-500">
               Live status, solution counts, and engine verification for all chapters.
@@ -144,7 +144,7 @@ export default function DashboardPage() {
                   : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
               }`}
             >
-              All (27)
+              All ({allSections.length})
             </button>
             {Object.values(CHAPTER_METADATA).map((ch) => (
               <button
@@ -240,13 +240,13 @@ export default function DashboardPage() {
         <Card title="SymPy Symbolic Validation Pipeline" subtitle="Subprocess & CLI Engine">
           <div className="space-y-3 text-sm text-slate-600">
             <p>
-              Mathematical claims across all 153 textbook solutions are verified using SymPy symbolic equivalence:
+              Mathematical claims across all {totalSolutions} textbook solutions are verified using SymPy symbolic equivalence:
             </p>
             <div className="p-3 bg-slate-900 text-blue-300 font-mono text-xs rounded-lg">
               simplify(expr - expected) == 0
             </div>
             <p className="text-xs text-slate-500">
-              Covers algebraic factoring, expansions, trigonometric identities, limits, derivatives, chain rules, optimization, and antiderivatives.
+              Covers algebraic factoring, expansions, trigonometric identities, limits, derivatives, chain rules, optimization, antiderivatives, multivariable calculus, and vector fields.
             </p>
           </div>
         </Card>
@@ -254,7 +254,7 @@ export default function DashboardPage() {
         <Card title="Zod Schema Guardrail Pipeline" subtitle="Content Integrity Assurance">
           <div className="space-y-3 text-sm text-slate-600">
             <p>
-              All 196 content files conform strictly to TypeScript Zod schemas:
+              All registered content files conform strictly to TypeScript Zod schemas:
             </p>
             <div className="p-3 bg-slate-900 text-teal-300 font-mono text-xs rounded-lg">
               npm run content:validate

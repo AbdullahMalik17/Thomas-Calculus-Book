@@ -1,0 +1,47 @@
+{
+  "id": "ch14-partial-derivatives/14.4-the-chain-rule/solutions/ex-03",
+  "chapter": "ch14",
+  "section": "14.4",
+  "type": "solution",
+  "title": "Related Rates of Volume Change in a Cylinder",
+  "exerciseReference": "Section 14.4, Exercise 3",
+  "originalTopic": "Related Rates via Chain Rule",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "related-rates",
+    "cylinder",
+    "chain-rule"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "The radius of a cylinder increases at dr/dt = 2 cm/s while height decreases at dh/dt = -3 cm/s. Find the rate of volume change dV/dt when r = 10 cm and h = 20 cm.",
+  "finalAnswer": "\\frac{dV}{dt} = 500\\pi \\text{ cm}^3/\\text{s}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "State Volume Formula and Partial Derivatives",
+      "mathExpression": "V = \\pi r^2 h \\implies \\frac{\\partial V}{\\partial r} = 2\\pi r h, \\quad \\frac{\\partial V}{\\partial h} = \\pi r^2",
+      "explanation": "Differentiate cylindrical volume with respect to radius and height.",
+      "why": "Finding geometric partial rates."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Chain Rule for Total Time Derivative",
+      "mathExpression": "\\frac{dV}{dt} = \\frac{\\partial V}{\\partial r}\\frac{dr}{dt} + \\frac{\\partial V}{\\partial h}\\frac{dh}{dt} = (2\\pi r h)(2) + (\\pi r^2)(-3)",
+      "explanation": "Sum contributions from expanding radius and contracting height.",
+      "why": "Applying multivariable Chain Rule."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Substitute Given Dimensions",
+      "mathExpression": "\\frac{dV}{dt} = 2\\pi(10)(20)(2) + \\pi(100)(-3) = 800\\pi - 300\\pi = 500\\pi \\text{ cm}^3/\\text{s}",
+      "explanation": "Evaluate with r = 10 and h = 20.",
+      "why": "Evaluating net volume change rate."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2*pi*10*20*2 + pi*10**2*(-3)",
+    "expected": "500*pi"
+  }
+}

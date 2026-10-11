@@ -1,0 +1,21 @@
+# Section 16.3: Path Independence, Conservative Fields, and Potential Functions
+
+Conservative fields conserve energy, meaning work along closed loops is zero and line integrals depend solely on endpoints.
+
+---
+
+## 1. Equivalence of Conservative Properties
+
+For a continuous field $\mathbf{F}$ on an open, connected region:
+1. $\mathbf{F} = \nabla f$ for some scalar potential $f$.
+2. $\int_C \mathbf{F} \cdot d\mathbf{r}$ is independent of path.
+3. $\oint_C \mathbf{F} \cdot d\mathbf{r} = 0$ for every closed loop $C$.
+
+---
+
+## 2. Finding Potential Functions
+
+Given $\mathbf{F} = \langle M, N, P \rangle$:
+1. Integrate $f_x = M$ with respect to $x$: $f(x, y, z) = \int M \, dx + g(y, z)$.
+2. Differentiate with respect to $y$ and equate to $N$ to find $g_y(y, z)$.
+3. Differentiate with respect to $z$ and equate to $P$ to determine the remaining function of $z$.

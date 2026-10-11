@@ -1,0 +1,40 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.1-three-dimensional-coordinate-systems/solutions/ex-05",
+  "chapter": "ch12",
+  "section": "12.1",
+  "type": "solution",
+  "title": "Volume of a Hemispherical Shell Region",
+  "exerciseReference": "Section 12.1, Exercise 5",
+  "originalTopic": "Geometric Regions in 3D",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "hemisphere",
+    "inequalities",
+    "volume"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Describe the region in R^3 defined by 1 <= x^2 + y^2 + z^2 <= 9 and z >= 0, and compute its total volume.",
+  "finalAnswer": "\\frac{52\\pi}{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Geometric Interpretation of Region",
+      "mathExpression": "1 \\le \\rho^2 \\le 9 \\iff 1 \\le \\rho \\le 3; \\quad z \\ge 0",
+      "explanation": "The inequalities describe an upper hemispherical shell bounded by concentric spheres of radii 1 and 3 in the half-space z >= 0.",
+      "why": "Interpreting spatial boundary constraints."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Calculate Volume of Hemispherical Shell",
+      "mathExpression": "V = \\frac{1}{2} \\cdot \\frac{4}{3}\\pi (3^3 - 1^3) = \\frac{2}{3}\\pi (27 - 1) = \\frac{2}{3}\\pi (26) = \\frac{52\\pi}{3}",
+      "explanation": "Subtract volume of inner hemisphere from outer hemisphere.",
+      "why": "Computing difference of spherical volumes."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(2/3) * pi * (27 - 1)",
+    "expected": "52*pi/3"
+  }
+}

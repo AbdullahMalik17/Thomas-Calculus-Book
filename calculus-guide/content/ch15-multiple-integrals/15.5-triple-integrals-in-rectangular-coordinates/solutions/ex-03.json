@@ -1,0 +1,47 @@
+{
+  "id": "ch15-multiple-integrals/15.5-triple-integrals-in-rectangular-coordinates/solutions/ex-03",
+  "chapter": "ch15",
+  "section": "15.5",
+  "type": "solution",
+  "title": "Triple Integral over a Solid Circular Cylinder",
+  "exerciseReference": "Section 15.5, Exercise 3",
+  "originalTopic": "Cylinder Integration",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "cylinder",
+    "triple-integral",
+    "Fubini"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate iiint_E z dV where E is the cylinder x^2 + y^2 <= 4 between z = 0 and z = 3.",
+  "finalAnswer": "18\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Factor z-Integral from Base Area",
+      "mathExpression": "\\iiint_E z \\, dV = \\left( \\int_0^3 z \\, dz \\right) \\left( \\iint_{x^2+y^2 \\le 4} 1 \\, dA \\right)",
+      "explanation": "Because z-limits and cross-section are independent, the integral factors.",
+      "why": "Decoupling independent variables."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Each Component",
+      "mathExpression": "\\int_0^3 z \\, dz = \\left[ \\frac{z^2}{2} \\right]_0^3 = \\frac{9}{2}; \\quad \\text{Base Area} = \\pi(2^2) = 4\\pi",
+      "explanation": "Evaluate the 1D integral and 2D circular area.",
+      "why": "Computing factor values."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Multiply Factors",
+      "mathExpression": "\\left( \\frac{9}{2} \\right) (4\\pi) = 18\\pi",
+      "explanation": "Multiply the two factor results.",
+      "why": "Evaluating final integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(9/2) * (4*pi)",
+    "expected": "18*pi"
+  }
+}

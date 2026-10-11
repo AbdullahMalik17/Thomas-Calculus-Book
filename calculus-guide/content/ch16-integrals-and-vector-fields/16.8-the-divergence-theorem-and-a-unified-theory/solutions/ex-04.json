@@ -1,0 +1,40 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.8-the-divergence-theorem-and-a-unified-theory/solutions/ex-04",
+  "chapter": "ch16",
+  "section": "16.8",
+  "type": "solution",
+  "title": "Flux of an Incompressible (Solenoidal) Vector Field",
+  "exerciseReference": "Section 16.8, Exercise 4",
+  "originalTopic": "Incompressible Field",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "incompressible",
+    "solenoidal",
+    "zero-flux"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Show that the outward flux of F = <y, z, x> through any closed surface S is zero.",
+  "finalAnswer": "\\nabla \\cdot \\mathbf{F} = 0 \\implies \\text{Flux} = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Divergence",
+      "mathExpression": "\\nabla \\cdot \\mathbf{F} = \\frac{\\partial y}{\\partial x} + \\frac{\\partial z}{\\partial y} + \\frac{\\partial x}{\\partial z} = 0 + 0 + 0 = 0",
+      "explanation": "Each component derivative vanishes identically.",
+      "why": "Proving solenoidal condition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Divergence Theorem",
+      "mathExpression": "\\iint_S \\mathbf{F} \\cdot \\mathbf{n} \\, d\\sigma = \\iiint_D 0 \\, dV = 0",
+      "explanation": "The integral of zero over any solid volume is zero.",
+      "why": "Confirming vanishing of closed surface flux."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

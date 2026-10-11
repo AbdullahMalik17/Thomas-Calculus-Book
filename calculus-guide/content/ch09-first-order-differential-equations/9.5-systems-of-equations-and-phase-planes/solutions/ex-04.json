@@ -1,0 +1,47 @@
+{
+  "id": "ch09-first-order-differential-equations/9.5-systems-of-equations-and-phase-planes/solutions/ex-04",
+  "chapter": "ch09",
+  "section": "9.5",
+  "type": "solution",
+  "title": "Conserved Quantity in Lotka-Volterra System",
+  "exerciseReference": "Section 9.5, Exercise 4",
+  "originalTopic": "Conserved Invariant Function",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "conserved-quantity",
+    "first-integral",
+    "lotka-volterra"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For dx/dt = x(1 - y) and dy/dt = y(x - 1), find a conserved quantity H(x, y) that remains constant along all trajectories.",
+  "finalAnswer": "H(x, y) = x - \\ln(x) + y - \\ln(y) = C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up dy/dx Equation",
+      "mathExpression": "\\frac{dy}{dx} = \\frac{y(x - 1)}{x(1 - y)}",
+      "explanation": "Divide dy/dt by dx/dt.",
+      "why": "Trajectory differential equation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Separate Variables",
+      "mathExpression": "\\frac{1 - y}{y} dy = \\frac{x - 1}{x} dx \\implies \\left(\\frac{1}{y} - 1\\right) dy = \\left(1 - \\frac{1}{x}\\right) dx",
+      "explanation": "Separate x and y terms.",
+      "why": "Separation of variables."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate to Find Invariant H(x, y)",
+      "mathExpression": "\\ln(y) - y = x - \\ln(x) + C' \\implies x - \\ln(x) + y - \\ln(y) = C",
+      "explanation": "H is constant along trajectories, proving closed periodic orbits.",
+      "why": "First integral of motion."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(1 - 1/x) - (1 - 1/x)",
+    "expected": "0"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.9-taylors-formula-for-two-variables/solutions/ex-04",
+  "chapter": "ch14",
+  "section": "14.9",
+  "type": "solution",
+  "title": "Hessian Matrix Determinant and Quadratic Forms",
+  "exerciseReference": "Section 14.9, Exercise 4",
+  "originalTopic": "Hessian Matrix",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "Hessian",
+    "quadratic-form",
+    "determinant"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the Hessian determinant H = f_{xx} f_{yy} - (f_{xy})^2 for the quadratic form f(x, y) = x^2 + 3xy + 2y^2 and determine its definiteness.",
+  "finalAnswer": "H = -1 \\implies \\text{Indefinite quadratic form (saddle behavior)}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Second Partial Derivatives",
+      "mathExpression": "f_{xx} = 2, \\quad f_{yy} = 4, \\quad f_{xy} = 3",
+      "explanation": "Differentiate quadratic terms.",
+      "why": "Constructing Hessian entries."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Calculate Hessian Determinant",
+      "mathExpression": "\\det(H) = (2)(4) - (3)^2 = 8 - 9 = -1",
+      "explanation": "Evaluate discriminant D = 8 - 9 = -1.",
+      "why": "Testing definiteness."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2*4 - 3**2",
+    "expected": "-1"
+  }
+}

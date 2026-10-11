@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.7-extreme-values-and-saddle-points/solutions/ex-02",
+  "chapter": "ch14",
+  "section": "14.7",
+  "type": "solution",
+  "title": "Saddle Point of a Hyperbolic Paraboloid",
+  "exerciseReference": "Section 14.7, Exercise 2",
+  "originalTopic": "Saddle Points",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "saddle-point",
+    "discriminant",
+    "extrema"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Verify that the critical point of f(x, y) = x^2 - y^2 is a saddle point.",
+  "finalAnswer": "\\text{Critical point at } (0, 0) \\text{ has } D = -4 < 0 \\implies \\text{Saddle point}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Critical Point",
+      "mathExpression": "f_x = 2x = 0 \\implies x = 0; \\quad f_y = -2y = 0 \\implies y = 0",
+      "explanation": "The unique critical point is (0, 0).",
+      "why": "Locating critical point."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Discriminant",
+      "mathExpression": "f_{xx} = 2, \\quad f_{yy} = -2, \\quad f_{xy} = 0 \\implies D = (2)(-2) - 0^2 = -4 < 0",
+      "explanation": "Since D is strictly negative, the origin is a saddle point.",
+      "why": "Applying Second Derivative Test."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 * (-2) - 0",
+    "expected": "-4"
+  }
+}

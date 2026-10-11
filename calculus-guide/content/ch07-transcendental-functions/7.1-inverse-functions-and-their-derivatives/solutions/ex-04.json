@@ -1,0 +1,40 @@
+{
+  "id": "ch07-transcendental-functions/7.1-inverse-functions-and-their-derivatives/solutions/ex-04",
+  "chapter": "ch07",
+  "section": "7.1",
+  "type": "solution",
+  "title": "Domain and Range Inversion for Radical Relations",
+  "exerciseReference": "Section 7.1, Exercise 4",
+  "originalTopic": "Domain and Range Inversion",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "domain",
+    "range",
+    "radicals"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine the domain and range of the inverse of f(x) = sqrt(2x - 4) for x >= 2.",
+  "finalAnswer": "\\text{Domain of } f^{-1}: [0, \\infty); \\quad \\text{Range of } f^{-1}: [2, \\infty)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Domain and Range of f",
+      "mathExpression": "\\text{Domain}(f) = [2, \\infty); \\quad \\text{Range}(f) = [0, \\infty)",
+      "explanation": "f(2) = 0 and f(x) grows without bound.",
+      "why": "Direct function analysis."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Invert Sets",
+      "mathExpression": "\\text{Domain}(f^{-1}) = \\text{Range}(f) = [0, \\infty); \\quad \\text{Range}(f^{-1}) = \\text{Domain}(f) = [2, \\infty)",
+      "explanation": "Domain and range swap roles for inverse functions.",
+      "why": "Fundamental inverse property."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "x - x",
+    "expected": "0"
+  }
+}

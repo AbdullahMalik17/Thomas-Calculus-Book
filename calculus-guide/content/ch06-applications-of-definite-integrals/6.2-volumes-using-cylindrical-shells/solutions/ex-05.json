@@ -1,0 +1,47 @@
+{
+  "id": "ch06-applications-of-definite-integrals/6.2-volumes-using-cylindrical-shells/solutions/ex-05",
+  "chapter": "ch06",
+  "section": "6.2",
+  "type": "solution",
+  "title": "Volume of a Sphere via Cylindrical Shells",
+  "exerciseReference": "Section 6.2, Exercise 5",
+  "originalTopic": "Geometric Volume Verification",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "sphere-volume",
+    "cylindrical-shells",
+    "proof"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Derive the volume of a sphere of radius R by revolving the upper semicircle y = sqrt(R^2 - x^2) on [0, R] about the y-axis using the shell method and doubling the result.",
+  "finalAnswer": "V = \\frac{4}{3}\\pi R^3",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up Shell for Upper Hemisphere",
+      "mathExpression": "V_{\\text{hemi}} = 2\\pi \\int_0^R x \\sqrt{R^2 - x^2} \\, dx",
+      "explanation": "Radius is x and height is sqrt(R^2 - x^2).",
+      "why": "Shell method for hemisphere."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate via u-Substitution",
+      "mathExpression": "u = R^2 - x^2 \\implies du = -2x \\, dx \\implies V_{\\text{hemi}} = \\pi \\int_0^{R^2} u^{1/2} du = \\pi \\left[ \\frac{2}{3} u^{3/2} \\right]_0^{R^2} = \\frac{2}{3}\\pi R^3",
+      "explanation": "Evaluate transformed definite integral.",
+      "why": "Power substitution."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Double for Full Sphere",
+      "mathExpression": "V = 2 \\cdot V_{\\text{hemi}} = 2 \\left( \\frac{2}{3}\\pi R^3 \\right) = \\frac{4}{3}\\pi R^3",
+      "explanation": "Account for top and bottom hemispheres.",
+      "why": "Full sphere volume derivation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 * (2/3) * pi",
+    "expected": "4*pi/3"
+  }
+}

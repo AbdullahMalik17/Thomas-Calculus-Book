@@ -1,0 +1,19 @@
+# Section 14.8: Lagrange Multipliers
+
+The method of Lagrange multipliers optimizes functions subject to equality constraints.
+
+---
+
+## 1. Single Constraint $\nabla f = \lambda \nabla g$
+
+Solve the system of equations:
+$$\begin{cases} f_x = \lambda g_x \\ f_y = \lambda g_y \\ f_z = \lambda g_z \\ g(x, y, z) = k \end{cases}$$
+
+The scalar $\lambda$ represents the **marginal rate of change** of the optimal value with respect to the constraint level $k$: $\lambda = \frac{df^*}{dk}$.
+
+---
+
+## 2. Two Constraints $\nabla f = \lambda \nabla g + \mu \nabla h$
+
+When restricted to the intersection curve of two surfaces $g = k_1$ and $h = k_2$:
+$$\nabla f = \lambda \nabla g + \mu \nabla h$$

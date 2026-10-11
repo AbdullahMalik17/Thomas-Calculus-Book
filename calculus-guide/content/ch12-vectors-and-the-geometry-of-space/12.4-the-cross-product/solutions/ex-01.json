@@ -1,0 +1,40 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.4-the-cross-product/solutions/ex-01",
+  "chapter": "ch12",
+  "section": "12.4",
+  "type": "solution",
+  "title": "Computing the Cross Product of Two Vectors",
+  "exerciseReference": "Section 12.4, Exercise 1",
+  "originalTopic": "Vector Cross Product",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "cross-product",
+    "determinant",
+    "orthogonal-vector"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the cross product u x v for u = <2, 1, 1> and v = <-4, 3, 1>.",
+  "finalAnswer": "\\langle -2, -6, 10 \\rangle",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up 3x3 Determinant",
+      "mathExpression": "\\mathbf{u} \\times \\mathbf{v} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ 2 & 1 & 1 \\\\ -4 & 3 & 1 \\end{vmatrix}",
+      "explanation": "Expand determinant along first row.",
+      "why": "Formulating cross product determinant."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Calculate 2x2 Minor Determinants",
+      "mathExpression": "\\mathbf{i}(1 - 3) - \\mathbf{j}(2 - (-4)) + \\mathbf{k}(6 - (-4)) = -2\\mathbf{i} - 6\\mathbf{j} + 10\\mathbf{k}",
+      "explanation": "Evaluate i(1 - 3) - j(2 + 4) + k(6 + 4) = <-2, -6, 10>.",
+      "why": "Computing orthogonal components."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(-2)**2 + (-6)**2 + 10**2",
+    "expected": "140"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "ch08-techniques-of-integration/8.5-integration-of-rational-functions-by-partial-fractions/definitions",
+  "chapter": "ch08",
+  "section": "8.5",
+  "title": "Integration of Rational Functions by Partial Fractions",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-partial-fraction-decomposition",
+      "title": "Partial Fraction Decomposition Theorem",
+      "category": "theorem",
+      "latex": "\\frac{P(x)}{Q(x)} = \\sum \\frac{A_i}{(x - r_i)^{k_i}} + \\sum \\frac{B_j x + C_j}{(x^2 + b_j x + c_j)^{m_j}}",
+      "statement": "Any proper rational function P(x)/Q(x) with real coefficients can be uniquely decomposed into a sum of partial fractions corresponding to the linear and irreducible quadratic factors of its denominator.",
+      "conditions": [
+        "deg(P) < deg(Q)",
+        "Denominator Q(x) factored completely over R"
+      ],
+      "explanation": "Reduces rational integration into elementary logarithms and inverse tangents.",
+      "keyTakeaway": "Linear factors produce logarithms; irreducible quadratics produce inverse tangents."
+    }
+  ]
+}

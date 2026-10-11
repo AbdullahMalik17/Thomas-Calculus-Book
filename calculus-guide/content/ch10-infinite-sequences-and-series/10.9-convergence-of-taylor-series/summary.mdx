@@ -1,0 +1,25 @@
+# Section 10.9: Convergence of Taylor Series
+
+Proving that a Taylor series converges to the original function by analyzing the Lagrange remainder.
+
+---
+
+## 1. Taylor's Formula with Remainder
+
+$$
+f(x) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (x - a)^k + R_n(x)
+$$
+
+$$
+R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!} (x - a)^{n+1} \quad (c \text{ between } a \text{ and } x)
+$$
+
+---
+
+## 2. Remainder Estimation Theorem
+
+If $|f^{(n+1)}(t)| \le M$ for all $t$ between $a$ and $x$:
+
+$$
+|R_n(x)| \le \frac{M}{(n+1)!} |x - a|^{n+1}
+$$

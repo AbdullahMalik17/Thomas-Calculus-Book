@@ -1,0 +1,47 @@
+{
+  "id": "ch14-partial-derivatives/14.6-tangent-planes-and-differentials/solutions/ex-02",
+  "chapter": "ch14",
+  "section": "14.6",
+  "type": "solution",
+  "title": "Linearization and Numerical Approximation",
+  "exerciseReference": "Section 14.6, Exercise 2",
+  "originalTopic": "Linear Approximation",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "linearization",
+    "approximation",
+    "differentials"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the linearization L(x, y) of f(x, y) = sqrt(x^2 + y^2) at (3, 4) and use it to approximate f(3.06, 3.92).",
+  "finalAnswer": "L(x, y) = 5 + \\frac{3}{5}(x - 3) + \\frac{4}{5}(y - 4); \\quad f(3.06, 3.92) \\approx 4.972",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate Function and Partials at Base Point (3, 4)",
+      "mathExpression": "f(3, 4) = \\sqrt{9 + 16} = 5; \\quad f_x(3, 4) = \\frac{3}{5} = 0.6, \\quad f_y(3, 4) = \\frac{4}{5} = 0.8",
+      "explanation": "Compute value and partial derivatives at reference point.",
+      "why": "Establishing linear expansion coefficients."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Construct Linearization Formula",
+      "mathExpression": "L(x, y) = 5 + 0.6(x - 3) + 0.8(y - 4)",
+      "explanation": "Assemble linear approximation formula.",
+      "why": "Formulating linearization."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate at Perturbed Coordinates",
+      "mathExpression": "L(3.06, 3.92) = 5 + 0.6(0.06) + 0.8(-0.08) = 5 + 0.036 - 0.064 = 4.972",
+      "explanation": "Substitute Delta x = 0.06 and Delta y = -0.08.",
+      "why": "Computing numerical approximation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "5 + (3/5)*(3.06 - 3) + (4/5)*(3.92 - 4)",
+    "expected": "4.972"
+  }
+}

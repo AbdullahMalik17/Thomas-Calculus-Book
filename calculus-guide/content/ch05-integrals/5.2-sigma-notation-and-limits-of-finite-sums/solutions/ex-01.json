@@ -1,0 +1,47 @@
+{
+  "id": "ch05-integrals/5.2-sigma-notation-and-limits-of-finite-sums/solutions/ex-01",
+  "chapter": "ch05",
+  "section": "5.2",
+  "type": "solution",
+  "title": "Evaluating a Linear Sum using Power Formulas",
+  "exerciseReference": "Section 5.2, Exercise 1",
+  "originalTopic": "Algebraic Sigma Evaluation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "sigma-notation",
+    "linearity",
+    "power-sum"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate the finite sum sum_{k=1}^{20} (3k - 2).",
+  "finalAnswer": "\\sum_{k=1}^{20} (3k - 2) = 590",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Linearity of Summation",
+      "mathExpression": "\\sum_{k=1}^{20} (3k - 2) = 3 \\sum_{k=1}^{20} k - \\sum_{k=1}^{20} 2",
+      "explanation": "Split the sum into separate components.",
+      "why": "Summation linearity properties."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute Known Formulas",
+      "mathExpression": "\\sum_{k=1}^{20} k = \\frac{20(21)}{2} = 210; \\quad \\sum_{k=1}^{20} 2 = 2(20) = 40",
+      "explanation": "Use formula for sum k and sum of a constant.",
+      "why": "Direct closed-form evaluation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Combine Terms",
+      "mathExpression": "3(210) - 40 = 630 - 40 = 590",
+      "explanation": "Perform arithmetic multiplication and subtraction.",
+      "why": "Final evaluated integer result."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "3 * (20*21/2) - 40",
+    "expected": "590"
+  }
+}

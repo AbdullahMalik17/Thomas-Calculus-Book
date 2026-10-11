@@ -1,0 +1,33 @@
+{
+  "id": "ch06-applications-of-definite-integrals/6.3-arc-length/definitions",
+  "chapter": "ch06",
+  "section": "6.3",
+  "title": "Arc Length",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "formula-arc-length",
+      "title": "Arc Length of a Smooth Curve",
+      "category": "formula",
+      "latex": "L = \\int_a^b \\sqrt{1 + [f'(x)]^2} \\, dx",
+      "statement": "If f' is continuous on [a, b], the length of the curve y = f(x) from x = a to x = b is the integral of the differential arc length ds = sqrt(dx^2 + dy^2) = sqrt(1 + (f'(x))^2) dx.",
+      "conditions": [
+        "f'(x) is continuous on [a, b] (smooth curve)"
+      ],
+      "explanation": "Derived as the limit of polygonal path lengths approximating the curve.",
+      "keyTakeaway": "Arc length integrates the Pythagorean root sqrt(1 + (dy/dx)^2)."
+    },
+    {
+      "id": "formula-arc-length-dy",
+      "title": "Arc Length with Respect to y",
+      "category": "formula",
+      "latex": "L = \\int_c^d \\sqrt{1 + [g'(y)]^2} \\, dy",
+      "statement": "For a smooth curve given as x = g(y) from y = c to y = d, the arc length is integrated with respect to y.",
+      "conditions": [
+        "g'(y) is continuous on [c, d]"
+      ],
+      "explanation": "Useful when solving for x as a function of y yields a cleaner derivative.",
+      "keyTakeaway": "Symmetric formulation with respect to the vertical coordinate."
+    }
+  ]
+}

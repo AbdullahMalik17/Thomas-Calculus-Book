@@ -1,0 +1,41 @@
+{
+  "id": "ch08-techniques-of-integration/8.5-integration-of-rational-functions-by-partial-fractions/solutions/ex-04",
+  "chapter": "ch08",
+  "section": "8.5",
+  "type": "solution",
+  "title": "Improper Rational Function Requiring Long Division First",
+  "exerciseReference": "Section 8.5, Exercise 4",
+  "originalTopic": "Improper Rational Integration",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "long-division",
+    "improper-rational",
+    "partial-fractions"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int (x^3) / (x^2 - 1) dx.",
+  "finalAnswer": "\\frac{x^2}{2} + \\frac{1}{2}\\ln|x^2 - 1| + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Perform Long Division",
+      "mathExpression": "\\frac{x^3}{x^2 - 1} = x + \\frac{x}{x^2 - 1}",
+      "explanation": "Divide x^3 by x^2 - 1.",
+      "why": "Numerator degree >= denominator degree."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate Both Terms",
+      "mathExpression": "\\int x \\, dx + \\int \\frac{x}{x^2 - 1} dx = \\frac{x^2}{2} + \\frac{1}{2}\\ln|x^2 - 1| + C",
+      "explanation": "Use simple substitution u = x^2 - 1 for remainder.",
+      "why": "Direct integration."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "x**3 / (x**2 - 1)",
+    "expected": "x**2/2 + log(x**2 - 1)/2",
+    "kind": "indefinite"
+  }
+}

@@ -105,7 +105,7 @@ export default function QuizPage({ params }: QuizPageProps) {
       <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-slate-600">
         <Link href="/" className="hover:text-blue-700">Home</Link>
         <span>/</span>
-        <Link href="/chapters/ch01" className="hover:text-blue-700">Chapter 1</Link>
+        <Link href={`/chapters/ch${String(chapterNumber).padStart(2, '0')}`} className="hover:text-blue-700">Chapter {chapterNumber}</Link>
         <span>/</span>
         <span className="text-slate-800 font-medium">MCQ Quiz</span>
       </nav>

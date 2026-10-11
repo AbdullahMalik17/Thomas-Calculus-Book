@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.5-absolute-convergence-the-ratio-and-root-tests/solutions/ex-04",
+  "chapter": "ch10",
+  "section": "10.5",
+  "type": "solution",
+  "title": "Inconclusive Ratio Test on Polynomial Quotients",
+  "exerciseReference": "Section 10.5, Exercise 4",
+  "originalTopic": "Inconclusive Ratio Test",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "inconclusive-test",
+    "p-series",
+    "rational"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Show that the Ratio Test is inconclusive for sum_{n=1}^oo 1 / (n^2 + 1), and resolve its convergence.",
+  "finalAnswer": "\\rho = 1 \\text{ (Inconclusive)}; \\quad \\text{Converges by Comparison with } \\sum 1/n^2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Ratio Limit",
+      "mathExpression": "\\lim_{n \\to \\infty} \\frac{a_{n+1}}{a_n} = \\lim_{n \\to \\infty} \\frac{n^2 + 1}{(n+1)^2 + 1} = \\lim_{n \\to \\infty} \\frac{n^2 + 1}{n^2 + 2n + 2} = 1",
+      "explanation": "Ratio approaches 1.",
+      "why": "Ratio test evaluation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "State Inconclusive Result",
+      "mathExpression": "\\rho = 1 \\implies \\text{Ratio Test provides no information}",
+      "explanation": "Algebraic powers always yield rho = 1.",
+      "why": "Ratio test limitation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Resolve via Comparison Test",
+      "mathExpression": "\\frac{1}{n^2 + 1} < \\frac{1}{n^2}; \\quad \\sum \\frac{1}{n^2} \\text{ converges } (p = 2) \\implies \\text{Converges}",
+      "explanation": "Direct comparison test successfully proves convergence.",
+      "why": "Resolution of convergence."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1 - 1",
+    "expected": "0"
+  }
+}

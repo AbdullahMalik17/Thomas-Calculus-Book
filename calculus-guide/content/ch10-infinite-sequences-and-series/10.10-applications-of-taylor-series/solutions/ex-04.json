@@ -1,0 +1,41 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.10-applications-of-taylor-series/solutions/ex-04",
+  "chapter": "ch10",
+  "section": "10.10",
+  "type": "solution",
+  "title": "Approximating the Sine Integral Function Si(x)",
+  "exerciseReference": "Section 10.10, Exercise 4",
+  "originalTopic": "Sine Integral Function",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "sine-integral",
+    "special-functions",
+    "series"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the Maclaurin series for the Sine Integral Si(x) = int_0^x sin(t)/t dt.",
+  "finalAnswer": "\\text{Si}(x) = \\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n+1}}{(2n+1)!(2n+1)} = x - \\frac{x^3}{18} + \\frac{x^5}{600} - \\dots",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Divide Sine Series by t",
+      "mathExpression": "\\frac{\\sin(t)}{t} = \\frac{1}{t} \\sum_{n=0}^\\infty (-1)^n \\frac{t^{2n+1}}{(2n+1)!} = \\sum_{n=0}^\\infty (-1)^n \\frac{t^{2n}}{(2n+1)!} = 1 - \\frac{t^2}{6} + \\frac{t^4}{120} - \\dots",
+      "explanation": "Dividing by t reduces powers by 1.",
+      "why": "Integrand series expansion."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate Term by Term from 0 to x",
+      "mathExpression": "\\int_0^x \\left( 1 - \\frac{t^2}{6} + \\frac{t^4}{120} - \\dots \\right) dt = x - \\frac{x^3}{18} + \\frac{x^5}{600} - \\dots",
+      "explanation": "Antiderivative of t^(2n) is x^(2n+1)/(2n+1).",
+      "why": "Term-by-term integration."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "x - x**3/18 + x**5/600",
+    "expected": "1 - x**2/6 + x**4/120",
+    "variable": "x"
+  }
+}

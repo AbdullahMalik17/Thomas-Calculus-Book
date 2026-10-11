@@ -1,0 +1,47 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.4-curvature-and-normal-vectors-of-a-curve/solutions/ex-01",
+  "chapter": "ch13",
+  "section": "13.4",
+  "type": "solution",
+  "title": "Curvature of a Plane Circle",
+  "exerciseReference": "Section 13.4, Exercise 1",
+  "originalTopic": "Circle Curvature",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "curvature",
+    "circle",
+    "radius-of-curvature"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the curvature kappa of a circle of radius 4 defined by r(t) = <4 cos(t), 4 sin(t)>.",
+  "finalAnswer": "\\kappa = \\frac{1}{4}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Velocity and Speed",
+      "mathExpression": "\\mathbf{v}(t) = \\langle -4\\sin t, 4\\cos t \\rangle \\implies |\\mathbf{v}(t)| = 4",
+      "explanation": "The speed along a circle of radius 4 with standard parametrization is constant at 4.",
+      "why": "Determining constant trajectory speed."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Unit Tangent Vector and Derivative",
+      "mathExpression": "\\mathbf{T}(t) = \\langle -\\sin t, \\cos t \\rangle \\implies \\mathbf{T}'(t) = \\langle -\\cos t, -\\sin t \\rangle \\implies |\\mathbf{T}'(t)| = 1",
+      "explanation": "Divide v by 4 and differentiate with respect to t.",
+      "why": "Finding rate of tangent direction turn."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Calculate Curvature",
+      "mathExpression": "\\kappa = \\frac{|\\mathbf{T}'(t)|}{|\\mathbf{v}(t)|} = \\frac{1}{4}",
+      "explanation": "Curvature is the reciprocal of the radius of the circle.",
+      "why": "Evaluating constant circle curvature."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1/4",
+    "expected": "0.25"
+  }
+}

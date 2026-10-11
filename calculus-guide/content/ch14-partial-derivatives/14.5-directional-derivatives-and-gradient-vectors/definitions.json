@@ -1,0 +1,33 @@
+{
+  "id": "ch14-partial-derivatives/14.5-directional-derivatives-and-gradient-vectors/definitions",
+  "chapter": "ch14",
+  "section": "14.5",
+  "title": "Directional Derivatives and Gradient Vectors",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-gradient-vector",
+      "title": "Gradient Vector",
+      "category": "definition",
+      "latex": "\\nabla f(x, y) = f_x \\mathbf{i} + f_y \\mathbf{j} = \\langle f_x, f_y \\rangle, \\quad \\nabla f(x, y, z) = \\langle f_x, f_y, f_z \\rangle",
+      "statement": "The gradient of a differentiable scalar function f is the vector field whose components are the first partial derivatives of f.",
+      "conditions": [
+        "f is differentiable"
+      ],
+      "explanation": "Points in the direction of maximum instantaneous rate of increase of f, with magnitude |grad f| equal to that maximal rate.",
+      "keyTakeaway": "grad f is everywhere orthogonal to the level curves or level surfaces of f."
+    },
+    {
+      "id": "formula-directional-derivative",
+      "title": "Directional Derivative",
+      "category": "formula",
+      "latex": "D_\\mathbf{u} f(x_0, y_0) = \\nabla f(x_0, y_0) \\cdot \\mathbf{u} = |\\nabla f| \\cos\\theta",
+      "statement": "The directional derivative of f in the direction of unit vector u is the scalar product of the gradient vector with u. It measures the rate of change of f moving through (x_0, y_0) along direction u.",
+      "conditions": [
+        "u is a unit vector: |u| = 1"
+      ],
+      "explanation": "Attains maximum value |grad f| when u is parallel to grad f (theta = 0); minimum -|grad f| when antiparallel (theta = pi); and zero when tangent to level curve (theta = pi/2).",
+      "keyTakeaway": "Computes rate of change in any arbitrary spatial direction."
+    }
+  ]
+}

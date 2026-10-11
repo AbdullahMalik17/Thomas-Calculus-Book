@@ -1,0 +1,50 @@
+{
+  "id": "ch08-techniques-of-integration/8.2-integration-by-parts/solutions/ex-05",
+  "chapter": "ch08",
+  "section": "8.2",
+  "type": "solution",
+  "title": "Definite Integral by Parts with Inverse Trigonometry",
+  "exerciseReference": "Section 8.2, Exercise 5",
+  "originalTopic": "Definite Parts with Arctan",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "arctan",
+    "definite-parts",
+    "evaluation"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_0^1 arctan(x) dx.",
+  "finalAnswer": "\\int_0^1 \\arctan(x) dx = \\frac{\\pi}{4} - \\frac{1}{2}\\ln(2)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up Parts Formulation",
+      "mathExpression": "u = \\arctan(x) \\implies du = \\frac{1}{1 + x^2} dx; \\quad dv = dx \\implies v = x",
+      "explanation": "Differentiate arctan and integrate 1.",
+      "why": "LIATE rule."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Definite Parts Formula",
+      "mathExpression": "\\int_0^1 \\arctan(x) dx = [x \\arctan(x)]_0^1 - \\int_0^1 \\frac{x}{1 + x^2} dx",
+      "explanation": "Evaluate boundary term and set up remaining integral.",
+      "why": "Definite integration by parts."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Both Terms",
+      "mathExpression": "(1 \\cdot \\arctan(1) - 0) - \\left[ \\frac{1}{2} \\ln(1 + x^2) \\right]_0^1 = \\frac{\\pi}{4} - \\frac{1}{2}\\ln(2)",
+      "explanation": "Compute arctan(1) = pi/4 and ln(2) - ln(1) = ln(2).",
+      "why": "Final exact value."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "atan(x)",
+    "expected": "pi/4 - log(2)/2",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "1"
+  }
+}

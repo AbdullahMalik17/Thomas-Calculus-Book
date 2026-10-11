@@ -1,0 +1,34 @@
+{
+  "id": "ch08-techniques-of-integration/8.9-probability/definitions",
+  "chapter": "ch08",
+  "section": "8.9",
+  "title": "Probability",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-probability-density-function",
+      "title": "Probability Density Function (PDF)",
+      "category": "definition",
+      "latex": "f(x) \\ge 0 \\quad \\forall x, \\quad \\int_{-\\infty}^\\infty f(x) dx = 1, \\quad P(a \\le X \\le b) = \\int_a^b f(x) dx",
+      "statement": "A probability density function f(x) models a continuous random variable X. The probability that X falls in [a, b] is the definite integral of f(x) over [a, b].",
+      "conditions": [
+        "f(x) is non-negative",
+        "Total integral over real line equals 1"
+      ],
+      "explanation": "Continuous probability is represented by area under the curve rather than discrete point values.",
+      "keyTakeaway": "Total area under any valid PDF must equal 1."
+    },
+    {
+      "id": "formula-mean-expected-value",
+      "title": "Expected Value (Mean) of a Random Variable",
+      "category": "formula",
+      "latex": "\\mu = E[X] = \\int_{-\\infty}^\\infty x \\, f(x) \\, dx",
+      "statement": "The mean or expected value of a continuous random variable X is the first moment of the probability density function with respect to the origin.",
+      "conditions": [
+        "Integral converges absolutely"
+      ],
+      "explanation": "Analogous to the center of mass x_bar of a wire with density f(x).",
+      "keyTakeaway": "The expected value is the probability-weighted average of all possible outcomes."
+    }
+  ]
+}

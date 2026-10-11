@@ -1,0 +1,34 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.7-stokes-theorem/definitions",
+  "chapter": "ch16",
+  "section": "16.7",
+  "title": "Stokes' Theorem",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-stokes",
+      "title": "Stokes' Theorem",
+      "category": "theorem",
+      "latex": "\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = \\iint_S (\\nabla \\times \\mathbf{F}) \\cdot \\mathbf{n} \\, d\\sigma",
+      "statement": "The circulation of a continuously differentiable vector field F around the oriented boundary curve C of an oriented surface S equals the flux of the curl of F through S.",
+      "conditions": [
+        "S is an oriented piecewise-smooth surface",
+        "C is boundary curve oriented by right-hand rule with respect to n"
+      ],
+      "explanation": "Extends Green's Theorem to arbitrary curved two-dimensional surfaces embedded in three-dimensional space.",
+      "keyTakeaway": "Circulation along a closed loop depends only on the boundary curve, allowing replacement of complex surfaces with simpler ones sharing the same boundary."
+    },
+    {
+      "id": "def-curl-vector-interpretation",
+      "title": "Curl Vector and Local Rotation",
+      "category": "definition",
+      "latex": "(\\nabla \\times \\mathbf{F}) \\cdot \\mathbf{n} = \\lim_{A \\to 0} \\frac{1}{A} \\oint_{C} \\mathbf{F} \\cdot d\\mathbf{r}",
+      "statement": "The component of curl F along unit normal n represents the limiting circulation density per unit area in the plane orthogonal to n.",
+      "conditions": [
+        "Limit taken as area of loop shrinks to zero around point"
+      ],
+      "explanation": "A miniature paddle wheel placed in fluid flow rotates with maximum angular speed when its axis is aligned with curl F.",
+      "keyTakeaway": "Curl measures microscopic fluid vorticity and field rotation."
+    }
+  ]
+}

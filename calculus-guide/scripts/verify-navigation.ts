@@ -214,10 +214,15 @@ function runNavigationTests(): void {
       throw new Error(`public/llms.txt missing Chapter ${i}`);
     }
   }
+  for (const sec of allSections) {
+    if (!llmsContent.includes(`Section ${sec.number}:`)) {
+      throw new Error(`public/llms.txt missing Section ${sec.number} (${sec.title})`);
+    }
+  }
   if (!llmsContent.includes('/chapters')) {
     throw new Error('public/llms.txt missing /chapters link');
   }
-  console.log('    PASS: public/llms.txt accurately reflects all chapters and sections.');
+  console.log(`    PASS: public/llms.txt accurately reflects all 16 chapters and all ${allSections.length} sections.`);
 
   console.log('\nSUCCESS: All curriculum and navigation checks passed cleanly!\n');
 }

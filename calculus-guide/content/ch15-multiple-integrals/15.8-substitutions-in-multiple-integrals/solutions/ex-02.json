@@ -1,0 +1,47 @@
+{
+  "id": "ch15-multiple-integrals/15.8-substitutions-in-multiple-integrals/solutions/ex-02",
+  "chapter": "ch15",
+  "section": "15.8",
+  "type": "solution",
+  "title": "Area of an Ellipse via Coordinate Scaling",
+  "exerciseReference": "Section 15.8, Exercise 2",
+  "originalTopic": "Area of Ellipse",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "ellipse-area",
+    "Jacobian",
+    "coordinate-transformation"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the area of the ellipse x^2/9 + y^2/16 <= 1 by applying substitution x = 3u, y = 4v.",
+  "finalAnswer": "12\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Transform Domain into Unit Disk",
+      "mathExpression": "\\frac{(3u)^2}{9} + \\frac{(4v)^2}{16} \\le 1 \\implies u^2 + v^2 \\le 1",
+      "explanation": "The transformation maps the ellipse in xy into the unit circle in uv.",
+      "why": "Simplifying domain geometry."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Calculate Jacobian Determinant",
+      "mathExpression": "J(u, v) = \\begin{vmatrix} 3 & 0 \\\\ 0 & 4 \\end{vmatrix} = (3)(4) - 0 = 12",
+      "explanation": "Evaluate Jacobian of scaling transformation.",
+      "why": "Finding area scaling factor."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Ellipse Area",
+      "mathExpression": "\\text{Area} = \\iint_{u^2+v^2 \\le 1} 12 \\, du \\, dv = 12 \\times (\\text{Area of unit circle}) = 12\\pi",
+      "explanation": "Multiply Jacobian by area of unit disk pi.",
+      "why": "Evaluating transformed integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "pi * 3 * 4",
+    "expected": "12*pi"
+  }
+}

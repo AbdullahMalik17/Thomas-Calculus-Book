@@ -1,0 +1,48 @@
+{
+  "id": "ch05-integrals/5.1-area-and-estimating-with-finite-sums/solutions/ex-01",
+  "chapter": "ch05",
+  "section": "5.1",
+  "type": "solution",
+  "title": "RRAM and LRAM for a Parabola with 4 Subintervals",
+  "exerciseReference": "Section 5.1, Exercise 1",
+  "originalTopic": "Finite Sum Area Approximations",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "finite-sums",
+    "LRAM",
+    "RRAM",
+    "area-approximation"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Estimate the area under the curve f(x) = x^2 over the interval [0, 2] using 4 equal subintervals with (a) Right-endpoint sum (RRAM) and (b) Left-endpoint sum (LRAM).",
+  "finalAnswer": "\\text{RRAM} = \\frac{15}{4} = 3.75; \\quad \\text{LRAM} = \\frac{7}{4} = 1.75",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Subinterval Width and Grid Points",
+      "mathExpression": "\\Delta x = \\frac{2 - 0}{4} = \\frac{1}{2}; \\quad x_0 = 0, \\; x_1 = \\frac{1}{2}, \\; x_2 = 1, \\; x_3 = \\frac{3}{2}, \\; x_4 = 2",
+      "explanation": "Divide the interval length by n = 4.",
+      "why": "Determining partition width and endpoints."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Calculate RRAM",
+      "mathExpression": "R_4 = \\Delta x [f(1/2) + f(1) + f(3/2) + f(2)] = \\frac{1}{2} \\left[ \\frac{1}{4} + 1 + \\frac{9}{4} + 4 \\right] = \\frac{1}{2} \\left( \\frac{30}{4} \\right) = \\frac{15}{4}",
+      "explanation": "Evaluate f at right endpoints x_1, x_2, x_3, x_4.",
+      "why": "Right Riemann sum formulation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Calculate LRAM",
+      "mathExpression": "L_4 = \\Delta x [f(0) + f(1/2) + f(1) + f(3/2)] = \\frac{1}{2} \\left[ 0 + \\frac{1}{4} + 1 + \\frac{9}{4} \\right] = \\frac{1}{2} \\left( \\frac{14}{4} \\right) = \\frac{7}{4}",
+      "explanation": "Evaluate f at left endpoints x_0, x_1, x_2, x_3.",
+      "why": "Left Riemann sum formulation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(1/2) * (1/4 + 1 + 9/4 + 4)",
+    "expected": "15/4"
+  }
+}

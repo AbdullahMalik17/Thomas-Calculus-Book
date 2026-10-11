@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.7-power-series/solutions/ex-02",
+  "chapter": "ch10",
+  "section": "10.7",
+  "type": "solution",
+  "title": "Power Series with Infinite Radius of Convergence",
+  "exerciseReference": "Section 10.7, Exercise 2",
+  "originalTopic": "Infinite Radius of Convergence",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "power-series",
+    "infinite-radius",
+    "factorial"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the radius and interval of convergence of sum_{n=0}^oo x^n / n!.",
+  "finalAnswer": "R = \\infty, \\quad \\text{Interval of Convergence}: (-\\infty, \\infty)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Ratio Test",
+      "mathExpression": "\\lim_{n \\to \\infty} \\left| \\frac{x^{n+1}}{(n+1)!} \\cdot \\frac{n!}{x^n} \\right| = |x| \\lim_{n \\to \\infty} \\frac{1}{n + 1} = 0",
+      "explanation": "Evaluate the limit ratio.",
+      "why": "Ratio test on general term."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Inequality for All x",
+      "mathExpression": "0 < 1 \\quad \\forall x \\in \\mathbb{R}",
+      "explanation": "The limit is strictly less than 1 regardless of x.",
+      "why": "Universal absolute convergence."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude",
+      "mathExpression": "R = \\infty, \\quad \\text{Interval} = (-\\infty, \\infty)",
+      "explanation": "Converges on the entire real line (represents e^x).",
+      "why": "Full domain."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

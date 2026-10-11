@@ -1,0 +1,40 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.1-three-dimensional-coordinate-systems/solutions/ex-04",
+  "chapter": "ch12",
+  "section": "12.1",
+  "type": "solution",
+  "title": "Equation of Sphere with Given Diameter Endpoints",
+  "exerciseReference": "Section 12.1, Exercise 4",
+  "originalTopic": "Spheres and Diameters",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "sphere",
+    "diameter",
+    "midpoint"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the standard equation of the sphere that has the line segment joining A(1, 2, 3) and B(5, 6, 7) as a diameter.",
+  "finalAnswer": "(x - 3)^2 + (y - 4)^2 + (z - 5)^2 = 12",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Center as Midpoint of Diameter",
+      "mathExpression": "C = \\left( \\frac{1 + 5}{2}, \\frac{2 + 6}{2}, \\frac{3 + 7}{2} \\right) = (3, 4, 5)",
+      "explanation": "The midpoint of any diameter is the center of the sphere.",
+      "why": "Locating the sphere center."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute the Radius",
+      "mathExpression": "a^2 = |CA|^2 = (1 - 3)^2 + (2 - 4)^2 + (3 - 5)^2 = (-2)^2 + (-2)^2 + (-2)^2 = 4 + 4 + 4 = 12",
+      "explanation": "Compute square of Euclidean distance from center C to endpoint A.",
+      "why": "Determining squared radius a^2."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(5 - 1)**2 + (6 - 2)**2 + (7 - 3)**2",
+    "expected": "48"
+  }
+}

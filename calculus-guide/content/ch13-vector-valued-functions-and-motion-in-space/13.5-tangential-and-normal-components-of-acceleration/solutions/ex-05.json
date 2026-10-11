@@ -1,0 +1,47 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.5-tangential-and-normal-components-of-acceleration/solutions/ex-05",
+  "chapter": "ch13",
+  "section": "13.5",
+  "type": "solution",
+  "title": "Maximum Acceleration in Elliptic Planetary Orbit",
+  "exerciseReference": "Section 13.5, Exercise 5",
+  "originalTopic": "Orbital Acceleration",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "elliptic-orbit",
+    "planetary-motion",
+    "acceleration"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For an elliptical path r(t) = <5 cos(t), 3 sin(t)>, find the maximum magnitude of acceleration |a(t)|.",
+  "finalAnswer": "5",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Acceleration Vector Function",
+      "mathExpression": "\\mathbf{a}(t) = \\mathbf{r}''(t) = \\langle -5\\cos t, -3\\sin t \\rangle = -\\mathbf{r}(t)",
+      "explanation": "Differentiate position vector twice with respect to t.",
+      "why": "Finding acceleration."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Determine Acceleration Magnitude Function",
+      "mathExpression": "|\\mathbf{a}(t)| = \\sqrt{25\\cos^2 t + 9\\sin^2 t} = \\sqrt{9 + 16\\cos^2 t}",
+      "explanation": "Express magnitude using trigonometric identity sin^2(t) = 1 - cos^2(t).",
+      "why": "Expressing norm as single-variable function."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Find Global Maximum",
+      "mathExpression": "\\cos^2 t \\le 1 \\implies |\\mathbf{a}|_{\\max} = \\sqrt{9 + 16(1)} = \\sqrt{25} = 5",
+      "explanation": "Maximum occurs at periapsis where cos^2(t) = 1.",
+      "why": "Evaluating maximum acceleration magnitude."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(25*1 + 9*0)",
+    "expected": "5"
+  }
+}

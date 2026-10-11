@@ -1,0 +1,47 @@
+{
+  "id": "ch15-multiple-integrals/15.5-triple-integrals-in-rectangular-coordinates/solutions/ex-01",
+  "chapter": "ch15",
+  "section": "15.5",
+  "type": "solution",
+  "title": "Triple Iterated Integral over a Rectangular Box",
+  "exerciseReference": "Section 15.5, Exercise 1",
+  "originalTopic": "Iterated Triple Integrals",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "triple-integral",
+    "rectangular-box",
+    "linear-function"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate iiint_B (x + 2y + 3z) dV over the box B = [0, 1] x [0, 2] x [0, 3].",
+  "finalAnswer": "42",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Integrate with Respect to z",
+      "mathExpression": "\\int_0^3 (x + 2y + 3z) \\, dz = \\left[ (x + 2y)z + \\frac{3z^2}{2} \\right]_0^3 = 3x + 6y + \\frac{27}{2}",
+      "explanation": "Evaluate innermost integral over z from 0 to 3.",
+      "why": "Performing innermost integration."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate with Respect to y",
+      "mathExpression": "\\int_0^2 \\left( 3x + 6y + \\frac{27}{2} \\right) dy = \\left[ 3xy + 3y^2 + \\frac{27}{2}y \\right]_0^2 = 6x + 12 + 27 = 6x + 39",
+      "explanation": "Evaluate middle integral over y from 0 to 2.",
+      "why": "Performing middle integration."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate with Respect to x",
+      "mathExpression": "\\int_0^1 (6x + 39) \\, dx = \\left[ 3x^2 + 39x \\right]_0^1 = 3 + 39 = 42",
+      "explanation": "Evaluate outermost integral over x from 0 to 1.",
+      "why": "Evaluating final triple integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "6*(1/2) + 39",
+    "expected": "42"
+  }
+}

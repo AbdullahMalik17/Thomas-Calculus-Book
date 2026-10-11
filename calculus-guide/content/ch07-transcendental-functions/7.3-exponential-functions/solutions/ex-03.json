@@ -1,0 +1,41 @@
+{
+  "id": "ch07-transcendental-functions/7.3-exponential-functions/solutions/ex-03",
+  "chapter": "ch07",
+  "section": "7.3",
+  "type": "solution",
+  "title": "Differentiation of General Base Exponential a^x",
+  "exerciseReference": "Section 7.3, Exercise 3",
+  "originalTopic": "General Base Exponential",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "general-base",
+    "exponential",
+    "derivative"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the derivative of f(x) = 5^(3x).",
+  "finalAnswer": "f'(x) = 3 \\ln(5) \\cdot 5^{3x}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Recall Rule for a^u",
+      "mathExpression": "\\frac{d}{dx}[a^u] = a^u \\ln(a) \\cdot u'",
+      "explanation": "General base exponential rule with Chain Rule.",
+      "why": "General exponential differentiation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute Parameters",
+      "mathExpression": "a = 5, \\quad u = 3x \\implies u' = 3 \\implies f'(x) = 5^{3x} \\ln(5) \\cdot 3 = 3\\ln(5) \\cdot 5^{3x}",
+      "explanation": "Evaluate the product.",
+      "why": "Final derivative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "5**(3*x)",
+    "expected": "3*log(5)*5**(3*x)",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.5-lines-and-planes-in-space/solutions/ex-04",
+  "chapter": "ch12",
+  "section": "12.5",
+  "type": "solution",
+  "title": "Perpendicular Distance from a Point to a Plane",
+  "exerciseReference": "Section 12.5, Exercise 4",
+  "originalTopic": "Distance from Point to Plane",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "distance",
+    "point-to-plane",
+    "analytic-geometry"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the distance from the point S(1, 1, 3) to the plane 3x + 2y + 6z = 6.",
+  "finalAnswer": "\\frac{17}{7}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Plane Coefficients and Constant",
+      "mathExpression": "A = 3, \\; B = 2, \\; C = 6, \\; D = -6; \\quad (x_1, y_1, z_1) = (1, 1, 3)",
+      "explanation": "Write the plane in the form Ax + By + Cz + D = 0 with D = -6.",
+      "why": "Extracting normal components and offset."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Distance Formula",
+      "mathExpression": "d = \\frac{|3(1) + 2(1) + 6(3) - 6|}{\\sqrt{3^2 + 2^2 + 6^2}} = \\frac{|3 + 2 + 18 - 6|}{\\sqrt{9 + 4 + 36}} = \\frac{17}{\\sqrt{49}} = \\frac{17}{7}",
+      "explanation": "Evaluate the numerator and denominator of the projection formula.",
+      "why": "Computing shortest perpendicular distance."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "abs(3*1 + 2*1 + 6*3 - 6) / sqrt(3**2 + 2**2 + 6**2)",
+    "expected": "17/7"
+  }
+}

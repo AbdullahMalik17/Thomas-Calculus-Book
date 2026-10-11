@@ -1,0 +1,20 @@
+# Section 16.5: Surfaces and Area
+
+Surfaces in $\mathbb{R}^3$ are described explicitly ($z = f(x, y)$), implicitly ($F(x, y, z) = 0$), or parametrically ($\mathbf{r}(u, v)$).
+
+---
+
+## 1. Surface Area Formulas
+
+1. **Explicit Graph $z = f(x, y)$**:
+$$\text{Area}(S) = \iint_R \sqrt{1 + \left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y}\right)^2} \, dA$$
+
+2. **Parametric Surface $\mathbf{r}(u, v)$**:
+$$\text{Area}(S) = \iint_R |\mathbf{r}_u \times \mathbf{r}_v| \, du \, dv$$
+
+---
+
+## 2. Standard Surface Elements
+
+- **Sphere of radius $a$**: $d\sigma = a^2 \sin\phi \, d\phi \, d\theta$
+- **Cylinder of radius $a$**: $d\sigma = a \, dz \, d\theta$

@@ -19,7 +19,7 @@ import {
 export const metadata = {
   title: "Complete Curriculum & Solutions Index | Thomas' Calculus (14th Ed)",
   description:
-    "Comprehensive curriculum table of contents for Thomas' Calculus (14th Edition). Access all 4 chapters, 27 sections, and 153 SymPy CAS-verified worked exercise solutions.",
+    "Comprehensive curriculum table of contents for Thomas' Calculus (14th Edition). Access all 16 chapters, 116 sections, and 598 SymPy CAS-verified worked exercise solutions.",
 };
 
 export default function ChaptersIndexPage() {
@@ -53,7 +53,7 @@ export default function ChaptersIndexPage() {
         </h1>
 
         <p className="reading-copy text-slate-600 sm:text-lg">
-          Explore the full calculus progression from functions and limits to derivatives and real-world optimization.
+          Explore the full calculus progression from functions, limits, and derivatives to multivariable calculus, multiple integrals, and vector fields.
           Every section contains curated theory summaries, mathematical theorems, and step-by-step paraphrased exercise solutions.
         </p>
 

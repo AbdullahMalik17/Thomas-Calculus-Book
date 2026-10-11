@@ -1,0 +1,50 @@
+{
+  "id": "ch06-applications-of-definite-integrals/6.5-work-and-fluid-forces/solutions/ex-04",
+  "chapter": "ch06",
+  "section": "6.5",
+  "type": "solution",
+  "title": "Hydrostatic Force on a Submerged Vertical Rectangular Plate",
+  "exerciseReference": "Section 6.5, Exercise 4",
+  "originalTopic": "Hydrostatic Pressure and Force",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "hydrostatic-force",
+    "fluid-pressure",
+    "rectangular-plate"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A vertical rectangular floodgate 4 m wide and 3 m high has its top edge submerged 2 m below the surface of water (density 9800 N/m^3). Find the total hydrostatic fluid force on the gate.",
+  "finalAnswer": "F = 411600 \\text{ Newtons}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Coordinate System for Depth",
+      "mathExpression": "h \\text{ runs from } 2 \\text{ to } 5 \\text{ meters}; \\quad w(h) = 4 \\text{ m}",
+      "explanation": "Top edge at depth 2 m, bottom edge at depth 2 + 3 = 5 m.",
+      "why": "Depth interval."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Formulate Incremental Force",
+      "mathExpression": "dF = \\text{Pressure} \\cdot dA = (\\rho g h) \\cdot (w \\, dh) = 9800 \\cdot h \\cdot 4 \\, dh = 39200 h \\, dh",
+      "explanation": "Pressure = rho * g * h, area = width * dh.",
+      "why": "Hydrostatic equation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate Over Depth [2, 5]",
+      "mathExpression": "F = \\int_2^5 39200 h \\, dh = 39200 \\left[ \\frac{h^2}{2} \\right]_2^5 = 19600 (25 - 4) = 19600(21) = 411600 \\text{ N}",
+      "explanation": "Evaluate the definite integral.",
+      "why": "Total hydrostatic force."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "39200*x",
+    "expected": "411600",
+    "kind": "definite",
+    "lower": "2",
+    "upper": "5"
+  }
+}

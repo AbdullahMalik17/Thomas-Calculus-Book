@@ -1,0 +1,50 @@
+{
+  "id": "ch08-techniques-of-integration/8.9-probability/solutions/ex-04",
+  "chapter": "ch08",
+  "section": "8.9",
+  "type": "solution",
+  "title": "Exponential Waiting Time Distribution",
+  "exerciseReference": "Section 8.9, Exercise 4",
+  "originalTopic": "Exponential Distribution",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "exponential-distribution",
+    "improper-integral",
+    "reliability"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "The waiting time T (in minutes) at a customer service line is exponentially distributed with PDF f(t) = 0.2 e^(-0.2t) for t >= 0. Find the probability that a customer waits more than 5 minutes.",
+  "finalAnswer": "P(T > 5) = e^{-1} \\approx 0.3679",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate Improper Probability Integral",
+      "mathExpression": "P(T > 5) = \\int_5^\\infty 0.2 e^{-0.2t} dt",
+      "explanation": "Integrate from 5 to infinity.",
+      "why": "Tail probability."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Antiderivative",
+      "mathExpression": "\\int 0.2 e^{-0.2t} dt = -e^{-0.2t} \\implies \\lim_{M \\to \\infty} [-e^{-0.2t}]_5^M",
+      "explanation": "Antiderivative of c e^(-ct) is -e^(-ct).",
+      "why": "Exponential integration."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Limit",
+      "mathExpression": "\\lim_{M \\to \\infty} (-e^{-0.2M} + e^{-0.2(5)}) = 0 + e^{-1} = e^{-1}",
+      "explanation": "e^(-0.2 * 5) = e^(-1).",
+      "why": "Final exact probability."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "0.2*exp(-0.2*x)",
+    "expected": "exp(-1)",
+    "kind": "definite",
+    "lower": "5",
+    "upper": "oo"
+  }
+}

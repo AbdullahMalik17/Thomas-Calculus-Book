@@ -1560,8 +1560,8 @@ When a function lacks an elementary antiderivative (e.g. $e^{-x^2}$, $\\frac{\\s
         ],
         sympyVerification: {
           operation: "algebraic_equivalence",
-          expression: "ceil(sqrt(10000/6)) - 41",
-          expected: "0"
+          expression: "ceiling(sqrt(10000/6))",
+          expected: "41"
         }
       },
       {

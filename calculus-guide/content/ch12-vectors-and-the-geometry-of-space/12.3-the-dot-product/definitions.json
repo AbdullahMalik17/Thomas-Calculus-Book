@@ -1,0 +1,34 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.3-the-dot-product/definitions",
+  "chapter": "ch12",
+  "section": "12.3",
+  "title": "The Dot Product",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-dot-product",
+      "title": "Dot (Inner) Product",
+      "category": "definition",
+      "latex": "\\mathbf{u} \\cdot \\mathbf{v} = u_1 v_1 + u_2 v_2 + u_3 v_3 = |\\mathbf{u}| |\\mathbf{v}| \\cos\\theta",
+      "statement": "The dot product of two vectors u and v is the scalar obtained by summing the products of their corresponding components, equal to the product of their magnitudes and the cosine of the angle theta between them (0 <= theta <= pi).",
+      "conditions": [
+        "Vectors belong to Euclidean space R^n",
+        "0 <= theta <= pi"
+      ],
+      "explanation": "Connects algebraic component operations directly to geometric angle measurement.",
+      "keyTakeaway": "Two non-zero vectors are orthogonal if and only if their dot product vanishes: u . v = 0."
+    },
+    {
+      "id": "formula-vector-projection",
+      "title": "Vector Projection and Scalar Component",
+      "category": "formula",
+      "latex": "\\text{proj}_{\\mathbf{v}} \\mathbf{u} = \\left( \\frac{\\mathbf{u} \\cdot \\mathbf{v}}{|\\mathbf{v}|^2} \\right) \\mathbf{v}, \\quad \\text{comp}_{\\mathbf{v}} \\mathbf{u} = \\frac{\\mathbf{u} \\cdot \\mathbf{v}}{|\\mathbf{v}|}",
+      "statement": "The vector projection of u onto non-zero v represents the shadow cast by u along the line containing v, while the scalar component is its signed length.",
+      "conditions": [
+        "v is non-zero"
+      ],
+      "explanation": "Decomposes u into parallel and orthogonal components: u = proj_v u + (u - proj_v u).",
+      "keyTakeaway": "Fundamental in computing physical work: W = F . D."
+    }
+  ]
+}

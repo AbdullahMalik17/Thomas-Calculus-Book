@@ -1,0 +1,47 @@
+{
+  "id": "ch14-partial-derivatives/14.8-lagrange-multipliers/solutions/ex-01",
+  "chapter": "ch14",
+  "section": "14.8",
+  "type": "solution",
+  "title": "Maximizing a Product Subject to a Linear Constraint",
+  "exerciseReference": "Section 14.8, Exercise 1",
+  "originalTopic": "Lagrange Multipliers with One Constraint",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "Lagrange-multipliers",
+    "constrained-optimization",
+    "linear-constraint"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Maximize f(x, y) = xy subject to the constraint x + y = 10.",
+  "finalAnswer": "\\text{Maximum is } 25 \\text{ at } (5, 5)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up Lagrange Multiplier Gradients",
+      "mathExpression": "\\nabla f = \\langle y, x \\rangle, \\quad \\nabla g = \\langle 1, 1 \\rangle \\implies \\langle y, x \\rangle = \\lambda \\langle 1, 1 \\rangle",
+      "explanation": "Compute gradients of objective f and constraint g(x, y) = x + y - 10.",
+      "why": "Formulating Lagrange system."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve for Variables and Multiplier",
+      "mathExpression": "y = \\lambda, \\; x = \\lambda \\implies x = y; \\quad x + x = 10 \\implies 2x = 10 \\implies x = 5, \\; y = 5",
+      "explanation": "Equate x and y and substitute into constraint.",
+      "why": "Finding critical point on constraint."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Maximum Value",
+      "mathExpression": "f(5, 5) = (5)(5) = 25",
+      "explanation": "Multiply optimal values.",
+      "why": "Computing optimal objective value."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "5 * 5",
+    "expected": "25"
+  }
+}

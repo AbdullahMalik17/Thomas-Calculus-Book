@@ -1,0 +1,22 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.10-applications-of-taylor-series/definitions",
+  "chapter": "ch10",
+  "section": "10.10",
+  "title": "Applications of Taylor Series",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-binomial-series",
+      "title": "The Binomial Series Theorem",
+      "category": "theorem",
+      "latex": "(1 + x)^m = 1 + \\sum_{k=1}^\\infty \\binom{m}{k} x^k, \\quad \\binom{m}{k} = \\frac{m(m-1)\\cdots(m-k+1)}{k!}",
+      "statement": "Generalizes the Binomial Theorem to any real exponent m. The series converges absolutely for |x| < 1.",
+      "conditions": [
+        "|x| < 1",
+        "m is any real number"
+      ],
+      "explanation": "Enables expanding fractional and negative powers (e.g., 1/sqrt(1-x^2)) into polynomials without radicals.",
+      "keyTakeaway": "Expands (1 + x)^m for non-integer powers."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "ch14-partial-derivatives/14.2-limits-and-continuity-in-higher-dimensions/definitions",
+  "chapter": "ch14",
+  "section": "14.2",
+  "title": "Limits and Continuity in Higher Dimensions",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-multivariable-limit",
+      "title": "Limit of a Function of Two Variables",
+      "category": "definition",
+      "latex": "\\lim_{(x, y) \\to (x_0, y_0)} f(x, y) = L",
+      "statement": "For every epsilon > 0 there exists a delta > 0 such that |f(x, y) - L| < epsilon whenever (x, y) is in the domain of f and 0 < sqrt((x - x_0)^2 + (y - y_0)^2) < delta.",
+      "conditions": [
+        "(x_0, y_0) is an accumulation point of the domain",
+        "Delta applies across all approach paths"
+      ],
+      "explanation": "In two dimensions, approach paths are uncountably infinite (lines, parabolas, spirals). The limit exists if and only if every possible path yields the identical limit L.",
+      "keyTakeaway": "If two different paths to (x_0, y_0) yield different limits, the limit does not exist (Two-Path Test)."
+    },
+    {
+      "id": "theorem-continuity-higher-dim",
+      "title": "Continuity of Multivariable Functions",
+      "category": "theorem",
+      "latex": "\\lim_{(x, y) \\to (x_0, y_0)} f(x, y) = f(x_0, y_0)",
+      "statement": "A function f(x, y) is continuous at an interior point (x_0, y_0) if f is defined at (x_0, y_0), the limit exists as (x, y) -> (x_0, y_0), and the limit equals the function value.",
+      "conditions": [
+        "f(x_0, y_0) is defined",
+        "Limit exists and equals value"
+      ],
+      "explanation": "Polynomials, rational functions, and compositions of continuous single-variable functions with continuous multivariable functions are continuous on their natural domains.",
+      "keyTakeaway": "Allows direct substitution evaluation at points of continuity."
+    }
+  ]
+}

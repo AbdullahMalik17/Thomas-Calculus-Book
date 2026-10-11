@@ -1,0 +1,47 @@
+{
+  "id": "ch15-multiple-integrals/15.1-double-and-iterated-integrals-over-rectangles/solutions/ex-04",
+  "chapter": "ch15",
+  "section": "15.1",
+  "type": "solution",
+  "title": "Average Value of a Function over a Rectangle",
+  "exerciseReference": "Section 15.1, Exercise 4",
+  "originalTopic": "Average Value",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "average-value",
+    "double-integral",
+    "rectangle"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the average value of f(x, y) = xy over the rectangle R = [0, 4] x [0, 2].",
+  "finalAnswer": "\\text{avg}(f) = 2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Area of Rectangle",
+      "mathExpression": "\\text{Area}(R) = (4 - 0)(2 - 0) = 8",
+      "explanation": "Multiply width by height of rectangle.",
+      "why": "Finding normalizing area factor."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Double Integral of f",
+      "mathExpression": "\\iint_R xy \\, dA = \\left( \\int_0^4 x \\, dx \\right) \\left( \\int_0^2 y \\, dy \\right) = \\left[ \\frac{x^2}{2} \\right]_0^4 \\left[ \\frac{y^2}{2} \\right]_0^2 = (8)(2) = 16",
+      "explanation": "Evaluate product of decoupled polynomial integrals.",
+      "why": "Computing total accumulated volume."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Calculate Average Value",
+      "mathExpression": "\\text{avg}(f) = \\frac{1}{8} \\times 16 = 2",
+      "explanation": "Divide double integral by area of region.",
+      "why": "Evaluating average function height."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "16 / 8",
+    "expected": "2"
+  }
+}

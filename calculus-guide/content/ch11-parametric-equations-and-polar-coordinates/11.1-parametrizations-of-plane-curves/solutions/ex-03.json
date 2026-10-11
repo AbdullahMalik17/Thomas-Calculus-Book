@@ -1,0 +1,40 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.1-parametrizations-of-plane-curves/solutions/ex-03",
+  "chapter": "ch11",
+  "section": "11.1",
+  "type": "solution",
+  "title": "Eliminating Parameter from Algebraic Rational Equations",
+  "exerciseReference": "Section 11.1, Exercise 3",
+  "originalTopic": "Algebraic Parameter Elimination",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "algebraic-parametric",
+    "parabola",
+    "elimination"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Eliminate the parameter t for x = t - 2, y = t^2 + 1.",
+  "finalAnswer": "y = (x + 2)^2 + 1 = x^2 + 4x + 5",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Solve for t in terms of x",
+      "mathExpression": "x = t - 2 \\implies t = x + 2",
+      "explanation": "Isolate t in the linear equation.",
+      "why": "Substitution method."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute into y(t)",
+      "mathExpression": "y = (x + 2)^2 + 1 = x^2 + 4x + 4 + 1 = x^2 + 4x + 5",
+      "explanation": "Expand squared binomial.",
+      "why": "Cartesian parabola formula."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(x + 2)**2 + 1 - (x**2 + 4*x + 5)",
+    "expected": "0"
+  }
+}

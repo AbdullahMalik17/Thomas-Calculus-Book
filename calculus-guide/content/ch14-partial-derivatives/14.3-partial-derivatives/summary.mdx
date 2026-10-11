@@ -1,0 +1,20 @@
+# Section 14.3: Partial Derivatives
+
+Partial derivatives quantify directional change strictly along the coordinate axes.
+
+---
+
+## 1. Notation and Computation
+
+For $z = f(x, y)$:
+- Partial with respect to $x$: $f_x = \frac{\partial f}{\partial x} = \frac{\partial z}{\partial x}$ (treat $y$ as a constant)
+- Partial with respect to $y$: $f_y = \frac{\partial f}{\partial y} = \frac{\partial z}{\partial y}$ (treat $x$ as a constant)
+
+---
+
+## 2. Second-Order Partial Derivatives
+
+- $f_{xx} = \frac{\partial^2 f}{\partial x^2} = \frac{\partial}{\partial x}\left(\frac{\partial f}{\partial x}\right)$
+- $f_{yy} = \frac{\partial^2 f}{\partial y^2} = \frac{\partial}{\partial y}\left(\frac{\partial f}{\partial y}\right)$
+- $f_{xy} = \frac{\partial^2 f}{\partial y \partial x} = \frac{\partial}{\partial y}\left(\frac{\partial f}{\partial x}\right)$
+- **Clairaut's Theorem**: $f_{xy} = f_{yx}$ whenever both mixed partials are continuous.

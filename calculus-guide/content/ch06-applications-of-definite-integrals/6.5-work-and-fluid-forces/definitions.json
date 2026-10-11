@@ -1,0 +1,33 @@
+{
+  "id": "ch06-applications-of-definite-integrals/6.5-work-and-fluid-forces/definitions",
+  "chapter": "ch06",
+  "section": "6.5",
+  "title": "Work and Fluid Forces",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "formula-work-variable-force",
+      "title": "Work Done by a Variable Force",
+      "category": "formula",
+      "latex": "W = \\int_a^b F(x) \\, dx",
+      "statement": "The work done by a continuous variable force F(x) directed along the x-axis in moving an object from x = a to x = b is the definite integral of F(x).",
+      "conditions": [
+        "F(x) is continuous along displacement path"
+      ],
+      "explanation": "Extends elementary physics formula Work = Force * Distance to continuously varying forces.",
+      "keyTakeaway": "Work equals the area under the force-displacement curve."
+    },
+    {
+      "id": "rule-hookes-law",
+      "title": "Hooke's Law for Spring Work",
+      "category": "rule",
+      "latex": "F(x) = k x \\implies W = \\int_a^b k x \\, dx = \\frac{1}{2} k (b^2 - a^2)",
+      "statement": "The restoring force of an elastic spring is directly proportional to its displacement x from natural equilibrium. The work required to stretch a spring from x = a to x = b is (1/2)k(b^2 - a^2).",
+      "conditions": [
+        "Spring remains within elastic limit"
+      ],
+      "explanation": "k is the spring constant measured in N/m or lb/ft.",
+      "keyTakeaway": "Spring potential energy increases quadratically with displacement."
+    }
+  ]
+}

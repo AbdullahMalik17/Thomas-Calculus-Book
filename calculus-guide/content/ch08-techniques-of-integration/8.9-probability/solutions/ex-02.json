@@ -1,0 +1,43 @@
+{
+  "id": "ch08-techniques-of-integration/8.9-probability/solutions/ex-02",
+  "chapter": "ch08",
+  "section": "8.9",
+  "type": "solution",
+  "title": "Computing Probability from a PDF",
+  "exerciseReference": "Section 8.9, Exercise 2",
+  "originalTopic": "Event Probability Calculation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "probability",
+    "definite-integral",
+    "event"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Given PDF f(x) = (1/8) x on [0, 4], find the probability P(1 <= X <= 3).",
+  "finalAnswer": "P(1 \\le X \\le 3) = \\frac{1}{2} = 0.5",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up Probability Integral",
+      "mathExpression": "P(1 \\le X \\le 3) = \\int_1^3 \\frac{1}{8} x \\, dx",
+      "explanation": "Integrate PDF over interval [1, 3].",
+      "why": "Definition of continuous probability."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Integral",
+      "mathExpression": "\\frac{1}{8} \\left[ \\frac{x^2}{2} \\right]_1^3 = \\frac{1}{16} (9 - 1) = \\frac{8}{16} = \\frac{1}{2}",
+      "explanation": "Evaluate power antiderivative at boundaries.",
+      "why": "Final exact probability."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "(1/8)*x",
+    "expected": "1/2",
+    "kind": "definite",
+    "lower": "1",
+    "upper": "3"
+  }
+}

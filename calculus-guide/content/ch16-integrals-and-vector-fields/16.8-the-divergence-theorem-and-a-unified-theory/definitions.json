@@ -1,0 +1,35 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.8-the-divergence-theorem-and-a-unified-theory/definitions",
+  "chapter": "ch16",
+  "section": "16.8",
+  "title": "The Divergence Theorem and a Unified Theory",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-divergence-gauss",
+      "title": "The Divergence Theorem (Gauss's Theorem)",
+      "category": "theorem",
+      "latex": "\\iint_S \\mathbf{F} \\cdot \\mathbf{n} \\, d\\sigma = \\iiint_D \\nabla \\cdot \\mathbf{F} \\, dV",
+      "statement": "The net outward flux of a continuously differentiable vector field F across a closed orientable surface S enclosing solid region D equals the triple integral of the divergence of F over D.",
+      "conditions": [
+        "S is a piecewise-smooth closed surface",
+        "n is outward pointing unit normal",
+        "F has continuous first partials"
+      ],
+      "explanation": "Internal sources and sinks expand outward, so total surface flux equals the volume integral of local volumetric expansion rates.",
+      "keyTakeaway": "Transforms two-dimensional closed surface flux integrals into three-dimensional volume integrals."
+    },
+    {
+      "id": "def-divergence-source-rate",
+      "title": "Divergence as Volumetric Source Density",
+      "category": "definition",
+      "latex": "\\nabla \\cdot \\mathbf{F}(P) = \\lim_{V \\to 0} \\frac{1}{V} \\iint_{S_V} \\mathbf{F} \\cdot \\mathbf{n} \\, d\\sigma",
+      "statement": "The divergence div F at point P is the limiting outward flux per unit volume as the volume shrinks to P. If div F > 0, P is a source; if div F < 0, P is a sink; if div F = 0 everywhere, F is incompressible (solenoidal).",
+      "conditions": [
+        "Volume shrinks smoothly to point P"
+      ],
+      "explanation": "Physical foundation for continuity equations in hydrodynamics and Gauss's law in electrodynamics.",
+      "keyTakeaway": "Divergence quantifies the local rate of fluid generation per unit volume."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "ch06-applications-of-definite-integrals/6.3-arc-length/solutions/ex-01",
+  "chapter": "ch06",
+  "section": "6.3",
+  "type": "solution",
+  "title": "Arc Length of a Fractional Power Curve",
+  "exerciseReference": "Section 6.3, Exercise 1",
+  "originalTopic": "Standard Arc Length Evaluation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "arc-length",
+    "fractional-power",
+    "radicals"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the length of the curve y = (2/3) x^(3/2) from x = 0 to x = 3.",
+  "finalAnswer": "L = \\frac{14}{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Derivative y'",
+      "mathExpression": "y' = \\frac{2}{3} \\cdot \\frac{3}{2} x^{1/2} = \\sqrt{x}",
+      "explanation": "Differentiate using the power rule.",
+      "why": "Finding dy/dx."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Simplify Arc Length Radicand",
+      "mathExpression": "1 + (y')^2 = 1 + (\\sqrt{x})^2 = 1 + x",
+      "explanation": "Square the derivative and add 1.",
+      "why": "Constructing ds integrand."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate ds over [0, 3]",
+      "mathExpression": "L = \\int_0^3 \\sqrt{1 + x} \\, dx = \\left[ \\frac{2}{3}(1 + x)^{3/2} \\right]_0^3 = \\frac{2}{3} \\left( 4^{3/2} - 1^{3/2} \\right) = \\frac{2}{3}(8 - 1) = \\frac{14}{3}",
+      "explanation": "Evaluate the antiderivative at x = 3 and x = 0.",
+      "why": "Final exact arc length."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "sqrt(1 + x)",
+    "expected": "14/3",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "3"
+  }
+}

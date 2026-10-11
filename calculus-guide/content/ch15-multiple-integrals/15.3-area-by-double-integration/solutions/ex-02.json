@@ -1,0 +1,40 @@
+{
+  "id": "ch15-multiple-integrals/15.3-area-by-double-integration/solutions/ex-02",
+  "chapter": "ch15",
+  "section": "15.3",
+  "type": "solution",
+  "title": "Area Between Sine and Cosine Curves",
+  "exerciseReference": "Section 15.3, Exercise 2",
+  "originalTopic": "Trigonometric Area",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "trigonometric",
+    "area",
+    "sine-cosine"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the area of the region bounded by y = sin(x) and y = cos(x) from x = pi/4 to x = 5*pi/4.",
+  "finalAnswer": "2\\sqrt{2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up Area Double Integral",
+      "mathExpression": "\\text{Area} = \\int_{\\pi/4}^{5\\pi/4} \\int_{\\cos x}^{\\sin x} 1 \\, dy \\, dx = \\int_{\\pi/4}^{5\\pi/4} (\\sin x - \\cos x) \\, dx",
+      "explanation": "On [pi/4, 5*pi/4], sin(x) >= cos(x).",
+      "why": "Setting up area between trigonometric curves."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate Trigonometric Functions",
+      "mathExpression": "[-\\cos x - \\sin x]_{\\pi/4}^{5\\pi/4} = \\left( -(-\\sqrt{2}/2) - (-\\sqrt{2}/2) \\right) - \\left( -\\sqrt{2}/2 - \\sqrt{2}/2 \\right) = \\sqrt{2} - (-\\sqrt{2}) = 2\\sqrt{2}",
+      "explanation": "Evaluate trigonometric antiderivatives at 5*pi/4 and pi/4.",
+      "why": "Computing trigonometric area."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(2) + sqrt(2)",
+    "expected": "2*sqrt(2)"
+  }
+}

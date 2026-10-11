@@ -1,0 +1,40 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.5-surfaces-and-area/solutions/ex-02",
+  "chapter": "ch16",
+  "section": "16.5",
+  "type": "solution",
+  "title": "Area of a Plane Region Cut Out by a Cylinder",
+  "exerciseReference": "Section 16.5, Exercise 2",
+  "originalTopic": "Planar Surface Area",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "plane",
+    "cylinder",
+    "surface-area"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the surface area of the plane 2x + 2y + z = 8 inside the cylinder x^2 + y^2 <= 4.",
+  "finalAnswer": "12\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Calculate Area Scale Factor",
+      "mathExpression": "z = 8 - 2x - 2y \\implies z_x = -2, \\; z_y = -2; \\quad d\\sigma = \\sqrt{1 + (-2)^2 + (-2)^2} \\, dA = \\sqrt{9} \\, dA = 3 \\, dA",
+      "explanation": "The surface element scales the base area by constant factor 3.",
+      "why": "Finding surface metric scale."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Multiply Scale Factor by Base Circular Area",
+      "mathExpression": "\\text{Area} = 3 \\iint_{x^2+y^2 \\le 4} 1 \\, dA = 3 \\times \\pi(2^2) = 12\\pi",
+      "explanation": "Multiply factor 3 by area of disk 4*pi.",
+      "why": "Evaluating planar patch area."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "3 * 4*pi",
+    "expected": "12*pi"
+  }
+}

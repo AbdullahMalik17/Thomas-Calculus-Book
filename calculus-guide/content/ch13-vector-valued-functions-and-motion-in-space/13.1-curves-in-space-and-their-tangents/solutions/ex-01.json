@@ -1,0 +1,48 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.1-curves-in-space-and-their-tangents/solutions/ex-01",
+  "chapter": "ch13",
+  "section": "13.1",
+  "type": "solution",
+  "title": "Velocity, Speed, and Unit Tangent of a Circular Helix",
+  "exerciseReference": "Section 13.1, Exercise 1",
+  "originalTopic": "Kinematics of Space Curves",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "helix",
+    "velocity",
+    "unit-tangent",
+    "speed"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the velocity v(t), speed |v(t)|, and unit tangent vector T(t) for the circular helix r(t) = <cos(t), sin(t), t>.",
+  "finalAnswer": "\\mathbf{v}(t) = \\langle -\\sin t, \\cos t, 1 \\rangle, \\quad |\\mathbf{v}(t)| = \\sqrt{2}, \\quad \\mathbf{T}(t) = \\frac{1}{\\sqrt{2}}\\langle -\\sin t, \\cos t, 1 \\rangle",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Differentiate Position Component-Wise",
+      "mathExpression": "\\mathbf{v}(t) = \\mathbf{r}'(t) = \\left\\langle \\frac{d}{dt}(\\cos t), \\frac{d}{dt}(\\sin t), \\frac{d}{dt}(t) \\right\\rangle = \\langle -\\sin t, \\cos t, 1 \\rangle",
+      "explanation": "Compute component derivatives with respect to parameter t.",
+      "why": "Determining velocity vector."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Calculate Speed (Magnitude of Velocity)",
+      "mathExpression": "|\\mathbf{v}(t)| = \\sqrt{(-\\sin t)^2 + (\\cos t)^2 + 1^2} = \\sqrt{1 + 1} = \\sqrt{2}",
+      "explanation": "Apply Pythagorean identity sin^2(t) + cos^2(t) = 1.",
+      "why": "Finding scalar speed of motion."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Unit Tangent Vector T(t)",
+      "mathExpression": "\\mathbf{T}(t) = \\frac{\\mathbf{v}(t)}{|\\mathbf{v}(t)|} = \\frac{1}{\\sqrt{2}} \\langle -\\sin t, \\cos t, 1 \\rangle",
+      "explanation": "Divide the velocity vector by constant speed sqrt(2).",
+      "why": "Normalizing velocity to obtain unit tangent."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt((-sin(t))**2 + (cos(t))**2 + 1)",
+    "expected": "sqrt(2)"
+  }
+}

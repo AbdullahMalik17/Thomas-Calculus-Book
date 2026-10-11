@@ -1,0 +1,47 @@
+{
+  "id": "ch09-first-order-differential-equations/9.4-graphical-solutions-of-autonomous-equations/solutions/ex-03",
+  "chapter": "ch09",
+  "section": "9.4",
+  "type": "solution",
+  "title": "Semi-Stable Equilibrium Point",
+  "exerciseReference": "Section 9.4, Exercise 3",
+  "originalTopic": "Semi-Stable Critical Point",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "semi-stable",
+    "autonomous",
+    "phase-line"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine the stability of the equilibrium point y = 3 for dy/dt = (y - 3)^2.",
+  "finalAnswer": "y = 3 \\text{ is a semi-stable equilibrium}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Equilibrium",
+      "mathExpression": "(y - 3)^2 = 0 \\implies y = 3",
+      "explanation": "Only one critical point.",
+      "why": "Root of f(y)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Analyze Sign on Both Sides",
+      "mathExpression": "y < 3 \\implies (y - 3)^2 > 0 (\\uparrow); \\quad y > 3 \\implies (y - 3)^2 > 0 (\\uparrow)",
+      "explanation": "The slope is positive on both sides of y = 3.",
+      "why": "Squared term is non-negative."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude Semi-Stability",
+      "mathExpression": "\\text{Solutions approach from below but diverge away above } \\implies \\text{semi-stable}",
+      "explanation": "One-sided attractor.",
+      "why": "Classification of semi-stability."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(3 - 3)**2",
+    "expected": "0"
+  }
+}

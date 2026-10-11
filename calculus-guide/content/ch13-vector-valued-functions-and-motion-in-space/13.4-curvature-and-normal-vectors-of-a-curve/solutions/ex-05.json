@@ -1,0 +1,47 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.4-curvature-and-normal-vectors-of-a-curve/solutions/ex-05",
+  "chapter": "ch13",
+  "section": "13.4",
+  "type": "solution",
+  "title": "Curvature and Radius of Curvature of a Parabola at the Vertex",
+  "exerciseReference": "Section 13.4, Exercise 5",
+  "originalTopic": "Curvature of Plane Function",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "parabola",
+    "vertex-curvature",
+    "osculating-circle"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the curvature kappa and radius of curvature rho of the parabola y = x^2 at its vertex (0, 0).",
+  "finalAnswer": "\\kappa(0) = 2, \\quad \\rho = \\frac{1}{2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute First and Second Derivatives",
+      "mathExpression": "y' = 2x \\implies y'(0) = 0; \\quad y'' = 2 \\implies y''(0) = 2",
+      "explanation": "Differentiate y = x^2 twice and evaluate at x = 0.",
+      "why": "Finding derivative inputs for Cartesian curvature."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply 2D Curvature Formula",
+      "mathExpression": "\\kappa(x) = \\frac{|y''|}{[1 + (y')^2]^{3/2}} \\implies \\kappa(0) = \\frac{|2|}{[1 + 0^2]^{3/2}} = \\frac{2}{1} = 2",
+      "explanation": "Substitute derivative values at the origin.",
+      "why": "Evaluating vertex curvature."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Calculate Radius of Curvature",
+      "mathExpression": "\\rho = \\frac{1}{\\kappa(0)} = \\frac{1}{2}",
+      "explanation": "Take the reciprocal of curvature.",
+      "why": "Finding radius of osculating circle."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 / (1 + 0)**(3/2)",
+    "expected": "2"
+  }
+}

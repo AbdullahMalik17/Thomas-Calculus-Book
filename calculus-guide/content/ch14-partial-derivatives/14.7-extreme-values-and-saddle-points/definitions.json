@@ -1,0 +1,34 @@
+{
+  "id": "ch14-partial-derivatives/14.7-extreme-values-and-saddle-points/definitions",
+  "chapter": "ch14",
+  "section": "14.7",
+  "title": "Extreme Values and Saddle Points",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-critical-points-multivariable",
+      "title": "Critical Points and Local Extrema",
+      "category": "definition",
+      "latex": "\\nabla f(x_0, y_0) = \\mathbf{0} \\iff f_x(x_0, y_0) = 0 \\quad \\text{and} \\quad f_y(x_0, y_0) = 0",
+      "statement": "A point (x_0, y_0) in the domain of f is a critical point if either both first partial derivatives vanish or at least one partial derivative fails to exist. Local extrema occur only at critical points or boundary points.",
+      "conditions": [
+        "Point belongs to interior of domain"
+      ],
+      "explanation": "Horizontal tangent plane z = z_0 occurs at stationary critical points.",
+      "keyTakeaway": "Necessary condition for interior local extrema of differentiable functions."
+    },
+    {
+      "id": "test-second-derivative-test",
+      "title": "Second Derivative Test for Functions of Two Variables",
+      "category": "test",
+      "latex": "D = f_{xx}(a, b) f_{yy}(a, b) - [f_{xy}(a, b)]^2",
+      "statement": "Let (a, b) be a critical point with continuous second partials. If D > 0 and f_{xx} < 0, f has a local maximum; if D > 0 and f_{xx} > 0, f has a local minimum; if D < 0, f has a saddle point; if D = 0, the test is inconclusive.",
+      "conditions": [
+        "f_x(a, b) = f_y(a, b) = 0",
+        "Second partials are continuous"
+      ],
+      "explanation": "D is the determinant of the Hessian matrix. Positive D guarantees consistent curvature in all directions, while negative D indicates opposite curvatures (saddle).",
+      "keyTakeaway": "Classifies stationary points into local maxima, local minima, and saddle points."
+    }
+  ]
+}

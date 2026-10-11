@@ -1,0 +1,40 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.2-infinite-series/solutions/ex-03",
+  "chapter": "ch10",
+  "section": "10.2",
+  "type": "solution",
+  "title": "Divergence by the nth-Term Test",
+  "exerciseReference": "Section 10.2, Exercise 3",
+  "originalTopic": "nth-Term Divergence Test",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "nth-term-test",
+    "divergence",
+    "rational"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether the series sum_{n=1}^oo (2n + 1) / (3n + 5) converges or diverges.",
+  "finalAnswer": "\\text{Diverges by the } n\\text{-th Term Test}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate Limit of Terms a_n",
+      "mathExpression": "\\lim_{n \\to \\infty} a_n = \\lim_{n \\to \\infty} \\frac{2n + 1}{3n + 5} = \\frac{2}{3}",
+      "explanation": "Divide by n to evaluate limit at infinity.",
+      "why": "nth-term test calculation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Divergence Criterion",
+      "mathExpression": "\\lim_{n \\to \\infty} a_n = \\frac{2}{3} \\ne 0",
+      "explanation": "Since the terms do not approach 0, the series cannot converge.",
+      "why": "nth-term test for divergence."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "Rational(2, 3) - 2/3",
+    "expected": "0"
+  }
+}

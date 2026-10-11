@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.1-sequences/solutions/ex-03",
+  "chapter": "ch10",
+  "section": "10.1",
+  "type": "solution",
+  "title": "Limit of an Indeterminate Exponential Sequence",
+  "exerciseReference": "Section 10.1, Exercise 3",
+  "originalTopic": "L'Hopital Rule on Sequences",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "lhopital",
+    "logarithmic-sequence",
+    "indeterminate"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find lim_{n -> oo} (ln n)^2 / n.",
+  "finalAnswer": "\\lim_{n \\to \\infty} \\frac{(\\ln n)^2}{n} = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Pass to Continuous Variable x",
+      "mathExpression": "f(x) = \\frac{(\\ln x)^2}{x} \\quad \\left( \\frac{\\infty}{\\infty} \\right)",
+      "explanation": "Convert discrete n to real x >= 1.",
+      "why": "Enables differentiation via L'Hopital's Rule."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply L'Hopital's Rule First Time",
+      "mathExpression": "\\lim_{x \\to \\infty} \\frac{2\\ln(x)(1/x)}{1} = \\lim_{x \\to \\infty} \\frac{2\\ln(x)}{x} \\quad \\left( \\frac{\\infty}{\\infty} \\right)",
+      "explanation": "Differentiate numerator and denominator.",
+      "why": "First derivative quotient."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Apply L'Hopital's Rule Second Time",
+      "mathExpression": "\\lim_{x \\to \\infty} \\frac{2(1/x)}{1} = \\lim_{x \\to \\infty} \\frac{2}{x} = 0 \\implies \\lim_{n \\to \\infty} \\frac{(\\ln n)^2}{n} = 0",
+      "explanation": "Limit is 0.",
+      "why": "Final evaluated sequence limit."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

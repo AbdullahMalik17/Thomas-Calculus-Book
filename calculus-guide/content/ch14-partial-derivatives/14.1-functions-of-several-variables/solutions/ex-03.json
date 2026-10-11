@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.1-functions-of-several-variables/solutions/ex-03",
+  "chapter": "ch14",
+  "section": "14.1",
+  "type": "solution",
+  "title": "Domain of a Logarithmic Multivariable Function",
+  "exerciseReference": "Section 14.1, Exercise 3",
+  "originalTopic": "Logarithmic Domain",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "logarithm",
+    "domain",
+    "half-plane"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the natural domain of g(x, y) = ln(x + y - 1) and evaluate g(2, 0).",
+  "finalAnswer": "\\text{Domain: } \\{(x, y) \\in \\mathbb{R}^2 \\mid x + y > 1\\}; \\quad g(2, 0) = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Strictly Positive Argument Condition",
+      "mathExpression": "x + y - 1 > 0 \\iff x + y > 1",
+      "explanation": "The natural logarithm requires a strictly positive argument.",
+      "why": "Applying domain restriction for ln."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate at (2, 0)",
+      "mathExpression": "g(2, 0) = \\ln(2 + 0 - 1) = \\ln(1) = 0",
+      "explanation": "Substitute x = 2, y = 0.",
+      "why": "Evaluating logarithmic output."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "log(2 + 0 - 1)",
+    "expected": "0"
+  }
+}

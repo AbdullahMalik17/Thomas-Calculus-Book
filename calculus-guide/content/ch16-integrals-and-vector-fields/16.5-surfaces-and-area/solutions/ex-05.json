@@ -1,0 +1,40 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.5-surfaces-and-area/solutions/ex-05",
+  "chapter": "ch16",
+  "section": "16.5",
+  "type": "solution",
+  "title": "Surface Area of a Right Circular Cone",
+  "exerciseReference": "Section 16.5, Exercise 5",
+  "originalTopic": "Cone Surface Area",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "cone",
+    "surface-area",
+    "polar-coordinates"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the lateral surface area of the cone z = sqrt(x^2 + y^2) for 0 <= z <= 3.",
+  "finalAnswer": "9\\sqrt{2}\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Partial Derivatives and Metric",
+      "mathExpression": "z_x = \\frac{x}{\\sqrt{x^2+y^2}}, \\; z_y = \\frac{y}{\\sqrt{x^2+y^2}} \\implies 1 + z_x^2 + z_y^2 = 1 + \\frac{x^2 + y^2}{x^2 + y^2} = 1 + 1 = 2",
+      "explanation": "Sum squared partial derivatives.",
+      "why": "Finding cone surface metric."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate Over Base Disk",
+      "mathExpression": "d\\sigma = \\sqrt{2} \\, dA; \\quad \\text{Area} = \\sqrt{2} \\iint_{x^2+y^2 \\le 9} 1 \\, dA = \\sqrt{2} \\pi (3^2) = 9\\sqrt{2}\\pi",
+      "explanation": "Multiply constant sqrt(2) by area of base disk of radius 3.",
+      "why": "Evaluating cone lateral area."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(2) * pi * 3**2",
+    "expected": "9*sqrt(2)*pi"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.6-conic-sections/solutions/ex-05",
+  "chapter": "ch11",
+  "section": "11.6",
+  "type": "solution",
+  "title": "Eccentricity and Shape Variation",
+  "exerciseReference": "Section 11.6, Exercise 5",
+  "originalTopic": "Eccentricity Geometric Meaning",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "eccentricity",
+    "circle-limit",
+    "conic-theory"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Describe the geometric shape of an ellipse as its eccentricity e approaches 0.",
+  "finalAnswer": "\\text{As } e \\to 0, \\text{ the foci coalesce at the center and the ellipse becomes a circle}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Relate Eccentricity to Semi-Axes",
+      "mathExpression": "e = \\frac{c}{a} = \\frac{\\sqrt{a^2 - b^2}}{a} = \\sqrt{1 - \\frac{b^2}{a^2}}",
+      "explanation": "Expression of eccentricity in terms of axis ratio b/a.",
+      "why": "Eccentricity formula."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Take Limit as e -> 0",
+      "mathExpression": "e \\to 0 \\implies 1 - \\frac{b^2}{a^2} \\to 0 \\implies b \\to a",
+      "explanation": "When semi-minor axis b approaches semi-major axis a, the ellipse becomes a circle.",
+      "why": "Limiting circular geometry."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

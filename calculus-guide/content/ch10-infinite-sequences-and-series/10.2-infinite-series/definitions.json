@@ -1,0 +1,45 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.2-infinite-series/definitions",
+  "chapter": "ch10",
+  "section": "10.2",
+  "title": "Infinite Series",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-infinite-series-sum",
+      "title": "Sum of an Infinite Series",
+      "category": "definition",
+      "latex": "\\sum_{n=1}^\\infty a_n = \\lim_{k \\to \\infty} s_k, \\quad s_k = \\sum_{n=1}^k a_n",
+      "statement": "An infinite series converges to sum S if its sequence of partial sums {s_k} converges to S. If the sequence of partial sums diverges, the series diverges.",
+      "conditions": [
+        "Partial sums s_k are finite for each k"
+      ],
+      "explanation": "Transforms an infinite addition into a limit of finite sums.",
+      "keyTakeaway": "Series convergence means convergence of partial sums."
+    },
+    {
+      "id": "formula-geometric-series",
+      "title": "Geometric Series Theorem",
+      "category": "formula",
+      "latex": "\\sum_{n=0}^\\infty a r^n = \\frac{a}{1 - r} \\quad \\iff \\quad |r| < 1",
+      "statement": "A geometric series with first term a and common ratio r converges if and only if |r| < 1, with sum a/(1 - r). If |r| >= 1 and a != 0, the series diverges.",
+      "conditions": [
+        "|r| < 1"
+      ],
+      "explanation": "One of the few series whose exact sum can be computed in closed form directly.",
+      "keyTakeaway": "Geometric series converges iff |r| < 1, sum = a / (1 - r)."
+    },
+    {
+      "id": "theorem-nth-term-divergence-test",
+      "title": "The nth-Term Test for Divergence",
+      "category": "theorem",
+      "latex": "\\lim_{n \\to \\infty} a_n \\ne 0 \\implies \\sum a_n \\text{ diverges}",
+      "statement": "If the limit of terms a_n is not zero, or if the limit does not exist, the series sum a_n diverges.",
+      "conditions": [
+        "None (applies universally)"
+      ],
+      "explanation": "The converse is FALSE: a_n -> 0 does NOT guarantee convergence (e.g., Harmonic series sum 1/n diverges even though 1/n -> 0).",
+      "keyTakeaway": "Terms must approach 0 to have any hope of converging."
+    }
+  ]
+}

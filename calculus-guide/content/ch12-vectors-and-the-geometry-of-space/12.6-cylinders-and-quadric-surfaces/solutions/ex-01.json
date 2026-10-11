@@ -1,0 +1,40 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.6-cylinders-and-quadric-surfaces/solutions/ex-01",
+  "chapter": "ch12",
+  "section": "12.6",
+  "type": "solution",
+  "title": "Identifying an Ellipsoid and Finding its Principal Trace",
+  "exerciseReference": "Section 12.6, Exercise 1",
+  "originalTopic": "Ellipsoid Traces",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "ellipsoid",
+    "traces",
+    "quadric-surfaces"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Identify the quadric surface x^2/4 + y^2/9 + z^2/16 = 1 and find the area of its trace in the xy-plane.",
+  "finalAnswer": "\\text{Ellipsoid; Trace area in } z=0 \\text{ is } 6\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Classify Quadric Surface",
+      "mathExpression": "\\frac{x^2}{2^2} + \\frac{y^2}{3^2} + \\frac{z^2}{4^2} = 1",
+      "explanation": "All three variables are squared with positive coefficients summing to 1, defining an ellipsoid with semi-axes a = 2, b = 3, c = 4.",
+      "why": "Classifying quadric surface."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find xy-Trace and Compute Area",
+      "mathExpression": "z = 0 \\implies \\frac{x^2}{4} + \\frac{y^2}{9} = 1; \\quad \\text{Area} = \\pi a b = \\pi (2)(3) = 6\\pi",
+      "explanation": "Set z = 0 to get an ellipse with semi-axes 2 and 3; its area is pi*a*b.",
+      "why": "Calculating trace geometric area."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "pi * 2 * 3",
+    "expected": "6*pi"
+  }
+}

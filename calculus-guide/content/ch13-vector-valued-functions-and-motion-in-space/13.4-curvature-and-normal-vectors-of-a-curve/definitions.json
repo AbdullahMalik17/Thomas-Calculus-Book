@@ -1,0 +1,34 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.4-curvature-and-normal-vectors-of-a-curve/definitions",
+  "chapter": "ch13",
+  "section": "13.4",
+  "title": "Curvature and Normal Vectors of a Curve",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-curvature",
+      "title": "Curvature of a Space Curve",
+      "category": "definition",
+      "latex": "\\kappa = \\left| \\frac{d\\mathbf{T}}{ds} \\right| = \\frac{|\\mathbf{T}'(t)|}{|\\mathbf{r}'(t)|} = \\frac{|\\mathbf{v} \\times \\mathbf{a}|}{|\\mathbf{v}|^3}",
+      "statement": "Curvature kappa is the rate at which the unit tangent vector T changes direction per unit of arc length s. It measures how sharply the curve bends at each point.",
+      "conditions": [
+        "Curve is twice differentiable",
+        "|v| > 0"
+      ],
+      "explanation": "Straight lines have kappa = 0 everywhere; a circle of radius a has constant curvature kappa = 1/a.",
+      "keyTakeaway": "Radius of curvature rho = 1/kappa is the radius of the osculating (best-fit) circle."
+    },
+    {
+      "id": "def-principal-normal-binormal",
+      "title": "Principal Normal and Binormal Vectors (TNB Frame)",
+      "category": "definition",
+      "latex": "\\mathbf{N}(t) = \\frac{\\mathbf{T}'(t)}{|\\mathbf{T}'(t)|}, \\quad \\mathbf{B}(t) = \\mathbf{T}(t) \\times \\mathbf{N}(t)",
+      "statement": "The principal unit normal vector N points in the direction that T is turning (toward the inside of the curve). The binormal vector B is a unit vector orthogonal to both T and N, completing the right-handed Frenet-Serret orthonormal TNB frame.",
+      "conditions": [
+        "|T'(t)| != 0"
+      ],
+      "explanation": "The plane spanned by T and N is the osculating plane; T and B span the rectifying plane; N and B span the normal plane.",
+      "keyTakeaway": "The TNB frame forms a moving orthogonal coordinate system traveling along the trajectory."
+    }
+  ]
+}

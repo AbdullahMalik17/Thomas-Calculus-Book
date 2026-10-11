@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.9-taylors-formula-for-two-variables/solutions/ex-02",
+  "chapter": "ch14",
+  "section": "14.9",
+  "type": "solution",
+  "title": "Quadratic Approximation of a Product of Sines",
+  "exerciseReference": "Section 14.9, Exercise 2",
+  "originalTopic": "Taylor Approximation at Origin",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "trig-product",
+    "Taylor-formula",
+    "mixed-derivative"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the quadratic Taylor polynomial for f(x, y) = sin(x) sin(y) about (0, 0).",
+  "finalAnswer": "P_2(x, y) = xy",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate Single Variable Series Products",
+      "mathExpression": "\\sin x = x - \\frac{x^3}{6} + \\cdots, \\quad \\sin y = y - \\frac{y^3}{6} + \\cdots",
+      "explanation": "Multiply the single-variable Maclaurin series.",
+      "why": "Applying series multiplication method."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Truncate to Degree <= 2",
+      "mathExpression": "\\sin x \\sin y = \\left( x - \\cdots \\right)\\left( y - \\cdots \\right) = xy + \\mathcal{O}(\\|\\mathbf{x}\\|^4) \\implies P_2(x, y) = xy",
+      "explanation": "The only term of degree <= 2 is the cross-product term xy.",
+      "why": "Extracting second-order polynomial."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "diff(diff(sin(x)*sin(y), x), y).subs([(x, 0), (y, 0)])",
+    "expected": "1"
+  }
+}

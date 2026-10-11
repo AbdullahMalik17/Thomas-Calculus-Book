@@ -1,0 +1,23 @@
+{
+  "id": "ch07-transcendental-functions/7.5-indeterminate-forms-and-lhospitals-rule/definitions",
+  "chapter": "ch07",
+  "section": "7.5",
+  "title": "Indeterminate Forms and L'Hôpital's Rule",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-lhospitals-rule",
+      "title": "L'Hôpital's Rule (Indeterminate Forms 0/0 and inf/inf)",
+      "category": "theorem",
+      "latex": "\\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\lim_{x \\to c} \\frac{f'(x)}{g'(x)}",
+      "statement": "If lim f(x)/g(x) produces an indeterminate form 0/0 or (+-oo)/(+-oo), and if lim f'(x)/g'(x) exists or is +-oo, then the limit of the quotient equals the limit of the quotient of their derivatives.",
+      "conditions": [
+        "Form must be 0/0 or inf/inf",
+        "g'(x) != 0 near c",
+        "Limit of derivatives must exist or diverge to +-inf"
+      ],
+      "explanation": "Differentiating numerator and denominator separately evaluates the ratio of their instantaneous rates of approach to 0 or infinity.",
+      "keyTakeaway": "Never apply quotient rule when applying L'Hôpital's Rule; differentiate numerator and denominator independently."
+    }
+  ]
+}

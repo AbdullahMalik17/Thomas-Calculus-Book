@@ -1,0 +1,47 @@
+{
+  "id": "ch15-multiple-integrals/15.8-substitutions-in-multiple-integrals/solutions/ex-03",
+  "chapter": "ch15",
+  "section": "15.8",
+  "type": "solution",
+  "title": "Double Integral over a Skewed Parallelogram",
+  "exerciseReference": "Section 15.8, Exercise 3",
+  "originalTopic": "Parallelogram Substitution",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "parallelogram",
+    "change-of-variables",
+    "inverse-Jacobian"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate iint_R (x + y) dA where R is bounded by x + y = 0, x + y = 2, x - 2y = 0, and x - 2y = 3.",
+  "finalAnswer": "2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Define New Coordinates u and v",
+      "mathExpression": "u = x + y, \\quad v = x - 2y \\implies 0 \\le u \\le 2, \\; 0 \\le v \\le 3",
+      "explanation": "The transformation maps the skewed region R into a simple rectangle [0, 2] x [0, 3] in uv.",
+      "why": "Rectifying region boundaries."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Inverse Jacobian",
+      "mathExpression": "\\frac{\\partial(u, v)}{\\partial(x, y)} = \\begin{vmatrix} 1 & 1 \\\\ 1 & -2 \\end{vmatrix} = -2 - 1 = -3 \\implies \\left|\\frac{\\partial(x, y)}{\\partial(u, v)}\\right| = \\frac{1}{|-3|} = \\frac{1}{3}",
+      "explanation": "Invert the Jacobian determinant of the direct mapping.",
+      "why": "Finding area factor for substitution."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Transformed Integral",
+      "mathExpression": "\\iint_R (x + y) \\, dA = \\int_0^2 \\int_0^3 u \\left( \\frac{1}{3} \\right) dv \\, du = \\left( \\frac{1}{3} \\right) (3) \\int_0^2 u \\, du = \\left[ \\frac{u^2}{2} \\right]_0^2 = 2",
+      "explanation": "Evaluate the product of separated single integrals.",
+      "why": "Evaluating final simplified integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(2**2 / 2) * (1/3) * 3",
+    "expected": "2"
+  }
+}

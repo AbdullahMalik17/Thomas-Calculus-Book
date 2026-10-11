@@ -1,0 +1,41 @@
+{
+  "id": "ch07-transcendental-functions/7.1-inverse-functions-and-their-derivatives/solutions/ex-02",
+  "chapter": "ch07",
+  "section": "7.1",
+  "type": "solution",
+  "title": "Finding the Explicit Inverse Formula and Derivative",
+  "exerciseReference": "Section 7.1, Exercise 2",
+  "originalTopic": "Algebraic Inverse and Derivative",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "algebraic-inverse",
+    "derivative",
+    "rational-function"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the inverse of f(x) = (2x + 1)/(x - 3) and find (f^(-1))'(y).",
+  "finalAnswer": "f^{-1}(y) = \\frac{3y + 1}{y - 2}, \\quad (f^{-1})'(y) = -\\frac{7}{(y - 2)^2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Solve for x in Terms of y",
+      "mathExpression": "y(x - 3) = 2x + 1 \\implies yx - 3y = 2x + 1 \\implies x(y - 2) = 3y + 1 \\implies x = \\frac{3y + 1}{y - 2}",
+      "explanation": "Rearrange to isolate x.",
+      "why": "Inverse function definition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate Inverse Function",
+      "mathExpression": "\\frac{d}{dy}\\left[ \\frac{3y + 1}{y - 2} \\right] = \\frac{3(y - 2) - (3y + 1)(1)}{(y - 2)^2} = \\frac{3y - 6 - 3y - 1}{(y - 2)^2} = -\\frac{7}{(y - 2)^2}",
+      "explanation": "Apply quotient rule with respect to y.",
+      "why": "Quotient rule of differentiation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "(3*x + 1)/(x - 2)",
+    "expected": "-7/(x - 2)**2",
+    "variable": "x"
+  }
+}

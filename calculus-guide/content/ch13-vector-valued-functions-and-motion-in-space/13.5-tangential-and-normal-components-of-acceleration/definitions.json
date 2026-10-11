@@ -1,0 +1,34 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.5-tangential-and-normal-components-of-acceleration/definitions",
+  "chapter": "ch13",
+  "section": "13.5",
+  "title": "Tangential and Normal Components of Acceleration",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-acceleration-decomposition",
+      "title": "Orthogonal Decomposition of Acceleration",
+      "category": "theorem",
+      "latex": "\\mathbf{a} = a_T \\mathbf{T} + a_N \\mathbf{N} = \\left( \\frac{d|\\mathbf{v}|}{dt} \\right) \\mathbf{T} + \\left( \\kappa |\\mathbf{v}|^2 \\right) \\mathbf{N}",
+      "statement": "The acceleration vector of a moving particle always lies entirely in the osculating plane spanned by T and N (its binormal component is identically zero). The tangential component a_T changes speed, while the normal component a_N changes direction.",
+      "conditions": [
+        "Curve is twice differentiable",
+        "|v| > 0"
+      ],
+      "explanation": "Scalar formulas: a_T = (v . a)/|v| and a_N = |v x a|/|v| = sqrt(|a|^2 - a_T^2).",
+      "keyTakeaway": "Disentangles rate of speed change from rate of directional curvature."
+    },
+    {
+      "id": "def-osculating-plane",
+      "title": "Osculating Plane",
+      "category": "definition",
+      "latex": "\\mathbf{B} \\cdot (\\mathbf{r} - \\mathbf{r}_0) = 0",
+      "statement": "The osculating plane at point r_0 on a smooth curve is the plane determined by the unit tangent T and principal normal N. It is the plane that has the closest contact with the curve at that point.",
+      "conditions": [
+        "Curvature kappa > 0"
+      ],
+      "explanation": "Has normal vector B = T x N. Contains both the velocity vector v and the acceleration vector a.",
+      "keyTakeaway": "All instantaneous physical acceleration occurs within the osculating plane."
+    }
+  ]
+}

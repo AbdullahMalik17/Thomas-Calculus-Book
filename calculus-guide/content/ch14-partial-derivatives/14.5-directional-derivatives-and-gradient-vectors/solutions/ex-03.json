@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.5-directional-derivatives-and-gradient-vectors/solutions/ex-03",
+  "chapter": "ch14",
+  "section": "14.5",
+  "type": "solution",
+  "title": "Maximum Rate of Change of a 3D Function",
+  "exerciseReference": "Section 14.5, Exercise 3",
+  "originalTopic": "Steepest Ascent",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "maximum-rate-of-change",
+    "steepest-ascent",
+    "gradient-magnitude"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the maximum rate of change of f(x, y, z) = x^2 + 2y^2 - 3z^2 at P(1, 1, 1) and the direction in which it occurs.",
+  "finalAnswer": "\\text{Max Rate: } 2\\sqrt{14}, \\quad \\text{Direction: } \\langle 2, 4, -6 \\rangle",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute 3D Gradient Vector",
+      "mathExpression": "\\nabla f = \\langle 2x, 4y, -6z \\rangle \\implies \\nabla f(1, 1, 1) = \\langle 2, 4, -6 \\rangle",
+      "explanation": "Evaluate partial derivatives at (1, 1, 1).",
+      "why": "Determining direction of steepest ascent."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Magnitude of Gradient",
+      "mathExpression": "|\\nabla f(1, 1, 1)| = \\sqrt{2^2 + 4^2 + (-6)^2} = \\sqrt{4 + 16 + 36} = \\sqrt{56} = 2\\sqrt{14}",
+      "explanation": "The maximum rate of increase equals the norm of the gradient vector.",
+      "why": "Calculating maximum rate of change."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(4 + 16 + 36)",
+    "expected": "2*sqrt(14)"
+  }
+}

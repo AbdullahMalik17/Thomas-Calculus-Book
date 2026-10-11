@@ -1,0 +1,47 @@
+{
+  "id": "ch14-partial-derivatives/14.4-the-chain-rule/solutions/ex-01",
+  "chapter": "ch14",
+  "section": "14.4",
+  "type": "solution",
+  "title": "Chain Rule along a Parameterized Curve",
+  "exerciseReference": "Section 14.4, Exercise 1",
+  "originalTopic": "Chain Rule with One Parameter",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "chain-rule",
+    "parameterized-path",
+    "derivatives"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For z = x^2 y + 3xy^4 with x = sin(2t) and y = cos(t), find dz/dt at t = 0.",
+  "finalAnswer": "\\frac{dz}{dt} = 6",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate Intermediate Variables and Derivatives at t = 0",
+      "mathExpression": "t = 0 \\implies x = \\sin 0 = 0, \\; y = \\cos 0 = 1; \\quad \\frac{dx}{dt} = 2\\cos(2t) \\implies 2, \\; \\frac{dy}{dt} = -\\sin(t) \\implies 0",
+      "explanation": "Compute coordinates and rates at t = 0.",
+      "why": "Finding branch inputs at evaluation time."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Partial Derivatives of z",
+      "mathExpression": "\\frac{\\partial z}{\\partial x} = 2xy + 3y^4 \\implies 2(0)(1) + 3(1)^4 = 3; \\quad \\frac{\\partial z}{\\partial y} = x^2 + 12xy^3 \\implies 0",
+      "explanation": "Evaluate z_x and z_y at (x, y) = (0, 1).",
+      "why": "Finding partial sensitivities."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Apply Chain Rule Formula",
+      "mathExpression": "\\frac{dz}{dt} = \\frac{\\partial z}{\\partial x}\\frac{dx}{dt} + \\frac{\\partial z}{\\partial y}\\frac{dy}{dt} = (3)(2) + (0)(0) = 6",
+      "explanation": "Multiply along tree branches and sum.",
+      "why": "Computing total time derivative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(2*0*1 + 3*1**4)*2 + (0**2 + 12*0*1**3)*0",
+    "expected": "6"
+  }
+}

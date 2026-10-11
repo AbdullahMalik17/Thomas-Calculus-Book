@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.10-partial-derivatives-with-constrained-variables/solutions/ex-05",
+  "chapter": "ch14",
+  "section": "14.10",
+  "type": "solution",
+  "title": "Constrained Partials on a Sphere via Implicit Ratios",
+  "exerciseReference": "Section 14.10, Exercise 5",
+  "originalTopic": "Implicit Constrained Partials",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "implicit-ratio",
+    "sphere",
+    "constrained-derivatives"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For points on the unit sphere x^2 + y^2 + z^2 = 1, find (dz/dx)_y using the implicit function theorem.",
+  "finalAnswer": "\\left(\\frac{\\partial z}{\\partial x}\\right)_y = -\\frac{x}{z}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Differentiate Constraint Implicitly with Respect to x",
+      "mathExpression": "\\frac{\\partial}{\\partial x}(x^2 + y^2 + z^2 - 1) = 0 \\implies 2x + 0 + 2z\\left(\\frac{\\partial z}{\\partial x}\\right)_y = 0",
+      "explanation": "Since y is held constant, dy/dx = 0.",
+      "why": "Applying implicit differentiation holding y fixed."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve for Constrained Derivative",
+      "mathExpression": "2z\\left(\\frac{\\partial z}{\\partial x}\\right)_y = -2x \\implies \\left(\\frac{\\partial z}{\\partial x}\\right)_y = -\\frac{x}{z}",
+      "explanation": "Divide both sides by 2z.",
+      "why": "Isolating constrained partial derivative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "-(2*x)/(2*z)",
+    "expected": "-x/z"
+  }
+}

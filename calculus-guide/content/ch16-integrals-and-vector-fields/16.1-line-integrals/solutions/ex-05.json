@@ -1,0 +1,47 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.1-line-integrals/solutions/ex-05",
+  "chapter": "ch16",
+  "section": "16.1",
+  "type": "solution",
+  "title": "Center of Mass of a Semicircular Wire",
+  "exerciseReference": "Section 16.1, Exercise 5",
+  "originalTopic": "Center of Mass of Wire",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "center-of-mass",
+    "wire",
+    "semicircle"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the center of mass of a uniform semicircular wire of radius a = pi in the upper half-plane.",
+  "finalAnswer": "(0, 2)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Total Mass with Uniform Density delta = 1",
+      "mathExpression": "M = \\int_C 1 \\, ds = \\pi a = \\pi(\\pi) = \\pi^2",
+      "explanation": "The mass is the arc length of the semicircle.",
+      "why": "Finding total mass of wire."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate First Moment M_x and y_bar",
+      "mathExpression": "M_x = \\int_0^\\pi (a\\sin t)(a \\, dt) = a^2 [-\\cos t]_0^\\pi = 2a^2; \\quad \\bar{y} = \\frac{M_x}{M} = \\frac{2a^2}{\\pi a} = \\frac{2a}{\\pi}",
+      "explanation": "Integrate y ds = a sin(t) a dt.",
+      "why": "Evaluating first moment and vertical balance point."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Substitute Numerical Radius a = pi",
+      "mathExpression": "\\bar{y} = \\frac{2\\pi}{\\pi} = 2; \\quad \\bar{x} = 0 \\text{ by symmetry} \\implies (0, 2)",
+      "explanation": "Substitute a = pi to obtain center of mass (0, 2).",
+      "why": "Finalizing coordinates."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 * pi / pi",
+    "expected": "2"
+  }
+}

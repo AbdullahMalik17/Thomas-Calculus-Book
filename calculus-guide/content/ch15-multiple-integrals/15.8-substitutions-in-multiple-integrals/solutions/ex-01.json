@@ -1,0 +1,40 @@
+{
+  "id": "ch15-multiple-integrals/15.8-substitutions-in-multiple-integrals/solutions/ex-01",
+  "chapter": "ch15",
+  "section": "15.8",
+  "type": "solution",
+  "title": "Computing the Jacobian of a Linear Coordinate Transformation",
+  "exerciseReference": "Section 15.8, Exercise 1",
+  "originalTopic": "Jacobian Determinant",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "Jacobian",
+    "linear-transformation",
+    "change-of-variables"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the Jacobian J(u, v) = d(x, y)/d(u, v) for the transformation x = 2u + v, y = u + 3v.",
+  "finalAnswer": "J(u, v) = 5",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Partial Derivatives",
+      "mathExpression": "x_u = 2, \\quad x_v = 1, \\quad y_u = 1, \\quad y_v = 3",
+      "explanation": "Differentiate linear coordinate relations.",
+      "why": "Finding matrix elements for Jacobian."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate 2x2 Determinant",
+      "mathExpression": "J(u, v) = \\begin{vmatrix} 2 & 1 \\\\ 1 & 3 \\end{vmatrix} = (2)(3) - (1)(1) = 6 - 1 = 5",
+      "explanation": "Compute ad - bc.",
+      "why": "Evaluating area scaling factor."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2*3 - 1*1",
+    "expected": "5"
+  }
+}

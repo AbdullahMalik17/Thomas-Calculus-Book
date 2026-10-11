@@ -1,0 +1,40 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.4-graphing-polar-coordinate-equations/solutions/ex-04",
+  "chapter": "ch11",
+  "section": "11.4",
+  "type": "solution",
+  "title": "Lemniscate Radial Extrema",
+  "exerciseReference": "Section 11.4, Exercise 4",
+  "originalTopic": "Lemniscate Figure-Eight Curve",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "lemniscate",
+    "figure-eight",
+    "polar"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the maximum radius and orientation of the lemniscate r^2 = 9 cos(2 theta).",
+  "finalAnswer": "r_{\\max} = 3 \\quad \\text{at } \\theta = 0, \\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Maximum of Right Hand Side",
+      "mathExpression": "\\max [9\\cos(2\\theta)] = 9(1) = 9 \\implies r_{\\max} = \\sqrt{9} = 3",
+      "explanation": "Maximum occurs when cos(2 theta) = 1.",
+      "why": "Maximum radial length."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find Angles for Maxima",
+      "mathExpression": "\\cos(2\\theta) = 1 \\implies 2\\theta = 0, \\; 2\\pi \\implies \\theta = 0, \\; \\pi",
+      "explanation": "Lies along the polar axis.",
+      "why": "Orientation angles."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(9) - 3",
+    "expected": "0"
+  }
+}

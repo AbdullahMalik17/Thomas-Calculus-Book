@@ -1,0 +1,40 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.6-cylinders-and-quadric-surfaces/solutions/ex-03",
+  "chapter": "ch12",
+  "section": "12.6",
+  "type": "solution",
+  "title": "Trace Analysis of a Hyperboloid of One Sheet",
+  "exerciseReference": "Section 12.6, Exercise 3",
+  "originalTopic": "Hyperboloid of One Sheet",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "hyperboloid-one-sheet",
+    "traces",
+    "circular-sections"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For the hyperboloid of one sheet x^2 + y^2 - z^2 = 1, find the radii of the circular cross-sections at z = 0 and z = sqrt(3).",
+  "finalAnswer": "r_0 = 1, \\quad r_{\\sqrt{3}} = 2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Trace at z = 0",
+      "mathExpression": "x^2 + y^2 - 0 = 1 \\implies x^2 + y^2 = 1 \\implies r_0 = 1",
+      "explanation": "At z = 0, the throat circle has radius 1.",
+      "why": "Determining minimum waist radius."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find Trace at z = sqrt(3)",
+      "mathExpression": "x^2 + y^2 - (\\sqrt{3})^2 = 1 \\implies x^2 + y^2 - 3 = 1 \\implies x^2 + y^2 = 4 \\implies r = \\sqrt{4} = 2",
+      "explanation": "Substitute z = sqrt(3) and add 3 to both sides to find radius of circle.",
+      "why": "Computing cross-sectional radius at specified height."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1 + (sqrt(3))**2",
+    "expected": "4"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ch07-transcendental-functions/7.8-relative-rates-of-growth/solutions/ex-02",
+  "chapter": "ch07",
+  "section": "7.8",
+  "type": "solution",
+  "title": "Comparing Exponential and Factorial Growth",
+  "exerciseReference": "Section 7.8, Exercise 2",
+  "originalTopic": "Exponential vs Factorial Growth",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "factorial",
+    "exponential",
+    "growth-rates"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Show that 10^n grows slower than n! as n -> oo.",
+  "finalAnswer": "10^n = o(n!) \\implies n! \\text{ grows faster}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Express Ratio of Consecutive Terms",
+      "mathExpression": "a_n = \\frac{10^n}{n!} \\implies \\frac{a_{n+1}}{a_n} = \\frac{10^{n+1}}{(n+1)!} \\cdot \\frac{n!}{10^n} = \\frac{10}{n+1}",
+      "explanation": "Calculate term ratio.",
+      "why": "Ratio Test logic."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Limit of Ratio",
+      "mathExpression": "\\lim_{n \\to \\infty} \\frac{10}{n+1} = 0 < 1",
+      "explanation": "The ratio approaches 0.",
+      "why": "Convergence of terms to zero."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude Relative Growth",
+      "mathExpression": "\\lim_{n \\to \\infty} \\frac{10^n}{n!} = 0 \\implies 10^n = o(n!)",
+      "explanation": "Factorials outgrow any fixed base exponential.",
+      "why": "Asymptotic dominance."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

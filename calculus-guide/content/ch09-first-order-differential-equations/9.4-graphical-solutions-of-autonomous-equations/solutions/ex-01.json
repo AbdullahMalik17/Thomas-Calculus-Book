@@ -1,0 +1,47 @@
+{
+  "id": "ch09-first-order-differential-equations/9.4-graphical-solutions-of-autonomous-equations/solutions/ex-01",
+  "chapter": "ch09",
+  "section": "9.4",
+  "type": "solution",
+  "title": "Equilibrium Points and Stability for a Cubic Autonomous ODE",
+  "exerciseReference": "Section 9.4, Exercise 1",
+  "originalTopic": "Phase Line Stability Analysis",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "autonomous-ode",
+    "phase-line",
+    "stability"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the equilibrium points and classify their stability for dy/dt = y(y - 2)(y - 4).",
+  "finalAnswer": "y = 0 \\text{ (unstable)}, \\quad y = 2 \\text{ (stable)}, \\quad y = 4 \\text{ (unstable)}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Zeros of f(y)",
+      "mathExpression": "f(y) = y(y - 2)(y - 4) = 0 \\implies y = 0, \\; 2, \\; 4",
+      "explanation": "Equilibrium solutions are constant functions.",
+      "why": "Definition of equilibrium."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Test Signs of f(y) in Each Interval",
+      "mathExpression": "y < 0: f < 0 (\\downarrow); \\quad 0 < y < 2: f > 0 (\\uparrow); \\quad 2 < y < 4: f < 0 (\\downarrow); \\quad y > 4: f > 0 (\\uparrow)",
+      "explanation": "Determine whether y increases or decreases.",
+      "why": "Phase line direction arrows."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Classify Stability",
+      "mathExpression": "y = 0: \\text{arrows point away (unstable)}; \\quad y = 2: \\text{arrows point toward (stable)}; \\quad y = 4: \\text{arrows point away (unstable)}",
+      "explanation": "Summarize attractor and repeller points.",
+      "why": "Phase line stability conclusions."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0 * 2 * 4",
+    "expected": "0"
+  }
+}

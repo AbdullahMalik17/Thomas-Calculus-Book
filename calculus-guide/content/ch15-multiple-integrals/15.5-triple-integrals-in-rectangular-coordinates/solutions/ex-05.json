@@ -1,0 +1,40 @@
+{
+  "id": "ch15-multiple-integrals/15.5-triple-integrals-in-rectangular-coordinates/solutions/ex-05",
+  "chapter": "ch15",
+  "section": "15.5",
+  "type": "solution",
+  "title": "Mass of a Unit Cube with Linear Density Variation",
+  "exerciseReference": "Section 15.5, Exercise 5",
+  "originalTopic": "Mass Calculation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "mass",
+    "density",
+    "cube"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the total mass of the unit cube [0, 1]^3 if its density is delta(x, y, z) = x y z.",
+  "finalAnswer": "\\frac{1}{8}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Factor Triple Integral Over Cube",
+      "mathExpression": "M = \\int_0^1 x \\, dx \\int_0^1 y \\, dy \\int_0^1 z \\, dz",
+      "explanation": "All limits are constant and the density function factors into separate single-variable terms.",
+      "why": "Decoupling separable triple integral."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Product of Single Integrals",
+      "mathExpression": "M = \\left( \\frac{1}{2} \\right) \\left( \\frac{1}{2} \\right) \\left( \\frac{1}{2} \\right) = \\frac{1}{8}",
+      "explanation": "Each single-variable integral equals 1/2.",
+      "why": "Evaluating total mass."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(1/2)**3",
+    "expected": "1/8"
+  }
+}

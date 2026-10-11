@@ -1,0 +1,50 @@
+{
+  "id": "ch06-applications-of-definite-integrals/6.5-work-and-fluid-forces/solutions/ex-01",
+  "chapter": "ch06",
+  "section": "6.5",
+  "type": "solution",
+  "title": "Work Done Stretching a Spring (Hooke's Law)",
+  "exerciseReference": "Section 6.5, Exercise 1",
+  "originalTopic": "Hooke's Law Work",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "work",
+    "spring",
+    "hookes-law"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A force of 40 N is required to hold a spring stretched 0.1 m beyond its natural length. How much work is done stretching the spring from 0.1 m to 0.2 m beyond its natural length?",
+  "finalAnswer": "W = 6 \\text{ Joules}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Spring Constant k",
+      "mathExpression": "F(x) = k x \\implies 40 = k(0.1) \\implies k = 400 \\text{ N/m}",
+      "explanation": "Apply Hooke's law to solve for k.",
+      "why": "Determining physical parameter."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Set Up Work Integral",
+      "mathExpression": "W = \\int_{0.1}^{0.2} 400x \\, dx",
+      "explanation": "Integrate F(x) over displacement interval [0.1, 0.2].",
+      "why": "Work definition."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Definite Integral",
+      "mathExpression": "W = \\left[ 200 x^2 \\right]_{0.1}^{0.2} = 200 (0.04 - 0.01) = 200(0.03) = 6 \\text{ Joules}",
+      "explanation": "Compute antiderivative at boundaries.",
+      "why": "Final exact work in Joules."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "400*x",
+    "expected": "6",
+    "kind": "definite",
+    "lower": "0.1",
+    "upper": "0.2"
+  }
+}

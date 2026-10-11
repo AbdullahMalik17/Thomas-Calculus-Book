@@ -1,0 +1,21 @@
+{
+  "id": "ch09-first-order-differential-equations/9.5-systems-of-equations-and-phase-planes/definitions",
+  "chapter": "ch09",
+  "section": "9.5",
+  "title": "Systems of Equations and Phase Planes",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-autonomous-system",
+      "title": "Two-Dimensional Autonomous System and Phase Plane",
+      "category": "definition",
+      "latex": "\\frac{dx}{dt} = F(x, y), \\quad \\frac{dy}{dt} = G(x, y)",
+      "statement": "A two-dimensional system of first-order differential equations describes the velocity vector field (dx/dt, dy/dt) in the xy-phase plane. Trajectories represent parametric solution curves (x(t), y(t)).",
+      "conditions": [
+        "F and G are continuously differentiable"
+      ],
+      "explanation": "Equilibrium points occur where F(x, y) = 0 and G(x, y) = 0 simultaneously.",
+      "keyTakeaway": "Phase portraits reveal qualitative dynamics (cycles, saddles, nodes, spirals) of coupled systems."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.3-the-dot-product/solutions/ex-01",
+  "chapter": "ch12",
+  "section": "12.3",
+  "type": "solution",
+  "title": "Dot Product and Angle Between Vectors",
+  "exerciseReference": "Section 12.3, Exercise 1",
+  "originalTopic": "Angle Between Vectors",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "dot-product",
+    "angle",
+    "cosine"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the dot product u . v and find cos(theta) for u = <1, -2, 2> and v = <3, 4, 0>.",
+  "finalAnswer": "\\mathbf{u} \\cdot \\mathbf{v} = -5, \\quad \\cos\\theta = -\\frac{1}{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Calculate Dot Product",
+      "mathExpression": "\\mathbf{u} \\cdot \\mathbf{v} = (1)(3) + (-2)(4) + (2)(0) = 3 - 8 + 0 = -5",
+      "explanation": "Multiply corresponding components and add.",
+      "why": "Applying algebraic dot product definition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Calculate Vector Magnitudes",
+      "mathExpression": "|\\mathbf{u}| = \\sqrt{1 + 4 + 4} = 3, \\quad |\\mathbf{v}| = \\sqrt{9 + 16 + 0} = 5",
+      "explanation": "Compute Euclidean norms for both vectors.",
+      "why": "Finding denominator for angle formula."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Angle Cosine",
+      "mathExpression": "\\cos\\theta = \\frac{\\mathbf{u} \\cdot \\mathbf{v}}{|\\mathbf{u}| |\\mathbf{v}|} = \\frac{-5}{(3)(5)} = -\\frac{1}{3}",
+      "explanation": "Divide the inner product by the product of norms.",
+      "why": "Evaluating angle between vectors."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(1*3 + (-2)*4 + 2*0) / (3 * 5)",
+    "expected": "-1/3"
+  }
+}

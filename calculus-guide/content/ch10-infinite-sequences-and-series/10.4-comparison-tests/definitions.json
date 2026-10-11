@@ -1,0 +1,34 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.4-comparison-tests/definitions",
+  "chapter": "ch10",
+  "section": "10.4",
+  "title": "Comparison Tests",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-direct-comparison-test",
+      "title": "Direct Comparison Test (DCT)",
+      "category": "theorem",
+      "latex": "0 \\le a_n \\le b_n: \\quad \\sum b_n < \\infty \\implies \\sum a_n < \\infty; \\quad \\sum a_n = \\infty \\implies \\sum b_n = \\infty",
+      "statement": "If terms of a non-negative series are term-by-term bounded by a convergent series, the smaller series converges. If bounded below by a divergent series, the larger series diverges.",
+      "conditions": [
+        "a_n >= 0, b_n >= 0"
+      ],
+      "explanation": "Compares unknown series against known p-series or geometric benchmarks.",
+      "keyTakeaway": "Smaller than convergent is convergent; larger than divergent is divergent."
+    },
+    {
+      "id": "theorem-limit-comparison-test",
+      "title": "Limit Comparison Test (LCT)",
+      "category": "theorem",
+      "latex": "\\lim_{n \\to \\infty} \\frac{a_n}{b_n} = L \\in (0, \\infty) \\implies \\sum a_n \\text{ and } \\sum b_n \\text{ share the same fate}",
+      "statement": "If the limit of the ratio of terms a_n/b_n is a finite positive number L, then both series either converge together or diverge together.",
+      "conditions": [
+        "a_n > 0, b_n > 0",
+        "0 < L < oo"
+      ],
+      "explanation": "Eliminates delicate inequality checking by focusing on asymptotic leading behavior.",
+      "keyTakeaway": "If terms behave proportionally for large n, their series share convergence behavior."
+    }
+  ]
+}

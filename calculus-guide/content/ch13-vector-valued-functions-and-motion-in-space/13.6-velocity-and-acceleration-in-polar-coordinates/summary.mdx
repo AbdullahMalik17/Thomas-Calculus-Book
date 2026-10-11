@@ -1,0 +1,20 @@
+# Section 13.6: Velocity and Acceleration in Polar Coordinates
+
+Planetary orbits and central-force mechanics are most naturally described in polar coordinates.
+
+---
+
+## 1. Velocity and Acceleration Decompositions
+
+- **Position**: $\mathbf{r} = r \mathbf{u}_r$
+- **Velocity**: $\mathbf{v} = \dot{r}\mathbf{u}_r + r\dot{\theta}\mathbf{u}_\theta$
+- **Acceleration**:
+$$\mathbf{a} = (\ddot{r} - r\dot{\theta}^2)\mathbf{u}_r + (r\ddot{\theta} + 2\dot{r}\dot{\theta})\mathbf{u}_\theta$$
+
+---
+
+## 2. Kepler's Laws of Planetary Motion
+
+1. **First Law**: Planets move in elliptical orbits with the Sun at one focus.
+2. **Second Law (Equal Areas)**: A line segment joining a planet and the Sun sweeps out equal areas during equal intervals of time: $\frac{dA}{dt} = \frac{1}{2}r^2\dot{\theta} = \frac{h}{2} = \text{constant}$.
+3. **Third Law**: The square of the orbital period is proportional to the cube of the semi-major axis: $T^2 = \frac{4\pi^2}{G M} a^3$.

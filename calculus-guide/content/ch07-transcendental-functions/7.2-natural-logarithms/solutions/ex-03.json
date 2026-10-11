@@ -1,0 +1,50 @@
+{
+  "id": "ch07-transcendental-functions/7.2-natural-logarithms/solutions/ex-03",
+  "chapter": "ch07",
+  "section": "7.2",
+  "type": "solution",
+  "title": "Definite Integral Resulting in a Natural Logarithm",
+  "exerciseReference": "Section 7.2, Exercise 3",
+  "originalTopic": "Logarithmic Antiderivative",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "logarithm",
+    "definite-integral",
+    "substitution"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_0^2 (2x + 1)/(x^2 + x + 1) dx.",
+  "finalAnswer": "\\int_0^2 \\frac{2x + 1}{x^2 + x + 1} dx = \\ln(7)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Recognize u'/u Pattern",
+      "mathExpression": "u = x^2 + x + 1 \\implies du = (2x + 1) \\, dx",
+      "explanation": "Numerator is the exact derivative of denominator.",
+      "why": "u-substitution."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Transform Integration Limits",
+      "mathExpression": "x = 0 \\implies u = 1; \\quad x = 2 \\implies u = 4 + 2 + 1 = 7",
+      "explanation": "Limits transform from [0, 2] to [1, 7].",
+      "why": "Definite integral substitution."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate and Evaluate",
+      "mathExpression": "\\int_1^7 \\frac{1}{u} du = [\\ln(u)]_1^7 = \\ln(7) - \\ln(1) = \\ln(7)",
+      "explanation": "Since ln(1) = 0, the result is ln(7).",
+      "why": "Final exact value."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "(2*x + 1)/(x**2 + x + 1)",
+    "expected": "log(7)",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "2"
+  }
+}

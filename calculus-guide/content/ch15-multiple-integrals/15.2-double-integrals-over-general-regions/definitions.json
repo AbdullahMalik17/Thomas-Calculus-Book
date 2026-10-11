@@ -1,0 +1,33 @@
+{
+  "id": "ch15-multiple-integrals/15.2-double-integrals-over-general-regions/definitions",
+  "chapter": "ch15",
+  "section": "15.2",
+  "title": "Double Integrals over General Regions",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-general-regions-types",
+      "title": "Type I and Type II Regions",
+      "category": "definition",
+      "latex": "D_I = \\{(x, y) \\mid a \\le x \\le b, \\; g_1(x) \\le y \\le g_2(x)\\}, \\quad D_{II} = \\{(x, y) \\mid c \\le y \\le d, \\; h_1(y) \\le x \\le h_2(y)\\}",
+      "statement": "A Type I region is bounded on the left and right by vertical lines x = a and x = b, and on bottom and top by continuous curves y = g_1(x) and y = g_2(x). A Type II region has horizontal bounding lines and x varying between curves of y.",
+      "conditions": [
+        "Bounding functions are continuous"
+      ],
+      "explanation": "Type I uses vertical slices (dy dx order); Type II uses horizontal slices (dx dy order).",
+      "keyTakeaway": "Choosing the correct region type simplifies integration limits and avoids intractable antiderivatives."
+    },
+    {
+      "id": "theorem-reversing-order",
+      "title": "Reversing the Order of Integration",
+      "category": "theorem",
+      "latex": "\\int_a^b \\int_{g_1(x)}^{g_2(x)} f(x, y) \\, dy \\, dx = \\int_c^d \\int_{h_1(y)}^{h_2(y)} f(x, y) \\, dx \\, dy",
+      "statement": "Reversing the order of integration transforms an iterated integral by describing the same geometric region from the complementary coordinate perspective, frequently enabling integration of non-elementary single variable forms.",
+      "conditions": [
+        "Region D can be described in both Type I and Type II formats"
+      ],
+      "explanation": "Crucial technique when the inner integrand cannot be integrated in elementary functions (such as e^(x^2) or sin(x^2)).",
+      "keyTakeaway": "Sketching the 2D domain is essential when transposing integration limits."
+    }
+  ]
+}

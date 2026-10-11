@@ -1,0 +1,34 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.1-sequences/definitions",
+  "chapter": "ch10",
+  "section": "10.1",
+  "title": "Sequences",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-sequence-convergence",
+      "title": "Convergence of an Infinite Sequence",
+      "category": "definition",
+      "latex": "\\lim_{n \\to \\infty} a_n = L \\iff \\forall \\epsilon > 0, \\; \\exists N \\text{ s.t. } n > N \\implies |a_n - L| < \\epsilon",
+      "statement": "A sequence {a_n} converges to limit L if its terms approach L arbitrarily closely as n increases without bound. If no finite limit exists, the sequence diverges.",
+      "conditions": [
+        "n is a positive integer"
+      ],
+      "explanation": "Continuous limit theorems (Squeeze Theorem, L'Hopital's Rule applied to a(x)) carry over directly to discrete sequences.",
+      "keyTakeaway": "A sequence is an ordered list of numbers whose convergence is governed by limits at infinity."
+    },
+    {
+      "id": "theorem-monotone-convergence",
+      "title": "Monotone Convergence Theorem",
+      "category": "theorem",
+      "latex": "a_n \\le a_{n+1} \\quad \\text{and} \\quad a_n \\le M \\implies \\lim_{n \\to \\infty} a_n \\text{ exists}",
+      "statement": "Every bounded, monotonic sequence of real numbers converges to a finite real limit.",
+      "conditions": [
+        "Sequence is monotonic (non-decreasing or non-increasing)",
+        "Sequence is bounded"
+      ],
+      "explanation": "Fundamental completeness property of the real numbers: bounded increasing sequences converge to their least upper bound (supremum).",
+      "keyTakeaway": "Bounded + Monotonic = Convergent."
+    }
+  ]
+}

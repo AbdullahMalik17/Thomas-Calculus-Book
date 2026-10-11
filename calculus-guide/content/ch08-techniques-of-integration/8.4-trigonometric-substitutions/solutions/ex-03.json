@@ -1,0 +1,48 @@
+{
+  "id": "ch08-techniques-of-integration/8.4-trigonometric-substitutions/solutions/ex-03",
+  "chapter": "ch08",
+  "section": "8.4",
+  "type": "solution",
+  "title": "Secant Substitution for sqrt(x^2 - a^2)",
+  "exerciseReference": "Section 8.4, Exercise 3",
+  "originalTopic": "Secant Substitution",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "secant-substitution",
+    "trig-sub",
+    "radicals"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int sqrt(x^2 - 16) / x dx for x > 4.",
+  "finalAnswer": "\\sqrt{x^2 - 16} - 4\\text{arcsec}\\left(\\frac{x}{4}\\right) + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Secant Substitution",
+      "mathExpression": "x = 4\\sec(\\theta) \\implies dx = 4\\sec(\\theta)\\tan(\\theta) d\\theta, \\quad \\sqrt{x^2 - 16} = 4\\tan(\\theta)",
+      "explanation": "Use x = a sec(theta) with a = 4.",
+      "why": "sec^2 - 1 = tan^2."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute into Integrand",
+      "mathExpression": "\\int \\frac{4\\tan(\\theta)}{4\\sec(\\theta)} (4\\sec(\\theta)\\tan(\\theta) d\\theta) = 4 \\int \\tan^2(\\theta) d\\theta = 4 \\int (\\sec^2(\\theta) - 1) d\\theta",
+      "explanation": "Simplify integrand.",
+      "why": "Convert tan^2 to sec^2 - 1."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate and Back-Substitute",
+      "mathExpression": "4(\\tan(\\theta) - \\theta) + C = 4\\left( \\frac{\\sqrt{x^2 - 16}}{4} - \\text{arcsec}(x/4) \\right) + C = \\sqrt{x^2 - 16} - 4\\text{arcsec}(x/4) + C",
+      "explanation": "tan(theta) = sqrt(x^2 - 16)/4 and theta = arcsec(x/4).",
+      "why": "Final exact result."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "sqrt(x**2 - 16)/x",
+    "expected": "sqrt(x**2 - 16) - 4*asec(x/4)",
+    "kind": "indefinite"
+  }
+}

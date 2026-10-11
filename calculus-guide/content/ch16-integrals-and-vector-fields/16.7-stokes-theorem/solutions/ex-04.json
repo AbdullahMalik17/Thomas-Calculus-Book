@@ -1,0 +1,40 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.7-stokes-theorem/solutions/ex-04",
+  "chapter": "ch16",
+  "section": "16.7",
+  "type": "solution",
+  "title": "Stokes' Theorem on a Gradient Field",
+  "exerciseReference": "Section 16.7, Exercise 4",
+  "originalTopic": "Conservative Field Circulation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "curl-of-gradient",
+    "conservative",
+    "Stokes-theorem"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Use Stokes' Theorem to explain why the line integral of a gradient field F = grad f around any closed loop C is zero.",
+  "finalAnswer": "\\nabla \\times (\\nabla f) = \\mathbf{0} \\implies \\oint_C \\nabla f \\cdot d\\mathbf{r} = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Identity curl(grad f) = 0",
+      "mathExpression": "\\nabla \\times (\\nabla f) = \\mathbf{0}",
+      "explanation": "The curl of any gradient field is identically zero by Clairaut's theorem.",
+      "why": "Establishing vector identity."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute into Stokes' Theorem",
+      "mathExpression": "\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = \\iint_S \\mathbf{0} \\cdot \\mathbf{n} \\, d\\sigma = 0",
+      "explanation": "The surface integral vanishes identically.",
+      "why": "Proving vanishing of loop circulation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

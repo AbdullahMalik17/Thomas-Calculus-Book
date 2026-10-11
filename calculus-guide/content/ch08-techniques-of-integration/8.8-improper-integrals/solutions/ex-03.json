@@ -1,0 +1,50 @@
+{
+  "id": "ch08-techniques-of-integration/8.8-improper-integrals/solutions/ex-03",
+  "chapter": "ch08",
+  "section": "8.8",
+  "type": "solution",
+  "title": "Type II Improper Integral with Vertical Asymptote",
+  "exerciseReference": "Section 8.8, Exercise 3",
+  "originalTopic": "Type II Improper Integral",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "type-II",
+    "vertical-asymptote",
+    "fractional-power"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_0^4 1 / sqrt(x) dx.",
+  "finalAnswer": "\\int_0^4 \\frac{1}{\\sqrt{x}} dx = 4",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Discontinuity at x = 0",
+      "mathExpression": "\\lim_{x \\to 0^+} \\frac{1}{\\sqrt{x}} = \\infty",
+      "explanation": "The integrand has an infinite discontinuity at the lower limit.",
+      "why": "Type II classification."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Set Up Right-Hand Limit",
+      "mathExpression": "\\lim_{c \\to 0^+} \\int_c^4 x^{-1/2} dx = \\lim_{c \\to 0^+} [2\\sqrt{x}]_c^4",
+      "explanation": "Antiderivative of x^(-1/2) is 2 x^(1/2).",
+      "why": "Limit from the right."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Limit",
+      "mathExpression": "\\lim_{c \\to 0^+} (2\\sqrt{4} - 2\\sqrt{c}) = 4 - 0 = 4",
+      "explanation": "The limit exists, so the integral converges to 4.",
+      "why": "Convergent improper integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "1/sqrt(x)",
+    "expected": "4",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "4"
+  }
+}

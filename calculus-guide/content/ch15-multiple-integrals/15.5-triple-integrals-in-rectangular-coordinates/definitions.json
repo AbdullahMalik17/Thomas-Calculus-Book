@@ -1,0 +1,33 @@
+{
+  "id": "ch15-multiple-integrals/15.5-triple-integrals-in-rectangular-coordinates/definitions",
+  "chapter": "ch15",
+  "section": "15.5",
+  "title": "Triple Integrals in Rectangular Coordinates",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-triple-integral",
+      "title": "Triple Integral in Cartesian Coordinates",
+      "category": "definition",
+      "latex": "\\iiint_D f(x, y, z) \\, dV = \\lim_{||P|| \\to 0} \\sum_{k=1}^n f(x_k^*, y_k^*, z_k^*) \\Delta V_k",
+      "statement": "The triple integral of a continuous function f over a bounded solid region D in R^3 is the limit of Riemann sums as the sub-box volume Delta V = Delta x Delta y Delta z approaches zero.",
+      "conditions": [
+        "f is continuous on closed bounded region D"
+      ],
+      "explanation": "If f(x, y, z) = 1, the integral yields the geometric volume V of D. If f is mass density delta, it gives total mass M.",
+      "keyTakeaway": "Extends accumulation and integration to three spatial dimensions."
+    },
+    {
+      "id": "theorem-fubini-triple",
+      "title": "Fubini's Theorem for Triple Integrals",
+      "category": "theorem",
+      "latex": "\\iiint_D f(x, y, z) \\, dV = \\int_a^b \\int_{g_1(x)}^{g_2(x)} \\int_{h_1(x, y)}^{h_2(x, y)} f(x, y, z) \\, dz \\, dy \\, dx",
+      "statement": "A triple integral over a region bounded between surfaces can be evaluated as an iterated integral through six possible permutations of integration order (dz dy dx, dz dx dy, dy dz dx, dy dx dz, dx dz dy, dx dy dz).",
+      "conditions": [
+        "Surfaces bounding D are continuous functions"
+      ],
+      "explanation": "Inner limits are functions of two variables, middle limits are functions of one variable, outer limits are constant.",
+      "keyTakeaway": "Permutations of integration orders allow bypassing difficult boundary projections."
+    }
+  ]
+}

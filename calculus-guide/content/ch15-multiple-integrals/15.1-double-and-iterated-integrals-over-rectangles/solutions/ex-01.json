@@ -1,0 +1,47 @@
+{
+  "id": "ch15-multiple-integrals/15.1-double-and-iterated-integrals-over-rectangles/solutions/ex-01",
+  "chapter": "ch15",
+  "section": "15.1",
+  "type": "solution",
+  "title": "Evaluating an Iterated Double Integral over a Rectangle",
+  "exerciseReference": "Section 15.1, Exercise 1",
+  "originalTopic": "Iterated Integrals",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "iterated-integral",
+    "Fubini-theorem",
+    "rectangles"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate the double integral iint_R (4 - x - y) dA over R = [0, 2] x [0, 1].",
+  "finalAnswer": "5",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up Iterated Integral with Respect to y First",
+      "mathExpression": "\\int_0^2 \\int_0^1 (4 - x - y) \\, dy \\, dx",
+      "explanation": "Integrate inner variable y from 0 to 1 holding x constant.",
+      "why": "Setting up Fubini iterated integral."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Inner Integral with Respect to y",
+      "mathExpression": "\\int_0^1 (4 - x - y) \\, dy = \\left[ 4y - xy - \\frac{y^2}{2} \\right]_0^1 = 4 - x - \\frac{1}{2} = \\frac{7}{2} - x",
+      "explanation": "Compute antiderivative with respect to y and plug in limits 0 and 1.",
+      "why": "Completing inner integration."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Outer Integral with Respect to x",
+      "mathExpression": "\\int_0^2 \\left( \\frac{7}{2} - x \\right) dx = \\left[ \\frac{7}{2}x - \\frac{x^2}{2} \\right]_0^2 = \\frac{7}{2}(2) - \\frac{4}{2} = 7 - 2 = 5",
+      "explanation": "Integrate the resulting function of x over [0, 2].",
+      "why": "Evaluating outer single integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "7*2/2 - 2**2/2",
+    "expected": "5"
+  }
+}

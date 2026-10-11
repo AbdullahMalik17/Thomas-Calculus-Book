@@ -1,0 +1,40 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.8-taylor-and-maclaurin-series/solutions/ex-02",
+  "chapter": "ch10",
+  "section": "10.8",
+  "type": "solution",
+  "title": "Maclaurin Series for Composite Exponential e^(-x^2)",
+  "exerciseReference": "Section 10.8, Exercise 2",
+  "originalTopic": "Maclaurin Series Substitution",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "maclaurin",
+    "gaussian",
+    "exponential"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the Maclaurin series for f(x) = e^(-x^2).",
+  "finalAnswer": "e^{-x^2} = \\sum_{n=0}^\\infty \\frac{(-1)^n x^{2n}}{n!} = 1 - x^2 + \\frac{x^4}{2} - \\frac{x^6}{6} + \\dots",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Substitute u = -x^2 into Exponential Series",
+      "mathExpression": "e^u = \\sum_{n=0}^\\infty \\frac{u^n}{n!} \\implies e^{-x^2} = \\sum_{n=0}^\\infty \\frac{(-x^2)^n}{n!}",
+      "explanation": "Use standard Maclaurin expansion of e^u.",
+      "why": "Series substitution."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Simplify Powers",
+      "mathExpression": "\\sum_{n=0}^\\infty \\frac{(-1)^n x^{2n}}{n!} = 1 - x^2 + \\frac{x^4}{2!} - \\frac{x^6}{3!} + \\dots",
+      "explanation": "Separate sign and power.",
+      "why": "Standard alternating series form."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1 - x**2 + x**4/2 - (1 - x**2 + x**4/2)",
+    "expected": "0"
+  }
+}

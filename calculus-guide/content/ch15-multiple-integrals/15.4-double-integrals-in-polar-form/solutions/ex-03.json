@@ -1,0 +1,47 @@
+{
+  "id": "ch15-multiple-integrals/15.4-double-integrals-in-polar-form/solutions/ex-03",
+  "chapter": "ch15",
+  "section": "15.4",
+  "type": "solution",
+  "title": "Volume Under an Inverted Paraboloid Above the xy-Plane",
+  "exerciseReference": "Section 15.4, Exercise 3",
+  "originalTopic": "Volume via Polar Coordinates",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "volume",
+    "paraboloid",
+    "polar-coordinates"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the volume of the solid under the paraboloid z = 9 - x^2 - y^2 above the xy-plane.",
+  "finalAnswer": "\\frac{81\\pi}{2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine Boundary of Base Region in xy-Plane",
+      "mathExpression": "z = 0 \\implies 9 - x^2 - y^2 = 0 \\implies x^2 + y^2 = 9 \\implies r = 3",
+      "explanation": "The base is a circle of radius 3 centered at the origin.",
+      "why": "Finding radial integration bounds."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Set Up Polar Volume Integral",
+      "mathExpression": "V = \\int_0^{2\\pi} \\int_0^3 (9 - r^2) r \\, dr \\, d\\theta = 2\\pi \\int_0^3 (9r - r^3) \\, dr",
+      "explanation": "Multiply integrand (9 - r^2) by Jacobian factor r.",
+      "why": "Formulating volume integral."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Definite Radial Integral",
+      "mathExpression": "2\\pi \\left[ \\frac{9r^2}{2} - \\frac{r^4}{4} \\right]_0^3 = 2\\pi \\left( \\frac{81}{2} - \\frac{81}{4} \\right) = 2\\pi \\left( \\frac{81}{4} \\right) = \\frac{81\\pi}{2}",
+      "explanation": "Evaluate polynomial antiderivative at r = 3.",
+      "why": "Computing total volume."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 * pi * (81 / 4)",
+    "expected": "81*pi / 2"
+  }
+}

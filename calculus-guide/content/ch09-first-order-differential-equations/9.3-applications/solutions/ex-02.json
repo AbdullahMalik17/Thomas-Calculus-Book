@@ -1,0 +1,47 @@
+{
+  "id": "ch09-first-order-differential-equations/9.3-applications/solutions/ex-02",
+  "chapter": "ch09",
+  "section": "9.3",
+  "type": "solution",
+  "title": "Orthogonal Trajectories of a Parabola Family",
+  "exerciseReference": "Section 9.3, Exercise 2",
+  "originalTopic": "Orthogonal Trajectories",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "orthogonal-trajectories",
+    "geometry",
+    "separation-of-variables"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the orthogonal trajectories of the family of parabolas y = k x^2.",
+  "finalAnswer": "x^2 + 2y^2 = C \\quad (\\text{Family of ellipses})",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Differentiate to Eliminate Parameter k",
+      "mathExpression": "y = k x^2 \\implies k = \\frac{y}{x^2} \\implies \\frac{dy}{dx} = 2kx = 2\\left(\\frac{y}{x^2}\\right)x = \\frac{2y}{x}",
+      "explanation": "Eliminate constant k.",
+      "why": "Slope of original family."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Formulate Orthogonal Slope Equation",
+      "mathExpression": "\\left(\\frac{dy}{dx}\\right)_{\\text{ortho}} = -\\frac{x}{2y}",
+      "explanation": "Take negative reciprocal.",
+      "why": "Orthogonality condition."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Separate Variables and Integrate",
+      "mathExpression": "2y \\, dy = -x \\, dx \\implies y^2 = -\\frac{x^2}{2} + C' \\implies \\frac{x^2}{2} + y^2 = C' \\implies x^2 + 2y^2 = C",
+      "explanation": "Integrate to obtain family of ellipses.",
+      "why": "Final orthogonal trajectories."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2*y*(-x/(2*y)) + x",
+    "expected": "0"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.4-comparison-tests/solutions/ex-03",
+  "chapter": "ch10",
+  "section": "10.4",
+  "type": "solution",
+  "title": "Divergence via Limit Comparison with Harmonic Series",
+  "exerciseReference": "Section 10.4, Exercise 3",
+  "originalTopic": "LCT with Harmonic Series",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "LCT",
+    "harmonic-series",
+    "divergence"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Test sum_{n=1}^oo 1 / sqrt(n^2 + 5) for convergence.",
+  "finalAnswer": "\\sum_{n=1}^\\infty \\frac{1}{\\sqrt{n^2 + 5}} \\quad \\text{Diverges by the Limit Comparison Test}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Choose Benchmark b_n = 1/n",
+      "mathExpression": "a_n \\approx \\frac{1}{\\sqrt{n^2}} = \\frac{1}{n} = b_n",
+      "explanation": "Leading order is 1/n.",
+      "why": "Harmonic comparison."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Limit of Ratio",
+      "mathExpression": "\\lim_{n \\to \\infty} \\frac{a_n}{b_n} = \\lim_{n \\to \\infty} \\frac{n}{\\sqrt{n^2 + 5}} = \\lim_{n \\to \\infty} \\frac{1}{\\sqrt{1 + 5/n^2}} = 1",
+      "explanation": "L = 1 is finite and positive.",
+      "why": "LCT test ratio."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude Divergence",
+      "mathExpression": "\\text{Since } \\sum \\frac{1}{n} \\text{ diverges, } \\sum a_n \\text{ diverges}",
+      "explanation": "Shares fate with Harmonic series.",
+      "why": "Divergence proven."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1 - 1",
+    "expected": "0"
+  }
+}

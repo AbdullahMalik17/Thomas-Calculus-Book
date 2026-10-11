@@ -1,0 +1,40 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.5-tangential-and-normal-components-of-acceleration/solutions/ex-02",
+  "chapter": "ch13",
+  "section": "13.5",
+  "type": "solution",
+  "title": "Acceleration in Uniform Circular Motion",
+  "exerciseReference": "Section 13.5, Exercise 2",
+  "originalTopic": "Uniform Circular Motion",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "uniform-circular-motion",
+    "centripetal-acceleration",
+    "constant-speed"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For r(t) = <4 cos(2t), 4 sin(2t)>, show that a_T = 0 and find a_N.",
+  "finalAnswer": "a_T = 0, \\quad a_N = 16",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Speed and Tangential Acceleration",
+      "mathExpression": "\\mathbf{v}(t) = \\langle -8\\sin(2t), 8\\cos(2t) \\rangle \\implies |\\mathbf{v}(t)| = 8 \\implies a_T = \\frac{d}{dt}(8) = 0",
+      "explanation": "Since speed is constant at 8, the tangential component of acceleration vanishes identically.",
+      "why": "Confirming vanishing of tangential acceleration."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Acceleration Vector and Normal Component",
+      "mathExpression": "\\mathbf{a}(t) = \\langle -16\\cos(2t), -16\\sin(2t) \\rangle \\implies |\\mathbf{a}(t)| = 16 \\implies a_N = 16",
+      "explanation": "Because a_T = 0, the entire acceleration is normal (centripetal): a_N = |a| = 16.",
+      "why": "Evaluating centripetal acceleration."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt((-16*cos(2*t))**2 + (-16*sin(2*t))**2)",
+    "expected": "16"
+  }
+}

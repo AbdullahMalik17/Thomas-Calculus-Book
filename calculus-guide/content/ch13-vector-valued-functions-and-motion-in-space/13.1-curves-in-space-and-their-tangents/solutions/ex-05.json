@@ -1,0 +1,40 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.1-curves-in-space-and-their-tangents/solutions/ex-05",
+  "chapter": "ch13",
+  "section": "13.1",
+  "type": "solution",
+  "title": "Limit of a Vector-Valued Function",
+  "exerciseReference": "Section 13.1, Exercise 5",
+  "originalTopic": "Limits of Vector Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "limits",
+    "vector-functions",
+    "trig-limits"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate lim_{t -> 0} <sin(3t)/t, (exp(2t) - 1)/t, cos(t)>.",
+  "finalAnswer": "\\langle 3, 2, 1 \\rangle",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate Each Component Limit",
+      "mathExpression": "\\lim_{t \\to 0} \\frac{\\sin(3t)}{t} = 3, \\quad \\lim_{t \\to 0} \\frac{e^{2t}-1}{t} = 2, \\quad \\lim_{t \\to 0} \\cos(t) = 1",
+      "explanation": "Apply standard calculus limits to each independent component.",
+      "why": "Evaluating limits component-wise."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Assemble Limiting Vector",
+      "mathExpression": "\\lim_{t \\to 0} \\mathbf{r}(t) = \\langle 3, 2, 1 \\rangle",
+      "explanation": "The limit of the vector function is the vector of limits.",
+      "why": "Constructing final limiting vector."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "3 + 2 + 1",
+    "expected": "6"
+  }
+}

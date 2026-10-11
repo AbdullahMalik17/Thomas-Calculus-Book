@@ -1,0 +1,47 @@
+{
+  "id": "ch14-partial-derivatives/14.7-extreme-values-and-saddle-points/solutions/ex-05",
+  "chapter": "ch14",
+  "section": "14.7",
+  "type": "solution",
+  "title": "Minimizing the Surface Area of an Open Rectangular Box",
+  "exerciseReference": "Section 14.7, Exercise 5",
+  "originalTopic": "Applied Multivariable Optimization",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "optimization",
+    "box",
+    "surface-area"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "An open-top rectangular box has fixed volume V = 32000 cm^3. Find the dimensions x, y, z that minimize the total surface area, and compute that minimum area.",
+  "finalAnswer": "x = 40 \\text{ cm}, \\; y = 40 \\text{ cm}, \\; z = 20 \\text{ cm}; \\quad \\text{Min Area} = 4800 \\text{ cm}^2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate Two-Variable Objective Function",
+      "mathExpression": "V = xyz = 32000 \\implies z = \\frac{32000}{xy}; \\quad S(x, y) = xy + 2xz + 2yz = xy + \\frac{64000}{y} + \\frac{64000}{x}",
+      "explanation": "Substitute z from volume constraint into surface area formula.",
+      "why": "Formulating objective function."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find Critical Dimensions",
+      "mathExpression": "S_x = y - \\frac{64000}{x^2} = 0, \\; S_y = x - \\frac{64000}{y^2} = 0 \\implies x^2 y = y^2 x \\implies x = y; \\quad x^3 = 64000 \\implies x = y = 40",
+      "explanation": "Set partial derivatives to zero and solve.",
+      "why": "Finding optimal base dimensions."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Height and Minimum Surface Area",
+      "mathExpression": "z = \\frac{32000}{40 \\times 40} = 20; \\quad S = (40)(40) + 2(40)(20) + 2(40)(20) = 1600 + 1600 + 1600 = 4800 \\text{ cm}^2",
+      "explanation": "Substitute optimal dimensions to find minimum area.",
+      "why": "Evaluating minimum material requirement."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "40*40 + 64000/40 + 64000/40",
+    "expected": "4800"
+  }
+}

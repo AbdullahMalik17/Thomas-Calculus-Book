@@ -1,0 +1,33 @@
+{
+  "id": "ch14-partial-derivatives/14.9-taylors-formula-for-two-variables/definitions",
+  "chapter": "ch14",
+  "section": "14.9",
+  "title": "Taylor's Formula for Two Variables",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-taylor-formula-2d",
+      "title": "Taylor's Formula for Two Variables",
+      "category": "theorem",
+      "latex": "f(a+h, b+k) = f(a, b) + (h f_x + k f_y) + \\frac{1}{2!}(h^2 f_{xx} + 2hk f_{xy} + k^2 f_{yy}) + \\cdots",
+      "statement": "If f and its partial derivatives through order n+1 are continuous on an open disk centered at (a, b), then f can be approximated near (a, b) by its n-th degree Taylor polynomial with remainder term.",
+      "conditions": [
+        "f has continuous partial derivatives through order n+1"
+      ],
+      "explanation": "Derived by restricting f to the line segment connecting (a, b) to (a+h, b+k) and applying single-variable Taylor's theorem.",
+      "keyTakeaway": "Enables quadratic and higher-order polynomial approximations of multivariable surfaces."
+    },
+    {
+      "id": "def-quadratic-taylor-polynomial",
+      "title": "Quadratic (Second-Order) Taylor Polynomial",
+      "category": "formula",
+      "latex": "Q(x, y) = f(0, 0) + f_x x + f_y y + \\frac{1}{2} f_{xx} x^2 + f_{xy} xy + \\frac{1}{2} f_{yy} y^2",
+      "statement": "The quadratic Taylor polynomial Q(x, y) of f about (0, 0) matches the value, gradient, and Hessian matrix of f at the origin.",
+      "conditions": [
+        "Continuous second partial derivatives"
+      ],
+      "explanation": "The quadratic terms (1/2)(h^2 f_{xx} + 2hk f_{xy} + k^2 f_{yy}) govern surface curvature and justify the Second Derivative Test.",
+      "keyTakeaway": "The Hessian quadratic form dictates local surface concavity and extrema."
+    }
+  ]
+}

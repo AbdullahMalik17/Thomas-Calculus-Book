@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.7-power-series/solutions/ex-03",
+  "chapter": "ch10",
+  "section": "10.7",
+  "type": "solution",
+  "title": "Generating Power Series by Algebraic Substitution",
+  "exerciseReference": "Section 10.7, Exercise 3",
+  "originalTopic": "Geometric Power Series Substitution",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "geometric-series",
+    "power-series",
+    "substitution"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find a power series representation for f(x) = 1 / (1 + x^2) and find its radius of convergence.",
+  "finalAnswer": "f(x) = \\sum_{n=0}^\\infty (-1)^n x^{2n}, \\quad R = 1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Substitute into Standard Geometric Series",
+      "mathExpression": "\\frac{1}{1 - u} = \\sum_{n=0}^\\infty u^n \\quad \\text{with } u = -x^2",
+      "explanation": "Replace u with -x^2.",
+      "why": "Geometric series template."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Write Resulting Power Series",
+      "mathExpression": "\\frac{1}{1 - (-x^2)} = \\sum_{n=0}^\\infty (-x^2)^n = \\sum_{n=0}^\\infty (-1)^n x^{2n} = 1 - x^2 + x^4 - x^6 + \\dots",
+      "explanation": "Expand in alternating powers.",
+      "why": "Power series form."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Determine Convergence Domain",
+      "mathExpression": "|-x^2| < 1 \\implies |x|^2 < 1 \\implies |x| < 1 \\implies R = 1",
+      "explanation": "Radius of convergence is 1.",
+      "why": "Geometric domain constraint."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1 - x**2 + x**4 - (1 - x**2 + x**4)",
+    "expected": "0"
+  }
+}

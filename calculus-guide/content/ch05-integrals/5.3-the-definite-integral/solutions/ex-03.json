@@ -1,0 +1,50 @@
+{
+  "id": "ch05-integrals/5.3-the-definite-integral/solutions/ex-03",
+  "chapter": "ch05",
+  "section": "5.3",
+  "type": "solution",
+  "title": "Average Value of a Quadratic Function",
+  "exerciseReference": "Section 5.3, Exercise 3",
+  "originalTopic": "Average Value Formula",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "average-value",
+    "quadratic",
+    "mean-value"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the average value of f(x) = 3x^2 - 4x + 1 on the interval [0, 2].",
+  "finalAnswer": "f_{\\text{avg}} = 1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "State Average Value Definition",
+      "mathExpression": "f_{\\text{avg}} = \\frac{1}{b - a} \\int_a^b f(x) dx = \\frac{1}{2 - 0} \\int_0^2 (3x^2 - 4x + 1) dx",
+      "explanation": "Divide the definite integral by interval length 2.",
+      "why": "Mean value definition for continuous functions."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Definite Integral",
+      "mathExpression": "\\int_0^2 (3x^2 - 4x + 1) dx = \\left[ x^3 - 2x^2 + x \\right]_0^2 = 8 - 2(4) + 2 - 0 = 2",
+      "explanation": "Find antiderivative and evaluate at endpoints.",
+      "why": "Fundamental Theorem of Calculus."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Calculate Average",
+      "mathExpression": "f_{\\text{avg}} = \\frac{1}{2} \\cdot 2 = 1",
+      "explanation": "Multiply integral by 1/2.",
+      "why": "Completing average value calculation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "3*x**2 - 4*x + 1",
+    "expected": "2",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "2"
+  }
+}

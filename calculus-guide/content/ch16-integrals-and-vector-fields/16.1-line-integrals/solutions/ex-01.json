@@ -1,0 +1,40 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.1-line-integrals/solutions/ex-01",
+  "chapter": "ch16",
+  "section": "16.1",
+  "type": "solution",
+  "title": "Line Integral over a Semicircular Path",
+  "exerciseReference": "Section 16.1, Exercise 1",
+  "originalTopic": "Scalar Line Integral",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "line-integral",
+    "arc-length",
+    "semicircle"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_C (x + y) ds where C is the upper semicircle x = cos(t), y = sin(t) for 0 <= t <= pi.",
+  "finalAnswer": "2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Arc Length Differential ds",
+      "mathExpression": "x'(t) = -\\sin t, \\quad y'(t) = \\cos t \\implies ds = \\sqrt{(-\\sin t)^2 + (\\cos t)^2} \\, dt = 1 \\, dt",
+      "explanation": "Compute the speed along the unit circle.",
+      "why": "Finding the arc length differential."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute Parametrization into Integrand",
+      "mathExpression": "\\int_0^\\pi (\\cos t + \\sin t)(1 \\, dt) = [\\sin t - \\cos t]_0^\\pi = (\\sin\\pi - \\cos\\pi) - (\\sin 0 - \\cos 0) = (0 - (-1)) - (0 - 1) = 2",
+      "explanation": "Evaluate trigonometric antiderivative at pi and 0.",
+      "why": "Evaluating the definite integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(0 - (-1)) - (0 - 1)",
+    "expected": "2"
+  }
+}

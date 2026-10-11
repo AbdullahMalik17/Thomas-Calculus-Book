@@ -1,0 +1,47 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.6-velocity-and-acceleration-in-polar-coordinates/solutions/ex-01",
+  "chapter": "ch13",
+  "section": "13.6",
+  "type": "solution",
+  "title": "Polar Velocity on an Archimedean Spiral",
+  "exerciseReference": "Section 13.6, Exercise 1",
+  "originalTopic": "Polar Velocity",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "polar-coordinates",
+    "spiral",
+    "velocity"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A particle moves along the spiral r = 2*theta with constant angular speed d(theta)/dt = 3 rad/s. Find its velocity vector in polar coordinates at theta = pi/2.",
+  "finalAnswer": "\\mathbf{v} = 6\\mathbf{u}_r + 3\\pi\\mathbf{u}_\\theta, \\quad |\\mathbf{v}| = 3\\sqrt{4 + \\pi^2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Radial Derivative dr/dt",
+      "mathExpression": "\\dot{r} = \\frac{dr}{d\\theta} \\dot{\\theta} = 2(3) = 6",
+      "explanation": "Apply chain rule dr/dt = (dr/dtheta) (dtheta/dt).",
+      "why": "Finding radial velocity component."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Transverse Velocity Component",
+      "mathExpression": "v_\\theta = r \\dot{\\theta} = (2 \\cdot \\pi/2)(3) = 3\\pi",
+      "explanation": "Multiply radius r = pi at theta = pi/2 by angular speed 3.",
+      "why": "Finding transverse velocity component."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Assemble Velocity and Compute Magnitude",
+      "mathExpression": "\\mathbf{v} = 6\\mathbf{u}_r + 3\\pi\\mathbf{u}_\\theta \\implies |\\mathbf{v}| = \\sqrt{6^2 + (3\\pi)^2} = \\sqrt{36 + 9\\pi^2} = 3\\sqrt{4 + \\pi^2}",
+      "explanation": "Radial and transverse components are mutually orthogonal.",
+      "why": "Evaluating speed in polar coordinates."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(6**2 + (3*pi)**2)",
+    "expected": "3*sqrt(4 + pi**2)"
+  }
+}

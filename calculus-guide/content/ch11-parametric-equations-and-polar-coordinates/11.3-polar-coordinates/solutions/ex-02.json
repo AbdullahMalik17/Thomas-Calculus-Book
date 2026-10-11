@@ -1,0 +1,47 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.3-polar-coordinates/solutions/ex-02",
+  "chapter": "ch11",
+  "section": "11.3",
+  "type": "solution",
+  "title": "Converting a Cartesian Equation to Polar Form",
+  "exerciseReference": "Section 11.3, Exercise 2",
+  "originalTopic": "Cartesian to Polar Curve",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "polar-form",
+    "circle",
+    "conversion"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Convert the circle x^2 + (y - 3)^2 = 9 to polar coordinates.",
+  "finalAnswer": "r = 6\\sin(\\theta)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Expand Cartesian Equation",
+      "mathExpression": "x^2 + y^2 - 6y + 9 = 9 \\implies x^2 + y^2 - 6y = 0",
+      "explanation": "Expand binomial and cancel 9.",
+      "why": "Algebraic expansion."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute Polar Identities",
+      "mathExpression": "r^2 - 6r\\sin(\\theta) = 0 \\implies r(r - 6\\sin(\\theta)) = 0",
+      "explanation": "Replace x^2 + y^2 with r^2 and y with r sin(theta).",
+      "why": "Polar conversion."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Isolate Non-Trivial Equation",
+      "mathExpression": "r = 6\\sin(\\theta)",
+      "explanation": "Circle of diameter 6 centered at (0, 3).",
+      "why": "Standard polar circle formula."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "r**2 - 6*r*sin(theta) - (r**2 - 6*r*sin(theta))",
+    "expected": "0"
+  }
+}

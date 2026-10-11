@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.1-sequences/solutions/ex-02",
+  "chapter": "ch10",
+  "section": "10.1",
+  "type": "solution",
+  "title": "Applying the Squeeze Theorem to an Oscillating Sequence",
+  "exerciseReference": "Section 10.1, Exercise 2",
+  "originalTopic": "Squeeze Theorem for Sequences",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "squeeze-theorem",
+    "oscillating-sequence",
+    "sine"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the limit of a_n = sin(n) / n as n -> oo.",
+  "finalAnswer": "\\lim_{n \\to \\infty} \\frac{\\sin(n)}{n} = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Establish Bounding Inequalities",
+      "mathExpression": "-1 \\le \\sin(n) \\le 1 \\implies -\\frac{1}{n} \\le \\frac{\\sin(n)}{n} \\le \\frac{1}{n} \\quad \\forall n \\ge 1",
+      "explanation": "Divide the standard sine bound by positive integer n.",
+      "why": "Bounding the oscillating term."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Bounding Limits",
+      "mathExpression": "\\lim_{n \\to \\infty} \\left(-\\frac{1}{n}\\right) = 0 \\quad \\text{and} \\quad \\lim_{n \\to \\infty} \\frac{1}{n} = 0",
+      "explanation": "Both outer bounds converge to 0.",
+      "why": "Squeeze theorem condition."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude by Squeeze Theorem",
+      "mathExpression": "\\lim_{n \\to \\infty} \\frac{\\sin(n)}{n} = 0",
+      "explanation": "The intermediate sequence is forced to 0.",
+      "why": "Squeeze Theorem."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

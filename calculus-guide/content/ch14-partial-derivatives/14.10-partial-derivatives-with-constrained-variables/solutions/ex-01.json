@@ -1,0 +1,41 @@
+{
+  "id": "ch14-partial-derivatives/14.10-partial-derivatives-with-constrained-variables/solutions/ex-01",
+  "chapter": "ch14",
+  "section": "14.10",
+  "type": "solution",
+  "title": "Constrained Partial Derivative Holding y Constant",
+  "exerciseReference": "Section 14.10, Exercise 1",
+  "originalTopic": "Constrained Partials",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "constrained-variables",
+    "thermodynamic-notation",
+    "substitution"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For w = x^2 + y^2 + z^2 subject to constraint z = x + y, find (dw/dx)_y.",
+  "finalAnswer": "\\left(\\frac{\\partial w}{\\partial x}\\right)_y = 4x + 2y",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Eliminate Dependent Variable z",
+      "mathExpression": "w = x^2 + y^2 + (x + y)^2 = x^2 + y^2 + x^2 + 2xy + y^2 = 2x^2 + 2xy + 2y^2",
+      "explanation": "Substitute z = x + y into w to express w solely in terms of independent variables x and y.",
+      "why": "Selecting (x, y) as independent coordinate basis."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate with Respect to x Holding y Constant",
+      "mathExpression": "\\left(\\frac{\\partial w}{\\partial x}\\right)_y = \\frac{\\partial}{\\partial x}(2x^2 + 2xy + 2y^2) = 4x + 2y",
+      "explanation": "Compute partial derivative treating y as constant.",
+      "why": "Evaluating constrained rate."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "2*x**2 + 2*x*y + 2*y**2",
+    "expected": "4*x + 2*y",
+    "variable": "x"
+  }
+}

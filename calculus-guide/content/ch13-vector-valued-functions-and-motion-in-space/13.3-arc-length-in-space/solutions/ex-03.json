@@ -1,0 +1,47 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.3-arc-length-in-space/solutions/ex-03",
+  "chapter": "ch13",
+  "section": "13.3",
+  "type": "solution",
+  "title": "Reparametrizing a Curve by Arc Length",
+  "exerciseReference": "Section 13.3, Exercise 3",
+  "originalTopic": "Natural Parametrization",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "arc-length-parameter",
+    "unit-speed",
+    "helix"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Reparametrize the circular helix r(t) = <cos(t), sin(t), t> with respect to arc length s measured from t = 0.",
+  "finalAnswer": "\\mathbf{r}(s) = \\left\\langle \\cos\\left(\\frac{s}{\\sqrt{2}}\\right), \\sin\\left(\\frac{s}{\\sqrt{2}}\\right), \\frac{s}{\\sqrt{2}} \\right\\rangle",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Calculate Arc Length Parameter Function s(t)",
+      "mathExpression": "|\\mathbf{v}(t)| = \\sqrt{(-\\sin t)^2 + (\\cos t)^2 + 1} = \\sqrt{2}; \\quad s(t) = \\int_0^t \\sqrt{2} \\, d\\tau = \\sqrt{2}t",
+      "explanation": "Integrate constant speed sqrt(2) from 0 to t.",
+      "why": "Expressing s as function of t."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Invert for Parameter t in Terms of s",
+      "mathExpression": "s = \\sqrt{2}t \\implies t = \\frac{s}{\\sqrt{2}}",
+      "explanation": "Solve for t as a function of arc length s.",
+      "why": "Inverting parameter mapping."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Substitute into Position Vector",
+      "mathExpression": "\\mathbf{r}(s) = \\left\\langle \\cos\\left(\\frac{s}{\\sqrt{2}}\\right), \\sin\\left(\\frac{s}{\\sqrt{2}}\\right), \\frac{s}{\\sqrt{2}} \\right\\rangle",
+      "explanation": "Replace every occurrence of t with s/sqrt(2).",
+      "why": "Obtaining unit speed parametrization."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(-sin(s/sqrt(2))/sqrt(2))**2 + (cos(s/sqrt(2))/sqrt(2))**2 + (1/sqrt(2))**2",
+    "expected": "1"
+  }
+}

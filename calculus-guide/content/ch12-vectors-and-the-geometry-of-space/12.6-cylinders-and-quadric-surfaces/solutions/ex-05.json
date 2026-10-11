@@ -1,0 +1,47 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.6-cylinders-and-quadric-surfaces/solutions/ex-05",
+  "chapter": "ch12",
+  "section": "12.6",
+  "type": "solution",
+  "title": "Saddle Point Properties of a Hyperbolic Paraboloid",
+  "exerciseReference": "Section 12.6, Exercise 5",
+  "originalTopic": "Hyperbolic Paraboloid",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "hyperbolic-paraboloid",
+    "saddle-point",
+    "partial-derivatives"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For the hyperbolic paraboloid z = y^2 - x^2, verify that the origin (0, 0, 0) is a critical saddle point by examining partial derivatives.",
+  "finalAnswer": "\\nabla z(0, 0) = \\mathbf{0}; \\quad \\text{Parabolas open upward in } y \\text{ and downward in } x",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute First Partial Derivatives",
+      "mathExpression": "\\frac{\\partial z}{\\partial x} = -2x, \\quad \\frac{\\partial z}{\\partial y} = 2y",
+      "explanation": "Differentiate z with respect to x and y independently.",
+      "why": "Finding gradient components."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate at the Origin",
+      "mathExpression": "\\left.\\frac{\\partial z}{\\partial x}\\right|_{(0,0)} = 0, \\quad \\left.\\frac{\\partial z}{\\partial y}\\right|_{(0,0)} = 0 \\implies \\nabla z(0,0) = \\langle 0, 0 \\rangle",
+      "explanation": "Both partial derivatives vanish at (0, 0), confirming a critical point.",
+      "why": "Confirming stationary point."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Analyze Curvatures Along Coordinate Axes",
+      "mathExpression": "x = 0 \\implies z = y^2 \\; (\\text{min at } 0); \\quad y = 0 \\implies z = -x^2 \\; (\\text{max at } 0)",
+      "explanation": "The surface curves upward along the y-axis and downward along the x-axis, creating a classic saddle.",
+      "why": "Demonstrating opposite directional concavities."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(-2*0) + (2*0)",
+    "expected": "0"
+  }
+}

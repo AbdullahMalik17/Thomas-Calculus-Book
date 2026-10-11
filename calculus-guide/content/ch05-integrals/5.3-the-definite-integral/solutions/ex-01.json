@@ -1,0 +1,50 @@
+{
+  "id": "ch05-integrals/5.3-the-definite-integral/solutions/ex-01",
+  "chapter": "ch05",
+  "section": "5.3",
+  "type": "solution",
+  "title": "Geometric Area Evaluation for a Piecewise Linear Integral",
+  "exerciseReference": "Section 5.3, Exercise 1",
+  "originalTopic": "Geometric Interpretation of Integrals",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "definite-integral",
+    "geometry",
+    "signed-area"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_{-2}^3 (2x + 4) dx by interpreting the integral as net signed area of geometric regions.",
+  "finalAnswer": "\\int_{-2}^3 (2x + 4) dx = 25",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine the Sign of the Integrand",
+      "mathExpression": "2x + 4 = 0 \\implies x = -2",
+      "explanation": "Over [-2, 3], f(x) >= 0 everywhere, so the integral represents a single right trapezoid.",
+      "why": "Net area equals geometric area when f(x) is non-negative."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Calculate Geometric Heights and Base",
+      "mathExpression": "f(-2) = 0, \\quad f(3) = 2(3) + 4 = 10, \\quad \\text{Base } = 3 - (-2) = 5",
+      "explanation": "The region is a right triangle with base 5 and height 10.",
+      "why": "Area formula for a triangle."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Area",
+      "mathExpression": "\\text{Area} = \\frac{1}{2} \\cdot \\text{Base} \\cdot \\text{Height} = \\frac{1}{2} \\cdot 5 \\cdot 10 = 25",
+      "explanation": "Direct geometric computation.",
+      "why": "Equivalence of definite integral and planar area."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "2*x + 4",
+    "expected": "25",
+    "kind": "definite",
+    "lower": "-2",
+    "upper": "3"
+  }
+}

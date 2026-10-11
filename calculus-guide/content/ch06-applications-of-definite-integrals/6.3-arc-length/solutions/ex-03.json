@@ -1,0 +1,50 @@
+{
+  "id": "ch06-applications-of-definite-integrals/6.3-arc-length/solutions/ex-03",
+  "chapter": "ch06",
+  "section": "6.3",
+  "type": "solution",
+  "title": "Arc Length with Respect to y",
+  "exerciseReference": "Section 6.3, Exercise 3",
+  "originalTopic": "Integration along y-Axis",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "arc-length-dy",
+    "y-variable",
+    "perfect-square"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the length of x = (y^4)/4 + 1/(8y^2) from y = 1 to y = 2.",
+  "finalAnswer": "L = \\frac{123}{32}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute dx/dy",
+      "mathExpression": "\\frac{dx}{dy} = y^3 - \\frac{1}{4y^3}",
+      "explanation": "Differentiate x with respect to y.",
+      "why": "Finding derivative for dy arc length."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Form Perfect Square",
+      "mathExpression": "1 + \\left(\\frac{dx}{dy}\\right)^2 = 1 + \\left(y^6 - \\frac{1}{2} + \\frac{1}{16y^6}\\right) = y^6 + \\frac{1}{2} + \\frac{1}{16y^6} = \\left(y^3 + \\frac{1}{4y^3}\\right)^2",
+      "explanation": "Middle term becomes positive 1/2 upon adding 1.",
+      "why": "Radical simplification."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate over [1, 2]",
+      "mathExpression": "L = \\int_1^2 \\left(y^3 + \\frac{1}{4}y^{-3}\\right) dy = \\left[ \\frac{y^4}{4} - \\frac{1}{8y^2} \\right]_1^2 = \\left( 4 - \\frac{1}{32} \\right) - \\left( \\frac{1}{4} - \\frac{1}{8} \\right) = \\frac{127}{32} - \\frac{4}{32} = \\frac{123}{32}",
+      "explanation": "Compute antiderivative at boundaries.",
+      "why": "Final exact value."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "x**3 + 1/(4*x**3)",
+    "expected": "123/32",
+    "kind": "definite",
+    "lower": "1",
+    "upper": "2"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.5-areas-and-lengths-in-polar-coordinates/solutions/ex-01",
+  "chapter": "ch11",
+  "section": "11.5",
+  "type": "solution",
+  "title": "Area Enclosed by a Cardioid",
+  "exerciseReference": "Section 11.5, Exercise 1",
+  "originalTopic": "Cardioid Area Integration",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "polar-area",
+    "cardioid",
+    "half-angle"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the total area enclosed by the cardioid r = 2(1 + cos theta).",
+  "finalAnswer": "\\text{Area} = 6\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up Polar Area Integral",
+      "mathExpression": "A = \\frac{1}{2} \\int_0^{2\\pi} r^2 d\\theta = \\frac{1}{2} \\int_0^{2\\pi} 4(1 + \\cos\\theta)^2 d\\theta = 2 \\int_0^{2\\pi} (1 + 2\\cos\\theta + \\cos^2\\theta) d\\theta",
+      "explanation": "Integrate (1/2) r^2 around full cycle [0, 2pi].",
+      "why": "Polar area formula."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Expand Using Half-Angle Identity",
+      "mathExpression": "\\cos^2\\theta = \\frac{1 + \\cos(2\\theta)}{2} \\implies 1 + 2\\cos\\theta + \\cos^2\\theta = \\frac{3}{2} + 2\\cos\\theta + \\frac{1}{2}\\cos(2\\theta)",
+      "explanation": "Rewrite cos^2 term.",
+      "why": "Prepares for integration."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate Over Full Period [0, 2pi]",
+      "mathExpression": "2 \\int_0^{2\\pi} \\left( \\frac{3}{2} + 2\\cos\\theta + \\frac{1}{2}\\cos(2\\theta) \\right) d\\theta = 2 \\left( \\frac{3}{2} \\times 2\\pi + 0 + 0 \\right) = 6\\pi",
+      "explanation": "Oscillating cosine terms integrate to 0.",
+      "why": "Final exact area."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "2*(1 + cos(x))**2",
+    "expected": "6*pi",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "2*pi"
+  }
+}

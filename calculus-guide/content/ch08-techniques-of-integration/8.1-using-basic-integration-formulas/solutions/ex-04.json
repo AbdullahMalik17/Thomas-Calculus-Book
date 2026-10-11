@@ -1,0 +1,48 @@
+{
+  "id": "ch08-techniques-of-integration/8.1-using-basic-integration-formulas/solutions/ex-04",
+  "chapter": "ch08",
+  "section": "8.1",
+  "type": "solution",
+  "title": "Multiplying by Conjugate to Eliminate Radical Denominator",
+  "exerciseReference": "Section 8.1, Exercise 4",
+  "originalTopic": "Conjugate Multiplication",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "conjugate",
+    "rationalization",
+    "radicals"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int 1 / (1 + cos(x)) dx.",
+  "finalAnswer": "\\tan\\left(\\frac{x}{2}\\right) + C = \\csc(x) - \\cot(x) + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Multiply Numerator and Denominator by Conjugate",
+      "mathExpression": "\\frac{1}{1 + \\cos(x)} \\cdot \\frac{1 - \\cos(x)}{1 - \\cos(x)} = \\frac{1 - \\cos(x)}{1 - \\cos^2(x)} = \\frac{1 - \\cos(x)}{\\sin^2(x)}",
+      "explanation": "Pythagorean identity 1 - cos^2(x) = sin^2(x).",
+      "why": "Conjugate multiplication simplifies single trigonometric term."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Split into Elementary Trigonometric Functions",
+      "mathExpression": "\\frac{1}{\\sin^2(x)} - \\frac{\\cos(x)}{\\sin^2(x)} = \\csc^2(x) - \\cot(x)\\csc(x)",
+      "explanation": "Express in terms of cosecant and cotangent.",
+      "why": "Recognizing standard derivative formulas."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate Term by Term",
+      "mathExpression": "\\int (\\csc^2(x) - \\csc(x)\\cot(x)) dx = -\\cot(x) - (-\\csc(x)) + C = \\csc(x) - \\cot(x) + C = \\tan(x/2) + C",
+      "explanation": "Direct antiderivative evaluation.",
+      "why": "Final exact result."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "1/(1 + cos(x))",
+    "expected": "tan(x/2)",
+    "kind": "indefinite"
+  }
+}

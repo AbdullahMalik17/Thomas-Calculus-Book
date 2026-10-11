@@ -1,0 +1,47 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.2-integrals-of-vector-functions-projectile-motion/solutions/ex-05",
+  "chapter": "ch13",
+  "section": "13.2",
+  "type": "solution",
+  "title": "Three-Dimensional Particle Trajectory and Landing Location",
+  "exerciseReference": "Section 13.2, Exercise 5",
+  "originalTopic": "3D Motion Under Gravity and Wind",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "3D-motion",
+    "gravity",
+    "crosswind"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A particle experiences acceleration a(t) = <2, 0, -32> with initial velocity v(0) = <0, 10, 64> and initial position r(0) = <0, 0, 0>. Find the landing location when the particle returns to z = 0.",
+  "finalAnswer": "(16, 40, 0)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Integrate for Velocity Vector",
+      "mathExpression": "\\mathbf{v}(t) = \\langle 2t, 10, 64 - 32t \\rangle",
+      "explanation": "Integrate acceleration components and apply initial velocity v(0) = <0, 10, 64>.",
+      "why": "Determining 3D velocity vector."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate for Position Vector",
+      "mathExpression": "\\mathbf{r}(t) = \\langle t^2, 10t, 64t - 16t^2 \\rangle",
+      "explanation": "Integrate velocity components with initial condition r(0) = 0.",
+      "why": "Finding 3D trajectory."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Solve for Landing Time and Position",
+      "mathExpression": "z(t) = 64t - 16t^2 = 16t(4 - t) = 0 \\implies t = 4; \\quad \\mathbf{r}(4) = \\langle 4^2, 10(4), 0 \\rangle = \\langle 16, 40, 0 \\rangle",
+      "explanation": "Find positive root of z(t) = 0 and evaluate x(4) and y(4).",
+      "why": "Locating landing coordinates."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "64*4 - 16*4**2",
+    "expected": "0"
+  }
+}

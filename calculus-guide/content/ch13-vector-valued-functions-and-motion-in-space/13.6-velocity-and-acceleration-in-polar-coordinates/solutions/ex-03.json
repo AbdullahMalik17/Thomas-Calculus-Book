@@ -1,0 +1,40 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.6-velocity-and-acceleration-in-polar-coordinates/solutions/ex-03",
+  "chapter": "ch13",
+  "section": "13.6",
+  "type": "solution",
+  "title": "Orthogonality of Polar Basis Vectors",
+  "exerciseReference": "Section 13.6, Exercise 3",
+  "originalTopic": "Polar Unit Vectors",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "polar-basis",
+    "orthogonality",
+    "unit-vectors"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Verify that the polar unit vectors u_r and u_theta are orthogonal for any angle theta.",
+  "finalAnswer": "\\mathbf{u}_r \\cdot \\mathbf{u}_\\theta = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Write Expressions in Cartesian Basis",
+      "mathExpression": "\\mathbf{u}_r = \\cos\\theta\\mathbf{i} + \\sin\\theta\\mathbf{j}, \\quad \\mathbf{u}_\\theta = -\\sin\\theta\\mathbf{i} + \\cos\\theta\\mathbf{j}",
+      "explanation": "Express the polar basis vectors in terms of standard unit vectors i and j.",
+      "why": "Setting up Cartesian dot product."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Calculate Dot Product",
+      "mathExpression": "\\mathbf{u}_r \\cdot \\mathbf{u}_\\theta = (\\cos\\theta)(-\\sin\\theta) + (\\sin\\theta)(\\cos\\theta) = -\\sin\\theta\\cos\\theta + \\sin\\theta\\cos\\theta = 0",
+      "explanation": "Multiply corresponding components and cancel identical opposite terms.",
+      "why": "Proving orthogonality for all angles."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "cos(theta)*(-sin(theta)) + sin(theta)*cos(theta)",
+    "expected": "0"
+  }
+}

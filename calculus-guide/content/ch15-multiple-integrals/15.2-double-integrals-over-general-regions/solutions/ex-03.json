@@ -1,0 +1,47 @@
+{
+  "id": "ch15-multiple-integrals/15.2-double-integrals-over-general-regions/solutions/ex-03",
+  "chapter": "ch15",
+  "section": "15.2",
+  "type": "solution",
+  "title": "Volume Under a Paraboloid over a General Region",
+  "exerciseReference": "Section 15.2, Exercise 3",
+  "originalTopic": "Volume under Surface",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "volume",
+    "paraboloid",
+    "general-region"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the volume under z = x^2 + y^2 over the region between y = 2x and y = x^2.",
+  "finalAnswer": "\\frac{216}{35}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Intersection Points",
+      "mathExpression": "x^2 = 2x \\implies x(x - 2) = 0 \\implies x = 0, \\; x = 2",
+      "explanation": "The curves intersect at (0, 0) and (2, 4). On [0, 2], 2x >= x^2.",
+      "why": "Determining x-interval."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate with Respect to y",
+      "mathExpression": "\\int_{x^2}^{2x} (x^2 + y^2) \\, dy = \\left[ x^2 y + \\frac{y^3}{3} \\right]_{x^2}^{2x} = \\left( 2x^3 + \\frac{8x^3}{3} \\right) - \\left( x^4 + \\frac{x^6}{3} \\right) = \\frac{14}{3}x^3 - x^4 - \\frac{1}{3}x^6",
+      "explanation": "Evaluate inner antiderivative between parabola and line.",
+      "why": "Evaluating inner integral."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate with Respect to x",
+      "mathExpression": "\\int_0^2 \\left( \\frac{14}{3}x^3 - x^4 - \\frac{1}{3}x^6 \\right) dx = \\left[ \\frac{7}{6}x^4 - \\frac{x^5}{5} - \\frac{x^7}{21} \\right]_0^2 = \\frac{112}{6} - \\frac{32}{5} - \\frac{128}{21} = \\frac{56}{3} - \\frac{32}{5} - \\frac{128}{21} = \\frac{216}{35}",
+      "explanation": "Evaluate definite polynomial integral at 2.",
+      "why": "Computing final volume."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "88/7 - 32/5",
+    "expected": "216/35"
+  }
+}

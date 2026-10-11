@@ -1,0 +1,47 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.7-stokes-theorem/solutions/ex-05",
+  "chapter": "ch16",
+  "section": "16.7",
+  "type": "solution",
+  "title": "Circulation of a Permuted Linear Field",
+  "exerciseReference": "Section 16.7, Exercise 5",
+  "originalTopic": "Circulation on Boundary",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "circulation",
+    "Stokes-theorem",
+    "tilted-curl"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For F = <z, x, y>, find the circulation around the unit circle x^2 + y^2 = 1, z = 0 oriented counterclockwise.",
+  "finalAnswer": "\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Curl of F",
+      "mathExpression": "\\nabla \\times \\mathbf{F} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ \\partial_x & \\partial_y & \\partial_z \\\\ z & x & y \\end{vmatrix} = \\langle 1 - 0, 1 - 0, 1 - 0 \\rangle = \\langle 1, 1, 1 \\rangle",
+      "explanation": "Evaluate the curl determinant.",
+      "why": "Finding curl vector."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Dot with Upward Normal on Flat Disk",
+      "mathExpression": "(\\nabla \\times \\mathbf{F}) \\cdot \\mathbf{k} = \\langle 1, 1, 1 \\rangle \\cdot \\langle 0, 0, 1 \\rangle = 1",
+      "explanation": "Project curl onto surface normal k.",
+      "why": "Finding normal component of curl."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate Over Unit Disk",
+      "mathExpression": "\\iint_D 1 \\, dA = \\text{Area of unit circle} = \\pi",
+      "explanation": "Multiply by area of unit disk.",
+      "why": "Evaluating boundary circulation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "pi * 1",
+    "expected": "pi"
+  }
+}

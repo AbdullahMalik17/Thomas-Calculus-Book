@@ -1,0 +1,48 @@
+{
+  "id": "ch08-techniques-of-integration/8.4-trigonometric-substitutions/solutions/ex-05",
+  "chapter": "ch08",
+  "section": "8.4",
+  "type": "solution",
+  "title": "Completing the Square Prior to Trig Substitution",
+  "exerciseReference": "Section 8.4, Exercise 5",
+  "originalTopic": "Completed Square Trig Substitution",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "completing-the-square",
+    "trig-sub",
+    "radicals"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int 1 / (x^2 - 4x + 13)^(3/2) dx.",
+  "finalAnswer": "\\frac{x - 2}{9\\sqrt{(x - 2)^2 + 9}} + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Complete the Square",
+      "mathExpression": "x^2 - 4x + 13 = (x - 2)^2 + 9 = u^2 + 3^2, \\quad u = x - 2, \\; du = dx",
+      "explanation": "Transform into sum of squares u^2 + a^2.",
+      "why": "Prepares for tangent substitution."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute u = 3 tan(theta)",
+      "mathExpression": "u = 3\\tan(\\theta) \\implies du = 3\\sec^2(\\theta) d\\theta, \\quad (u^2 + 9)^{3/2} = (9\\sec^2(\\theta))^{3/2} = 27\\sec^3(\\theta)",
+      "explanation": "Substitute into radical power.",
+      "why": "Trigonometric conversion."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate and Back-Substitute",
+      "mathExpression": "\\int \\frac{3\\sec^2(\\theta)}{27\\sec^3(\\theta)} d\\theta = \\frac{1}{9} \\int \\cos(\\theta) d\\theta = \\frac{1}{9}\\sin(\\theta) + C = \\frac{1}{9} \\frac{u}{\\sqrt{u^2 + 9}} + C = \\frac{x - 2}{9\\sqrt{(x - 2)^2 + 9}} + C",
+      "explanation": "From triangle, sin(theta) = u/sqrt(u^2 + 9).",
+      "why": "Final exact result."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "1/(x**2 - 4*x + 13)**(Rational(3, 2))",
+    "expected": "(x - 2)/(9*sqrt((x - 2)**2 + 9))",
+    "kind": "indefinite"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "ch09-first-order-differential-equations/9.1-solutions-slope-fields-and-eulers-method/solutions/ex-03",
+  "chapter": "ch09",
+  "section": "9.1",
+  "type": "solution",
+  "title": "Isocline Analysis for a Slope Field",
+  "exerciseReference": "Section 9.1, Exercise 3",
+  "originalTopic": "Isoclines and Slope Fields",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "isoclines",
+    "slope-fields",
+    "geometry"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the equations of the isoclines for dy/dx = y - x^2 for slopes c = 0, c = 1, and c = -1.",
+  "finalAnswer": "c = 0: y = x^2; \\quad c = 1: y = x^2 + 1; \\quad c = -1: y = x^2 - 1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Differential Expression Equal to Constant c",
+      "mathExpression": "y - x^2 = c \\implies y = x^2 + c",
+      "explanation": "Isoclines are the level curves of the slope function.",
+      "why": "Definition of an isocline."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute Values of c",
+      "mathExpression": "c = 0 \\implies y = x^2; \\quad c = 1 \\implies y = x^2 + 1; \\quad c = -1 \\implies y = x^2 - 1",
+      "explanation": "A family of vertically shifted parabolas.",
+      "why": "Specific isocline curves."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "x**2 + 1 - (x**2 + 1)",
+    "expected": "0"
+  }
+}

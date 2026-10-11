@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.5-absolute-convergence-the-ratio-and-root-tests/solutions/ex-05",
+  "chapter": "ch10",
+  "section": "10.5",
+  "type": "solution",
+  "title": "Root Test Involving Natural Logarithm Powers",
+  "exerciseReference": "Section 10.5, Exercise 5",
+  "originalTopic": "Root Test with Logarithms",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "root-test",
+    "logarithm",
+    "convergence"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Test sum_{n=2}^oo (1 / ln n)^n for convergence.",
+  "finalAnswer": "\\rho = 0 < 1 \\implies \\text{Converges Absolutely}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Take n-th Root",
+      "mathExpression": "\\sqrt[n]{|a_n|} = \\sqrt[n]{\\left(\\frac{1}{\\ln n}\\right)^n} = \\frac{1}{\\ln n}",
+      "explanation": "Remove outer power n.",
+      "why": "Root test setup."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Take Limit as n -> oo",
+      "mathExpression": "\\rho = \\lim_{n \\to \\infty} \\frac{1}{\\ln n} = 0",
+      "explanation": "ln(n) -> oo.",
+      "why": "Limit evaluation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude",
+      "mathExpression": "\\rho = 0 < 1 \\implies \\text{Converges absolutely}",
+      "explanation": "Root test condition met.",
+      "why": "Final conclusion."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

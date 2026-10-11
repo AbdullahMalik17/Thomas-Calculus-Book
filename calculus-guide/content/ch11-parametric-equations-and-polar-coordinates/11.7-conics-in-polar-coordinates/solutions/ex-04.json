@@ -1,0 +1,47 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.7-conics-in-polar-coordinates/solutions/ex-04",
+  "chapter": "ch11",
+  "section": "11.7",
+  "type": "solution",
+  "title": "Perihelion and Aphelion in Planetary Orbits",
+  "exerciseReference": "Section 11.7, Exercise 4",
+  "originalTopic": "Kepler Orbit Perihelion and Aphelion",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "kepler-orbit",
+    "astronomy",
+    "perihelion"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For an elliptical orbit r = ed / (1 + e cos theta), find the perihelion (closest distance r_min) and aphelion (farthest distance r_max) to the central body.",
+  "finalAnswer": "r_{\\text{min}} = \\frac{ed}{1 + e}, \\quad r_{\\text{max}} = \\frac{ed}{1 - e}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Minimum Radius (Perihelion)",
+      "mathExpression": "\\cos\\theta = 1 \\implies r_{\\text{min}} = \\frac{ed}{1 + e}",
+      "explanation": "Denominator is maximized when cos(theta) = 1.",
+      "why": "Minimum distance."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find Maximum Radius (Aphelion)",
+      "mathExpression": "\\cos\\theta = -1 \\implies r_{\\text{max}} = \\frac{ed}{1 - e}",
+      "explanation": "Denominator is minimized when cos(theta) = -1.",
+      "why": "Maximum distance."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Major Axis Relation",
+      "mathExpression": "2a = r_{\\text{min}} + r_{\\text{max}} = \\frac{ed(1 - e) + ed(1 + e)}{1 - e^2} = \\frac{2ed}{1 - e^2} \\implies a = \\frac{ed}{1 - e^2}",
+      "explanation": "Relates focal parameters to semi-major axis a.",
+      "why": "Kepler's first law orbital geometry."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "ed/(1 + e) + ed/(1 - e) - 2*ed/(1 - e**2)",
+    "expected": "0"
+  }
+}

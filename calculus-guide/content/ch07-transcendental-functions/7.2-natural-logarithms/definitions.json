@@ -1,0 +1,33 @@
+{
+  "id": "ch07-transcendental-functions/7.2-natural-logarithms/definitions",
+  "chapter": "ch07",
+  "section": "7.2",
+  "title": "Natural Logarithms",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-natural-logarithm",
+      "title": "The Natural Logarithm as an Integral",
+      "category": "definition",
+      "latex": "\\ln(x) = \\int_1^x \\frac{1}{t} \\, dt, \\quad x > 0",
+      "statement": "The natural logarithm function ln(x) is defined for all x > 0 as the accumulated area under the hyperbola y = 1/t from t = 1 to t = x.",
+      "conditions": [
+        "x > 0"
+      ],
+      "explanation": "By FTC Part 1, d/dx[ln(x)] = 1/x for all x > 0.",
+      "keyTakeaway": "ln(x) fills the gap in the power rule int t^(-1) dt."
+    },
+    {
+      "id": "rule-logarithmic-differentiation",
+      "title": "Logarithmic Differentiation",
+      "category": "rule",
+      "latex": "y = f(x) \\implies \\ln|y| = \\ln|f(x)| \\implies \\frac{y'}{y} = \\frac{d}{dx}[\\ln|f(x)|] \\implies y' = y \\frac{d}{dx}[\\ln|f(x)|]",
+      "statement": "Technique that simplifies products, quotients, and variable exponents by taking the natural logarithm before differentiating.",
+      "conditions": [
+        "f(x) != 0"
+      ],
+      "explanation": "Logarithms convert products into sums and exponents into coefficients.",
+      "keyTakeaway": "Essential for differentiating variable-base and variable-exponent functions u(x)^v(x)."
+    }
+  ]
+}

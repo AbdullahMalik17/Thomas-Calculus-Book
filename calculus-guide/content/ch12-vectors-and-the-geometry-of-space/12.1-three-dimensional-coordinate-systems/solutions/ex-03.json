@@ -1,0 +1,33 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.1-three-dimensional-coordinate-systems/solutions/ex-03",
+  "chapter": "ch12",
+  "section": "12.1",
+  "type": "solution",
+  "title": "Midpoint of a 3D Line Segment",
+  "exerciseReference": "Section 12.1, Exercise 3",
+  "originalTopic": "Midpoint Formula in 3D",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "midpoint",
+    "geometry",
+    "vectors"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the coordinates of the midpoint M of the line segment joining A(2, 4, -6) and B(8, -2, 4).",
+  "finalAnswer": "(5, 1, -1)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Component-Wise Midpoint Formula",
+      "mathExpression": "M = \\left( \\frac{2 + 8}{2}, \\frac{4 + (-2)}{2}, \\frac{-6 + 4}{2} \\right) = \\left( \\frac{10}{2}, \\frac{2}{2}, \\frac{-2}{2} \\right) = (5, 1, -1)",
+      "explanation": "Average the respective x, y, and z coordinates of the segment endpoints.",
+      "why": "Finding the center of mass of two endpoints."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(2 + 8)/2 + (4 + (-2))/2 + (-6 + 4)/2",
+    "expected": "5 + 1 - 1"
+  }
+}

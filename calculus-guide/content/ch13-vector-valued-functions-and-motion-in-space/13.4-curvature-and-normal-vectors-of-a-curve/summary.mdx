@@ -1,0 +1,20 @@
+# Section 13.4: Curvature and Normal Vectors of a Curve
+
+Curvature and the Frenet-Serret moving frame characterize the geometric bending and twisting of space curves.
+
+---
+
+## 1. Curvature Formulas
+
+- **Definition**: $\kappa = \left|\frac{d\mathbf{T}}{ds}\right| = \frac{|\mathbf{T}'(t)|}{|\mathbf{v}(t)|}$
+- **Computational Cross-Product Formula**:
+$$\kappa = \frac{|\mathbf{v} \times \mathbf{a}|}{|\mathbf{v}|^3}$$
+- **Plane Curve $y = f(x)$**: $\kappa(x) = \frac{|f''(x)|}{[1 + (f'(x))^2]^{3/2}}$
+
+---
+
+## 2. The Frenet-Serret TNB Frame
+
+- **Unit Tangent Vector**: $\mathbf{T} = \frac{\mathbf{v}}{|\mathbf{v}|}$
+- **Principal Unit Normal**: $\mathbf{N} = \frac{\mathbf{T}'}{|\mathbf{T}'|}$
+- **Binormal Vector**: $\mathbf{B} = \mathbf{T} \times \mathbf{N}$

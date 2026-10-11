@@ -1,0 +1,34 @@
+{
+  "id": "ch14-partial-derivatives/14.4-the-chain-rule/definitions",
+  "chapter": "ch14",
+  "section": "14.4",
+  "title": "The Chain Rule",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-chain-rule-multivariable",
+      "title": "Multivariable Chain Rule",
+      "category": "theorem",
+      "latex": "\\frac{dz}{dt} = \\frac{\\partial z}{\\partial x} \\frac{dx}{dt} + \\frac{\\partial z}{\\partial y} \\frac{dy}{dt}",
+      "statement": "If z = f(x, y) is differentiable and x = g(t), y = h(t) are differentiable functions of t, then z is a differentiable function of t, and its total derivative equals the sum of the partial rates along each path variable.",
+      "conditions": [
+        "f is differentiable",
+        "x(t) and y(t) are differentiable"
+      ],
+      "explanation": "Can be visualized as a tree diagram with branches from z to intermediate variables x and y, and then to independent variable t.",
+      "keyTakeaway": "Sums contributions to change from all intermediate coordinate paths."
+    },
+    {
+      "id": "theorem-chain-rule-two-parameters",
+      "title": "Chain Rule for Two Independent Variables",
+      "category": "theorem",
+      "latex": "\\frac{\\partial z}{\\partial u} = \\frac{\\partial z}{\\partial x}\\frac{\\partial x}{\\partial u} + \\frac{\\partial z}{\\partial y}\\frac{\\partial y}{\\partial u}, \\quad \\frac{\\partial z}{\\partial v} = \\frac{\\partial z}{\\partial x}\\frac{\\partial x}{\\partial v} + \\frac{\\partial z}{\\partial y}\\frac{\\partial y}{\\partial v}",
+      "statement": "When intermediate variables x = g(u, v) and y = h(u, v) depend on multiple parameters u and v, partial derivatives with respect to each independent variable follow separate branch summations.",
+      "conditions": [
+        "All functions possess continuous first partials"
+      ],
+      "explanation": "Essential for converting differential equations between Cartesian, polar, cylindrical, and spherical coordinates.",
+      "keyTakeaway": "Extends coordinate transformation calculus to partial differential equations."
+    }
+  ]
+}

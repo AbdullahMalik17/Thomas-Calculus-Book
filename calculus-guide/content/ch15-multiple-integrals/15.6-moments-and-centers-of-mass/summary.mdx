@@ -1,0 +1,20 @@
+# Section 15.6: Moments and Centers of Mass
+
+Multiple integrals compute physical center of mass, centroids, and rotational moments of inertia.
+
+---
+
+## 1. Mass and First Moments
+
+For a solid $D$ with density $\delta(x, y, z)$:
+- **Total Mass**: $M = \iiint_D \delta \, dV$
+- **Moments about Coordinate Planes**:
+$$M_{yz} = \iiint_D x\delta \, dV, \quad M_{xz} = \iiint_D y\delta \, dV, \quad M_{xy} = \iiint_D z\delta \, dV$$
+- **Center of Mass**: $(\bar{x}, \bar{y}, \bar{z}) = \left( \frac{M_{yz}}{M}, \frac{M_{xz}}{M}, \frac{M_{xy}}{M} \right)$
+
+---
+
+## 2. Moments of Inertia
+
+- **About the $z$-axis**: $I_z = \iiint_D (x^2 + y^2)\delta \, dV$
+- **Radius of Gyration**: $\hat{R}_z = \sqrt{\frac{I_z}{M}}$

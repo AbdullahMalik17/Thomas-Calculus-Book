@@ -1,0 +1,21 @@
+{
+  "id": "ch07-transcendental-functions/7.7-hyperbolic-functions/definitions",
+  "chapter": "ch07",
+  "section": "7.7",
+  "title": "Hyperbolic Functions",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-hyperbolic-functions",
+      "title": "Definitions of Hyperbolic Sine and Cosine",
+      "category": "definition",
+      "latex": "\\sinh(x) = \\frac{e^x - e^{-x}}{2}, \\quad \\cosh(x) = \\frac{e^x + e^{-x}}{2}",
+      "statement": "Hyperbolic functions are symmetric combinations of exponential functions satisfying the fundamental hyperbolic identity cosh^2(x) - sinh^2(x) = 1.",
+      "conditions": [
+        "x in R"
+      ],
+      "explanation": "Parameterize the unit hyperbola x^2 - y^2 = 1 in the same way circular trigonometric functions parameterize x^2 + y^2 = 1.",
+      "keyTakeaway": "Hyperbolic functions model hanging cables (catenaries) and wave transmission."
+    }
+  ]
+}

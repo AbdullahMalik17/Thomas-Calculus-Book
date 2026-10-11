@@ -1,0 +1,21 @@
+{
+  "id": "ch08-techniques-of-integration/8.1-using-basic-integration-formulas/definitions",
+  "chapter": "ch08",
+  "section": "8.1",
+  "title": "Using Basic Integration Formulas",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "rule-algebraic-transformation-integrals",
+      "title": "Algebraic Pre-processing for Integration",
+      "category": "rule",
+      "latex": "\\frac{P(x)}{Q(x)} = S(x) + \\frac{R(x)}{Q(x)}, \\quad \\text{where } \\deg(R) < \\deg(Q)",
+      "statement": "Before applying advanced integration techniques, simplify integrands algebraically through polynomial long division, completing the square, expanding products, or splitting numerators.",
+      "conditions": [
+        "Rational functions with degree(numerator) >= degree(denominator)"
+      ],
+      "explanation": "Reduces complex rational and radical integrands into sums of elementary known antiderivatives.",
+      "keyTakeaway": "Always check for algebraic simplification and simple substitution first."
+    }
+  ]
+}

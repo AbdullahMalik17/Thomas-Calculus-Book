@@ -1,0 +1,43 @@
+{
+  "id": "ch08-techniques-of-integration/8.1-using-basic-integration-formulas/solutions/ex-05",
+  "chapter": "ch08",
+  "section": "8.1",
+  "type": "solution",
+  "title": "Definite Integral with Radical Quadratic Radicand",
+  "exerciseReference": "Section 8.1, Exercise 5",
+  "originalTopic": "Arcsine Definite Evaluation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "arcsin",
+    "definite-integral",
+    "radicals"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_0^{1/2} 1 / sqrt(1 - x^2) dx.",
+  "finalAnswer": "\\int_0^{1/2} \\frac{1}{\\sqrt{1 - x^2}} dx = \\frac{\\pi}{6}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Antiderivative",
+      "mathExpression": "\\int \\frac{1}{\\sqrt{1 - x^2}} dx = \\arcsin(x)",
+      "explanation": "Standard inverse sine integral formula.",
+      "why": "Direct antiderivative."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate at Limits",
+      "mathExpression": "[\\arcsin(x)]_0^{1/2} = \\arcsin(1/2) - \\arcsin(0) = \\frac{\\pi}{6} - 0 = \\frac{\\pi}{6}",
+      "explanation": "sin(pi/6) = 1/2.",
+      "why": "Final exact angular value."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "1/sqrt(1 - x**2)",
+    "expected": "pi/6",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "1/2"
+  }
+}

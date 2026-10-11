@@ -1,0 +1,34 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.2-integrals-of-vector-functions-projectile-motion/definitions",
+  "chapter": "ch13",
+  "section": "13.2",
+  "title": "Integrals of Vector Functions; Projectile Motion",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-vector-integral",
+      "title": "Definite and Indefinite Integrals of Vector Functions",
+      "category": "definition",
+      "latex": "\\int \\mathbf{r}(t) \\, dt = \\left( \\int f(t) dt \\right)\\mathbf{i} + \\left( \\int g(t) dt \\right)\\mathbf{j} + \\left( \\int h(t) dt \\right)\\mathbf{k} + \\mathbf{C}",
+      "statement": "The integral of a vector function is defined by integrating each component function independently. The constant of integration C is an arbitrary vector constant in R^3.",
+      "conditions": [
+        "Component functions f, g, h are integrable on [a, b]"
+      ],
+      "explanation": "Fundamental Theorem of Calculus applies component-wise: int_a^b r(t) dt = R(b) - R(a) where R'(t) = r(t).",
+      "keyTakeaway": "Velocity integrates to position, and acceleration integrates to velocity."
+    },
+    {
+      "id": "model-projectile-motion",
+      "title": "Classical Projectile Motion Equation",
+      "category": "formula",
+      "latex": "\\mathbf{r}(t) = (v_0 \\cos\\alpha) t \\, \\mathbf{i} + \\left( (v_0 \\sin\\alpha) t - \\frac{1}{2}gt^2 \\right) \\mathbf{j}",
+      "statement": "For a projectile launched from the origin with initial speed v_0 at inclination angle alpha subject only to downward gravitational acceleration g, the position r(t) follows a parabolic path.",
+      "conditions": [
+        "No air resistance",
+        "Constant gravity g"
+      ],
+      "explanation": "Flight time T = (2 v_0 sin alpha)/g, Maximum height H = (v_0^2 sin^2 alpha)/(2g), Range R = (v_0^2 sin 2alpha)/g.",
+      "keyTakeaway": "Horizontal velocity remains constant while vertical velocity decreases linearly with time."
+    }
+  ]
+}

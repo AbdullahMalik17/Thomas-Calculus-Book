@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.3-partial-derivatives/solutions/ex-05",
+  "chapter": "ch14",
+  "section": "14.3",
+  "type": "solution",
+  "title": "Partial Rate of Change in the Ideal Gas Law",
+  "exerciseReference": "Section 14.3, Exercise 5",
+  "originalTopic": "Applied Partial Derivatives",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "ideal-gas-law",
+    "thermodynamics",
+    "physics"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For an ideal gas P = n R T / V, find dP/dT at V = 10 L assuming n R = 8.314 J/K.",
+  "finalAnswer": "\\frac{\\partial P}{\\partial T} = 0.8314 \\text{ J/(L}\\cdot\\text{K)}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Differentiate P with Respect to T at Constant V",
+      "mathExpression": "\\frac{\\partial P}{\\partial T} = \\frac{\\partial}{\\partial T} \\left( \\frac{n R T}{V} \\right) = \\frac{n R}{V}",
+      "explanation": "Treat volume V and gas constant nR as constants.",
+      "why": "Isolating thermal pressure sensitivity."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate with Numerical Parameters",
+      "mathExpression": "\\frac{\\partial P}{\\partial T} = \\frac{8.314}{10} = 0.8314",
+      "explanation": "Substitute nR = 8.314 and V = 10.",
+      "why": "Evaluating numerical derivative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "8.314 / 10",
+    "expected": "0.8314"
+  }
+}

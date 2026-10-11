@@ -1,0 +1,36 @@
+{
+  "id": "ch15-multiple-integrals/15.7-triple-integrals-in-cylindrical-and-spherical-coordinates/definitions",
+  "chapter": "ch15",
+  "section": "15.7",
+  "title": "Triple Integrals in Cylindrical and Spherical Coordinates",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-cylindrical-coordinates-integral",
+      "title": "Cylindrical Coordinates Volume Element",
+      "category": "definition",
+      "latex": "dV = r \\, dz \\, dr \\, d\\theta, \\quad x = r\\cos\\theta, \\; y = r\\sin\\theta, \\; z = z",
+      "statement": "Cylindrical coordinates combine polar coordinates in the xy-plane with standard Cartesian height z. The volume element dV = r dz dr dtheta includes the polar Jacobian factor r.",
+      "conditions": [
+        "r >= 0",
+        "0 <= theta <= 2*pi"
+      ],
+      "explanation": "Ideal for solid regions exhibiting symmetry about the z-axis, such as cylinders, cones, and paraboloids.",
+      "keyTakeaway": "Converts radial cross-sections into simple rectangular integration limits."
+    },
+    {
+      "id": "def-spherical-coordinates-integral",
+      "title": "Spherical Coordinates Volume Element",
+      "category": "definition",
+      "latex": "dV = \\rho^2 \\sin\\phi \\, d\\rho \\, d\\phi \\, d\\theta, \\quad x = \\rho\\sin\\phi\\cos\\theta, \\; y = \\rho\\sin\\phi\\sin\\theta, \\; z = \\rho\\cos\\phi",
+      "statement": "In spherical coordinates, rho is distance from the origin, phi is polar angle from the positive z-axis, and theta is azimuthal angle in the xy-plane. The volume element is dV = rho^2 sin(phi) drho dphi dtheta.",
+      "conditions": [
+        "rho >= 0",
+        "0 <= phi <= pi",
+        "0 <= theta <= 2*pi"
+      ],
+      "explanation": "The factor rho^2 sin(phi) derives from the Jacobian determinant of the spherical coordinate transformation.",
+      "keyTakeaway": "Essential for central potentials, spheres, and conical volumes."
+    }
+  ]
+}

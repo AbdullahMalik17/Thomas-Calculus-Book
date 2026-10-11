@@ -1,0 +1,33 @@
+{
+  "id": "ch08-techniques-of-integration/8.8-improper-integrals/definitions",
+  "chapter": "ch08",
+  "section": "8.8",
+  "title": "Improper Integrals",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-improper-integrals",
+      "title": "Improper Integrals of Type I and Type II",
+      "category": "definition",
+      "latex": "\\int_a^\\infty f(x) dx = \\lim_{t \\to \\infty} \\int_a^t f(x) dx, \\quad \\int_a^b f(x) dx = \\lim_{t \\to b^-} \\int_a^t f(x) dx",
+      "statement": "Type I improper integrals have infinite integration intervals. Type II improper integrals have integrands with vertical asymptotes (infinite discontinuities) within or at the boundaries of the interval. An improper integral converges if the limit exists and diverges otherwise.",
+      "conditions": [
+        "f is integrable on all finite subintervals"
+      ],
+      "explanation": "Replaces unbounded integration with limits of proper definite integrals.",
+      "keyTakeaway": "Improper integrals are defined by taking limits of definite integrals."
+    },
+    {
+      "id": "theorem-p-integral-test",
+      "title": "The p-Integral Convergence Theorem",
+      "category": "theorem",
+      "latex": "\\int_1^\\infty \\frac{1}{x^p} dx = \\begin{cases} \\frac{1}{p - 1} & p > 1 \\\\ \\text{diverges} & p \\le 1 \\end{cases}",
+      "statement": "The improper integral of 1/x^p over [1, oo) converges if and only if p > 1. Conversely, near zero, int_0^1 1/x^p dx converges if and only if p < 1.",
+      "conditions": [
+        "p is a real constant"
+      ],
+      "explanation": "Serves as the universal benchmark for comparison tests in improper integrals and infinite series.",
+      "keyTakeaway": "1/x^p on [1, oo) converges iff p > 1; on [0, 1] converges iff p < 1."
+    }
+  ]
+}

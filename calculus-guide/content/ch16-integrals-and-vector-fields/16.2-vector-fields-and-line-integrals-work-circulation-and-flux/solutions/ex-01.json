@@ -1,0 +1,47 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.2-vector-fields-and-line-integrals-work-circulation-and-flux/solutions/ex-01",
+  "chapter": "ch16",
+  "section": "16.2",
+  "type": "solution",
+  "title": "Work Done by a Rotational Vector Field around a Circle",
+  "exerciseReference": "Section 16.2, Exercise 1",
+  "originalTopic": "Work in Vector Field",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "work",
+    "vector-field",
+    "circulation"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the work done by F = <y, -x> along the counterclockwise unit circle r(t) = <cos(t), sin(t)> for 0 <= t <= 2*pi.",
+  "finalAnswer": "W = -2\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Differential Vector dr",
+      "mathExpression": "\\mathbf{r}'(t) = \\langle -\\sin t, \\cos t \\rangle \\implies d\\mathbf{r} = \\langle -\\sin t, \\cos t \\rangle \\, dt",
+      "explanation": "Differentiate parametric equations.",
+      "why": "Finding displacement differential."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Vector Field along Path",
+      "mathExpression": "\\mathbf{F}(\\mathbf{r}(t)) = \\langle y(t), -x(t) \\rangle = \\langle \\sin t, -\\cos t \\rangle",
+      "explanation": "Substitute path coordinates into field components.",
+      "why": "Evaluating field on curve."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Dot Product and Integrate",
+      "mathExpression": "\\mathbf{F} \\cdot d\\mathbf{r} = [(\\sin t)(-\\sin t) + (-\\cos t)(\\cos t)] \\, dt = -(\\sin^2 t + \\cos^2 t) \\, dt = -1 \\, dt; \\quad W = \\int_0^{2\\pi} (-1) \\, dt = -2\\pi",
+      "explanation": "Integrate constant dot product -1 over [0, 2*pi].",
+      "why": "Evaluating total work."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "-2*pi",
+    "expected": "-2*pi"
+  }
+}

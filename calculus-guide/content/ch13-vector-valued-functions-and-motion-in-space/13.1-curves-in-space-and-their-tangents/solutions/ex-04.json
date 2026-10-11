@@ -1,0 +1,47 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.1-curves-in-space-and-their-tangents/solutions/ex-04",
+  "chapter": "ch13",
+  "section": "13.1",
+  "type": "solution",
+  "title": "Orthogonality Property of Constant-Magnitude Vectors",
+  "exerciseReference": "Section 13.1, Exercise 4",
+  "originalTopic": "Constant Length Vectors",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "constant-magnitude",
+    "orthogonality",
+    "proof"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For r(t) = <3 cos(2t), 3 sin(2t), 4>, verify that |r(t)| is constant and r(t) . r'(t) = 0 for all t.",
+  "finalAnswer": "|\\mathbf{r}(t)| = 5 \\implies \\mathbf{r}(t) \\cdot \\mathbf{r}'(t) = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Calculate Magnitude of r(t)",
+      "mathExpression": "|\\mathbf{r}(t)| = \\sqrt{9\\cos^2(2t) + 9\\sin^2(2t) + 16} = \\sqrt{9(1) + 16} = \\sqrt{25} = 5",
+      "explanation": "The norm is constant and independent of t.",
+      "why": "Confirming constant magnitude."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Velocity Vector r'(t)",
+      "mathExpression": "\\mathbf{r}'(t) = \\langle -6\\sin(2t), 6\\cos(2t), 0 \\rangle",
+      "explanation": "Differentiate each component using chain rule.",
+      "why": "Finding derivative vector."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate r(t) . r'(t)",
+      "mathExpression": "\\mathbf{r}(t) \\cdot \\mathbf{r}'(t) = [3\\cos(2t)][-6\\sin(2t)] + [3\\sin(2t)][6\\cos(2t)] + [4][0] = -18\\cos(2t)\\sin(2t) + 18\\sin(2t)\\cos(2t) = 0",
+      "explanation": "The terms cancel identically, proving orthogonality.",
+      "why": "Verifying that derivative is perpendicular to position on sphere."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "-18*cos(2*t)*sin(2*t) + 18*sin(2*t)*cos(2*t)",
+    "expected": "0"
+  }
+}

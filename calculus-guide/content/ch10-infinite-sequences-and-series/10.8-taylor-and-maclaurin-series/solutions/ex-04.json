@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.8-taylor-and-maclaurin-series/solutions/ex-04",
+  "chapter": "ch10",
+  "section": "10.8",
+  "type": "solution",
+  "title": "Taylor Series for Natural Logarithm Centered at a = 2",
+  "exerciseReference": "Section 10.8, Exercise 4",
+  "originalTopic": "Shifted Taylor Series",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "taylor-series",
+    "logarithm",
+    "shifted-center"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the first 4 terms of the Taylor series for f(x) = ln(x) centered at a = 2.",
+  "finalAnswer": "\\ln(2) + \\frac{x - 2}{2} - \\frac{(x - 2)^2}{8} + \\frac{(x - 2)^3}{24} - \\dots",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Derivatives at a = 2",
+      "mathExpression": "f(2) = \\ln(2), \\; f'(2) = \\frac{1}{2}, \\; f''(2) = -\\frac{1}{4}, \\; f'''(2) = \\frac{2}{8} = \\frac{1}{4}",
+      "explanation": "f'(x) = 1/x, f''(x) = -1/x^2, f'''(x) = 2/x^3.",
+      "why": "Derivative evaluation at center."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Divide by Factorials",
+      "mathExpression": "c_0 = \\ln(2), \\quad c_1 = \\frac{1}{2}, \\quad c_2 = \\frac{-1/4}{2} = -\\frac{1}{8}, \\quad c_3 = \\frac{1/4}{6} = \\frac{1}{24}",
+      "explanation": "Apply c_n = f^(n)(2) / n!.",
+      "why": "Taylor coefficients."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Assemble Series",
+      "mathExpression": "\\ln(2) + \\frac{1}{2}(x - 2) - \\frac{1}{8}(x - 2)^2 + \\frac{1}{24}(x - 2)^3",
+      "explanation": "First 4 terms.",
+      "why": "Final shifted Taylor polynomial."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "log(2) - log(2)",
+    "expected": "0"
+  }
+}

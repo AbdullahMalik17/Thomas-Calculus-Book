@@ -1,0 +1,40 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.5-lines-and-planes-in-space/solutions/ex-01",
+  "chapter": "ch12",
+  "section": "12.5",
+  "type": "solution",
+  "title": "Parametric Equations of a Line Through a Point",
+  "exerciseReference": "Section 12.5, Exercise 1",
+  "originalTopic": "Equations of Lines",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "lines",
+    "parametric-equations",
+    "direction-vector"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find parametric equations for the line through P(2, 4, -1) parallel to the vector v = <3, -1, 5>.",
+  "finalAnswer": "x = 2 + 3t, \\quad y = 4 - t, \\quad z = -1 + 5t",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Write Vector Equation of Line",
+      "mathExpression": "\\mathbf{r}(t) = \\langle 2, 4, -1 \\rangle + t\\langle 3, -1, 5 \\rangle",
+      "explanation": "Combine initial position vector with scaled direction vector.",
+      "why": "Applying vector definition of line."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Extract Scalar Parametric Equations",
+      "mathExpression": "x = 2 + 3t, \\quad y = 4 - t, \\quad z = -1 + 5t",
+      "explanation": "Equate respective components for x, y, and z.",
+      "why": "Formulating individual coordinate functions."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(2 + 3*2) + (4 - 2) + (-1 + 5*2)",
+    "expected": "8 + 2 + 9"
+  }
+}

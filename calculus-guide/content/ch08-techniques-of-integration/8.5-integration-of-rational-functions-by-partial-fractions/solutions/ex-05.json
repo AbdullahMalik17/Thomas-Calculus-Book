@@ -1,0 +1,50 @@
+{
+  "id": "ch08-techniques-of-integration/8.5-integration-of-rational-functions-by-partial-fractions/solutions/ex-05",
+  "chapter": "ch08",
+  "section": "8.5",
+  "type": "solution",
+  "title": "Definite Integral of a Rational Function",
+  "exerciseReference": "Section 8.5, Exercise 5",
+  "originalTopic": "Definite Partial Fraction Integration",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "definite-integral",
+    "partial-fractions",
+    "logarithm"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_2^3 1 / (x^2 - 1) dx.",
+  "finalAnswer": "\\int_2^3 \\frac{1}{x^2 - 1} dx = \\frac{1}{2}\\ln\\left(\\frac{3}{2}\\right)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Decompose into Partial Fractions",
+      "mathExpression": "\\frac{1}{x^2 - 1} = \\frac{1}{(x - 1)(x + 1)} = \\frac{1}{2}\\left( \\frac{1}{x - 1} - \\frac{1}{x + 1} \\right)",
+      "explanation": "Standard difference of squares decomposition.",
+      "why": "Partial fractions."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find Antiderivative",
+      "mathExpression": "\\frac{1}{2} [\\ln|x - 1| - \\ln|x + 1|] = \\frac{1}{2} \\ln\\left|\\frac{x - 1}{x + 1}\\right|",
+      "explanation": "Combine logs.",
+      "why": "Logarithm quotient law."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate at Limits 2 and 3",
+      "mathExpression": "\\frac{1}{2} \\left( \\ln\\left(\\frac{2}{4}\\right) - \\ln\\left(\\frac{1}{3}\\right) \\right) = \\frac{1}{2} \\ln\\left( \\frac{1/2}{1/3} \\right) = \\frac{1}{2} \\ln\\left(\\frac{3}{2}\\right)",
+      "explanation": "Compute ratio of logs.",
+      "why": "Final exact value."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "1/(x**2 - 1)",
+    "expected": "log(Rational(3, 2))/2",
+    "kind": "definite",
+    "lower": "2",
+    "upper": "3"
+  }
+}

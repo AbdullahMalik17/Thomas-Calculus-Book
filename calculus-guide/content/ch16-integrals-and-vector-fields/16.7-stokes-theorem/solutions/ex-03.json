@@ -1,0 +1,33 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.7-stokes-theorem/solutions/ex-03",
+  "chapter": "ch16",
+  "section": "16.7",
+  "type": "solution",
+  "title": "Curl Flux Invariance over Different Surfaces",
+  "exerciseReference": "Section 16.7, Exercise 3",
+  "originalTopic": "Surface Independence",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "surface-independence",
+    "Stokes-theorem",
+    "curl-flux"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "If curl F = <0, 0, 3>, compute the flux of curl F through any surface S capped by the unit circle x^2 + y^2 = 1 in the xy-plane.",
+  "finalAnswer": "3\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Select Simplest Surface (Flat Disk)",
+      "mathExpression": "\\iint_S (\\nabla \\times \\mathbf{F}) \\cdot \\mathbf{n} \\, d\\sigma = \\iint_{\\text{Disk}} 3 \\, dA = 3 \\times \\pi(1^2) = 3\\pi",
+      "explanation": "Because curl flux depends only on boundary curve C, evaluate across flat disk.",
+      "why": "Using surface independence."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "3*pi",
+    "expected": "3*pi"
+  }
+}

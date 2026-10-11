@@ -1,0 +1,48 @@
+{
+  "id": "ch09-first-order-differential-equations/9.2-first-order-linear-equations/solutions/ex-02",
+  "chapter": "ch09",
+  "section": "9.2",
+  "type": "solution",
+  "title": "Linear ODE with Variable Coefficient",
+  "exerciseReference": "Section 9.2, Exercise 2",
+  "originalTopic": "Variable Coefficient Linear ODE",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "linear-ode",
+    "integrating-factor",
+    "variable-P"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Solve x dy/dx + 2y = 4x^2 for x > 0.",
+  "finalAnswer": "y(x) = x^2 + \\frac{C}{x^2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Convert to Standard Form",
+      "mathExpression": "\\frac{dy}{dx} + \\frac{2}{x} y = 4x",
+      "explanation": "Divide all terms by x.",
+      "why": "Standard form dy/dx + P y = Q."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Integrating Factor",
+      "mathExpression": "P(x) = \\frac{2}{x} \\implies \\mu(x) = e^{\\int (2/x) dx} = e^{2\\ln(x)} = e^{\\ln(x^2)} = x^2",
+      "explanation": "Simplify exponential of logarithm.",
+      "why": "Integrating factor."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Multiply and Integrate",
+      "mathExpression": "\\frac{d}{dx}[x^2 y] = x^2(4x) = 4x^3 \\implies x^2 y = \\int 4x^3 dx = x^4 + C \\implies y(x) = x^2 + \\frac{C}{x^2}",
+      "explanation": "Integrate 4x^3 to x^4 and divide by x^2.",
+      "why": "Final general solution."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "x**2 + 1/x**2",
+    "expected": "2*x - 2/x**3",
+    "variable": "x"
+  }
+}

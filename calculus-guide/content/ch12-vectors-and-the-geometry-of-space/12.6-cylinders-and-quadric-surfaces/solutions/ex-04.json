@@ -1,0 +1,47 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.6-cylinders-and-quadric-surfaces/solutions/ex-04",
+  "chapter": "ch12",
+  "section": "12.6",
+  "type": "solution",
+  "title": "Horizontal Cross-Section of an Elliptic Cone",
+  "exerciseReference": "Section 12.6, Exercise 4",
+  "originalTopic": "Elliptic Cone",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "cone",
+    "traces",
+    "ellipse"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the trace of the elliptic cone z^2 = 4x^2 + 9y^2 at height z = 6, and find its area.",
+  "finalAnswer": "\\frac{x^2}{9} + \\frac{y^2}{4} = 1; \\quad \\text{Area} = 6\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Substitute z = 6 into Cone Equation",
+      "mathExpression": "6^2 = 4x^2 + 9y^2 \\implies 36 = 4x^2 + 9y^2",
+      "explanation": "Substitute fixed height z = 6 into second-degree equation.",
+      "why": "Evaluating trace at z = 6."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Normalize to Standard Ellipse Form",
+      "mathExpression": "\\frac{4x^2}{36} + \\frac{9y^2}{36} = 1 \\implies \\frac{x^2}{9} + \\frac{y^2}{4} = 1",
+      "explanation": "Divide through by 36.",
+      "why": "Identifying semi-axes a = 3, b = 2."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Area of Ellipse",
+      "mathExpression": "\\text{Area} = \\pi (3)(2) = 6\\pi",
+      "explanation": "Multiply semi-axes by pi.",
+      "why": "Evaluating trace area."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "pi * 3 * 2",
+    "expected": "6*pi"
+  }
+}

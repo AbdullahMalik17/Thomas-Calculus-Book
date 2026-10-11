@@ -1,0 +1,47 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.2-calculus-with-parametric-curves/solutions/ex-03",
+  "chapter": "ch11",
+  "section": "11.2",
+  "type": "solution",
+  "title": "Arc Length of One Arch of a Cycloid",
+  "exerciseReference": "Section 11.2, Exercise 3",
+  "originalTopic": "Parametric Arc Length",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "cycloid",
+    "arc-length",
+    "trigonometric-integral"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the total length of one arch of the cycloid x = a(t - sin t), y = a(1 - cos t) for 0 <= t <= 2pi.",
+  "finalAnswer": "L = 8a",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Derivatives dx/dt and dy/dt",
+      "mathExpression": "\\frac{dx}{dt} = a(1 - \\cos t), \\quad \\frac{dy}{dt} = a\\sin t",
+      "explanation": "Differentiate components with respect to t.",
+      "why": "Velocity components."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Simplify Speed Expression",
+      "mathExpression": "(x')^2 + (y')^2 = a^2(1 - 2\\cos t + \\cos^2 t + \\sin^2 t) = a^2(2 - 2\\cos t) = 4a^2 \\sin^2(t/2)",
+      "explanation": "Use half-angle identity 1 - cos(t) = 2 sin^2(t/2).",
+      "why": "Radical simplification."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate over [0, 2pi]",
+      "mathExpression": "L = \\int_0^{2\\pi} 2a \\sin(t/2) dt = 2a [-2\\cos(t/2)]_0^{2\\pi} = 2a [(-2(-1)) - (-2(1))] = 2a(4) = 8a",
+      "explanation": "Evaluate antiderivative at limits.",
+      "why": "Classical 8a cycloid arch length."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2*a * 4 - 8*a",
+    "expected": "0"
+  }
+}

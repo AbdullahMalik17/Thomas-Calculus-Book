@@ -1,0 +1,47 @@
+{
+  "id": "ch09-first-order-differential-equations/9.5-systems-of-equations-and-phase-planes/solutions/ex-01",
+  "chapter": "ch09",
+  "section": "9.5",
+  "type": "solution",
+  "title": "Equilibrium Points of a Predator-Prey System",
+  "exerciseReference": "Section 9.5, Exercise 1",
+  "originalTopic": "Lotka-Volterra Equilibria",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "lotka-volterra",
+    "predator-prey",
+    "equilibria"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the equilibrium points in the first quadrant of the predator-prey system dx/dt = x(2 - y), dy/dt = y(x - 3).",
+  "finalAnswer": "(0, 0) \\quad \\text{and} \\quad (3, 2)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Both Derivatives Equal to Zero",
+      "mathExpression": "x(2 - y) = 0 \\quad \\text{and} \\quad y(x - 3) = 0",
+      "explanation": "Equilibrium requires both time rates to be zero.",
+      "why": "Definition of critical point."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Case 1: Extinction Equilibrium",
+      "mathExpression": "x = 0 \\implies y(0 - 3) = 0 \\implies y = 0 \\implies (0, 0)",
+      "explanation": "Trivial state with no predators and no prey.",
+      "why": "Origin equilibrium."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Case 2: Coexistence Equilibrium",
+      "mathExpression": "x \\ne 0 \\implies 2 - y = 0 \\implies y = 2; \\quad y \\ne 0 \\implies x - 3 = 0 \\implies x = 3 \\implies (3, 2)",
+      "explanation": "Non-zero coexistence balance.",
+      "why": "Coexistence equilibrium point."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "3*(2 - 2)",
+    "expected": "0"
+  }
+}

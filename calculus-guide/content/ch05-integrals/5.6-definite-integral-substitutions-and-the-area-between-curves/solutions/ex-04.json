@@ -1,0 +1,50 @@
+{
+  "id": "ch05-integrals/5.6-definite-integral-substitutions-and-the-area-between-curves/solutions/ex-04",
+  "chapter": "ch05",
+  "section": "5.6",
+  "type": "solution",
+  "title": "Area Between Curves with Multiple Intersection Regions",
+  "exerciseReference": "Section 5.6, Exercise 4",
+  "originalTopic": "Multi-Region Area Between Curves",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "intersecting-curves",
+    "symmetry",
+    "area"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the total area of the region bounded by y = x^3 and y = x.",
+  "finalAnswer": "\\text{Total Area} = \\frac{1}{2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find All Intersections",
+      "mathExpression": "x^3 = x \\implies x(x^2 - 1) = 0 \\implies x = -1, \\; 0, \\; 1",
+      "explanation": "The curves intersect at three points, forming two separate symmetrical regions.",
+      "why": "Partitioning area into subintervals."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Utilize Origin Symmetry",
+      "mathExpression": "\\text{Total Area} = 2 \\int_0^1 (x - x^3) dx",
+      "explanation": "On [0, 1], y = x is above y = x^3. By symmetry, area on [-1, 0] is identical.",
+      "why": "Doubling single positive region by odd symmetry."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Area",
+      "mathExpression": "2 \\left[ \\frac{x^2}{2} - \\frac{x^4}{4} \\right]_0^1 = 2 \\left( \\frac{1}{2} - \\frac{1}{4} \\right) = 2 \\left( \\frac{1}{4} \\right) = \\frac{1}{2}",
+      "explanation": "Evaluate the definite integral.",
+      "why": "Total enclosed area."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "x - x**3",
+    "expected": "1/4",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "1"
+  }
+}

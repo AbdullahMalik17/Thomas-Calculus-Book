@@ -1,0 +1,41 @@
+{
+  "id": "ch09-first-order-differential-equations/9.2-first-order-linear-equations/solutions/ex-05",
+  "chapter": "ch09",
+  "section": "9.2",
+  "type": "solution",
+  "title": "Asymptotic Steady-State Behavior of Linear ODEs",
+  "exerciseReference": "Section 9.2, Exercise 5",
+  "originalTopic": "Transient and Steady-State Solutions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "steady-state",
+    "transient",
+    "asymptotics"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For dy/dt + 3y = 6, identify the transient and steady-state components of the general solution.",
+  "finalAnswer": "y(t) = 2 + C e^{-3t}, \\quad \\text{Steady-State} = 2, \\quad \\text{Transient} = C e^{-3t}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Integrating Factor and General Solution",
+      "mathExpression": "\\mu(t) = e^{3t} \\implies \\frac{d}{dt}[e^{3t} y] = 6e^{3t} \\implies e^{3t} y = 2e^{3t} + C \\implies y(t) = 2 + C e^{-3t}",
+      "explanation": "Solve linear ODE.",
+      "why": "General solution formulation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify Limit as t -> oo",
+      "mathExpression": "\\lim_{t \\to \\infty} C e^{-3t} = 0 \\implies \\lim_{t \\to \\infty} y(t) = 2",
+      "explanation": "Exponential decay term dies out.",
+      "why": "Steady-state definition."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "2 + exp(-3*x)",
+    "expected": "-3*exp(-3*x)",
+    "variable": "x"
+  }
+}

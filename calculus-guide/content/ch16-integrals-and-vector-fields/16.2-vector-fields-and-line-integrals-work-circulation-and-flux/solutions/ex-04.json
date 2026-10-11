@@ -1,0 +1,40 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.2-vector-fields-and-line-integrals-work-circulation-and-flux/solutions/ex-04",
+  "chapter": "ch16",
+  "section": "16.2",
+  "type": "solution",
+  "title": "Exact Differential Form Line Integral",
+  "exerciseReference": "Section 16.2, Exercise 4",
+  "originalTopic": "Differential Form Evaluation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "exact-differential",
+    "product-rule",
+    "line-integral"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_C (y dx + x dy) along any path from (1, 1) to (3, 5).",
+  "finalAnswer": "14",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Recognize Exact Differential of a Product",
+      "mathExpression": "y \\, dx + x \\, dy = d(xy)",
+      "explanation": "By the product rule of differentials, y dx + x dy is the total differential of f(x, y) = xy.",
+      "why": "Identifying exact differential."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate at Path Endpoints",
+      "mathExpression": "\\int_{(1, 1)}^{(3, 5)} d(xy) = [xy]_{(1, 1)}^{(3, 5)} = (3)(5) - (1)(1) = 15 - 1 = 14",
+      "explanation": "Subtract initial value from terminal value.",
+      "why": "Evaluating path-independent integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "3*5 - 1*1",
+    "expected": "14"
+  }
+}

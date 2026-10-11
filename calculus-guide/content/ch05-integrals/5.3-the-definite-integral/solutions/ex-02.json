@@ -1,0 +1,47 @@
+{
+  "id": "ch05-integrals/5.3-the-definite-integral/solutions/ex-02",
+  "chapter": "ch05",
+  "section": "5.3",
+  "type": "solution",
+  "title": "Using Integral Additivity and Linearity",
+  "exerciseReference": "Section 5.3, Exercise 2",
+  "originalTopic": "Algebraic Properties of Integrals",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "interval-additivity",
+    "linearity",
+    "properties"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Given that int_1^5 f(x) dx = 10 and int_3^5 f(x) dx = 4, evaluate int_1^3 (2f(x) - 3) dx.",
+  "finalAnswer": "\\int_1^3 (2f(x) - 3) dx = 6",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Interval Additivity to Find int_1^3 f",
+      "mathExpression": "\\int_1^5 f(x) dx = \\int_1^3 f(x) dx + \\int_3^5 f(x) dx \\implies 10 = \\int_1^3 f(x) dx + 4 \\implies \\int_1^3 f(x) dx = 6",
+      "explanation": "Subtract integral on [3, 5] from integral on [1, 5].",
+      "why": "Interval additivity property."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Linearity to Target Integral",
+      "mathExpression": "\\int_1^3 (2f(x) - 3) dx = 2 \\int_1^3 f(x) dx - \\int_1^3 3 dx",
+      "explanation": "Distribute integration operator.",
+      "why": "Linearity of definite integration."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Constant and Total",
+      "mathExpression": "2(6) - 3(3 - 1) = 12 - 6 = 6",
+      "explanation": "Evaluate integral of constant 3 over length 2.",
+      "why": "Final algebraic result."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 * 6 - 3 * (3 - 1)",
+    "expected": "6"
+  }
+}

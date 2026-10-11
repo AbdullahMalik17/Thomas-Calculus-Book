@@ -1,0 +1,40 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.4-the-cross-product/solutions/ex-03",
+  "chapter": "ch12",
+  "section": "12.4",
+  "type": "solution",
+  "title": "Unit Vector Orthogonal to Two Given Vectors",
+  "exerciseReference": "Section 12.4, Exercise 3",
+  "originalTopic": "Orthogonal Vectors",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "unit-vector",
+    "cross-product",
+    "orthogonality"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find a unit vector orthogonal to both u = <1, 1, 0> and v = <0, 1, 1>.",
+  "finalAnswer": "\\frac{1}{\\sqrt{3}}\\langle 1, -1, 1 \\rangle",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Cross Product",
+      "mathExpression": "\\mathbf{u} \\times \\mathbf{v} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ 1 & 1 & 0 \\\\ 0 & 1 & 1 \\end{vmatrix} = \\mathbf{i}(1 - 0) - \\mathbf{j}(1 - 0) + \\mathbf{k}(1 - 0) = \\langle 1, -1, 1 \\rangle",
+      "explanation": "The cross product u x v is perpendicular to both u and v.",
+      "why": "Constructing mutually orthogonal direction."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Normalize to Unit Length",
+      "mathExpression": "|\\mathbf{u} \\times \\mathbf{v}| = \\sqrt{1^2 + (-1)^2 + 1^2} = \\sqrt{3}; \\quad \\mathbf{n} = \\frac{1}{\\sqrt{3}}\\langle 1, -1, 1 \\rangle",
+      "explanation": "Divide the vector by its magnitude sqrt(3).",
+      "why": "Obtaining unit orthogonal vector."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt((1/sqrt(3))**2 + (-1/sqrt(3))**2 + (1/sqrt(3))**2)",
+    "expected": "1"
+  }
+}

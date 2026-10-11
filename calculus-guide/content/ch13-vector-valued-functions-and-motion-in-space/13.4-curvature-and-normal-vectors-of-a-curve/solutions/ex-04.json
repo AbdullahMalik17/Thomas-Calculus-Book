@@ -1,0 +1,40 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.4-curvature-and-normal-vectors-of-a-curve/solutions/ex-04",
+  "chapter": "ch13",
+  "section": "13.4",
+  "type": "solution",
+  "title": "Binormal Vector of a Space Curve",
+  "exerciseReference": "Section 13.4, Exercise 4",
+  "originalTopic": "Binormal Vector",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "binormal",
+    "TNB",
+    "cross-product"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the binormal vector B(t) for the helix r(t) = <3 cos(t), 3 sin(t), 4t>.",
+  "finalAnswer": "\\mathbf{B}(t) = \\left\\langle \\frac{4}{5}\\sin t, -\\frac{4}{5}\\cos t, \\frac{3}{5} \\right\\rangle",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Take Cross Product B = T x N",
+      "mathExpression": "\\mathbf{B} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ -\\frac{3}{5}\\sin t & \\frac{3}{5}\\cos t & \\frac{4}{5} \\\\ -\\cos t & -\\sin t & 0 \\end{vmatrix}",
+      "explanation": "Evaluate the cross product of the unit tangent and normal vectors.",
+      "why": "Constructing binormal vector."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Calculate Components of B",
+      "mathExpression": "\\mathbf{B} = \\mathbf{i}\\left(0 - \\left(-\\frac{4}{5}\\sin t\\right)\\right) - \\mathbf{j}\\left(0 - \\left(-\\frac{4}{5}\\cos t\\right)\\right) + \\mathbf{k}\\left(\\frac{3}{5}\\sin^2 t + \\frac{3}{5}\\cos^2 t\\right) = \\left\\langle \\frac{4}{5}\\sin t, -\\frac{4}{5}\\cos t, \\frac{3}{5} \\right\\rangle",
+      "explanation": "Simplify the minors using sin^2(t) + cos^2(t) = 1.",
+      "why": "Finalizing binormal expression."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(4/5)**2 + (3/5)**2",
+    "expected": "1"
+  }
+}

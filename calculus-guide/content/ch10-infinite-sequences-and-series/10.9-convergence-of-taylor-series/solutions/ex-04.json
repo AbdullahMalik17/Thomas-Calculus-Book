@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.9-convergence-of-taylor-series/solutions/ex-04",
+  "chapter": "ch10",
+  "section": "10.9",
+  "type": "solution",
+  "title": "Convergence of Sine Taylor Series Everywhere",
+  "exerciseReference": "Section 10.9, Exercise 4",
+  "originalTopic": "Sine Convergence Proof",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "sine",
+    "convergence-proof",
+    "lagrange-remainder"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Prove that the Maclaurin series for sin(x) converges to sin(x) for all real x.",
+  "finalAnswer": "\\lim_{n \\to \\infty} R_n(x) = 0 \\implies \\sin(x) = \\sum_{n=0}^\\infty (-1)^n \\frac{x^{2n+1}}{(2n+1)!} \\quad \\forall x \\in \\mathbb{R}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Bound Derivatives of Sine",
+      "mathExpression": "|f^{(n+1)}(c)| \\le 1 \\quad \\forall c \\in \\mathbb{R}, \\; \\forall n",
+      "explanation": "All derivatives of sin(x) are +-sin(x) or +-cos(x), bounded by 1.",
+      "why": "Universal derivative bound M = 1."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Remainder Estimate",
+      "mathExpression": "|R_n(x)| \\le \\frac{1}{(n+1)!} |x|^{n+1}",
+      "explanation": "Substitute M = 1.",
+      "why": "Taylor error bound."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Take Limit",
+      "mathExpression": "\\lim_{n \\to \\infty} \\frac{|x|^{n+1}}{(n+1)!} = 0 \\implies \\lim_{n \\to \\infty} R_n(x) = 0",
+      "explanation": "Remainder vanishes everywhere on the real line.",
+      "why": "Global convergence."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

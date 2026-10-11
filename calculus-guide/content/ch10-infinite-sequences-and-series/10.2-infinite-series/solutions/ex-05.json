@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.2-infinite-series/solutions/ex-05",
+  "chapter": "ch10",
+  "section": "10.2",
+  "type": "solution",
+  "title": "Combining Geometric Series via Linearity",
+  "exerciseReference": "Section 10.2, Exercise 5",
+  "originalTopic": "Linear Combination of Series",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "linearity",
+    "geometric-series",
+    "series-algebra"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the sum of the convergent series sum_{n=0}^oo (3^n + 2^n) / 6^n.",
+  "finalAnswer": "\\sum_{n=0}^\\infty \\frac{3^n + 2^n}{6^n} = \\frac{7}{2} = 3.5",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Split into Two Geometric Series",
+      "mathExpression": "\\sum_{n=0}^\\infty \\left( \\left(\\frac{3}{6}\\right)^n + \\left(\\frac{2}{6}\\right)^n \\right) = \\sum_{n=0}^\\infty \\left(\\frac{1}{2}\\right)^n + \\sum_{n=0}^\\infty \\left(\\frac{1}{3}\\right)^n",
+      "explanation": "Decompose into two separate ratios 1/2 and 1/3.",
+      "why": "Linearity of convergent series."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Each Series",
+      "mathExpression": "S_1 = \\frac{1}{1 - 1/2} = 2; \\quad S_2 = \\frac{1}{1 - 1/3} = \\frac{3}{2}",
+      "explanation": "Use a = 1, r_1 = 1/2, r_2 = 1/3.",
+      "why": "Geometric series formula."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Sum the Two Components",
+      "mathExpression": "S = 2 + \\frac{3}{2} = \\frac{7}{2}",
+      "explanation": "Add both sums.",
+      "why": "Final exact sum."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 + Rational(3, 2) - Rational(7, 2)",
+    "expected": "0"
+  }
+}

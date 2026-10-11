@@ -1,0 +1,48 @@
+{
+  "id": "ch08-techniques-of-integration/8.6-integral-tables-and-computer-algebra-systems/solutions/ex-03",
+  "chapter": "ch08",
+  "section": "8.6",
+  "type": "solution",
+  "title": "Reduction Formula for Powers of Natural Logarithm",
+  "exerciseReference": "Section 8.6, Exercise 3",
+  "originalTopic": "Logarithm Reduction Formula",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "logarithm",
+    "reduction-formula",
+    "by-parts"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int (ln x)^2 dx using a reduction formula.",
+  "finalAnswer": "x(\\ln x)^2 - 2x\\ln(x) + 2x + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Logarithm Reduction Formula for n = 2",
+      "mathExpression": "\\int (\\ln x)^2 dx = x(\\ln x)^2 - 2 \\int \\ln(x) dx",
+      "explanation": "Substitute n = 2 into integral (ln x)^n dx.",
+      "why": "Reduction step."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute Known Integral of ln(x)",
+      "mathExpression": "\\int \\ln(x) dx = x\\ln(x) - x",
+      "explanation": "Use result from Section 8.2.",
+      "why": "Known base integral."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Expand and Simplify",
+      "mathExpression": "x(\\ln x)^2 - 2(x\\ln(x) - x) + C = x(\\ln x)^2 - 2x\\ln(x) + 2x + C",
+      "explanation": "Distribute -2.",
+      "why": "Final exact result."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "log(x)**2",
+    "expected": "x*log(x)**2 - 2*x*log(x) + 2*x",
+    "kind": "indefinite"
+  }
+}

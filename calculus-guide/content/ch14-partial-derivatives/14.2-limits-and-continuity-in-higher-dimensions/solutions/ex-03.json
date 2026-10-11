@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.2-limits-and-continuity-in-higher-dimensions/solutions/ex-03",
+  "chapter": "ch14",
+  "section": "14.2",
+  "type": "solution",
+  "title": "Limit by Direct Substitution for Continuous Rational Function",
+  "exerciseReference": "Section 14.2, Exercise 3",
+  "originalTopic": "Direct Substitution Limits",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "continuity",
+    "direct-substitution",
+    "rational-limits"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate lim_{(x, y) -> (1, 2)} (x^2 y + 3xy^2) / (x + y).",
+  "finalAnswer": "\\frac{14}{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Check Denominator Continuity",
+      "mathExpression": "\\lim_{(x, y) \\to (1, 2)} (x + y) = 1 + 2 = 3 \\ne 0",
+      "explanation": "The denominator does not vanish at (1, 2), so the rational function is continuous at this point.",
+      "why": "Verifying applicability of direct substitution."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Direct Substitution",
+      "mathExpression": "\\frac{(1)^2(2) + 3(1)(2)^2}{1 + 2} = \\frac{2 + 12}{3} = \\frac{14}{3}",
+      "explanation": "Evaluate numerator and denominator at x = 1, y = 2.",
+      "why": "Evaluating continuous limit."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(1**2 * 2 + 3 * 1 * 2**2) / (1 + 2)",
+    "expected": "14/3"
+  }
+}

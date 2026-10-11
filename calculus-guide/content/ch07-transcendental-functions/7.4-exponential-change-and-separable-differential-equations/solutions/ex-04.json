@@ -1,0 +1,47 @@
+{
+  "id": "ch07-transcendental-functions/7.4-exponential-change-and-separable-differential-equations/solutions/ex-04",
+  "chapter": "ch07",
+  "section": "7.4",
+  "type": "solution",
+  "title": "Continuously Compounded Interest",
+  "exerciseReference": "Section 7.4, Exercise 4",
+  "originalTopic": "Financial Exponential Growth",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "interest",
+    "continuous-compounding",
+    "financial-math"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "An investment of $1000 earns 6% annual interest compounded continuously. What is the account balance after 5 years?",
+  "finalAnswer": "A(5) = 1000 e^{0.3} \\approx \\$1349.86",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "State Continuous Compounding Model",
+      "mathExpression": "A(t) = P e^{rt}, \\quad P = 1000, \\; r = 0.06, \\; t = 5",
+      "explanation": "Continuous compounding exponential formula.",
+      "why": "Financial growth law."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Exponent",
+      "mathExpression": "rt = 0.06 \\times 5 = 0.30",
+      "explanation": "Multiply rate by time.",
+      "why": "Evaluating exponent."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Account Balance",
+      "mathExpression": "A(5) = 1000 e^{0.3}",
+      "explanation": "Account balance formula.",
+      "why": "Exact continuous value."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1000 * exp(0.06 * 5) - 1000 * exp(0.3)",
+    "expected": "0"
+  }
+}

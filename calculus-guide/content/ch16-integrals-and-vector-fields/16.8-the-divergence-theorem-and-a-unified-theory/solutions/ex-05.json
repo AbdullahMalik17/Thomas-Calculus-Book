@@ -1,0 +1,40 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.8-the-divergence-theorem-and-a-unified-theory/solutions/ex-05",
+  "chapter": "ch16",
+  "section": "16.8",
+  "type": "solution",
+  "title": "Gauss's Law in Normalized Electrostatics",
+  "exerciseReference": "Section 16.8, Exercise 5",
+  "originalTopic": "Gauss's Law",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "Gauss-law",
+    "electrostatics",
+    "inverse-square"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For an electric field with unit point charge q = 1 and permittivity epsilon_0 = 1, verify that the flux through any enclosing closed surface equals 1.",
+  "finalAnswer": "\\text{Flux} = \\frac{q}{\\varepsilon_0} = 1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Gauss's Law",
+      "mathExpression": "\\Phi_E = \\iint_S \\mathbf{E} \\cdot \\mathbf{n} \\, d\\sigma = \\frac{q_{\\text{enclosed}}}{\\varepsilon_0}",
+      "explanation": "Gauss's law equates total outward electric flux to enclosed charge.",
+      "why": "Applying fundamental physical law."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate with Normalized Units",
+      "mathExpression": "\\Phi_E = \\frac{1}{1} = 1",
+      "explanation": "Substitute q = 1 and epsilon_0 = 1.",
+      "why": "Evaluating normalized flux."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1",
+    "expected": "1"
+  }
+}

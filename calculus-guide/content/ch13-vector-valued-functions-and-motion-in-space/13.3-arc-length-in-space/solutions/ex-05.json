@@ -1,0 +1,51 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.3-arc-length-in-space/solutions/ex-05",
+  "chapter": "ch13",
+  "section": "13.3",
+  "type": "solution",
+  "title": "Arc Length of an Exponential Equiangular Spiral",
+  "exerciseReference": "Section 13.3, Exercise 5",
+  "originalTopic": "Exponential Curves",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "exponential",
+    "spiral",
+    "definite-integral"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the length of the curve r(t) = <exp(t) cos(t), exp(t) sin(t), exp(t)> from t = 0 to t = ln(2).",
+  "finalAnswer": "\\sqrt{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Differentiate Each Component",
+      "mathExpression": "x'(t) = e^t(\\cos t - \\sin t), \\quad y'(t) = e^t(\\sin t + \\cos t), \\quad z'(t) = e^t",
+      "explanation": "Apply product rule to x(t) and y(t).",
+      "why": "Evaluating velocity components."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Calculate Speed Magnitude",
+      "mathExpression": "|\\mathbf{v}(t)|^2 = e^{2t} [(\\cos t - \\sin t)^2 + (\\sin t + \\cos t)^2 + 1] = e^{2t}[2 + 1] = 3e^{2t} \\implies |\\mathbf{v}(t)| = \\sqrt{3}e^t",
+      "explanation": "Use identity (cos t - sin t)^2 + (sin t + cos t)^2 = 2.",
+      "why": "Simplifying speed expression."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate from 0 to ln(2)",
+      "mathExpression": "L = \\int_0^{\\ln 2} \\sqrt{3}e^t \\, dt = \\sqrt{3}[e^t]_0^{\\ln 2} = \\sqrt{3}(2 - 1) = \\sqrt{3}",
+      "explanation": "Evaluate exponential integral.",
+      "why": "Computing total arc length."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "kind": "definite",
+    "expression": "sqrt(3)*exp(t)",
+    "lower": "0",
+    "upper": "log(2)",
+    "expected": "sqrt(3)",
+    "variable": "t"
+  }
+}

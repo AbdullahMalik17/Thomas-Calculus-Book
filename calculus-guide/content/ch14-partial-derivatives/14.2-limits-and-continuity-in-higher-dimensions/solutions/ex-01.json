@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.2-limits-and-continuity-in-higher-dimensions/solutions/ex-01",
+  "chapter": "ch14",
+  "section": "14.2",
+  "type": "solution",
+  "title": "Two-Path Test for Limit Non-Existence",
+  "exerciseReference": "Section 14.2, Exercise 1",
+  "originalTopic": "Two-Path Test",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "two-path-test",
+    "limit-nonexistence",
+    "multivariable-limits"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Show that lim_{(x, y) -> (0, 0)} (xy) / (x^2 + y^2) does not exist by approaching along lines y = mx.",
+  "finalAnswer": "\\text{Limit does not exist; value depends on slope } m: \\frac{m}{1 + m^2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Substitute Straight Line Path y = mx",
+      "mathExpression": "\\lim_{x \\to 0} \\frac{x(mx)}{x^2 + (mx)^2} = \\lim_{x \\to 0} \\frac{m x^2}{x^2(1 + m^2)} = \\frac{m}{1 + m^2}",
+      "explanation": "Cancel factor of x^2 from numerator and denominator.",
+      "why": "Evaluating limit along linear family of paths."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compare Different Slope Values",
+      "mathExpression": "m = 0 \\implies L = 0; \\quad m = 1 \\implies L = \\frac{1}{1 + 1^2} = \\frac{1}{2}",
+      "explanation": "Approaching along the x-axis gives 0, while approaching along y = x gives 1/2.",
+      "why": "Demonstrating path dependency."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1 / (1 + 1**2)",
+    "expected": "1/2"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.1-functions-of-several-variables/solutions/ex-01",
+  "chapter": "ch14",
+  "section": "14.1",
+  "type": "solution",
+  "title": "Domain and Value of a Hemispherical Function",
+  "exerciseReference": "Section 14.1, Exercise 1",
+  "originalTopic": "Natural Domain and Evaluation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "domain",
+    "multivariable",
+    "square-root"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the natural domain of f(x, y) = sqrt(9 - x^2 - y^2) and evaluate f(1, 2).",
+  "finalAnswer": "\\text{Domain: } x^2 + y^2 \\le 9; \\quad f(1, 2) = 2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine Non-Negative Radicand Condition",
+      "mathExpression": "9 - x^2 - y^2 \\ge 0 \\iff x^2 + y^2 \\le 9",
+      "explanation": "The square root is defined for real outputs if and only if its radicand is non-negative.",
+      "why": "Enforcing domain constraint."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate at Specified Point",
+      "mathExpression": "f(1, 2) = \\sqrt{9 - 1^2 - 2^2} = \\sqrt{9 - 1 - 4} = \\sqrt{4} = 2",
+      "explanation": "Substitute x = 1 and y = 2 into the function.",
+      "why": "Evaluating function at point."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(9 - 1**2 - 2**2)",
+    "expected": "2"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.10-partial-derivatives-with-constrained-variables/solutions/ex-04",
+  "chapter": "ch14",
+  "section": "14.10",
+  "type": "solution",
+  "title": "Verification of the Thermodynamic Cyclic Rule",
+  "exerciseReference": "Section 14.10, Exercise 4",
+  "originalTopic": "Cyclic Rule in Thermodynamics",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "cyclic-rule",
+    "thermodynamics",
+    "ideal-gas"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Verify the cyclic relation (dP/dV)_T (dV/dT)_P (dT/dP)_V = -1 for the ideal gas law PV = RT.",
+  "finalAnswer": "\\left(\\frac{\\partial P}{\\partial V}\\right)_T \\left(\\frac{\\partial V}{\\partial T}\\right)_P \\left(\\frac{\\partial T}{\\partial P}\\right)_V = -1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Each Constrained Partial Derivative",
+      "mathExpression": "P = \\frac{RT}{V} \\implies \\left(\\frac{\\partial P}{\\partial V}\\right)_T = -\\frac{RT}{V^2}; \\quad V = \\frac{RT}{P} \\implies \\left(\\frac{\\partial V}{\\partial T}\\right)_P = \\frac{R}{P}; \\quad T = \\frac{PV}{R} \\implies \\left(\\frac{\\partial T}{\\partial P}\\right)_V = \\frac{V}{R}",
+      "explanation": "Solve for each variable in turn and differentiate.",
+      "why": "Computing individual partial factors."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Multiply the Three Factors",
+      "mathExpression": "\\left(-\\frac{RT}{V^2}\\right) \\left(\\frac{R}{P}\\right) \\left(\\frac{V}{R}\\right) = -\\frac{R^2 T V}{R P V^2} = -\\frac{RT}{PV} = -1",
+      "explanation": "Cancel common factors and use PV = RT.",
+      "why": "Proving cyclic rule identity."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(-1) * 1",
+    "expected": "-1"
+  }
+}

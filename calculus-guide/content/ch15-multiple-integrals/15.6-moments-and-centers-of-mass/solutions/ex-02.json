@@ -1,0 +1,33 @@
+{
+  "id": "ch15-multiple-integrals/15.6-moments-and-centers-of-mass/solutions/ex-02",
+  "chapter": "ch15",
+  "section": "15.6",
+  "type": "solution",
+  "title": "Centroid of a Right Triangular Region",
+  "exerciseReference": "Section 15.6, Exercise 2",
+  "originalTopic": "Centroid of a Triangle",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "centroid",
+    "triangle",
+    "geometry"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the centroid of the right triangle with vertices (0, 0), (6, 0), and (0, 9).",
+  "finalAnswer": "(2, 3)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Recall Triangle Centroid Theorem",
+      "mathExpression": "\\bar{x} = \\frac{a}{3} = \\frac{6}{3} = 2, \\quad \\bar{y} = \\frac{b}{3} = \\frac{9}{3} = 3",
+      "explanation": "The centroid of any right triangle with legs along the coordinate axes lies at (a/3, b/3).",
+      "why": "Applying geometric centroid formula."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "6/3 + 9/3",
+    "expected": "2 + 3"
+  }
+}

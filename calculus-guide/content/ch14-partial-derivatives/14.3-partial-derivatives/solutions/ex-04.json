@@ -1,0 +1,48 @@
+{
+  "id": "ch14-partial-derivatives/14.3-partial-derivatives/solutions/ex-04",
+  "chapter": "ch14",
+  "section": "14.3",
+  "type": "solution",
+  "title": "Laplace's Equation for the Logarithmic Potential",
+  "exerciseReference": "Section 14.3, Exercise 4",
+  "originalTopic": "Harmonic Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "Laplace-equation",
+    "harmonic-function",
+    "second-partials"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Show that f(x, y) = ln(x^2 + y^2) satisfies Laplace's equation f_{xx} + f_{yy} = 0 for (x, y) != (0, 0).",
+  "finalAnswer": "f_{xx} + f_{yy} = 0 \\implies f \\text{ is harmonic}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute First Partials",
+      "mathExpression": "f_x = \\frac{2x}{x^2 + y^2}, \\quad f_y = \\frac{2y}{x^2 + y^2}",
+      "explanation": "Differentiate using chain rule on natural logarithm.",
+      "why": "Finding first derivatives."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Pure Second Partials via Quotient Rule",
+      "mathExpression": "f_{xx} = \\frac{2(x^2 + y^2) - 2x(2x)}{(x^2 + y^2)^2} = \\frac{2y^2 - 2x^2}{(x^2 + y^2)^2}; \\quad f_{yy} = \\frac{2x^2 - 2y^2}{(x^2 + y^2)^2}",
+      "explanation": "Apply quotient rule to f_x and f_y.",
+      "why": "Finding second pure derivatives."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Sum to Verify Laplace's Equation",
+      "mathExpression": "f_{xx} + f_{yy} = \\frac{(2y^2 - 2x^2) + (2x^2 - 2y^2)}{(x^2 + y^2)^2} = 0",
+      "explanation": "The numerators sum to zero identically.",
+      "why": "Confirming harmonic property."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "log(x**2 + y**2)",
+    "expected": "2*x/(x**2 + y**2)",
+    "variable": "x"
+  }
+}

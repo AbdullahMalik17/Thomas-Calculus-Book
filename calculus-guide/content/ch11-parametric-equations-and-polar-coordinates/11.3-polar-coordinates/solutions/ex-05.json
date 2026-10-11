@@ -1,0 +1,40 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.3-polar-coordinates/solutions/ex-05",
+  "chapter": "ch11",
+  "section": "11.3",
+  "type": "solution",
+  "title": "Testing Symmetry of a Limaçon",
+  "exerciseReference": "Section 11.3, Exercise 5",
+  "originalTopic": "Polar Symmetry Testing",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "limacon",
+    "symmetry",
+    "cosine"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Test r = 2 + 4 cos(theta) for symmetry about the polar axis.",
+  "finalAnswer": "\\text{Symmetric about the polar axis (x-axis)}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Substitute -theta for theta",
+      "mathExpression": "r(-\\theta) = 2 + 4\\cos(-\\theta)",
+      "explanation": "Test symmetry across horizontal polar axis.",
+      "why": "Symmetry test rule."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Cosine Even Symmetry",
+      "mathExpression": "\\cos(-\\theta) = \\cos(\\theta) \\implies r(-\\theta) = 2 + 4\\cos(\\theta) = r(\\theta)",
+      "explanation": "Equation remains unchanged.",
+      "why": "Proof of symmetry."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "cos(-theta) - cos(theta)",
+    "expected": "0"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "ch09-first-order-differential-equations/9.4-graphical-solutions-of-autonomous-equations/solutions/ex-02",
+  "chapter": "ch09",
+  "section": "9.4",
+  "type": "solution",
+  "title": "Logistic Equation Inflection Point",
+  "exerciseReference": "Section 9.4, Exercise 2",
+  "originalTopic": "Logistic Inflection Point",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "logistic",
+    "inflection-point",
+    "maximum-growth"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For dy/dt = 2y(1 - y/100), find the population level where growth rate is maximized.",
+  "finalAnswer": "y = 50 \\quad (\\text{Half of carrying capacity } M/2)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Express Second Derivative via Chain Rule",
+      "mathExpression": "\\frac{d^2 y}{dt^2} = \\frac{d}{dy}[f(y)] \\cdot \\frac{dy}{dt} = f'(y) f(y)",
+      "explanation": "Differentiate rate of change with respect to t.",
+      "why": "Concavity test."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate f(y)",
+      "mathExpression": "f(y) = 2y - \\frac{2}{100}y^2 \\implies f'(y) = 2 - \\frac{4}{100}y = 0 \\implies y = 50",
+      "explanation": "Set derivative of growth rate equal to zero.",
+      "why": "Maximizing growth rate."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Verify Point of Maximum Growth",
+      "mathExpression": "f''(50) = -0.04 < 0 \\implies y = 50 \\text{ maximizes } \\frac{dy}{dt}",
+      "explanation": "Growth is fastest when population is at half the carrying capacity.",
+      "why": "Logistic inflection point."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "2*x - 2*x**2 / 100",
+    "expected": "2 - 4*x/100",
+    "variable": "x"
+  }
+}

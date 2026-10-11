@@ -1,0 +1,40 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.7-conics-in-polar-coordinates/solutions/ex-01",
+  "chapter": "ch11",
+  "section": "11.7",
+  "type": "solution",
+  "title": "Identifying a Conic from its Polar Equation",
+  "exerciseReference": "Section 11.7, Exercise 1",
+  "originalTopic": "Polar Conic Identification",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "polar-conic",
+    "eccentricity",
+    "directrix"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Identify the conic r = 12 / (3 + 2 cos theta), and find its eccentricity and directrix.",
+  "finalAnswer": "\\text{Ellipse with } e = \\frac{2}{3} \\text{ and vertical directrix } x = 6",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Divide Numerator and Denominator by 3",
+      "mathExpression": "r = \\frac{12/3}{1 + (2/3)\\cos\\theta} = \\frac{4}{1 + (2/3)\\cos\\theta}",
+      "explanation": "Normalize leading denominator term to 1.",
+      "why": "Standard polar conic form ed / (1 + e cos theta)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify Eccentricity e and Directrix d",
+      "mathExpression": "e = \\frac{2}{3} < 1 \\implies \\text{Ellipse}; \\quad e d = 4 \\implies \\left(\\frac{2}{3}\\right)d = 4 \\implies d = 6",
+      "explanation": "Since denominator has + e cos(theta), directrix is vertical line x = d = 6.",
+      "why": "Conic classification."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "4 / (2/3) - 6",
+    "expected": "0"
+  }
+}

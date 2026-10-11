@@ -1,0 +1,40 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.2-vectors/solutions/ex-03",
+  "chapter": "ch12",
+  "section": "12.2",
+  "type": "solution",
+  "title": "Normalizing a Vector to Unit Length",
+  "exerciseReference": "Section 12.2, Exercise 3",
+  "originalTopic": "Unit Vectors",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "unit-vector",
+    "normalization",
+    "standard-basis"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find a unit vector u in the direction of v = 3i - 4j + 12k.",
+  "finalAnswer": "\\mathbf{u} = \\frac{3}{13}\\mathbf{i} - \\frac{4}{13}\\mathbf{j} + \\frac{12}{13}\\mathbf{k}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Calculate the Magnitude of v",
+      "mathExpression": "|\\mathbf{v}| = \\sqrt{3^2 + (-4)^2 + 12^2} = \\sqrt{9 + 16 + 144} = \\sqrt{169} = 13",
+      "explanation": "Calculate the norm of the vector v.",
+      "why": "Determining scaling factor for unit length."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Scale Vector by Reciprocal Magnitude",
+      "mathExpression": "\\mathbf{u} = \\frac{1}{13} (3\\mathbf{i} - 4\\mathbf{j} + 12\\mathbf{k}) = \\frac{3}{13}\\mathbf{i} - \\frac{4}{13}\\mathbf{j} + \\frac{12}{13}\\mathbf{k}",
+      "explanation": "Divide each component by 13 to produce a vector of length 1.",
+      "why": "Constructing directional unit vector."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(3**2 + (-4)**2 + 12**2)",
+    "expected": "13"
+  }
+}

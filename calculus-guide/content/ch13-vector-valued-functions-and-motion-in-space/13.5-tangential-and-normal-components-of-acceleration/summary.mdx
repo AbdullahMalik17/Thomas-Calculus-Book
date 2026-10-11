@@ -1,0 +1,19 @@
+# Section 13.5: Tangential and Normal Components of Acceleration
+
+Acceleration decomposes into orthogonal components aligned with the moving Frenet frame.
+
+---
+
+## 1. Component Formulas
+
+$$\mathbf{a} = a_T \mathbf{T} + a_N \mathbf{N}$$
+
+- **Tangential Component**: $a_T = \frac{d}{dt}|\mathbf{v}| = \frac{\mathbf{v} \cdot \mathbf{a}}{|\mathbf{v}|}$
+- **Normal Component**: $a_N = \kappa |\mathbf{v}|^2 = \frac{|\mathbf{v} \times \mathbf{a}|}{|\mathbf{v}|} = \sqrt{|\mathbf{a}|^2 - a_T^2}$
+
+---
+
+## 2. Geometric Interpretation
+
+- If speed is constant ($|\mathbf{v}| = c$), then $a_T = 0$ and $\mathbf{a} = a_N \mathbf{N}$ points directly toward the center of curvature.
+- The binormal component $a_B = \mathbf{a} \cdot \mathbf{B}$ is always identically zero.

@@ -1,0 +1,40 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.2-vectors/solutions/ex-02",
+  "chapter": "ch12",
+  "section": "12.2",
+  "type": "solution",
+  "title": "Linear Combination of Vectors",
+  "exerciseReference": "Section 12.2, Exercise 2",
+  "originalTopic": "Vector Algebra",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "linear-combination",
+    "vector-addition",
+    "scalar-multiplication"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Given u = <2, -1, 3> and v = <0, 4, -2>, find the component form of 3u - 2v.",
+  "finalAnswer": "\\langle 6, -11, 13 \\rangle",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Perform Scalar Multiplications",
+      "mathExpression": "3\\mathbf{u} = \\langle 6, -3, 9 \\rangle, \\quad 2\\mathbf{v} = \\langle 0, 8, -4 \\rangle",
+      "explanation": "Multiply each vector component by the respective scalar.",
+      "why": "Applying scalar distribution."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Subtract Vector Components",
+      "mathExpression": "3\\mathbf{u} - 2\\mathbf{v} = \\langle 6 - 0, -3 - 8, 9 - (-4) \\rangle = \\langle 6, -11, 13 \\rangle",
+      "explanation": "Subtract corresponding components.",
+      "why": "Completing linear combination of vectors."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "3*2 - 2*0 + 3*(-1) - 2*4 + 3*3 - 2*(-2)",
+    "expected": "6 - 11 + 13"
+  }
+}

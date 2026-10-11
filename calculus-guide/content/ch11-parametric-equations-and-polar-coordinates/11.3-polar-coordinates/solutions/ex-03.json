@@ -1,0 +1,40 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.3-polar-coordinates/solutions/ex-03",
+  "chapter": "ch11",
+  "section": "11.3",
+  "type": "solution",
+  "title": "Negative Radial Coordinate Interpretation",
+  "exerciseReference": "Section 11.3, Exercise 3",
+  "originalTopic": "Negative r Geometry",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "negative-r",
+    "polar-points",
+    "angles"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Plot (-3, pi/4) and find an equivalent representation with positive r.",
+  "finalAnswer": "(-3, \\pi/4) = (3, 5\\pi/4)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Understand Negative r Definition",
+      "mathExpression": "(-r, \\theta) = (r, \\theta + \\pi)",
+      "explanation": "Reflect across the origin by adding pi to the angle.",
+      "why": "Polar coordinate equivalence rule."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Add pi to the Angle",
+      "mathExpression": "\\frac{\\pi}{4} + \\pi = \\frac{5\\pi}{4} \\implies (3, 5\\pi/4)",
+      "explanation": "Point in third quadrant.",
+      "why": "Positive r equivalent form."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "pi/4 + pi - 5*pi/4",
+    "expected": "0"
+  }
+}

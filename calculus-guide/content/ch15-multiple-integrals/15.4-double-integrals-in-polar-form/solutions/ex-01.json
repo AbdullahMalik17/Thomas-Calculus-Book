@@ -1,0 +1,40 @@
+{
+  "id": "ch15-multiple-integrals/15.4-double-integrals-in-polar-form/solutions/ex-01",
+  "chapter": "ch15",
+  "section": "15.4",
+  "type": "solution",
+  "title": "Double Integral of x^2 + y^2 over a Circular Disk",
+  "exerciseReference": "Section 15.4, Exercise 1",
+  "originalTopic": "Polar Disk Integration",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "polar-integral",
+    "circular-disk",
+    "Jacobian-r"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate iint_D (x^2 + y^2) dA where D is the circular disk x^2 + y^2 <= 4.",
+  "finalAnswer": "8\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Convert Integrand and Region to Polar Coordinates",
+      "mathExpression": "x^2 + y^2 = r^2, \\quad dA = r \\, dr \\, d\\theta; \\quad 0 \\le r \\le 2, \\; 0 \\le \\theta \\le 2\\pi",
+      "explanation": "Substitute r^2 for x^2 + y^2 and include factor r in area element.",
+      "why": "Formulating polar integral."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Set Up and Separate Iterated Integrals",
+      "mathExpression": "\\int_0^{2\\pi} d\\theta \\int_0^2 r^2 \\cdot r \\, dr = (2\\pi) \\int_0^2 r^3 \\, dr = 2\\pi \\left[ \\frac{r^4}{4} \\right]_0^2 = 2\\pi \\left( \\frac{16}{4} \\right) = 8\\pi",
+      "explanation": "Integrate r^3 over [0, 2] and multiply by 2*pi.",
+      "why": "Evaluating separated polar integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 * pi * 4",
+    "expected": "8*pi"
+  }
+}

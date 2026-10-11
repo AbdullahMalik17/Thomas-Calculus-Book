@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.3-the-integral-test/solutions/ex-01",
+  "chapter": "ch10",
+  "section": "10.3",
+  "type": "solution",
+  "title": "Applying the Integral Test to a Logarithmic Denominator",
+  "exerciseReference": "Section 10.3, Exercise 1",
+  "originalTopic": "Integral Test Application",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "integral-test",
+    "logarithm",
+    "divergence"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine the convergence or divergence of sum_{n=2}^oo 1 / (n ln n).",
+  "finalAnswer": "\\sum_{n=2}^\\infty \\frac{1}{n \\ln n} \\quad \\text{Diverges by the Integral Test}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Check Integral Test Conditions",
+      "mathExpression": "f(x) = \\frac{1}{x \\ln x} > 0, \\quad f'(x) = -\\frac{\\ln x + 1}{(x \\ln x)^2} < 0 \\quad \\forall x \\ge 2",
+      "explanation": "f is continuous, positive, and decreasing on [2, oo).",
+      "why": "Prerequisites for Integral Test."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Improper Integral",
+      "mathExpression": "\\int_2^\\infty \\frac{1}{x \\ln x} dx = \\lim_{t \\to \\infty} [\\ln(\\ln x)]_2^t = \\lim_{t \\to \\infty} (\\ln(\\ln t) - \\ln(\\ln 2)) = \\infty",
+      "explanation": "Substitute u = ln(x) to integrate 1/u du.",
+      "why": "Improper integral evaluation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude Divergence",
+      "mathExpression": "\\int_2^\\infty f(x) dx = \\infty \\implies \\sum_{n=2}^\\infty \\frac{1}{n \\ln n} \\text{ diverges}",
+      "explanation": "Since the integral diverges, the series diverges.",
+      "why": "Integral test conclusion."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

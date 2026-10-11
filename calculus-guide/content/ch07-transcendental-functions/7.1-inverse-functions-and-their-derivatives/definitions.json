@@ -1,0 +1,22 @@
+{
+  "id": "ch07-transcendental-functions/7.1-inverse-functions-and-their-derivatives/definitions",
+  "chapter": "ch07",
+  "section": "7.1",
+  "title": "Inverse Functions and Their Derivatives",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-derivative-of-inverse-function",
+      "title": "Derivative Rule for Inverses",
+      "category": "theorem",
+      "latex": "(f^{-1})'(b) = \\frac{1}{f'(a)}, \\quad \\text{where } b = f(a) \\text{ and } f'(a) \\ne 0",
+      "statement": "If f is one-to-one and differentiable with non-zero derivative at a, then its inverse f^(-1) is differentiable at b = f(a) and its slope is the reciprocal of the slope of f at a.",
+      "conditions": [
+        "f is one-to-one",
+        "f'(a) != 0"
+      ],
+      "explanation": "Reflecting a tangent line across the line y = x inverts its slope (Delta y / Delta x becomes Delta x / Delta y).",
+      "keyTakeaway": "The derivative of the inverse function is the reciprocal of the derivative of the original function."
+    }
+  ]
+}

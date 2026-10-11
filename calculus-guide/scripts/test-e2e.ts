@@ -102,7 +102,7 @@ const CHECKS: CheckDefinition[] = [
   },
   {
     id: 4,
-    name: 'SymPy Math Engine 24 Fixtures & Section 1.1 Verification',
+    name: 'SymPy Math Engine 24 Fixtures & 116 Sections Verification',
     command: 'python',
     args: ['tools/verify/verify.py'],
     validateOutput: (stdout, stderr) => {

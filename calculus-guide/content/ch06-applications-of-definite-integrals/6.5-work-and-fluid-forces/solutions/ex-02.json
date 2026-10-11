@@ -1,0 +1,50 @@
+{
+  "id": "ch06-applications-of-definite-integrals/6.5-work-and-fluid-forces/solutions/ex-02",
+  "chapter": "ch06",
+  "section": "6.5",
+  "type": "solution",
+  "title": "Work Required to Pump Water from a Cylindrical Tank",
+  "exerciseReference": "Section 6.5, Exercise 2",
+  "originalTopic": "Pumping Liquid Work",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "pumping-water",
+    "cylindrical-tank",
+    "work"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A cylindrical tank of radius 2 m and height 6 m is full of water (density 9800 N/m^3). Find the work required to pump all the water out over the top rim of the tank.",
+  "finalAnswer": "W = 705600\\pi \\text{ Joules}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate Slice Volume and Weight",
+      "mathExpression": "\\Delta V = \\pi r^2 \\Delta y = 4\\pi \\Delta y; \\quad \\Delta F = 9800 (4\\pi \\Delta y) = 39200\\pi \\Delta y",
+      "explanation": "A horizontal slice at height y has area 4pi and thickness dy.",
+      "why": "Incremental weight force."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify Lifting Distance",
+      "mathExpression": "d(y) = 6 - y",
+      "explanation": "A slice at height y must be lifted to the top rim at y = 6.",
+      "why": "Displacement against gravity."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate Work from y = 0 to y = 6",
+      "mathExpression": "W = 39200\\pi \\int_0^6 (6 - y) dy = 39200\\pi \\left[ 6y - \\frac{y^2}{2} \\right]_0^6 = 39200\\pi (36 - 18) = 39200\\pi (18) = 705600\\pi",
+      "explanation": "Evaluate the linear definite integral.",
+      "why": "Total pumping work."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "39200*pi*(6 - x)",
+    "expected": "705600*pi",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "6"
+  }
+}

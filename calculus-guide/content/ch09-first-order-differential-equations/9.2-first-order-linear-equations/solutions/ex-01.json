@@ -1,0 +1,48 @@
+{
+  "id": "ch09-first-order-differential-equations/9.2-first-order-linear-equations/solutions/ex-01",
+  "chapter": "ch09",
+  "section": "9.2",
+  "type": "solution",
+  "title": "Standard Integrating Factor with Constant Coefficient",
+  "exerciseReference": "Section 9.2, Exercise 1",
+  "originalTopic": "Integrating Factor Method",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "linear-ode",
+    "integrating-factor",
+    "first-order"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Solve dy/dx + 2y = e^(-x).",
+  "finalAnswer": "y(x) = e^{-x} + C e^{-2x}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Integrating Factor mu(x)",
+      "mathExpression": "P(x) = 2 \\implies \\mu(x) = e^{\\int 2 dx} = e^{2x}",
+      "explanation": "Integrate constant coefficient 2.",
+      "why": "Integrating factor definition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Multiply and Collapse Left Side",
+      "mathExpression": "e^{2x} \\frac{dy}{dx} + 2e^{2x}y = \\frac{d}{dx}[e^{2x} y] = e^{2x} e^{-x} = e^x",
+      "explanation": "Collapse left side into derivative of product.",
+      "why": "Product rule reversal."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate and Solve for y",
+      "mathExpression": "e^{2x} y = \\int e^x dx = e^x + C \\implies y(x) = e^{-2x}(e^x + C) = e^{-x} + C e^{-2x}",
+      "explanation": "Divide both sides by e^(2x).",
+      "why": "Explicit solution."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "exp(-x) + exp(-2*x)",
+    "expected": "-exp(-x) - 2*exp(-2*x)",
+    "variable": "x"
+  }
+}

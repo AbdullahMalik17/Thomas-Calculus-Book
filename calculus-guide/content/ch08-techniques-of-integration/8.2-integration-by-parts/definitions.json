@@ -1,0 +1,34 @@
+{
+  "id": "ch08-techniques-of-integration/8.2-integration-by-parts/definitions",
+  "chapter": "ch08",
+  "section": "8.2",
+  "title": "Integration by Parts",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-integration-by-parts",
+      "title": "Integration by Parts Formula",
+      "category": "theorem",
+      "latex": "\\int u \\, dv = u v - \\int v \\, du",
+      "statement": "Derived from the Product Rule of differentiation d(uv) = u dv + v du. Enables transforming an integral of a product into an easier integral by differentiating u and integrating dv.",
+      "conditions": [
+        "u and v are continuously differentiable"
+      ],
+      "explanation": "Priority for choosing u follows LIATE rule: Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential.",
+      "keyTakeaway": "Integration by parts is the integral calculus reversal of the product rule."
+    },
+    {
+      "id": "rule-tabular-integration",
+      "title": "Tabular Integration by Parts",
+      "category": "rule",
+      "latex": "\\int f(x) g(x) dx = f(x) G_1(x) - f'(x) G_2(x) + f''(x) G_3(x) - \\dots",
+      "statement": "A rapid systematic algorithm for repeated integration by parts where polynomial f(x) is repeatedly differentiated until 0, and g(x) is repeatedly integrated.",
+      "conditions": [
+        "f(x) is a polynomial",
+        "g(x) is repeatedly integrable (sin, cos, exp)"
+      ],
+      "explanation": "Eliminates repetitive bookkeeping and sign errors.",
+      "keyTakeaway": "Tabular method executes repeated integration by parts instantly."
+    }
+  ]
+}

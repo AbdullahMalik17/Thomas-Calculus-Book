@@ -1,0 +1,47 @@
+{
+  "id": "ch09-first-order-differential-equations/9.4-graphical-solutions-of-autonomous-equations/solutions/ex-04",
+  "chapter": "ch09",
+  "section": "9.4",
+  "type": "solution",
+  "title": "Harvesting Model with Threshold",
+  "exerciseReference": "Section 9.4, Exercise 4",
+  "originalTopic": "Harvesting Threshold",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "harvesting",
+    "bifurcation",
+    "extinction-threshold"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For dy/dt = y(1 - y) - h, find the critical harvesting rate h_c above which population collapses to extinction for all initial sizes.",
+  "finalAnswer": "h_c = \\frac{1}{4} = 0.25",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Equilibria as Roots of Quadratic",
+      "mathExpression": "-y^2 + y - h = 0 \\implies y^2 - y + h = 0 \\implies y = \\frac{1 \\pm \\sqrt{1 - 4h}}{2}",
+      "explanation": "Solve quadratic equation f(y) = 0.",
+      "why": "Equilibrium points."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find Discriminant Condition",
+      "mathExpression": "\\Delta = 1 - 4h",
+      "explanation": "Real equilibria exist only when discriminant is non-negative.",
+      "why": "Bifurcation value."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Determine Critical Rate",
+      "mathExpression": "1 - 4h = 0 \\implies h_c = \\frac{1}{4}",
+      "explanation": "If h > 1/4, dy/dt < 0 everywhere and extinction is inevitable.",
+      "why": "Critical bifurcation threshold."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1 - 4*(1/4)",
+    "expected": "0"
+  }
+}

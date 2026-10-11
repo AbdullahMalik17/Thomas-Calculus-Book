@@ -1,0 +1,13 @@
+# Section 9.2: First-Order Linear Equations
+
+First-order linear ODEs have standard form $\frac{dy}{dx} + P(x)y = Q(x)$.
+
+---
+
+## 1. Solution Algorithm
+
+1. **Standard Form**: Put equation into $\frac{dy}{dx} + P(x)y = Q(x)$.
+2. **Integrating Factor**: Calculate $\mu(x) = e^{\int P(x) dx}$.
+3. **Multiply**: $\mu(x) \frac{dy}{dx} + \mu(x) P(x) y = \frac{d}{dx}[\mu(x) y] = \mu(x) Q(x)$.
+4. **Integrate**: $\mu(x) y = \int \mu(x) Q(x) dx + C$.
+5. **Solve for $y$**: $y = \frac{1}{\mu(x)} \left( \int \mu(x) Q(x) dx + C \right)$.

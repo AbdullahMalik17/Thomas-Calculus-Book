@@ -39,9 +39,9 @@ export interface SectionDef {
     }>;
     sympyVerification: {
       operation: string;
-      type: string;
-      expression: string;
-      expected: string;
+      type?: string;
+      expression?: string;
+      expected?: string;
       variable?: string;
       order?: number;
       kind?: string;

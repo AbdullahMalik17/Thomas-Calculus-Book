@@ -1,0 +1,48 @@
+{
+  "id": "ch07-transcendental-functions/7.4-exponential-change-and-separable-differential-equations/solutions/ex-05",
+  "chapter": "ch07",
+  "section": "7.4",
+  "type": "solution",
+  "title": "Logistic Differential Equation Form",
+  "exerciseReference": "Section 7.4, Exercise 5",
+  "originalTopic": "Separable Logistic Growth",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "logistic-ode",
+    "separation-of-variables",
+    "partial-fractions"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Solve dP/dt = P(1 - P) with initial population P(0) = 1/2.",
+  "finalAnswer": "P(t) = \\frac{1}{1 + e^{-t}} = \\frac{e^t}{e^t + 1}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Separate Variables",
+      "mathExpression": "\\frac{dP}{P(1 - P)} = dt \\implies \\left( \\frac{1}{P} + \\frac{1}{1 - P} \\right) dP = dt",
+      "explanation": "Apply partial fractions: 1/(P(1-P)) = 1/P + 1/(1-P).",
+      "why": "Partial fraction decomposition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate",
+      "mathExpression": "\\ln|P| - \\ln|1 - P| = t + C \\implies \\ln\\left|\\frac{P}{1 - P}\\right| = t + C",
+      "explanation": "Integrate each rational term.",
+      "why": "Logarithmic antiderivative."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Apply P(0) = 1/2 and Solve for P",
+      "mathExpression": "\\ln\\left(\\frac{1/2}{1/2}\\right) = \\ln(1) = 0 \\implies C = 0 \\implies \\frac{P}{1 - P} = e^t \\implies P(t) = \\frac{e^t}{1 + e^t} = \\frac{1}{1 + e^{-t}}",
+      "explanation": "Solve algebraically for P(t).",
+      "why": "Standard logistic sigmoid solution."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "1 / (1 + exp(-x))",
+    "expected": "exp(-x) / (1 + exp(-x))**2",
+    "variable": "x"
+  }
+}

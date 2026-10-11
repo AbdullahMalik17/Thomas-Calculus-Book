@@ -1,0 +1,40 @@
+{
+  "id": "ch15-multiple-integrals/15.7-triple-integrals-in-cylindrical-and-spherical-coordinates/solutions/ex-01",
+  "chapter": "ch15",
+  "section": "15.7",
+  "type": "solution",
+  "title": "Volume of a Paraboloid Cap in Cylindrical Coordinates",
+  "exerciseReference": "Section 15.7, Exercise 1",
+  "originalTopic": "Cylindrical Coordinates Volume",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "cylindrical-coordinates",
+    "volume",
+    "paraboloid"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the volume of the solid under z = 4 - r^2 above the xy-plane using cylindrical coordinates.",
+  "finalAnswer": "8\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine Cylindrical Integration Bounds",
+      "mathExpression": "z = 0 \\implies 4 - r^2 = 0 \\implies r = 2; \\quad 0 \\le z \\le 4 - r^2, \\; 0 \\le r \\le 2, \\; 0 \\le \\theta \\le 2\\pi",
+      "explanation": "The base is circle of radius 2; height extends from 0 to 4 - r^2.",
+      "why": "Setting up limits in cylindrical coordinates."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Set Up and Integrate",
+      "mathExpression": "V = \\int_0^{2\\pi} d\\theta \\int_0^2 r (4 - r^2) \\, dr = 2\\pi \\int_0^2 (4r - r^3) \\, dr = 2\\pi \\left[ 2r^2 - \\frac{r^4}{4} \\right]_0^2 = 2\\pi (8 - 4) = 8\\pi",
+      "explanation": "Evaluate the radial integral with Jacobian factor r.",
+      "why": "Evaluating volume integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 * pi * (8 - 4)",
+    "expected": "8*pi"
+  }
+}

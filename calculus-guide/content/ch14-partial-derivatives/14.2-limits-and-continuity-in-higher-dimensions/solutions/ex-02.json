@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.2-limits-and-continuity-in-higher-dimensions/solutions/ex-02",
+  "chapter": "ch14",
+  "section": "14.2",
+  "type": "solution",
+  "title": "Evaluating a Multivariable Limit via Polar Coordinates",
+  "exerciseReference": "Section 14.2, Exercise 2",
+  "originalTopic": "Polar Coordinate Limits",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "polar-limits",
+    "limit-existence",
+    "squeeze-theorem"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate lim_{(x, y) -> (0, 0)} (x^3 + y^3) / (x^2 + y^2) using polar coordinates.",
+  "finalAnswer": "0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Convert to Polar Coordinates",
+      "mathExpression": "x = r\\cos\\theta, \\; y = r\\sin\\theta \\implies \\frac{x^3 + y^3}{x^2 + y^2} = \\frac{r^3(\\cos^3\\theta + \\sin^3\\theta)}{r^2} = r(\\cos^3\\theta + \\sin^3\\theta)",
+      "explanation": "Substitute polar expressions and simplify powers of r.",
+      "why": "Isolating radial distance from angular orientation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Limit as r -> 0",
+      "mathExpression": "|r(\\cos^3\\theta + \\sin^3\\theta)| \\le r (|\\cos^3\\theta| + |\\sin^3\\theta|) \\le 2r \\to 0 \\text{ as } r \\to 0^+",
+      "explanation": "Since the angular term is bounded by 2, the product approaches 0 uniformly in theta.",
+      "why": "Establishing uniform convergence to 0."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

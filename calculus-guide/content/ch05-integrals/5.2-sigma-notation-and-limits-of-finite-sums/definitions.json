@@ -1,0 +1,33 @@
+{
+  "id": "ch05-integrals/5.2-sigma-notation-and-limits-of-finite-sums/definitions",
+  "chapter": "ch05",
+  "section": "5.2",
+  "title": "Sigma Notation and Limits of Finite Sums",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-sigma-notation",
+      "title": "Sigma Notation and Linearity",
+      "category": "definition",
+      "latex": "\\sum_{k=1}^n (c a_k + d b_k) = c \\sum_{k=1}^n a_k + d \\sum_{k=1}^n b_k",
+      "statement": "Sigma notation compactly represents sums of indexed terms. The summation operator is linear: constant factors factor out, and sums distribute across addition and subtraction.",
+      "conditions": [
+        "c, d are constants independent of index k"
+      ],
+      "explanation": "Linearity enables algebraic decomposition of complex polynomials into elementary power sums.",
+      "keyTakeaway": "Sigma notation is linear and distributes over addition."
+    },
+    {
+      "id": "formula-standard-power-sums",
+      "title": "Formulas for Sums of Powers of Integers",
+      "category": "formula",
+      "latex": "\\sum_{k=1}^n k = \\frac{n(n+1)}{2}, \\quad \\sum_{k=1}^n k^2 = \\frac{n(n+1)(2n+1)}{6}, \\quad \\sum_{k=1}^n k^3 = \\left(\\frac{n(n+1)}{2}\\right)^2",
+      "statement": "Exact algebraic closed-form expressions for the sums of the first n positive integers, squares, and cubes.",
+      "conditions": [
+        "n is a positive integer"
+      ],
+      "explanation": "These formulas provide the algebraic mechanism to compute limits of Riemann sums analytically without relying on antiderivatives.",
+      "keyTakeaway": "Closed-form power sum formulas convert index sums into rational functions of n."
+    }
+  ]
+}

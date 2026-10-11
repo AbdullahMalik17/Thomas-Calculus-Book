@@ -1,0 +1,40 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.2-vectors/solutions/ex-01",
+  "chapter": "ch12",
+  "section": "12.2",
+  "type": "solution",
+  "title": "Component Form and Magnitude of Displacement Vector",
+  "exerciseReference": "Section 12.2, Exercise 1",
+  "originalTopic": "Vector Components and Norm",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "displacement-vector",
+    "magnitude",
+    "components"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the component form and magnitude of the vector v having initial point P(-1, 3, 5) and terminal point Q(2, -1, 4).",
+  "finalAnswer": "\\mathbf{v} = \\langle 3, -4, -1 \\rangle, \\quad |\\mathbf{v}| = \\sqrt{26}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Vector Components",
+      "mathExpression": "\\mathbf{v} = \\langle 2 - (-1), -1 - 3, 4 - 5 \\rangle = \\langle 3, -4, -1 \\rangle",
+      "explanation": "Subtract initial point coordinates from terminal point coordinates.",
+      "why": "Determining directed displacement components."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Euclidean Magnitude",
+      "mathExpression": "|\\mathbf{v}| = \\sqrt{3^2 + (-4)^2 + (-1)^2} = \\sqrt{9 + 16 + 1} = \\sqrt{26}",
+      "explanation": "Apply the Euclidean vector norm formula.",
+      "why": "Finding the geometric length of the vector."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt((2 - (-1))**2 + (-1 - 3)**2 + (4 - 5)**2)",
+    "expected": "sqrt(26)"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ch14-partial-derivatives/14.2-limits-and-continuity-in-higher-dimensions/solutions/ex-05",
+  "chapter": "ch14",
+  "section": "14.2",
+  "type": "solution",
+  "title": "Making a Piecewise Function Continuous at the Origin",
+  "exerciseReference": "Section 14.2, Exercise 5",
+  "originalTopic": "Removable Discontinuity",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "continuity",
+    "piecewise",
+    "trig-limits"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine the value of c that makes f(x, y) = sin(x^2 + y^2) / (x^2 + y^2) for (x, y) != (0, 0) and f(0, 0) = c continuous everywhere.",
+  "finalAnswer": "c = 1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Substitute Single Variable u = x^2 + y^2",
+      "mathExpression": "u = x^2 + y^2; \\quad (x, y) \\to (0, 0) \\iff u \\to 0^+",
+      "explanation": "Rephrase the 2D limit as a 1D radial limit.",
+      "why": "Reducing to single-variable limit."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Known Fundamental Limit",
+      "mathExpression": "\\lim_{u \\to 0^+} \\frac{\\sin u}{u} = 1",
+      "explanation": "Apply standard calculus limit sin(u)/u -> 1.",
+      "why": "Finding the limiting value at the origin."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Enforce Continuity Definition",
+      "mathExpression": "f(0, 0) = c = \\lim_{(x, y) \\to (0, 0)} f(x, y) = 1 \\implies c = 1",
+      "explanation": "For continuity, the defined value must match the limiting value.",
+      "why": "Ensuring continuity at origin."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1",
+    "expected": "1"
+  }
+}

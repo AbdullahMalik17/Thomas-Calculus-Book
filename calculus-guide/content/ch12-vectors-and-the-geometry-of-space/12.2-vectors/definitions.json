@@ -1,0 +1,34 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.2-vectors/definitions",
+  "chapter": "ch12",
+  "section": "12.2",
+  "title": "Vectors",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-vector-3d",
+      "title": "Vector in Three Dimensions",
+      "category": "definition",
+      "latex": "\\mathbf{v} = \\langle v_1, v_2, v_3 \\rangle = v_1 \\mathbf{i} + v_2 \\mathbf{j} + v_3 \\mathbf{k}",
+      "statement": "A three-dimensional vector is an equivalence class of directed line segments having the same length and direction. In component form, v = <v_1, v_2, v_3>, where v_1, v_2, v_3 are the scalar components along the standard basis vectors.",
+      "conditions": [
+        "Components are real numbers",
+        "Equality holds component-wise"
+      ],
+      "explanation": "Vectors model physical quantities possessing both magnitude and spatial orientation, such as displacement, velocity, and force.",
+      "keyTakeaway": "Vectors add component-wise and scale linearly by multiplying each component."
+    },
+    {
+      "id": "formula-vector-magnitude-unit",
+      "title": "Vector Magnitude and Unit Vector",
+      "category": "formula",
+      "latex": "|\\mathbf{v}| = \\sqrt{v_1^2 + v_2^2 + v_3^2}, \\quad \\mathbf{u} = \\frac{\\mathbf{v}}{|\\mathbf{v}|} \\quad (\\mathbf{v} \\ne \\mathbf{0})",
+      "statement": "The magnitude (or norm) of v is its Euclidean length. A unit vector u in the direction of non-zero v has length 1 and is obtained by dividing v by its magnitude.",
+      "conditions": [
+        "|v| >= 0 with equality if and only if v = 0"
+      ],
+      "explanation": "Normalization isolates direction from magnitude, allowing directional decomposition of vector quantities.",
+      "keyTakeaway": "Every non-zero vector decomposes uniquely as v = |v| u."
+    }
+  ]
+}

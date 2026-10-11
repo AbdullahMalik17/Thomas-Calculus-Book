@@ -1,0 +1,47 @@
+{
+  "id": "ch15-multiple-integrals/15.1-double-and-iterated-integrals-over-rectangles/solutions/ex-02",
+  "chapter": "ch15",
+  "section": "15.1",
+  "type": "solution",
+  "title": "Separable Double Integral Involving Trigonometric Functions",
+  "exerciseReference": "Section 15.1, Exercise 2",
+  "originalTopic": "Separable Double Integrals",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "separable-integral",
+    "trigonometric",
+    "Fubini"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate iint_R x sin(y) dA over the rectangle R = [0, pi/2] x [0, pi].",
+  "finalAnswer": "\\frac{\\pi^2}{4}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Factor into Product of Single Integrals",
+      "mathExpression": "\\iint_R x\\sin y \\, dA = \\left( \\int_0^{\\pi/2} x \\, dx \\right) \\left( \\int_0^\\pi \\sin y \\, dy \\right)",
+      "explanation": "Because limits are constant and integrand factors as g(x)h(y), the integral factors.",
+      "why": "Using separable integral product property."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Each Factor",
+      "mathExpression": "\\int_0^{\\pi/2} x \\, dx = \\left[ \\frac{x^2}{2} \\right]_0^{\\pi/2} = \\frac{\\pi^2}{8}; \\quad \\int_0^\\pi \\sin y \\, dy = [-\\cos y]_0^\\pi = -(-1) - (-1) = 2",
+      "explanation": "Compute single variable definite integrals.",
+      "why": "Evaluating individual factors."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Multiply Results",
+      "mathExpression": "\\frac{\\pi^2}{8} \\times 2 = \\frac{\\pi^2}{4}",
+      "explanation": "Multiply the two factor values.",
+      "why": "Computing final double integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(pi**2 / 8) * 2",
+    "expected": "pi**2 / 4"
+  }
+}

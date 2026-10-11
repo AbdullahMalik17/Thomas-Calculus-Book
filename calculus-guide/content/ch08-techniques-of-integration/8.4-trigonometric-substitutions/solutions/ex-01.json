@@ -1,0 +1,48 @@
+{
+  "id": "ch08-techniques-of-integration/8.4-trigonometric-substitutions/solutions/ex-01",
+  "chapter": "ch08",
+  "section": "8.4",
+  "type": "solution",
+  "title": "Sine Substitution for sqrt(a^2 - x^2)",
+  "exerciseReference": "Section 8.4, Exercise 1",
+  "originalTopic": "Sine Substitution",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "trig-sub",
+    "sine-substitution",
+    "radicals"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int sqrt(9 - x^2) dx.",
+  "finalAnswer": "\\frac{9}{2}\\arcsin\\left(\\frac{x}{3}\\right) + \\frac{x\\sqrt{9 - x^2}}{2} + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up Trigonometric Substitution",
+      "mathExpression": "x = 3\\sin(\\theta) \\implies dx = 3\\cos(\\theta) d\\theta, \\quad \\sqrt{9 - x^2} = 3\\cos(\\theta)",
+      "explanation": "Use x = a sin(theta) with a = 3.",
+      "why": "Eliminates square root via 1 - sin^2 = cos^2."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute and Integrate in theta",
+      "mathExpression": "\\int (3\\cos(\\theta))(3\\cos(\\theta) d\\theta) = 9 \\int \\cos^2(\\theta) d\\theta = 9 \\int \\frac{1 + \\cos(2\\theta)}{2} d\\theta = \\frac{9}{2}\\theta + \\frac{9}{4}\\sin(2\\theta) + C",
+      "explanation": "Apply half-angle formula.",
+      "why": "Even power integration."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Back-Substitute Using Right Triangle",
+      "mathExpression": "\\sin(2\\theta) = 2\\sin(\\theta)\\cos(\\theta) = 2\\left(\\frac{x}{3}\\right)\\left(\\frac{\\sqrt{9 - x^2}}{3}\\right) = \\frac{2x\\sqrt{9 - x^2}}{9} \\implies \\frac{9}{2}\\arcsin(x/3) + \\frac{x\\sqrt{9 - x^2}}{2} + C",
+      "explanation": "Replace theta with arcsin(x/3) and sin(2 theta) with 2 sin cos.",
+      "why": "Returning to algebraic variable x."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "sqrt(9 - x**2)",
+    "expected": "(9/2)*asin(x/3) + x*sqrt(9 - x**2)/2",
+    "kind": "indefinite"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "ch09-first-order-differential-equations/9.2-first-order-linear-equations/definitions",
+  "chapter": "ch09",
+  "section": "9.2",
+  "title": "First-Order Linear Equations",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-integrating-factor",
+      "title": "The Integrating Factor Method",
+      "category": "theorem",
+      "latex": "\\frac{dy}{dx} + P(x)y = Q(x) \\implies \\mu(x) = e^{\\int P(x) dx}, \\quad y(x) = \\frac{1}{\\mu(x)} \\int \\mu(x) Q(x) dx",
+      "statement": "Any first-order linear differential equation in standard form dy/dx + P(x)y = Q(x) can be solved by multiplying through by the integrating factor mu(x) = exp(int P(x)dx), collapsing the left side into the product derivative d/dx[mu(x) y].",
+      "conditions": [
+        "P(x) and Q(x) are continuous on interval I"
+      ],
+      "explanation": "Transforms an insoluble equation into an exact total derivative.",
+      "keyTakeaway": "Multiply by mu(x) = exp(int P dx) to collapse left side into d/dx[mu * y]."
+    }
+  ]
+}

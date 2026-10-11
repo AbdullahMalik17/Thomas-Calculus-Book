@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.6-tangent-planes-and-differentials/solutions/ex-03",
+  "chapter": "ch14",
+  "section": "14.6",
+  "type": "solution",
+  "title": "Computing Total Differential of a Power Product",
+  "exerciseReference": "Section 14.6, Exercise 3",
+  "originalTopic": "Total Differential",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "total-differential",
+    "differentials",
+    "error-estimation"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For z = x^3 y^2, compute the total differential dz at (x, y) = (2, 3) for dx = 0.01 and dy = -0.02.",
+  "finalAnswer": "dz = 0.12",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Partial Derivatives of z",
+      "mathExpression": "\\frac{\\partial z}{\\partial x} = 3x^2 y^2, \\quad \\frac{\\partial z}{\\partial y} = 2x^3 y",
+      "explanation": "Differentiate with respect to x and y.",
+      "why": "Finding differential coefficients."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Total Differential",
+      "mathExpression": "dz = (3x^2 y^2) dx + (2x^3 y) dy = [3(4)(9)](0.01) + [2(8)(3)](-0.02) = (108)(0.01) + (48)(-0.02) = 1.08 - 0.96 = 0.12",
+      "explanation": "Substitute x = 2, y = 3, dx = 0.01, dy = -0.02.",
+      "why": "Evaluating total differential."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "3*4*9*0.01 + 2*8*3*(-0.02)",
+    "expected": "0.12"
+  }
+}

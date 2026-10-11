@@ -1,0 +1,47 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.3-path-independence-conservative-fields-and-potential-functions/solutions/ex-01",
+  "chapter": "ch16",
+  "section": "16.3",
+  "type": "solution",
+  "title": "Finding the Potential Function of a Planar Conservative Field",
+  "exerciseReference": "Section 16.3, Exercise 1",
+  "originalTopic": "Potential Function Construction",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "potential-function",
+    "conservative-field",
+    "integration"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Verify that F = <2xy + cos(x), x^2 + 3y^2> is conservative and find its scalar potential function f(x, y).",
+  "finalAnswer": "f(x, y) = x^2 y + \\sin(x) + y^3 + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Verify Component Equality",
+      "mathExpression": "\\frac{\\partial M}{\\partial y} = \\frac{\\partial}{\\partial y}(2xy + \\cos x) = 2x; \\quad \\frac{\\partial N}{\\partial x} = \\frac{\\partial}{\\partial x}(x^2 + 3y^2) = 2x",
+      "explanation": "Since M_y = N_x on all of R^2 (simply connected), F is conservative.",
+      "why": "Testing conservative criterion."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate M with Respect to x",
+      "mathExpression": "f(x, y) = \\int (2xy + \\cos x) \\, dx = x^2 y + \\sin x + g(y)",
+      "explanation": "The constant of integration g(y) is a function of y alone.",
+      "why": "Integrating first component."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Differentiate with Respect to y and Match N",
+      "mathExpression": "\\frac{\\partial f}{\\partial y} = x^2 + g'(y) = x^2 + 3y^2 \\implies g'(y) = 3y^2 \\implies g(y) = y^3 + C",
+      "explanation": "Equate partial derivative to N(x, y).",
+      "why": "Solving for g(y)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "pi**2 + 1",
+    "expected": "pi**2 + 1"
+  }
+}

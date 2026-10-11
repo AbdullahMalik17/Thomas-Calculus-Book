@@ -1,0 +1,50 @@
+{
+  "id": "ch07-transcendental-functions/7.3-exponential-functions/solutions/ex-05",
+  "chapter": "ch07",
+  "section": "7.3",
+  "type": "solution",
+  "title": "Area Under an Exponential Decay Curve",
+  "exerciseReference": "Section 7.3, Exercise 5",
+  "originalTopic": "Exponential Area",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "exponential-decay",
+    "area",
+    "definite-integral"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the area under y = e^(-2x) on the interval [0, \\ln(2)].",
+  "finalAnswer": "\\text{Area} = \\frac{3}{8}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up Area Integral",
+      "mathExpression": "A = \\int_0^{\\ln(2)} e^{-2x} dx",
+      "explanation": "Since e^(-2x) > 0, the integral gives the area directly.",
+      "why": "Definite integral for area."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find Antiderivative",
+      "mathExpression": "\\int e^{-2x} dx = -\\frac{1}{2} e^{-2x}",
+      "explanation": "Divide by constant coefficient -2.",
+      "why": "Exponential integration rule."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate at Endpoints",
+      "mathExpression": "-\\frac{1}{2} \\left[ e^{-2\\ln(2)} - e^0 \\right] = -\\frac{1}{2} \\left( \\frac{1}{4} - 1 \\right) = -\\frac{1}{2} \\left( -\\frac{3}{4} \\right) = \\frac{3}{8}",
+      "explanation": "e^(-2 ln 2) = (2)^(-2) = 1/4.",
+      "why": "Final exact rational area."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "exp(-2*x)",
+    "expected": "3/8",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "log(2)"
+  }
+}

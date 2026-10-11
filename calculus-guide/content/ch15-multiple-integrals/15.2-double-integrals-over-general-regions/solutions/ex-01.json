@@ -1,0 +1,54 @@
+{
+  "id": "ch15-multiple-integrals/15.2-double-integrals-over-general-regions/solutions/ex-01",
+  "chapter": "ch15",
+  "section": "15.2",
+  "type": "solution",
+  "title": "Double Integral over Region Bounded by a Parabola and Square Root",
+  "exerciseReference": "Section 15.2, Exercise 1",
+  "originalTopic": "Type I Region Integration",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "Type-I-region",
+    "general-regions",
+    "polynomial-integral"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate iint_D (x + 2y) dA where D is bounded by y = x^2 and y = sqrt(x).",
+  "finalAnswer": "\\frac{9}{20}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Intersection Points of Bounding Curves",
+      "mathExpression": "x^2 = \\sqrt{x} \\implies x^4 = x \\implies x(x^3 - 1) = 0 \\implies x = 0, \\; x = 1",
+      "explanation": "The curves intersect at (0, 0) and (1, 1). On [0, 1], sqrt(x) >= x^2.",
+      "why": "Determining domain boundary limits."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Set Up Type I Iterated Integral",
+      "mathExpression": "\\int_0^1 \\int_{x^2}^{\\sqrt{x}} (x + 2y) \\, dy \\, dx",
+      "explanation": "Inner limits are y = x^2 to y = sqrt(x); outer limits are x = 0 to 1.",
+      "why": "Formulating iterated integral."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Inner Integral with Respect to y",
+      "mathExpression": "\\left[ xy + y^2 \\right]_{x^2}^{\\sqrt{x}} = (x\\sqrt{x} + x) - (x(x^2) + x^4) = x^{3/2} + x - x^3 - x^4",
+      "explanation": "Evaluate antiderivative at upper and lower boundaries.",
+      "why": "Performing inner integration."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Evaluate Outer Integral with Respect to x",
+      "mathExpression": "\\int_0^1 (x^{3/2} + x - x^3 - x^4) \\, dx = \\left[ \\frac{2}{5}x^{5/2} + \\frac{x^2}{2} - \\frac{x^4}{4} - \\frac{x^5}{5} \\right]_0^1 = \\frac{2}{5} + \\frac{1}{2} - \\frac{1}{4} - \\frac{1}{5} = \\frac{1}{5} + \\frac{1}{4} = \\frac{9}{20}",
+      "explanation": "Integrate each power term over [0, 1].",
+      "why": "Evaluating final area-weighted integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2/5 + 1/2 - 1/4 - 1/5",
+    "expected": "9/20"
+  }
+}

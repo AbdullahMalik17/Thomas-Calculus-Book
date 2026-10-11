@@ -1,0 +1,48 @@
+{
+  "id": "ch08-techniques-of-integration/8.3-trigonometric-integrals/solutions/ex-01",
+  "chapter": "ch08",
+  "section": "8.3",
+  "type": "solution",
+  "title": "Trigonometric Integral with Odd Cosine Power",
+  "exerciseReference": "Section 8.3, Exercise 1",
+  "originalTopic": "Odd Cosine Power",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "trigonometric-integrals",
+    "odd-power",
+    "substitution"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int sin^2(x) cos^3(x) dx.",
+  "finalAnswer": "\\frac{\\sin^3(x)}{3} - \\frac{\\sin^5(x)}{5} + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Isolate One Factor of cos(x)",
+      "mathExpression": "\\sin^2(x) \\cos^3(x) dx = \\sin^2(x) \\cos^2(x) \\cos(x) dx = \\sin^2(x)(1 - \\sin^2(x)) \\cos(x) dx",
+      "explanation": "Convert cos^2(x) to 1 - sin^2(x).",
+      "why": "Prepares for u = sin(x) substitution."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute u = sin(x)",
+      "mathExpression": "u = \\sin(x) \\implies du = \\cos(x) dx \\implies \\int u^2(1 - u^2) du = \\int (u^2 - u^4) du",
+      "explanation": "Expand polynomial in u.",
+      "why": "Polynomial integration."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate and Back-Substitute",
+      "mathExpression": "\\frac{u^3}{3} - \\frac{u^5}{5} + C = \\frac{\\sin^3(x)}{3} - \\frac{\\sin^5(x)}{5} + C",
+      "explanation": "Replace u with sin(x).",
+      "why": "Final evaluated antiderivative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "sin(x)**2 * cos(x)**3",
+    "expected": "sin(x)**3/3 - sin(x)**5/5",
+    "kind": "indefinite"
+  }
+}

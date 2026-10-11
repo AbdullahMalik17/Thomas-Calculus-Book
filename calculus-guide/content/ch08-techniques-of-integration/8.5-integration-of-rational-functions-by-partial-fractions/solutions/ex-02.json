@@ -1,0 +1,48 @@
+{
+  "id": "ch08-techniques-of-integration/8.5-integration-of-rational-functions-by-partial-fractions/solutions/ex-02",
+  "chapter": "ch08",
+  "section": "8.5",
+  "type": "solution",
+  "title": "Partial Fractions with Repeated Linear Factor",
+  "exerciseReference": "Section 8.5, Exercise 2",
+  "originalTopic": "Repeated Linear Factor",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "repeated-factor",
+    "partial-fractions",
+    "power-rule"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int (x^2 + 1) / (x(x - 1)^2) dx.",
+  "finalAnswer": "\\ln|x| - \\frac{2}{x - 1} + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up Partial Fraction Decomposition",
+      "mathExpression": "\\frac{x^2 + 1}{x(x - 1)^2} = \\frac{A}{x} + \\frac{B}{x - 1} + \\frac{C}{(x - 1)^2}",
+      "explanation": "Include single and repeated powers of (x - 1).",
+      "why": "Decomposition template."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve Coefficients",
+      "mathExpression": "x^2 + 1 = A(x - 1)^2 + Bx(x - 1) + Cx; \\quad x = 0 \\implies 1 = A; \\quad x = 1 \\implies 2 = C; \\quad x^2 \\text{ coeff}: 1 = A + B \\implies B = 0",
+      "explanation": "A = 1, B = 0, C = 2.",
+      "why": "Determining coefficients."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate Terms",
+      "mathExpression": "\\int \\left( \\frac{1}{x} + \\frac{2}{(x - 1)^2} \\right) dx = \\ln|x| - \\frac{2}{x - 1} + C",
+      "explanation": "Integrate 1/x to ln|x| and 2(x-1)^(-2) to -2/(x-1).",
+      "why": "Final exact antiderivative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "(x**2 + 1)/(x*(x - 1)**2)",
+    "expected": "log(x) - 2/(x - 1)",
+    "kind": "indefinite"
+  }
+}

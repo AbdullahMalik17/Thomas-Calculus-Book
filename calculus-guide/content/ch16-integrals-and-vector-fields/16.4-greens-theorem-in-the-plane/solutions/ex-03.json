@@ -1,0 +1,40 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.4-greens-theorem-in-the-plane/solutions/ex-03",
+  "chapter": "ch16",
+  "section": "16.4",
+  "type": "solution",
+  "title": "Outward Flux Across a Circle via Green's Flux Theorem",
+  "exerciseReference": "Section 16.4, Exercise 3",
+  "originalTopic": "Green's Theorem Flux Form",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "flux",
+    "divergence",
+    "Greens-theorem"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the outward flux of F = <2x, 3y> across the circle x^2 + y^2 = 4.",
+  "finalAnswer": "20\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Divergence of F",
+      "mathExpression": "\\text{div}\\,\\mathbf{F} = \\frac{\\partial M}{\\partial x} + \\frac{\\partial N}{\\partial y} = 2 + 3 = 5",
+      "explanation": "Differentiate each component.",
+      "why": "Finding 2D divergence."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Green's Flux Theorem",
+      "mathExpression": "\\oint_C \\mathbf{F} \\cdot \\mathbf{n} \\, ds = \\iint_R 5 \\, dA = 5 \\times \\text{Area}(R) = 5 \\times \\pi(2^2) = 20\\pi",
+      "explanation": "Multiply constant divergence 5 by the area of the circular disk 4*pi.",
+      "why": "Evaluating total flux."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "5 * pi * 4",
+    "expected": "20*pi"
+  }
+}

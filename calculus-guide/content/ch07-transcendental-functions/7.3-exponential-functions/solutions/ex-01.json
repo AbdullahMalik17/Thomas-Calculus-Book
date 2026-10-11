@@ -1,0 +1,41 @@
+{
+  "id": "ch07-transcendental-functions/7.3-exponential-functions/solutions/ex-01",
+  "chapter": "ch07",
+  "section": "7.3",
+  "type": "solution",
+  "title": "Derivative of Exponential with Composite Exponent",
+  "exerciseReference": "Section 7.3, Exercise 1",
+  "originalTopic": "Chain Rule with Exponential",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "exponential",
+    "chain-rule",
+    "derivative"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the derivative of y = e^(x^2 - 3x).",
+  "finalAnswer": "\\frac{dy}{dx} = (2x - 3)e^{x^2 - 3x}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Exponential Chain Rule",
+      "mathExpression": "\\frac{d}{dx}[e^u] = e^u \\cdot u', \\quad u = x^2 - 3x",
+      "explanation": "The derivative of e^u is e^u times the derivative of exponent.",
+      "why": "Chain Rule."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute u' and Combine",
+      "mathExpression": "u' = 2x - 3 \\implies \\frac{dy}{dx} = (2x - 3)e^{x^2 - 3x}",
+      "explanation": "Multiply e^u by (2x - 3).",
+      "why": "Final evaluated derivative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "exp(x**2 - 3*x)",
+    "expected": "(2*x - 3)*exp(x**2 - 3*x)",
+    "variable": "x"
+  }
+}

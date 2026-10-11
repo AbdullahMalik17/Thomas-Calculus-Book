@@ -1,0 +1,47 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.6-surface-integrals/solutions/ex-04",
+  "chapter": "ch16",
+  "section": "16.6",
+  "type": "solution",
+  "title": "Upward Flux Through a Paraboloid Cap",
+  "exerciseReference": "Section 16.6, Exercise 4",
+  "originalTopic": "Flux Through Graph",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "flux",
+    "paraboloid",
+    "surface-integral"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the upward flux of F = <0, 0, z> through the paraboloid z = 4 - x^2 - y^2 for z >= 0.",
+  "finalAnswer": "8\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Upward Normal Flux Formula",
+      "mathExpression": "z = f(x, y) = 4 - x^2 - y^2 \\implies \\mathbf{n}\\,d\\sigma = \\langle 2x, 2y, 1 \\rangle \\, dA",
+      "explanation": "The upward normal vector for z = f(x, y) is <-f_x, -f_y, 1>.",
+      "why": "Setting up oriented area element."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Dot Product F . n d sigma",
+      "mathExpression": "\\mathbf{F} \\cdot \\mathbf{n}\\,d\\sigma = [0(2x) + 0(2y) + z(1)] \\, dA = z \\, dA = (4 - x^2 - y^2) \\, dA",
+      "explanation": "Take inner product of F and normal element.",
+      "why": "Formulating planar double integral."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate in Polar Coordinates",
+      "mathExpression": "\\int_0^{2\\pi} d\\theta \\int_0^2 (4 - r^2) r \\, dr = 2\\pi \\left[ 2r^2 - \\frac{r^4}{4} \\right]_0^2 = 2\\pi (8 - 4) = 8\\pi",
+      "explanation": "Evaluate polar integral over base circle of radius 2.",
+      "why": "Computing total upward flux."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 * pi * 4",
+    "expected": "8*pi"
+  }
+}

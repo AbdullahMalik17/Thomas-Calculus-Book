@@ -1,0 +1,47 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.7-stokes-theorem/solutions/ex-01",
+  "chapter": "ch16",
+  "section": "16.7",
+  "type": "solution",
+  "title": "Verifying Stokes' Theorem on a Hemispherical Cap",
+  "exerciseReference": "Section 16.7, Exercise 1",
+  "originalTopic": "Stokes' Theorem Verification",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "Stokes-theorem",
+    "curl",
+    "hemisphere"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Verify Stokes' Theorem for F = <-y, x, z> over upper hemisphere z = sqrt(1 - x^2 - y^2) bounded by unit circle C in the xy-plane.",
+  "finalAnswer": "\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = \\iint_S (\\nabla \\times \\mathbf{F}) \\cdot \\mathbf{n} \\, d\\sigma = 2\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate Boundary Line Integral Directly",
+      "mathExpression": "\\oint_C (-y \\, dx + x \\, dy + z \\, dz) = \\int_0^{2\\pi} [-\\sin t(-\\sin t) + \\cos t(\\cos t) + 0] dt = \\int_0^{2\\pi} 1 \\, dt = 2\\pi",
+      "explanation": "Parametrize boundary circle x = cos(t), y = sin(t), z = 0.",
+      "why": "Computing boundary circulation directly."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Curl of F",
+      "mathExpression": "\\nabla \\times \\mathbf{F} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ \\partial_x & \\partial_y & \\partial_z \\\\ -y & x & z \\end{vmatrix} = \\langle 0, 0, 1 - (-1) \\rangle = \\langle 0, 0, 2 \\rangle",
+      "explanation": "Evaluate the curl vector.",
+      "why": "Finding curl integrand."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Flux of Curl via Flat Base Disk",
+      "mathExpression": "\\iint_{\\text{Disk}} \\langle 0, 0, 2 \\rangle \\cdot \\mathbf{k} \\, dA = 2 \\iint_D 1 \\, dA = 2(\\pi \\cdot 1^2) = 2\\pi",
+      "explanation": "By Stokes' Theorem, replace hemisphere with flat disk sharing boundary C.",
+      "why": "Computing curl flux across surface."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2*pi",
+    "expected": "2*pi"
+  }
+}

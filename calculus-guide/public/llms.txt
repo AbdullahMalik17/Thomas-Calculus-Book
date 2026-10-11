@@ -59,12 +59,13 @@
 - Section 5.5: Indefinite Integrals and the Substitution Method - u-substitution, algebraic transforms, trigonometric integrals (5 solutions).
 - Section 5.6: Substitution and Area Between Curves - Definite integrals via substitution, area between intersecting curves (5 solutions).
 
-### Chapter 6: Applications of Definite Integrals (5 Sections, 25 Solutions)
+### Chapter 6: Applications of Definite Integrals (6 Sections, 30 Solutions)
 - Section 6.1: Volumes Using Cross-Sections - Slicing method, Cavalieri's principle, solids of revolution, disk and washer methods (5 solutions).
 - Section 6.2: Volumes Using Cylindrical Shells - Shell method around coordinate and displaced axes (5 solutions).
 - Section 6.3: Arc Length - Smooth curve lengths, parametric arc length, differential arc element (5 solutions).
 - Section 6.4: Areas of Surfaces of Revolution - Conical frustum, surface area of revolution about x- and y-axes (5 solutions).
 - Section 6.5: Work and Fluid Forces - Hooke's law springs, pumping liquids from tanks, hydrostatic pressure and fluid force on submerged plates (5 solutions).
+- Section 6.6: Moments and Centers of Mass - First moments, centroids of planar regions, center of mass, Pappus's centroid theorem (5 solutions).
 
 ### Chapter 7: Transcendental Functions (8 Sections, 40 Solutions)
 - Section 7.1: Inverse Functions and Their Derivatives - One-to-one criteria, inverse function theorem, reflection across y = x (5 solutions).

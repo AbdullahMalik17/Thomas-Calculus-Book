@@ -1,0 +1,47 @@
+{
+  "id": "ch14-partial-derivatives/14.5-directional-derivatives-and-gradient-vectors/solutions/ex-05",
+  "chapter": "ch14",
+  "section": "14.5",
+  "type": "solution",
+  "title": "Directions of Zero Rate of Change",
+  "exerciseReference": "Section 14.5, Exercise 5",
+  "originalTopic": "Zero Directional Derivative",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "contour-tangent",
+    "zero-rate",
+    "orthogonality"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "At a point where grad f = <-3, 13>, find the unit directions u along which the directional derivative is zero.",
+  "finalAnswer": "\\mathbf{u} = \\pm \\frac{1}{\\sqrt{178}} \\langle 13, 3 \\rangle",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Directional Derivative Equal to Zero",
+      "mathExpression": "D_\\mathbf{u} f = \\nabla f \\cdot \\mathbf{u} = 0",
+      "explanation": "Zero change occurs in directions tangent to the level curve (orthogonal to grad f).",
+      "why": "Setting up orthogonality condition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find Orthogonal Vector and Normalize",
+      "mathExpression": "\\langle -3, 13 \\rangle \\cdot \\langle u_1, u_2 \\rangle = -3 u_1 + 13 u_2 = 0 \\implies \\mathbf{u} \\parallel \\langle 13, 3 \\rangle",
+      "explanation": "Rotate the vector by 90 degrees.",
+      "why": "Finding orthogonal direction."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Normalize to Unit Length",
+      "mathExpression": "|\\langle 13, 3 \\rangle| = \\sqrt{169 + 9} = \\sqrt{178} \\implies \\mathbf{u} = \\pm \\frac{1}{\\sqrt{178}} \\langle 13, 3 \\rangle",
+      "explanation": "Divide by the Euclidean norm.",
+      "why": "Obtaining unit direction vectors."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(-3)*13 + 13*3",
+    "expected": "0"
+  }
+}

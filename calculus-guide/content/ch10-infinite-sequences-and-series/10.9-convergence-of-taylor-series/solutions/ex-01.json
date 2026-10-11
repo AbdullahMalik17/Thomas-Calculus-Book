@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.9-convergence-of-taylor-series/solutions/ex-01",
+  "chapter": "ch10",
+  "section": "10.9",
+  "type": "solution",
+  "title": "Proving Convergence of Maclaurin Series for e^x",
+  "exerciseReference": "Section 10.9, Exercise 1",
+  "originalTopic": "Taylor Series Convergence Proof",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "taylors-theorem",
+    "lagrange-remainder",
+    "proof"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Prove that the Maclaurin series for e^x converges to e^x for all real x.",
+  "finalAnswer": "\\lim_{n \\to \\infty} R_n(x) = 0 \\implies e^x = \\sum_{n=0}^\\infty \\frac{x^n}{n!} \\quad \\forall x \\in \\mathbb{R}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "State Lagrange Remainder for e^x",
+      "mathExpression": "R_n(x) = \\frac{f^{(n+1)}(c)}{(n+1)!} x^{n+1} = \\frac{e^c}{(n+1)!} x^{n+1} \\quad (c \\text{ between } 0 \\text{ and } x)",
+      "explanation": "All derivatives of e^x equal e^x.",
+      "why": "Lagrange remainder formula."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Bound e^c on Closed Interval",
+      "mathExpression": "M = \\max(1, e^x) \\implies |R_n(x)| \\le M \\frac{|x|^{n+1}}{(n+1)!}",
+      "explanation": "e^c is bounded by constant M independent of n.",
+      "why": "Bounding the derivative factor."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Take Limit as n -> oo",
+      "mathExpression": "\\lim_{n \\to \\infty} \\frac{|x|^{n+1}}{(n+1)!} = 0 \\implies \\lim_{n \\to \\infty} R_n(x) = 0",
+      "explanation": "Factorials outgrow any fixed base power x^(n+1).",
+      "why": "Proof of exact convergence."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

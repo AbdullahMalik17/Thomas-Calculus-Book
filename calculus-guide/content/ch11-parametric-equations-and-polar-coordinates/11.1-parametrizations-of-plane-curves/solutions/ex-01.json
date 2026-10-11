@@ -1,0 +1,47 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.1-parametrizations-of-plane-curves/solutions/ex-01",
+  "chapter": "ch11",
+  "section": "11.1",
+  "type": "solution",
+  "title": "Eliminating the Parameter for an Ellipse",
+  "exerciseReference": "Section 11.1, Exercise 1",
+  "originalTopic": "Eliminating Parameter via Trigonometry",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "parametric",
+    "ellipse",
+    "trigonometric-identity"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Eliminate the parameter t to find the Cartesian equation of x = 3 cos(t), y = 2 sin(t) for 0 <= t <= 2pi.",
+  "finalAnswer": "\\frac{x^2}{9} + \\frac{y^2}{4} = 1 \\quad (\\text{Standard Ellipse})",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Isolate Trigonometric Functions",
+      "mathExpression": "\\cos(t) = \\frac{x}{3}, \\quad \\sin(t) = \\frac{y}{2}",
+      "explanation": "Divide by the semi-axis lengths.",
+      "why": "Prepares for Pythagorean identity."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Pythagorean Identity",
+      "mathExpression": "\\cos^2(t) + \\sin^2(t) = 1 \\implies \\left(\\frac{x}{3}\\right)^2 + \\left(\\frac{y}{2}\\right)^2 = 1",
+      "explanation": "Substitute x/3 and y/2.",
+      "why": "Eliminating parameter t."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State Cartesian Equation",
+      "mathExpression": "\\frac{x^2}{9} + \\frac{y^2}{4} = 1",
+      "explanation": "Standard form of an ellipse centered at the origin.",
+      "why": "Final Cartesian trajectory."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(x/3)**2 + (y/2)**2 - (x**2/9 + y**2/4)",
+    "expected": "0"
+  }
+}

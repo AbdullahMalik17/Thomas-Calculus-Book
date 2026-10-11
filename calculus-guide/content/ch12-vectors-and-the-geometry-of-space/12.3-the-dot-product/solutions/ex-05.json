@@ -1,0 +1,47 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.3-the-dot-product/solutions/ex-05",
+  "chapter": "ch12",
+  "section": "12.3",
+  "type": "solution",
+  "title": "Direction Cosines of a Vector",
+  "exerciseReference": "Section 12.3, Exercise 5",
+  "originalTopic": "Direction Angles and Cosines",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "direction-cosines",
+    "unit-sphere",
+    "angles"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the direction cosines of the vector v = <2, 1, -2> and verify that cos^2(alpha) + cos^2(beta) + cos^2(gamma) = 1.",
+  "finalAnswer": "\\cos\\alpha = \\frac{2}{3}, \\; \\cos\\beta = \\frac{1}{3}, \\; \\cos\\gamma = -\\frac{2}{3}; \\quad \\Sigma\\cos^2 = 1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Vector Magnitude",
+      "mathExpression": "|\\mathbf{v}| = \\sqrt{2^2 + 1^2 + (-2)^2} = \\sqrt{4 + 1 + 4} = \\sqrt{9} = 3",
+      "explanation": "Evaluate the length of vector v.",
+      "why": "Obtaining normalizer for direction cosines."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Extract Direction Cosines",
+      "mathExpression": "\\cos\\alpha = \\frac{v_1}{|\\mathbf{v}|} = \\frac{2}{3}, \\quad \\cos\\beta = \\frac{v_2}{|\\mathbf{v}|} = \\frac{1}{3}, \\quad \\cos\\gamma = \\frac{v_3}{|\\mathbf{v}|} = -\\frac{2}{3}",
+      "explanation": "Direction cosines are the components of the normalized unit vector.",
+      "why": "Identifying directional projections."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Verify Sum of Squares Identity",
+      "mathExpression": "\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = \\left(\\frac{2}{3}\\right)^2 + \\left(\\frac{1}{3}\\right)^2 + \\left(-\\frac{2}{3}\\right)^2 = \\frac{4}{9} + \\frac{1}{9} + \\frac{4}{9} = \\frac{9}{9} = 1",
+      "explanation": "Sum the squares of the direction cosines.",
+      "why": "Proving unit length constraint."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(2/3)**2 + (1/3)**2 + (-2/3)**2",
+    "expected": "1"
+  }
+}

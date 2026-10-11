@@ -1,0 +1,48 @@
+{
+  "id": "ch07-transcendental-functions/7.2-natural-logarithms/solutions/ex-04",
+  "chapter": "ch07",
+  "section": "7.2",
+  "type": "solution",
+  "title": "Antiderivative of the Tangent Function",
+  "exerciseReference": "Section 7.2, Exercise 4",
+  "originalTopic": "Trigonometric Logarithmic Integral",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "tangent",
+    "logarithm",
+    "antiderivative"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int tan(x) dx.",
+  "finalAnswer": "\\int \\tan(x) dx = \\ln|\\sec(x)| + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Rewrite in Terms of Sine and Cosine",
+      "mathExpression": "\\int \\tan(x) dx = \\int \\frac{\\sin(x)}{\\cos(x)} dx",
+      "explanation": "Use quotient definition of tangent.",
+      "why": "Prepares for substitution."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute u = cos(x)",
+      "mathExpression": "u = \\cos(x) \\implies du = -\\sin(x) dx \\implies \\int -\\frac{du}{u} = -\\ln|u| + C",
+      "explanation": "Numerator provides -du.",
+      "why": "Logarithmic integration."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Simplify using Log Rules",
+      "mathExpression": "-\\ln|\\cos(x)| = \\ln|(\\cos(x))^{-1}| = \\ln|\\sec(x)| + C",
+      "explanation": "Negative sign becomes exponent -1 inside log.",
+      "why": "Standard formula form."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "tan(x)",
+    "expected": "log(sec(x))",
+    "kind": "indefinite"
+  }
+}

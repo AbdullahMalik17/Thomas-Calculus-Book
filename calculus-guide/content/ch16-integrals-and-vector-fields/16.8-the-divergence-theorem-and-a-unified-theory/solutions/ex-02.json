@@ -1,0 +1,40 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.8-the-divergence-theorem-and-a-unified-theory/solutions/ex-02",
+  "chapter": "ch16",
+  "section": "16.8",
+  "type": "solution",
+  "title": "Outward Flux from a Unit Cube",
+  "exerciseReference": "Section 16.8, Exercise 2",
+  "originalTopic": "Divergence Theorem on Cube",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "cube",
+    "Divergence-theorem",
+    "flux"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the outward flux of F = <x^2, y^2, z^2> across the boundary of the unit cube [0, 1]^3.",
+  "finalAnswer": "3",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Divergence",
+      "mathExpression": "\\nabla \\cdot \\mathbf{F} = 2x + 2y + 2z",
+      "explanation": "Differentiate each quadratic term.",
+      "why": "Finding divergence."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Triple Integral over Unit Cube",
+      "mathExpression": "\\int_0^1 \\int_0^1 \\int_0^1 (2x + 2y + 2z) \\, dz \\, dy \\, dx = \\int_0^1 2x \\, dx + \\int_0^1 2y \\, dy + \\int_0^1 2z \\, dz = 1 + 1 + 1 = 3",
+      "explanation": "Integrate each symmetric linear term over [0, 1]^3.",
+      "why": "Evaluating total outward flux."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1 + 1 + 1",
+    "expected": "3"
+  }
+}

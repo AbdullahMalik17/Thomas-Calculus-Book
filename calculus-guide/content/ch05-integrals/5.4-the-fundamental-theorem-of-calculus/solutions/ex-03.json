@@ -1,0 +1,47 @@
+{
+  "id": "ch05-integrals/5.4-the-fundamental-theorem-of-calculus/solutions/ex-03",
+  "chapter": "ch05",
+  "section": "5.4",
+  "type": "solution",
+  "title": "Integral with Two Variable Limits",
+  "exerciseReference": "Section 5.4, Exercise 3",
+  "originalTopic": "Two Variable Limits FTC Application",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "FTC-part-1",
+    "two-variable-limits",
+    "chain-rule"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find d/dx int_{2x}^{3x} (t^2 + 1) dt.",
+  "finalAnswer": "\\frac{d}{dx} \\int_{2x}^{3x} (t^2 + 1) dt = 19x^2 + 1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Split Integral at a Constant",
+      "mathExpression": "\\int_{2x}^{3x} (t^2 + 1) dt = \\int_0^{3x} (t^2 + 1) dt - \\int_0^{2x} (t^2 + 1) dt",
+      "explanation": "Use interval additivity to anchor each integral at 0.",
+      "why": "Enables applying FTC Part 1 to both terms."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate Each Term via Chain Rule",
+      "mathExpression": "\\frac{d}{dx} = ((3x)^2 + 1) \\cdot 3 - ((2x)^2 + 1) \\cdot 2 = 3(9x^2 + 1) - 2(4x^2 + 1)",
+      "explanation": "Apply FTC 1: substitute upper bound and multiply by its derivative.",
+      "why": "General Leibniz Integral Rule."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Simplify the Resulting Polynomial",
+      "mathExpression": "(27x^2 + 3) - (8x^2 + 2) = 19x^2 + 1",
+      "explanation": "Combine like algebraic terms.",
+      "why": "Final derivative simplification."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "3*(9*x**2 + 1) - 2*(4*x**2 + 1)",
+    "expected": "19*x**2 + 1"
+  }
+}

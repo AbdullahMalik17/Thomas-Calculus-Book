@@ -1,0 +1,50 @@
+{
+  "id": "ch05-integrals/5.2-sigma-notation-and-limits-of-finite-sums/solutions/ex-03",
+  "chapter": "ch05",
+  "section": "5.2",
+  "type": "solution",
+  "title": "Exact Area under a Quadratic Curve via Riemann Limit",
+  "exerciseReference": "Section 5.2, Exercise 3",
+  "originalTopic": "Riemann Sum Limit for x^2",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "riemann-sum",
+    "quadratic-area",
+    "limits"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the exact area under f(x) = x^2 on [0, 1] using the limit of Riemann sums as n approaches infinity.",
+  "finalAnswer": "\\text{Area} = \\lim_{n \\to \\infty} R_n = \\frac{1}{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up Delta x and Sample Points",
+      "mathExpression": "\\Delta x = \\frac{1}{n}, \\quad c_k = \\frac{k}{n}",
+      "explanation": "Uniform partition of [0, 1].",
+      "why": "Standard right endpoint partition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Construct Sum Expression",
+      "mathExpression": "R_n = \\sum_{k=1}^n \\left(\\frac{k}{n}\\right)^2 \\frac{1}{n} = \\frac{1}{n^3} \\sum_{k=1}^n k^2 = \\frac{1}{n^3} \\frac{n(n+1)(2n+1)}{6}",
+      "explanation": "Substitute formula for sum k^2.",
+      "why": "Closed form for quadratic sum."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute the Limit as n -> oo",
+      "mathExpression": "\\lim_{n \\to \\infty} \\frac{2n^3 + 3n^2 + n}{6n^3} = \\frac{2}{6} = \\frac{1}{3}",
+      "explanation": "Highest degree terms dominate.",
+      "why": "Evaluating limit of rational function."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "x**2",
+    "expected": "1/3",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "1"
+  }
+}

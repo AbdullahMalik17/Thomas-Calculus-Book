@@ -1,0 +1,47 @@
+{
+  "id": "ch08-techniques-of-integration/8.7-numerical-integration/solutions/ex-05",
+  "chapter": "ch08",
+  "section": "8.7",
+  "type": "solution",
+  "title": "Error Bound for Simpson's Rule",
+  "exerciseReference": "Section 8.7, Exercise 5",
+  "originalTopic": "Simpson's Error Estimation",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "simpson-error",
+    "fourth-derivative",
+    "numerical"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the maximum error when approximating int_0^1 e^(x^2) dx with Simpson's Rule if M_4 = max |f^(4)(x)| = 76 and n = 10.",
+  "finalAnswer": "|E_S| \\le \\frac{76}{1800000} \\approx 4.22 \\times 10^{-5}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "State Simpson's Error Bound Formula",
+      "mathExpression": "|E_S| \\le \\frac{M_4 (b - a)^5}{180 n^4}",
+      "explanation": "Standard fourth-order error bound.",
+      "why": "Formula definition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute Given Parameters",
+      "mathExpression": "M_4 = 76, \\quad b - a = 1, \\quad n = 10 \\implies n^4 = 10000",
+      "explanation": "Calculate denominator 180 * 10000 = 1,800,000.",
+      "why": "Arithmetic evaluation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Bound",
+      "mathExpression": "|E_S| \\le \\frac{76(1)^5}{180(10000)} = \\frac{76}{1800000} = \\frac{19}{450000} \\approx 4.22 \\times 10^{-5}",
+      "explanation": "Fraction reduces to 19/450000.",
+      "why": "Final error bound."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "76 / 1800000 - 19/450000",
+    "expected": "0"
+  }
+}

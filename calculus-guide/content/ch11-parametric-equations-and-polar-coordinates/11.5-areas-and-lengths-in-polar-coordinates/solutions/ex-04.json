@@ -1,0 +1,50 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.5-areas-and-lengths-in-polar-coordinates/solutions/ex-04",
+  "chapter": "ch11",
+  "section": "11.5",
+  "type": "solution",
+  "title": "Arc Length of a Cardioid",
+  "exerciseReference": "Section 11.5, Exercise 4",
+  "originalTopic": "Polar Arc Length Evaluation",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "cardioid",
+    "arc-length",
+    "polar-perimeter"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the perimeter (total arc length) of the cardioid r = 1 + cos(theta).",
+  "finalAnswer": "L = 8",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute dr/dtheta and Radicand",
+      "mathExpression": "r' = -\\sin\\theta \\implies r^2 + (r')^2 = (1 + \\cos\\theta)^2 + (-\\sin\\theta)^2 = 1 + 2\\cos\\theta + \\cos^2\\theta + \\sin^2\\theta = 2 + 2\\cos\\theta = 4\\cos^2(\\theta/2)",
+      "explanation": "Use half-angle identity 1 + cos theta = 2 cos^2(theta/2).",
+      "why": "Radical simplification."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Take Square Root and Use Symmetry",
+      "mathExpression": "\\sqrt{r^2 + (r')^2} = 2|\\cos(\\theta/2)| \\implies L = 2 \\int_0^\\pi 2\\cos(\\theta/2) d\\theta",
+      "explanation": "Double the integral from 0 to pi.",
+      "why": "Symmetry about polar axis."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Definite Integral",
+      "mathExpression": "4 \\left[ 2\\sin(\\theta/2) \\right]_0^\\pi = 8(1 - 0) = 8",
+      "explanation": "sin(pi/2) = 1.",
+      "why": "Classical 8a cardioid perimeter with a = 1."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "4*cos(x/2)",
+    "expected": "8",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "pi"
+  }
+}

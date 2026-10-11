@@ -1,0 +1,41 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.1-curves-in-space-and-their-tangents/solutions/ex-03",
+  "chapter": "ch13",
+  "section": "13.1",
+  "type": "solution",
+  "title": "Product Rule for the Dot Product of Vector Functions",
+  "exerciseReference": "Section 13.1, Exercise 3",
+  "originalTopic": "Vector Product Rules",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "product-rule",
+    "dot-product",
+    "derivatives"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For u(t) = <t, t^2, 1> and v(t) = <1, t, t^2>, verify the product rule d/dt [u . v] = u' . v + u . v'.",
+  "finalAnswer": "\\frac{d}{dt}[\\mathbf{u} \\cdot \\mathbf{v}] = 3t^2 + 2t + 1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Inner Product Directly",
+      "mathExpression": "\\mathbf{u}(t) \\cdot \\mathbf{v}(t) = (t)(1) + (t^2)(t) + (1)(t^2) = t + t^3 + t^2",
+      "explanation": "Multiply corresponding components of u(t) and v(t).",
+      "why": "Formulating scalar function u . v."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate the Scalar Function",
+      "mathExpression": "\\frac{d}{dt}(t^3 + t^2 + t) = 3t^2 + 2t + 1",
+      "explanation": "Apply standard polynomial differentiation.",
+      "why": "Computing derivative of the inner product."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "t + t**3 + t**2",
+    "expected": "3*t**2 + 2*t + 1",
+    "variable": "t"
+  }
+}

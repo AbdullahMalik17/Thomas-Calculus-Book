@@ -1,0 +1,50 @@
+{
+  "id": "ch08-techniques-of-integration/8.8-improper-integrals/solutions/ex-02",
+  "chapter": "ch08",
+  "section": "8.8",
+  "type": "solution",
+  "title": "Convergence of a p-Integral",
+  "exerciseReference": "Section 8.8, Exercise 2",
+  "originalTopic": "p-Integral Evaluation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "p-integral",
+    "power-rule",
+    "convergence"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_1^oo 1 / x^3 dx.",
+  "finalAnswer": "\\int_1^\\infty \\frac{1}{x^3} dx = \\frac{1}{2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate Limit",
+      "mathExpression": "\\lim_{t \\to \\infty} \\int_1^t x^{-3} dx",
+      "explanation": "Set up limit for Type I integral.",
+      "why": "Improper integral definition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Antiderivative",
+      "mathExpression": "\\left[ -\\frac{1}{2x^2} \\right]_1^t = -\\frac{1}{2t^2} - \\left(-\\frac{1}{2}\\right) = \\frac{1}{2} - \\frac{1}{2t^2}",
+      "explanation": "Apply power rule.",
+      "why": "FTC evaluation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Limit",
+      "mathExpression": "\\lim_{t \\to \\infty} \\left( \\frac{1}{2} - \\frac{1}{2t^2} \\right) = \\frac{1}{2} - 0 = \\frac{1}{2}",
+      "explanation": "Term 1/(2t^2) vanishes.",
+      "why": "Convergent p-integral with p = 3."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "1/x**3",
+    "expected": "1/2",
+    "kind": "definite",
+    "lower": "1",
+    "upper": "oo"
+  }
+}

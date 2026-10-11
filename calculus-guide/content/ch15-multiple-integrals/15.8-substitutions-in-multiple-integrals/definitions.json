@@ -1,0 +1,33 @@
+{
+  "id": "ch15-multiple-integrals/15.8-substitutions-in-multiple-integrals/definitions",
+  "chapter": "ch15",
+  "section": "15.8",
+  "title": "Substitutions in Multiple Integrals",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-jacobian-determinant-2d",
+      "title": "Jacobian Determinant (2D)",
+      "category": "definition",
+      "latex": "J(u, v) = \\frac{\\partial(x, y)}{\\partial(u, v)} = \\begin{vmatrix} \\frac{\\partial x}{\\partial u} & \\frac{\\partial x}{\\partial v} \\\\ \\frac{\\partial y}{\\partial u} & \\frac{\\partial y}{\\partial v} \\end{vmatrix} = \\frac{\\partial x}{\\partial u}\\frac{\\partial y}{\\partial v} - \\frac{\\partial x}{\\partial v}\\frac{\\partial y}{\\partial u}",
+      "statement": "The Jacobian of the coordinate transformation x = g(u, v), y = h(u, v) measures the local area magnification factor under the change of variables.",
+      "conditions": [
+        "Transformation is continuously differentiable and one-to-one"
+      ],
+      "explanation": "Relates area elements: dx dy = |J(u, v)| du dv.",
+      "keyTakeaway": "Absolute value of Jacobian is the multivariable analogue of dx/du in single-variable u-substitution."
+    },
+    {
+      "id": "theorem-change-of-variables-multiple",
+      "title": "Change of Variables Formula for Double Integrals",
+      "category": "theorem",
+      "latex": "\\iint_R f(x, y) \\, dx \\, dy = \\iint_G f(g(u, v), h(u, v)) \\left| \\frac{\\partial(x, y)}{\\partial(u, v)} \\right| du \\, dv",
+      "statement": "Transforms an integral over complicated region R into an integral over simpler region G in the uv-plane, scaling by the absolute value of the Jacobian determinant.",
+      "conditions": [
+        "Transformation maps G onto R injectively almost everywhere"
+      ],
+      "explanation": "Straightens skewed boundaries such as parallelograms and ellipses into rectangles and circles.",
+      "keyTakeaway": "Enables algebraic simplification of boundaries and integrands simultaneously."
+    }
+  ]
+}

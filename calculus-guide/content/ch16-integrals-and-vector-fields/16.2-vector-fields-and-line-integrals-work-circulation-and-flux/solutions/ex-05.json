@@ -1,0 +1,47 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.2-vector-fields-and-line-integrals-work-circulation-and-flux/solutions/ex-05",
+  "chapter": "ch16",
+  "section": "16.2",
+  "type": "solution",
+  "title": "Circulation of a Vortex Vector Field",
+  "exerciseReference": "Section 16.2, Exercise 5",
+  "originalTopic": "Vortex Circulation",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "vortex-field",
+    "circulation",
+    "singularity"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the circulation of the vortex field F = <-y/(x^2 + y^2), x/(x^2 + y^2)> counterclockwise around a circle of radius R centered at the origin.",
+  "finalAnswer": "2\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Parametrize Circle of Radius R",
+      "mathExpression": "x = R\\cos t, \\; y = R\\sin t \\implies x^2 + y^2 = R^2; \\quad dx = -R\\sin t \\, dt, \\; dy = R\\cos t \\, dt",
+      "explanation": "Substitute circular path coordinates.",
+      "why": "Setting up path coordinates."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Differential Form",
+      "mathExpression": "M \\, dx + N \\, dy = \\left( -\\frac{R\\sin t}{R^2} \\right)(-R\\sin t \\, dt) + \\left( \\frac{R\\cos t}{R^2} \\right)(R\\cos t \\, dt) = (\\sin^2 t + \\cos^2 t) \\, dt = 1 \\, dt",
+      "explanation": "The factor R^2 cancels completely from numerator and denominator.",
+      "why": "Simplifying vortex integrand."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate over [0, 2*pi]",
+      "mathExpression": "\\oint_C \\mathbf{F} \\cdot d\\mathbf{r} = \\int_0^{2\\pi} 1 \\, dt = 2\\pi",
+      "explanation": "Evaluate the integral of 1 over full circle.",
+      "why": "Evaluating constant vortex circulation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2*pi",
+    "expected": "2*pi"
+  }
+}

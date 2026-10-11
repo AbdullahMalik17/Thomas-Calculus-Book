@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.6-alternating-series-and-conditional-convergence/solutions/ex-05",
+  "chapter": "ch10",
+  "section": "10.6",
+  "type": "solution",
+  "title": "Alternating Series with Logarithmic Terms",
+  "exerciseReference": "Section 10.6, Exercise 5",
+  "originalTopic": "Logarithmic Alternating Series",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "alternating-series",
+    "logarithm",
+    "conditional-convergence"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether sum_{n=2}^oo (-1)^n / ln(n) converges absolutely, conditionally, or diverges.",
+  "finalAnswer": "\\sum_{n=2}^\\infty \\frac{(-1)^n}{\\ln(n)} \\quad \\text{Converges Conditionally}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Test Absolute Convergence",
+      "mathExpression": "\\sum_{n=2}^\\infty \\frac{1}{\\ln n} > \\sum_{n=2}^\\infty \\frac{1}{n} = \\infty \\implies \\text{Diverges absolutely}",
+      "explanation": "ln(n) < n implies 1/ln(n) > 1/n; diverges by comparison with harmonic series.",
+      "why": "Direct comparison."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Alternating Series Test",
+      "mathExpression": "u_n = \\frac{1}{\\ln n} > 0, \\quad u_{n+1} = \\frac{1}{\\ln(n+1)} < \\frac{1}{\\ln n}, \\quad \\lim_{n \\to \\infty} \\frac{1}{\\ln n} = 0",
+      "explanation": "Conditions of Leibniz test are fulfilled.",
+      "why": "Alternating series test."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude",
+      "mathExpression": "\\text{The series converges conditionally.}",
+      "explanation": "Converges by AST, but absolute series diverges.",
+      "why": "Conditional convergence."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

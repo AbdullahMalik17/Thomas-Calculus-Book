@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.9-taylors-formula-for-two-variables/solutions/ex-05",
+  "chapter": "ch14",
+  "section": "14.9",
+  "type": "solution",
+  "title": "Error Bound on Linear Taylor Approximation",
+  "exerciseReference": "Section 14.9, Exercise 5",
+  "originalTopic": "Taylor Remainder Bounds",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "remainder-bound",
+    "error-analysis",
+    "Taylor-theorem"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For f(x, y) = cos(x + y), linear approximation at (0, 0) is P_1(x, y) = 1. Bound the absolute approximation error for |x| <= 0.1 and |y| <= 0.1.",
+  "finalAnswer": "|R_1(x, y)| \\le 0.02",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Bound Second Derivatives",
+      "mathExpression": "|f_{xx}| = |-\\cos(x+y)| \\le 1, \\quad |f_{xy}| \\le 1, \\quad |f_{yy}| \\le 1 \\implies M = 1",
+      "explanation": "All second partial derivatives are bounded by M = 1 in absolute value.",
+      "why": "Establishing uniform second-derivative bound."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Remainder Formula",
+      "mathExpression": "|R_1| \\le \\frac{1}{2} M (|x| + |y|)^2 \\le \\frac{1}{2}(1)(0.1 + 0.1)^2 = \\frac{1}{2}(0.2)^2 = \\frac{1}{2}(0.04) = 0.02",
+      "explanation": "Evaluate Taylor remainder upper bound.",
+      "why": "Bounding linear approximation error."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(1/2) * (0.1 + 0.1)**2",
+    "expected": "0.02"
+  }
+}

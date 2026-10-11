@@ -1,0 +1,41 @@
+{
+  "id": "ch08-techniques-of-integration/8.1-using-basic-integration-formulas/solutions/ex-01",
+  "chapter": "ch08",
+  "section": "8.1",
+  "type": "solution",
+  "title": "Polynomial Long Division Before Integration",
+  "exerciseReference": "Section 8.1, Exercise 1",
+  "originalTopic": "Rational Simplification via Division",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "long-division",
+    "rational-integrals",
+    "algebra"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int (x^3 + 2x^2 + 1) / (x + 1) dx.",
+  "finalAnswer": "\\frac{x^3}{3} + \\frac{x^2}{2} - x + 2\\ln|x + 1| + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Perform Polynomial Long Division",
+      "mathExpression": "\\frac{x^3 + 2x^2 + 1}{x + 1} = x^2 + x - 1 + \\frac{2}{x + 1}",
+      "explanation": "Divide numerator by (x + 1) to extract polynomial quotient and remainder 2.",
+      "why": "Degree of numerator (3) exceeds denominator (1)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate Term by Term",
+      "mathExpression": "\\int \\left( x^2 + x - 1 + \\frac{2}{x + 1} \\right) dx = \\frac{x^3}{3} + \\frac{x^2}{2} - x + 2\\ln|x + 1| + C",
+      "explanation": "Apply power rule to polynomial and logarithm to remainder.",
+      "why": "Standard integration rules."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "(x**3 + 2*x**2 + 1)/(x + 1)",
+    "expected": "x**3/3 + x**2/2 - x + 2*log(x + 1)",
+    "kind": "indefinite"
+  }
+}

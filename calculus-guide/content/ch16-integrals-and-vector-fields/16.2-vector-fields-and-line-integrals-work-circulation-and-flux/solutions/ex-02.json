@@ -1,0 +1,47 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.2-vector-fields-and-line-integrals-work-circulation-and-flux/solutions/ex-02",
+  "chapter": "ch16",
+  "section": "16.2",
+  "type": "solution",
+  "title": "Work along a Parabolic Trajectory",
+  "exerciseReference": "Section 16.2, Exercise 2",
+  "originalTopic": "Work along Parabola",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "work",
+    "parabolic-path",
+    "line-integral"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the work done by F = <3x^2, 2xy> along the parabolic arc y = x^2 from (0, 0) to (1, 1).",
+  "finalAnswer": "\\frac{9}{5}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Parametrize Parabolic Path",
+      "mathExpression": "x = t, \\; y = t^2 \\quad (0 \\le t \\le 1); \\quad dx = dt, \\; dy = 2t \\, dt",
+      "explanation": "Use parameter t = x.",
+      "why": "Setting up path coordinates."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute into Differential Form",
+      "mathExpression": "M \\, dx + N \\, dy = (3t^2)(dt) + [2(t)(t^2)](2t \\, dt) = 3t^2 \\, dt + 4t^4 \\, dt = (3t^2 + 4t^4) \\, dt",
+      "explanation": "Substitute components and differential relations.",
+      "why": "Formulating single-variable integrand."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Definite Integral",
+      "mathExpression": "W = \\int_0^1 (3t^2 + 4t^4) \\, dt = \\left[ t^3 + \\frac{4t^5}{5} \\right]_0^1 = 1 + \\frac{4}{5} = \\frac{9}{5}",
+      "explanation": "Integrate polynomial over [0, 1].",
+      "why": "Evaluating final work."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1 + 4/5",
+    "expected": "9/5"
+  }
+}

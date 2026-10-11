@@ -1,0 +1,41 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.10-applications-of-taylor-series/solutions/ex-05",
+  "chapter": "ch10",
+  "section": "10.10",
+  "type": "solution",
+  "title": "Binomial Series for Inverse Square Root 1/sqrt(1 - x^2)",
+  "exerciseReference": "Section 10.10, Exercise 5",
+  "originalTopic": "Binomial Expansion for Arcsine",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "arcsin",
+    "binomial-series",
+    "inverse-square-root"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the first 3 non-zero terms of (1 - x^2)^(-1/2) and integrate to find the series for arcsin(x).",
+  "finalAnswer": "\\arcsin(x) = x + \\frac{x^3}{6} + \\frac{3x^5}{40} + \\dots",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Binomial Series for m = -1/2",
+      "mathExpression": "(1 - u)^{-1/2} = 1 + \\frac{1}{2}u + \\frac{3}{8}u^2 + \\dots \\implies (1 - x^2)^{-1/2} = 1 + \\frac{1}{2}x^2 + \\frac{3}{8}x^4 + \\dots",
+      "explanation": "Substitute u = x^2.",
+      "why": "Binomial expansion."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate to Recover arcsin(x)",
+      "mathExpression": "\\arcsin(x) = \\int \\left( 1 + \\frac{1}{2}x^2 + \\frac{3}{8}x^4 + \\dots \\right) dx = x + \\frac{x^3}{6} + \\frac{3x^5}{40} + \\dots",
+      "explanation": "Integrate term by term.",
+      "why": "Classical arcsine power series."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "x + x**3/6 + 3*x**5/40",
+    "expected": "1 + x**2/2 + 3*x**4/8",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "ch08-techniques-of-integration/8.4-trigonometric-substitutions/definitions",
+  "chapter": "ch08",
+  "section": "8.4",
+  "title": "Trigonometric Substitutions",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "rule-trig-substitution-dictionary",
+      "title": "Trigonometric Substitution Dictionary",
+      "category": "rule",
+      "latex": "\\begin{array}{c|c|c} \\text{Radical Form} & \\text{Substitution} & \\text{Identity} \\\\ \\hline \\sqrt{a^2 - x^2} & x = a\\sin(\\theta) & a^2 - a^2\\sin^2(\\theta) = a^2\\cos^2(\\theta) \\\\ \\sqrt{a^2 + x^2} & x = a\\tan(\\theta) & a^2 + a^2\\tan^2(\\theta) = a^2\\sec^2(\\theta) \\\\ \\sqrt{x^2 - a^2} & x = a\\sec(\\theta) & a^2\\sec^2(\\theta) - a^2 = a^2\\tan^2(\\theta) \\end{array}",
+      "statement": "Trigonometric substitutions eliminate square roots containing quadratic binomials by transforming them into single trigonometric squared terms via Pythagorean identities.",
+      "conditions": [
+        "a > 0"
+      ],
+      "explanation": "Right triangle geometry facilitates back-substitution from theta to original variable x.",
+      "keyTakeaway": "sqrt(a^2 - x^2) -> x = a sin theta; sqrt(a^2 + x^2) -> x = a tan theta; sqrt(x^2 - a^2) -> x = a sec theta."
+    }
+  ]
+}

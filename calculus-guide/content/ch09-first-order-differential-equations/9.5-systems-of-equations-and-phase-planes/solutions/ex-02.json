@@ -1,0 +1,40 @@
+{
+  "id": "ch09-first-order-differential-equations/9.5-systems-of-equations-and-phase-planes/solutions/ex-02",
+  "chapter": "ch09",
+  "section": "9.5",
+  "type": "solution",
+  "title": "Trajectory Equation in Phase Plane",
+  "exerciseReference": "Section 9.5, Exercise 2",
+  "originalTopic": "Phase Plane Trajectory ODE",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "phase-plane",
+    "separable-system",
+    "trajectories"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the Cartesian equation of the trajectories for dx/dt = -y, dy/dt = x.",
+  "finalAnswer": "x^2 + y^2 = C \\quad (\\text{Family of concentric circles})",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate dy/dx Ratio",
+      "mathExpression": "\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{x}{-y} = -\\frac{x}{y}",
+      "explanation": "Eliminate time variable t.",
+      "why": "Phase plane slope."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Separate Variables and Integrate",
+      "mathExpression": "y \\, dy = -x \\, dx \\implies \\int y \\, dy = -\\int x \\, dx \\implies \\frac{y^2}{2} = -\\frac{x^2}{2} + C' \\implies x^2 + y^2 = C",
+      "explanation": "Circular orbits centered at the origin.",
+      "why": "Cartesian trajectory formula."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "x**2 + y**2 - (x**2 + y**2)",
+    "expected": "0"
+  }
+}

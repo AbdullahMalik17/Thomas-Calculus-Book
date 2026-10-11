@@ -1,0 +1,33 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.1-curves-in-space-and-their-tangents/definitions",
+  "chapter": "ch13",
+  "section": "13.1",
+  "title": "Curves in Space and Their Tangents",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-vector-valued-function",
+      "title": "Vector-Valued Function and Space Curve",
+      "category": "definition",
+      "latex": "\\mathbf{r}(t) = f(t)\\mathbf{i} + g(t)\\mathbf{j} + h(t)\\mathbf{k} = \\langle f(t), g(t), h(t) \\rangle",
+      "statement": "A vector-valued function r maps a real parameter t from an interval I into Euclidean space R^3. The set of terminal points of r(t) for t in I traces out a space curve C.",
+      "conditions": [
+        "f, g, h are real functions defined on common interval I"
+      ],
+      "explanation": "Limits and continuity of r(t) are defined component-wise: lim r(t) = <lim f, lim g, lim h>.",
+      "keyTakeaway": "Unifies particle trajectory kinematics and spatial curve geometry."
+    },
+    {
+      "id": "def-tangent-vector",
+      "title": "Derivative Vector and Unit Tangent Vector",
+      "category": "definition",
+      "latex": "\\mathbf{r}'(t) = \\lim_{\\Delta t \\to 0} \\frac{\\mathbf{r}(t+\\Delta t) - \\mathbf{r}(t)}{\\Delta t} = \\langle f'(t), g'(t), h'(t) \\rangle, \\quad \\mathbf{T}(t) = \\frac{\\mathbf{r}'(t)}{|\\mathbf{r}'(t)|}",
+      "statement": "The derivative vector r'(t) represents the instantaneous velocity vector v(t) tangent to the space curve pointing in the direction of increasing t. The unit tangent vector T(t) normalizes the velocity.",
+      "conditions": [
+        "Curve is smooth: r'(t) is continuous and r'(t) != 0"
+      ],
+      "explanation": "The tangent line to the curve at t_0 has vector equation L(t) = r(t_0) + (t - t_0) r'(t_0).",
+      "keyTakeaway": "T(t) captures the pure direction of motion independent of particle speed."
+    }
+  ]
+}

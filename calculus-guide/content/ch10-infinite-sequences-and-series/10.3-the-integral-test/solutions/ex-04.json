@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.3-the-integral-test/solutions/ex-04",
+  "chapter": "ch10",
+  "section": "10.3",
+  "type": "solution",
+  "title": "Remainder Estimation for a Convergent Series",
+  "exerciseReference": "Section 10.3, Exercise 4",
+  "originalTopic": "Remainder Estimation via Integrals",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "remainder-estimate",
+    "integral-test",
+    "error-bounds"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Estimate the remainder R_n for sum_{n=1}^oo 1/n^3 when approximated by the first n terms.",
+  "finalAnswer": "\\frac{1}{2(n+1)^2} \\le R_n \\le \\frac{1}{2n^2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "State Remainder Inequality",
+      "mathExpression": "\\int_{n+1}^\\infty x^{-3} dx \\le R_n \\le \\int_n^\\infty x^{-3} dx",
+      "explanation": "The remainder is bounded between integrals from n+1 and n.",
+      "why": "Integral test remainder bounds."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Upper and Lower Integrals",
+      "mathExpression": "\\int_k^\\infty x^{-3} dx = \\left[ -\\frac{1}{2x^2} \\right]_k^\\infty = \\frac{1}{2k^2}",
+      "explanation": "Evaluate the power integral.",
+      "why": "Antiderivative computation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude Remainder Bounds",
+      "mathExpression": "\\frac{1}{2(n+1)^2} \\le R_n \\le \\frac{1}{2n^2}",
+      "explanation": "Substitute k = n+1 and k = n.",
+      "why": "Exact error bounds."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1/(2*n**2) - 1/(2*n**2)",
+    "expected": "0"
+  }
+}

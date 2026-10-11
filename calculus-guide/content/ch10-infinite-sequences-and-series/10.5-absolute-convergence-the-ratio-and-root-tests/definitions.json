@@ -1,0 +1,33 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.5-absolute-convergence-the-ratio-and-root-tests/definitions",
+  "chapter": "ch10",
+  "section": "10.5",
+  "title": "Absolute Convergence; The Ratio and Root Tests",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-ratio-test",
+      "title": "The Ratio Test",
+      "category": "theorem",
+      "latex": "\\rho = \\lim_{n \\to \\infty} \\left| \\frac{a_{n+1}}{a_n} \\right|: \\quad \\rho < 1 \\implies \\text{abs. conv.}; \\quad \\rho > 1 \\implies \\text{div.}; \\quad \\rho = 1 \\implies \\text{inconclusive}",
+      "statement": "The Ratio Test measures the asymptotic growth factor between consecutive terms. Invaluable for factorials and exponential powers.",
+      "conditions": [
+        "a_n != 0"
+      ],
+      "explanation": "rho < 1 implies the tail is dominated by a convergent geometric series.",
+      "keyTakeaway": "Ratio Test is ideal for factorials and products of powers."
+    },
+    {
+      "id": "theorem-root-test",
+      "title": "The Root Test",
+      "category": "theorem",
+      "latex": "\\rho = \\lim_{n \\to \\infty} \\sqrt[n]{|a_n|}: \\quad \\rho < 1 \\implies \\text{abs. conv.}; \\quad \\rho > 1 \\implies \\text{div.}; \\quad \\rho = 1 \\implies \\text{inconclusive}",
+      "statement": "The Root Test evaluates the n-th root of the absolute value of the terms. Especially powerful when terms contain n-th powers.",
+      "conditions": [
+        "a_n is defined"
+      ],
+      "explanation": "Directly detects whether terms decay exponentially as r^n with r < 1.",
+      "keyTakeaway": "Root Test is ideal for expressions raised to the n-th power."
+    }
+  ]
+}

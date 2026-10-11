@@ -1,0 +1,40 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.3-path-independence-conservative-fields-and-potential-functions/solutions/ex-05",
+  "chapter": "ch16",
+  "section": "16.3",
+  "type": "solution",
+  "title": "Detecting a Non-Conservative Vector Field",
+  "exerciseReference": "Section 16.3, Exercise 5",
+  "originalTopic": "Non-Conservative Test",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "non-conservative",
+    "cross-derivatives",
+    "curl"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Show that F = <y, 2x> is not conservative.",
+  "finalAnswer": "\\frac{\\partial N}{\\partial x} - \\frac{\\partial M}{\\partial y} = 1 \\ne 0 \\implies \\mathbf{F} \\text{ is not conservative}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Partial Cross Derivatives",
+      "mathExpression": "M = y \\implies \\frac{\\partial M}{\\partial y} = 1; \\quad N = 2x \\implies \\frac{\\partial N}{\\partial x} = 2",
+      "explanation": "Differentiate M with respect to y and N with respect to x.",
+      "why": "Checking Clairaut condition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compare Values",
+      "mathExpression": "\\frac{\\partial N}{\\partial x} - \\frac{\\partial M}{\\partial y} = 2 - 1 = 1 \\ne 0",
+      "explanation": "Since the mixed partials are not equal, F cannot be the gradient of any scalar potential.",
+      "why": "Proving field is non-conservative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 - 1",
+    "expected": "1"
+  }
+}

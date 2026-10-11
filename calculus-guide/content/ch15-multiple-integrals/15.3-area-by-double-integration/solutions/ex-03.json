@@ -1,0 +1,40 @@
+{
+  "id": "ch15-multiple-integrals/15.3-area-by-double-integration/solutions/ex-03",
+  "chapter": "ch15",
+  "section": "15.3",
+  "type": "solution",
+  "title": "Area Computed by Horizontal Slices (Type II)",
+  "exerciseReference": "Section 15.3, Exercise 3",
+  "originalTopic": "Type II Area",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "Type-II",
+    "horizontal-slices",
+    "area"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the area of the region bounded by x = y^2 and x = 4 in the right half-plane using horizontal slices.",
+  "finalAnswer": "\\frac{16}{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine Limits on y for Upper Half",
+      "mathExpression": "y^2 = 4 \\implies y = 2 \\quad (\\text{for } y \\ge 0)",
+      "explanation": "For the region where 0 <= y <= 2, x varies from y^2 to 4.",
+      "why": "Establishing horizontal strip limits."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Set Up and Evaluate Iterated Integral",
+      "mathExpression": "\\int_0^2 \\int_{y^2}^4 1 \\, dx \\, dy = \\int_0^2 (4 - y^2) \\, dy = \\left[ 4y - \\frac{y^3}{3} \\right]_0^2 = 8 - \\frac{8}{3} = \\frac{16}{3}",
+      "explanation": "Integrate with respect to x first, then y.",
+      "why": "Computing area."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "8 - 8/3",
+    "expected": "16/3"
+  }
+}

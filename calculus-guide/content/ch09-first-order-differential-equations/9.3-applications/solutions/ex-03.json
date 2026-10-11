@@ -1,0 +1,47 @@
+{
+  "id": "ch09-first-order-differential-equations/9.3-applications/solutions/ex-03",
+  "chapter": "ch09",
+  "section": "9.3",
+  "type": "solution",
+  "title": "Terminal Velocity of a Falling Body with Drag",
+  "exerciseReference": "Section 9.3, Exercise 3",
+  "originalTopic": "Terminal Velocity with Air Resistance",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "terminal-velocity",
+    "drag",
+    "physics"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "An object of mass m falls from rest under gravity with air resistance proportional to velocity: m dv/dt = mg - kv. Find v(t) and the terminal velocity v_term.",
+  "finalAnswer": "v(t) = \\frac{mg}{k}(1 - e^{-kt/m}), \\quad v_{\\text{term}} = \\frac{mg}{k}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Write in Standard Linear Form",
+      "mathExpression": "\\frac{dv}{dt} + \\frac{k}{m} v = g",
+      "explanation": "Divide by m.",
+      "why": "Standard ODE form."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve via Integrating Factor",
+      "mathExpression": "\\mu(t) = e^{kt/m} \\implies \\frac{d}{dt}[e^{kt/m} v] = g e^{kt/m} \\implies e^{kt/m} v = \\frac{mg}{k} e^{kt/m} + C \\implies v(t) = \\frac{mg}{k} + C e^{-kt/m}",
+      "explanation": "Integrate right side.",
+      "why": "Integrating factor."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Apply v(0) = 0 and Take Limit",
+      "mathExpression": "v(0) = 0 \\implies C = -\\frac{mg}{k} \\implies v(t) = \\frac{mg}{k}(1 - e^{-kt/m}) \\implies \\lim_{t \\to \\infty} v(t) = \\frac{mg}{k}",
+      "explanation": "Terminal velocity occurs when drag balances gravity.",
+      "why": "Asymptotic velocity."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "m*g/k - m*g/k",
+    "expected": "0"
+  }
+}

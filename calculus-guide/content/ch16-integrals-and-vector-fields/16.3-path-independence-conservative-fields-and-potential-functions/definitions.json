@@ -1,0 +1,34 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.3-path-independence-conservative-fields-and-potential-functions/definitions",
+  "chapter": "ch16",
+  "section": "16.3",
+  "title": "Path Independence, Conservative Fields, and Potential Functions",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-fundamental-theorem-line-integrals",
+      "title": "Fundamental Theorem of Line Integrals",
+      "category": "theorem",
+      "latex": "\\int_C \\nabla f \\cdot d\\mathbf{r} = f(B) - f(A)",
+      "statement": "If vector field F is conservative with potential function f (so F = grad f), then for any smooth curve C from point A to point B, the line integral depends only on the endpoints and is independent of the path taken.",
+      "conditions": [
+        "F = grad f is continuous on open connected domain"
+      ],
+      "explanation": "Multivariable counterpart of Fundamental Theorem of Calculus: net change equals evaluation at boundaries.",
+      "keyTakeaway": "Work done by a conservative force depends only on initial and final positions."
+    },
+    {
+      "id": "test-conservative-component-test",
+      "title": "Component Test for Conservative Vector Fields",
+      "category": "test",
+      "latex": "\\frac{\\partial P}{\\partial y} = \\frac{\\partial N}{\\partial z}, \\quad \\frac{\\partial M}{\\partial z} = \\frac{\\partial P}{\\partial x}, \\quad \\frac{\\partial N}{\\partial x} = \\frac{\\partial M}{\\partial y} \\iff \\text{curl}\\,\\mathbf{F} = \\mathbf{0}",
+      "statement": "On a simply connected domain, a continuously differentiable vector field F = <M, N, P> is conservative if and only if its curl vanishes identically everywhere.",
+      "conditions": [
+        "Domain D is simply connected (no holes)",
+        "F has continuous first partials"
+      ],
+      "explanation": "Equivalent to stating that mixed second partial derivatives of the potential function must commute by Clairaut's theorem.",
+      "keyTakeaway": "Zero curl on a simply connected domain guarantees path independence and the existence of a potential."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.7-conics-in-polar-coordinates/solutions/ex-03",
+  "chapter": "ch11",
+  "section": "11.7",
+  "type": "solution",
+  "title": "Converting a Polar Conic to Cartesian Form",
+  "exerciseReference": "Section 11.7, Exercise 3",
+  "originalTopic": "Polar Conic to Cartesian Conversion",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "conversion",
+    "polar-to-cartesian",
+    "hyperbola"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Convert r = 6 / (1 + 2 cos theta) to Cartesian coordinates and identify the conic.",
+  "finalAnswer": "3x^2 - y^2 + 24x + 36 = 0 \\quad (\\text{Hyperbola with } e = 2)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Clear Denominator",
+      "mathExpression": "r(1 + 2\\cos\\theta) = 6 \\implies r + 2r\\cos\\theta = 6",
+      "explanation": "Multiply both sides by 1 + 2 cos(theta).",
+      "why": "Algebraic clearance."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute x = r cos(theta) and r = sqrt(x^2 + y^2)",
+      "mathExpression": "r + 2x = 6 \\implies r = 6 - 2x \\implies r^2 = (6 - 2x)^2",
+      "explanation": "Isolate r and square both sides.",
+      "why": "Eliminating r."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Expand and Collect Terms",
+      "mathExpression": "x^2 + y^2 = 36 - 24x + 4x^2 \\implies 3x^2 - y^2 - 24x + 36 = 0",
+      "explanation": "Group terms into quadratic form.",
+      "why": "Cartesian hyperbola equation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(6 - 2*x)**2 - (x**2 + y**2) - (3*x**2 - y**2 - 24*x + 36)",
+    "expected": "0"
+  }
+}

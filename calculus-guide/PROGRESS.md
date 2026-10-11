@@ -18,6 +18,7 @@
 | **M6: Final Verification & Audit** | Full build, validation, SymPy test suite pass, adversarial hardening, E2E suite | ✅ Completed | Automated E2E Test Suite (6/6 Checks Exit 0) | 2026-10-05 |
 | **M7: Chapter 1 Expansion & Tabbed UI** | Complete Ch 1 (1.1–1.4), Tabbed UI, DefinitionSchema, 38 solutions with 'why', 4 def files | ✅ Completed | Content Validator, SymPy CAS, Build (Exit 0) | 2026-10-06 |
 | **M8: Complete Solutions for Chapters 1–4** | Full coverage for Ch 1 (Functions, 4 secs), Ch 2 (Limits & Continuity, 6 secs), Ch 3 (Derivatives, 9 secs), Ch 4 (Applications of Derivatives, 8 secs). 27 sections, 27 definitions files, 27 summaries, 153 worked solutions with step 'why' & SymPy CAS verification | ✅ Completed | Content Validator, SymPy CAS, Build (Exit 0) | 2026-10-06 |
+| **M9: Full Textbook Curriculum for Chapters 1–16** | Comprehensive coverage for all 16 chapters (116 sections, 116 definitions files, 116 summaries, 598 worked solutions with step 'why' & SymPy CAS verification). Complete multi-chapter navigation, static params, and discovery files. | ✅ Completed | Content Validator, SymPy CAS (606/606), Next.js SSG 503/503 (Exit 0) | 2026-10-11 |
 
 ---
 

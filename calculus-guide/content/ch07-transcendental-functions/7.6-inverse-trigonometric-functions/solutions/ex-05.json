@@ -1,0 +1,50 @@
+{
+  "id": "ch07-transcendental-functions/7.6-inverse-trigonometric-functions/solutions/ex-05",
+  "chapter": "ch07",
+  "section": "7.6",
+  "type": "solution",
+  "title": "Integration with Linear-Quadratic Scaling",
+  "exerciseReference": "Section 7.6, Exercise 5",
+  "originalTopic": "Scaled Inverse Tangent Integral",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "arctan",
+    "scaled-integral",
+    "definite-integral"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_0^2 1 / (4 + 9x^2) dx.",
+  "finalAnswer": "\\int_0^2 \\frac{1}{4 + 9x^2} dx = \\frac{1}{6} \\arctan(3)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Rewrite in Standard Form a^2 + u^2",
+      "mathExpression": "4 + 9x^2 = 2^2 + (3x)^2 \\implies u = 3x, \\; du = 3 dx \\implies dx = \\frac{1}{3} du",
+      "explanation": "Identify a = 2 and u = 3x.",
+      "why": "Linear scaling substitution."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Transform Limits",
+      "mathExpression": "x = 0 \\implies u = 0; \\quad x = 2 \\implies u = 6",
+      "explanation": "u runs from 0 to 6.",
+      "why": "Definite limits transformation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate and Evaluate",
+      "mathExpression": "\\frac{1}{3} \\int_0^6 \\frac{1}{2^2 + u^2} du = \\frac{1}{3} \\left[ \\frac{1}{2} \\arctan\\left(\\frac{u}{2}\\right) \\right]_0^6 = \\frac{1}{6} [\\arctan(3) - \\arctan(0)] = \\frac{1}{6} \\arctan(3)",
+      "explanation": "Evaluate arctan at 3.",
+      "why": "Final exact result."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "1/(4 + 9*x**2)",
+    "expected": "atan(3)/6",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "2"
+  }
+}

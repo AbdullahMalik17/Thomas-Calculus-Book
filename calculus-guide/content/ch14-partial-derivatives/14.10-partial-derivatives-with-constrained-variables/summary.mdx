@@ -1,0 +1,20 @@
+# Section 14.10: Partial Derivatives with Constrained Variables
+
+When variables are linked by equations of state or geometric constraints, a partial derivative depends critically on which other variables are held fixed.
+
+---
+
+## 1. Explicit Variable Dependency
+
+Given $w = f(x, y, z)$ subject to constraint $g(x, y, z) = 0$:
+- $\left(\frac{\partial w}{\partial x}\right)_y$: Treat $x$ and $y$ as independent; solve constraint for $z = z(x, y)$ and substitute into $w$.
+- $\left(\frac{\partial w}{\partial x}\right)_z$: Treat $x$ and $z$ as independent; solve constraint for $y = y(x, z)$ and substitute into $w$.
+
+In general: $\left(\frac{\partial w}{\partial x}\right)_y \ne \left(\frac{\partial w}{\partial x}\right)_z$.
+
+---
+
+## 2. The Cyclic Rule
+
+For any equation $F(x, y, z) = 0$:
+$$\left( \frac{\partial x}{\partial y} \right)_z \left( \frac{\partial y}{\partial z} \right)_x \left( \frac{\partial z}{\partial x} \right)_y = -1$$

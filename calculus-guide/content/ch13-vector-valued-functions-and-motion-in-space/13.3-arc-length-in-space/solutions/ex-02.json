@@ -1,0 +1,44 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.3-arc-length-in-space/solutions/ex-02",
+  "chapter": "ch13",
+  "section": "13.3",
+  "type": "solution",
+  "title": "Arc Length with Non-Constant Speed",
+  "exerciseReference": "Section 13.3, Exercise 2",
+  "originalTopic": "Variable Speed Arc Length",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "arc-length",
+    "substitution",
+    "space-curve"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the arc length of the curve r(t) = <t, (2/3) t^(3/2), t> from t = 0 to t = 3.",
+  "finalAnswer": "\\frac{2}{3}(5\\sqrt{5} - 2\\sqrt{2})",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Derivative and Speed",
+      "mathExpression": "\\mathbf{r}'(t) = \\langle 1, t^{1/2}, 1 \\rangle \\implies |\\mathbf{v}(t)| = \\sqrt{1^2 + (\\sqrt{t})^2 + 1^2} = \\sqrt{t + 2}",
+      "explanation": "Differentiate components and compute Euclidean norm.",
+      "why": "Formulating integrand for arc length."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate Speed Function",
+      "mathExpression": "L = \\int_0^3 (t+2)^{1/2} \\, dt = \\left[ \\frac{2}{3}(t+2)^{3/2} \\right]_0^3 = \\frac{2}{3} (5^{3/2} - 2^{3/2}) = \\frac{2}{3}(5\\sqrt{5} - 2\\sqrt{2})",
+      "explanation": "Apply power rule of integration to (t+2)^(1/2).",
+      "why": "Evaluating definite arc length integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "kind": "definite",
+    "expression": "sqrt(t + 2)",
+    "lower": "0",
+    "upper": "3",
+    "expected": "(2/3)*(5*sqrt(5) - 2*sqrt(2))",
+    "variable": "t"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.6-conic-sections/solutions/ex-04",
+  "chapter": "ch11",
+  "section": "11.6",
+  "type": "solution",
+  "title": "Shifted Conic via Completing the Square",
+  "exerciseReference": "Section 11.6, Exercise 4",
+  "originalTopic": "Shifted Conic Center",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "shifted-conic",
+    "completing-the-square",
+    "ellipse"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Identify the type and center of the conic 4x^2 + 9y^2 - 16x + 18y - 11 = 0.",
+  "finalAnswer": "\\text{Ellipse with center } (2, -1)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Group Variables and Complete Squares",
+      "mathExpression": "4(x^2 - 4x + 4) + 9(y^2 + 2y + 1) = 11 + 16 + 9 = 36",
+      "explanation": "Factor out leading coefficients and add balanced constants.",
+      "why": "Completing squares."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Divide by 36",
+      "mathExpression": "\\frac{4(x - 2)^2}{36} + \\frac{9(y + 1)^2}{36} = 1 \\implies \\frac{(x - 2)^2}{9} + \\frac{(y + 1)^2}{4} = 1",
+      "explanation": "Standard form of an ellipse.",
+      "why": "Shifted standard form."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Identify Center",
+      "mathExpression": "\\text{Center} = (h, k) = (2, -1)",
+      "explanation": "Semi-axes a = 3, b = 2.",
+      "why": "Conic characteristics."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "4*4 + 9*1 + 11 - 36",
+    "expected": "0"
+  }
+}

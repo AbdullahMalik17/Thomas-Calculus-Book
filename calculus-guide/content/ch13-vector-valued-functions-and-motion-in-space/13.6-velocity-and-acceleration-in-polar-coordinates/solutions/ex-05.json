@@ -1,0 +1,40 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.6-velocity-and-acceleration-in-polar-coordinates/solutions/ex-05",
+  "chapter": "ch13",
+  "section": "13.6",
+  "type": "solution",
+  "title": "Orbital Period from Kepler's Third Law",
+  "exerciseReference": "Section 13.6, Exercise 5",
+  "originalTopic": "Kepler's Third Law",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "Kepler-third-law",
+    "orbital-period",
+    "semi-major-axis"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "An asteroid has a circular orbit with radius a = 4 AU around the Sun. Find its orbital period T in Earth years.",
+  "finalAnswer": "T = 8 \\text{ years}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Kepler's Harmonic Law",
+      "mathExpression": "T^2 = a^3",
+      "explanation": "In units of Astronomical Units (AU) and Earth years, Kepler's Third Law takes the normalized form T^2 = a^3.",
+      "why": "Using normalized planetary units."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve for Orbital Period T",
+      "mathExpression": "T = a^{3/2} = 4^{3/2} = (\\sqrt{4})^3 = 2^3 = 8 \\text{ years}",
+      "explanation": "Compute 4 to the power 3/2.",
+      "why": "Evaluating orbital period."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "4**(3/2)",
+    "expected": "8"
+  }
+}

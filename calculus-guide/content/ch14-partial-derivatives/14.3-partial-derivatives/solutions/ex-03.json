@@ -1,0 +1,47 @@
+{
+  "id": "ch14-partial-derivatives/14.3-partial-derivatives/solutions/ex-03",
+  "chapter": "ch14",
+  "section": "14.3",
+  "type": "solution",
+  "title": "Implicit Partial Differentiation",
+  "exerciseReference": "Section 14.3, Exercise 3",
+  "originalTopic": "Implicit Differentiation",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "implicit-differentiation",
+    "partial-derivatives",
+    "surfaces"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Given x^3 + y^3 + z^3 + 6xyz = 1, find dz/dx using the implicit differentiation formula dz/dx = -F_x / F_z.",
+  "finalAnswer": "\\frac{\\partial z}{\\partial x} = -\\frac{x^2 + 2yz}{z^2 + 2xy}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Define F(x, y, z) = 0",
+      "mathExpression": "F(x, y, z) = x^3 + y^3 + z^3 + 6xyz - 1 = 0",
+      "explanation": "Set all terms on one side of equation.",
+      "why": "Setting up implicit surface representation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Partial Derivatives F_x and F_z",
+      "mathExpression": "F_x = 3x^2 + 6yz = 3(x^2 + 2yz), \\quad F_z = 3z^2 + 6xy = 3(z^2 + 2xy)",
+      "explanation": "Differentiate F with respect to x and z while treating other variables as constants.",
+      "why": "Finding components for implicit formula."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Apply Ratio Formula",
+      "mathExpression": "\\frac{\\partial z}{\\partial x} = -\\frac{F_x}{F_z} = -\\frac{3(x^2 + 2yz)}{3(z^2 + 2xy)} = -\\frac{x^2 + 2yz}{z^2 + 2xy}",
+      "explanation": "Divide F_x by F_z and negate.",
+      "why": "Evaluating implicit derivative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "-(3*x**2 + 6*y*z)/(3*z**2 + 6*x*y)",
+    "expected": "-(x**2 + 2*y*z)/(z**2 + 2*x*y)"
+  }
+}

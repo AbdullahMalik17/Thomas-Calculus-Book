@@ -1,0 +1,48 @@
+{
+  "id": "ch08-techniques-of-integration/8.3-trigonometric-integrals/solutions/ex-03",
+  "chapter": "ch08",
+  "section": "8.3",
+  "type": "solution",
+  "title": "Integral of Secant to the Fourth Power",
+  "exerciseReference": "Section 8.3, Exercise 3",
+  "originalTopic": "Even Secant Powers",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "secant",
+    "tangent",
+    "even-secant"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int sec^4(x) dx.",
+  "finalAnswer": "\\tan(x) + \\frac{\\tan^3(x)}{3} + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Isolate sec^2(x) Factor for du",
+      "mathExpression": "\\sec^4(x) dx = \\sec^2(x) \\sec^2(x) dx = (1 + \\tan^2(x)) \\sec^2(x) dx",
+      "explanation": "Apply Pythagorean identity sec^2(x) = 1 + tan^2(x).",
+      "why": "Prepares for u = tan(x) substitution."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute u = tan(x)",
+      "mathExpression": "u = \\tan(x) \\implies du = \\sec^2(x) dx \\implies \\int (1 + u^2) du",
+      "explanation": "Direct polynomial in u.",
+      "why": "Algebraic conversion."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate and Back-Substitute",
+      "mathExpression": "u + \\frac{u^3}{3} + C = \\tan(x) + \\frac{\\tan^3(x)}{3} + C",
+      "explanation": "Replace u with tan(x).",
+      "why": "Final evaluated result."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "sec(x)**4",
+    "expected": "tan(x) + tan(x)**3/3",
+    "kind": "indefinite"
+  }
+}

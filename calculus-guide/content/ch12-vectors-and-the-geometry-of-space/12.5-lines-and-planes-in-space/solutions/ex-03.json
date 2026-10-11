@@ -1,0 +1,47 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.5-lines-and-planes-in-space/solutions/ex-03",
+  "chapter": "ch12",
+  "section": "12.5",
+  "type": "solution",
+  "title": "Plane Passing Through Three Non-Collinear Points",
+  "exerciseReference": "Section 12.5, Exercise 3",
+  "originalTopic": "Plane from Three Points",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "three-points",
+    "cross-product",
+    "plane"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the equation of the plane passing through the points A(1, 1, 1), B(2, 0, 3), and C(0, 2, 1).",
+  "finalAnswer": "x + y = 2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Construct Two Spanning Vectors in the Plane",
+      "mathExpression": "\\vec{AB} = \\langle 2-1, 0-1, 3-1 \\rangle = \\langle 1, -1, 2 \\rangle; \\quad \\vec{AC} = \\langle 0-1, 2-1, 1-1 \\rangle = \\langle -1, 1, 0 \\rangle",
+      "explanation": "Form vectors connecting point A to B and C.",
+      "why": "Determining two vectors lying in the plane."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find Normal Vector via Cross Product",
+      "mathExpression": "\\mathbf{n} = \\vec{AB} \\times \\vec{AC} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ 1 & -1 & 2 \\\\ -1 & 1 & 0 \\end{vmatrix} = \\mathbf{i}(-2) - \\mathbf{j}(2) + \\mathbf{k}(0) = \\langle -2, -2, 0 \\rangle",
+      "explanation": "Cross product of coplanar vectors is perpendicular to the plane. Dividing by -2 gives n = <1, 1, 0>.",
+      "why": "Generating orthogonal normal vector."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Formulate Plane Equation",
+      "mathExpression": "1(x - 1) + 1(y - 1) + 0(z - 1) = 0 \\implies x - 1 + y - 1 = 0 \\implies x + y = 2",
+      "explanation": "Substitute point A(1, 1, 1) and simplified normal <1, 1, 0>.",
+      "why": "Producing final linear plane equation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1*(x - 1) + 1*(y - 1)",
+    "expected": "x + y - 2"
+  }
+}

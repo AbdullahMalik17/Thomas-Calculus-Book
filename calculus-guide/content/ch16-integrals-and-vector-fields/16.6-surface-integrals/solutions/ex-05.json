@@ -1,0 +1,40 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.6-surface-integrals/solutions/ex-05",
+  "chapter": "ch16",
+  "section": "16.6",
+  "type": "solution",
+  "title": "Mass of a Planar Triangular Shell with Linear Density",
+  "exerciseReference": "Section 16.6, Exercise 5",
+  "originalTopic": "Surface Mass Integral",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "mass",
+    "density",
+    "triangular-shell"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the mass of the triangular surface x + y + z = 1 in the first octant if density is delta(x, y, z) = x.",
+  "finalAnswer": "\\frac{\\sqrt{3}}{6}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine Surface Area Element d sigma",
+      "mathExpression": "z = 1 - x - y \\implies z_x = -1, \\; z_y = -1; \\quad d\\sigma = \\sqrt{1 + 1 + 1} \\, dA = \\sqrt{3} \\, dA",
+      "explanation": "Evaluate surface scale factor.",
+      "why": "Finding surface area metric."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Set Up and Evaluate Double Integral",
+      "mathExpression": "M = \\iint_T x (\\sqrt{3} \\, dA) = \\sqrt{3} \\int_0^1 x \\left( \\int_0^{1-x} dy \\right) dx = \\sqrt{3} \\int_0^1 x(1 - x) \\, dx = \\sqrt{3} \\left( \\frac{1}{2} - \\frac{1}{3} \\right) = \\frac{\\sqrt{3}}{6}",
+      "explanation": "Integrate x(1-x) over [0, 1].",
+      "why": "Evaluating total shell mass."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(3) * (1/6)",
+    "expected": "sqrt(3)/6"
+  }
+}

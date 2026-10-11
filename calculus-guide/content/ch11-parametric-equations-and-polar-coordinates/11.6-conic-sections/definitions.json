@@ -1,0 +1,21 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.6-conic-sections/definitions",
+  "chapter": "ch11",
+  "section": "11.6",
+  "title": "Conic Sections",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-conic-sections",
+      "title": "Geometric Definitions and Standard Forms of Conic Sections",
+      "category": "definition",
+      "latex": "\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\; (\\text{Ellipse}), \\quad y^2 = 4px \\; (\\text{Parabola}), \\quad \\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1 \\; (\\text{Hyperbola})",
+      "statement": "Conic sections are curves formed by intersecting a double right circular cone with a plane. Characterized universally by eccentricity e = PF / PD (distance to focus divided by distance to directrix): e = 0 (circle), 0 < e < 1 (ellipse), e = 1 (parabola), e > 1 (hyperbola).",
+      "conditions": [
+        "a > b > 0 for ellipse, c^2 = a^2 - b^2; c^2 = a^2 + b^2 for hyperbola"
+      ],
+      "explanation": "Unifies planetary orbits (Kepler's First Law) and optical reflection properties.",
+      "keyTakeaway": "Eccentricity e classifies all conic sections."
+    }
+  ]
+}

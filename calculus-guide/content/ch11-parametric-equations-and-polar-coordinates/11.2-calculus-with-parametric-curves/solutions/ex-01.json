@@ -1,0 +1,47 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.2-calculus-with-parametric-curves/solutions/ex-01",
+  "chapter": "ch11",
+  "section": "11.2",
+  "type": "solution",
+  "title": "Tangent Line to a Parametric Curve",
+  "exerciseReference": "Section 11.2, Exercise 1",
+  "originalTopic": "Parametric Tangent Line",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "parametric-tangent",
+    "derivative",
+    "slope"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the equation of the tangent line to x = t^2 + 1, y = t^3 - t at the point where t = 2.",
+  "finalAnswer": "y - 6 = \\frac{11}{4}(x - 5) \\implies y = \\frac{11}{4}x - \\frac{31}{4}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Coordinates at t = 2",
+      "mathExpression": "x(2) = 2^2 + 1 = 5, \\quad y(2) = 2^3 - 2 = 6",
+      "explanation": "Point of tangency is (5, 6).",
+      "why": "Point coordinates."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Component Derivatives and Slope",
+      "mathExpression": "\\frac{dx}{dt} = 2t = 4, \\quad \\frac{dy}{dt} = 3t^2 - 1 = 11 \\implies \\frac{dy}{dx} = \\frac{11}{4}",
+      "explanation": "Divide dy/dt by dx/dt.",
+      "why": "Parametric slope formula."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Write Tangent Line Equation",
+      "mathExpression": "y - 6 = \\frac{11}{4}(x - 5) \\implies y = \\frac{11}{4}x - \\frac{31}{4}",
+      "explanation": "Point-slope formula at (5, 6).",
+      "why": "Final tangent line."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(11/4)*(5) - 31/4 - 6",
+    "expected": "0"
+  }
+}

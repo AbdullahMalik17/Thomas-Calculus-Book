@@ -1,0 +1,48 @@
+{
+  "id": "ch08-techniques-of-integration/8.2-integration-by-parts/solutions/ex-04",
+  "chapter": "ch08",
+  "section": "8.2",
+  "type": "solution",
+  "title": "Cyclic Integration by Parts (Solving for the Unknown Integral)",
+  "exerciseReference": "Section 8.2, Exercise 4",
+  "originalTopic": "Cyclic Integration",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "cyclic-parts",
+    "exponential-trig",
+    "solving-for-integral"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int e^x cos(x) dx.",
+  "finalAnswer": "\\frac{e^x}{2}(\\cos(x) + \\sin(x)) + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "First Integration by Parts",
+      "mathExpression": "I = \\int e^x \\cos(x) dx; \\quad u = \\cos(x), \\; dv = e^x dx \\implies I = e^x \\cos(x) + \\int e^x \\sin(x) dx",
+      "explanation": "du = -sin(x) dx, v = e^x.",
+      "why": "First step."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Second Integration by Parts on Remaining Integral",
+      "mathExpression": "u = \\sin(x), \\; dv = e^x dx \\implies \\int e^x \\sin(x) dx = e^x \\sin(x) - \\int e^x \\cos(x) dx = e^x \\sin(x) - I",
+      "explanation": "The original integral I reappears on the right side.",
+      "why": "Cyclic reproduction of integrand."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Solve Algebraically for I",
+      "mathExpression": "I = e^x \\cos(x) + e^x \\sin(x) - I \\implies 2I = e^x(\\cos(x) + \\sin(x)) \\implies I = \\frac{e^x}{2}(\\cos(x) + \\sin(x)) + C",
+      "explanation": "Add I to both sides and divide by 2.",
+      "why": "Algebraic solution for cyclic integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "exp(x)*cos(x)",
+    "expected": "exp(x)*(cos(x) + sin(x))/2",
+    "kind": "indefinite"
+  }
+}

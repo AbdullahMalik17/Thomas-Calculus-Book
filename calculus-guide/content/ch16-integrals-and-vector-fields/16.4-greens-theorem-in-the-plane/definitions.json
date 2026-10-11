@@ -1,0 +1,34 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.4-greens-theorem-in-the-plane/definitions",
+  "chapter": "ch16",
+  "section": "16.4",
+  "title": "Green's Theorem in the Plane",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-greens-circulation",
+      "title": "Green's Theorem (Circulation-Curl Form)",
+      "category": "theorem",
+      "latex": "\\oint_C M \\, dx + N \\, dy = \\iint_R \\left( \\frac{\\partial N}{\\partial x} - \\frac{\\partial M}{\\partial y} \\right) dA",
+      "statement": "Let C be a positively oriented, piecewise-smooth, simple closed curve in the plane enclosing region R. The counterclockwise circulation around boundary C equals the double integral of the 2D scalar curl over R.",
+      "conditions": [
+        "C is positively oriented (counterclockwise)",
+        "M and N have continuous partials on open set containing R"
+      ],
+      "explanation": "Microscopic rotations (curl) inside the region cancel on internal shared boundaries, leaving only the macroscopic boundary circulation.",
+      "keyTakeaway": "Transforms boundary line integrals into planar double integrals."
+    },
+    {
+      "id": "theorem-greens-flux",
+      "title": "Green's Theorem (Flux-Divergence Form)",
+      "category": "theorem",
+      "latex": "\\oint_C M \\, dy - N \\, dx = \\iint_R \\left( \\frac{\\partial M}{\\partial x} + \\frac{\\partial N}{\\partial y} \\right) dA = \\iint_R \\text{div}\\,\\mathbf{F} \\, dA",
+      "statement": "The total outward flux of F across boundary curve C equals the double integral of the divergence of F over region R.",
+      "conditions": [
+        "Simple closed curve C enclosing region R"
+      ],
+      "explanation": "Microscopic sources and sinks inside R accumulate to produce net outward flux across the perimeter.",
+      "keyTakeaway": "Planar version of the Divergence Theorem."
+    }
+  ]
+}

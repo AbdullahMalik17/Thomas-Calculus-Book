@@ -1,0 +1,33 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.2-vector-fields-and-line-integrals-work-circulation-and-flux/definitions",
+  "chapter": "ch16",
+  "section": "16.2",
+  "title": "Vector Fields and Line Integrals: Work, Circulation, and Flux",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-vector-field-work",
+      "title": "Line Integral of a Vector Field (Work)",
+      "category": "definition",
+      "latex": "W = \\int_C \\mathbf{F} \\cdot d\\mathbf{r} = \\int_C \\mathbf{F} \\cdot \\mathbf{T} \\, ds = \\int_C M \\, dx + N \\, dy + P \\, dz",
+      "statement": "The line integral of vector field F along oriented curve C measures the cumulative tangential component of F along C. In physics, it represents the work done by force field F moving a particle along C.",
+      "conditions": [
+        "F is continuous along oriented smooth curve C"
+      ],
+      "explanation": "Evaluating F . dr = (M x' + N y' + P z') dt contracts vector dot products into a single definite integral.",
+      "keyTakeaway": "Reversing orientation negates the value: int_{-C} F . dr = - int_C F . dr."
+    },
+    {
+      "id": "def-circulation-and-flux",
+      "title": "Circulation and Flux in the Plane",
+      "category": "formula",
+      "latex": "\\text{Circulation} = \\oint_C \\mathbf{F} \\cdot \\mathbf{T} \\, ds = \\oint_C M \\, dx + N \\, dy, \\quad \\text{Flux} = \\oint_C \\mathbf{F} \\cdot \\mathbf{n} \\, ds = \\oint_C M \\, dy - N \\, dx",
+      "statement": "Along a closed planar curve C, circulation measures the net fluid flow around the loop, while flux measures the net fluid flow passing outward through the boundary curve.",
+      "conditions": [
+        "C is a simple closed curve with counterclockwise orientation"
+      ],
+      "explanation": "Outward normal n = T x k turns the unit tangent 90 degrees clockwise, converting F . n ds into M dy - N dx.",
+      "keyTakeaway": "Circulation evaluates boundary alignment; flux evaluates boundary penetration."
+    }
+  ]
+}

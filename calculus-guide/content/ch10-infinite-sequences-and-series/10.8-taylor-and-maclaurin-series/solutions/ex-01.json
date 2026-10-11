@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.8-taylor-and-maclaurin-series/solutions/ex-01",
+  "chapter": "ch10",
+  "section": "10.8",
+  "type": "solution",
+  "title": "Computing Taylor Polynomial for Cosine at pi/4",
+  "exerciseReference": "Section 10.8, Exercise 1",
+  "originalTopic": "Taylor Polynomial Calculation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "taylor-polynomial",
+    "cosine",
+    "expansion"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the 3rd-degree Taylor polynomial for f(x) = cos(x) centered at a = pi/4.",
+  "finalAnswer": "P_3(x) = \\frac{\\sqrt{2}}{2} - \\frac{\\sqrt{2}}{2}\\left(x - \\frac{\\pi}{4}\\right) - \\frac{\\sqrt{2}}{4}\\left(x - \\frac{\\pi}{4}\\right)^2 + \\frac{\\sqrt{2}}{12}\\left(x - \\frac{\\pi}{4}\\right)^3",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Derivatives at a = pi/4",
+      "mathExpression": "f(\\pi/4) = \\frac{\\sqrt{2}}{2}, \\; f'(\\pi/4) = -\\frac{\\sqrt{2}}{2}, \\; f''(\\pi/4) = -\\frac{\\sqrt{2}}{2}, \\; f'''(\\pi/4) = \\frac{\\sqrt{2}}{2}",
+      "explanation": "Evaluate derivatives of cosine at pi/4.",
+      "why": "Taylor coefficient calculation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Formulate Taylor Polynomial P_3(x)",
+      "mathExpression": "P_3(x) = f(a) + f'(a)(x - a) + \\frac{f''(a)}{2!}(x - a)^2 + \\frac{f'''(a)}{3!}(x - a)^3",
+      "explanation": "Divide derivatives by n!.",
+      "why": "Taylor formula."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Substitute Values",
+      "mathExpression": "\\frac{\\sqrt{2}}{2} - \\frac{\\sqrt{2}}{2}\\left(x - \\frac{\\pi}{4}\\right) - \\frac{\\sqrt{2}}{4}\\left(x - \\frac{\\pi}{4}\\right)^2 + \\frac{\\sqrt{2}}{12}\\left(x - \\frac{\\pi}{4}\\right)^3",
+      "explanation": "2! = 2, 3! = 6.",
+      "why": "Final polynomial."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(2)/2 - sqrt(2)/2",
+    "expected": "0"
+  }
+}

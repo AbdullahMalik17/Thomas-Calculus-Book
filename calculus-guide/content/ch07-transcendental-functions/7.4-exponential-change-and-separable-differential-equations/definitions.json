@@ -1,0 +1,21 @@
+{
+  "id": "ch07-transcendental-functions/7.4-exponential-change-and-separable-differential-equations/definitions",
+  "chapter": "ch07",
+  "section": "7.4",
+  "title": "Exponential Change and Separable Differential Equations",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "law-exponential-growth-decay",
+      "title": "The Law of Exponential Change",
+      "category": "rule",
+      "latex": "\\frac{dy}{dt} = k y \\implies y(t) = y_0 e^{kt}",
+      "statement": "If the rate of change of a quantity y is directly proportional to y itself, then y grows (k > 0) or decays (k < 0) exponentially with time, where y_0 is the initial quantity.",
+      "conditions": [
+        "k is a non-zero proportionality constant"
+      ],
+      "explanation": "Governs population growth, radioactive decay, continuously compounded interest, and Newton's Law of Cooling.",
+      "keyTakeaway": "Proportional rate of change produces exponential dynamics."
+    }
+  ]
+}

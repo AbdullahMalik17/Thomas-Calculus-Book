@@ -1,0 +1,40 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.4-graphing-polar-coordinate-equations/solutions/ex-03",
+  "chapter": "ch11",
+  "section": "11.4",
+  "type": "solution",
+  "title": "Inner Loop Boundaries of a Limaçon",
+  "exerciseReference": "Section 11.4, Exercise 3",
+  "originalTopic": "Limaçon Inner Loop",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "limacon",
+    "inner-loop",
+    "zeros"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the interval of angles theta that traces the inner loop of r = 1 + 2 cos(theta).",
+  "finalAnswer": "\\frac{2\\pi}{3} \\le \\theta \\le \\frac{4\\pi}{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Zeros of r",
+      "mathExpression": "1 + 2\\cos\\theta = 0 \\implies \\cos\\theta = -\\frac{1}{2} \\implies \\theta = \\frac{2\\pi}{3}, \\; \\frac{4\\pi}{3}",
+      "explanation": "The curve passes through the pole at these angles.",
+      "why": "Loop boundary angles."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Determine Sign of r in Interval",
+      "mathExpression": "\\theta \\in (2\\pi/3, 4\\pi/3) \\implies \\cos\\theta < -1/2 \\implies r < 0",
+      "explanation": "Negative r values trace the inner loop.",
+      "why": "Inner loop characterization."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "cos(2*pi/3) - (-Rational(1, 2))",
+    "expected": "0"
+  }
+}

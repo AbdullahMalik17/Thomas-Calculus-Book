@@ -1,0 +1,35 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.3-the-integral-test/definitions",
+  "chapter": "ch10",
+  "section": "10.3",
+  "title": "The Integral Test",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-integral-test",
+      "title": "The Integral Test",
+      "category": "theorem",
+      "latex": "\\sum_{n=1}^\\infty a_n \\text{ and } \\int_1^\\infty f(x) dx \\quad \\text{both converge or both diverge}",
+      "statement": "Let f(x) be a continuous, positive, decreasing function on [1, oo) such that a_n = f(n). Then the infinite series sum a_n converges if and only if the improper integral int_1^oo f(x) dx converges.",
+      "conditions": [
+        "f is positive",
+        "f is continuous",
+        "f is decreasing on [1, oo)"
+      ],
+      "explanation": "Bounds series sums between upper and lower Riemann integral areas.",
+      "keyTakeaway": "Series convergence matches improper integral convergence for monotonic positive terms."
+    },
+    {
+      "id": "theorem-p-series-convergence",
+      "title": "The p-Series Convergence Theorem",
+      "category": "theorem",
+      "latex": "\\sum_{n=1}^\\infty \\frac{1}{n^p} \\quad \\begin{cases} \\text{converges} & p > 1 \\\\ \\text{diverges} & p \\le 1 \\end{cases}",
+      "statement": "The p-series converges if and only if p > 1. For p = 1, it yields the divergent Harmonic Series.",
+      "conditions": [
+        "p is a real number"
+      ],
+      "explanation": "Direct consequence of the Integral Test evaluated on int 1/x^p dx.",
+      "keyTakeaway": "sum 1/n^p converges iff p > 1."
+    }
+  ]
+}

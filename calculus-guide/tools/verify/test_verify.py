@@ -224,12 +224,12 @@ def test_calculus_ftc_integral(calculus_verifier):
 
 
 def test_all_sections_mathematical_validation():
-    """Verify that all content sections across Chapters 1-4 pass mathematical validation."""
+    """Verify that all content sections across Chapters 1-16 pass mathematical validation."""
     from tools.verify.section_validator import validate_section_dir
     from tools.verify.verify import locate_all_sections
 
     sections = locate_all_sections()
-    assert len(sections) >= 27, f"Expected at least 27 sections, found {len(sections)}"
+    assert len(sections) == 116, f"Expected exactly 116 sections, found {len(sections)}"
     failures = []
     for sec in sections:
         rep = validate_section_dir(sec)
@@ -257,4 +257,4 @@ if __name__ == "__main__":
     test_calculus_symmetry_odd_and_even(calc_v)
     test_calculus_ftc_integral(calc_v)
     test_all_sections_mathematical_validation()
-    print("ALL TEST_VERIFY CHECKS PASSED (including all 27 curriculum sections)!")
+    print("ALL TEST_VERIFY CHECKS PASSED (including all 116 curriculum sections)!")

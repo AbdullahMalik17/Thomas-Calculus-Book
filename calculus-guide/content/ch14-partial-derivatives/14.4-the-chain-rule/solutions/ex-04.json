@@ -1,0 +1,47 @@
+{
+  "id": "ch14-partial-derivatives/14.4-the-chain-rule/solutions/ex-04",
+  "chapter": "ch14",
+  "section": "14.4",
+  "type": "solution",
+  "title": "Radial Derivative in Polar Coordinates",
+  "exerciseReference": "Section 14.4, Exercise 4",
+  "originalTopic": "Coordinate Transformations",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "polar-coordinates",
+    "chain-rule",
+    "transformations"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For z = f(x, y) with x = r cos(theta) and y = r sin(theta), find dz/dr and evaluate it at theta = 0.",
+  "finalAnswer": "\\frac{\\partial z}{\\partial r} = f_x \\cos\\theta + f_y \\sin\\theta; \\quad \\left.\\frac{\\partial z}{\\partial r}\\right|_{\\theta=0} = f_x",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Coordinate Derivatives with Respect to r",
+      "mathExpression": "\\frac{\\partial x}{\\partial r} = \\cos\\theta, \\quad \\frac{\\partial y}{\\partial r} = \\sin\\theta",
+      "explanation": "Differentiate Cartesian coordinates with respect to radial distance r.",
+      "why": "Finding coordinate derivatives."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Chain Rule",
+      "mathExpression": "\\frac{\\partial z}{\\partial r} = \\frac{\\partial z}{\\partial x}\\frac{\\partial x}{\\partial r} + \\frac{\\partial z}{\\partial y}\\frac{\\partial y}{\\partial r} = f_x \\cos\\theta + f_y \\sin\\theta",
+      "explanation": "Combine via Chain Rule.",
+      "why": "Formulating radial derivative."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate at theta = 0",
+      "mathExpression": "\\left.\\frac{\\partial z}{\\partial r}\\right|_{\\theta=0} = f_x (1) + f_y (0) = f_x",
+      "explanation": "Substitute cos(0) = 1 and sin(0) = 0.",
+      "why": "Evaluating along positive x-axis."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "cos(0)",
+    "expected": "1"
+  }
+}

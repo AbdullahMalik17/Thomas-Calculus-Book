@@ -1,0 +1,40 @@
+{
+  "id": "ch09-first-order-differential-equations/9.1-solutions-slope-fields-and-eulers-method/solutions/ex-01",
+  "chapter": "ch09",
+  "section": "9.1",
+  "type": "solution",
+  "title": "Euler's Method Step-by-Step Numerical Approximation",
+  "exerciseReference": "Section 9.1, Exercise 1",
+  "originalTopic": "Euler's Method Iteration",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "eulers-method",
+    "numerical-ode",
+    "step-size"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Use Euler's method with step size Delta x = 0.1 to approximate y(0.2) for the initial value problem dy/dx = x + y with y(0) = 1.",
+  "finalAnswer": "y(0.2) \\approx 1.22",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "First Step: From x_0 = 0 to x_1 = 0.1",
+      "mathExpression": "x_0 = 0, \\; y_0 = 1 \\implies f(x_0, y_0) = 0 + 1 = 1; \\quad y_1 = y_0 + f(x_0, y_0)\\Delta x = 1 + 1(0.1) = 1.1",
+      "explanation": "Evaluate slope at (0, 1) and advance by Delta x = 0.1.",
+      "why": "First Euler iteration."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Second Step: From x_1 = 0.1 to x_2 = 0.2",
+      "mathExpression": "f(x_1, y_1) = 0.1 + 1.1 = 1.2; \\quad y_2 = y_1 + f(x_1, y_1)\\Delta x = 1.1 + 1.2(0.1) = 1.1 + 0.12 = 1.22",
+      "explanation": "Evaluate slope at (0.1, 1.1) and advance to x = 0.2.",
+      "why": "Second Euler iteration."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1.1 + (0.1 + 1.1)*0.1",
+    "expected": "1.22"
+  }
+}

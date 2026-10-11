@@ -1,0 +1,47 @@
+{
+  "id": "ch06-applications-of-definite-integrals/6.6-moments-and-centers-of-mass/solutions/ex-04",
+  "chapter": "ch06",
+  "section": "6.6",
+  "type": "solution",
+  "title": "Centroid of a Semicircle",
+  "exerciseReference": "Section 6.6, Exercise 4",
+  "originalTopic": "Semicircle Centroid",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "semicircle",
+    "centroid",
+    "symmetry"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the centroid of the upper semicircle y = sqrt(R^2 - x^2) on [-R, R].",
+  "finalAnswer": "(\\bar{x}, \\bar{y}) = \\left( 0, \\frac{4R}{3\\pi} \\right)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine x-bar by Symmetry",
+      "mathExpression": "\\bar{x} = 0",
+      "explanation": "The semicircle is symmetric about the y-axis.",
+      "why": "Horizontal balance coordinate."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Area of Semicircle",
+      "mathExpression": "A = \\frac{\\pi R^2}{2}",
+      "explanation": "Half the area of a circle of radius R.",
+      "why": "Total region area."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Moment M_x and y-bar",
+      "mathExpression": "M_x = \\frac{1}{2} \\int_{-R}^R (R^2 - x^2) dx = \\int_0^R (R^2 - x^2) dx = \\left[ R^2 x - \\frac{x^3}{3} \\right]_0^R = \\frac{2R^3}{3}; \\quad \\bar{y} = \\frac{M_x}{A} = \\frac{2R^3/3}{\\pi R^2/2} = \\frac{4R}{3\\pi}",
+      "explanation": "Divide moment by area.",
+      "why": "Famous centroid formula for semicircle."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(2/3) / (pi/2)",
+    "expected": "4/(3*pi)"
+  }
+}

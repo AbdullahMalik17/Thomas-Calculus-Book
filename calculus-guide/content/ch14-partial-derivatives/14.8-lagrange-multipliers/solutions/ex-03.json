@@ -1,0 +1,47 @@
+{
+  "id": "ch14-partial-derivatives/14.8-lagrange-multipliers/solutions/ex-03",
+  "chapter": "ch14",
+  "section": "14.8",
+  "type": "solution",
+  "title": "Extreme Values on a Circular Constraint",
+  "exerciseReference": "Section 14.8, Exercise 3",
+  "originalTopic": "Extrema on Circle",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "circle-constraint",
+    "Lagrange-multipliers",
+    "extrema"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the maximum and minimum values of f(x, y) = x^2 + 2y subject to x^2 + y^2 = 1.",
+  "finalAnswer": "\\text{Maximum: } 2 \\text{ at } (0, 1); \\quad \\text{Minimum: } -2 \\text{ at } (0, -1)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up Lagrange System",
+      "mathExpression": "\\nabla f = \\langle 2x, 2 \\rangle, \\quad \\nabla g = \\langle 2x, 2y \\rangle \\implies 2x = 2\\lambda x, \\quad 2 = 2\\lambda y",
+      "explanation": "Equate gradient components with scalar multiplier lambda.",
+      "why": "Formulating Lagrange equations."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Analyze Case x = 0 and Case lambda = 1",
+      "mathExpression": "2x(1 - \\lambda) = 0 \\implies x = 0 \\text{ or } \\lambda = 1. \\quad \\text{If } x = 0: y^2 = 1 \\implies y = \\pm 1",
+      "explanation": "Examine roots of the first equation.",
+      "why": "Branching solution cases."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Objective at Candidate Points",
+      "mathExpression": "f(0, 1) = 0 + 2(1) = 2; \\quad f(0, -1) = 0 + 2(-1) = -2",
+      "explanation": "Compare candidate values.",
+      "why": "Identifying global extrema."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0**2 + 2*(1)",
+    "expected": "2"
+  }
+}

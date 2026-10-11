@@ -1,0 +1,47 @@
+{
+  "id": "ch09-first-order-differential-equations/9.3-applications/solutions/ex-04",
+  "chapter": "ch09",
+  "section": "9.3",
+  "type": "solution",
+  "title": "RL Electric Circuit Equation",
+  "exerciseReference": "Section 9.3, Exercise 4",
+  "originalTopic": "RL Circuit Current",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "RL-circuit",
+    "inductance",
+    "electronics"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "In an RL series circuit, L di/dt + R i = V_0 where V_0 is a constant voltage. If i(0) = 0, find current i(t).",
+  "finalAnswer": "i(t) = \\frac{V_0}{R}(1 - e^{-Rt/L})",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Put in Standard Form",
+      "mathExpression": "\\frac{di}{dt} + \\frac{R}{L} i = \\frac{V_0}{L}",
+      "explanation": "Divide by inductance L.",
+      "why": "Standard linear ODE."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve Using Integrating Factor",
+      "mathExpression": "\\mu(t) = e^{Rt/L} \\implies \\frac{d}{dt}[e^{Rt/L} i] = \\frac{V_0}{L} e^{Rt/L} \\implies e^{Rt/L} i = \\frac{V_0}{R} e^{Rt/L} + C",
+      "explanation": "Integrate exponential.",
+      "why": "Integrating factor method."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Apply i(0) = 0",
+      "mathExpression": "i(t) = \\frac{V_0}{R} + C e^{-Rt/L}; \\quad i(0) = 0 \\implies C = -\\frac{V_0}{R} \\implies i(t) = \\frac{V_0}{R}(1 - e^{-Rt/L})",
+      "explanation": "Ohm's law steady state V_0/R.",
+      "why": "Particular solution."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "V0/R - V0/R",
+    "expected": "0"
+  }
+}

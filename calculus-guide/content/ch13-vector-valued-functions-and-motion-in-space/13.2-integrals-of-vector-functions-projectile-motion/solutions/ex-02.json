@@ -1,0 +1,48 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.2-integrals-of-vector-functions-projectile-motion/solutions/ex-02",
+  "chapter": "ch13",
+  "section": "13.2",
+  "type": "solution",
+  "title": "Solving an Initial Value Problem for Position",
+  "exerciseReference": "Section 13.2, Exercise 2",
+  "originalTopic": "Initial Value Problems",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "initial-value-problem",
+    "antiderivative",
+    "vector-functions"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Solve the initial value problem dr/dt = <cos(t), sin(t), 2t> with initial condition r(0) = <1, -1, 0>.",
+  "finalAnswer": "\\mathbf{r}(t) = \\langle \\sin t + 1, -\\cos t, t^2 \\rangle",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find General Indefinite Antiderivative",
+      "mathExpression": "\\mathbf{r}(t) = \\int \\langle \\cos t, \\sin t, 2t \\rangle \\, dt = \\langle \\sin t, -\\cos t, t^2 \\rangle + \\mathbf{C}",
+      "explanation": "Compute antiderivatives of cos(t), sin(t), and 2t.",
+      "why": "Finding general antiderivative vector."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Initial Condition at t = 0",
+      "mathExpression": "\\mathbf{r}(0) = \\langle 0, -1, 0 \\rangle + \\mathbf{C} = \\langle 1, -1, 0 \\rangle \\implies \\mathbf{C} = \\langle 1, 0, 0 \\rangle",
+      "explanation": "Substitute t = 0 to solve for constant vector C.",
+      "why": "Satisfying initial boundary state."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State Particular Solution",
+      "mathExpression": "\\mathbf{r}(t) = \\langle \\sin t + 1, -\\cos t, t^2 \\rangle",
+      "explanation": "Add constant vector C to the antiderivative.",
+      "why": "Formulating final trajectory."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "sin(t) + 1",
+    "expected": "cos(t)",
+    "variable": "t"
+  }
+}

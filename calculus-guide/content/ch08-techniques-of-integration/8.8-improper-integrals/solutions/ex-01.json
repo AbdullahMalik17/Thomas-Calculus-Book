@@ -1,0 +1,50 @@
+{
+  "id": "ch08-techniques-of-integration/8.8-improper-integrals/solutions/ex-01",
+  "chapter": "ch08",
+  "section": "8.8",
+  "type": "solution",
+  "title": "Type I Improper Integral with Exponential Decay",
+  "exerciseReference": "Section 8.8, Exercise 1",
+  "originalTopic": "Type I Improper Integral",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "improper-integral",
+    "type-I",
+    "exponential"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate the improper integral int_0^oo e^(-3x) dx or state that it diverges.",
+  "finalAnswer": "\\int_0^\\infty e^{-3x} dx = \\frac{1}{3} \\quad (\\text{Converges})",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Express as a Limit",
+      "mathExpression": "\\int_0^\\infty e^{-3x} dx = \\lim_{t \\to \\infty} \\int_0^t e^{-3x} dx",
+      "explanation": "Replace infinite limit with variable t.",
+      "why": "Definition of Type I improper integral."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Definite Integral in t",
+      "mathExpression": "\\int_0^t e^{-3x} dx = \\left[ -\\frac{1}{3} e^{-3x} \\right]_0^t = -\\frac{1}{3}e^{-3t} - \\left(-\\frac{1}{3}\\right) = \\frac{1}{3} - \\frac{1}{3}e^{-3t}",
+      "explanation": "Antiderivative of e^(-3x).",
+      "why": "FTC Part 2 on finite interval."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Take Limit as t -> oo",
+      "mathExpression": "\\lim_{t \\to \\infty} \\left( \\frac{1}{3} - \\frac{1}{3}e^{-3t} \\right) = \\frac{1}{3} - 0 = \\frac{1}{3}",
+      "explanation": "Since e^(-3t) -> 0 as t -> oo, the integral converges.",
+      "why": "Final evaluated convergent limit."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "exp(-3*x)",
+    "expected": "1/3",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "oo"
+  }
+}

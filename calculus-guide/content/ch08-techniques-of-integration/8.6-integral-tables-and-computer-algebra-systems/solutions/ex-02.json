@@ -1,0 +1,48 @@
+{
+  "id": "ch08-techniques-of-integration/8.6-integral-tables-and-computer-algebra-systems/solutions/ex-02",
+  "chapter": "ch08",
+  "section": "8.6",
+  "type": "solution",
+  "title": "Reduction Formula for Secant Cubed",
+  "exerciseReference": "Section 8.6, Exercise 2",
+  "originalTopic": "Secant Cubed Integration",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "secant-cubed",
+    "reduction-formula",
+    "by-parts"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int sec^3(x) dx using the secant reduction formula.",
+  "finalAnswer": "\\frac{1}{2}\\sec(x)\\tan(x) + \\frac{1}{2}\\ln|\\sec(x) + \\tan(x)| + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Reduction Formula for n = 3",
+      "mathExpression": "\\int \\sec^3(x) dx = \\frac{\\sec(x)\\tan(x)}{2} + \\frac{1}{2} \\int \\sec(x) dx",
+      "explanation": "Substitute n = 3 into secant reduction formula.",
+      "why": "Reduction formula step."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute Integral of Secant",
+      "mathExpression": "\\int \\sec(x) dx = \\ln|\\sec(x) + \\tan(x)|",
+      "explanation": "Standard integral table entry.",
+      "why": "Base case evaluation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State Result",
+      "mathExpression": "\\frac{1}{2}\\sec(x)\\tan(x) + \\frac{1}{2}\\ln|\\sec(x) + \\tan(x)| + C",
+      "explanation": "Combine terms.",
+      "why": "Famous calculus result."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "sec(x)**3",
+    "expected": "sec(x)*tan(x)/2 + log(sec(x) + tan(x))/2",
+    "kind": "indefinite"
+  }
+}

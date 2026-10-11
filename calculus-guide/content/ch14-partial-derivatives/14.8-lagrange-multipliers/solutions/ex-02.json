@@ -1,0 +1,54 @@
+{
+  "id": "ch14-partial-derivatives/14.8-lagrange-multipliers/solutions/ex-02",
+  "chapter": "ch14",
+  "section": "14.8",
+  "type": "solution",
+  "title": "Shortest Distance from the Origin to a Plane",
+  "exerciseReference": "Section 14.8, Exercise 2",
+  "originalTopic": "Constrained Distance Optimization",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "distance-to-plane",
+    "Lagrange-multipliers",
+    "quadratic-optimization"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the point on the plane 2x - y + z = 6 closest to the origin, and compute that minimum distance.",
+  "finalAnswer": "\\text{Closest point: } (2, -1, 1), \\quad \\text{Distance: } \\sqrt{6}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate Squared Distance Objective Function",
+      "mathExpression": "f(x, y, z) = x^2 + y^2 + z^2; \\quad g(x, y, z) = 2x - y + z = 6",
+      "explanation": "Minimizing squared distance avoids square root radicals.",
+      "why": "Setting up equivalent smooth objective."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Lagrange Gradient Condition",
+      "mathExpression": "\\langle 2x, 2y, 2z \\rangle = \\lambda \\langle 2, -1, 1 \\rangle \\implies x = \\lambda, \\; y = -\\frac{\\lambda}{2}, \\; z = \\frac{\\lambda}{2}",
+      "explanation": "Express coordinates in terms of multiplier lambda.",
+      "why": "Parametrizing variables via lambda."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Substitute into Plane Constraint",
+      "mathExpression": "2(\\lambda) - \\left(-\\frac{\\lambda}{2}\\right) + \\left(\\frac{\\lambda}{2}\\right) = 6 \\implies 3\\lambda = 6 \\implies \\lambda = 2",
+      "explanation": "Solve for multiplier lambda = 2.",
+      "why": "Finding specific multiplier value."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Compute Coordinates and Distance",
+      "mathExpression": "x = 2, \\; y = -1, \\; z = 1 \\implies d = \\sqrt{2^2 + (-1)^2 + 1^2} = \\sqrt{4 + 1 + 1} = \\sqrt{6}",
+      "explanation": "Calculate Euclidean distance from origin.",
+      "why": "Evaluating shortest distance."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(2**2 + (-1)**2 + 1**2)",
+    "expected": "sqrt(6)"
+  }
+}

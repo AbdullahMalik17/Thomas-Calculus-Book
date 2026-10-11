@@ -1,0 +1,48 @@
+{
+  "id": "ch05-integrals/5.5-indefinite-integrals-and-the-substitution-method/solutions/ex-03",
+  "chapter": "ch05",
+  "section": "5.5",
+  "type": "solution",
+  "title": "Algebraic Rearrangement with Linear Substitution",
+  "exerciseReference": "Section 5.5, Exercise 3",
+  "originalTopic": "Linear Shift Substitution",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "algebraic-substitution",
+    "fractional-power",
+    "radicals"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int x sqrt(x + 1) dx.",
+  "finalAnswer": "\\frac{2}{5}(x + 1)^{5/2} - \\frac{2}{3}(x + 1)^{3/2} + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Define Substitution and Solve for x",
+      "mathExpression": "u = x + 1 \\implies x = u - 1, \\quad dx = du",
+      "explanation": "Express the outer variable x in terms of u.",
+      "why": "Eliminates sum inside radical."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute and Expand Integrand",
+      "mathExpression": "\\int (u - 1) u^{1/2} du = \\int (u^{3/2} - u^{1/2}) du",
+      "explanation": "Distribute u^(1/2) over (u - 1).",
+      "why": "Converts to sum of power terms."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate Term by Term and Back-Substitute",
+      "mathExpression": "\\frac{2}{5}u^{5/2} - \\frac{2}{3}u^{3/2} + C = \\frac{2}{5}(x+1)^{5/2} - \\frac{2}{3}(x+1)^{3/2} + C",
+      "explanation": "Apply power rule and replace u with x + 1.",
+      "why": "Final simplified antiderivative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "x*sqrt(x + 1)",
+    "expected": "(2/5)*(x + 1)**(5/2) - (2/3)*(x + 1)**(3/2)",
+    "kind": "indefinite"
+  }
+}

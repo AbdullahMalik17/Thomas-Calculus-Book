@@ -1,0 +1,40 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.6-conic-sections/solutions/ex-01",
+  "chapter": "ch11",
+  "section": "11.6",
+  "type": "solution",
+  "title": "Focus and Directrix of a Parabola",
+  "exerciseReference": "Section 11.6, Exercise 1",
+  "originalTopic": "Parabola Geometric Features",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "parabola",
+    "focus",
+    "directrix"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the focus, vertex, and directrix of the parabola y^2 = 12x.",
+  "finalAnswer": "\\text{Vertex}: (0, 0), \\quad \\text{Focus}: (3, 0), \\quad \\text{Directrix}: x = -3",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Match with Standard Form y^2 = 4px",
+      "mathExpression": "4p = 12 \\implies p = 3",
+      "explanation": "Focal parameter p is 3.",
+      "why": "Standard parabola equation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Determine Focus and Directrix Coordinates",
+      "mathExpression": "\\text{Focus} = (p, 0) = (3, 0); \\quad \\text{Directrix}: x = -p = -3",
+      "explanation": "Parabola opens to the right.",
+      "why": "Focal definition of parabola."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "12 / 4 - 3",
+    "expected": "0"
+  }
+}

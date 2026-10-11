@@ -1,0 +1,23 @@
+{
+  "id": "ch07-transcendental-functions/7.6-inverse-trigonometric-functions/definitions",
+  "chapter": "ch07",
+  "section": "7.6",
+  "title": "Inverse Trigonometric Functions",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-inverse-trig-derivatives",
+      "title": "Derivatives of Inverse Trigonometric Functions",
+      "category": "formula",
+      "latex": "\\frac{d}{dx}[\\arcsin(x)] = \\frac{1}{\\sqrt{1 - x^2}}, \\quad \\frac{d}{dx}[\\arctan(x)] = \\frac{1}{1 + x^2}, \\quad \\frac{d}{dx}[\\text{arcsec}(x)] = \\frac{1}{|x|\\sqrt{x^2 - 1}}",
+      "statement": "The restricted trigonometric functions possess differentiable inverses whose derivatives are purely algebraic functions.",
+      "conditions": [
+        "|x| < 1 for arcsin",
+        "x in R for arctan",
+        "|x| > 1 for arcsec"
+      ],
+      "explanation": "Derived by implicit differentiation applied to sin(y) = x and using Pythagorean identities.",
+      "keyTakeaway": "Inverse trig derivatives bridge algebraic and transcendental integration."
+    }
+  ]
+}

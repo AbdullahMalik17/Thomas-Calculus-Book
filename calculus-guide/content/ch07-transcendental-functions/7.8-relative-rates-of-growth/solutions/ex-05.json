@@ -1,0 +1,47 @@
+{
+  "id": "ch07-transcendental-functions/7.8-relative-rates-of-growth/solutions/ex-05",
+  "chapter": "ch07",
+  "section": "7.8",
+  "type": "solution",
+  "title": "Comparing Exponential Functions with Different Bases",
+  "exerciseReference": "Section 7.8, Exercise 5",
+  "originalTopic": "Exponential Base Comparison",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "exponential",
+    "base-comparison",
+    "growth-rates"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether 2^x = o(3^x) as x -> oo.",
+  "finalAnswer": "2^x = o(3^x) \\implies 3^x \\text{ grows strictly faster}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate Limit Quotient",
+      "mathExpression": "\\lim_{x \\to \\infty} \\frac{2^x}{3^x} = \\lim_{x \\to \\infty} \\left( \\frac{2}{3} \\right)^x",
+      "explanation": "Combine bases under single exponent x.",
+      "why": "Exponential quotient law."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Limit of Base Less Than 1",
+      "mathExpression": "\\text{Since } 0 < \\frac{2}{3} < 1, \\quad \\lim_{x \\to \\infty} \\left(\\frac{2}{3}\\right)^x = 0",
+      "explanation": "Powers of fractions strictly between 0 and 1 decay to 0.",
+      "why": "Geometric progression limit."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude Little-o Relation",
+      "mathExpression": "2^x = o(3^x)",
+      "explanation": "By definition, quotient tending to 0 implies little-o.",
+      "why": "Final asymptotic relation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

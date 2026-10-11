@@ -1,0 +1,21 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.4-graphing-polar-coordinate-equations/definitions",
+  "chapter": "ch11",
+  "section": "11.4",
+  "title": "Graphing Polar Coordinate Equations",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-polar-curves-catalog",
+      "title": "Catalog of Classic Polar Curves",
+      "category": "definition",
+      "latex": "r = a \\pm b\\cos(\\theta) \\; (\\text{Lima\\c{c}ons}), \\quad r = a\\cos(n\\theta) \\; (\\text{Rose Curves}), \\quad r^2 = a^2\\cos(2\\theta) \\; (\\text{Lemniscates})",
+      "statement": "Standard families of polar curves categorized by trigonometric harmonic frequencies: Cardiods (a = b), Limaçons with inner loops (a < b), Dimpled limaçons (a > b), and Rose curves (n petals if n is odd, 2n petals if n is even).",
+      "conditions": [
+        "a, b > 0"
+      ],
+      "explanation": "Graphing utilizes symmetry, critical radius values, and table of special angles.",
+      "keyTakeaway": "Rose curve has n petals if n is odd, 2n petals if n is even."
+    }
+  ]
+}

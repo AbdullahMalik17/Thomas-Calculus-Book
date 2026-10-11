@@ -1,0 +1,48 @@
+{
+  "id": "ch08-techniques-of-integration/8.2-integration-by-parts/solutions/ex-01",
+  "chapter": "ch08",
+  "section": "8.2",
+  "type": "solution",
+  "title": "Classic Polynomial Times Exponential Integration by Parts",
+  "exerciseReference": "Section 8.2, Exercise 1",
+  "originalTopic": "Basic Integration by Parts",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "integration-by-parts",
+    "exponential",
+    "polynomial"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int x e^(2x) dx.",
+  "finalAnswer": "\\frac{x}{2} e^{2x} - \\frac{1}{4} e^{2x} + C = \\frac{e^{2x}}{4}(2x - 1) + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Choose u and dv",
+      "mathExpression": "u = x \\implies du = dx; \\quad dv = e^{2x} dx \\implies v = \\frac{1}{2} e^{2x}",
+      "explanation": "Apply LIATE rule: algebraic u = x, exponential dv = e^(2x) dx.",
+      "why": "Integration by parts setup."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Integration by Parts Formula",
+      "mathExpression": "\\int u \\, dv = uv - \\int v \\, du = \\frac{x}{2} e^{2x} - \\frac{1}{2} \\int e^{2x} dx",
+      "explanation": "Substitute u, v, du, dv.",
+      "why": "Formula application."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate Remaining Term and Factor",
+      "mathExpression": "\\frac{x}{2} e^{2x} - \\frac{1}{4} e^{2x} + C = \\frac{e^{2x}}{4}(2x - 1) + C",
+      "explanation": "Integrate e^(2x) and factor out e^(2x)/4.",
+      "why": "Final simplified antiderivative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "x*exp(2*x)",
+    "expected": "exp(2*x)*(2*x - 1)/4",
+    "kind": "indefinite"
+  }
+}

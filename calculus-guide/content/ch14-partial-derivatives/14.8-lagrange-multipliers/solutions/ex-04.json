@@ -1,0 +1,47 @@
+{
+  "id": "ch14-partial-derivatives/14.8-lagrange-multipliers/solutions/ex-04",
+  "chapter": "ch14",
+  "section": "14.8",
+  "type": "solution",
+  "title": "Optimization Subject to Two Simultaneous Constraints",
+  "exerciseReference": "Section 14.8, Exercise 4",
+  "originalTopic": "Two Constraints",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "two-constraints",
+    "plane-and-cylinder",
+    "Lagrange-multipliers"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the difference between the maximum and minimum values of f(x, y, z) = z subject to x + y + z = 1 and x^2 + y^2 = 1.",
+  "finalAnswer": "z_{\\max} - z_{\\min} = 2\\sqrt{2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Express z in Terms of Constraint Variables",
+      "mathExpression": "z = 1 - (x + y)",
+      "explanation": "From the planar constraint x + y + z = 1, z is maximized when x + y is minimized.",
+      "why": "Reducing to single constraint optimization."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Optimize x + y on the Unit Circle",
+      "mathExpression": "\\nabla(x + y) = \\lambda \\nabla(x^2 + y^2) \\implies \\langle 1, 1 \\rangle = \\lambda \\langle 2x, 2y \\rangle \\implies x = y = \\pm \\frac{1}{\\sqrt{2}}",
+      "explanation": "The extrema of x + y on the unit circle are +- sqrt(2).",
+      "why": "Finding extreme values of x + y."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Maximum and Minimum Values of z",
+      "mathExpression": "z_{\\max} = 1 - (-\\sqrt{2}) = 1 + \\sqrt{2}, \\quad z_{\\min} = 1 - \\sqrt{2} \\implies z_{\\max} - z_{\\min} = 2\\sqrt{2}",
+      "explanation": "Subtract minimum from maximum.",
+      "why": "Evaluating difference between extrema."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(1 + sqrt(2)) - (1 - sqrt(2))",
+    "expected": "2*sqrt(2)"
+  }
+}

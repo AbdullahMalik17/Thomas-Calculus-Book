@@ -1,0 +1,47 @@
+{
+  "id": "ch07-transcendental-functions/7.5-indeterminate-forms-and-lhospitals-rule/solutions/ex-01",
+  "chapter": "ch07",
+  "section": "7.5",
+  "type": "solution",
+  "title": "Evaluating a 0/0 Form with Exponentials",
+  "exerciseReference": "Section 7.5, Exercise 1",
+  "originalTopic": "L'Hopital Rule 0/0 Form",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "lhopital",
+    "indeterminate-0-0",
+    "exponential"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate lim_{x -> 0} (e^x - 1 - x) / x^2.",
+  "finalAnswer": "\\lim_{x \\to 0} \\frac{e^x - 1 - x}{x^2} = \\frac{1}{2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Check Indeterminate Form",
+      "mathExpression": "\\frac{e^0 - 1 - 0}{0^2} = \\frac{0}{0}",
+      "explanation": "Direct substitution yields 0/0.",
+      "why": "Qualifies for L'Hopital's Rule."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply L'Hopital's Rule First Time",
+      "mathExpression": "\\lim_{x \\to 0} \\frac{e^x - 1}{2x} \\quad \\left( \\frac{0}{0} \\right)",
+      "explanation": "Differentiate numerator and denominator.",
+      "why": "First derivative quotient."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Apply L'Hopital's Rule Second Time",
+      "mathExpression": "\\lim_{x \\to 0} \\frac{e^x}{2} = \\frac{e^0}{2} = \\frac{1}{2}",
+      "explanation": "Differentiate again to resolve indeterminacy.",
+      "why": "Final evaluated limit."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1/2 - 1/2",
+    "expected": "0"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ch07-transcendental-functions/7.5-indeterminate-forms-and-lhospitals-rule/solutions/ex-03",
+  "chapter": "ch07",
+  "section": "7.5",
+  "type": "solution",
+  "title": "Indeterminate Product 0 * infinity",
+  "exerciseReference": "Section 7.5, Exercise 3",
+  "originalTopic": "Indeterminate Product Transformation",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "indeterminate-product",
+    "lhopital",
+    "logarithm"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate lim_{x -> 0^+} x ln(x).",
+  "finalAnswer": "\\lim_{x \\to 0^+} x \\ln(x) = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Transform into Quotient",
+      "mathExpression": "x \\ln(x) = \\frac{\\ln(x)}{1/x} \\quad \\left( \\frac{-\\infty}{\\infty} \\right)",
+      "explanation": "Rewrite multiplication by x as division by 1/x.",
+      "why": "Converts product to standard indeterminate quotient."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply L'Hopital's Rule",
+      "mathExpression": "\\lim_{x \\to 0^+} \\frac{1/x}{-1/x^2} = \\lim_{x \\to 0^+} \\left( -\\frac{x^2}{x} \\right) = \\lim_{x \\to 0^+} (-x)",
+      "explanation": "Differentiate numerator and denominator.",
+      "why": "L'Hopital derivative step."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate",
+      "mathExpression": "\\lim_{x \\to 0^+} (-x) = 0",
+      "explanation": "Direct evaluation as x -> 0.",
+      "why": "Final limit."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

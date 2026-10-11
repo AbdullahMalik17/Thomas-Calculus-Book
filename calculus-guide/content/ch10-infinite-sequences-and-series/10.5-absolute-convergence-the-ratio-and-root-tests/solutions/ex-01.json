@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.5-absolute-convergence-the-ratio-and-root-tests/solutions/ex-01",
+  "chapter": "ch10",
+  "section": "10.5",
+  "type": "solution",
+  "title": "Ratio Test with Factorials and Exponentials",
+  "exerciseReference": "Section 10.5, Exercise 1",
+  "originalTopic": "Ratio Test with Factorials",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "ratio-test",
+    "factorial",
+    "exponential"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Test the series sum_{n=1}^oo 2^n / n! for convergence using the Ratio Test.",
+  "finalAnswer": "\\rho = 0 < 1 \\implies \\sum_{n=1}^\\infty \\frac{2^n}{n!} \\quad \\text{Converges Absolutely}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up Ratio of Consecutive Terms",
+      "mathExpression": "\\left| \\frac{a_{n+1}}{a_n} \\right| = \\frac{2^{n+1}}{(n+1)!} \\cdot \\frac{n!}{2^n} = \\frac{2^{n+1}}{2^n} \\cdot \\frac{n!}{(n+1)!} = \\frac{2}{n + 1}",
+      "explanation": "Cancel common exponential and factorial factors.",
+      "why": "Ratio simplification."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Take Limit as n -> oo",
+      "mathExpression": "\\rho = \\lim_{n \\to \\infty} \\frac{2}{n + 1} = 0",
+      "explanation": "Denominator approaches infinity.",
+      "why": "Evaluating rho."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude",
+      "mathExpression": "\\rho = 0 < 1 \\implies \\text{Series converges absolutely}",
+      "explanation": "Ratio test condition satisfied.",
+      "why": "Convergence conclusion."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

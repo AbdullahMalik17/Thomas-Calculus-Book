@@ -1,0 +1,40 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.3-the-integral-test/solutions/ex-03",
+  "chapter": "ch10",
+  "section": "10.3",
+  "type": "solution",
+  "title": "p-Series Classification",
+  "exerciseReference": "Section 10.3, Exercise 3",
+  "originalTopic": "p-Series Test",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "p-series",
+    "radicals",
+    "convergence"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether sum_{n=1}^oo 1 / n^(1.001) and sum_{n=1}^oo 1 / sqrt(n) converge.",
+  "finalAnswer": "\\sum \\frac{1}{n^{1.001}} \\text{ converges } (p = 1.001 > 1); \\quad \\sum \\frac{1}{\\sqrt{n}} \\text{ diverges } (p = 0.5 \\le 1)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify p for First Series",
+      "mathExpression": "p = 1.001 > 1 \\implies \\text{Converges}",
+      "explanation": "Since p > 1, the p-series converges.",
+      "why": "p-series theorem."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify p for Second Series",
+      "mathExpression": "\\frac{1}{\\sqrt{n}} = \\frac{1}{n^{1/2}} \\implies p = \\frac{1}{2} \\le 1 \\implies \\text{Diverges}",
+      "explanation": "Since p <= 1, the p-series diverges.",
+      "why": "p-series divergence."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

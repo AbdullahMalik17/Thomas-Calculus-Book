@@ -1,0 +1,47 @@
+{
+  "id": "ch08-techniques-of-integration/8.4-trigonometric-substitutions/solutions/ex-04",
+  "chapter": "ch08",
+  "section": "8.4",
+  "type": "solution",
+  "title": "Area of an Ellipse Derived via Trig Substitution",
+  "exerciseReference": "Section 8.4, Exercise 4",
+  "originalTopic": "Geometric Application: Ellipse Area",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "ellipse",
+    "area",
+    "trig-sub"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the area enclosed by the ellipse x^2/a^2 + y^2/b^2 = 1.",
+  "finalAnswer": "\\text{Area} = \\pi a b",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate Quadrant Area Integral",
+      "mathExpression": "y = b \\sqrt{1 - \\frac{x^2}{a^2}} = \\frac{b}{a}\\sqrt{a^2 - x^2} \\implies A = 4 \\frac{b}{a} \\int_0^a \\sqrt{a^2 - x^2} dx",
+      "explanation": "By symmetry, full area is 4 times the first quadrant.",
+      "why": "Quarter ellipse formulation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute x = a sin(theta)",
+      "mathExpression": "x = a\\sin(\\theta) \\implies dx = a\\cos(\\theta) d\\theta; \\quad x = 0 \\implies \\theta = 0, \\; x = a \\implies \\theta = \\pi/2",
+      "explanation": "Limits transform from [0, a] to [0, pi/2].",
+      "why": "Trigonometric substitution with transformed limits."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Integral",
+      "mathExpression": "4 \\frac{b}{a} \\int_0^{\\pi/2} (a\\cos(\\theta))(a\\cos(\\theta) d\\theta) = 4ab \\int_0^{\\pi/2} \\cos^2(\\theta) d\\theta = 4ab \\left( \\frac{\\pi}{4} \\right) = \\pi a b",
+      "explanation": "Integral of cos^2 over [0, pi/2] is pi/4.",
+      "why": "Classical ellipse area formula."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "4 * (pi/4)",
+    "expected": "pi"
+  }
+}

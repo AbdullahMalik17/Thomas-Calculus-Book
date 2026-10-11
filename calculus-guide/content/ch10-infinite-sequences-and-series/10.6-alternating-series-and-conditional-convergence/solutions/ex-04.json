@@ -1,0 +1,40 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.6-alternating-series-and-conditional-convergence/solutions/ex-04",
+  "chapter": "ch10",
+  "section": "10.6",
+  "type": "solution",
+  "title": "Terms Required for Error Less Than 0.001",
+  "exerciseReference": "Section 10.6, Exercise 4",
+  "originalTopic": "Precision Term Count",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "precision",
+    "alternating-series",
+    "error-bound"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "How many terms of the alternating harmonic series sum_{n=1}^oo (-1)^(n-1) / n are needed to guarantee error < 10^(-3)?",
+  "finalAnswer": "n = 1000 \\text{ terms}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Alternating Error Bound",
+      "mathExpression": "|R_n| \\le u_{n+1} = \\frac{1}{n + 1} < 10^{-3}",
+      "explanation": "Next term must be less than 1/1000.",
+      "why": "Error bound formula."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve for n",
+      "mathExpression": "n + 1 > 1000 \\implies n \\ge 1000",
+      "explanation": "Smallest integer is 1000.",
+      "why": "Integer inequality."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1000 - 1000",
+    "expected": "0"
+  }
+}

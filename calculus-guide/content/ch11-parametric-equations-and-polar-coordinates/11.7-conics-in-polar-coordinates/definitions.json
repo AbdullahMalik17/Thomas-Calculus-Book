@@ -1,0 +1,21 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.7-conics-in-polar-coordinates/definitions",
+  "chapter": "ch11",
+  "section": "11.7",
+  "title": "Conics in Polar Coordinates",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "formula-polar-conics",
+      "title": "Unified Polar Equation of Conics",
+      "category": "formula",
+      "latex": "r = \\frac{e d}{1 \\pm e \\cos(\\theta)} \\quad \\text{or} \\quad r = \\frac{e d}{1 \\pm e \\sin(\\theta)}",
+      "statement": "A conic section with one focus placed at the pole and directrix at distance d from the pole has a single unified polar equation governed entirely by eccentricity e.",
+      "conditions": [
+        "e > 0, d > 0"
+      ],
+      "explanation": "Eliminates disparate Cartesian formulas: e < 1 (ellipse), e = 1 (parabola), e > 1 (hyperbola).",
+      "keyTakeaway": "A single polar equation describes all conic sections with focus at the origin."
+    }
+  ]
+}

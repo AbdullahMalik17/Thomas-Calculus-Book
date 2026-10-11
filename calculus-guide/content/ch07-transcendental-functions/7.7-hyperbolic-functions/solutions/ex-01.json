@@ -1,0 +1,41 @@
+{
+  "id": "ch07-transcendental-functions/7.7-hyperbolic-functions/solutions/ex-01",
+  "chapter": "ch07",
+  "section": "7.7",
+  "type": "solution",
+  "title": "Derivative of Hyperbolic Tangent with Composite Argument",
+  "exerciseReference": "Section 7.7, Exercise 1",
+  "originalTopic": "Hyperbolic Chain Rule",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "tanh",
+    "hyperbolic",
+    "derivative"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the derivative of y = tanh(4x).",
+  "finalAnswer": "\\frac{dy}{dx} = 4 \\text{sech}^2(4x)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Recall Derivative of tanh",
+      "mathExpression": "\\frac{d}{dx}[\\tanh(u)] = \\text{sech}^2(u) \\cdot u'",
+      "explanation": "Hyperbolic tangent derivative rule.",
+      "why": "Chain Rule."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate Argument 4x",
+      "mathExpression": "u = 4x \\implies u' = 4 \\implies \\frac{dy}{dx} = 4 \\text{sech}^2(4x)",
+      "explanation": "Multiply by 4.",
+      "why": "Final evaluated derivative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "tanh(4*x)",
+    "expected": "4*(1 - tanh(4*x)**2)",
+    "variable": "x"
+  }
+}

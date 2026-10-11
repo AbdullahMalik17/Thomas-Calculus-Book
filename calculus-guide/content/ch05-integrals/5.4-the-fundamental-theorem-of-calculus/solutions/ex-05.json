@@ -1,0 +1,50 @@
+{
+  "id": "ch05-integrals/5.4-the-fundamental-theorem-of-calculus/solutions/ex-05",
+  "chapter": "ch05",
+  "section": "5.4",
+  "type": "solution",
+  "title": "Area Under a Secant Squared Curve",
+  "exerciseReference": "Section 5.4, Exercise 5",
+  "originalTopic": "Trigonometric Definite Integral",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "trigonometric-integral",
+    "FTC",
+    "secant-squared"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate the definite integral int_0^{pi/3} sec^2(x) dx.",
+  "finalAnswer": "\\int_0^{\\pi/3} \\sec^2(x) dx = \\sqrt{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Antiderivative of Secant Squared",
+      "mathExpression": "\\frac{d}{dx}[\\tan(x)] = \\sec^2(x) \\implies F(x) = \\tan(x)",
+      "explanation": "Recall standard trigonometric derivative rule.",
+      "why": "Finding exact antiderivative."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Evaluation Theorem",
+      "mathExpression": "[\\tan(x)]_0^{\\pi/3} = \\tan(\\pi/3) - \\tan(0)",
+      "explanation": "Substitute upper and lower limits.",
+      "why": "FTC Part 2 application."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Trigonometric Values",
+      "mathExpression": "\\sqrt{3} - 0 = \\sqrt{3}",
+      "explanation": "tan(pi/3) = sqrt(3) and tan(0) = 0.",
+      "why": "Final exact radical evaluation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "sec(x)**2",
+    "expected": "sqrt(3)",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "pi/3"
+  }
+}

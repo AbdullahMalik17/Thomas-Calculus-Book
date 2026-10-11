@@ -1,0 +1,47 @@
+{
+  "id": "ch07-transcendental-functions/7.5-indeterminate-forms-and-lhospitals-rule/solutions/ex-02",
+  "chapter": "ch07",
+  "section": "7.5",
+  "type": "solution",
+  "title": "Evaluating an inf/inf Form with Logarithms",
+  "exerciseReference": "Section 7.5, Exercise 2",
+  "originalTopic": "L'Hopital Rule inf/inf Form",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "lhopital",
+    "infinity-infinity",
+    "logarithm"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate lim_{x -> oo} ln(x) / sqrt(x).",
+  "finalAnswer": "\\lim_{x \\to \\infty} \\frac{\\ln(x)}{\\sqrt{x}} = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Indeterminate Form",
+      "mathExpression": "\\lim_{x \\to \\infty} \\frac{\\ln(x)}{\\sqrt{x}} = \\frac{\\infty}{\\infty}",
+      "explanation": "Both numerator and denominator grow without bound.",
+      "why": "inf/inf condition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply L'Hopital's Rule",
+      "mathExpression": "\\lim_{x \\to \\infty} \\frac{1/x}{1/(2\\sqrt{x})} = \\lim_{x \\to \\infty} \\frac{2\\sqrt{x}}{x} = \\lim_{x \\to \\infty} \\frac{2}{\\sqrt{x}}",
+      "explanation": "Differentiate top and bottom and simplify compound fraction.",
+      "why": "Algebraic simplification of derivative ratio."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Limit",
+      "mathExpression": "\\lim_{x \\to \\infty} \\frac{2}{\\sqrt{x}} = 0",
+      "explanation": "Denominator approaches infinity while numerator is constant.",
+      "why": "Zero limit."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

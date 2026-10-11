@@ -1,0 +1,47 @@
+{
+  "id": "ch05-integrals/5.1-area-and-estimating-with-finite-sums/solutions/ex-02",
+  "chapter": "ch05",
+  "section": "5.1",
+  "type": "solution",
+  "title": "Midpoint Approximation for Reciprocal Function",
+  "exerciseReference": "Section 5.1, Exercise 2",
+  "originalTopic": "Midpoint Rule (MRAM)",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "MRAM",
+    "reciprocal",
+    "numerical-approximation"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Estimate the area under f(x) = 1/x over [1, 5] using the Midpoint Rule (MRAM) with n = 4 subintervals.",
+  "finalAnswer": "M_4 = \\frac{1}{2}\\left( \\frac{2}{3} + \\frac{2}{5} + \\frac{2}{7} + \\frac{2}{9} \\right) = \\frac{496}{315} \\approx 1.5746",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine Width and Midpoints",
+      "mathExpression": "\\Delta x = \\frac{5 - 1}{4} = 1; \\quad c_1 = 1.5 = \\frac{3}{2}, \\; c_2 = \\frac{5}{2}, \\; c_3 = \\frac{7}{2}, \\; c_4 = \\frac{9}{2}",
+      "explanation": "Find midpoints of [1, 2], [2, 3], [3, 4], [4, 5].",
+      "why": "MRAM evaluates at subinterval centers."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Sum Rectangular Areas",
+      "mathExpression": "M_4 = 1 \\cdot \\left[ \\frac{1}{3/2} + \\frac{1}{5/2} + \\frac{1}{7/2} + \\frac{1}{9/2} \\right] = \\frac{2}{3} + \\frac{2}{5} + \\frac{2}{7} + \\frac{2}{9}",
+      "explanation": "Substitute midpoints into f(x) = 1/x.",
+      "why": "Applying MRAM sum definition."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Combine Fractions",
+      "mathExpression": "2 \\cdot \\left( \\frac{105 + 63 + 45 + 35}{315} \\right) = 2 \\cdot \\frac{248}{315} = \\frac{496}{315}",
+      "explanation": "Find common denominator 315 and simplify.",
+      "why": "Exact rational arithmetic."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2/3 + 2/5 + 2/7 + 2/9",
+    "expected": "496/315"
+  }
+}

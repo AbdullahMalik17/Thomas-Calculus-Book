@@ -1,0 +1,47 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.1-curves-in-space-and-their-tangents/solutions/ex-02",
+  "chapter": "ch13",
+  "section": "13.1",
+  "type": "solution",
+  "title": "Tangent Line to a Twisted Cubic Space Curve",
+  "exerciseReference": "Section 13.1, Exercise 2",
+  "originalTopic": "Tangent Lines in Space",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "tangent-line",
+    "twisted-cubic",
+    "space-curve"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find parametric equations for the tangent line to the twisted cubic r(t) = <t, t^2, t^3> at the point where t = 1.",
+  "finalAnswer": "x = 1 + t, \\quad y = 1 + 2t, \\quad z = 1 + 3t",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate Point on Curve at t = 1",
+      "mathExpression": "\\mathbf{r}(1) = \\langle 1, 1^2, 1^3 \\rangle = \\langle 1, 1, 1 \\rangle",
+      "explanation": "Substitute t = 1 into the position vector to obtain P_0(1, 1, 1).",
+      "why": "Finding the point of tangency."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Tangent Direction Vector",
+      "mathExpression": "\\mathbf{r}'(t) = \\langle 1, 2t, 3t^2 \\rangle \\implies \\mathbf{r}'(1) = \\langle 1, 2(1), 3(1)^2 \\rangle = \\langle 1, 2, 3 \\rangle",
+      "explanation": "Differentiate r(t) and evaluate at t = 1.",
+      "why": "Determining direction vector for tangent line."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Write Parametric Equations of Line",
+      "mathExpression": "x = 1 + 1\\tau, \\quad y = 1 + 2\\tau, \\quad z = 1 + 3\\tau",
+      "explanation": "Set up line through (1, 1, 1) in direction <1, 2, 3>.",
+      "why": "Formulating tangent line in parameter space."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "diff(t**3, t).subs(t, 1)",
+    "expected": "3"
+  }
+}

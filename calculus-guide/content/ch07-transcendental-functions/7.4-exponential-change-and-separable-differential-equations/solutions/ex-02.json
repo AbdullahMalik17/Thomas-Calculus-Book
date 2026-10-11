@@ -1,0 +1,47 @@
+{
+  "id": "ch07-transcendental-functions/7.4-exponential-change-and-separable-differential-equations/solutions/ex-02",
+  "chapter": "ch07",
+  "section": "7.4",
+  "type": "solution",
+  "title": "Newton's Law of Cooling Application",
+  "exerciseReference": "Section 7.4, Exercise 2",
+  "originalTopic": "Newton's Law of Cooling",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "cooling",
+    "differential-equation",
+    "separation-of-variables"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A cup of coffee at 90 deg C is placed in a 20 deg C room. After 10 minutes, the coffee cools to 60 deg C. When will its temperature reach 30 deg C?",
+  "finalAnswer": "t = 10 \\frac{\\ln(1/7)}{\\ln(4/7)} \\approx 28.07 \\text{ minutes}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "State Solution to Newton's Law of Cooling",
+      "mathExpression": "T(t) = T_s + (T_0 - T_s)e^{-kt} = 20 + (90 - 20)e^{-kt} = 20 + 70e^{-kt}",
+      "explanation": "Substitute ambient temperature T_s = 20 and initial T_0 = 90.",
+      "why": "Newton's cooling law solution."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Use Condition at t = 10 to Solve for k",
+      "mathExpression": "60 = 20 + 70e^{-10k} \\implies 40 = 70e^{-10k} \\implies e^{-10k} = \\frac{4}{7} \\implies -k = \\frac{1}{10}\\ln(4/7)",
+      "explanation": "Substitute T(10) = 60.",
+      "why": "Determining cooling parameter."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Solve for t when T = 30",
+      "mathExpression": "30 = 20 + 70e^{-kt} \\implies 10 = 70e^{-kt} \\implies e^{-kt} = \\frac{1}{7} \\implies -kt = \\ln(1/7) \\implies t = 10 \\frac{\\ln(1/7)}{\\ln(4/7)}",
+      "explanation": "Divide logarithms to isolate t.",
+      "why": "Exact cooling time."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "20 + 70 * exp(log(Rational(4, 7))/10 * (10*log(Rational(1, 7))/log(Rational(4, 7))))",
+    "expected": "30"
+  }
+}

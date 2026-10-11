@@ -1,0 +1,40 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.2-integrals-of-vector-functions-projectile-motion/solutions/ex-03",
+  "chapter": "ch13",
+  "section": "13.2",
+  "type": "solution",
+  "title": "Horizontal Range of a Projectile",
+  "exerciseReference": "Section 13.2, Exercise 3",
+  "originalTopic": "Projectile Range",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "projectile",
+    "range",
+    "physics"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A projectile is fired with initial speed v_0 = 98 m/s at an angle of 30 degrees to the horizontal. Assuming g = 9.8 m/s^2, find its horizontal range.",
+  "finalAnswer": "490\\sqrt{3} \\text{ m}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Total Time of Flight",
+      "mathExpression": "T = \\frac{2 v_0 \\sin\\alpha}{g} = \\frac{2(98)\\sin(30^\\circ)}{9.8} = \\frac{2(98)(1/2)}{9.8} = 10 \\text{ s}",
+      "explanation": "Set vertical displacement y(T) = 0 and solve for non-zero time.",
+      "why": "Calculating duration of flight."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Horizontal Distance Travelled",
+      "mathExpression": "R = (v_0 \\cos\\alpha) T = (98 \\cos 30^\\circ)(10) = 980 \\left(\\frac{\\sqrt{3}}{2}\\right) = 490\\sqrt{3} \\text{ m}",
+      "explanation": "Multiply constant horizontal velocity by flight duration.",
+      "why": "Evaluating horizontal range."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(98**2 * sqrt(3)/2) / 9.8",
+    "expected": "490*sqrt(3)"
+  }
+}

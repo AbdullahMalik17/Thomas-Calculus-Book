@@ -1,0 +1,18 @@
+# Section 16.6: Surface Integrals
+
+Surface integrals evaluate scalar accumulations and vector flux across curved two-dimensional manifolds.
+
+---
+
+## 1. Explicit Graph Flux Formulation
+
+For $\mathbf{F} = \langle M, N, P \rangle$ and surface $z = f(x, y)$ with **upward** orientation:
+$$\mathbf{n} \, d\sigma = \left( -\frac{\partial z}{\partial x}\mathbf{i} - \frac{\partial z}{\partial y}\mathbf{j} + \mathbf{k} \right) dA$$
+$$\iint_S \mathbf{F} \cdot \mathbf{n} \, d\sigma = \iint_R \left( -M \frac{\partial z}{\partial x} - N \frac{\partial z}{\partial y} + P \right) dA$$
+
+---
+
+## 2. Spherical Shell Flux
+
+For a sphere of radius $R$ with outward normal $\mathbf{n} = \frac{\mathbf{r}}{R}$:
+$$\iint_S \mathbf{F} \cdot \mathbf{n} \, d\sigma = \iint_S \mathbf{F} \cdot \left( \frac{\mathbf{r}}{R} \right) d\sigma$$

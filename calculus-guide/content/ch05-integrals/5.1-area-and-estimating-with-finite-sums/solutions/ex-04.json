@@ -1,0 +1,47 @@
+{
+  "id": "ch05-integrals/5.1-area-and-estimating-with-finite-sums/solutions/ex-04",
+  "chapter": "ch05",
+  "section": "5.1",
+  "type": "solution",
+  "title": "Upper and Lower Sum Error Bound for Monotonic Decay",
+  "exerciseReference": "Section 5.1, Exercise 4",
+  "originalTopic": "Error Bound in Finite Sums",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "error-bounds",
+    "upper-lower-sums",
+    "monotonic"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For f(x) = 1/(1+x) on [0, 1], find the maximum possible error when approximating the area under f(x) using n = 5 subintervals.",
+  "finalAnswer": "\\text{Max Error} \\le (f(0) - f(1)) \\Delta x = \\left(1 - \\frac{1}{2}\\right) \\frac{1}{5} = \\frac{1}{10} = 0.1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Monotonicity of Integrand",
+      "mathExpression": "f'(x) = -\\frac{1}{(1+x)^2} < 0 \\quad \\forall x \\in [0, 1]",
+      "explanation": "f is strictly decreasing on [0, 1].",
+      "why": "Monotonicity determines upper and lower sum endpoints."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Formulate Upper and Lower Sum Difference",
+      "mathExpression": "U_n - L_n = \\sum_{k=1}^n [f(x_{k-1}) - f(x_k)] \\Delta x = (f(a) - f(b)) \\Delta x",
+      "explanation": "The intermediate terms telescope, leaving only the boundary values.",
+      "why": "Telescoping property of monotonic sums."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Bound for n = 5",
+      "mathExpression": "(f(0) - f(1)) \\Delta x = \\left( 1 - \\frac{1}{2} \\right) \\frac{1}{5} = \\frac{1}{2} \\cdot \\frac{1}{5} = \\frac{1}{10}",
+      "explanation": "Error cannot exceed U_5 - L_5 = 0.1.",
+      "why": "Exact bound on approximation error."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(1 - 1/2) * (1/5)",
+    "expected": "1/10"
+  }
+}

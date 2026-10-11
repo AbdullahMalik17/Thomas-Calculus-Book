@@ -1,0 +1,47 @@
+{
+  "id": "ch15-multiple-integrals/15.5-triple-integrals-in-rectangular-coordinates/solutions/ex-04",
+  "chapter": "ch15",
+  "section": "15.5",
+  "type": "solution",
+  "title": "Volume of a Parabolic Prism via Reordered Triple Integration",
+  "exerciseReference": "Section 15.5, Exercise 4",
+  "originalTopic": "Reordering Triple Integrals",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "reordering",
+    "parabolic-prism",
+    "volume"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the volume of the solid bounded by z = x^2, z = 4, y = 0, and y = 3.",
+  "finalAnswer": "32",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Boundaries and Projection",
+      "mathExpression": "0 \\le y \\le 3, \\quad 0 \\le z \\le 4, \\quad -\\sqrt{z} \\le x \\le \\sqrt{z}",
+      "explanation": "Express the symmetric x-limits in terms of z.",
+      "why": "Reordering to dx dy dz."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate with Respect to x",
+      "mathExpression": "\\int_{-\\sqrt{z}}^{\\sqrt{z}} 1 \\, dx = 2\\sqrt{z}",
+      "explanation": "The x-width at height z is 2 sqrt(z).",
+      "why": "Evaluating inner width."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate over y and z",
+      "mathExpression": "\\left( \\int_0^3 dy \\right) \\left( \\int_0^4 2z^{1/2} dz \\right) = (3) \\left[ \\frac{4}{3} z^{3/2} \\right]_0^4 = 4(4^{3/2}) = 4(8) = 32",
+      "explanation": "Multiply length in y by the area of the parabolic cross-section in xz.",
+      "why": "Evaluating total volume."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "4 * 8",
+    "expected": "32"
+  }
+}

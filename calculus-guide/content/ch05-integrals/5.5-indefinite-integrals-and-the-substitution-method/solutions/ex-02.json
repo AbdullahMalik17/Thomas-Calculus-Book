@@ -1,0 +1,48 @@
+{
+  "id": "ch05-integrals/5.5-indefinite-integrals-and-the-substitution-method/solutions/ex-02",
+  "chapter": "ch05",
+  "section": "5.5",
+  "type": "solution",
+  "title": "Trigonometric Substitution with Chain Factor",
+  "exerciseReference": "Section 5.5, Exercise 2",
+  "originalTopic": "Trigonometric Substitution",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "u-substitution",
+    "trigonometry",
+    "indefinite-integral"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int sin(3x) cos^2(3x) dx.",
+  "finalAnswer": "-\\frac{\\cos^3(3x)}{9} + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Inner Function and Differential",
+      "mathExpression": "u = \\cos(3x) \\implies du = -3 \\sin(3x) \\, dx \\implies \\sin(3x) \\, dx = -\\frac{1}{3} du",
+      "explanation": "Let u be cos(3x); its derivative supplies sin(3x) dx.",
+      "why": "Trigonometric Chain Rule pattern."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Rewrite and Integrate",
+      "mathExpression": "\\int \\sin(3x) \\cos^2(3x) dx = -\\frac{1}{3} \\int u^2 du = -\\frac{1}{3} \\left( \\frac{u^3}{3} \\right) + C = -\\frac{u^3}{9} + C",
+      "explanation": "Integrate standard power u^2.",
+      "why": "Power rule for integration."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Back-Substitute",
+      "mathExpression": "-\\frac{\\cos^3(3x)}{9} + C",
+      "explanation": "Replace u with cos(3x).",
+      "why": "Final antiderivative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "sin(3*x)*cos(3*x)**2",
+    "expected": "-cos(3*x)**3 / 9",
+    "kind": "indefinite"
+  }
+}

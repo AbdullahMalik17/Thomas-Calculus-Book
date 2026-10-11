@@ -1,0 +1,47 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.1-three-dimensional-coordinate-systems/solutions/ex-02",
+  "chapter": "ch12",
+  "section": "12.1",
+  "type": "solution",
+  "title": "Center and Radius of a Sphere by Completing the Square",
+  "exerciseReference": "Section 12.1, Exercise 2",
+  "originalTopic": "Equations of Spheres",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "sphere",
+    "completing-the-square",
+    "quadric-equations"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the center (h, k, l) and radius a of the sphere defined by the equation x^2 + y^2 + z^2 - 6x + 4y - 2z = 11.",
+  "finalAnswer": "\\text{Center: } (3, -2, 1), \\quad \\text{Radius: } 5",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Group Terms by Variable",
+      "mathExpression": "(x^2 - 6x) + (y^2 + 4y) + (z^2 - 2z) = 11",
+      "explanation": "Group terms corresponding to each coordinate variable.",
+      "why": "Preparing variables for quadratic completion."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Complete the Square for Each Variable",
+      "mathExpression": "(x - 3)^2 - 9 + (y + 2)^2 - 4 + (z - 1)^2 - 1 = 11",
+      "explanation": "Add and balance constants: (-6/2)^2 = 9, (4/2)^2 = 4, (-2/2)^2 = 1.",
+      "why": "Transforming to standard sphere format."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Write in Standard Form",
+      "mathExpression": "(x - 3)^2 + (y + 2)^2 + (z - 1)^2 = 11 + 9 + 4 + 1 = 25 = 5^2",
+      "explanation": "Identify center (3, -2, 1) and radius sqrt(25) = 5.",
+      "why": "Extracting geometric sphere parameters."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(x - 3)**2 + (y + 2)**2 + (z - 1)**2 - 25",
+    "expected": "x**2 + y**2 + z**2 - 6*x + 4*y - 2*z - 11"
+  }
+}

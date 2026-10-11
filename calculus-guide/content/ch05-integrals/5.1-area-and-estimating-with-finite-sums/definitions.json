@@ -1,0 +1,34 @@
+{
+  "id": "ch05-integrals/5.1-area-and-estimating-with-finite-sums/definitions",
+  "chapter": "ch05",
+  "section": "5.1",
+  "title": "Area and Estimating with Finite Sums",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-riemann-sum-approximations",
+      "title": "Finite Sum Approximations (LRAM, RRAM, MRAM)",
+      "category": "definition",
+      "latex": "R_n = \\sum_{k=1}^n f(c_k) \\Delta x, \\quad \\Delta x = \\frac{b - a}{n}",
+      "statement": "Finite sums approximate the area under a non-negative continuous curve f(x) over [a, b] by partitioning the interval into n subintervals of length Delta x = (b - a)/n and evaluating f at chosen sample points: left endpoints (LRAM), right endpoints (RRAM), or midpoints (MRAM).",
+      "conditions": [
+        "f is bounded on [a, b]",
+        "Subintervals partition [a, b] equally"
+      ],
+      "explanation": "As n increases, the width Delta x approaches 0, and the finite rectangle sum converges toward the exact net area under the curve.",
+      "keyTakeaway": "Finite sums provide computable upper and lower bounds for curved areas."
+    },
+    {
+      "id": "theorem-upper-lower-sums",
+      "title": "Upper and Lower Sum Bounding Theorem",
+      "category": "theorem",
+      "latex": "L_n \\le \\text{Area} \\le U_n",
+      "statement": "For a continuous function on [a, b], any lower sum (using the absolute minimum value on each subinterval) is less than or equal to the true area, which in turn is less than or equal to any upper sum (using the absolute maximum value on each subinterval).",
+      "conditions": [
+        "f is continuous on [a, b]"
+      ],
+      "explanation": "Since f attains extreme values on closed subintervals by the Extreme Value Theorem, the exact area is squeezed between lower and upper sums.",
+      "keyTakeaway": "Upper and lower sums bracket the exact area with arbitrary precision as n -> infinity."
+    }
+  ]
+}

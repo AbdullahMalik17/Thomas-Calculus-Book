@@ -1,0 +1,40 @@
+{
+  "id": "ch15-multiple-integrals/15.6-moments-and-centers-of-mass/solutions/ex-05",
+  "chapter": "ch15",
+  "section": "15.6",
+  "type": "solution",
+  "title": "Center of Mass of a Uniform Solid Hemisphere",
+  "exerciseReference": "Section 15.6, Exercise 5",
+  "originalTopic": "Solid Hemisphere Center of Mass",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "hemisphere",
+    "center-of-mass",
+    "symmetry"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the vertical center of mass z_bar of a uniform solid hemisphere of radius R = 8 centered at the origin for z >= 0.",
+  "finalAnswer": "\\bar{z} = 3",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Recall Hemisphere Centroid Formula",
+      "mathExpression": "\\bar{z} = \\frac{3}{8}R",
+      "explanation": "The center of mass of a uniform solid hemisphere of radius R lies at distance (3/8)R from the flat base.",
+      "why": "Using geometric centroid property of hemisphere."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute Given Radius",
+      "mathExpression": "\\bar{z} = \\frac{3}{8}(8) = 3",
+      "explanation": "Multiply 3/8 by radius 8.",
+      "why": "Evaluating numerical coordinate."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(3/8) * 8",
+    "expected": "3"
+  }
+}

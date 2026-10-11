@@ -1,0 +1,34 @@
+{
+  "id": "ch05-integrals/5.5-indefinite-integrals-and-the-substitution-method/definitions",
+  "chapter": "ch05",
+  "section": "5.5",
+  "title": "Indefinite Integrals and the Substitution Method",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-substitution-rule",
+      "title": "The Substitution Rule for Integrals",
+      "category": "theorem",
+      "latex": "\\int f(g(x)) g'(x) dx = \\int f(u) du, \\quad \\text{where } u = g(x), \\; du = g'(x) dx",
+      "statement": "If u = g(x) is a differentiable function whose range is an interval I and f is continuous on I, then substitution transforms an integral into a simpler form by reversing the Chain Rule of differentiation.",
+      "conditions": [
+        "g'(x) is continuous",
+        "f is continuous on range of g"
+      ],
+      "explanation": "The differential du = g'(x) dx replaces g'(x) dx entirely, simplifying the integration.",
+      "keyTakeaway": "Substitution is the integral calculus analog of the Chain Rule."
+    },
+    {
+      "id": "formula-power-rule-substitution",
+      "title": "Generalized Power Rule for Integration",
+      "category": "formula",
+      "latex": "\\int [g(x)]^n g'(x) dx = \\frac{[g(x)]^{n+1}}{n+1} + C \\quad (n \\ne -1)",
+      "statement": "Direct integration formula when the integrand contains an expression raised to a power multiplied by its derivative.",
+      "conditions": [
+        "n != -1"
+      ],
+      "explanation": "Setting u = g(x) immediately yields int u^n du = u^(n+1)/(n+1) + C.",
+      "keyTakeaway": "Enables instant integration of composite power terms."
+    }
+  ]
+}

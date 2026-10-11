@@ -1,0 +1,40 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.1-line-integrals/solutions/ex-02",
+  "chapter": "ch16",
+  "section": "16.1",
+  "type": "solution",
+  "title": "Line Integral Along a Straight Line Segment",
+  "exerciseReference": "Section 16.1, Exercise 2",
+  "originalTopic": "Line Segment Integral",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "line-segment",
+    "parametric-curve",
+    "line-integral"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_C xy ds where C is the line segment from (0, 0) to (3, 4).",
+  "finalAnswer": "20",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Parametrize Line Segment",
+      "mathExpression": "\\mathbf{r}(t) = \\langle 3t, 4t \\rangle, \\quad 0 \\le t \\le 1; \\quad ds = \\sqrt{3^2 + 4^2} \\, dt = 5 \\, dt",
+      "explanation": "Linear parametrization connecting origin to (3, 4).",
+      "why": "Parametrizing integration path."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Definite Integral",
+      "mathExpression": "\\int_0^1 (3t)(4t)(5 \\, dt) = 60 \\int_0^1 t^2 \\, dt = 60 \\left[ \\frac{t^3}{3} \\right]_0^1 = \\frac{60}{3} = 20",
+      "explanation": "Substitute and integrate with respect to t.",
+      "why": "Evaluating total accumulated product."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "60 / 3",
+    "expected": "20"
+  }
+}

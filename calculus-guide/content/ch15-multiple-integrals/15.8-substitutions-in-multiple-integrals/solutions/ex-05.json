@@ -1,0 +1,40 @@
+{
+  "id": "ch15-multiple-integrals/15.8-substitutions-in-multiple-integrals/solutions/ex-05",
+  "chapter": "ch15",
+  "section": "15.8",
+  "type": "solution",
+  "title": "Evaluation of the Spherical Coordinate Jacobian",
+  "exerciseReference": "Section 15.8, Exercise 5",
+  "originalTopic": "Spherical Jacobian",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "spherical-Jacobian",
+    "3D-transformation",
+    "determinants"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate the spherical coordinate Jacobian rho^2 sin(phi) at rho = 2 and phi = pi/6.",
+  "finalAnswer": "2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Recall Spherical Jacobian Formula",
+      "mathExpression": "J(\\rho, \\phi, \\theta) = \\rho^2 \\sin\\phi",
+      "explanation": "The 3x3 determinant of spherical coordinate transformation reduces to rho^2 sin(phi).",
+      "why": "Using spherical volume factor."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute Given Numerical Values",
+      "mathExpression": "J = 2^2 \\sin\\left( \\frac{\\pi}{6} \\right) = 4 \\left( \\frac{1}{2} \\right) = 2",
+      "explanation": "Substitute rho = 2 and sin(pi/6) = 1/2.",
+      "why": "Evaluating numerical value."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2**2 * (1/2)",
+    "expected": "2"
+  }
+}

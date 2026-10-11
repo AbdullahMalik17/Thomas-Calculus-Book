@@ -1,0 +1,47 @@
+{
+  "id": "ch14-partial-derivatives/14.7-extreme-values-and-saddle-points/solutions/ex-04",
+  "chapter": "ch14",
+  "section": "14.7",
+  "type": "solution",
+  "title": "Absolute Extrema on a Closed Triangular Region",
+  "exerciseReference": "Section 14.7, Exercise 4",
+  "originalTopic": "Absolute Extrema on Compact Sets",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "absolute-extrema",
+    "compact-set",
+    "boundary-analysis"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the absolute maximum of f(x, y) = 2 + 2x + 2y - x^2 - y^2 on the closed triangular region bounded by x = 0, y = 0, and y = 9 - x.",
+  "finalAnswer": "\\text{Absolute maximum value is } 4 \\text{ at } (1, 1)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Interior Critical Points",
+      "mathExpression": "f_x = 2 - 2x = 0 \\implies x = 1; \\quad f_y = 2 - 2y = 0 \\implies y = 1",
+      "explanation": "The point (1, 1) lies strictly inside the triangle because 1 + 1 = 2 < 9.",
+      "why": "Finding interior stationary candidate."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate at Interior Critical Point",
+      "mathExpression": "f(1, 1) = 2 + 2(1) + 2(1) - 1^2 - 1^2 = 2 + 2 + 2 - 2 = 4",
+      "explanation": "Compute function value at interior peak.",
+      "why": "Evaluating peak candidate."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Inspect Boundary Behavior",
+      "mathExpression": "\\text{On } x = 0: g(y) = 2 + 2y - y^2 \\le 3; \\quad \\text{On } y = 0: h(x) \\le 3; \\quad \\text{On } x+y=9: f < 0",
+      "explanation": "All boundary values are strictly less than 4.",
+      "why": "Ruling out boundary for maximum."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 + 2*1 + 2*1 - 1**2 - 1**2",
+    "expected": "4"
+  }
+}

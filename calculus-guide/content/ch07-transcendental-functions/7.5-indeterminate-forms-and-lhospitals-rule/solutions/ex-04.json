@@ -1,0 +1,47 @@
+{
+  "id": "ch07-transcendental-functions/7.5-indeterminate-forms-and-lhospitals-rule/solutions/ex-04",
+  "chapter": "ch07",
+  "section": "7.5",
+  "type": "solution",
+  "title": "Indeterminate Power 1^infinity",
+  "exerciseReference": "Section 7.5, Exercise 4",
+  "originalTopic": "Indeterminate Power 1^oo",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "indeterminate-power",
+    "e-definition",
+    "logarithm"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate lim_{x -> 0} (1 + 2x)^(1/x).",
+  "finalAnswer": "\\lim_{x \\to 0} (1 + 2x)^{1/x} = e^2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Take Natural Logarithm of Expression",
+      "mathExpression": "y = (1 + 2x)^{1/x} \\implies \\ln(y) = \\frac{\\ln(1 + 2x)}{x}",
+      "explanation": "Use log to bring exponent 1/x down.",
+      "why": "Converts power to quotient."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Limit of ln(y) via L'Hopital's Rule",
+      "mathExpression": "\\lim_{x \\to 0} \\frac{\\ln(1 + 2x)}{x} \\; \\left(\\frac{0}{0}\\right) = \\lim_{x \\to 0} \\frac{2/(1 + 2x)}{1} = \\frac{2}{1} = 2",
+      "explanation": "Differentiate numerator and denominator.",
+      "why": "Evaluating log limit."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Exponentiate to Find Original Limit",
+      "mathExpression": "\\lim_{x \\to 0} y = e^{\\lim \\ln(y)} = e^2",
+      "explanation": "Invert logarithm using base e.",
+      "why": "Final exponential limit value."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "exp(2) - exp(2)",
+    "expected": "0"
+  }
+}

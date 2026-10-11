@@ -1,0 +1,34 @@
+{
+  "id": "ch14-partial-derivatives/14.6-tangent-planes-and-differentials/definitions",
+  "chapter": "ch14",
+  "section": "14.6",
+  "title": "Tangent Planes and Differentials",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-tangent-plane",
+      "title": "Tangent Plane to a Surface",
+      "category": "definition",
+      "latex": "z - z_0 = f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0)",
+      "statement": "The tangent plane to the surface z = f(x, y) at P_0(x_0, y_0, z_0) is the plane containing all tangent lines to curves on the surface through P_0. For level surface F(x, y, z) = c, equation is grad F(P_0) . (r - r_0) = 0.",
+      "conditions": [
+        "f is differentiable at (x_0, y_0)",
+        "grad F(P_0) != 0"
+      ],
+      "explanation": "Provides the best linear approximation to the curved surface near the point of tangency.",
+      "keyTakeaway": "Normal vector to the tangent plane of z = f(x, y) is <f_x, f_y, -1>."
+    },
+    {
+      "id": "def-linearization-total-differential",
+      "title": "Linearization and Total Differential",
+      "category": "formula",
+      "latex": "L(x, y) = f(x_0, y_0) + f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0), \\quad dz = f_x dx + f_y dy",
+      "statement": "The linearization L(x, y) is the linear function whose graph is the tangent plane. The total differential dz approximates the actual change Delta z = f(x_0+dx, y_0+dy) - f(x_0, y_0) for small increments dx, dy.",
+      "conditions": [
+        "Partial derivatives are continuous"
+      ],
+      "explanation": "Error Delta z - dz approaches 0 faster than distance sqrt(dx^2 + dy^2).",
+      "keyTakeaway": "Used extensively for error propagation and linear sensitivity analysis."
+    }
+  ]
+}

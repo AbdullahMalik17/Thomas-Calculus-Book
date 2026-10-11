@@ -1,0 +1,21 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.3-polar-coordinates/definitions",
+  "chapter": "ch11",
+  "section": "11.3",
+  "title": "Polar Coordinates",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-polar-coordinates",
+      "title": "Polar Coordinate System",
+      "category": "definition",
+      "latex": "x = r\\cos(\\theta), \\quad y = r\\sin(\\theta), \\quad r^2 = x^2 + y^2, \\quad \\tan(\\theta) = \\frac{y}{x}",
+      "statement": "A two-dimensional coordinate system in which each point P is determined by a radial distance r from the pole (origin) and an angle theta from the positive x-axis (polar axis). If r < 0, the point lies along the ray opposite to theta.",
+      "conditions": [
+        "r in R, theta in R"
+      ],
+      "explanation": "Points in polar coordinates have non-unique representations: (r, theta) = (r, theta + 2k pi) = (-r, theta + (2k+1) pi).",
+      "keyTakeaway": "Connects circular radius and rotation angle to Cartesian plane coordinates."
+    }
+  ]
+}

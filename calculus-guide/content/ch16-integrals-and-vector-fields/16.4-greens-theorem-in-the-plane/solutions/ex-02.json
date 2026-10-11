@@ -1,0 +1,47 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.4-greens-theorem-in-the-plane/solutions/ex-02",
+  "chapter": "ch16",
+  "section": "16.4",
+  "type": "solution",
+  "title": "Area of an Ellipse via Boundary Line Integral",
+  "exerciseReference": "Section 16.4, Exercise 2",
+  "originalTopic": "Area Formula via Green's Theorem",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "ellipse-area",
+    "Greens-theorem",
+    "differential-form"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the area enclosed by the ellipse x = 5 cos(t), y = 2 sin(t) for 0 <= t <= 2*pi using Green's Theorem.",
+  "finalAnswer": "10\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Green's Area Formula",
+      "mathExpression": "\\text{Area} = \\frac{1}{2}\\oint_C (x \\, dy - y \\, dx)",
+      "explanation": "The differential form (1/2)(x dy - y dx) evaluates to the enclosed area.",
+      "why": "Setting up boundary area formula."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute Parametric Expressions",
+      "mathExpression": "x \\, dy - y \\, dx = (5\\cos t)(2\\cos t \\, dt) - (2\\sin t)(-5\\sin t \\, dt) = 10(\\cos^2 t + \\sin^2 t) \\, dt = 10 \\, dt",
+      "explanation": "Substitute x, y, dx, and dy.",
+      "why": "Evaluating integrand on boundary."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate over [0, 2*pi]",
+      "mathExpression": "\\text{Area} = \\frac{1}{2}\\int_0^{2\\pi} 10 \\, dt = \\frac{1}{2}(20\\pi) = 10\\pi",
+      "explanation": "Evaluate the definite integral.",
+      "why": "Computing ellipse area."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "pi * 5 * 2",
+    "expected": "10*pi"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.3-the-dot-product/solutions/ex-02",
+  "chapter": "ch12",
+  "section": "12.3",
+  "type": "solution",
+  "title": "Testing Orthogonality of Two Vectors",
+  "exerciseReference": "Section 12.3, Exercise 2",
+  "originalTopic": "Orthogonal Vectors",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "orthogonality",
+    "perpendicular",
+    "dot-product"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether the vectors a = <2, -3, 4> and b = <6, 8, 3> are orthogonal.",
+  "finalAnswer": "\\text{Yes, } \\mathbf{a} \\cdot \\mathbf{b} = 0 \\implies \\mathbf{a} \\perp \\mathbf{b}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate Inner Product",
+      "mathExpression": "\\mathbf{a} \\cdot \\mathbf{b} = 2(6) + (-3)(8) + 4(3) = 12 - 24 + 12 = 0",
+      "explanation": "Compute the sum of component products.",
+      "why": "Checking the vanishing of the dot product."
+    },
+    {
+      "stepNumber": 2,
+      "title": "State Conclusion",
+      "mathExpression": "\\mathbf{a} \\cdot \\mathbf{b} = 0 \\iff \\mathbf{a} \\perp \\mathbf{b}",
+      "explanation": "Since the dot product is exactly 0, the vectors meet at a 90 degree angle.",
+      "why": "Applying orthogonality criterion."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2*6 + (-3)*8 + 4*3",
+    "expected": "0"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.2-vector-fields-and-line-integrals-work-circulation-and-flux/solutions/ex-03",
+  "chapter": "ch16",
+  "section": "16.2",
+  "type": "solution",
+  "title": "Outward Flux of a Radial Vector Field Across a Circle",
+  "exerciseReference": "Section 16.2, Exercise 3",
+  "originalTopic": "Planar Flux Calculation",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "flux",
+    "radial-field",
+    "outward-normal"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the outward flux of F = <x, y> across the circle r(t) = <3 cos(t), 3 sin(t)> for 0 <= t <= 2*pi.",
+  "finalAnswer": "18\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Recall Planar Flux Formula",
+      "mathExpression": "\\text{Flux} = \\oint_C M \\, dy - N \\, dx",
+      "explanation": "Formula for flux across counterclockwise curve.",
+      "why": "Applying boundary flux definition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute Circular Parametrization",
+      "mathExpression": "x = 3\\cos t, \\; y = 3\\sin t \\implies dx = -3\\sin t \\, dt, \\; dy = 3\\cos t \\, dt",
+      "explanation": "Compute coordinate differentials.",
+      "why": "Evaluating differential components."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Flux Integral",
+      "mathExpression": "M \\, dy - N \\, dx = (3\\cos t)(3\\cos t \\, dt) - (3\\sin t)(-3\\sin t \\, dt) = 9(\\cos^2 t + \\sin^2 t) \\, dt = 9 \\, dt; \\quad \\text{Flux} = \\int_0^{2\\pi} 9 \\, dt = 18\\pi",
+      "explanation": "Integrate constant 9 over [0, 2*pi].",
+      "why": "Computing total outward flux."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 * pi * 3**2",
+    "expected": "18*pi"
+  }
+}

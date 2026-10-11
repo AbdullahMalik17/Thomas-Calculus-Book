@@ -1,0 +1,48 @@
+{
+  "id": "ch07-transcendental-functions/7.4-exponential-change-and-separable-differential-equations/solutions/ex-03",
+  "chapter": "ch07",
+  "section": "7.4",
+  "type": "solution",
+  "title": "Separation of Variables with Rational Integrals",
+  "exerciseReference": "Section 7.4, Exercise 3",
+  "originalTopic": "Separation of Variables",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "separable-ode",
+    "differential-equations",
+    "rational"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Solve the differential equation dy/dx = 2x y^2 with initial condition y(0) = 1.",
+  "finalAnswer": "y(x) = \\frac{1}{1 - x^2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Separate Variables",
+      "mathExpression": "\\frac{1}{y^2} dy = 2x \\, dx",
+      "explanation": "Group y-terms on the left and x-terms on the right.",
+      "why": "Separation of variables technique."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate Both Sides",
+      "mathExpression": "\\int y^{-2} dy = \\int 2x \\, dx \\implies -\\frac{1}{y} = x^2 + C",
+      "explanation": "Integrate power terms.",
+      "why": "Solving separated integrals."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Apply Initial Condition y(0) = 1",
+      "mathExpression": "-\\frac{1}{1} = 0^2 + C \\implies C = -1 \\implies -\\frac{1}{y} = x^2 - 1 \\implies y = \\frac{1}{1 - x^2}",
+      "explanation": "Solve for C and isolate y.",
+      "why": "Particular solution."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "1/(1 - x**2)",
+    "expected": "2*x / (1 - x**2)**2",
+    "variable": "x"
+  }
+}

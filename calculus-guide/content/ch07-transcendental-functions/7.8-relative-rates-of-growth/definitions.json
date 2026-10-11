@@ -1,0 +1,21 @@
+{
+  "id": "ch07-transcendental-functions/7.8-relative-rates-of-growth/definitions",
+  "chapter": "ch07",
+  "section": "7.8",
+  "title": "Relative Rates of Growth",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-relative-growth-rates",
+      "title": "Relative Rates of Growth and Big-O Notation",
+      "category": "definition",
+      "latex": "f = o(g) \\iff \\lim_{x \\to \\infty} \\frac{f(x)}{g(x)} = 0, \\quad f = O(g) \\iff \\frac{f(x)}{g(x)} \\le M",
+      "statement": "Function g grows faster than f as x -> oo if f/g -> 0. Logarithms grow slower than polynomials, which grow slower than exponentials, which grow slower than factorials.",
+      "conditions": [
+        "f(x), g(x) > 0 for large x"
+      ],
+      "explanation": "Quantifies algorithmic complexity and asymptotic dominance in mathematical analysis.",
+      "keyTakeaway": "Growth hierarchy: (ln x)^a << x^b << e^(cx) << x! << x^x."
+    }
+  ]
+}

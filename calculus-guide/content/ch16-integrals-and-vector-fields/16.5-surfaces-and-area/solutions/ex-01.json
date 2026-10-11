@@ -1,0 +1,47 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.5-surfaces-and-area/solutions/ex-01",
+  "chapter": "ch16",
+  "section": "16.5",
+  "type": "solution",
+  "title": "Surface Area of a Circular Paraboloid Cap",
+  "exerciseReference": "Section 16.5, Exercise 1",
+  "originalTopic": "Explicit Surface Area",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "surface-area",
+    "paraboloid",
+    "polar-coordinates"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the surface area of the paraboloid z = x^2 + y^2 below the plane z = 4.",
+  "finalAnswer": "\\frac{\\pi}{6}(17\\sqrt{17} - 1)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Area Element d sigma",
+      "mathExpression": "z_x = 2x, \\quad z_y = 2y \\implies d\\sigma = \\sqrt{1 + 4x^2 + 4y^2} \\, dA = \\sqrt{1 + 4r^2} \\, r \\, dr \\, d\\theta",
+      "explanation": "Evaluate partial derivatives and convert to polar coordinates.",
+      "why": "Formulating surface area element."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Set Up Limits and Integrate",
+      "mathExpression": "z = 4 \\implies x^2 + y^2 = 4 \\implies r = 2; \\quad \\text{Area} = \\int_0^{2\\pi} d\\theta \\int_0^2 \\sqrt{1 + 4r^2} r \\, dr",
+      "explanation": "Radial limit extends from 0 to 2.",
+      "why": "Determining integration limits."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Using Substitution",
+      "mathExpression": "u = 1 + 4r^2, \\; du = 8r \\, dr \\implies 2\\pi \\left[ \\frac{1}{12}(1 + 4r^2)^{3/2} \\right]_0^2 = \\frac{\\pi}{6} (17^{3/2} - 1^{3/2}) = \\frac{\\pi}{6}(17\\sqrt{17} - 1)",
+      "explanation": "Integrate using power rule on u^(1/2).",
+      "why": "Computing final surface area."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(pi/6)*(17*sqrt(17) - 1)",
+    "expected": "(pi/6)*(17*sqrt(17) - 1)"
+  }
+}

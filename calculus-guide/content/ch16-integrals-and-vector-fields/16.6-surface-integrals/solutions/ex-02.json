@@ -1,0 +1,47 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.6-surface-integrals/solutions/ex-02",
+  "chapter": "ch16",
+  "section": "16.6",
+  "type": "solution",
+  "title": "Flux of a Uniform Vector Field Through a Flat Disk",
+  "exerciseReference": "Section 16.6, Exercise 2",
+  "originalTopic": "Uniform Flux",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "flux",
+    "flat-surface",
+    "vector-field"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the upward flux of F = <0, 0, 5> through the disk x^2 + y^2 <= 9 in the xy-plane.",
+  "finalAnswer": "45\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine Upward Normal Vector",
+      "mathExpression": "\\mathbf{n} = \\mathbf{k} = \\langle 0, 0, 1 \\rangle",
+      "explanation": "The unit upward normal to the xy-plane is k.",
+      "why": "Identifying normal orientation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Flux Dot Product",
+      "mathExpression": "\\mathbf{F} \\cdot \\mathbf{n} = \\langle 0, 0, 5 \\rangle \\cdot \\langle 0, 0, 1 \\rangle = 5",
+      "explanation": "Compute the normal component of the field.",
+      "why": "Evaluating normal field component."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate Over Disk",
+      "mathExpression": "\\iint_S 5 \\, d\\sigma = 5 \\times \\text{Area}(S) = 5 \\times \\pi(3^2) = 45\\pi",
+      "explanation": "Multiply constant normal component 5 by disk area 9*pi.",
+      "why": "Computing total flux."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "5 * 9*pi",
+    "expected": "45*pi"
+  }
+}

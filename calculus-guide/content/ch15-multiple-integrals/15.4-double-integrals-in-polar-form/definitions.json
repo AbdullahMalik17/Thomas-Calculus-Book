@@ -1,0 +1,34 @@
+{
+  "id": "ch15-multiple-integrals/15.4-double-integrals-in-polar-form/definitions",
+  "chapter": "ch15",
+  "section": "15.4",
+  "title": "Double Integrals in Polar Form",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-polar-double-integral",
+      "title": "Double Integral in Polar Coordinates",
+      "category": "definition",
+      "latex": "\\iint_R f(x, y) \\, dA = \\int_\\alpha^\\beta \\int_{r_1(\\theta)}^{r_2(\\theta)} f(r\\cos\\theta, r\\sin\\theta) \\, r \\, dr \\, d\\theta",
+      "statement": "In polar coordinates, the differential area element is dA = r dr dtheta. The extra factor of r represents the Jacobian determinant of the transformation x = r cos(theta), y = r sin(theta).",
+      "conditions": [
+        "r >= 0",
+        "beta - alpha <= 2*pi"
+      ],
+      "explanation": "A polar rectangle has radial length dr and arc length r dtheta, giving area r dr dtheta.",
+      "keyTakeaway": "Always include the radial factor r in the polar area element: dA = r dr dtheta."
+    },
+    {
+      "id": "formula-gaussian-integral-polar",
+      "title": "Gaussian Integral via Polar Double Integration",
+      "category": "formula",
+      "latex": "\\int_{-\\infty}^\\infty e^{-x^2} \\, dx = \\sqrt{\\pi}",
+      "statement": "Squaring the single-variable improper integral and converting to polar coordinates over the entire plane transforms the intractable integrand e^(-x^2) into the easily integrable form r e^(-r^2).",
+      "conditions": [
+        "Integration over entire R^2 plane"
+      ],
+      "explanation": "Produces I^2 = int_0^(2pi) int_0^oo e^(-r^2) r dr dtheta = pi, yielding I = sqrt(pi).",
+      "keyTakeaway": "Classic demonstration of simplifying higher-dimensional integrals via polar symmetry."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "id": "ch05-integrals/5.5-indefinite-integrals-and-the-substitution-method/solutions/ex-01",
+  "chapter": "ch05",
+  "section": "5.5",
+  "type": "solution",
+  "title": "Substitution with Polynomial Power Function",
+  "exerciseReference": "Section 5.5, Exercise 1",
+  "originalTopic": "Power Rule Substitution",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "u-substitution",
+    "polynomial",
+    "indefinite-integral"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate the indefinite integral int 2x (x^2 + 5)^4 dx.",
+  "finalAnswer": "\\frac{(x^2 + 5)^5}{5} + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Choose Substitution Variable",
+      "mathExpression": "u = x^2 + 5 \\implies du = 2x \\, dx",
+      "explanation": "The derivative of x^2 + 5 is exactly 2x dx.",
+      "why": "Inner function substitution."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Transform the Integral",
+      "mathExpression": "\\int 2x (x^2 + 5)^4 dx = \\int u^4 du",
+      "explanation": "Replace (x^2 + 5)^4 with u^4 and 2x dx with du.",
+      "why": "Applying substitution rule."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate and Back-Substitute",
+      "mathExpression": "\\int u^4 du = \\frac{u^5}{5} + C = \\frac{(x^2 + 5)^5}{5} + C",
+      "explanation": "Apply power rule and substitute back u = x^2 + 5.",
+      "why": "Returning to original variable."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "2*x*(x**2 + 5)**4",
+    "expected": "(x**2 + 5)**5 / 5",
+    "kind": "indefinite"
+  }
+}

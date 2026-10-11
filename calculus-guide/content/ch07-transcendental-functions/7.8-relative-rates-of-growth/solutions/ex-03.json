@@ -1,0 +1,47 @@
+{
+  "id": "ch07-transcendental-functions/7.8-relative-rates-of-growth/solutions/ex-03",
+  "chapter": "ch07",
+  "section": "7.8",
+  "type": "solution",
+  "title": "Polynomial vs Exponential Growth",
+  "exerciseReference": "Section 7.8, Exercise 3",
+  "originalTopic": "Polynomial vs Exponential",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "polynomial",
+    "exponential",
+    "growth-comparison"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate lim_{x -> oo} x^100 e^(-0.01x).",
+  "finalAnswer": "\\lim_{x \\to \\infty} x^{100} e^{-0.01x} = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Rewrite as Quotient",
+      "mathExpression": "\\lim_{x \\to \\infty} \\frac{x^{100}}{e^{0.01x}}",
+      "explanation": "Express as polynomial over exponential.",
+      "why": "inf/inf indeterminate form."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Asymptotic Dominance Principle",
+      "mathExpression": "\\frac{d^{100}}{dx^{100}}[x^{100}] = 100!, \\quad \\frac{d^{100}}{dx^{100}}[e^{0.01x}] = (0.01)^{100} e^{0.01x}",
+      "explanation": "After 100 applications of L'Hopital's rule, the numerator becomes constant while denominator continues to grow exponentially.",
+      "why": "Repeated L'Hopital analysis."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Limit",
+      "mathExpression": "\\lim_{x \\to \\infty} \\frac{100!}{(0.01)^{100} e^{0.01x}} = 0",
+      "explanation": "Exponential decay overcomes any finite power polynomial.",
+      "why": "Final limit."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

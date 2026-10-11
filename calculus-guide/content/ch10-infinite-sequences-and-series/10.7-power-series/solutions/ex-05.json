@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.7-power-series/solutions/ex-05",
+  "chapter": "ch10",
+  "section": "10.7",
+  "type": "solution",
+  "title": "Term-by-Term Differentiation to Sum a Series",
+  "exerciseReference": "Section 10.7, Exercise 5",
+  "originalTopic": "Term-by-Term Differentiation",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "term-by-term-differentiation",
+    "series-sum",
+    "algebra"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the sum of the series sum_{n=1}^oo n x^n for |x| < 1 by differentiating the geometric series.",
+  "finalAnswer": "\\sum_{n=1}^\\infty n x^n = \\frac{x}{(1 - x)^2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Start from Geometric Series Formula",
+      "mathExpression": "\\sum_{n=0}^\\infty x^n = \\frac{1}{1 - x} \\quad (|x| < 1)",
+      "explanation": "Standard geometric sum.",
+      "why": "Base power series."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate Both Sides with Respect to x",
+      "mathExpression": "\\frac{d}{dx} \\left[ \\sum_{n=0}^\\infty x^n \\right] = \\sum_{n=1}^\\infty n x^{n-1} = \\frac{d}{dx}[(1 - x)^{-1}] = \\frac{1}{(1 - x)^2}",
+      "explanation": "Term-by-term derivative.",
+      "why": "Differentiation theorem."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Multiply Both Sides by x",
+      "mathExpression": "x \\sum_{n=1}^\\infty n x^{n-1} = \\sum_{n=1}^\\infty n x^n = \\frac{x}{(1 - x)^2}",
+      "explanation": "Multiply by x to match target index power.",
+      "why": "Final closed form sum."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "x/(1 - x)**2 - x/(1 - x)**2",
+    "expected": "0"
+  }
+}

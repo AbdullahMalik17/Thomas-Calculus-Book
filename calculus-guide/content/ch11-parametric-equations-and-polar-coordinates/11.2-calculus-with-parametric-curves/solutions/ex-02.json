@@ -1,0 +1,47 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.2-calculus-with-parametric-curves/solutions/ex-02",
+  "chapter": "ch11",
+  "section": "11.2",
+  "type": "solution",
+  "title": "Second Derivative and Concavity of a Parametric Curve",
+  "exerciseReference": "Section 11.2, Exercise 2",
+  "originalTopic": "Parametric Second Derivative",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "second-derivative",
+    "concavity",
+    "parametric"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find d^2y/dx^2 for x = t^3, y = t^2.",
+  "finalAnswer": "\\frac{d^2 y}{dx^2} = -\\frac{2}{9t^4}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute First Derivative dy/dx",
+      "mathExpression": "\\frac{dx}{dt} = 3t^2, \\quad \\frac{dy}{dt} = 2t \\implies \\frac{dy}{dx} = \\frac{2t}{3t^2} = \\frac{2}{3t}",
+      "explanation": "Ratio of first derivatives.",
+      "why": "First derivative."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate dy/dx with Respect to t",
+      "mathExpression": "\\frac{d}{dt}\\left[ \\frac{2}{3t} \\right] = -\\frac{2}{3t^2}",
+      "explanation": "Differentiate with respect to parameter.",
+      "why": "Numerator of second derivative."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Divide by dx/dt",
+      "mathExpression": "\\frac{d^2 y}{dx^2} = \\frac{-2/(3t^2)}{3t^2} = -\\frac{2}{9t^4}",
+      "explanation": "Divide by dx/dt = 3t^2.",
+      "why": "Parametric second derivative formula."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(-2/(3*t**2)) / (3*t**2) - (-2/(9*t**4))",
+    "expected": "0"
+  }
+}

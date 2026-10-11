@@ -1,0 +1,48 @@
+{
+  "id": "ch05-integrals/5.5-indefinite-integrals-and-the-substitution-method/solutions/ex-04",
+  "chapter": "ch05",
+  "section": "5.5",
+  "type": "solution",
+  "title": "Substitution with Radical in Denominator",
+  "exerciseReference": "Section 5.5, Exercise 4",
+  "originalTopic": "Radical Denominator Substitution",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "radical",
+    "denominator",
+    "u-substitution"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int x^2 / sqrt(x^3 + 9) dx.",
+  "finalAnswer": "\\frac{2}{3} \\sqrt{x^3 + 9} + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up u and du",
+      "mathExpression": "u = x^3 + 9 \\implies du = 3x^2 \\, dx \\implies x^2 \\, dx = \\frac{1}{3} du",
+      "explanation": "Numerator x^2 dx matches (1/3) du.",
+      "why": "Degree 3 radicand differentiates to degree 2."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Rewrite in Terms of u",
+      "mathExpression": "\\frac{1}{3} \\int u^{-1/2} du",
+      "explanation": "Express denominator as negative fractional power.",
+      "why": "Prepares for power rule."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate and Back-Substitute",
+      "mathExpression": "\\frac{1}{3} \\left( 2 u^{1/2} \\right) + C = \\frac{2}{3} \\sqrt{x^3 + 9} + C",
+      "explanation": "Add 1 to exponent and replace u with x^3 + 9.",
+      "why": "Final evaluated result."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "x**2 / sqrt(x**3 + 9)",
+    "expected": "(2/3)*sqrt(x**3 + 9)",
+    "kind": "indefinite"
+  }
+}

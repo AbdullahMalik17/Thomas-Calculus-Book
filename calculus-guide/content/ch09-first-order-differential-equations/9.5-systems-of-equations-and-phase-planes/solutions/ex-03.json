@@ -1,0 +1,47 @@
+{
+  "id": "ch09-first-order-differential-equations/9.5-systems-of-equations-and-phase-planes/solutions/ex-03",
+  "chapter": "ch09",
+  "section": "9.5",
+  "type": "solution",
+  "title": "Linear Autonomous System Matrix Formulation",
+  "exerciseReference": "Section 9.5, Exercise 3",
+  "originalTopic": "Linear System Matrix",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "linear-system",
+    "eigenvalues",
+    "matrix"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the eigenvalues of the linear system dx/dt = x + 2y, dy/dt = 2x + y.",
+  "finalAnswer": "\\lambda_1 = 3, \\quad \\lambda_2 = -1 \\quad (\\text{Saddle point})",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Form Coefficient Matrix A",
+      "mathExpression": "A = \\begin{pmatrix} 1 & 2 \\\\ 2 & 1 \\end{pmatrix}",
+      "explanation": "Extract coefficients of linear system.",
+      "why": "Matrix representation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Characteristic Polynomial",
+      "mathExpression": "\\det(A - \\lambda I) = (1 - \\lambda)^2 - 4 = \\lambda^2 - 2\\lambda - 3 = (\\lambda - 3)(\\lambda + 1) = 0",
+      "explanation": "Set determinant equal to zero.",
+      "why": "Eigenvalue equation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State Eigenvalues and Classification",
+      "mathExpression": "\\lambda_1 = 3, \\; \\lambda_2 = -1",
+      "explanation": "Opposite sign real eigenvalues signify an unstable saddle point.",
+      "why": "Phase portrait classification."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(3 - 1)**2 - 4",
+    "expected": "0"
+  }
+}

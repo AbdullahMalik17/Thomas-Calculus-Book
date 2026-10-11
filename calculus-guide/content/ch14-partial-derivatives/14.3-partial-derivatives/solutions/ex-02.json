@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.3-partial-derivatives/solutions/ex-02",
+  "chapter": "ch14",
+  "section": "14.3",
+  "type": "solution",
+  "title": "Verifying Clairaut's Theorem for Mixed Partial Derivatives",
+  "exerciseReference": "Section 14.3, Exercise 2",
+  "originalTopic": "Mixed Partial Derivatives",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "Clairaut-theorem",
+    "mixed-partials",
+    "equality"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For f(x, y) = x exp(y) + y sin(x), verify that f_{xy} = f_{yx}.",
+  "finalAnswer": "f_{xy} = f_{yx} = e^y + \\cos(x)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute First Partials",
+      "mathExpression": "f_x = e^y + y\\cos x, \\quad f_y = x e^y + \\sin x",
+      "explanation": "Differentiate with respect to x and y independently.",
+      "why": "Finding first-order partials."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Mixed Second Partials",
+      "mathExpression": "f_{xy} = \\frac{\\partial}{\\partial y}(e^y + y\\cos x) = e^y + \\cos x; \\quad f_{yx} = \\frac{\\partial}{\\partial x}(x e^y + \\sin x) = e^y + \\cos x",
+      "explanation": "Differentiate f_x with respect to y and f_y with respect to x.",
+      "why": "Demonstrating equality of mixed partials."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "exp(y) + cos(x)",
+    "expected": "exp(y) + cos(x)"
+  }
+}

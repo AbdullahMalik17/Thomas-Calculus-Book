@@ -1,0 +1,27 @@
+# Section 5.4: The Fundamental Theorem of Calculus
+
+The Fundamental Theorem of Calculus is the crowning achievement connecting differential calculus and integral calculus.
+
+---
+
+## 1. FTC Part 1: Differentiating Accumulation Functions
+
+If $F(x) = \int_a^{u(x)} f(t) dt$, by combining FTC Part 1 with the Chain Rule:
+
+$$
+\frac{d}{dx} \left[ \int_a^{u(x)} f(t) dt \right] = f(u(x)) \cdot u'(x)
+$$
+
+If both upper and lower limits are variable:
+
+$$
+\frac{d}{dx} \left[ \int_{v(x)}^{u(x)} f(t) dt \right] = f(u(x)) u'(x) - f(v(x)) v'(x)
+$$
+
+---
+
+## 2. FTC Part 2: The Net Change Theorem
+
+$$
+\int_a^b f(x) dx = F(b) - F(a) = [F(x)]_a^b
+$$

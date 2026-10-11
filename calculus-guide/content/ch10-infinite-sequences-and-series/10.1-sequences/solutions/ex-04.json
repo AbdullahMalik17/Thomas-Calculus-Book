@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.1-sequences/solutions/ex-04",
+  "chapter": "ch10",
+  "section": "10.1",
+  "type": "solution",
+  "title": "Monotone Convergence of a Recursive Sequence",
+  "exerciseReference": "Section 10.1, Exercise 4",
+  "originalTopic": "Recursive Sequence Convergence",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "recursive-sequence",
+    "monotone-convergence",
+    "fixed-point"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Let a_1 = 1 and a_{n+1} = sqrt(2 + a_n). Prove the sequence converges and find its limit.",
+  "finalAnswer": "L = 2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Prove Sequence is Bounded by 2",
+      "mathExpression": "a_1 = 1 < 2; \\quad a_k < 2 \\implies a_{k+1} = \\sqrt{2 + a_k} < \\sqrt{2 + 2} = 2",
+      "explanation": "By induction, a_n < 2 for all n.",
+      "why": "Boundedness proof."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Prove Sequence is Monotonically Increasing",
+      "mathExpression": "a_{n+1} - a_n = \\sqrt{2 + a_n} - a_n = \\frac{2 + a_n - a_n^2}{\\sqrt{2 + a_n} + a_n} = \\frac{(2 - a_n)(1 + a_n)}{\\sqrt{2 + a_n} + a_n} > 0",
+      "explanation": "Since 0 < a_n < 2, the numerator is strictly positive.",
+      "why": "Monotonicity proof."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Solve for the Limit L",
+      "mathExpression": "L = \\sqrt{2 + L} \\implies L^2 - L - 2 = 0 \\implies (L - 2)(L + 1) = 0 \\implies L = 2",
+      "explanation": "Since a_n > 0, L must be positive, so L = 2.",
+      "why": "Fixed point algebraic equation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(2 + 2) - 2",
+    "expected": "0"
+  }
+}

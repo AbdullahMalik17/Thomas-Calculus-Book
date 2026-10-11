@@ -1,0 +1,47 @@
+{
+  "id": "ch14-partial-derivatives/14.5-directional-derivatives-and-gradient-vectors/solutions/ex-02",
+  "chapter": "ch14",
+  "section": "14.5",
+  "type": "solution",
+  "title": "Directional Derivative in a Specified Direction",
+  "exerciseReference": "Section 14.5, Exercise 2",
+  "originalTopic": "Directional Derivative",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "directional-derivative",
+    "unit-vector",
+    "dot-product"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the directional derivative of f(x, y) = x^3 - 3xy + 4y^2 at P(1, 2) in the direction of v = 3i + 4j.",
+  "finalAnswer": "D_\\mathbf{u} f(1, 2) = \\frac{43}{5}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Normalize Direction Vector to Unit Length",
+      "mathExpression": "|\\mathbf{v}| = \\sqrt{3^2 + 4^2} = 5 \\implies \\mathbf{u} = \\left\\langle \\frac{3}{5}, \\frac{4}{5} \\right\\rangle",
+      "explanation": "Divide direction vector by its length 5.",
+      "why": "Ensuring unit vector condition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Calculate Gradient Vector at P(1, 2)",
+      "mathExpression": "\\nabla f = \\langle 3x^2 - 3y, -3x + 8y \\rangle \\implies \\nabla f(1, 2) = \\langle 3(1) - 3(2), -3(1) + 8(2) \\rangle = \\langle -3, 13 \\rangle",
+      "explanation": "Evaluate partial derivatives at (1, 2).",
+      "why": "Finding gradient at given point."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Scalar Product grad f . u",
+      "mathExpression": "D_\\mathbf{u} f = \\langle -3, 13 \\rangle \\cdot \\left\\langle \\frac{3}{5}, \\frac{4}{5} \\right\\rangle = \\frac{(-3)(3) + (13)(4)}{5} = \\frac{-9 + 52}{5} = \\frac{43}{5}",
+      "explanation": "Take inner product of gradient and unit direction.",
+      "why": "Evaluating directional rate of change."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(-3)*(3/5) + 13*(4/5)",
+    "expected": "43/5"
+  }
+}

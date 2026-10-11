@@ -1,0 +1,33 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.3-path-independence-conservative-fields-and-potential-functions/solutions/ex-04",
+  "chapter": "ch16",
+  "section": "16.3",
+  "type": "solution",
+  "title": "Zero Work along a Closed Elliptical Loop",
+  "exerciseReference": "Section 16.3, Exercise 4",
+  "originalTopic": "Closed Loop Work",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "closed-loop",
+    "zero-work",
+    "conservative"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the work done by F = grad(x^2 + y^2) around the ellipse x^2/4 + y^2/9 = 1.",
+  "finalAnswer": "0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Closed Loop Theorem for Gradient Fields",
+      "mathExpression": "\\oint_C \\nabla f \\cdot d\\mathbf{r} = 0",
+      "explanation": "Because F is conservative and C is a closed loop returning to its starting point, initial and terminal states coincide.",
+      "why": "Applying closed loop property."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

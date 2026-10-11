@@ -1,0 +1,40 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.8-taylor-and-maclaurin-series/solutions/ex-03",
+  "chapter": "ch10",
+  "section": "10.8",
+  "type": "solution",
+  "title": "Maclaurin Series for x cos(2x)",
+  "exerciseReference": "Section 10.8, Exercise 3",
+  "originalTopic": "Trigonometric Series Manipulation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "maclaurin",
+    "cosine",
+    "multiplication"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the Maclaurin series for f(x) = x cos(2x).",
+  "finalAnswer": "x \\cos(2x) = \\sum_{n=0}^\\infty \\frac{(-1)^n 2^{2n}}{(2n)!} x^{2n+1} = x - 2x^3 + \\frac{2}{3}x^5 - \\dots",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Substitute 2x into Cosine Series",
+      "mathExpression": "\\cos(2x) = \\sum_{n=0}^\\infty (-1)^n \\frac{(2x)^{2n}}{(2n)!} = \\sum_{n=0}^\\infty \\frac{(-1)^n 2^{2n}}{(2n)!} x^{2n}",
+      "explanation": "Expand cos(2x).",
+      "why": "Trigonometric substitution."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Multiply by x",
+      "mathExpression": "x \\cos(2x) = \\sum_{n=0}^\\infty \\frac{(-1)^n 2^{2n}}{(2n)!} x^{2n+1}",
+      "explanation": "Multiply every term by x.",
+      "why": "Final series expansion."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "x - 2*x**3 + (2/3)*x**5 - (x - 2*x**3 + (2/3)*x**5)",
+    "expected": "0"
+  }
+}

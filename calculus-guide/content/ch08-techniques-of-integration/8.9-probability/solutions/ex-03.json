@@ -1,0 +1,43 @@
+{
+  "id": "ch08-techniques-of-integration/8.9-probability/solutions/ex-03",
+  "chapter": "ch08",
+  "section": "8.9",
+  "type": "solution",
+  "title": "Expected Value of a Continuous Random Variable",
+  "exerciseReference": "Section 8.9, Exercise 3",
+  "originalTopic": "Expected Value Calculation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "expected-value",
+    "mean",
+    "probability"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the mean (expected value) E[X] for f(x) = (1/8) x on [0, 4].",
+  "finalAnswer": "\\mu = E[X] = \\frac{8}{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "State Expected Value Integral",
+      "mathExpression": "E[X] = \\int_0^4 x \\cdot f(x) \\, dx = \\int_0^4 x \\left(\\frac{1}{8} x\\right) dx = \\frac{1}{8} \\int_0^4 x^2 dx",
+      "explanation": "Multiply x by f(x) and integrate.",
+      "why": "First moment definition of expected value."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Integral",
+      "mathExpression": "\\frac{1}{8} \\left[ \\frac{x^3}{3} \\right]_0^4 = \\frac{1}{24} (64 - 0) = \\frac{64}{24} = \\frac{8}{3}",
+      "explanation": "Simplify the fraction 64/24 by dividing by 8.",
+      "why": "Final exact mean."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "(1/8)*x**2",
+    "expected": "8/3",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "4"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "ch08-techniques-of-integration/8.2-integration-by-parts/solutions/ex-02",
+  "chapter": "ch08",
+  "section": "8.2",
+  "type": "solution",
+  "title": "Integration of Natural Logarithm via Parts",
+  "exerciseReference": "Section 8.2, Exercise 2",
+  "originalTopic": "Logarithm Integration by Parts",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "logarithm",
+    "integration-by-parts",
+    "antiderivative"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int ln(x) dx.",
+  "finalAnswer": "x \\ln(x) - x + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Choose u = ln(x) and dv = dx",
+      "mathExpression": "u = \\ln(x) \\implies du = \\frac{1}{x} dx; \\quad dv = dx \\implies v = x",
+      "explanation": "Treat integrand as ln(x) * 1 dx.",
+      "why": "Standard strategy for single transcendental functions."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Parts Formula",
+      "mathExpression": "\\int \\ln(x) dx = x \\ln(x) - \\int x \\left(\\frac{1}{x}\\right) dx = x \\ln(x) - \\int 1 \\, dx",
+      "explanation": "x and 1/x cancel to 1.",
+      "why": "Algebraic cancellation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate 1",
+      "mathExpression": "x \\ln(x) - x + C",
+      "explanation": "Antiderivative of 1 is x.",
+      "why": "Final standard antiderivative of natural log."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "log(x)",
+    "expected": "x*log(x) - x",
+    "kind": "indefinite"
+  }
+}

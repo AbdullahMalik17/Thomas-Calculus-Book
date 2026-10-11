@@ -1,0 +1,47 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.4-curvature-and-normal-vectors-of-a-curve/solutions/ex-03",
+  "chapter": "ch13",
+  "section": "13.4",
+  "type": "solution",
+  "title": "Principal Unit Normal Vector of a Helix",
+  "exerciseReference": "Section 13.4, Exercise 3",
+  "originalTopic": "Principal Unit Normal",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "principal-normal",
+    "helix",
+    "TNB-frame"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the principal unit normal vector N(t) for the circular helix r(t) = <3 cos(t), 3 sin(t), 4t>.",
+  "finalAnswer": "\\mathbf{N}(t) = \\langle -\\cos t, -\\sin t, 0 \\rangle",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Unit Tangent Vector T(t)",
+      "mathExpression": "\\mathbf{v}(t) = \\langle -3\\sin t, 3\\cos t, 4 \\rangle, \\; |\\mathbf{v}| = 5 \\implies \\mathbf{T}(t) = \\left\\langle -\\frac{3}{5}\\sin t, \\frac{3}{5}\\cos t, \\frac{4}{5} \\right\\rangle",
+      "explanation": "Divide velocity vector by constant speed 5.",
+      "why": "Determining unit tangent."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate T(t) with Respect to t",
+      "mathExpression": "\\mathbf{T}'(t) = \\left\\langle -\\frac{3}{5}\\cos t, -\\frac{3}{5}\\sin t, 0 \\right\\rangle \\implies |\\mathbf{T}'(t)| = \\frac{3}{5}",
+      "explanation": "Differentiate components and calculate norm.",
+      "why": "Finding turning rate of T."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Normalize T'(t) to Obtain N(t)",
+      "mathExpression": "\\mathbf{N}(t) = \\frac{\\mathbf{T}'(t)}{|\\mathbf{T}'(t)|} = \\frac{5}{3} \\left\\langle -\\frac{3}{5}\\cos t, -\\frac{3}{5}\\sin t, 0 \\right\\rangle = \\langle -\\cos t, -\\sin t, 0 \\rangle",
+      "explanation": "Divide T' by its norm 3/5.",
+      "why": "Constructing principal normal vector."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(-cos(t))**2 + (-sin(t))**2",
+    "expected": "1"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.3-polar-coordinates/solutions/ex-04",
+  "chapter": "ch11",
+  "section": "11.3",
+  "type": "solution",
+  "title": "Converting a Polar Line Equation to Cartesian Form",
+  "exerciseReference": "Section 11.3, Exercise 4",
+  "originalTopic": "Polar Line Conversion",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "polar-to-cartesian",
+    "line",
+    "secant"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Convert r = 4 sec(theta) to Cartesian coordinates.",
+  "finalAnswer": "x = 4 \\quad (\\text{Vertical line})",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Multiply by cos(theta)",
+      "mathExpression": "r = \\frac{4}{\\cos(\\theta)} \\implies r\\cos(\\theta) = 4",
+      "explanation": "Rewrite secant as 1/cos.",
+      "why": "Exposing r cos(theta)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute x = r cos(theta)",
+      "mathExpression": "x = 4",
+      "explanation": "Vertical line with x-intercept 4.",
+      "why": "Cartesian line equation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "4 - 4",
+    "expected": "0"
+  }
+}

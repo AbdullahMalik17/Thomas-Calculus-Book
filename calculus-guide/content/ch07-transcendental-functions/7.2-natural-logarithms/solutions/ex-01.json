@@ -1,0 +1,41 @@
+{
+  "id": "ch07-transcendental-functions/7.2-natural-logarithms/solutions/ex-01",
+  "chapter": "ch07",
+  "section": "7.2",
+  "type": "solution",
+  "title": "Differentiating a Logarithmic Composite Expression",
+  "exerciseReference": "Section 7.2, Exercise 1",
+  "originalTopic": "Chain Rule with Natural Logarithm",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "logarithm",
+    "derivative",
+    "chain-rule"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the derivative of y = ln(x^3 + 5x).",
+  "finalAnswer": "\\frac{dy}{dx} = \\frac{3x^2 + 5}{x^3 + 5x}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Derivative of ln(u)",
+      "mathExpression": "\\frac{d}{dx}[\\ln(u)] = \\frac{u'}{u}",
+      "explanation": "Set u = x^3 + 5x.",
+      "why": "Logarithmic Chain Rule."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute u' and Form Quotient",
+      "mathExpression": "u' = 3x^2 + 5 \\implies \\frac{dy}{dx} = \\frac{3x^2 + 5}{x^3 + 5x}",
+      "explanation": "Place derivative over original function.",
+      "why": "Final evaluated derivative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "log(x**3 + 5*x)",
+    "expected": "(3*x**2 + 5)/(x**3 + 5*x)",
+    "variable": "x"
+  }
+}

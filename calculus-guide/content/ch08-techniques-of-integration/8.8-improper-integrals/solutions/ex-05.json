@@ -1,0 +1,50 @@
+{
+  "id": "ch08-techniques-of-integration/8.8-improper-integrals/solutions/ex-05",
+  "chapter": "ch08",
+  "section": "8.8",
+  "type": "solution",
+  "title": "Gabriel's Horn Paradox: Finite Volume and Infinite Area",
+  "exerciseReference": "Section 8.8, Exercise 5",
+  "originalTopic": "Gabriel's Horn Paradox",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "gabriels-horn",
+    "paradox",
+    "improper-integral"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For the curve y = 1/x on [1, oo) revolved about the x-axis, show that its volume V is finite (pi) while its surface area S is infinite.",
+  "finalAnswer": "V = \\pi < \\infty, \\quad S > 2\\pi \\int_1^\\infty \\frac{1}{x} dx = \\infty",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Volume of Revolution via Disks",
+      "mathExpression": "V = \\pi \\int_1^\\infty \\left(\\frac{1}{x}\\right)^2 dx = \\pi \\lim_{t \\to \\infty} \\left[ -\\frac{1}{x} \\right]_1^t = \\pi (0 - (-1)) = \\pi",
+      "explanation": "The p-integral with p = 2 converges to 1.",
+      "why": "Finite volume calculation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Formulate Surface Area Integral",
+      "mathExpression": "S = 2\\pi \\int_1^\\infty \\frac{1}{x} \\sqrt{1 + \\frac{1}{x^4}} \\, dx",
+      "explanation": "Since sqrt(1 + 1/x^4) > 1 for all x >= 1.",
+      "why": "Surface area formula."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Apply Comparison Test to Surface Area",
+      "mathExpression": "S > 2\\pi \\int_1^\\infty \\frac{1}{x} dx = \\infty",
+      "explanation": "Since int 1/x dx diverges, the surface area diverges to infinity.",
+      "why": "Gabriel's horn paradox verified."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "pi/x**2",
+    "expected": "pi",
+    "kind": "definite",
+    "lower": "1",
+    "upper": "oo"
+  }
+}

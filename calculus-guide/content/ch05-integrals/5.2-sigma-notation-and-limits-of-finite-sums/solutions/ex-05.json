@@ -1,0 +1,50 @@
+{
+  "id": "ch05-integrals/5.2-sigma-notation-and-limits-of-finite-sums/solutions/ex-05",
+  "chapter": "ch05",
+  "section": "5.2",
+  "type": "solution",
+  "title": "Recognizing a Limit of Riemann Sums as a Definite Integral",
+  "exerciseReference": "Section 5.2, Exercise 5",
+  "originalTopic": "Riemann Sum to Integral Identification",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "riemann-recognition",
+    "integral-conversion",
+    "theory"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Express the limit lim_{n -> oo} sum_{k=1}^n (1 + 3k/n)^4 (3/n) as a definite integral and find its exact value.",
+  "finalAnswer": "\\int_1^4 x^4 dx = \\frac{4^5 - 1^5}{5} = \\frac{1023}{5} = 204.6",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Subinterval Width and Sample Points",
+      "mathExpression": "\\Delta x = \\frac{3}{n} = \\frac{b - a}{n} \\implies b - a = 3; \\quad c_k = 1 + \\frac{3k}{n} \\implies a = 1, \\; b = 4",
+      "explanation": "Match terms with definition c_k = a + k Delta x.",
+      "why": "Identifying integration boundaries."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify Integrand Function",
+      "mathExpression": "f(c_k) = c_k^4 \\implies f(x) = x^4",
+      "explanation": "The expression inside the 4th power corresponds to x.",
+      "why": "Mapping sample point function to integrand."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Formulate and Evaluate Definite Integral",
+      "mathExpression": "\\int_1^4 x^4 dx = \\left[ \\frac{x^5}{5} \\right]_1^4 = \\frac{1024 - 1}{5} = \\frac{1023}{5}",
+      "explanation": "Apply power rule for antiderivatives.",
+      "why": "Fundamental Theorem of Calculus."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "x**4",
+    "expected": "1023/5",
+    "kind": "definite",
+    "lower": "1",
+    "upper": "4"
+  }
+}

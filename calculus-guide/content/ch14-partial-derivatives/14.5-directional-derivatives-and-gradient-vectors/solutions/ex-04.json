@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.5-directional-derivatives-and-gradient-vectors/solutions/ex-04",
+  "chapter": "ch14",
+  "section": "14.5",
+  "type": "solution",
+  "title": "Normal Vector to an Elliptical Level Curve",
+  "exerciseReference": "Section 14.5, Exercise 4",
+  "originalTopic": "Orthogonality to Level Curves",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "level-curve",
+    "normal-vector",
+    "orthogonality"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find a normal vector to the level curve x^2 + 4y^2 = 8 at the point (2, 1).",
+  "finalAnswer": "\\mathbf{n} = \\langle 4, 8 \\rangle = 4\\langle 1, 2 \\rangle",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Define g(x, y) and Compute Gradient",
+      "mathExpression": "g(x, y) = x^2 + 4y^2 \\implies \\nabla g(x, y) = \\langle 2x, 8y \\rangle",
+      "explanation": "The gradient of g is orthogonal to every level curve g(x, y) = c.",
+      "why": "Applying level curve orthogonality theorem."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate at Point (2, 1)",
+      "mathExpression": "\\nabla g(2, 1) = \\langle 2(2), 8(1) \\rangle = \\langle 4, 8 \\rangle",
+      "explanation": "Substitute x = 2 and y = 1.",
+      "why": "Finding normal vector."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "4 / 8",
+    "expected": "1/2"
+  }
+}

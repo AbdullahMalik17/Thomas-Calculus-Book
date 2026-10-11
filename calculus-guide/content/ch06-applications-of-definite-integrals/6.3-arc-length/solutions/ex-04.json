@@ -1,0 +1,47 @@
+{
+  "id": "ch06-applications-of-definite-integrals/6.3-arc-length/solutions/ex-04",
+  "chapter": "ch06",
+  "section": "6.3",
+  "type": "solution",
+  "title": "Arc Length of a Catenary Cable",
+  "exerciseReference": "Section 6.3, Exercise 4",
+  "originalTopic": "Hyperbolic Curve Length",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "catenary",
+    "hyperbolic",
+    "cosh"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the length of the hanging cable y = a cosh(x/a) over [-a, a].",
+  "finalAnswer": "L = 2a \\sinh(1)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Differentiate Catenary Function",
+      "mathExpression": "y' = a \\cdot \\frac{1}{a} \\sinh(x/a) = \\sinh(x/a)",
+      "explanation": "Chain rule applied to cosh.",
+      "why": "Derivative of hyperbolic cosine."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Hyperbolic Identity",
+      "mathExpression": "1 + (y')^2 = 1 + \\sinh^2(x/a) = \\cosh^2(x/a)",
+      "explanation": "Recall identity cosh^2(t) - sinh^2(t) = 1.",
+      "why": "Hyperbolic Pythagorean identity."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate cosh(x/a)",
+      "mathExpression": "L = \\int_{-a}^a \\cosh(x/a) dx = 2 \\int_0^a \\cosh(x/a) dx = 2 \\left[ a \\sinh(x/a) \\right]_0^a = 2a \\sinh(1)",
+      "explanation": "Evaluate by symmetry.",
+      "why": "Exact catenary arc length."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "cosh(x)**2 - sinh(x)**2",
+    "expected": "1"
+  }
+}

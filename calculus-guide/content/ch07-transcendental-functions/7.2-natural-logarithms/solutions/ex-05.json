@@ -1,0 +1,48 @@
+{
+  "id": "ch07-transcendental-functions/7.2-natural-logarithms/solutions/ex-05",
+  "chapter": "ch07",
+  "section": "7.2",
+  "type": "solution",
+  "title": "Derivative of Variable Base and Exponent x^x",
+  "exerciseReference": "Section 7.2, Exercise 5",
+  "originalTopic": "Logarithmic Differentiation of x^x",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "x-to-the-x",
+    "log-differentiation",
+    "transcendental"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the derivative of y = x^x for x > 0.",
+  "finalAnswer": "\\frac{d}{dx}[x^x] = x^x (\\ln(x) + 1)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Natural Logarithm",
+      "mathExpression": "\\ln(y) = \\ln(x^x) = x \\ln(x)",
+      "explanation": "Bring down variable exponent.",
+      "why": "Logarithmic property."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate with Respect to x",
+      "mathExpression": "\\frac{y'}{y} = (1)\\ln(x) + x\\left(\\frac{1}{x}\\right) = \\ln(x) + 1",
+      "explanation": "Product rule on x ln(x).",
+      "why": "Implicit differentiation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Solve for y'",
+      "mathExpression": "y' = y(\\ln(x) + 1) = x^x (\\ln(x) + 1)",
+      "explanation": "Replace y with x^x.",
+      "why": "Final derivative formula."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "x**x",
+    "expected": "x**x * (log(x) + 1)",
+    "variable": "x"
+  }
+}

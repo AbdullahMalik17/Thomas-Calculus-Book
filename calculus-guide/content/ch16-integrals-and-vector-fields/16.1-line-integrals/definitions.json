@@ -1,0 +1,35 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.1-line-integrals/definitions",
+  "chapter": "ch16",
+  "section": "16.1",
+  "title": "Line Integrals",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-scalar-line-integral",
+      "title": "Scalar Line Integral with Respect to Arc Length",
+      "category": "definition",
+      "latex": "\\int_C f(x, y, z) \\, ds = \\int_a^b f(x(t), y(t), z(t)) |\\mathbf{r}'(t)| \\, dt",
+      "statement": "The line integral of a continuous scalar function f along a smooth space curve C parametrized by r(t) on [a, b] is the limit of Riemann sums weighted by arc length subsegments ds = |r'(t)| dt.",
+      "conditions": [
+        "C is smooth: r'(t) is continuous and non-zero",
+        "f is continuous along C"
+      ],
+      "explanation": "If f = 1, computes the arc length of C; if f is mass density delta, computes total mass of thin wire C.",
+      "keyTakeaway": "Integrates scalar distributions along one-dimensional curved paths in space."
+    },
+    {
+      "id": "formula-wire-center-of-mass",
+      "title": "Center of Mass of a Curved Wire",
+      "category": "formula",
+      "latex": "M = \\int_C \\delta \\, ds, \\quad \\bar{x} = \\frac{1}{M}\\int_C x\\delta \\, ds, \\quad \\bar{y} = \\frac{1}{M}\\int_C y\\delta \\, ds, \\quad \\bar{z} = \\frac{1}{M}\\int_C z\\delta \\, ds",
+      "statement": "The center of mass of a physical wire shaped along curve C with linear mass density delta is determined by normalized first moments with respect to arc length.",
+      "conditions": [
+        "delta >= 0",
+        "Total mass M > 0"
+      ],
+      "explanation": "Computes physical balance coordinates for curved geometric filaments.",
+      "keyTakeaway": "Directly extends planar and solid mass formulas to space curves."
+    }
+  ]
+}

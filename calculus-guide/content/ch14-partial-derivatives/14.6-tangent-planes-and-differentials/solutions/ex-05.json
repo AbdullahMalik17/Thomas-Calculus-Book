@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.6-tangent-planes-and-differentials/solutions/ex-05",
+  "chapter": "ch14",
+  "section": "14.6",
+  "type": "solution",
+  "title": "Maximum Relative Percentage Error Propagation",
+  "exerciseReference": "Section 14.6, Exercise 5",
+  "originalTopic": "Error Propagation",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "percentage-error",
+    "differentials",
+    "geometry"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "The area of a rectangle is A = xy. If errors in measuring x and y are at most 1% and 2% respectively, estimate the maximum percentage error in the calculated area.",
+  "finalAnswer": "3\\%",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Relative Differential dA/A",
+      "mathExpression": "dA = y \\, dx + x \\, dy \\implies \\frac{dA}{A} = \\frac{y \\, dx + x \\, dy}{xy} = \\frac{dx}{x} + \\frac{dy}{y}",
+      "explanation": "Divide total differential dA by area formula A = xy.",
+      "why": "Deriving relative error formula."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Sum Maximum Relative Absolute Errors",
+      "mathExpression": "\\left|\\frac{dA}{A}\\right| \\le \\left|\\frac{dx}{x}\\right| + \\left|\\frac{dy}{y}\\right| \\le 0.01 + 0.02 = 0.03 = 3\\%",
+      "explanation": "Apply triangle inequality to bound worst-case relative error.",
+      "why": "Estimating maximum propagation error."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0.01 + 0.02",
+    "expected": "0.03"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "ch15-multiple-integrals/15.6-moments-and-centers-of-mass/definitions",
+  "chapter": "ch15",
+  "section": "15.6",
+  "title": "Moments and Centers of Mass",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-center-of-mass-3d",
+      "title": "Center of Mass of a Three-Dimensional Solid",
+      "category": "definition",
+      "latex": "\\bar{x} = \\frac{M_{yz}}{M}, \\quad \\bar{y} = \\frac{M_{xz}}{M}, \\quad \\bar{z} = \\frac{M_{xy}}{M}",
+      "statement": "The center of mass (x_bar, y_bar, z_bar) of a solid D with density delta(x, y, z) is the point of gravitational equilibrium, where M is total mass and M_yz, M_xz, M_xy are first moments about the coordinate planes.",
+      "conditions": [
+        "Total mass M > 0",
+        "Density is non-negative"
+      ],
+      "explanation": "First moments: M_yz = iiint x delta dV, M_xz = iiint y delta dV, M_xy = iiint z delta dV.",
+      "keyTakeaway": "Represents the mass-weighted average position of the continuous distribution."
+    },
+    {
+      "id": "def-moments-of-inertia",
+      "title": "Moments of Inertia (Second Moments)",
+      "category": "formula",
+      "latex": "I_z = \\iiint_D (x^2 + y^2) \\delta \\, dV, \\quad R_z = \\sqrt{\\frac{I_z}{M}}",
+      "statement": "The moment of inertia I_z measures the rotational inertia of a body about the z-axis. The radius of gyration R_z is the radial distance at which concentrating the entire mass produces the same rotational inertia.",
+      "conditions": [
+        "delta(x, y, z) >= 0"
+      ],
+      "explanation": "Integrates squared perpendicular distance r^2 = x^2 + y^2 from the axis of rotation weighted by mass element dm.",
+      "keyTakeaway": "Fundamental in rigid-body rotational dynamics: Kinetic Energy = (1/2) I omega^2."
+    }
+  ]
+}

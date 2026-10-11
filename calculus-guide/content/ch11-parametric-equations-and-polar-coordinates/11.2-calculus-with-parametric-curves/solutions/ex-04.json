@@ -1,0 +1,47 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.2-calculus-with-parametric-curves/solutions/ex-04",
+  "chapter": "ch11",
+  "section": "11.2",
+  "type": "solution",
+  "title": "Arc Length of the Astroid Curve",
+  "exerciseReference": "Section 11.2, Exercise 4",
+  "originalTopic": "Astroid Curve Length",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "astroid",
+    "arc-length",
+    "trig-powers"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the perimeter of the astroid x = cos^3(t), y = sin^3(t) for 0 <= t <= 2pi.",
+  "finalAnswer": "L = 6",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute dx/dt and dy/dt",
+      "mathExpression": "x' = -3\\cos^2(t)\\sin(t), \\quad y' = 3\\sin^2(t)\\cos(t)",
+      "explanation": "Chain rule on cubic trigonometric functions.",
+      "why": "Velocity components."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Simplify Speed in Quadrant 1",
+      "mathExpression": "(x')^2 + (y')^2 = 9\\cos^4(t)\\sin^2(t) + 9\\sin^4(t)\\cos^2(t) = 9\\cos^2(t)\\sin^2(t)(\\cos^2 t + \\sin^2 t) = 9\\cos^2(t)\\sin^2(t)",
+      "explanation": "Factor out common terms.",
+      "why": "Speed formula."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate 4 Quadrants",
+      "mathExpression": "L = 4 \\int_0^{\\pi/2} 3\\cos(t)\\sin(t) dt = 12 \\left[ \\frac{\\sin^2(t)}{2} \\right]_0^{\\pi/2} = 12 \\left(\\frac{1}{2}\\right) = 6",
+      "explanation": "Multiply single quadrant length by 4.",
+      "why": "Total perimeter."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "12 * (1/2) - 6",
+    "expected": "0"
+  }
+}

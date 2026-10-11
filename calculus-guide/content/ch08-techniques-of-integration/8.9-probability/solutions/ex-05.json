@@ -1,0 +1,47 @@
+{
+  "id": "ch08-techniques-of-integration/8.9-probability/solutions/ex-05",
+  "chapter": "ch08",
+  "section": "8.9",
+  "type": "solution",
+  "title": "Mean of an Exponential Distribution via Integration by Parts",
+  "exerciseReference": "Section 8.9, Exercise 5",
+  "originalTopic": "Mean of Exponential Distribution",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "exponential-distribution",
+    "by-parts",
+    "mean"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Verify that the mean of the exponential distribution f(t) = c e^(-ct) on [0, oo) is 1/c.",
+  "finalAnswer": "\\mu = E[T] = \\frac{1}{c}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up Expected Value Integral",
+      "mathExpression": "E[T] = \\int_0^\\infty t (c e^{-ct}) dt",
+      "explanation": "Integrate t times PDF.",
+      "why": "Expected value formula."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Integration by Parts",
+      "mathExpression": "u = t \\implies du = dt; \\quad dv = c e^{-ct} dt \\implies v = -e^{-ct}",
+      "explanation": "Parts setup.",
+      "why": "Integration by parts on t e^(-ct)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Boundary Terms and Remaining Integral",
+      "mathExpression": "\\lim_{M \\to \\infty} [-t e^{-ct}]_0^M + \\int_0^\\infty e^{-ct} dt = 0 + \\left[ -\\frac{e^{-ct}}{c} \\right]_0^\\infty = \\frac{1}{c}",
+      "explanation": "Boundary terms vanish; remaining integral yields 1/c.",
+      "why": "Mean of exponential distribution."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1/c - 1/c",
+    "expected": "0"
+  }
+}

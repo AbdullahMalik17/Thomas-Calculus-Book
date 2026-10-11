@@ -1,0 +1,50 @@
+{
+  "id": "ch05-integrals/5.4-the-fundamental-theorem-of-calculus/solutions/ex-04",
+  "chapter": "ch05",
+  "section": "5.4",
+  "type": "solution",
+  "title": "Definite Integral Evaluation via FTC Part 2",
+  "exerciseReference": "Section 5.4, Exercise 4",
+  "originalTopic": "FTC Part 2 Evaluation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "FTC-part-2",
+    "antiderivative",
+    "evaluation"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_1^3 (3x^2 - 4x + 1) dx using the Fundamental Theorem of Calculus.",
+  "finalAnswer": "\\int_1^3 (3x^2 - 4x + 1) dx = 12",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find the General Antiderivative",
+      "mathExpression": "F(x) = \\int (3x^2 - 4x + 1) dx = x^3 - 2x^2 + x",
+      "explanation": "Apply standard power rules term by term.",
+      "why": "Determining F(x) such that F'(x) = f(x)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate at Upper and Lower Limits",
+      "mathExpression": "F(3) = (3)^3 - 2(3)^2 + 3 = 27 - 18 + 3 = 12; \\quad F(1) = (1)^3 - 2(1)^2 + 1 = 1 - 2 + 1 = 0",
+      "explanation": "Calculate values at boundary points.",
+      "why": "FTC Part 2 formula F(b) - F(a)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Net Difference",
+      "mathExpression": "F(3) - F(1) = 12 - 0 = 12",
+      "explanation": "Subtract F(1) from F(3).",
+      "why": "Exact definite integral value."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "3*x**2 - 4*x + 1",
+    "expected": "12",
+    "kind": "definite",
+    "lower": "1",
+    "upper": "3"
+  }
+}

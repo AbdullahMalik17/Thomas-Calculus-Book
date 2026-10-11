@@ -1,0 +1,47 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.1-parametrizations-of-plane-curves/solutions/ex-05",
+  "chapter": "ch11",
+  "section": "11.1",
+  "type": "solution",
+  "title": "Hyperbolic Parameterization of a Hyperbola",
+  "exerciseReference": "Section 11.1, Exercise 5",
+  "originalTopic": "Hyperbolic Curve Parametrization",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "hyperbola",
+    "cosh-sinh",
+    "parametric"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Show that x = a cosh(t), y = b sinh(t) parameterizes the right branch of the hyperbola x^2/a^2 - y^2/b^2 = 1.",
+  "finalAnswer": "\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = \\cosh^2(t) - \\sinh^2(t) = 1 \\quad (x \\ge a)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Coordinate Quotients",
+      "mathExpression": "\\frac{x}{a} = \\cosh(t), \\quad \\frac{y}{b} = \\sinh(t)",
+      "explanation": "Divide by semi-axes.",
+      "why": "Isolating hyperbolic functions."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Fundamental Hyperbolic Identity",
+      "mathExpression": "\\left(\\frac{x}{a}\\right)^2 - \\left(\\frac{y}{b}\\right)^2 = \\cosh^2(t) - \\sinh^2(t) = 1",
+      "explanation": "Recall cosh^2 - sinh^2 = 1.",
+      "why": "Proving Cartesian hyperbola."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Identify Branch",
+      "mathExpression": "\\cosh(t) \\ge 1 \\implies x = a \\cosh(t) \\ge a > 0",
+      "explanation": "Covers only the right branch (x > 0).",
+      "why": "Domain property."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "cosh(t)**2 - sinh(t)**2",
+    "expected": "1"
+  }
+}

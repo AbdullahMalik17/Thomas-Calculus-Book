@@ -1,0 +1,22 @@
+{
+  "id": "ch08-techniques-of-integration/8.7-numerical-integration/definitions",
+  "chapter": "ch08",
+  "section": "8.7",
+  "title": "Numerical Integration",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "formula-trapezoidal-simpsons-rules",
+      "title": "Trapezoidal Rule and Simpson's Rule",
+      "category": "formula",
+      "latex": "T_n = \\frac{\\Delta x}{2} [y_0 + 2y_1 + 2y_2 + \\dots + 2y_{n-1} + y_n], \\quad S_n = \\frac{\\Delta x}{3} [y_0 + 4y_1 + 2y_2 + 4y_3 + \\dots + y_n]",
+      "statement": "Numerical quadrature algorithms to approximate definite integrals when antiderivatives cannot be expressed in elementary terms. Simpson's Rule fits parabolic arcs across pairs of subintervals (n must be even).",
+      "conditions": [
+        "Delta x = (b - a)/n",
+        "n is even for Simpson's Rule"
+      ],
+      "explanation": "Trapezoidal error scales with (Delta x)^2; Simpson's error scales with (Delta x)^4.",
+      "keyTakeaway": "Simpson's Rule integrates cubic polynomials with zero error."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "ch07-transcendental-functions/7.8-relative-rates-of-growth/solutions/ex-04",
+  "chapter": "ch07",
+  "section": "7.8",
+  "type": "solution",
+  "title": "Big-O Equivalence of Polynomial Sums",
+  "exerciseReference": "Section 7.8, Exercise 4",
+  "originalTopic": "Big-O Polynomial Dominance",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "big-O",
+    "polynomial",
+    "dominant-term"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Show that 5x^3 + 20x^2 - 12 = O(x^3) as x -> oo.",
+  "finalAnswer": "5x^3 + 20x^2 - 12 = O(x^3)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Ratio to Leading Power",
+      "mathExpression": "\\lim_{x \\to \\infty} \\frac{5x^3 + 20x^2 - 12}{x^3} = \\lim_{x \\to \\infty} \\left( 5 + \\frac{20}{x} - \\frac{12}{x^3} \\right) = 5",
+      "explanation": "Divide each term by x^3.",
+      "why": "Limit ratio test for big-O."
+    },
+    {
+      "stepNumber": 2,
+      "title": "State Constant Bound M",
+      "mathExpression": "\\left| \\frac{5x^3 + 20x^2 - 12}{x^3} \\right| \\le 6 \\quad \\text{for all } x \\ge 20",
+      "explanation": "Since the ratio approaches finite limit 5, it is bounded by M = 6.",
+      "why": "Definition of Big-O."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "5 - 5",
+    "expected": "0"
+  }
+}

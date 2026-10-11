@@ -1,0 +1,18 @@
+# Section 13.3: Arc Length in Space
+
+Arc length provides the intrinsic geometric measure of distance along a trajectory in $\mathbb{R}^3$.
+
+---
+
+## 1. Arc Length Formula
+
+For $\mathbf{r}(t) = \langle x(t), y(t), z(t) \rangle$ on $[a, b]$:
+$$L = \int_a^b \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 + \left(\frac{dz}{dt}\right)^2} \, dt = \int_a^b |\mathbf{v}(t)| \, dt$$
+
+---
+
+## 2. Natural Arc Length Parametrization
+
+- **Arc Length Parameter**: $s(t) = \int_{t_0}^t |\mathbf{v}(\tau)| \, d\tau$
+- **Speed Relation**: $\frac{ds}{dt} = |\mathbf{v}(t)|$
+- **Unit Speed Property**: $\left|\frac{d\mathbf{r}}{ds}\right| = 1$

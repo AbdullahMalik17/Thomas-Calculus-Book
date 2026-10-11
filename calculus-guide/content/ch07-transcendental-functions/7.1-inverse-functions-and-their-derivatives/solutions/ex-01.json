@@ -1,0 +1,47 @@
+{
+  "id": "ch07-transcendental-functions/7.1-inverse-functions-and-their-derivatives/solutions/ex-01",
+  "chapter": "ch07",
+  "section": "7.1",
+  "type": "solution",
+  "title": "Derivative of an Inverse Function at a Specific Point",
+  "exerciseReference": "Section 7.1, Exercise 1",
+  "originalTopic": "Derivative of Inverse Function",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "inverse-function",
+    "derivative",
+    "reciprocal-slope"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Given f(x) = x^3 + 2x - 1, verify that f is one-to-one and find (f^(-1))'(2).",
+  "finalAnswer": "(f^{-1})'(2) = \\frac{1}{5}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Verify One-to-One Property",
+      "mathExpression": "f'(x) = 3x^2 + 2 > 0 \\quad \\forall x \\in \\mathbb{R}",
+      "explanation": "Since f'(x) > 0 everywhere, f is strictly increasing and therefore invertible.",
+      "why": "Strict monotonicity implies injectivity."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find a such that f(a) = 2",
+      "mathExpression": "a^3 + 2a - 1 = 2 \\implies a^3 + 2a - 3 = 0 \\implies a = 1",
+      "explanation": "By inspection, f(1) = 1 + 2 - 1 = 2.",
+      "why": "Finding the original domain value corresponding to b = 2."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Inverse Derivative",
+      "mathExpression": "f'(1) = 3(1)^2 + 2 = 5 \\implies (f^{-1})'(2) = \\frac{1}{f'(1)} = \\frac{1}{5}",
+      "explanation": "Take the reciprocal of f'(1).",
+      "why": "Derivative of inverse function formula."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1 / (3*1**2 + 2)",
+    "expected": "1/5"
+  }
+}

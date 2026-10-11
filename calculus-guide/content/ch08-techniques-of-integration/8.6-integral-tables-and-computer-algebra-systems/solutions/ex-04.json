@@ -1,0 +1,41 @@
+{
+  "id": "ch08-techniques-of-integration/8.6-integral-tables-and-computer-algebra-systems/solutions/ex-04",
+  "chapter": "ch08",
+  "section": "8.6",
+  "type": "solution",
+  "title": "Using Table Formula for sqrt(x^2 + a^2)",
+  "exerciseReference": "Section 8.6, Exercise 4",
+  "originalTopic": "Table Entry Application",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "integral-tables",
+    "radicals",
+    "hyperbolic-form"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int sqrt(x^2 + 9) dx using standard integral table formulas.",
+  "finalAnswer": "\\frac{x}{2}\\sqrt{x^2 + 9} + \\frac{9}{2}\\ln|x + \\sqrt{x^2 + 9}| + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Locate Matching Table Entry",
+      "mathExpression": "\\int \\sqrt{u^2 + a^2} du = \\frac{u}{2}\\sqrt{u^2 + a^2} + \\frac{a^2}{2}\\ln|u + \\sqrt{u^2 + a^2}| + C",
+      "explanation": "Identify parameters: u = x, a = 3.",
+      "why": "Table matching."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute Parameters",
+      "mathExpression": "\\frac{x}{2}\\sqrt{x^2 + 9} + \\frac{9}{2}\\ln|x + \\sqrt{x^2 + 9}| + C",
+      "explanation": "Substitute a^2 = 9 directly.",
+      "why": "Final evaluated antiderivative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "sqrt(x**2 + 9)",
+    "expected": "x*sqrt(x**2 + 9)/2 + (9/2)*log(x + sqrt(x**2 + 9))",
+    "kind": "indefinite"
+  }
+}

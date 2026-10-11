@@ -1,0 +1,48 @@
+{
+  "id": "ch09-first-order-differential-equations/9.2-first-order-linear-equations/solutions/ex-03",
+  "chapter": "ch09",
+  "section": "9.2",
+  "type": "solution",
+  "title": "Initial Value Problem with Trigonometric Coefficient",
+  "exerciseReference": "Section 9.2, Exercise 3",
+  "originalTopic": "Initial Value Problem with Trig",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "IVP",
+    "trigonometry",
+    "integrating-factor"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Solve dy/dx + y tan(x) = cos^2(x) with y(0) = 2 on (-pi/2, pi/2).",
+  "finalAnswer": "y(x) = \\sin(x)\\cos(x) + 2\\cos(x)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Integrating Factor",
+      "mathExpression": "P(x) = \\tan(x) \\implies \\mu(x) = e^{\\int \\tan(x) dx} = e^{\\ln|\\sec(x)|} = \\sec(x)",
+      "explanation": "On (-pi/2, pi/2), sec(x) > 0.",
+      "why": "Integrating factor."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Multiply and Integrate",
+      "mathExpression": "\\frac{d}{dx}[\\sec(x) y] = \\sec(x) \\cos^2(x) = \\cos(x) \\implies \\sec(x) y = \\int \\cos(x) dx = \\sin(x) + C",
+      "explanation": "sec(x) * cos^2(x) = cos(x).",
+      "why": "Exact derivative."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Apply Initial Condition y(0) = 2",
+      "mathExpression": "y(x) = \\cos(x)(\\sin(x) + C); \\quad y(0) = 1(0 + C) = 2 \\implies C = 2 \\implies y(x) = \\sin(x)\\cos(x) + 2\\cos(x)",
+      "explanation": "Solve for C and distribute cos(x).",
+      "why": "Unique particular solution."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "sin(x)*cos(x) + 2*cos(x)",
+    "expected": "cos(x)**2 - sin(x)**2 - 2*sin(x)",
+    "variable": "x"
+  }
+}

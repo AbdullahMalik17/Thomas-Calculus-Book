@@ -1,0 +1,35 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.1-three-dimensional-coordinate-systems/definitions",
+  "chapter": "ch12",
+  "section": "12.1",
+  "title": "Three-Dimensional Coordinate Systems",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-cartesian-coordinates-3d",
+      "title": "Three-Dimensional Cartesian Coordinate System",
+      "category": "definition",
+      "latex": "P(x, y, z) \\in \\mathbb{R}^3",
+      "statement": "A three-dimensional Cartesian coordinate system is formed by three mutually perpendicular directed coordinate axes (the x-, y-, and z-axes) meeting at a single origin point (0, 0, 0) and satisfying the right-hand rule.",
+      "conditions": [
+        "Axes are mutually orthogonal",
+        "Orientation follows standard right-hand rule"
+      ],
+      "explanation": "Every point in Euclidean 3-space is identified with a unique ordered triplet of real numbers representing signed distances from coordinate planes.",
+      "keyTakeaway": "Extends Cartesian plane geometry to physical 3D space via three coordinate planes: xy, yz, and xz."
+    },
+    {
+      "id": "formula-distance-sphere-3d",
+      "title": "Distance Formula and Standard Equation of a Sphere",
+      "category": "formula",
+      "latex": "|P_1 P_2| = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2}, \\quad (x-h)^2 + (y-k)^2 + (z-l)^2 = a^2",
+      "statement": "The Euclidean distance between P_1(x_1, y_1, z_1) and P_2(x_2, y_2, z_2) derives from double application of the Pythagorean theorem. A sphere of radius a centered at (h, k, l) is the locus of points at distance a from (h, k, l).",
+      "conditions": [
+        "Radius a > 0",
+        "Coordinates are real numbers"
+      ],
+      "explanation": "Completing the square in quadratic 3D equations reveals the center and radius of spheres or determines if the locus is degenerate.",
+      "keyTakeaway": "Spheres generalize 2D circles into 3D through equal distance from a central locus."
+    }
+  ]
+}

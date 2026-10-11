@@ -1,0 +1,40 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.7-conics-in-polar-coordinates/solutions/ex-05",
+  "chapter": "ch11",
+  "section": "11.7",
+  "type": "solution",
+  "title": "Eccentricity of a Polar Hyperbola",
+  "exerciseReference": "Section 11.7, Exercise 5",
+  "originalTopic": "Hyperbolic Eccentricity Extraction",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "hyperbola",
+    "eccentricity",
+    "polar"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine the eccentricity of r = 8 / (2 - 5 sin theta).",
+  "finalAnswer": "e = \\frac{5}{2} = 2.5 \\quad (\\text{Hyperbola})",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Divide by 2 to Normalize Denominator",
+      "mathExpression": "r = \\frac{8/2}{1 - (5/2)\\sin\\theta} = \\frac{4}{1 - 2.5\\sin\\theta}",
+      "explanation": "Make leading constant 1.",
+      "why": "Standard form alignment."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Read Eccentricity",
+      "mathExpression": "e = \\frac{5}{2} = 2.5 > 1",
+      "explanation": "Since e > 1, the curve is a hyperbola.",
+      "why": "Conic identification."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "Rational(5, 2) - 2.5",
+    "expected": "0"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.6-surface-integrals/definitions",
+  "chapter": "ch16",
+  "section": "16.6",
+  "title": "Surface Integrals",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-scalar-surface-integral",
+      "title": "Scalar Surface Integral",
+      "category": "definition",
+      "latex": "\\iint_S g(x, y, z) \\, d\\sigma = \\iint_R g(x(u, v), y(u, v), z(u, v)) |\\mathbf{r}_u \\times \\mathbf{r}_v| \\, du \\, dv",
+      "statement": "The surface integral of a continuous scalar function g over smooth surface S accumulates g weighted by area element d sigma. Computes mass of thin shell S when g is surface density.",
+      "conditions": [
+        "g is continuous on smooth surface S"
+      ],
+      "explanation": "Generalizes line integrals from 1D curves to 2D curved surfaces in space.",
+      "keyTakeaway": "Integrates scalar distributions across curved surfaces."
+    },
+    {
+      "id": "def-vector-surface-integral-flux",
+      "title": "Flux of a Vector Field (Surface Integral of Vector Field)",
+      "category": "definition",
+      "latex": "\\text{Flux} = \\iint_S \\mathbf{F} \\cdot \\mathbf{n} \\, d\\sigma = \\iint_S \\mathbf{F} \\cdot d\\boldsymbol{\\sigma}",
+      "statement": "The flux of vector field F through oriented surface S measures the net volume of fluid flowing across S per unit time in the direction of unit normal n.",
+      "conditions": [
+        "S is an orientable surface with chosen continuous unit normal n"
+      ],
+      "explanation": "For graph z = f(x, y) with upward normal, F . n d sigma = (-M f_x - N f_y + P) dx dy.",
+      "keyTakeaway": "Fundamental in electromagnetism (Gauss's Law) and fluid dynamics."
+    }
+  ]
+}

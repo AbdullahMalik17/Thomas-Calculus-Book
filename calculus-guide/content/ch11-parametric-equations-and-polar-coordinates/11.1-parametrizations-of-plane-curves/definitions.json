@@ -1,0 +1,21 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.1-parametrizations-of-plane-curves/definitions",
+  "chapter": "ch11",
+  "section": "11.1",
+  "title": "Parametrizations of Plane Curves",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-parametric-curve",
+      "title": "Parametric Equations of a Plane Curve",
+      "category": "definition",
+      "latex": "x = f(t), \\quad y = g(t), \\quad t \\in [a, b]",
+      "statement": "A plane curve can be defined parametrically by expressing both coordinates x and y as functions of an independent parameter t (often representing time). The trajectory is traced with a specific orientation as t increases.",
+      "conditions": [
+        "f and g are continuous on interval I"
+      ],
+      "explanation": "Overcomes the Vertical Line Test limitation, allowing curves that loop, self-intersect, and reverse direction.",
+      "keyTakeaway": "Parametric curves describe both path geometry and particle motion through time."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "ch07-transcendental-functions/7.3-exponential-functions/definitions",
+  "chapter": "ch07",
+  "section": "7.3",
+  "title": "Exponential Functions",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-exponential-function",
+      "title": "The Natural Exponential Function e^x",
+      "category": "definition",
+      "latex": "e^x = \\ln^{-1}(x) \\iff \\ln(e^x) = x \\quad \\text{and} \\quad e^{\\ln(x)} = x \\; (x > 0)",
+      "statement": "The natural exponential function exp(x) = e^x is the inverse of the natural logarithm function. It is its own derivative: d/dx[e^x] = e^x.",
+      "conditions": [
+        "Domain: (-oo, oo)",
+        "Range: (0, oo)"
+      ],
+      "explanation": "Because e^x is its own derivative, it models natural growth and decay processes where the rate of change is proportional to current size.",
+      "keyTakeaway": "e^x is the unique non-trivial real function that equals its own derivative."
+    }
+  ]
+}

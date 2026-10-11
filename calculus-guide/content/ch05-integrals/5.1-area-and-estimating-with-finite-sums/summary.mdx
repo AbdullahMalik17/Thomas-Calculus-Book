@@ -1,0 +1,21 @@
+# Section 5.1: Area and Estimating with Finite Sums
+
+The problem of finding areas under arbitrary curved boundaries is the historical and conceptual origin of integral calculus.
+
+---
+
+## 1. Rectangle Approximation Methods
+
+To approximate the area under $y = f(x) \ge 0$ over $[a, b]$ with $n$ subintervals of width $\Delta x = \frac{b - a}{n}$:
+
+- **Left Riemann Sum (LRAM)**: Sample points $c_k = a + (k-1)\Delta x$.
+- **Right Riemann Sum (RRAM)**: Sample points $c_k = a + k\Delta x$.
+- **Midpoint Rule (MRAM)**: Sample points $c_k = a + \left(k - \frac{1}{2}\right)\Delta x$.
+
+---
+
+## 2. Monotonicity and Error Bounds
+
+- If $f$ is strictly **increasing** on $[a, b]$, LRAM underestimates the area and RRAM overestimates it.
+- If $f$ is strictly **decreasing** on $[a, b]$, LRAM overestimates the area and RRAM underestimates it.
+- The difference $|R_n - L_n| = |f(b) - f(a)|\Delta x$, which vanishes as $n \to \infty$.

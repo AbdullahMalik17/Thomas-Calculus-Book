@@ -1,0 +1,40 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.3-the-dot-product/solutions/ex-04",
+  "chapter": "ch12",
+  "section": "12.3",
+  "type": "solution",
+  "title": "Work Done by a Constant Force Vector",
+  "exerciseReference": "Section 12.3, Exercise 4",
+  "originalTopic": "Work in Physics",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "work",
+    "force",
+    "displacement"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A constant force F = 5i + 2j - k moves an object along a straight line from P(1, 0, 2) to Q(4, 3, 8). Find the total work done.",
+  "finalAnswer": "15 \\text{ units}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine Displacement Vector",
+      "mathExpression": "\\mathbf{D} = \\vec{PQ} = \\langle 4 - 1, 3 - 0, 8 - 2 \\rangle = \\langle 3, 3, 6 \\rangle",
+      "explanation": "Subtract initial point P from destination point Q.",
+      "why": "Finding the displacement vector D."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Calculate Work as F . D",
+      "mathExpression": "W = \\mathbf{F} \\cdot \\mathbf{D} = (5)(3) + (2)(3) + (-1)(6) = 15 + 6 - 6 = 15",
+      "explanation": "Compute the inner product of force and displacement.",
+      "why": "Applying physical definition of work."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "5*(4 - 1) + 2*(3 - 0) + (-1)*(8 - 2)",
+    "expected": "15"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "ch15-multiple-integrals/15.1-double-and-iterated-integrals-over-rectangles/definitions",
+  "chapter": "ch15",
+  "section": "15.1",
+  "title": "Double and Iterated Integrals over Rectangles",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-double-integral-rectangle",
+      "title": "Double Integral over a Rectangle",
+      "category": "definition",
+      "latex": "\\iint_R f(x, y) \\, dA = \\lim_{||P|| \\to 0} \\sum_{k=1}^n f(x_k^*, y_k^*) \\Delta A_k",
+      "statement": "The double integral of a continuous function f over a closed rectangle R = [a, b] x [c, d] is the limit of Riemann sums as the norm of the partition approaches zero. If f(x, y) >= 0, it represents the volume of the solid under the surface z = f(x, y) over R.",
+      "conditions": [
+        "f is bounded and continuous almost everywhere on R"
+      ],
+      "explanation": "Subdivides R into small rectangular subregions of area Delta A = Delta x Delta y and sums column volumes.",
+      "keyTakeaway": "Computes signed volumes and accumulated quantities across two-dimensional planar regions."
+    },
+    {
+      "id": "theorem-fubini-rectangles",
+      "title": "Fubini's Theorem (First Form)",
+      "category": "theorem",
+      "latex": "\\iint_R f(x, y) \\, dA = \\int_a^b \\int_c^d f(x, y) \\, dy \\, dx = \\int_c^d \\int_a^b f(x, y) \\, dx \\, dy",
+      "statement": "If f(x, y) is continuous on the rectangle R = [a, b] x [c, d], then the double integral equals the iterated integral in either order of integration.",
+      "conditions": [
+        "f is continuous on R"
+      ],
+      "explanation": "Reduces a two-dimensional double integral to two successive single-variable definite integrals.",
+      "keyTakeaway": "Order of integration may be freely interchanged for continuous functions over rectangles."
+    }
+  ]
+}

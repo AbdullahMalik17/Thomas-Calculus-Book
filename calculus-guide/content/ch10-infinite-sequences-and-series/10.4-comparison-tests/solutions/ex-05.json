@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.4-comparison-tests/solutions/ex-05",
+  "chapter": "ch10",
+  "section": "10.4",
+  "type": "solution",
+  "title": "Direct Comparison with Radical Bounds",
+  "exerciseReference": "Section 10.4, Exercise 5",
+  "originalTopic": "Radical Direct Comparison",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "radicals",
+    "DCT",
+    "bounding"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine the convergence of sum_{n=1}^oo (n - 1) / (n 4^n).",
+  "finalAnswer": "\\sum_{n=1}^\\infty \\frac{n - 1}{n 4^n} \\quad \\text{Converges by Direct Comparison}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate Upper Bound",
+      "mathExpression": "\\frac{n - 1}{n 4^n} = \\left(1 - \\frac{1}{n}\\right) \\frac{1}{4^n} < \\frac{1}{4^n} \\quad \\forall n \\ge 1",
+      "explanation": "Since 1 - 1/n < 1 for all n >= 1.",
+      "why": "Direct inequality."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify Benchmark Geometric Series",
+      "mathExpression": "\\sum_{n=1}^\\infty \\left(\\frac{1}{4}\\right)^n \\text{ converges } (r = 1/4 < 1)",
+      "explanation": "Geometric series.",
+      "why": "Convergent benchmark."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude Convergence",
+      "mathExpression": "0 < a_n < b_n \\implies \\sum a_n \\text{ converges}",
+      "explanation": "By Direct Comparison Test.",
+      "why": "Convergence verified."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

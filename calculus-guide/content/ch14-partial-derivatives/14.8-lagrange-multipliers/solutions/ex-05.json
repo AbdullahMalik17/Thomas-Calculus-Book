@@ -1,0 +1,47 @@
+{
+  "id": "ch14-partial-derivatives/14.8-lagrange-multipliers/solutions/ex-05",
+  "chapter": "ch14",
+  "section": "14.8",
+  "type": "solution",
+  "title": "Cobb-Douglas Production Function Optimization",
+  "exerciseReference": "Section 14.8, Exercise 5",
+  "originalTopic": "Economic Optimization",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "Cobb-Douglas",
+    "economics",
+    "Lagrange-multipliers"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Maximize production P(L, K) = 50 L^(0.5) K^(0.5) subject to budget constraint 100 L + 200 K = 40000.",
+  "finalAnswer": "P_{\\max} = 5000\\sqrt{2} \\text{ units at } L = 200, \\; K = 100",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up Lagrange Ratio of Marginal Productivities",
+      "mathExpression": "\\frac{\\partial P / \\partial L}{100} = \\frac{\\partial P / \\partial K}{200} \\implies \\frac{25 L^{-0.5} K^{0.5}}{100} = \\frac{25 L^{0.5} K^{-0.5}}{200} \\implies \\frac{K}{100 L} = \\frac{1}{200} \\implies L = 2K",
+      "explanation": "Equating marginal product per dollar yields capital-labor expansion path L = 2K.",
+      "why": "Finding optimal factor ratio."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute into Budget Constraint",
+      "mathExpression": "100(2K) + 200K = 40000 \\implies 400K = 40000 \\implies K = 100, \\; L = 200",
+      "explanation": "Solve linear budget equation.",
+      "why": "Finding optimal input quantities."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Maximum Production",
+      "mathExpression": "P(200, 100) = 50 \\sqrt{200 \\times 100} = 50 \\sqrt{20000} = 50(100\\sqrt{2}) = 5000\\sqrt{2}",
+      "explanation": "Substitute optimal L and K into production function.",
+      "why": "Evaluating maximum output."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "50 * sqrt(200 * 100)",
+    "expected": "5000*sqrt(2)"
+  }
+}

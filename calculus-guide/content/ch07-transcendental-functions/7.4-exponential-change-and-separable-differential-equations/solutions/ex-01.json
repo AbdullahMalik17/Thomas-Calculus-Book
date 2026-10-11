@@ -1,0 +1,47 @@
+{
+  "id": "ch07-transcendental-functions/7.4-exponential-change-and-separable-differential-equations/solutions/ex-01",
+  "chapter": "ch07",
+  "section": "7.4",
+  "type": "solution",
+  "title": "Radioactive Half-Life Decay Calculation",
+  "exerciseReference": "Section 7.4, Exercise 1",
+  "originalTopic": "Radioactive Decay Law",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "half-life",
+    "radioactive-decay",
+    "exponential"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A radioactive substance has a half-life of 1000 years. What fraction of the original mass remains after 2500 years?",
+  "finalAnswer": "\\frac{y(2500)}{y_0} = \\frac{1}{4\\sqrt{2}} = 2^{-5/2} \\approx 0.1768",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Decay Constant k",
+      "mathExpression": "k = -\\frac{\\ln(2)}{t_{1/2}} = -\\frac{\\ln(2)}{1000}",
+      "explanation": "Use standard half-life relationship.",
+      "why": "Determining growth/decay constant."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Formulate Remaining Fraction",
+      "mathExpression": "\\frac{y(t)}{y_0} = e^{kt} = e^{-\\frac{\\ln(2)}{1000} \\cdot 2500} = e^{-2.5 \\ln(2)} = 2^{-2.5}",
+      "explanation": "Substitute t = 2500 years.",
+      "why": "Exponential decay formula."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Simplify Exponential Power",
+      "mathExpression": "2^{-5/2} = \\frac{1}{2^{5/2}} = \\frac{1}{4\\sqrt{2}}",
+      "explanation": "Evaluate 2^(5/2) = 4 sqrt(2).",
+      "why": "Exact radical fraction."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "exp(-log(2)/1000 * 2500) - 2**(-Rational(5, 2))",
+    "expected": "0"
+  }
+}

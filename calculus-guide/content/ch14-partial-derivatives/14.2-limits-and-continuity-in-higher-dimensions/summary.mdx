@@ -1,0 +1,23 @@
+# Section 14.2: Limits and Continuity in Higher Dimensions
+
+Multivariable limits require consistency across every conceivable path of approach through the domain.
+
+---
+
+## 1. The Two-Path Test for Non-Existence
+
+If $f(x, y)$ approaches $L_1$ along path $C_1$ and approaches $L_2$ along path $C_2$ (with $L_1 \ne L_2$) as $(x, y) \to (x_0, y_0)$, then:
+$$\lim_{(x, y) \to (x_0, y_0)} f(x, y) \quad \text{does not exist.}$$
+
+Common test paths:
+- Horizontal line: $y = y_0$
+- Vertical line: $x = x_0$
+- Straight lines of slope $m$: $y - y_0 = m(x - x_0)$
+- Parabolic curves: $y = k x^2$
+
+---
+
+## 2. Proving Limit Existence
+
+1. **Polar Coordinates**: Let $x = r\cos\theta, y = r\sin\theta$. If the limit as $r \to 0^+$ is independent of $\theta$, the limit exists.
+2. **Squeeze Theorem**: Bracket $f(x, y)$ between two functions that both converge to $L$.

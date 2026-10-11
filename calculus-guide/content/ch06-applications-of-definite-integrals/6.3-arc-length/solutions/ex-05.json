@@ -1,0 +1,48 @@
+{
+  "id": "ch06-applications-of-definite-integrals/6.3-arc-length/solutions/ex-05",
+  "chapter": "ch06",
+  "section": "6.3",
+  "type": "solution",
+  "title": "The Arc Length Accumulation Function",
+  "exerciseReference": "Section 6.3, Exercise 5",
+  "originalTopic": "Arc Length Function s(x)",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "arc-length-function",
+    "accumulation",
+    "speed"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the arc length function s(x) measured from x = 0 for the curve y = (2/3) x^(3/2).",
+  "finalAnswer": "s(x) = \\frac{2}{3} \\left( (1 + x)^{3/2} - 1 \\right)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up Arc Length Function",
+      "mathExpression": "s(x) = \\int_0^x \\sqrt{1 + [f'(t)]^2} \\, dt",
+      "explanation": "Use accumulation integral starting from reference point x = 0.",
+      "why": "Definition of arc length parameter."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute Simplified Integrand",
+      "mathExpression": "f'(t) = \\sqrt{t} \\implies \\sqrt{1 + [f'(t)]^2} = \\sqrt{1 + t}",
+      "explanation": "Evaluate differential arc length.",
+      "why": "Integrand formulation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate to Find s(x)",
+      "mathExpression": "s(x) = \\left[ \\frac{2}{3}(1 + t)^{3/2} \\right]_0^x = \\frac{2}{3}(1 + x)^{3/2} - \\frac{2}{3}(1) = \\frac{2}{3} \\left( (1 + x)^{3/2} - 1 \\right)",
+      "explanation": "Evaluate at boundaries t = x and t = 0.",
+      "why": "Closed form for s(x)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "(2/3)*((1 + x)**(3/2) - 1)",
+    "expected": "sqrt(1 + x)",
+    "variable": "x"
+  }
+}

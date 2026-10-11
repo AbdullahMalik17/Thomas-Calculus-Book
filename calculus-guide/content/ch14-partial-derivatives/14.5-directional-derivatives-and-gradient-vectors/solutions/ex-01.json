@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.5-directional-derivatives-and-gradient-vectors/solutions/ex-01",
+  "chapter": "ch14",
+  "section": "14.5",
+  "type": "solution",
+  "title": "Gradient Vector of a Function of Two Variables",
+  "exerciseReference": "Section 14.5, Exercise 1",
+  "originalTopic": "Gradient Vector Computation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "gradient",
+    "partial-derivatives",
+    "vector-calculus"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute the gradient grad f for f(x, y) = x^2 y + sqrt(y) at the point (2, 4).",
+  "finalAnswer": "\\nabla f(2, 4) = \\left\\langle 16, \\frac{17}{4} \\right\\rangle",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute First Partial Derivatives",
+      "mathExpression": "f_x = 2xy, \\quad f_y = x^2 + \\frac{1}{2\\sqrt{y}}",
+      "explanation": "Differentiate with respect to x and y independently.",
+      "why": "Finding components of gradient."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate at (2, 4)",
+      "mathExpression": "f_x(2, 4) = 2(2)(4) = 16; \\quad f_y(2, 4) = 2^2 + \\frac{1}{2\\sqrt{4}} = 4 + \\frac{1}{4} = \\frac{17}{4}",
+      "explanation": "Substitute point coordinates into gradient components.",
+      "why": "Computing numerical gradient at point."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "4 + 1/4",
+    "expected": "17/4"
+  }
+}

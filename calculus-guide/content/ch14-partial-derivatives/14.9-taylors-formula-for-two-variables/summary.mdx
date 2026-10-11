@@ -1,0 +1,15 @@
+# Section 14.9: Taylor's Formula for Two Variables
+
+Taylor polynomials approximate multivariable functions near a base point using higher-order partial derivatives.
+
+---
+
+## 1. Second-Order Taylor Polynomial at $(0, 0)$
+
+$$f(x, y) \approx f(0, 0) + f_x x + f_y y + \frac{1}{2} \left( f_{xx} x^2 + 2 f_{xy} xy + f_{yy} y^2 \right)$$
+
+In vector notation with $\mathbf{x} = \langle x, y \rangle$:
+$$f(\mathbf{x}) \approx f(\mathbf{0}) + \nabla f(\mathbf{0}) \cdot \mathbf{x} + \frac{1}{2} \mathbf{x}^T H f(\mathbf{0}) \, \mathbf{x}$$
+
+where $H f$ is the symmetric $2 \times 2$ **Hessian matrix**:
+$$H f = \begin{pmatrix} f_{xx} & f_{xy} \\ f_{xy} & f_{yy} \end{pmatrix}$$

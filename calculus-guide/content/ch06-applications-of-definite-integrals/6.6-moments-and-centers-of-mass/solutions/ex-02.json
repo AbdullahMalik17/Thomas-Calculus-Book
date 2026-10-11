@@ -1,0 +1,47 @@
+{
+  "id": "ch06-applications-of-definite-integrals/6.6-moments-and-centers-of-mass/solutions/ex-02",
+  "chapter": "ch06",
+  "section": "6.6",
+  "type": "solution",
+  "title": "Centroid of a Symmetric Parabolic Region",
+  "exerciseReference": "Section 6.6, Exercise 2",
+  "originalTopic": "Continuous Lamina Centroid",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "centroid",
+    "parabola",
+    "symmetry"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the centroid of the region bounded by y = 4 - x^2 and the x-axis.",
+  "finalAnswer": "(\\bar{x}, \\bar{y}) = \\left( 0, \\frac{8}{5} \\right)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify x-bar by Symmetry",
+      "mathExpression": "f(-x) = 4 - (-x)^2 = 4 - x^2 = f(x) \\implies \\bar{x} = 0",
+      "explanation": "The region is symmetric across the y-axis.",
+      "why": "Symmetry principle for centroids."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Total Area A",
+      "mathExpression": "A = \\int_{-2}^2 (4 - x^2) dx = 2 \\int_0^2 (4 - x^2) dx = 2 \\left[ 4x - \\frac{x^3}{3} \\right]_0^2 = 2 \\left( 8 - \\frac{8}{3} \\right) = 2 \\left( \\frac{16}{3} \\right) = \\frac{32}{3}",
+      "explanation": "Integrate area under parabola.",
+      "why": "Denominator of centroid formula."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Moment M_x and y-bar",
+      "mathExpression": "M_x = \\frac{1}{2} \\int_{-2}^2 (4 - x^2)^2 dx = \\int_0^2 (16 - 8x^2 + x^4) dx = \\left[ 16x - \\frac{8x^3}{3} + \\frac{x^5}{5} \\right]_0^2 = 32 - \\frac{64}{3} + \\frac{32}{5} = \\frac{256}{15}; \\quad \\bar{y} = \\frac{M_x}{A} = \\frac{256/15}{32/3} = \\frac{256}{15} \\cdot \\frac{3}{32} = \\frac{8}{5}",
+      "explanation": "Divide M_x by A.",
+      "why": "Vertical centroid coordinate."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(256/15) / (32/3)",
+    "expected": "8/5"
+  }
+}

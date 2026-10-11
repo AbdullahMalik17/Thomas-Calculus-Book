@@ -1,0 +1,40 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.4-greens-theorem-in-the-plane/solutions/ex-01",
+  "chapter": "ch16",
+  "section": "16.4",
+  "type": "solution",
+  "title": "Circulation Around a Square via Green's Theorem",
+  "exerciseReference": "Section 16.4, Exercise 1",
+  "originalTopic": "Green's Theorem Circulation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "Greens-theorem",
+    "circulation",
+    "double-integral"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate oint_C (y^2 dx + 3xy dy) where C is the boundary of the unit square [0, 1] x [0, 1] traversed counterclockwise.",
+  "finalAnswer": "\\frac{1}{2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute 2D Curl Integrand",
+      "mathExpression": "M = y^2, \\; N = 3xy \\implies \\frac{\\partial N}{\\partial x} - \\frac{\\partial M}{\\partial y} = 3y - 2y = y",
+      "explanation": "Differentiate N with respect to x and M with respect to y.",
+      "why": "Finding the scalar curl."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Double Integral over Unit Square",
+      "mathExpression": "\\iint_R y \\, dA = \\int_0^1 dx \\int_0^1 y \\, dy = (1) \\left[ \\frac{y^2}{2} \\right]_0^1 = \\frac{1}{2}",
+      "explanation": "Apply Green's Theorem to convert line integral to double integral.",
+      "why": "Evaluating area integral of curl."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1/2",
+    "expected": "0.5"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.3-path-independence-conservative-fields-and-potential-functions/solutions/ex-02",
+  "chapter": "ch16",
+  "section": "16.3",
+  "type": "solution",
+  "title": "Fundamental Theorem of Line Integrals in 3D Space",
+  "exerciseReference": "Section 16.3, Exercise 2",
+  "originalTopic": "Fundamental Theorem of Line Integrals",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "fundamental-theorem",
+    "path-independence",
+    "work"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_C grad(xyz) . dr along any smooth path from A(1, 2, 3) to B(2, 3, 4).",
+  "finalAnswer": "18",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Potential Function",
+      "mathExpression": "f(x, y, z) = xyz",
+      "explanation": "The integrand is the gradient of f.",
+      "why": "Recognizing gradient field."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Fundamental Theorem of Line Integrals",
+      "mathExpression": "\\int_C \\nabla f \\cdot d\\mathbf{r} = f(B) - f(A) = f(2, 3, 4) - f(1, 2, 3) = (2)(3)(4) - (1)(2)(3) = 24 - 6 = 18",
+      "explanation": "Evaluate potential function at destination and initial points.",
+      "why": "Evaluating path-independent integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2*3*4 - 1*2*3",
+    "expected": "18"
+  }
+}

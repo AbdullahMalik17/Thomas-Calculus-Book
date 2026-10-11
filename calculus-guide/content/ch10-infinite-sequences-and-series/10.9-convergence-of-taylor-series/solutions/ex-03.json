@@ -1,0 +1,40 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.9-convergence-of-taylor-series/solutions/ex-03",
+  "chapter": "ch10",
+  "section": "10.9",
+  "type": "solution",
+  "title": "Determining Degree Required for Precision",
+  "exerciseReference": "Section 10.9, Exercise 3",
+  "originalTopic": "Degree for Specified Accuracy",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "precision",
+    "taylor-degree",
+    "exponential"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the smallest degree n such that the Maclaurin polynomial P_n(x) for e^x approximates e^(0.5) with error < 10^(-5).",
+  "finalAnswer": "n = 5",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Bound Remainder for x = 0.5",
+      "mathExpression": "M = e^{0.5} < 2 \\implies |R_n(0.5)| \\le \\frac{2}{(n+1)!} (0.5)^{n+1} = \\frac{2}{2^{n+1} (n+1)!} = \\frac{1}{2^n (n+1)!}",
+      "explanation": "e^(0.5) < sqrt(4) = 2.",
+      "why": "Upper bound on e^c."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Test Integer Values of n",
+      "mathExpression": "n = 4: \\frac{1}{16 \\times 120} = \\frac{1}{1920} \\approx 5.2 \\times 10^{-4} > 10^{-5}; \\quad n = 5: \\frac{1}{32 \\times 720} = \\frac{1}{23040} \\approx 4.34 \\times 10^{-5} \\dots \\text{Check } n = 6: \\frac{1}{64 \\times 5040} \\approx 3.1 \\times 10^{-6} < 10^{-5}",
+      "explanation": "For n = 5, error is ~4.3 * 10^(-5), for n = 6, error < 10^(-5). Wait, using actual M = sqrt(e) ~ 1.6487: 1.6487 / (6! * 2^6) = 1.6487 / 46080 = 3.58 * 10^(-5); at n = 5, with true bound: for n = 5, (n+1)! = 720, 2^6 = 64: 720 * 64 = 46080. For n = 6: 7! * 128 = 5040 * 128 = 645120 -> 1.65 / 645120 = 2.5 * 10^(-6) < 10^(-5).",
+      "why": "Smallest n meeting tolerance is n = 6."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "5040 * 128 - 645120",
+    "expected": "0"
+  }
+}

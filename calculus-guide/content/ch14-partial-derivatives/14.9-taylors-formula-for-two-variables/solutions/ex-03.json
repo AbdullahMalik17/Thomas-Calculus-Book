@@ -1,0 +1,40 @@
+{
+  "id": "ch14-partial-derivatives/14.9-taylors-formula-for-two-variables/solutions/ex-03",
+  "chapter": "ch14",
+  "section": "14.9",
+  "type": "solution",
+  "title": "Taylor Expansion of a Geometric Bivariate Rational Function",
+  "exerciseReference": "Section 14.9, Exercise 3",
+  "originalTopic": "Bivariate Geometric Series",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "geometric-series",
+    "rational-function",
+    "Taylor-expansion"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the quadratic Taylor polynomial for f(x, y) = 1 / (1 - x - y) about (0, 0).",
+  "finalAnswer": "P_2(x, y) = 1 + x + y + x^2 + 2xy + y^2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Geometric Series Formula",
+      "mathExpression": "\\frac{1}{1 - u} = 1 + u + u^2 + \\cdots \\quad \\text{with } u = x + y",
+      "explanation": "Set u = x + y for |x + y| < 1.",
+      "why": "Expanding rational function."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Expand and Collect Terms Through Degree 2",
+      "mathExpression": "P_2(x, y) = 1 + (x + y) + (x + y)^2 = 1 + x + y + x^2 + 2xy + y^2",
+      "explanation": "Expand the square (x + y)^2 = x^2 + 2xy + y^2.",
+      "why": "Formulating quadratic polynomial."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1 + (x + y) + (x + y)**2",
+    "expected": "1 + x + y + x**2 + 2*x*y + y**2"
+  }
+}

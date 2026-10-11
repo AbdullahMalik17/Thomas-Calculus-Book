@@ -1,0 +1,50 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.5-areas-and-lengths-in-polar-coordinates/solutions/ex-05",
+  "chapter": "ch11",
+  "section": "11.5",
+  "type": "solution",
+  "title": "Arc Length of an Archimedean Spiral",
+  "exerciseReference": "Section 11.5, Exercise 5",
+  "originalTopic": "Spiral Arc Length",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "spiral",
+    "arc-length",
+    "trig-sub-integral"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the arc length of the spiral r = theta for 0 <= theta <= 1.",
+  "finalAnswer": "L = \\frac{1}{2}\\left( \\sqrt{2} + \\ln(1 + \\sqrt{2}) \\right)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Differential Arc Length Element",
+      "mathExpression": "r = \\theta \\implies r' = 1 \\implies \\sqrt{r^2 + (r')^2} = \\sqrt{\\theta^2 + 1}",
+      "explanation": "Substitute into polar arc length formula.",
+      "why": "ds element."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Integrate via Standard Table Formula",
+      "mathExpression": "\\int_0^1 \\sqrt{\\theta^2 + 1} d\\theta = \\left[ \\frac{\\theta}{2}\\sqrt{\\theta^2 + 1} + \\frac{1}{2}\\ln(\\theta + \\sqrt{\\theta^2 + 1}) \\right]_0^1",
+      "explanation": "Recall integral of sqrt(u^2 + a^2) from Section 8.6.",
+      "why": "Standard table evaluation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate at Boundaries",
+      "mathExpression": "\\frac{1}{2}\\sqrt{2} + \\frac{1}{2}\\ln(1 + \\sqrt{2}) - 0 = \\frac{1}{2}\\left( \\sqrt{2} + \\ln(1 + \\sqrt{2}) \\right)",
+      "explanation": "ln(0 + 1) = 0.",
+      "why": "Final exact spiral length."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "sqrt(x**2 + 1)",
+    "expected": "sqrt(2)/2 + log(1 + sqrt(2))/2",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "1"
+  }
+}

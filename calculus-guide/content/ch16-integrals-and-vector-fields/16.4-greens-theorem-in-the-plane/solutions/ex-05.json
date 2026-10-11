@@ -1,0 +1,40 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.4-greens-theorem-in-the-plane/solutions/ex-05",
+  "chapter": "ch16",
+  "section": "16.4",
+  "type": "solution",
+  "title": "Green's Theorem on an Annular Doubly-Connected Region",
+  "exerciseReference": "Section 16.4, Exercise 5",
+  "originalTopic": "Annulus Green's Theorem",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "annulus",
+    "doubly-connected",
+    "vortex-field"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For the vortex field with curl = 0 in the annulus 1 <= x^2 + y^2 <= 4, show that the circulation around outer boundary C_2 equals circulation around inner boundary C_1.",
+  "finalAnswer": "\\oint_{C_2} \\mathbf{F} \\cdot d\\mathbf{r} - \\oint_{C_1} \\mathbf{F} \\cdot d\\mathbf{r} = 0 \\implies \\oint_{C_2} = \\oint_{C_1} = 2\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Green's Theorem for Region with Hole",
+      "mathExpression": "\\oint_{C_2} \\mathbf{F} \\cdot d\\mathbf{r} - \\oint_{C_1} \\mathbf{F} \\cdot d\\mathbf{r} = \\iint_R \\left( \\frac{\\partial N}{\\partial x} - \\frac{\\partial M}{\\partial y} \\right) dA",
+      "explanation": "Outer boundary is counterclockwise; inner boundary is clockwise, giving subtraction.",
+      "why": "Formulating Green's theorem on multiply-connected domain."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Zero Curl Integrand",
+      "mathExpression": "\\iint_R 0 \\, dA = 0 \\implies \\oint_{C_2} \\mathbf{F} \\cdot d\\mathbf{r} = \\oint_{C_1} \\mathbf{F} \\cdot d\\mathbf{r}",
+      "explanation": "Since curl is zero in the annular region, the difference of circulations vanishes.",
+      "why": "Proving path deformation invariance."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2*pi - 2*pi",
+    "expected": "0"
+  }
+}

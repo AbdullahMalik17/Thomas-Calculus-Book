@@ -1,0 +1,40 @@
+{
+  "id": "ch15-multiple-integrals/15.7-triple-integrals-in-cylindrical-and-spherical-coordinates/solutions/ex-02",
+  "chapter": "ch15",
+  "section": "15.7",
+  "type": "solution",
+  "title": "Moment of Inertia of a Cylinder in Cylindrical Coordinates",
+  "exerciseReference": "Section 15.7, Exercise 2",
+  "originalTopic": "Cylindrical Moment of Inertia",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "cylindrical",
+    "moment-of-inertia",
+    "solid-cylinder"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find I_z for a cylinder of radius R = 2, height h = 5, and density delta = 1.",
+  "finalAnswer": "40\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up Triple Integral for I_z",
+      "mathExpression": "I_z = \\int_0^{2\\pi} d\\theta \\int_0^5 dz \\int_0^2 r^2 (r \\, dr) = (2\\pi)(5) \\int_0^2 r^3 \\, dr",
+      "explanation": "The integrand is squared distance from z-axis: x^2 + y^2 = r^2.",
+      "why": "Formulating moment of inertia in cylindrical coordinates."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Iterated Integrals",
+      "mathExpression": "10\\pi \\left[ \\frac{r^4}{4} \\right]_0^2 = 10\\pi \\left( \\frac{16}{4} \\right) = 40\\pi",
+      "explanation": "Evaluate polynomial radial integral.",
+      "why": "Computing rotational inertia."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "pi * 5 * 16 / 2",
+    "expected": "40*pi"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ch05-integrals/5.4-the-fundamental-theorem-of-calculus/solutions/ex-02",
+  "chapter": "ch05",
+  "section": "5.4",
+  "type": "solution",
+  "title": "Differentiating an Accumulation Function with Chain Rule",
+  "exerciseReference": "Section 5.4, Exercise 2",
+  "originalTopic": "Leibniz Rule / Chain Rule with FTC 1",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "FTC-part-1",
+    "chain-rule",
+    "leibniz-rule"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the derivative with respect to x of G(x) = int_0^{x^2} cos(t^2) dt.",
+  "finalAnswer": "G'(x) = 2x \\cos(x^4)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Define Composite Form",
+      "mathExpression": "G(x) = F(u(x)), \\quad u(x) = x^2, \\quad F(u) = \\int_0^u \\cos(t^2) dt",
+      "explanation": "Identify the upper limit as a composite function u(x) = x^2.",
+      "why": "Chain Rule decomposition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Differentiate Outer and Inner Functions",
+      "mathExpression": "F'(u) = \\cos(u^2), \\quad u'(x) = 2x",
+      "explanation": "FTC Part 1 yields F'(u), standard power rule yields u'(x).",
+      "why": "Derivative rules."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Combine via Chain Rule",
+      "mathExpression": "G'(x) = F'(u(x)) \\cdot u'(x) = \\cos((x^2)^2) \\cdot 2x = 2x \\cos(x^4)",
+      "explanation": "Multiply outer derivative by inner derivative.",
+      "why": "Chain Rule application to integral functions."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2*x*cos(x**4) - 2*x*cos(x**4)",
+    "expected": "0"
+  }
+}

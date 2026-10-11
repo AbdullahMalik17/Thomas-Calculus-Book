@@ -1,0 +1,17 @@
+# Section 8.7: Numerical Integration
+
+When a function lacks an elementary antiderivative (e.g. $e^{-x^2}$, $\frac{\sin x}{x}$), numerical quadrature approximates the definite integral.
+
+---
+
+## 1. Quadrature Formulas
+
+- **Trapezoidal Rule**: Weights $1, 2, 2, \dots, 2, 1$ scaled by $\frac{\Delta x}{2}$.
+- **Simpson's Rule**: Weights $1, 4, 2, 4, \dots, 4, 1$ scaled by $\frac{\Delta x}{3}$ ($n$ even).
+
+---
+
+## 2. Error Bounds
+
+- $|E_T| \le \frac{M_2 (b - a)^3}{12 n^2}$ where $|f''(x)| \le M_2$.
+- $|E_S| \le \frac{M_4 (b - a)^5}{180 n^4}$ where $|f^{(4)}(x)| \le M_4$.

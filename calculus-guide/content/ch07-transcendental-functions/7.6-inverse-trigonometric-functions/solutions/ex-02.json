@@ -1,0 +1,41 @@
+{
+  "id": "ch07-transcendental-functions/7.6-inverse-trigonometric-functions/solutions/ex-02",
+  "chapter": "ch07",
+  "section": "7.6",
+  "type": "solution",
+  "title": "Derivative of Inverse Tangent with Quadratic Argument",
+  "exerciseReference": "Section 7.6, Exercise 2",
+  "originalTopic": "Inverse Tangent Chain Rule",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "arctan",
+    "inverse-trig",
+    "chain-rule"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the derivative of y = arctan(x^2).",
+  "finalAnswer": "\\frac{dy}{dx} = \\frac{2x}{1 + x^4}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply Inverse Tangent Rule",
+      "mathExpression": "\\frac{d}{dx}[\\arctan(u)] = \\frac{u'}{1 + u^2}",
+      "explanation": "Set u = x^2.",
+      "why": "Arctan differentiation formula."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Derivative",
+      "mathExpression": "u' = 2x, \\quad u^2 = (x^2)^2 = x^4 \\implies \\frac{dy}{dx} = \\frac{2x}{1 + x^4}",
+      "explanation": "Substitute u and u'.",
+      "why": "Final derivative expression."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "atan(x**2)",
+    "expected": "2*x/(1 + x**4)",
+    "variable": "x"
+  }
+}

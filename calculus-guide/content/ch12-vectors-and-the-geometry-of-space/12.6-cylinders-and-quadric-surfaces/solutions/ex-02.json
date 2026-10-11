@@ -1,0 +1,40 @@
+{
+  "id": "ch12-vectors-and-the-geometry-of-space/12.6-cylinders-and-quadric-surfaces/solutions/ex-02",
+  "chapter": "ch12",
+  "section": "12.6",
+  "type": "solution",
+  "title": "Cross-Section of an Elliptic Paraboloid",
+  "exerciseReference": "Section 12.6, Exercise 2",
+  "originalTopic": "Elliptic Paraboloid",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "elliptic-paraboloid",
+    "traces",
+    "cross-section"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the trace of the elliptic paraboloid z = x^2/4 + y^2/9 in the horizontal plane z = 4, and compute its area.",
+  "finalAnswer": "\\text{Ellipse } \\frac{x^2}{16} + \\frac{y^2}{36} = 1; \\quad \\text{Area} = 24\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Substitute z = 4 into Surface Equation",
+      "mathExpression": "4 = \\frac{x^2}{4} + \\frac{y^2}{9} \\implies \\frac{x^2}{16} + \\frac{y^2}{36} = 1",
+      "explanation": "Divide both sides by 4 to place the ellipse in standard form.",
+      "why": "Determining trace curve."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Area of Elliptic Trace",
+      "mathExpression": "a = \\sqrt{16} = 4, \\; b = \\sqrt{36} = 6 \\implies \\text{Area} = \\pi a b = \\pi (4)(6) = 24\\pi",
+      "explanation": "Use formula Area = pi*a*b for the ellipse.",
+      "why": "Calculating planar cross-section area."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "pi * 4 * 6",
+    "expected": "24*pi"
+  }
+}

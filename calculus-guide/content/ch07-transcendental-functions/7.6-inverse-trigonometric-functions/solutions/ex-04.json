@@ -1,0 +1,48 @@
+{
+  "id": "ch07-transcendental-functions/7.6-inverse-trigonometric-functions/solutions/ex-04",
+  "chapter": "ch07",
+  "section": "7.6",
+  "type": "solution",
+  "title": "Completing the Square to Evaluate an Inverse Sine Integral",
+  "exerciseReference": "Section 7.6, Exercise 4",
+  "originalTopic": "Completing the Square for Inverse Trig",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "completing-the-square",
+    "arcsin",
+    "integration"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int 1 / sqrt(5 - 4x - x^2) dx.",
+  "finalAnswer": "\\arcsin\\left(\\frac{x + 2}{3}\\right) + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Complete the Square in the Radicand",
+      "mathExpression": "5 - 4x - x^2 = 5 - (x^2 + 4x + 4) + 4 = 9 - (x + 2)^2 = 3^2 - (x + 2)^2",
+      "explanation": "Rewrite quadratic radicand in a^2 - u^2 form.",
+      "why": "Prepares for arcsin formula."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Inverse Sine Integral Formula",
+      "mathExpression": "\\int \\frac{1}{\\sqrt{a^2 - u^2}} du = \\arcsin(u/a) + C, \\quad u = x + 2, \\; a = 3",
+      "explanation": "Direct identification of parameters.",
+      "why": "Standard table formula."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State Result",
+      "mathExpression": "\\arcsin\\left(\\frac{x + 2}{3}\\right) + C",
+      "explanation": "Substitute u = x + 2 and a = 3.",
+      "why": "Final indefinite integral."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "1/sqrt(5 - 4*x - x**2)",
+    "expected": "asin((x + 2)/3)",
+    "kind": "indefinite"
+  }
+}

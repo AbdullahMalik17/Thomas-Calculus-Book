@@ -1,0 +1,33 @@
+{
+  "id": "ch09-first-order-differential-equations/9.1-solutions-slope-fields-and-eulers-method/definitions",
+  "chapter": "ch09",
+  "section": "9.1",
+  "title": "Solutions, Slope Fields, and Euler's Method",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-slope-field",
+      "title": "Direction (Slope) Field",
+      "category": "definition",
+      "latex": "\\frac{dy}{dx} = f(x, y)",
+      "statement": "A visual geometric representation of a first-order differential equation consisting of short line segments with slope f(x, y) plotted on a grid of points (x, y) in the plane. Solution curves are tangent to these segments everywhere.",
+      "conditions": [
+        "f(x, y) is defined at grid points"
+      ],
+      "explanation": "Allows qualitative analysis of solution behavior (asymptotes, stability, trends) without explicit algebraic solutions.",
+      "keyTakeaway": "Solution curves flow through direction fields along local slope tangents."
+    },
+    {
+      "id": "formula-eulers-method",
+      "title": "Euler's Numerical Method",
+      "category": "formula",
+      "latex": "y_{n+1} = y_n + f(x_n, y_n) \\Delta x, \\quad x_{n+1} = x_n + \\Delta x",
+      "statement": "A step-by-step numerical approximation technique for initial value problems that marches forward along tangent lines with step size Delta x.",
+      "conditions": [
+        "Delta x is a small positive step size"
+      ],
+      "explanation": "First-order numerical method with local truncation error O((Delta x)^2) and global error O(Delta x).",
+      "keyTakeaway": "Next y = current y + (slope)(step size)."
+    }
+  ]
+}

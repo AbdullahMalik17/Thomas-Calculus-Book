@@ -1,0 +1,33 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.2-calculus-with-parametric-curves/definitions",
+  "chapter": "ch11",
+  "section": "11.2",
+  "title": "Calculus with Parametric Curves",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "formula-parametric-derivatives",
+      "title": "First and Second Derivatives of Parametric Curves",
+      "category": "formula",
+      "latex": "\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt}, \\quad \\frac{d^2 y}{dx^2} = \\frac{\\frac{d}{dt}\\left[ \\frac{dy}{dx} \\right]}{dx/dt}",
+      "statement": "The tangent slope dy/dx is the ratio of vertical to horizontal velocity. The second derivative d^2y/dx^2 measures concavity by differentiating dy/dx with respect to t and dividing again by dx/dt.",
+      "conditions": [
+        "dx/dt != 0"
+      ],
+      "explanation": "Critical pitfall: d^2y/dx^2 is NOT equal to (d^2y/dt^2)/(d^2x/dt^2).",
+      "keyTakeaway": "Always divide by dx/dt when computing derivatives with respect to x."
+    },
+    {
+      "id": "formula-parametric-arc-length",
+      "title": "Arc Length of a Parametric Curve",
+      "category": "formula",
+      "latex": "L = \\int_a^b \\sqrt{\\left(\\frac{dx}{dt}\\right)^2 + \\left(\\frac{dy}{dt}\\right)^2} \\, dt",
+      "statement": "The arc length of a smooth parametric curve from t = a to t = b is the integral of particle speed |v(t)| = sqrt((x')^2 + (y')^2).",
+      "conditions": [
+        "Curve is traversed exactly once without backtracking"
+      ],
+      "explanation": "Integrates infinitesimal distance ds = sqrt(dx^2 + dy^2).",
+      "keyTakeaway": "Arc length integrates speed over time."
+    }
+  ]
+}

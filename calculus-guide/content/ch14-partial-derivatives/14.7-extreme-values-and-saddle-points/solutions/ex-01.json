@@ -1,0 +1,54 @@
+{
+  "id": "ch14-partial-derivatives/14.7-extreme-values-and-saddle-points/solutions/ex-01",
+  "chapter": "ch14",
+  "section": "14.7",
+  "type": "solution",
+  "title": "Second Derivative Test on a Cubic Surface",
+  "exerciseReference": "Section 14.7, Exercise 1",
+  "originalTopic": "Classification of Critical Points",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "second-derivative-test",
+    "critical-points",
+    "saddle-point"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find and classify all critical points of f(x, y) = x^3 + y^3 - 3xy.",
+  "finalAnswer": "(0, 0) \\text{ is a saddle point}; \\quad (1, 1) \\text{ is a local minimum with } f(1, 1) = -1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Critical Points by Setting First Partials to Zero",
+      "mathExpression": "f_x = 3x^2 - 3y = 0 \\implies y = x^2; \\quad f_y = 3y^2 - 3x = 0 \\implies x = y^2",
+      "explanation": "Substitute y = x^2 into x = y^2 to obtain x = x^4, so x(x^3 - 1) = 0.",
+      "why": "Locating stationary points."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify Real Critical Points",
+      "mathExpression": "x = 0 \\implies y = 0 \\; (0, 0); \\quad x = 1 \\implies y = 1 \\; (1, 1)",
+      "explanation": "There are two real critical points: (0, 0) and (1, 1).",
+      "why": "Extracting critical coordinates."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Second Partials and Discriminant",
+      "mathExpression": "f_{xx} = 6x, \\; f_{yy} = 6y, \\; f_{xy} = -3 \\implies D = (6x)(6y) - (-3)^2 = 36xy - 9",
+      "explanation": "Formulate discriminant D = f_{xx} f_{yy} - (f_{xy})^2.",
+      "why": "Setting up Hessian determinant."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Classify Each Point",
+      "mathExpression": "\\text{At } (0, 0): D = -9 < 0 \\implies \\text{Saddle}; \\quad \\text{At } (1, 1): D = 36 - 9 = 27 > 0, \\; f_{xx} = 6 > 0 \\implies \\text{Local Min}",
+      "explanation": "Apply Second Derivative Test rules.",
+      "why": "Classifying critical point topologies."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "6*6 - (-3)**2",
+    "expected": "27"
+  }
+}

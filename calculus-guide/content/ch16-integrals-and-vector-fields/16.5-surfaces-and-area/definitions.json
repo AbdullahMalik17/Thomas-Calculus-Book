@@ -1,0 +1,33 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.5-surfaces-and-area/definitions",
+  "chapter": "ch16",
+  "section": "16.5",
+  "title": "Surfaces and Area",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-parametric-surface",
+      "title": "Parametric Surface and Normal Vector",
+      "category": "definition",
+      "latex": "\\mathbf{r}(u, v) = x(u, v)\\mathbf{i} + y(u, v)\\mathbf{j} + z(u, v)\\mathbf{k}, \\quad \\mathbf{n} = \\mathbf{r}_u \\times \\mathbf{r}_v",
+      "statement": "A smooth parametric surface S is traced by continuous vector function r(u, v) over parameter domain R in the uv-plane. The cross product of tangent vectors r_u and r_v provides the normal vector.",
+      "conditions": [
+        "r_u x r_v != 0 (smooth surface)"
+      ],
+      "explanation": "Coordinates u and v form curvilinear coordinate grid lines on the curved 2D surface in 3-space.",
+      "keyTakeaway": "Parametrization provides an intrinsic coordinate system for arbitrary 3D surfaces."
+    },
+    {
+      "id": "formula-surface-area",
+      "title": "Surface Area Differential and Formula",
+      "category": "formula",
+      "latex": "d\\sigma = |\\mathbf{r}_u \\times \\mathbf{r}_v| \\, du \\, dv, \\quad \\text{or for } z = f(x, y): \\; d\\sigma = \\sqrt{1 + f_x^2 + f_y^2} \\, dA",
+      "statement": "The surface area element d sigma measures the area of the infinitesimal parallelogram spanned by tangent increments r_u du and r_v dv. Total surface area is the double integral of d sigma over the parameter region.",
+      "conditions": [
+        "Surface is smooth and traversed once"
+      ],
+      "explanation": "For Monge explicit patch z = f(x, y), simplifies to sqrt(1 + (dz/dx)^2 + (dz/dy)^2) dx dy.",
+      "keyTakeaway": "Quantifies area of curved 2D manifolds embedded in 3D Euclidean space."
+    }
+  ]
+}

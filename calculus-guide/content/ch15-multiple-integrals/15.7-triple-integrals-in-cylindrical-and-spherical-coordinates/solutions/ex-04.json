@@ -1,0 +1,40 @@
+{
+  "id": "ch15-multiple-integrals/15.7-triple-integrals-in-cylindrical-and-spherical-coordinates/solutions/ex-04",
+  "chapter": "ch15",
+  "section": "15.7",
+  "type": "solution",
+  "title": "Volume of an Ice Cream Cone Region",
+  "exerciseReference": "Section 15.7, Exercise 4",
+  "originalTopic": "Spherical Cone and Sphere",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "ice-cream-cone",
+    "spherical",
+    "cone-volume"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the volume of the region bounded above by the sphere rho = 2 and below by the cone phi = pi/3.",
+  "finalAnswer": "\\frac{8\\pi}{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Spherical Limits",
+      "mathExpression": "0 \\le \\rho \\le 2, \\quad 0 \\le \\phi \\le \\frac{\\pi}{3}, \\quad 0 \\le \\theta \\le 2\\pi",
+      "explanation": "The cone bounds the polar angle phi at pi/3.",
+      "why": "Determining cone-capped spherical bounds."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Iterated Integral",
+      "mathExpression": "V = 2\\pi \\left( \\int_0^{\\pi/3} \\sin\\phi \\, d\\phi \\right) \\left( \\int_0^2 \\rho^2 \\, d\\rho \\right) = 2\\pi [-\\cos\\phi]_0^{\\pi/3} \\left[ \\frac{\\rho^3}{3} \\right]_0^2 = 2\\pi \\left(1 - \\frac{1}{2}\\right) \\left(\\frac{8}{3}\\right) = \\frac{8\\pi}{3}",
+      "explanation": "Multiply separated angular and radial integrals.",
+      "why": "Computing ice cream cone volume."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(16*pi/3) * (1/2)",
+    "expected": "8*pi/3"
+  }
+}

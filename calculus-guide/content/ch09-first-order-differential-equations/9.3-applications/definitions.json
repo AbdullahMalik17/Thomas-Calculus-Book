@@ -1,0 +1,33 @@
+{
+  "id": "ch09-first-order-differential-equations/9.3-applications/definitions",
+  "chapter": "ch09",
+  "section": "9.3",
+  "title": "Applications",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "model-mixture-problems",
+      "title": "Continuous Mixture Tank Model",
+      "category": "rule",
+      "latex": "\\frac{dy}{dt} = \\text{Rate In} - \\text{Rate Out} = c_{\\text{in}} r_{\\text{in}} - \\left(\\frac{y(t)}{V(t)}\\right) r_{\\text{out}}",
+      "statement": "The rate of change of solute mass y(t) in a well-stirred tank equals the incoming mass flux minus the outgoing mass flux.",
+      "conditions": [
+        "Liquid is well mixed instantaneously"
+      ],
+      "explanation": "Yields a standard first-order linear differential equation.",
+      "keyTakeaway": "Rate of change = Input rate - Output rate."
+    },
+    {
+      "id": "def-orthogonal-trajectories",
+      "title": "Orthogonal Trajectories",
+      "category": "definition",
+      "latex": "\\left( \\frac{dy}{dx} \\right)_{\\text{ortho}} = -\\frac{1}{\\left(\\frac{dy}{dx}\\right)_{\\text{given}}}",
+      "statement": "A family of curves that intersects every member of another given family of curves at right angles (90 degrees).",
+      "conditions": [
+        "Slopes are negative reciprocals at all intersection points"
+      ],
+      "explanation": "Models electric field lines and equipotential curves, or fluid streamlines and velocity potentials.",
+      "keyTakeaway": "Replace dy/dx with -dx/dy to find orthogonal trajectories."
+    }
+  ]
+}

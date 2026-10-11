@@ -1,0 +1,40 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.4-graphing-polar-coordinate-equations/solutions/ex-02",
+  "chapter": "ch11",
+  "section": "11.4",
+  "type": "solution",
+  "title": "Finding the Cusp of a Cardioid",
+  "exerciseReference": "Section 11.4, Exercise 2",
+  "originalTopic": "Cardioid Cusp Point",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "cardioid",
+    "cusp",
+    "pole"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the angle theta where the cardioid r = 2(1 - cos theta) passes through the pole.",
+  "finalAnswer": "\\theta = 0 \\implies r = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set r = 0",
+      "mathExpression": "2(1 - \\cos\\theta) = 0 \\implies \\cos\\theta = 1",
+      "explanation": "Passing through the pole means radial distance is 0.",
+      "why": "Pole condition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve for theta in [0, 2pi)",
+      "mathExpression": "\\theta = 0",
+      "explanation": "cos(0) = 1 is the unique solution.",
+      "why": "Cusp location."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "cos(0) - 1",
+    "expected": "0"
+  }
+}

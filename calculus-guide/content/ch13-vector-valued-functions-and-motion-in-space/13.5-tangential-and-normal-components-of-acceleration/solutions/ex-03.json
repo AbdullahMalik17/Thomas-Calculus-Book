@@ -1,0 +1,47 @@
+{
+  "id": "ch13-vector-valued-functions-and-motion-in-space/13.5-tangential-and-normal-components-of-acceleration/solutions/ex-03",
+  "chapter": "ch13",
+  "section": "13.5",
+  "type": "solution",
+  "title": "Equation of the Osculating Plane",
+  "exerciseReference": "Section 13.5, Exercise 3",
+  "originalTopic": "Osculating Plane",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "osculating-plane",
+    "TNB",
+    "helix"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the equation of the osculating plane to the circular helix r(t) = <cos(t), sin(t), t> at t = 0.",
+  "finalAnswer": "z - y = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate Point of Contact at t = 0",
+      "mathExpression": "\\mathbf{r}(0) = \\langle \\cos 0, \\sin 0, 0 \\rangle = \\langle 1, 0, 0 \\rangle",
+      "explanation": "Evaluate the position at t = 0.",
+      "why": "Locating contact point."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Determine Binormal Normal Vector",
+      "mathExpression": "\\mathbf{v}(0) = \\langle 0, 1, 1 \\rangle, \\; \\mathbf{a}(0) = \\langle -1, 0, 0 \\rangle \\implies \\mathbf{v} \\times \\mathbf{a} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ 0 & 1 & 1 \\\\ -1 & 0 & 0 \\end{vmatrix} = \\langle 0, -1, 1 \\rangle",
+      "explanation": "The cross product of velocity and acceleration is parallel to binormal B.",
+      "why": "Finding normal vector to osculating plane."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Write Plane Equation",
+      "mathExpression": "0(x - 1) - 1(y - 0) + 1(z - 0) = 0 \\implies -y + z = 0 \\implies z - y = 0",
+      "explanation": "Substitute point (1, 0, 0) and normal <0, -1, 1>.",
+      "why": "Formulating osculating plane."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "z - y",
+    "expected": "-y + z"
+  }
+}

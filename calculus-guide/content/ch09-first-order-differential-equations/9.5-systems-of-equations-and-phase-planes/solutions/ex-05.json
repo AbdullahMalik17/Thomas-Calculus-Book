@@ -1,0 +1,40 @@
+{
+  "id": "ch09-first-order-differential-equations/9.5-systems-of-equations-and-phase-planes/solutions/ex-05",
+  "chapter": "ch09",
+  "section": "9.5",
+  "type": "solution",
+  "title": "Nullclines of a Competing Species System",
+  "exerciseReference": "Section 9.5, Exercise 5",
+  "originalTopic": "Nullclines and Vector Field Directions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "nullclines",
+    "competing-species",
+    "phase-plane"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the x-nullclines and y-nullclines for dx/dt = x(3 - x - y) and dy/dt = y(2 - x - y).",
+  "finalAnswer": "\\text{x-nullclines: } x = 0, \\; x + y = 3; \\quad \\text{y-nullclines: } y = 0, \\; x + y = 2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find x-Nullclines (dx/dt = 0)",
+      "mathExpression": "x(3 - x - y) = 0 \\implies x = 0 \\quad \\text{or} \\quad x + y = 3",
+      "explanation": "Vertical velocity is purely vertical along these curves.",
+      "why": "x-nullcline definition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find y-Nullclines (dy/dt = 0)",
+      "mathExpression": "y(2 - x - y) = 0 \\implies y = 0 \\quad \\text{or} \\quad x + y = 2",
+      "explanation": "Velocity is purely horizontal along these curves.",
+      "why": "y-nullcline definition."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

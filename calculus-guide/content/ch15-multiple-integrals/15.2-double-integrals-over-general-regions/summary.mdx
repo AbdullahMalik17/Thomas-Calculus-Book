@@ -1,0 +1,22 @@
+# Section 15.2: Double Integrals over General Regions
+
+Integration extends to arbitrary bounded regions in the plane by decomposing boundaries into functional curves.
+
+---
+
+## 1. Type I vs. Type II Regions
+
+- **Type I (Vertical Cross-Sections)**:
+$$\iint_D f(x, y) \, dA = \int_a^b \left( \int_{g_1(x)}^{g_2(x)} f(x, y) \, dy \right) dx$$
+
+- **Type II (Horizontal Cross-Sections)**:
+$$\iint_D f(x, y) \, dA = \int_c^d \left( \int_{h_1(y)}^{h_2(y)} f(x, y) \, dx \right) dy$$
+
+---
+
+## 2. Reversing Order Strategy
+
+When an inner integral has no elementary antiderivative (e.g., $\int \sin(x^2) dx$):
+1. Sketch the region $D$ from the given limits.
+2. Express $D$ in the reverse order.
+3. Compute the new iterated integral.

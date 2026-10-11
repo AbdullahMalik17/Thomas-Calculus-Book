@@ -1,0 +1,47 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.1-sequences/solutions/ex-05",
+  "chapter": "ch10",
+  "section": "10.1",
+  "type": "solution",
+  "title": "Factorial Sequence Limit via Dominance",
+  "exerciseReference": "Section 10.1, Exercise 5",
+  "originalTopic": "Factorial vs Exponential Sequence",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "factorial",
+    "exponential",
+    "limits"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate lim_{n -> oo} 3^n / n!.",
+  "finalAnswer": "\\lim_{n \\to \\infty} \\frac{3^n}{n!} = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Expand Ratio for n >= 4",
+      "mathExpression": "\\frac{3^n}{n!} = \\frac{3}{1} \\cdot \\frac{3}{2} \\cdot \\frac{3}{3} \\cdot \\frac{3}{4} \\cdots \\frac{3}{n} \\le \\frac{9}{2} \\cdot \\left(\\frac{3}{4}\\right)^{n-3}",
+      "explanation": "Factor out the first three terms and bound remaining terms by 3/4.",
+      "why": "Establishing upper bound."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Geometric Decay Limit",
+      "mathExpression": "0 < \\frac{3^n}{n!} \\le \\frac{9}{2}\\left(\\frac{3}{4}\\right)^{n-3} \\to 0 \\text{ as } n \\to \\infty",
+      "explanation": "Since |3/4| < 1, the geometric term approaches 0.",
+      "why": "Squeeze theorem application."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude",
+      "mathExpression": "\\lim_{n \\to \\infty} \\frac{3^n}{n!} = 0",
+      "explanation": "Factorials dominate exponentials.",
+      "why": "Final limit."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "0",
+    "expected": "0"
+  }
+}

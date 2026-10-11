@@ -1,0 +1,50 @@
+{
+  "id": "ch07-transcendental-functions/7.7-hyperbolic-functions/solutions/ex-02",
+  "chapter": "ch07",
+  "section": "7.7",
+  "type": "solution",
+  "title": "Definite Integral of Hyperbolic Sine",
+  "exerciseReference": "Section 7.7, Exercise 2",
+  "originalTopic": "Definite Hyperbolic Integral",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "sinh",
+    "cosh",
+    "hyperbolic-integral"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_0^{\\ln(2)} sinh(x) dx.",
+  "finalAnswer": "\\int_0^{\\ln(2)} \\sinh(x) dx = \\frac{1}{4}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Antiderivative of sinh",
+      "mathExpression": "\\int \\sinh(x) dx = \\cosh(x)",
+      "explanation": "Antiderivative of sinh is cosh without sign change.",
+      "why": "Hyperbolic integration rule."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate at Limits",
+      "mathExpression": "[\\cosh(x)]_0^{\\ln(2)} = \\cosh(\\ln(2)) - \\cosh(0)",
+      "explanation": "Substitute upper and lower limits.",
+      "why": "FTC Part 2."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute Numerical Value",
+      "mathExpression": "\\cosh(\\ln(2)) = \\frac{e^{\\ln(2)} + e^{-\\ln(2)}}{2} = \\frac{2 + 1/2}{2} = \\frac{5}{4}; \\quad \\cosh(0) = 1 \\implies \\frac{5}{4} - 1 = \\frac{1}{4}",
+      "explanation": "Evaluate exponential definition.",
+      "why": "Final exact rational value."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "sinh(x)",
+    "expected": "1/4",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "log(2)"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ch15-multiple-integrals/15.6-moments-and-centers-of-mass/solutions/ex-01",
+  "chapter": "ch15",
+  "section": "15.6",
+  "type": "solution",
+  "title": "Center of Mass of a Parabolic Lamina",
+  "exerciseReference": "Section 15.6, Exercise 1",
+  "originalTopic": "Planar Center of Mass",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "center-of-mass",
+    "lamina",
+    "parabola"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the center of mass of a uniform lamina bounded by y = 1 - x^2 and the x-axis.",
+  "finalAnswer": "\\left( 0, \\frac{2}{5} \\right)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Calculate Total Mass (Area with delta = 1)",
+      "mathExpression": "M = \\int_{-1}^1 (1 - x^2) \\, dx = 2 \\left[ x - \\frac{x^3}{3} \\right]_0^1 = 2\\left(\\frac{2}{3}\\right) = \\frac{4}{3}",
+      "explanation": "Integrate area under parabola from -1 to 1.",
+      "why": "Finding total mass."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Determine x_bar by Symmetry",
+      "mathExpression": "\\bar{x} = 0",
+      "explanation": "The region and density are symmetric about the y-axis (x -> -x).",
+      "why": "Using symmetry."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute First Moment M_x and y_bar",
+      "mathExpression": "M_x = \\frac{1}{2}\\int_{-1}^1 (1 - x^2)^2 \\, dx = \\int_0^1 (1 - 2x^2 + x^4) \\, dx = 1 - \\frac{2}{3} + \\frac{1}{5} = \\frac{8}{15}; \\quad \\bar{y} = \\frac{M_x}{M} = \\frac{8/15}{4/3} = \\frac{2}{5}",
+      "explanation": "Divide first moment by total mass.",
+      "why": "Computing vertical center of mass."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(8/15) / (4/3)",
+    "expected": "2/5"
+  }
+}

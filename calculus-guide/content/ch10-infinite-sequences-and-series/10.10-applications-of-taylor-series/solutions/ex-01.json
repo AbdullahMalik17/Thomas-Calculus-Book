@@ -1,0 +1,40 @@
+{
+  "id": "ch10-infinite-sequences-and-series/10.10-applications-of-taylor-series/solutions/ex-01",
+  "chapter": "ch10",
+  "section": "10.10",
+  "type": "solution",
+  "title": "Binomial Series Expansion for a Square Root",
+  "exerciseReference": "Section 10.10, Exercise 1",
+  "originalTopic": "Binomial Series Expansion",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "binomial-series",
+    "square-root",
+    "fractional-power"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the first 4 terms of the binomial series expansion for f(x) = sqrt(1 + x).",
+  "finalAnswer": "\\sqrt{1 + x} = 1 + \\frac{1}{2}x - \\frac{1}{8}x^2 + \\frac{1}{16}x^3 - \\dots",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute Generalized Binomial Coefficients for m = 1/2",
+      "mathExpression": "\\binom{1/2}{1} = \\frac{1}{2}, \\quad \\binom{1/2}{2} = \\frac{(1/2)(-1/2)}{2} = -\\frac{1}{8}, \\quad \\binom{1/2}{3} = \\frac{(1/2)(-1/2)(-3/2)}{6} = \\frac{3/8}{6} = \\frac{1}{16}",
+      "explanation": "Evaluate binomial coefficient formula.",
+      "why": "Binomial coefficients."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Assemble Series",
+      "mathExpression": "1 + \\frac{1}{2}x - \\frac{1}{8}x^2 + \\frac{1}{16}x^3 - \\dots",
+      "explanation": "Combine terms with powers of x.",
+      "why": "Binomial series expansion."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1 + x/2 - x**2/8 + x**3/16 - (1 + x/2 - x**2/8 + x**3/16)",
+    "expected": "0"
+  }
+}

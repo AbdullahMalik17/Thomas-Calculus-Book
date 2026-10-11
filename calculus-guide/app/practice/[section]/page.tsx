@@ -12,6 +12,9 @@ interface PracticePageProps {
 
 export default function PracticePage({ params }: PracticePageProps) {
   const { section } = params;
+  const sectionNumber = section.split('-')[0] || section;
+  const chapterNumber = sectionNumber.split('.')[0] || '1';
+  const chapterKey = `ch${chapterNumber.padStart(2, '0')}`;
 
   const samplePracticeProblems = [
     {
@@ -67,9 +70,9 @@ export default function PracticePage({ params }: PracticePageProps) {
       <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-slate-600">
         <Link href="/" className="hover:text-blue-700">Home</Link>
         <span>/</span>
-        <Link href="/chapters/ch01" className="hover:text-blue-700">Chapter 1</Link>
+        <Link href={`/chapters/${chapterKey}`} className="hover:text-blue-700">Chapter {chapterNumber}</Link>
         <span>/</span>
-        <Link href={`/chapters/ch01/${section}`} className="hover:text-blue-700">Section Guide</Link>
+        <Link href={`/chapters/${chapterKey}/${section}`} className="hover:text-blue-700">Section Guide</Link>
         <span>/</span>
         <span className="text-slate-800 font-medium">Practice</span>
       </nav>
@@ -78,12 +81,12 @@ export default function PracticePage({ params }: PracticePageProps) {
       <div className="bg-white rounded-2xl border border-slate-200 p-5 sm:p-8 shadow-sm space-y-4">
         <div className="flex flex-wrap items-center gap-2">
           <Badge variant="primary">Practice</Badge>
-          <Badge variant="info">Section {section}</Badge>
+          <Badge variant="info">Section {sectionNumber}</Badge>
           <Badge variant="success">Solutions checked</Badge>
         </div>
 
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#172b43]">
-          Section 1.1 Practice Problems
+          Section {sectionNumber} Practice Problems
         </h1>
 
         <p className="reading-copy text-slate-600">

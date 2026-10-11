@@ -1,0 +1,48 @@
+{
+  "id": "ch05-integrals/5.5-indefinite-integrals-and-the-substitution-method/solutions/ex-05",
+  "chapter": "ch05",
+  "section": "5.5",
+  "type": "solution",
+  "title": "Initial Value Problem with Substitution",
+  "exerciseReference": "Section 5.5, Exercise 5",
+  "originalTopic": "Initial Value Problem",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "initial-value-problem",
+    "differential-equation",
+    "u-sub"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Solve the initial value problem dy/dx = 4x (2x^2 + 1)^3 with initial condition y(0) = 2.",
+  "finalAnswer": "y(x) = \\frac{(2x^2 + 1)^4}{4} + \\frac{7}{4}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Integrate to Find General Solution",
+      "mathExpression": "y(x) = \\int 4x (2x^2 + 1)^3 dx; \\quad u = 2x^2 + 1 \\implies du = 4x \\, dx",
+      "explanation": "The differential du = 4x dx is present directly.",
+      "why": "Solving separable first order ODE."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Antiderivative",
+      "mathExpression": "y(x) = \\int u^3 du = \\frac{u^4}{4} + C = \\frac{(2x^2 + 1)^4}{4} + C",
+      "explanation": "Integrate u^3.",
+      "why": "General solution family."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Apply Initial Condition y(0) = 2",
+      "mathExpression": "2 = \\frac{(2(0) + 1)^4}{4} + C \\implies 2 = \\frac{1}{4} + C \\implies C = \\frac{7}{4}",
+      "explanation": "Determine unique constant of integration.",
+      "why": "Satisfying initial condition."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "derivative",
+    "expression": "(2*x**2 + 1)**4 / 4 + 7/4",
+    "expected": "4*x*(2*x**2 + 1)**3",
+    "variable": "x"
+  }
+}

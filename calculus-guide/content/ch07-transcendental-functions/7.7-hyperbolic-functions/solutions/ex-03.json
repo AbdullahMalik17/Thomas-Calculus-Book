@@ -1,0 +1,40 @@
+{
+  "id": "ch07-transcendental-functions/7.7-hyperbolic-functions/solutions/ex-03",
+  "chapter": "ch07",
+  "section": "7.7",
+  "type": "solution",
+  "title": "Verification of Hyperbolic Pythagorean Identity",
+  "exerciseReference": "Section 7.7, Exercise 3",
+  "originalTopic": "Hyperbolic Identity Proof",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "hyperbolic-identity",
+    "exponential-expansion",
+    "algebra"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Prove using exponential definitions that cosh^2(x) - sinh^2(x) = 1.",
+  "finalAnswer": "\\cosh^2(x) - \\sinh^2(x) = 1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Square cosh(x) and sinh(x)",
+      "mathExpression": "\\cosh^2(x) = \\frac{e^{2x} + 2 + e^{-2x}}{4}, \\quad \\sinh^2(x) = \\frac{e^{2x} - 2 + e^{-2x}}{4}",
+      "explanation": "Expand squared binomials.",
+      "why": "Algebraic expansion of definitions."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Subtract the Expressions",
+      "mathExpression": "\\cosh^2(x) - \\sinh^2(x) = \\frac{(e^{2x} + 2 + e^{-2x}) - (e^{2x} - 2 + e^{-2x})}{4} = \\frac{4}{4} = 1",
+      "explanation": "The exponential terms cancel completely.",
+      "why": "Identity proven."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "cosh(x)**2 - sinh(x)**2",
+    "expected": "1"
+  }
+}

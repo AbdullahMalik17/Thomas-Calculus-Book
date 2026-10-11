@@ -1,0 +1,47 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.6-surface-integrals/solutions/ex-03",
+  "chapter": "ch16",
+  "section": "16.6",
+  "type": "solution",
+  "title": "Outward Flux of a Radial Field Through a Sphere",
+  "exerciseReference": "Section 16.6, Exercise 3",
+  "originalTopic": "Spherical Flux",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "flux",
+    "radial-field",
+    "sphere"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the outward flux of F = <x, y, z> through the sphere of radius R = 2 centered at the origin.",
+  "finalAnswer": "32\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Outward Unit Normal",
+      "mathExpression": "\\mathbf{n} = \\frac{\\langle x, y, z \\rangle}{R} = \\frac{1}{2}\\langle x, y, z \\rangle",
+      "explanation": "The unit normal points radially outward.",
+      "why": "Formulating outward unit normal."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate F . n on Sphere",
+      "mathExpression": "\\mathbf{F} \\cdot \\mathbf{n} = \\frac{x^2 + y^2 + z^2}{R} = \\frac{R^2}{R} = R = 2",
+      "explanation": "The normal component is constant and equals the sphere radius 2.",
+      "why": "Evaluating dot product on surface."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate Constant Value Over Sphere",
+      "mathExpression": "\\text{Flux} = \\iint_S 2 \\, d\\sigma = 2 \\times \\text{Area}(S) = 2 \\times 4\\pi(2^2) = 32\\pi",
+      "explanation": "Multiply 2 by total spherical surface area 16*pi.",
+      "why": "Evaluating total outward flux."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 * 4*pi * 2**2",
+    "expected": "32*pi"
+  }
+}

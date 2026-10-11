@@ -1,0 +1,43 @@
+{
+  "id": "ch07-transcendental-functions/7.6-inverse-trigonometric-functions/solutions/ex-03",
+  "chapter": "ch07",
+  "section": "7.6",
+  "type": "solution",
+  "title": "Definite Integral Yielding Inverse Tangent",
+  "exerciseReference": "Section 7.6, Exercise 3",
+  "originalTopic": "Arctan Integration Formula",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "arctan-integral",
+    "definite-integral",
+    "rational"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_0^1 1 / (1 + x^2) dx.",
+  "finalAnswer": "\\int_0^1 \\frac{1}{1 + x^2} dx = \\frac{\\pi}{4}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify Antiderivative",
+      "mathExpression": "\\int \\frac{1}{1 + x^2} dx = \\arctan(x)",
+      "explanation": "Fundamental inverse tangent integral formula.",
+      "why": "Direct antiderivative."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate at Limits 0 and 1",
+      "mathExpression": "[\\arctan(x)]_0^1 = \\arctan(1) - \\arctan(0) = \\frac{\\pi}{4} - 0 = \\frac{\\pi}{4}",
+      "explanation": "Recall tan(pi/4) = 1 and tan(0) = 0.",
+      "why": "Exact angle evaluation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "1/(1 + x**2)",
+    "expected": "pi/4",
+    "kind": "definite",
+    "lower": "0",
+    "upper": "1"
+  }
+}

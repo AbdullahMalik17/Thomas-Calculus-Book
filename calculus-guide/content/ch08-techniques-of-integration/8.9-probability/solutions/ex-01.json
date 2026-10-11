@@ -1,0 +1,47 @@
+{
+  "id": "ch08-techniques-of-integration/8.9-probability/solutions/ex-01",
+  "chapter": "ch08",
+  "section": "8.9",
+  "type": "solution",
+  "title": "Normalizing a Linear Probability Density Function",
+  "exerciseReference": "Section 8.9, Exercise 1",
+  "originalTopic": "PDF Normalization Constant",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "probability",
+    "PDF",
+    "normalization"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the constant C such that f(x) = C x on [0, 4] (and 0 elsewhere) is a valid probability density function.",
+  "finalAnswer": "C = \\frac{1}{8}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Total Probability Integral to 1",
+      "mathExpression": "\\int_0^4 C x \\, dx = 1",
+      "explanation": "The total area under any PDF must equal 1.",
+      "why": "PDF normalization condition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate Definite Integral",
+      "mathExpression": "C \\left[ \\frac{x^2}{2} \\right]_0^4 = C \\left( \\frac{16}{2} \\right) = 8C = 1",
+      "explanation": "Compute antiderivative of x.",
+      "why": "Linear integration."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Solve for C",
+      "mathExpression": "8C = 1 \\implies C = \\frac{1}{8}",
+      "explanation": "Divide by 8.",
+      "why": "Determining constant."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1/8 * (4**2 / 2)",
+    "expected": "1"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "ch05-integrals/5.3-the-definite-integral/solutions/ex-05",
+  "chapter": "ch05",
+  "section": "5.3",
+  "type": "solution",
+  "title": "Symmetry Simplification for Odd and Even Integrands",
+  "exerciseReference": "Section 5.3, Exercise 5",
+  "originalTopic": "Symmetry in Definite Integrals",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "symmetry",
+    "odd-function",
+    "even-function"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int_{-3}^3 (x^7 - 4x^3 + 5x^2 + 2) dx using symmetry properties.",
+  "finalAnswer": "\\int_{-3}^3 (x^7 - 4x^3 + 5x^2 + 2) dx = 102",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Separate Odd and Even Components",
+      "mathExpression": "\\int_{-3}^3 (x^7 - 4x^3) dx + \\int_{-3}^3 (5x^2 + 2) dx",
+      "explanation": "x^7 - 4x^3 is an odd function; 5x^2 + 2 is an even function.",
+      "why": "Parity decomposition of polynomials."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Odd Symmetry Rule",
+      "mathExpression": "\\int_{-a}^a f_{\\text{odd}}(x) dx = 0 \\implies \\int_{-3}^3 (x^7 - 4x^3) dx = 0",
+      "explanation": "Signed areas cancel symmetrically across the origin.",
+      "why": "Fundamental theorem of symmetric integrals."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Even Component Over Half-Interval",
+      "mathExpression": "2 \\int_0^3 (5x^2 + 2) dx = 2 \\left[ \\frac{5x^3}{3} + 2x \\right]_0^3 = 2 \\left( 5(9) + 6 \\right) = 2(51) = 102",
+      "explanation": "Double the integral from 0 to 3.",
+      "why": "Even function symmetry property."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "x**7 - 4*x**3 + 5*x**2 + 2",
+    "expected": "102",
+    "kind": "definite",
+    "lower": "-3",
+    "upper": "3"
+  }
+}

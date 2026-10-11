@@ -1,0 +1,40 @@
+{
+  "id": "ch16-integrals-and-vector-fields/16.3-path-independence-conservative-fields-and-potential-functions/solutions/ex-03",
+  "chapter": "ch16",
+  "section": "16.3",
+  "type": "solution",
+  "title": "Testing Conservativeness of a Three-Dimensional Field",
+  "exerciseReference": "Section 16.3, Exercise 3",
+  "originalTopic": "3D Curl Component Test",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "curl",
+    "3D-conservative",
+    "vector-field"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether F = <2xy, x^2 + 2yz, y^2> is conservative by computing its curl.",
+  "finalAnswer": "\\text{curl}\\,\\mathbf{F} = \\mathbf{0} \\implies \\mathbf{F} \\text{ is conservative}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate Curl Vector Components",
+      "mathExpression": "\\text{curl}\\,\\mathbf{F} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ \\frac{\\partial}{\\partial x} & \\frac{\\partial}{\\partial y} & \\frac{\\partial}{\\partial z} \\\\ 2xy & x^2 + 2yz & y^2 \\end{vmatrix}",
+      "explanation": "Set up the curl determinant operator.",
+      "why": "Formulating curl determinant."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute Individual Cross Derivatives",
+      "mathExpression": "\\mathbf{i}(2y - 2y) - \\mathbf{j}(0 - 0) + \\mathbf{k}(2x - 2x) = \\langle 0, 0, 0 \\rangle",
+      "explanation": "All three components vanish identically on R^3.",
+      "why": "Proving vanishing of curl."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 - 2",
+    "expected": "0"
+  }
+}

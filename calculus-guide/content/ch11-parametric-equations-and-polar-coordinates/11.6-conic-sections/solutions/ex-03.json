@@ -1,0 +1,40 @@
+{
+  "id": "ch11-parametric-equations-and-polar-coordinates/11.6-conic-sections/solutions/ex-03",
+  "chapter": "ch11",
+  "section": "11.6",
+  "type": "solution",
+  "title": "Asymptotes and Foci of a Hyperbola",
+  "exerciseReference": "Section 11.6, Exercise 3",
+  "originalTopic": "Hyperbola Asymptotes",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "hyperbola",
+    "asymptotes",
+    "foci"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the foci, vertices, and asymptotes of x^2/16 - y^2/9 = 1.",
+  "finalAnswer": "\\text{Vertices}: (\\pm 4, 0), \\quad \\text{Foci}: (\\pm 5, 0), \\quad \\text{Asymptotes}: y = \\pm \\frac{3}{4}x",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify a, b, and c",
+      "mathExpression": "a = 4, \\quad b = 3 \\implies c^2 = a^2 + b^2 = 16 + 9 = 25 \\implies c = 5",
+      "explanation": "Focal distance for hyperbola adds squared semi-axes.",
+      "why": "Hyperbola geometry."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Write Asymptotes Equations",
+      "mathExpression": "y = \\pm \\frac{b}{a} x = \\pm \\frac{3}{4} x",
+      "explanation": "Slopes are +-b/a.",
+      "why": "Hyperbolic asymptotes."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(16 + 9) - 5",
+    "expected": "0"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "ch08-techniques-of-integration/8.3-trigonometric-integrals/solutions/ex-04",
+  "chapter": "ch08",
+  "section": "8.3",
+  "type": "solution",
+  "title": "Odd Tangent and Odd Secant Powers",
+  "exerciseReference": "Section 8.3, Exercise 4",
+  "originalTopic": "Odd Tangent Powers",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "tangent-secant",
+    "odd-tangent",
+    "substitution"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate int tan^3(x) sec(x) dx.",
+  "finalAnswer": "\\frac{\\sec^3(x)}{3} - \\sec(x) + C",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Isolate sec(x) tan(x) Factor",
+      "mathExpression": "\\tan^3(x) \\sec(x) dx = \\tan^2(x) \\cdot (\\sec(x)\\tan(x) dx) = (\\sec^2(x) - 1) \\sec(x)\\tan(x) dx",
+      "explanation": "Use identity tan^2(x) = sec^2(x) - 1.",
+      "why": "Prepares for u = sec(x) substitution."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute u = sec(x)",
+      "mathExpression": "u = \\sec(x) \\implies du = \\sec(x)\\tan(x) dx \\implies \\int (u^2 - 1) du",
+      "explanation": "Standard polynomial form.",
+      "why": "Power integration."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Integrate and Back-Substitute",
+      "mathExpression": "\\frac{u^3}{3} - u + C = \\frac{\\sec^3(x)}{3} - \\sec(x) + C",
+      "explanation": "Substitute back u = sec(x).",
+      "why": "Final antiderivative."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "integral",
+    "expression": "tan(x)**3 * sec(x)",
+    "expected": "sec(x)**3/3 - sec(x)",
+    "kind": "indefinite"
+  }
+}
