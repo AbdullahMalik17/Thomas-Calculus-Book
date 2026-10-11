@@ -23,18 +23,18 @@ function runNavigationTests(): void {
   // Test 1: Chapter metadata completeness
   console.log('[1] Checking Chapter Metadata...');
   const chapterKeys = Object.keys(CHAPTER_METADATA);
-  if (chapterKeys.length !== 4) {
-    throw new Error(`Expected 4 chapters, found ${chapterKeys.length}`);
+  if (chapterKeys.length !== 16) {
+    throw new Error(`Expected 16 chapters, found ${chapterKeys.length}`);
   }
   const allSections = getAllSections();
-  if (allSections.length !== 27) {
-    throw new Error(`Expected 27 sections in total, found ${allSections.length}`);
+  if (allSections.length !== 116) {
+    throw new Error(`Expected 116 sections in total, found ${allSections.length}`);
   }
   const totalSolutions = allSections.reduce((sum, s) => sum + s.solutionsCount, 0);
-  if (totalSolutions !== 153) {
-    throw new Error(`Expected 153 total solutions across sections, found ${totalSolutions}`);
+  if (totalSolutions !== 598) {
+    throw new Error(`Expected 598 total solutions across sections, found ${totalSolutions}`);
   }
-  console.log(`    PASS: 4 Chapters, 27 Sections, ${totalSolutions} Solutions registered.`);
+  console.log(`    PASS: 16 Chapters, 116 Sections, ${totalSolutions} Solutions registered.`);
 
   // Test 2: Slug normalization
   console.log('[2] Testing Slug Normalization...');
@@ -63,6 +63,20 @@ function runNavigationTests(): void {
     ['ch4', 'ch04'],
     ['chapter-04', 'ch04'],
     ['ch04-applications-of-derivatives', 'ch04'],
+    ['5', 'ch05'],
+    ['ch5', 'ch05'],
+    ['chapter 5', 'ch05'],
+    ['ch05-integrals', 'ch05'],
+    ['8', 'ch08'],
+    ['ch08', 'ch08'],
+    ['12', 'ch12'],
+    ['ch12', 'ch12'],
+    ['chapter-12', 'ch12'],
+    ['ch12-vectors-and-the-geometry-of-space', 'ch12'],
+    ['16', 'ch16'],
+    ['ch16', 'ch16'],
+    ['chapter 16', 'ch16'],
+    ['ch16-integrals-and-vector-fields', 'ch16'],
   ];
   for (const [raw, expected] of normalizerCases) {
     const res = normalizeChapterKey(raw);
@@ -73,8 +87,10 @@ function runNavigationTests(): void {
   console.log(`    PASS: All ${normalizerCases.length} slug normalization cases passed.`);
 
   // Test 3: Directory and Content Loader with normalized and raw slugs
-  console.log('[3] Testing Content Loader for Chapter 2, 3, 4 with raw numbers & ch prefixes...');
+  console.log('[3] Testing Content Loader across chapters with raw numbers & ch prefixes...');
   const sampleSlugs = [
+    { ch: '1', sec: '1.1', expectedSolutions: 8, expectedChKey: 'ch01' },
+    { ch: 'ch01-functions', sec: '1-1', expectedSolutions: 8, expectedChKey: 'ch01' },
     { ch: '2', sec: '2.1', expectedSolutions: 5, expectedChKey: 'ch02' },
     { ch: 'ch2', sec: '2.1-rates-of-change-and-tangents-to-curves', expectedSolutions: 5, expectedChKey: 'ch02' },
     { ch: 'ch02-limits-continuity', sec: '2-1', expectedSolutions: 5, expectedChKey: 'ch02' },
@@ -83,9 +99,12 @@ function runNavigationTests(): void {
     { ch: 'chapter 3', sec: '3-6', expectedSolutions: 5, expectedChKey: 'ch03' },
     { ch: '4', sec: '4.8', expectedSolutions: 5, expectedChKey: 'ch04' },
     { ch: 'ch4', sec: '4.8-antiderivatives', expectedSolutions: 5, expectedChKey: 'ch04' },
-    { ch: 'ch04-applications-of-derivatives', sec: '4-8', expectedSolutions: 5, expectedChKey: 'ch04' },
-    { ch: '1', sec: '1.1', expectedSolutions: 8, expectedChKey: 'ch01' },
-    { ch: 'ch01-functions', sec: '1-1', expectedSolutions: 8, expectedChKey: 'ch01' },
+    { ch: '5', sec: '5.1', expectedSolutions: 5, expectedChKey: 'ch05' },
+    { ch: 'ch5', sec: '5.4-the-fundamental-theorem-of-calculus', expectedSolutions: 5, expectedChKey: 'ch05' },
+    { ch: '8', sec: '8.2', expectedSolutions: 5, expectedChKey: 'ch08' },
+    { ch: 'ch12', sec: '12.1-three-dimensional-coordinate-systems', expectedSolutions: 5, expectedChKey: 'ch12' },
+    { ch: '14', sec: '14.1', expectedSolutions: 5, expectedChKey: 'ch14' },
+    { ch: 'ch16', sec: '16.8-the-divergence-theorem-and-a-unified-theory', expectedSolutions: 5, expectedChKey: 'ch16' },
   ];
   for (const item of sampleSlugs) {
     const dir = getSectionDirectory(item.ch, item.sec);
@@ -109,8 +128,8 @@ function runNavigationTests(): void {
   }
   console.log(`    PASS: All sample slugs loaded content cleanly with expected solution counts and normalized chapterKey.`);
 
-  // Test 4: All 27 sections load without error
-  console.log('[4] Verifying all 27 sections load properly...');
+  // Test 4: All 116 sections load without error
+  console.log('[4] Verifying all 116 sections load properly...');
   for (const sec of allSections) {
     const loaded = loadSectionContent(sec.chapterKey, sec.id);
     if (!loaded) {
@@ -122,7 +141,7 @@ function runNavigationTests(): void {
       );
     }
   }
-  console.log('    PASS: All 27 sections verified to load their full solution sets.');
+  console.log('    PASS: All 116 sections verified to load their full solution sets.');
 
   // Test 5: Adjacent section navigation & cross-chapter transitions
   console.log('[5] Testing Adjacent Section Navigation...');
@@ -155,13 +174,31 @@ function runNavigationTests(): void {
     throw new Error('Section 3.9 next should transition to Section 4.1');
   }
 
-  // Last section 4.8
-  const lastSec = getAdjacentSections('ch04', '4.8-antiderivatives');
-  if (!lastSec.prev || lastSec.prev.number !== '4.7') {
-    throw new Error('Section 4.8 prev should be 4.7');
+  // Cross-chapter boundary 4.8 -> 5.1
+  const boundary48 = getAdjacentSections('ch04', '4.8-antiderivatives');
+  if (!boundary48.next || boundary48.next.number !== '5.1') {
+    throw new Error('Section 4.8 next should transition to Section 5.1');
+  }
+
+  // Cross-chapter boundary 11.7 -> 12.1
+  const boundary117 = getAdjacentSections('ch11', '11.7-conics-in-polar-coordinates');
+  if (!boundary117.next || boundary117.next.number !== '12.1') {
+    throw new Error('Section 11.7 next should transition to Section 12.1');
+  }
+
+  // Cross-chapter boundary 15.8 -> 16.1
+  const boundary158 = getAdjacentSections('ch15', '15.8-substitutions-in-multiple-integrals');
+  if (!boundary158.next || boundary158.next.number !== '16.1') {
+    throw new Error('Section 15.8 next should transition to Section 16.1');
+  }
+
+  // Last section 16.8
+  const lastSec = getAdjacentSections('ch16', '16.8-the-divergence-theorem-and-a-unified-theory');
+  if (!lastSec.prev || lastSec.prev.number !== '16.7') {
+    throw new Error('Section 16.8 prev should be 16.7');
   }
   if (lastSec.next !== null) {
-    throw new Error('Section 4.8 next should be null');
+    throw new Error('Section 16.8 next should be null');
   }
   console.log('    PASS: Adjacent section traversal and cross-chapter boundary handoffs verified.');
 
@@ -172,7 +209,7 @@ function runNavigationTests(): void {
     throw new Error('public/llms.txt does not exist');
   }
   const llmsContent = fs.readFileSync(llmsPath, 'utf-8');
-  for (let i = 1; i <= 4; i++) {
+  for (let i = 1; i <= 16; i++) {
     if (!llmsContent.includes(`Chapter ${i}:`)) {
       throw new Error(`public/llms.txt missing Chapter ${i}`);
     }

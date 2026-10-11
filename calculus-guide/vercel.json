@@ -15,7 +15,8 @@
     },
     "verify": {
       "root": "tools/verify",
-      "runtime": "python"
+      "runtime": "python",
+      "entrypoint": "server:app"
     }
   },
   "rewrites": [

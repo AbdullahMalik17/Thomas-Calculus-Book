@@ -9,18 +9,12 @@
 
 ## Core Pages
 - [/](/): Platform overview, curriculum roadmap, and SymPy verification feature highlights.
-- [/chapters](/chapters): Complete Curriculum Directory and Table of Contents covering all 4 chapters, 27 sections, and 153 worked solutions.
-- [/chapters/ch01](/chapters/ch01): Chapter 1 Functions overview, theorems, and section index.
-- [/chapters/ch02](/chapters/ch02): Chapter 2 Limits and Continuity overview, theorems, and section index.
-- [/chapters/ch03](/chapters/ch03): Chapter 3 Derivatives overview, differentiation rules, and section index.
-- [/chapters/ch04](/chapters/ch04): Chapter 4 Applications of Derivatives overview, optimization, and section index.
-- [/chapters/ch01/1.1-functions-and-graphs](/chapters/ch01/1.1-functions-and-graphs): Section 1.1 Golden Standard guide with definitions, theorems, and worked solutions.
-- [/practice/1.1-functions-and-graphs](/practice/1.1-functions-and-graphs): 8 original practice problems across 3 difficulty tiers with progressive hints and verified solutions.
-- [/quiz/ch01](/quiz/ch01): 8 conceptual multiple-choice questions with explicit misconception explanations for every distractor.
-- [/dashboard](/dashboard): Student mastery and SymPy verification engine status dashboard tracking all 27 sections.
+- [/chapters](/chapters): Complete Curriculum Directory and Table of Contents covering all 16 chapters, 116 sections, and 598 worked solutions.
+- [/chapters/ch01](/chapters/ch01) through [/chapters/ch16](/chapters/ch16): Overview, key theorems, and section directories for Chapters 1 through 16.
+- [/dashboard](/dashboard): Student mastery and SymPy verification engine status dashboard tracking all 116 sections.
 - [/about](/about): Platform mission, attribution to Muhammad Abdullah Athar, and copyright safeguards.
 
-## Complete Curriculum & Section Directory (27 Sections, 153 Solutions)
+## Complete Curriculum & Section Directory (116 Sections, 598 Solutions)
 
 ### Chapter 1: Functions (4 Sections, 38 Solutions)
 - Section 1.1: Functions and Their Graphs - Natural domains, ranges, piecewise functions, symmetry criteria, difference quotients (8 solutions).
@@ -57,7 +51,119 @@
 - Section 4.7: Newton's Method - Newton-Raphson iteration, tangent line root approximations, failure modes (5 solutions).
 - Section 4.8: Antiderivatives - Indefinite integrals, power rule for integration, trigonometric antiderivatives, IVPs (5 solutions).
 
+### Chapter 5: Integrals (6 Sections, 30 Solutions)
+- Section 5.1: Area and Estimating with Finite Sums - Riemann approximation, lower and upper sums, error bounds (5 solutions).
+- Section 5.2: Sigma Notation and Limits of Finite Sums - Telescoping series, summation formulas, definite integral limits (5 solutions).
+- Section 5.3: The Definite Integral - Riemann sums, integrable functions, area under curves, mean value theorem for integrals (5 solutions).
+- Section 5.4: The Fundamental Theorem of Calculus - FTC Part 1 and Part 2, differentiation of integral functions, net change theorem (5 solutions).
+- Section 5.5: Indefinite Integrals and the Substitution Method - u-substitution, algebraic transforms, trigonometric integrals (5 solutions).
+- Section 5.6: Substitution and Area Between Curves - Definite integrals via substitution, area between intersecting curves (5 solutions).
+
+### Chapter 6: Applications of Definite Integrals (5 Sections, 25 Solutions)
+- Section 6.1: Volumes Using Cross-Sections - Slicing method, Cavalieri's principle, solids of revolution, disk and washer methods (5 solutions).
+- Section 6.2: Volumes Using Cylindrical Shells - Shell method around coordinate and displaced axes (5 solutions).
+- Section 6.3: Arc Length - Smooth curve lengths, parametric arc length, differential arc element (5 solutions).
+- Section 6.4: Areas of Surfaces of Revolution - Conical frustum, surface area of revolution about x- and y-axes (5 solutions).
+- Section 6.5: Work and Fluid Forces - Hooke's law springs, pumping liquids from tanks, hydrostatic pressure and fluid force on submerged plates (5 solutions).
+
+### Chapter 7: Transcendental Functions (8 Sections, 40 Solutions)
+- Section 7.1: Inverse Functions and Their Derivatives - One-to-one criteria, inverse function theorem, reflection across y = x (5 solutions).
+- Section 7.2: Natural Logarithms - Logarithm defined as integral, derivative, logarithmic differentiation, integrals yielding ln (5 solutions).
+- Section 7.3: Exponential Functions - Exponential as inverse of ln, derivative, general bases a^x, power rule for all real exponents (5 solutions).
+- Section 7.4: Exponential Change and Separable Differential Equations - Law of exponential growth and decay, half-life, radiocarbon dating, Newton cooling law (5 solutions).
+- Section 7.5: Indeterminate Forms and L'Hôpital's Rule - Evaluating 0/0, infinity/infinity, indeterminate products, differences, and powers (5 solutions).
+- Section 7.6: Inverse Trigonometric Functions - Domains and ranges of arcsin, arccos, arctan, derivatives and integrals yielding inverse trig (5 solutions).
+- Section 7.7: Hyperbolic Functions - Hyperbolic sine, cosine, tangent, identities, derivatives, integrals, and inverse hyperbolic functions (5 solutions).
+- Section 7.8: Relative Rates of Growth - Comparing growth of functions as x approaches infinity, little-oh and big-oh asymptotic notation (5 solutions).
+
+### Chapter 8: Techniques of Integration (9 Sections, 45 Solutions)
+- Section 8.1: Using Basic Integration Formulas - Algebraic manipulation, completing the square, trigonometric identities to reduce to standard forms (5 solutions).
+- Section 8.2: Integration by Parts - Formula int u dv = uv - int v du, tabular integration by parts, cyclic integrals (5 solutions).
+- Section 8.3: Trigonometric Integrals - Products of powers of sine and cosine, tangent and secant, half-angle and reduction identities (5 solutions).
+- Section 8.4: Trigonometric Substitutions - Eliminating radicals via trigonometric substitutions (5 solutions).
+- Section 8.5: Integration of Rational Functions by Partial Fractions - Decomposition into linear and irreducible quadratic factors, polynomial long division (5 solutions).
+- Section 8.6: Integral Tables and Computer Algebra Systems - Using integral reference tables, reduction formulas, and symbolic CAS tools (5 solutions).
+- Section 8.7: Numerical Integration - Trapezoidal Rule, Simpson's 1/3 Rule, error bounds and error estimates (5 solutions).
+- Section 8.8: Improper Integrals - Type I infinite limit integrals, Type II discontinuous integrands, Comparison Tests (5 solutions).
+- Section 8.9: Probability - Continuous random variables, probability density functions, expected value, standard deviation (5 solutions).
+
+### Chapter 9: First-Order Differential Equations (5 Sections, 25 Solutions)
+- Section 9.1: Solutions, Slope Fields, and Euler's Method - Direction fields, qualitative solution trajectories, Euler's numerical approximation scheme (5 solutions).
+- Section 9.2: First-Order Linear Equations - Standard form, integrating factor method, variation of parameters (5 solutions).
+- Section 9.3: Applications - Brine tank mixing models, RL electrical circuits, orthogonal trajectories (5 solutions).
+- Section 9.4: Graphical Solutions of Autonomous Equations - Equilibrium points, phase lines, asymptotic stability, logistic population growth model (5 solutions).
+- Section 9.5: Systems of Equations and Phase Planes - Coupled linear differential equations, Lotka-Volterra predator-prey systems, phase portraits (5 solutions).
+
+### Chapter 10: Infinite Sequences and Series (10 Sections, 50 Solutions)
+- Section 10.1: Sequences - Sequence limits, Sandwich Theorem for sequences, Monotone Convergence Theorem (5 solutions).
+- Section 10.2: Infinite Series - Partial sums, geometric series, telescoping series, nth-Term Test for divergence (5 solutions).
+- Section 10.3: The Integral Test - Maclaurin-Cauchy Integral Test, p-series convergence theorem, remainder bounds (5 solutions).
+- Section 10.4: Comparison Tests - Direct Comparison Test and Limit Comparison Test with benchmark p-series (5 solutions).
+- Section 10.5: Absolute Convergence; The Ratio and Root Tests - Absolute vs conditional convergence, d'Alembert Ratio Test, Cauchy Root Test (5 solutions).
+- Section 10.6: Alternating Series and Conditional Convergence - Leibniz Alternating Series Test, alternating series estimation theorem, conditional convergence (5 solutions).
+- Section 10.7: Power Series - Radius and interval of convergence, term-by-term differentiation and integration (5 solutions).
+- Section 10.8: Taylor and Maclaurin Series - Taylor polynomial approximations, generating coefficients, standard Maclaurin series expansions (5 solutions).
+- Section 10.9: Convergence of Taylor Series - Taylor's Theorem with Lagrange remainder, bounding remainder, proving series representation (5 solutions).
+- Section 10.10: Applications of Taylor Series - Evaluating non-elementary integrals, indeterminate limits, Euler's formula e^(ix) = cos x + i sin x (5 solutions).
+
+### Chapter 11: Parametric Equations and Polar Coordinates (7 Sections, 35 Solutions)
+- Section 11.1: Parametrizations of Plane Curves - Parametric equations, eliminating parameter, projectile paths, cycloid generation (5 solutions).
+- Section 11.2: Calculus with Parametric Curves - Tangents, concavity, second derivatives, areas under curves, arc length of parametric curves (5 solutions).
+- Section 11.3: Polar Coordinates - Coordinate transformations x = r cos theta, y = r sin theta, polar graphing, converting equations (5 solutions).
+- Section 11.4: Graphing Polar Coordinate Equations - Symmetry tests in polar coordinates, cardioids, limacons, rose curves, lemniscates (5 solutions).
+- Section 11.5: Areas and Lengths in Polar Coordinates - Area of sector A = 1/2 int r^2 dtheta, area between polar curves, arc length in polar coordinates (5 solutions).
+- Section 11.6: Conic Sections - Geometric definitions, parabolas, ellipses, hyperbolas, eccentricity, focal properties (5 solutions).
+- Section 11.7: Conics in Polar Coordinates - Unified polar equation r = ed/(1 + e cos theta), eccentricity classification, Kepler orbits (5 solutions).
+
+### Chapter 12: Vectors and the Geometry of Space (6 Sections, 30 Solutions)
+- Section 12.1: Three-Dimensional Coordinate Systems - Cartesian coordinates in 3-space, distance formula, equations of spheres, midpoint formula (5 solutions).
+- Section 12.2: Vectors - Component form, vector magnitude, unit vectors, vector addition and scalar multiplication (5 solutions).
+- Section 12.3: The Dot Product - Angle between vectors, orthogonality criterion, vector projections, and physical work (5 solutions).
+- Section 12.4: The Cross Product - Determinant formula, orthogonal direction, areas of triangles/parallelograms, scalar triple product (5 solutions).
+- Section 12.5: Lines and Planes in Space - Vector and parametric equations of lines, standard equation of planes, distance from point to plane (5 solutions).
+- Section 12.6: Cylinders and Quadric Surfaces - Cylinders, ellipsoids, paraboloids, cones, hyperboloids of one and two sheets, trace analysis (5 solutions).
+
+### Chapter 13: Vector-Valued Functions and Motion in Space (6 Sections, 30 Solutions)
+- Section 13.1: Curves in Space and Their Tangents - Vector functions, velocity and speed, unit tangent vector T, differentiation rules (5 solutions).
+- Section 13.2: Integrals of Vector Functions; Projectile Motion - Antiderivatives, initial value problems, classical projectile trajectory, range and maximum height (5 solutions).
+- Section 13.3: Arc Length in Space - Arc length formula, natural arc length parameter s(t), unit-speed reparametrizations (5 solutions).
+- Section 13.4: Curvature and Normal Vectors of a Curve - Curvature kappa, principal unit normal N, binormal vector B, Frenet-Serret TNB moving frame (5 solutions).
+- Section 13.5: Tangential and Normal Components of Acceleration - Decomposition a = a_T T + a_N N, osculating plane, constant speed circular motion (5 solutions).
+- Section 13.6: Velocity and Acceleration in Polar Coordinates - Polar unit vectors u_r and u_theta, Coriolis acceleration, Kepler laws of planetary motion (5 solutions).
+
+### Chapter 14: Partial Derivatives (10 Sections, 50 Solutions)
+- Section 14.1: Functions of Several Variables - Domain, range, graphs of surfaces, level curves and contour maps, level surfaces in 3D (5 solutions).
+- Section 14.2: Limits and Continuity in Higher Dimensions - Multivariable limits, Two-Path Test for non-existence, polar coordinate limits, continuity (5 solutions).
+- Section 14.3: Partial Derivatives - First partial derivatives, geometric tangent slopes, Clairaut theorem on mixed partials (5 solutions).
+- Section 14.4: The Chain Rule - Multivariable Chain Rule for one and several parameters, tree diagrams, implicit differentiation (5 solutions).
+- Section 14.5: Directional Derivatives and Gradient Vectors - Gradient vector, directional derivative formula, steepest ascent and descent, level set normal (5 solutions).
+- Section 14.6: Tangent Planes and Differentials - Tangent planes to explicit and implicit surfaces, linearization, total differentials, error analysis (5 solutions).
+- Section 14.7: Extreme Values and Saddle Points - Critical points, Second Derivative Test, Hessian discriminant D, absolute extrema on compact sets (5 solutions).
+- Section 14.8: Lagrange Multipliers - Constrained optimization, method of Lagrange multipliers with one and two constraints (5 solutions).
+- Section 14.9: Taylor's Formula for Two Variables - Bivariate Taylor polynomials, quadratic approximations, Hessian matrix, error bounds (5 solutions).
+- Section 14.10: Partial Derivatives with Constrained Variables - Dependent vs independent variable choice, constrained notation, thermodynamic cyclic rule (5 solutions).
+
+### Chapter 15: Multiple Integrals (8 Sections, 40 Solutions)
+- Section 15.1: Double and Iterated Integrals over Rectangles - Double integrals, Fubini theorem over rectangles, volumes of solids, average value (5 solutions).
+- Section 15.2: Double Integrals over General Regions - Type I and Type II regions, reversing the order of integration, integration limits (5 solutions).
+- Section 15.3: Area by Double Integration - Area as double integral of 1, average height, region decomposition (5 solutions).
+- Section 15.4: Double Integrals in Polar Form - Polar area element dA = r dr dtheta, integrating over disks and rose petals, Gaussian integral (5 solutions).
+- Section 15.5: Triple Integrals in Rectangular Coordinates - Triple integrals in 3-space, volume of tetrahedrons, reordering six integration permutations (5 solutions).
+- Section 15.6: Moments and Centers of Mass - Mass, first moments, center of mass in 2D and 3D, moments of inertia, radius of gyration (5 solutions).
+- Section 15.7: Triple Integrals in Cylindrical and Spherical Coordinates - Cylindrical coordinates dV = r dz dr dtheta, spherical coordinates dV = rho^2 sin phi drho dphi dtheta (5 solutions).
+- Section 15.8: Substitutions in Multiple Integrals - The Jacobian determinant, change of variables formula, transforming skewed and elliptical regions (5 solutions).
+
+### Chapter 16: Integrals and Vector Fields (8 Sections, 40 Solutions)
+- Section 16.1: Line Integrals - Scalar line integrals with respect to arc length, wire mass, center of mass of curved wire (5 solutions).
+- Section 16.2: Vector Fields and Line Integrals: Work, Circulation, and Flux - Vector fields, work line integrals, circulation around closed curves, flux across planar boundaries (5 solutions).
+- Section 16.3: Path Independence, Conservative Fields, and Potential Functions - Fundamental Theorem of Line Integrals, conservative fields F = grad f, component test, closed loop work (5 solutions).
+- Section 16.4: Green's Theorem in the Plane - Circulation-curl and flux-divergence forms of Green theorem, area by line integrals (5 solutions).
+- Section 16.5: Surfaces and Area - Parametric surfaces r(u, v), tangent planes and normal vectors, surface area formulas (5 solutions).
+- Section 16.6: Surface Integrals - Scalar surface integrals, flux of vector fields across oriented surfaces, Gauss law applications (5 solutions).
+- Section 16.7: Stokes' Theorem - Circulation equals flux of curl, right-hand rule orientation, independence of spanning surface (5 solutions).
+- Section 16.8: The Divergence Theorem and a Unified Theory - Outward flux equals volume integral of divergence, Gauss theorem, grand unified theory of calculus (5 solutions).
+
 ## Mathematical Architecture & Verification Standards
-- SymPy Computer Algebra Engine: Symbolic algebraic equivalence checking via `simplify(expr - expected) == 0` for all 153 solutions.
-- Zod Content Schemas: Strict data validation enforcing 1-to-1 file path to ID mapping, non-empty step rationales, and distractor misconception feedback across all 196 items.
+- SymPy Computer Algebra Engine: Symbolic algebraic equivalence checking via `simplify(expr - expected) == 0` for all 598 solutions.
+- Zod Content Schemas: Strict data validation enforcing 1-to-1 file path to ID mapping, non-empty step rationales, and distractor misconception feedback.
 - Copyright Safeguards: All textbook exercises are referenced strictly by identifier (e.g. "Section 1.1, Exercise 21") with paraphrased, original explanations. No verbatim reproduction of textbook problems or diagrams.

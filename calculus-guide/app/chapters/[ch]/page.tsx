@@ -36,16 +36,13 @@ export function generateMetadata({ params }: ChapterPageProps) {
 }
 
 export function generateStaticParams() {
-  return [
-    { ch: 'ch01' },
-    { ch: 'ch02' },
-    { ch: 'ch03' },
-    { ch: 'ch04' },
-    { ch: '1' },
-    { ch: '2' },
-    { ch: '3' },
-    { ch: '4' },
-  ];
+  const params: { ch: string }[] = [];
+  for (let i = 1; i <= 16; i++) {
+    const padded = i.toString().padStart(2, '0');
+    params.push({ ch: `ch${padded}` });
+    params.push({ ch: `${i}` });
+  }
+  return params;
 }
 
 export default function ChapterPage({ params }: ChapterPageProps) {

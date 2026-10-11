@@ -12,6 +12,18 @@ import { CH03_SECTIONS_PART2 } from './curriculum-data-ch03-part2';
 import { CH03_SECTIONS_PART3 } from './curriculum-data-ch03-part3';
 import { CH04_SECTIONS_PART1 } from './curriculum-data-ch04-part1';
 import { CH04_SECTIONS_PART2 } from './curriculum-data-ch04-part2';
+import { CH05_SECTIONS } from './curriculum-data-ch05';
+import { CH06_SECTIONS } from './curriculum-data-ch06';
+import { CH07_SECTIONS } from './curriculum-data-ch07';
+import { CH08_SECTIONS } from './curriculum-data-ch08';
+import { CH09_SECTIONS } from './curriculum-data-ch09';
+import { CH10_SECTIONS } from './curriculum-data-ch10';
+import { CH11_SECTIONS } from './curriculum-data-ch11';
+import { CH12_SECTIONS } from './curriculum-data-ch12';
+import { CH13_SECTIONS } from './curriculum-data-ch13';
+import { CH14_SECTIONS } from './curriculum-data-ch14';
+import { CH15_SECTIONS } from './curriculum-data-ch15';
+import { CH16_SECTIONS } from './curriculum-data-ch16';
 
 const CONTENT_DIR = path.resolve(process.cwd(), 'content');
 
@@ -22,6 +34,18 @@ export const ALL_SECTIONS: SectionDef[] = [
   ...CH03_SECTIONS_PART3,
   ...CH04_SECTIONS_PART1,
   ...CH04_SECTIONS_PART2,
+  ...CH05_SECTIONS,
+  ...CH06_SECTIONS,
+  ...CH07_SECTIONS,
+  ...CH08_SECTIONS,
+  ...CH09_SECTIONS,
+  ...CH10_SECTIONS,
+  ...CH11_SECTIONS,
+  ...CH12_SECTIONS,
+  ...CH13_SECTIONS,
+  ...CH14_SECTIONS,
+  ...CH15_SECTIONS,
+  ...CH16_SECTIONS,
 ];
 
 export function buildCurriculumFiles(): void {
