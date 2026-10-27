@@ -1,0 +1,55 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-14",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Range of a Bounded Rational Function",
+  "exerciseReference": "Section 1.6, Exercise 14",
+  "originalTopic": "Range of a Function",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "range",
+    "rational-function"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the range of f(x)=1/(x^2+1) over all real x.",
+  "finalAnswer": "(0,1]",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Bound the Denominator",
+      "mathExpression": "x^2+1\\ge 1",
+      "explanation": "Since x^2 ranges over [0, infinity), adding 1 makes the denominator sweep out [1, infinity).",
+      "why": "Squares are nonnegative, and equality occurs at x=0."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Invert the Inequality",
+      "mathExpression": "0<\\frac{1}{x^2+1}\\le 1",
+      "explanation": "Taking reciprocals of positive quantities reverses the order, so the outputs lie between 0 (exclusive) and 1 (inclusive).",
+      "why": "For 0 < a <= b one has 1/b <= 1/a, and a positive numerator keeps the fraction positive."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Check Endpoint Attainment",
+      "mathExpression": "f(0)=1,\\quad f(x)\\to 0^+ \\text{ as } x\\to\\pm\\infty",
+      "explanation": "The maximum 1 occurs at x=0, while the value 0 is only a limiting value as |x| grows, never an actual output.",
+      "why": "Range endpoints count only when some finite input produces them."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Conclude the Range",
+      "mathExpression": "(0,1]",
+      "explanation": "Continuity fills every intermediate value, so the outputs are exactly the positives up to and including 1.",
+      "why": "The function is continuous, attains 1, and remains strictly between 0 and 1 elsewhere."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1/(x**2 + 1)",
+    "expected": "1/(x**2 + 1)",
+    "variable": "x"
+  }
+}

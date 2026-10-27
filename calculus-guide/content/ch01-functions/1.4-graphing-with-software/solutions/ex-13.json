@@ -1,0 +1,44 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-13",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "Counting Intersections of a Parabola and an Exponential Curve",
+  "exerciseReference": "Section 1.4, Exercise 13",
+  "originalTopic": "Number of intersection points found graphically and numerically",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["graphing-software", "intersections", "exponential", "zeros"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A graphing tool left on a small window suggests that y = x^2 and y = 2^x meet only once. Determine how many intersection points the two curves actually have and give their x-coordinates.",
+  "finalAnswer": "\\text{Three intersections: } x \\approx -0.767,\\quad x = 2, \\quad x = 4",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Test the obvious exact solutions",
+      "mathExpression": "2^2 = 4 = 2^2, \\qquad 4^2 = 16 = 2^4",
+      "explanation": "Substituting shows that x = 2 and x = 4 satisfy x^2 = 2^x exactly, giving two intersection points (2, 4) and (4, 16).",
+      "why": "Exact integer solutions anchor the count and reveal that the curves cross twice on the positive side, something a window ending near x = 3 hides."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Search the negative side with a sign check",
+      "mathExpression": "g(x) = x^2 - 2^x, \\qquad g(-1) = 1 - 0.5 = 0.5 > 0, \\quad g(0) = -1 < 0",
+      "explanation": "Since g is continuous and changes sign between -1 and 0, a third crossing lies in that interval; numerical solving gives x approximately -0.767.",
+      "why": "The Intermediate Value Theorem guarantees a root in the bracket, so the extra intersection is real and not a plotting artifact."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Confirm the total with growth comparison",
+      "mathExpression": "\\lim_{x \\to \\infty} \\frac{x^2}{2^x} = 0, \\qquad x^2 > 2^x \\text{ only on } (-\\infty, -0.767) \\cup (2, 4)",
+      "explanation": "Exponential growth eventually dominates quadratic growth, so for x > 4 the curve y = 2^x stays above y = x^2 and no further crossing is possible; a window near [-3, 6] by [-1, 20] displays all three crossings.",
+      "why": "Comparing end behavior bounds the number of further intersections, turning a picture into a trustworthy count of three."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(x - 2)*(x - 4)",
+    "expected": "x**2 - 6*x + 8",
+    "variable": "x"
+  }
+}

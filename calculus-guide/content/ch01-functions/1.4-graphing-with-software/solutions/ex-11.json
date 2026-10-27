@@ -1,0 +1,44 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-11",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "Viewing Window That Reveals Both Turning Points of a Cubic",
+  "exerciseReference": "Section 1.4, Exercise 11",
+  "originalTopic": "Viewing window design for polynomial extrema",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["graphing-software", "viewing-window", "cubic", "extrema"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "The default square window on many graphing tools clips the turning points of f(x) = x^3 - 12x. Locate the local maximum and local minimum of this cubic and use their coordinates to recommend a window [x_min, x_max] by [y_min, y_max] that displays every essential feature.",
+  "finalAnswer": "[-4, 4] \\times [-20, 20]",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find the critical numbers",
+      "mathExpression": "f'(x) = 3x^2 - 12 = 3(x - 2)(x + 2) = 0",
+      "explanation": "Setting the derivative to zero gives x = -2 and x = 2, the only candidates for turning points of the cubic.",
+      "why": "A window cannot show the shape of a curve unless it contains the critical numbers where the tangent is horizontal."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate the function at the critical numbers",
+      "mathExpression": "f(-2) = -8 + 24 = 16, \\quad f(2) = 8 - 24 = -16",
+      "explanation": "The point (-2, 16) is a local maximum and (2, -16) is a local minimum, so the interesting y-values span from -16 to 16.",
+      "why": "The extrema values fix the smallest vertical interval that must be visible."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Add margins and state the window",
+      "mathExpression": "x \\in [-4, 4], \\quad y \\in [-20, 20]",
+      "explanation": "The x-span [-4, 4] places both critical numbers well inside the frame and shows the ends turning upward and downward; the y-span [-20, 20] clears the extreme values 16 and -16 with headroom.",
+      "why": "Margins of roughly 25 percent prevent the turning points from touching the frame edge, where they are easily mistaken for intercepts."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "3*x**2 - 12",
+    "expected": "3*(x - 2)*(x + 2)",
+    "variable": "x"
+  }
+}

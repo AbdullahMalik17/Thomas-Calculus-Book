@@ -1,0 +1,52 @@
+{
+  "id": "ch01-functions/1.7-additional-and-advanced-exercises/solutions/ex-17",
+  "chapter": "ch01",
+  "section": "1.7",
+  "type": "solution",
+  "title": "Divergence of the Iteration x_{n+1} = x_n^2 + 1",
+  "exerciseReference": "Section 1.7, Exercise 17",
+  "originalTopic": "Iterated Functions and Sequences",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": ["advanced", "proof", "iteration", "sequences", "divergence"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Starting from x_0 = 2, iterate the rule x_{n+1} = x_n^2 + 1. Compute the first few terms and prove rigorously that the sequence grows at least geometrically and therefore diverges to infinity.",
+  "finalAnswer": "x_0=2,\\; x_1=5,\\; x_2=26,\\; x_3=677,\\; x_4=458330, \\qquad \\lim_{n \\to \\infty} x_n = \\infty",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Generate the First Terms",
+      "mathExpression": "2, \\quad 2^2+1 = 5, \\quad 5^2+1 = 26, \\quad 26^2+1 = 677",
+      "explanation": "Repeated application of the rule turns the modest seed 2 into rapidly widening numbers, hinting at faster-than-linear growth.",
+      "why": "Explicit computation of an orbit is the standard first probe of any discrete dynamical system."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Prove Monotone Increase",
+      "mathExpression": "x_{n+1} - x_n = x_n^2 - x_n + 1 = \\left(x_n - \\tfrac{1}{2}\\right)^2 + \\tfrac{3}{4} > 0",
+      "explanation": "Completing the square shows the gap between successive terms is always strictly positive, so the sequence climbs at every single step.",
+      "why": "A sum of a square and a positive constant can never vanish or turn negative, whatever x_n is."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Establish a Geometric Lower Bound",
+      "mathExpression": "x_n \\ge 2 \\;\\Rightarrow\\; x_{n+1} - 2x_n = (x_n - 1)^2 \\ge 0 \\;\\Rightarrow\\; x_{n+1} \\ge 2 x_n",
+      "explanation": "Every orbit point from the seed 2 onward is at least 2, and for such values the next term doubles at minimum: x_{n+1} = x_n^2 + 1 >= 2 x_n.",
+      "why": "Induction seals the estimate: the seed satisfies x_0 >= 2, and the rule x^2 + 1 > x for x >= 2 keeps all later terms in the region where doubling holds."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Conclude Divergence to Infinity",
+      "mathExpression": "x_n \\ge 2^n \\cdot x_0 = 2^{n+1} \\;\\xrightarrow[n \\to \\infty]{}\\; \\infty",
+      "explanation": "Telescoping the doubling inequalities bounds the sequence below by an exponentially growing power of 2, which exceeds every real threshold.",
+      "why": "By the comparison principle, any sequence dominating a divergent-to-infinity sequence must itself diverge to infinity; numerically 677^2 + 1 = 458330 already confirms the surge."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "677**2 + 1",
+    "expected": "458330",
+    "variable": "x"
+  }
+}

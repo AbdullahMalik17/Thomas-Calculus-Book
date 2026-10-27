@@ -1,0 +1,44 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-25",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "Window for a Sum of Two Sine Waves",
+  "exerciseReference": "Section 1.4, Exercise 25",
+  "originalTopic": "Period and amplitude bounds for a trigonometric sum",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["graphing-software", "viewing-window", "trigonometric", "periodicity"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "To display the complete shape of f(x) = sin x + sin 3x exactly once, what viewing window should be used? Justify the x-length from the period and the y-length from an amplitude bound.",
+  "finalAnswer": "[0, 2\\pi] \\times [-2.5, 2.5]",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find the period of the sum",
+      "mathExpression": "\\sin(x + 2\\pi) + \\sin(3(x + 2\\pi)) = \\sin x + \\sin 3x",
+      "explanation": "Both terms repeat after 2*pi, and 2*pi is the smallest common multiple of the individual periods 2*pi and 2*pi/3, so the sum has period 2*pi.",
+      "why": "An x-window one full period long shows the complete pattern without drawing the same feature twice."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Bound the amplitude",
+      "mathExpression": "|f(x)| \\le |\\sin x| + |\\sin 3x| \\le 2",
+      "explanation": "Each sine contributes at most 1, so the curve never leaves the horizontal strip between -2 and 2; factoring as 2 sin 2x cos x confirms the actual peaks stay below 2.",
+      "why": "A rigorous upper bound means the y-window can be chosen a priori instead of by trial and error on the screen."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State the window with margin",
+      "mathExpression": "x \\in [0, 2\\pi] \\approx [0, 6.283], \\qquad y \\in [-2.5, 2.5]",
+      "explanation": "Using [0, 2*pi] by [-2.5, 2.5] frames one full cycle, the zeros at the multiples of pi/2 visible inside it, and enough vertical slack that the crests do not graze the frame.",
+      "why": "Padding the theoretical bound 2 to 2.5 keeps the local maxima from being clipped by pixel rounding."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sin(x) + sin(3*x)",
+    "expected": "2*sin(2*x)*cos(x)",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-24",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "One Tangent Intersection: ln x and the Line x - 1",
+  "exerciseReference": "Section 1.4, Exercise 24",
+  "originalTopic": "Tangency and the count of intersections",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["graphing-software", "intersections", "tangent-line", "logarithm"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "The graphs of y = ln x and y = x - 1 appear to touch rather than cross near x = 1. Determine how many intersection points they have and explain the geometric relationship between the two curves at that point.",
+  "finalAnswer": "\\text{Exactly one intersection, at } (1, 0); \\quad y = x - 1 \\text{ is tangent to } y = \\ln x",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Solve the intersection equation",
+      "mathExpression": "\\ln x = x - 1 \\quad \\Rightarrow \\quad x = 1 \\text{ since } \\ln 1 = 0 = 1 - 1",
+      "explanation": "Substitution shows x = 1 works, giving the point (1, 0).",
+      "why": "An exact candidate found by inspection is what the rest of the analysis must confirm or rule out."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Prove it is the only one",
+      "mathExpression": "h(x) = \\ln x - (x - 1), \\quad h'(x) = \\frac{1}{x} - 1, \\quad h''(x) = -\\frac{1}{x^2} < 0",
+      "explanation": "The only critical point is x = 1, and since h is concave down everywhere on (0, infinity), that critical point is a global maximum with h(1) = 0. Hence h(x) <= 0 for every x > 0, with equality only at x = 1.",
+      "why": "A global maximum of exactly zero means the two graphs never separate, which proves there is no second intersection."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Match the slopes to confirm tangency",
+      "mathExpression": "\\left.\\frac{d}{dx}\\ln x\\right|_{x=1} = 1 = \\text{slope of } y = x - 1",
+      "explanation": "Both curves pass through (1, 0) with slope 1, so the line is the tangent line to the logarithm at that point and the inequality ln x <= x - 1 holds for all x > 0.",
+      "why": "Equal value and equal slope at a shared point is exactly the definition of tangency, which explains why the plot shows touching instead of crossing."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "log(x) - (x - 1)",
+    "expected": "log(x) - x + 1",
+    "variable": "x"
+  }
+}

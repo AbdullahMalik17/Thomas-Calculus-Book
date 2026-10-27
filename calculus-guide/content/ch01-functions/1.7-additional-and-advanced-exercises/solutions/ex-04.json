@@ -1,0 +1,45 @@
+{
+  "id": "ch01-functions/1.7-additional-and-advanced-exercises/solutions/ex-04",
+  "chapter": "ch01",
+  "section": "1.7",
+  "type": "solution",
+  "title": "Heron's Formula for the 13-14-15 Triangle",
+  "exerciseReference": "Section 1.7, Exercise 4",
+  "originalTopic": "Area of a Triangle from Its Sides",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["heron-formula", "triangle", "area"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Use Heron's formula to compute the exact area of the triangle whose side lengths are 13, 14, and 15.",
+  "finalAnswer": "A = \\sqrt{21 \\cdot 8 \\cdot 7 \\cdot 6} = \\sqrt{7056} = 84",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute the Semi-perimeter",
+      "mathExpression": "s = \\frac{13 + 14 + 15}{2} = 21",
+      "explanation": "Heron's formula works through the semi-perimeter s, half the sum of the three side lengths; here s = 42/2 = 21.",
+      "why": "The formula A = sqrt(s(s-a)(s-b)(s-c)) packages all three sides symmetrically through s, requiring only the perimeter."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Form the Three Excess Factors",
+      "mathExpression": "s-13 = 8, \\quad s-14 = 7, \\quad s-15 = 6",
+      "explanation": "Each factor measures how much the semi-perimeter exceeds one side; all three are positive, confirming the triangle is nondegenerate.",
+      "why": "Positivity of s-a, s-b, s-c is exactly the triangle inequality in disguise, so the radicand is legitimate."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Multiply and Take the Square Root",
+      "mathExpression": "A = \\sqrt{21 \\cdot 8 \\cdot 7 \\cdot 6} = \\sqrt{7056} = 84",
+      "explanation": "The product inside the root is 21*8*7*6 = 7056, which is a perfect square: 84 squared equals 7056, so the area is the whole number 84.",
+      "why": "Factoring as (3*7)*(2^3)*7*(2*3) = 2^4 * 3^2 * 7^2 lets the root extract exactly 2^2*3*7 = 84."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "sqrt(21*(21-13)*(21-14)*(21-15))",
+    "expected": "84",
+    "variable": "x"
+  }
+}

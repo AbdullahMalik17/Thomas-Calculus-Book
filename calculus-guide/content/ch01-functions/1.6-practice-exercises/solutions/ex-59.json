@@ -1,0 +1,47 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-59",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Evaluating a Piecewise Rule at a Negative Input",
+  "exerciseReference": "Section 1.6, Exercise 59",
+  "originalTopic": "Chapter 1 Practice: Piecewise Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "piecewise-functions"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Let $f(x)=x+2$ when $x<0$ and $f(x)=x^{2}$ when $x\\ge 0$. Find $f(-3)$, saying which branch supplies the answer.",
+  "finalAnswer": "f(-3) = -1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Test the Input Against the Conditions",
+      "explanation": "The input $-3$ is negative, so the linear branch governs; the quadratic branch never sees it.",
+      "why": "Piecewise evaluation always begins by checking which condition the input satisfies.",
+      "mathExpression": "-3 < 0 \\implies \\text{first branch } f(x)=x+2"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply the Selected Rule",
+      "explanation": "Substituting $x=-3$ into $x+2$ gives $-1$.",
+      "why": "Only one formula is active at a time, so the arithmetic is ordinary.",
+      "mathExpression": "f(-3) = -3+2 = -1"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Sanity Check the Branch Choice",
+      "explanation": "Plugging $-3$ into $x^2$ would be illegal here because that branch is reserved for $x\\\\ge 0$.",
+      "why": "A classic error is using the wrong piece; the domain tags must be respected.",
+      "mathExpression": "(-3)^{2}=9\\ \\text{is NOT } f(-3)"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "Piecewise((x + 2, x < 0), (x**2, True))",
+    "expected": "Piecewise((x + 2, x < 0), (x**2, True))",
+    "variable": "x"
+  }
+}

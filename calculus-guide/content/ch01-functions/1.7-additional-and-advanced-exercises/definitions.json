@@ -1,0 +1,58 @@
+{
+  "id": "ch01-functions/1.7-additional-and-advanced-exercises/definitions",
+  "chapter": "ch01",
+  "section": "1.7",
+  "title": "Core Tools: Additional and Advanced Exercises",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "theorem-symmetry-decomposition",
+      "title": "Even-Odd Symmetry Decomposition Theorem",
+      "category": "theorem",
+      "latex": "f(x) = \\underbrace{\\frac{f(x)+f(-x)}{2}}_{\\text{even part}} + \\underbrace{\\frac{f(x)-f(-x)}{2}}_{\\text{odd part}}",
+      "statement": "Every function whose domain is symmetric about the origin can be written uniquely as the sum of an even function and an odd function, built from the two averaging formulas above.",
+      "conditions": [
+        "The domain of f must satisfy: x in dom(f) implies -x in dom(f)"
+      ],
+      "explanation": "Symmetrizing f over the reflection x -> -x extracts its mirror-symmetric backbone and its antisymmetric remainder in one stroke; the reflection is an involution, so the two averaging projections are well defined and complementary.",
+      "keyTakeaway": "Any function splits uniquely into even plus odd; averaging f(x) and f(-x) finds the pieces."
+    },
+    {
+      "id": "criterion-discriminant-tangency",
+      "title": "Discriminant Tangency Criterion",
+      "category": "test",
+      "latex": "y = x^2 + bx + c \\text{ tangent to the } x\\text{-axis} \\iff b^2 - 4c = 0 \\iff c = \\frac{b^2}{4}",
+      "statement": "An upward-opening parabola grazes the x-axis at exactly one point, the vertex x = -b/2, if and only if its discriminant vanishes, forcing the quadratic into the perfect-square form (x + b/2)^2.",
+      "conditions": [
+        "Leading coefficient nonzero (genuine parabola)",
+        "Delta > 0 gives two crossings; Delta < 0 gives none; Delta = 0 is the borderline tangency"
+      ],
+      "explanation": "Tangency to a horizontal axis is the same event as a repeated real root, and the discriminant is the exact algebraic sensor for root multiplicity; geometrically the vertex height (4c - b^2)/4 hits zero.",
+      "keyTakeaway": "Set the discriminant to zero to convert 'touches the axis' into an equation between parameters."
+    },
+    {
+      "id": "formula-heron",
+      "title": "Heron's Formula for Triangle Area",
+      "category": "formula",
+      "latex": "A = \\sqrt{s(s-a)(s-b)(s-c)}, \\qquad s = \\frac{a+b+c}{2}",
+      "statement": "The area of a triangle with side lengths a, b, c equals the square root of the semi-perimeter times the three excesses s - a, s - b, s - c; e.g. sides 13, 14, 15 give s = 21 and A = sqrt(21*8*7*6) = 84.",
+      "conditions": [
+        "The three lengths must satisfy the triangle inequalities so that every factor s - a is positive"
+      ],
+      "explanation": "Area is recoverable from side lengths alone, without any angle or height measurement, because three sides determine the triangle up to congruence; the formula is a symmetric distillation of the law of cosines plus A = (1/2)ab sin C.",
+      "keyTakeaway": "Know only the three sides? Heron's formula converts them directly into exact area."
+    },
+    {
+      "id": "inequality-square-nonnegativity",
+      "title": "Square Nonnegativity Inequality (x - y)^2 >= 0",
+      "category": "theorem",
+      "latex": "(x - y)^2 \\ge 0 \\quad \\forall x, y \\in \\mathbb{R}, \\qquad (x-y)^2 = 0 \\iff x = y",
+      "statement": "The square of any real number is nonnegative, whence x^2 + y^2 >= 2xy for all real x and y, with equality if and only if x = y; equivalently, the arithmetic-geometric mean inequality holds for two numbers.",
+      "conditions": [
+        "x and y real; the equality case is the entire content of the theorem's sharpness"
+      ],
+      "explanation": "This single observation is the engine behind completing the square, the AM-GM inequality, and many optimization bounds: moving all terms to one side and recognizing a perfect square converts an inequality claim into an unconditional fact.",
+      "keyTakeaway": "To prove an inequality, rearrange it into a sum of squares and read off the equality case."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-32",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "Proving the Line y = ex Is Tangent to y = e^x",
+  "exerciseReference": "Section 1.4, Exercise 32",
+  "originalTopic": "Tangency between an exponential curve and a line through the origin",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": ["graphing-software", "tangent-line", "exponential", "inequality"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "The line y = ex (where e is Euler's number) looks as if it just grazes the curve y = e^x. Find the point of contact, verify that the two graphs share a slope there, and explain why the plot shows no other intersection.",
+  "finalAnswer": "\\text{Tangent at } x = 1, \\text{ point } (1, e); \\qquad e^x \\ge ex \\ \\text{for all } x, \\text{ with equality only at } x = 1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Check the shared point",
+      "mathExpression": "e^1 = e, \\qquad e \\cdot 1 = e",
+      "explanation": "Both graphs have height e at x = 1, so (1, e) is a common point.",
+      "why": "Any tangency claim must first satisfy the value condition, otherwise the graphs merely run parallel."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Check the shared slope",
+      "mathExpression": "\\left.\\frac{d}{dx}e^x\\right|_{x=1} = e = \\text{slope of } y = ex",
+      "explanation": "The derivative of e^x at x = 1 equals e, exactly the slope of the line, so the line is the tangent line there: e + e(x - 1) = ex.",
+      "why": "Equal value and equal first derivative is the defining test for tangency of order one."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Show the contact point is unique",
+      "mathExpression": "g(x) = e^x - ex, \\quad g'(x) = e^x - e = 0 \\Rightarrow x = 1, \\quad g''(1) = e > 0",
+      "explanation": "The difference has its single critical point at x = 1, where it is a minimum with value g(1) = 0, so g(x) >= 0 everywhere and equals 0 only at that point.",
+      "why": "A nonnegative difference vanishing once proves the line never cuts the curve, ruling out hidden intersections outside the plotted window."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Read it as an inequality on screen",
+      "mathExpression": "\\text{window } [-2, 3] \\times [-1, 10]: \\ e^x \\text{ hugs then rises above } ex",
+      "explanation": "In that frame the exponential touches the line at (1, e) and lies above it on both sides, shrinking toward 0 as x goes to negative infinity while the line descends.",
+      "why": "The picture is a visual proof of the tangent-line inequality for the convex function e^x: the graph always stays above any of its tangent lines."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "E + E*(x - 1)",
+    "expected": "E*x",
+    "variable": "x"
+  }
+}

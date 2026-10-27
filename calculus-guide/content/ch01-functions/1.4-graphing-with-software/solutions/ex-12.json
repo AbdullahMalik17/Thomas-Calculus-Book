@@ -1,0 +1,44 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-12",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "Window That Displays Both Asymptotes of a Reciprocal Function",
+  "exerciseReference": "Section 1.4, Exercise 12",
+  "originalTopic": "Viewing window design with vertical and horizontal asymptotes",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["graphing-software", "viewing-window", "asymptotes", "rational-function"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For f(x) = 1/(x - 2), identify the vertical and horizontal asymptotes, then choose a viewing window that shows the blow-up near the vertical asymptote and the flattening toward the horizontal one on both sides.",
+  "finalAnswer": "[-6, 10] \\times [-4, 4]",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Locate the vertical asymptote",
+      "mathExpression": "x - 2 = 0 \\Rightarrow x = 2, \\qquad \\lim_{x \\to 2^\\pm} \\frac{1}{x - 2} = \\pm \\infty",
+      "explanation": "The denominator vanishes at x = 2 while the numerator stays nonzero, so the graph splits into two branches running off the screen there.",
+      "why": "A window must place the asymptote strictly inside the x-range, otherwise one branch is invisible and the curve looks continuous."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Locate the horizontal asymptote",
+      "mathExpression": "\\lim_{x \\to \\pm\\infty} \\frac{1}{x - 2} = 0",
+      "explanation": "Away from x = 2 the curve decays toward the x-axis, so y = 0 is a horizontal asymptote approached from above on the right and from below on the left.",
+      "why": "The end behavior is only recognizable if the x-window is wide enough for the curve to visibly hug y = 0."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Choose an offset window",
+      "mathExpression": "x \\in [-6, 10], \\quad y \\in [-4, 4]",
+      "explanation": "The asymmetric x-range [-6, 10] puts x = 2 off-center with about 8 units of room on each side, and the modest y-range [-4, 4] shows the branches escaping vertically without compressing the flat tails.",
+      "why": "Deliberately clipping the vertical extremes is what makes both the blow-up and the approach to y = 0 readable in one picture."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1/(x - 2)",
+    "expected": "1/(x - 2)",
+    "variable": "x"
+  }
+}

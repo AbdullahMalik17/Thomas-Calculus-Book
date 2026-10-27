@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-15",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Difference Quotient of a Quadratic",
+  "exerciseReference": "Section 1.6, Exercise 15",
+  "originalTopic": "Difference Quotient",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "difference-quotient",
+    "quadratic"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For f(x)=x^2, compute and simplify the difference quotient (f(x+h)-f(x))/h, assuming h != 0.",
+  "finalAnswer": "2x+h",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Form the Two Function Values",
+      "mathExpression": "f(x+h)=(x+h)^2,\\quad f(x)=x^2",
+      "explanation": "Replace every x in the rule by x+h to get the incremented value.",
+      "why": "The difference quotient measures the change caused by the increment h."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Expand and Subtract",
+      "mathExpression": "(x+h)^2-x^2=2xh+h^2",
+      "explanation": "Expanding gives x^2+2xh+h^2, and the x^2 terms cancel in the numerator.",
+      "why": "Cancellation of f(x) leaves only terms containing the increment h."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Divide by h",
+      "mathExpression": "\\frac{2xh+h^2}{h}=2x+h",
+      "explanation": "Factor h from the numerator and cancel it against the denominator (valid since h != 0).",
+      "why": "Every surviving numerator term contains h, so the quotient simplifies completely."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "((x+h)**2 - x**2)/h",
+    "expected": "2*x + h",
+    "variable": "x"
+  }
+}

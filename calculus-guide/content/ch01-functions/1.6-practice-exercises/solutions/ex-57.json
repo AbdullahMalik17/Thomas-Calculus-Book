@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-57",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Period of a Sine with Pi in the Argument",
+  "exerciseReference": "Section 1.6, Exercise 57",
+  "originalTopic": "Chapter 1 Practice: Trigonometric Graph Properties",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "trigonometry",
+    "graphs"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine the amplitude and period of $y=\\sin(\\pi x)$ and state how many cycles fit into an interval of length $2$.",
+  "finalAnswer": "\\text{Amplitude}=1,\\quad \\text{Period}=2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Match the Standard Form",
+      "explanation": "The argument coefficient is $B=\\pi$ and there is no vertical scaling.",
+      "why": "Identifying $B$ correctly is everything for the period computation.",
+      "mathExpression": "y=A\\sin(Bx),\\quad A=1,\\ B=\\pi"
+    },
+    {
+      "stepNumber": 2,
+      "title": "State the Amplitude",
+      "explanation": "The outputs remain between $-1$ and $1$, so the wave keeps unit height.",
+      "why": "Only the outer multiplier changes amplitude.",
+      "mathExpression": "|A|=1"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute the Period",
+      "explanation": "Cancelling $\\pi$ leaves period $2$; hence exactly one full cycle occurs on every interval of length $2$.",
+      "why": "The $\\pi$ coefficient compresses the standard $2\\pi$-cycle down to length two.",
+      "mathExpression": "T=\\frac{2\\pi}{|B|}=\\frac{2\\pi}{\\pi}=2"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sin(pi*x)",
+    "expected": "sin(pi*x)",
+    "variable": "x"
+  }
+}

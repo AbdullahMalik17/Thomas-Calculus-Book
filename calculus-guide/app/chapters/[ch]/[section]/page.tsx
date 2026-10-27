@@ -7,7 +7,7 @@ import {
   getAdjacentSections,
   getAllSections,
 } from '@/lib/content/curriculum';
-import { TabbedSectionReader } from '@/components/section/TabbedSectionReader';
+import { BookSectionReader } from '@/components/section/BookSectionReader';
 import { MDXSummary } from '@/components/section/MDXSummary';
 import { Card } from '@/components/ui/Card';
 
@@ -51,7 +51,7 @@ export function generateStaticParams() {
   return params;
 }
 
-export default async function SectionPage({ params, searchParams }: SectionPageProps) {
+export default async function SectionPage({ params }: SectionPageProps) {
   const normalizedCh = normalizeChapterKey(params.ch);
   const sectionData = loadSectionContent(normalizedCh, params.section);
   const chapterMeta = CHAPTER_METADATA[normalizedCh];
@@ -79,25 +79,21 @@ export default async function SectionPage({ params, searchParams }: SectionPageP
   }
 
   const adjacent = getAdjacentSections(normalizedCh, sectionData.sectionKey);
-  const initialTab = searchParams?.tab === 'solutions' ? 'solutions' : 'theory';
 
   return (
-    <div className="space-y-6">
-      {/* Navigation Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-slate-600">
-        <Link href="/" className="hover:text-blue-700">Home</Link>
-        <span>/</span>
-        <Link href="/chapters" className="hover:text-blue-700">Chapters</Link>
-        <span>/</span>
-        <Link href={`/chapters/${normalizedCh}`} className="hover:text-blue-700">{chapterDisplayName}</Link>
-        <span>/</span>
-        <span className="text-slate-800 font-medium">Section {sectionData.sectionNumber}</span>
+    <div className="mx-auto max-w-4xl space-y-6">
+      {/* Shelf marker */}
+      <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-xs text-[#8a7a63]">
+        <Link href="/chapters" className="hover:text-[#1f1a13]">Contents</Link>
+        <span aria-hidden="true">&rsaquo;</span>
+        <Link href={`/chapters/${normalizedCh}`} className="hover:text-[#1f1a13]">{chapterDisplayName}</Link>
+        <span aria-hidden="true">&rsaquo;</span>
+        <span className="text-[#1f1a13]">Section {sectionData.sectionNumber}</span>
       </nav>
 
-      <TabbedSectionReader
+      <BookSectionReader
         data={sectionData}
         summary={sectionData.summaryMDXContent ? <MDXSummary source={sectionData.summaryMDXContent} /> : null}
-        initialTab={initialTab}
         prevSection={adjacent.prev ? {
           title: adjacent.prev.title,
           number: adjacent.prev.number,

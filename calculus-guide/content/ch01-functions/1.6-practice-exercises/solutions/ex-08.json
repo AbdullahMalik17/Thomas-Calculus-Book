@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-08",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Domain with a Radical in the Denominator",
+  "exerciseReference": "Section 1.6, Exercise 8",
+  "originalTopic": "Domain of a Function",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "domain",
+    "square-root",
+    "rational-function"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the natural domain of y=1/sqrt(x-5), where the square root sits in the denominator.",
+  "finalAnswer": "(5,\\infty)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Merge the Two Restrictions",
+      "mathExpression": "x-5>0",
+      "explanation": "The radicand must be nonnegative for the root to exist, and it cannot be zero because the root divides; together this means x-5 must be strictly positive.",
+      "why": "sqrt(0)=0 in a denominator would still be division by zero, so equality is excluded."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve the Strict Inequality",
+      "mathExpression": "x>5",
+      "explanation": "Adding 5 to both sides yields x > 5.",
+      "why": "Adding a constant preserves strict inequalities."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State the Domain",
+      "mathExpression": "(5,\\infty)",
+      "explanation": "All inputs strictly greater than 5 work, and the endpoint 5 itself does not.",
+      "why": "The open parenthesis at 5 records that the function is undefined there."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1/sqrt(x-5)",
+    "expected": "1/sqrt(x-5)",
+    "variable": "x"
+  }
+}

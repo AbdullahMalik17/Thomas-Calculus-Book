@@ -1,0 +1,59 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/definitions",
+  "chapter": "ch01",
+  "section": "1.6",
+  "title": "Core Tools: Chapter 1 Practice Exercises",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-natural-domain-rules",
+      "title": "Three Natural-Domain Restrictions",
+      "category": "rule",
+      "latex": "\\sqrt{\\,\\cdot\\,} \\Rightarrow \\text{radicand} \\ge 0, \\qquad \\frac{1}{\\,\\cdot\\,} \\Rightarrow \\text{denominator} \\ne 0, \\qquad \\frac{1}{\\sqrt{\\,\\cdot\\,}} \\Rightarrow \\text{radicand} > 0",
+      "statement": "When a function is given by a formula, exclude inputs that make an even root negative or a denominator (or a denominator's root) zero; everything else is allowed.",
+      "conditions": ["Real-valued functions only", "Combine restrictions with intersection, one restriction at a time"],
+      "explanation": "Nearly every domain exercise in this set is solved by scanning the formula for fractions and square roots and writing down the forbidden values. Even powers like x^(2/3) impose no restriction because the cube root accepts all real numbers.",
+      "keyTakeaway": "Read the formula left to right and collect the restrictions; the domain is what survives."
+    },
+    {
+      "id": "def-difference-quotient",
+      "title": "Difference Quotient",
+      "category": "formula",
+      "latex": "\\frac{f(x+h)-f(x)}{h}, \\qquad h \\ne 0",
+      "statement": "The difference quotient measures the average rate of change of f over an interval of length h; simplifying it is the algebraic precursor to the derivative.",
+      "conditions": ["h must be nonzero before canceling", "For sqrt functions, rationalize the numerator"],
+      "explanation": "Substitute x+h everywhere, expand carefully, subtract f(x), then factor h out of every remaining term and cancel. The h that cancels is exactly why the expression stays finite as h shrinks.",
+      "keyTakeaway": "If h does not cancel from the denominator, an algebra mistake was made."
+    },
+    {
+      "id": "def-parity-tests",
+      "title": "Even/Odd Algebraic Test",
+      "category": "test",
+      "latex": "f(-x)=f(x) \\;\\Rightarrow\\; \\text{even}, \\qquad f(-x)=-f(x) \\;\\Rightarrow\\; \\text{odd}",
+      "statement": "Replace x by -x throughout the formula: if the expression is unchanged the function is even (y-axis symmetry); if every term flips sign it is odd (origin symmetry).",
+      "conditions": ["A single mixed term like x^2 + x defeats both tests", "Domain must itself be symmetric about 0"],
+      "explanation": "Powers tell the story instantly for polynomials: only even powers means even, only odd powers means odd, a mixture means neither. Products inherit parity the way signs multiply.",
+      "keyTakeaway": "Parity is decided term by term — one wrong power spoils both symmetries."
+    },
+    {
+      "id": "def-transformation-table",
+      "title": "Standard Graph Transformations",
+      "category": "rule",
+      "latex": "y=f(x)+c \\;\\uparrow, \\quad y=f(x-c) \\;\\rightarrow, \\quad y=-f(x) \\;\\text{flip } x\\text{-axis}, \\quad y=f(kx) \\;\\text{shrink } 1/k",
+      "statement": "Vertical changes (outside the function argument) act as written; horizontal changes (inside the argument) act opposite to what the sign suggests.",
+      "conditions": ["Inside multiplications scale horizontally by 1/k", "Reflections and shifts do not commute in general"],
+      "explanation": "The most common error is reading f(x+3) as a shift right. Inside the argument, + moves left because the input must be 3 smaller to reach the same value.",
+      "keyTakeaway": "Outside behaves honestly; inside behaves oppositely."
+    },
+    {
+      "id": "def-composition-domain",
+      "title": "Domain of a Composition",
+      "category": "rule",
+      "latex": "\\operatorname{dom}(f \\circ g) = \\{\\, x \\in \\operatorname{dom}(g) : g(x) \\in \\operatorname{dom}(f) \\,\\}",
+      "statement": "The domain of f(g(x)) consists of the inputs x that g accepts AND whose outputs g(x) the outer function f also accepts.",
+      "conditions": ["Always impose restrictions before simplifying the composed formula"],
+      "explanation": "Simplifying first can erase visible warnings: for f = sqrt and g = 1/(x-1) the composition equals sqrt(1/(x-1)), and the fraction must be nonnegative, which forces x > 1, not merely x different from 1.",
+      "keyTakeaway": "Restrict first, simplify second — the domain is decided before the algebra."
+    }
+  ]
+}

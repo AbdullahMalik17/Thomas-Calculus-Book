@@ -1,0 +1,44 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-18",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "Window for a Downward-Shifted Parabola",
+  "exerciseReference": "Section 1.4, Exercise 18",
+  "originalTopic": "Viewing window for a translated parabola",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["graphing-software", "viewing-window", "parabola", "vertical-shift"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "The graph of y = x^2 - 3 is the parabola y = x^2 moved down 3 units. Find its vertex and zeros, then recommend a window that shows the vertex, both intercepts with the x-axis, and a clear view of the upward arms.",
+  "finalAnswer": "[-5, 5] \\times [-4, 22]",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify the vertex",
+      "mathExpression": "y = x^2 - 3 \\quad \\Rightarrow \\quad \\text{vertex } (0, -3)",
+      "explanation": "With no linear term, the axis of symmetry is x = 0 and the minimum value is -3.",
+      "why": "The lowest point of an upward-opening parabola sets the required bottom of the y-window."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve for the zeros",
+      "mathExpression": "x^2 - 3 = 0 \\ \\Rightarrow \\ x = \\pm\\sqrt{3} \\approx \\pm 1.732",
+      "explanation": "The curve crosses the x-axis at about -1.732 and 1.732, both comfortably inside a window of width 10 centered at the origin.",
+      "why": "The intercepts are the features a reader looks for first, so they must not be crowded against the frame."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Fix the vertical span from the arms",
+      "mathExpression": "x = \\pm 5: \\quad y = 25 - 3 = 22",
+      "explanation": "Taking x from -5 to 5 makes the arms rise to y = 22, so the window [-5, 5] by [-4, 22] shows the vertex just above the bottom edge and the full opening of the parabola.",
+      "why": "Choosing the y-max from the endpoint height keeps the parabola's steepness honest instead of artificially flattening it."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(x - sqrt(3))*(x + sqrt(3))",
+    "expected": "x**2 - 3",
+    "variable": "x"
+  }
+}

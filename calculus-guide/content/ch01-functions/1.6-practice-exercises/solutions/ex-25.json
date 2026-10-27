@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-25",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "The Product sin x cos x Is Odd",
+  "exerciseReference": "Section 1.6, Exercise 25",
+  "originalTopic": "Even and Odd Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "even-odd",
+    "trigonometric"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether g(x)=sin x cos x is even, odd, or neither.",
+  "finalAnswer": "\\text{odd}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Negate the Input",
+      "mathExpression": "g(-x)=\\sin(-x)\\cos(-x)",
+      "explanation": "Substitute -x into both factors of the product.",
+      "why": "Products inherit symmetry through the symmetry of each factor."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply the Basic Trig Parities",
+      "mathExpression": "\\sin(-x)\\cos(-x)=(-\\sin x)(\\cos x)=-\\sin x\\cos x",
+      "explanation": "Sine is odd and cosine is even, so exactly one minus sign appears.",
+      "why": "sin(-x) = -sin x while cos(-x) = cos x for all x."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude",
+      "mathExpression": "g(-x)=-g(x)\\Rightarrow\\text{odd}",
+      "explanation": "The product flips sign under negation of the input, so g is odd; equivalently g(x)=(sin 2x)/2, an odd function.",
+      "why": "An odd function's graph is symmetric under a half-turn about the origin."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sin(-x)*cos(-x)",
+    "expected": "-sin(x)*cos(x)",
+    "variable": "x"
+  }
+}

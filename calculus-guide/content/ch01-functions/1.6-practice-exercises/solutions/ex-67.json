@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-67",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Solving the Cylinder Formula for Height",
+  "exerciseReference": "Section 1.6, Exercise 67",
+  "originalTopic": "Chapter 1 Practice: Mathematical Modeling",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "modeling",
+    "inverse-relationships"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A right circular cylinder has fixed volume $100$ cubic units. Write the height $h$ as a function of the base radius $r$, and note how $h$ behaves as $r$ grows.",
+  "finalAnswer": "h(r)=\\frac{100}{\\pi r^{2}}, \\quad r>0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Start from the Volume Law",
+      "explanation": "Cylinder volume equals base area $\\pi r^2$ times height $h$; set this product to the fixed value $100$.",
+      "why": "The constraint equation couples the two free dimensions.",
+      "mathExpression": "\\pi r^{2}h = 100"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Isolate the Height",
+      "explanation": "Dividing both sides by $\\pi r^{2}$ expresses $h$ purely in terms of $r$.",
+      "why": "Solving for one variable produces a genuine function of the other.",
+      "mathExpression": "h=\\frac{100}{\\pi r^{2}}"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Describe Domain and Behavior",
+      "explanation": "Radii must be positive. The inverse-square law means a slender cylinder is very tall and a squat one is nearly flat.",
+      "why": "Asymptotic behavior of a reciprocal-square model captures the thin-versus-wide trade-off.",
+      "mathExpression": "r>0,\\quad h\\to\\infty \\text{ as } r\\to 0^{+},\\quad h\\to 0 \\text{ as } r\\to\\infty"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "pi*x**2*(100/(pi*x**2))",
+    "expected": "100",
+    "variable": "x"
+  }
+}

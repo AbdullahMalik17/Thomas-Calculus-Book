@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-41",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Reciprocal Composed with a Shift",
+  "exerciseReference": "Section 1.6, Exercise 41",
+  "originalTopic": "Chapter 1 Practice: Function Composition",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "composition",
+    "domain"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Suppose $f(x)=\\dfrac{1}{x}$ and $g(x)=x+2$. Find a formula for $(f\\circ g)(x)$ and describe the values of $x$ that must be excluded.",
+  "finalAnswer": "(f\\circ g)(x)=\\frac{1}{x+2}, \\quad x\\ne -2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up the Composite",
+      "explanation": "The reciprocal rule $f(u)=1/u$ takes $g(x)=x+2$ as its input.",
+      "why": "Substituting the whole inner expression into the denominator preserves the structure of $f$.",
+      "mathExpression": "(f\\circ g)(x) = f\\big(g(x)\\big) = \\frac{1}{g(x)}"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Write the Explicit Formula",
+      "explanation": "Replacing $u$ by $x+2$ gives $(f\\circ g)(x)=\\dfrac{1}{x+2}$.",
+      "why": "The composite inherits the algebraic form of the outer function.",
+      "mathExpression": "\\frac{1}{x+2}"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Determine the Excluded Input",
+      "explanation": "The fraction fails only when its denominator vanishes, i.e. at $x=-2$, so the domain is all reals except $-2$.",
+      "why": "Reciprocal-type composites break precisely where the outer denominator becomes zero.",
+      "mathExpression": "x+2=0 \\implies x=-2"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1/(x + 2)",
+    "expected": "1/(x + 2)",
+    "variable": "x"
+  }
+}

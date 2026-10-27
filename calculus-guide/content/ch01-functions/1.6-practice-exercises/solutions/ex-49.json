@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-49",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Exact Cosine in the Third Quadrant",
+  "exerciseReference": "Section 1.6, Exercise 49",
+  "originalTopic": "Chapter 1 Practice: Exact Trigonometric Values",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "trigonometry",
+    "exact-values"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate $\\cos\\left(\\dfrac{5\\pi}{4}\\right)$ exactly, showing how the reference angle and quadrant determine the answer.",
+  "finalAnswer": "\\cos\\left(\\frac{5\\pi}{4}\\right)=-\\frac{\\sqrt{2}}{2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Reference Angle and Quadrant",
+      "explanation": "The angle exceeds $\\pi$ by $\\pi/4$, placing it in the third quadrant with reference angle $\\pi/4$.",
+      "why": "Writing the angle as $\\pi$ plus an acute part immediately reveals both facts.",
+      "mathExpression": "\\frac{5\\pi}{4}=\\pi+\\frac{\\pi}{4} \\implies \\text{Quadrant III, reference } \\frac{\\pi}{4}"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Take the Magnitude from the Special Value",
+      "explanation": "Reference-angle reasoning transfers the known value $\\cos(\\pi/4)=\\sqrt{2}/2$ to $5\\pi/4$ in absolute size.",
+      "why": "Every angle shares its reference angle's trig magnitude.",
+      "mathExpression": "\\left|\\cos\\frac{5\\pi}{4}\\right|=\\cos\\frac{\\pi}{4}=\\frac{\\sqrt{2}}{2}"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Attach the Negative Sign",
+      "explanation": "In Quadrant III the unit-circle $x$-coordinate is negative, and cosine equals that coordinate.",
+      "why": "Only tangent-type functions are positive in the third quadrant, so cosine must be negative there.",
+      "mathExpression": "\\cos\\frac{5\\pi}{4}=-\\frac{\\sqrt{2}}{2}"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "cos(5*pi/4)",
+    "expected": "-sqrt(2)/2",
+    "variable": "x"
+  }
+}

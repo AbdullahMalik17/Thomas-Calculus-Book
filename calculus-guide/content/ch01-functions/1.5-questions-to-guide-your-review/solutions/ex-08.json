@@ -1,0 +1,44 @@
+{
+  "id": "ch01-functions/1.5-questions-to-guide-your-review/solutions/ex-08",
+  "chapter": "ch01",
+  "section": "1.5",
+  "type": "solution",
+  "title": "Radian Measure and Why Calculus Demands It",
+  "exerciseReference": "Section 1.5, Exercise 8",
+  "originalTopic": "Trigonometry: Radian Measure",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": ["review", "concepts", "radians", "trigonometry"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Explain what radian measure means geometrically, convert 180 degrees to radians, and justify why calculus formulas for trigonometric functions assume radians.",
+  "finalAnswer": "One radian is the angle whose intercepted arc equals the radius ($s = r\\theta$); $180^\\circ = \\pi$ radians. Calculus uses radians because limits like $\\lim_{\\theta \\to 0} \\sin\\theta/\\theta = 1$, and hence $\\tfrac{d}{dx}\\sin x = \\cos x$, hold only in radian measure.",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Define the Radian Geometrically",
+      "mathExpression": "s = r\\theta \\quad (\\theta \\text{ in radians})",
+      "explanation": "The radian measure of a central angle is the ratio of the intercepted arc length to the radius, theta = s/r. A full circle of arc 2*pi*r corresponds to 2*pi radians, so 180 degrees, a half turn, equals pi radians.",
+      "why": "Defining angle as an arc-to-radius ratio is what makes theta a pure dimensionless number, ready for calculus."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Examine the Fundamental Limit",
+      "mathExpression": "\\lim_{\\theta \\to 0} \\frac{\\sin \\theta}{\\theta} = 1 \\iff \\theta \\text{ measured in radians}",
+      "explanation": "The squeeze-theorem proof compares the areas of triangles and sectors, which requires arc length to equal radius times angle. In degrees this limit becomes 180/pi, since one degree subtends pi/180 of the radian arc.",
+      "why": "Every derivative of every trig function is built from this single limit, so its radian-dependence propagates everywhere."
+    },
+    {
+      "stepNumber": 3,
+      "title": "See the Cost of Using Degrees",
+      "mathExpression": "\\frac{d}{dx}\\sin(x^\\circ) = \\frac{\\pi}{180}\\cos(x^\\circ)",
+      "explanation": "If x were interpreted as degrees, each differentiation of sine or cosine would drag along a factor of pi/180. Series expansions, integrals, and the elegant solutions of differential equations like y'' = -y would all accumulate the same clutter.",
+      "why": "Radians are the unit that keeps the calculus of circular functions clean, which is why textbooks silently assume them."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "180*pi/180",
+    "expected": "pi",
+    "variable": "x"
+  }
+}

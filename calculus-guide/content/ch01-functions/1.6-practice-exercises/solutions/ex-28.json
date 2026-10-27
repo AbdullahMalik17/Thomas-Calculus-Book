@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-28",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "The Function x/(x^2+1) Is Odd",
+  "exerciseReference": "Section 1.6, Exercise 28",
+  "originalTopic": "Even and Odd Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "even-odd",
+    "rational-function"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Decide whether f(x)=x/(x^2+1) is even, odd, or neither.",
+  "finalAnswer": "\\text{odd}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Negate the Input",
+      "mathExpression": "f(-x)=\\frac{-x}{(-x)^2+1}=\\frac{-x}{x^2+1}",
+      "explanation": "The numerator flips sign while the squared denominator is unchanged.",
+      "why": "(-x)^2 = x^2, so only the top absorbs the minus."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compare with -f(x)",
+      "mathExpression": "\\frac{-x}{x^2+1}=-\\frac{x}{x^2+1}=-f(x)",
+      "explanation": "Pulling the minus sign out front shows the result equals minus the original function.",
+      "why": "Factoring -1 from a fraction gives the negative of the fraction."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude",
+      "mathExpression": "f(-x)=-f(x)\\Rightarrow\\text{odd}",
+      "explanation": "The odd identity holds for all real x (the domain is symmetric), so f is odd and its graph has origin symmetry.",
+      "why": "The domain of f is all reals, so the oddness test applies at every point."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(-x)/((-x)**2+1)",
+    "expected": "-x/(x**2+1)",
+    "variable": "x"
+  }
+}

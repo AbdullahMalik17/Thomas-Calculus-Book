@@ -1,0 +1,51 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-17",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "A Lissajous Figure-Eight from x = sin t, y = sin 2t",
+  "exerciseReference": "Section 1.4, Exercise 17",
+  "originalTopic": "Lissajous curve identification and symmetry",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["graphing-software", "parametric-curves", "lissajous", "symmetry"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Graph the Lissajous curve x = sin t, y = sin 2t for 0 <= t <= 2*pi. Describe its shape, test it for symmetry, and find an algebraic relation between x and y that the curve satisfies.",
+  "finalAnswer": "y^2 = 4x^2(1 - x^2) \\quad (\\text{figure-eight, symmetric about the origin and both axes}) ",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Use the double-angle identity",
+      "mathExpression": "y = \\sin 2t = 2\\sin t\\cos t = 2x\\cos t",
+      "explanation": "Because x = sin t, the y-coordinate factors as twice x times cos t, linking the two coordinates directly.",
+      "why": "Rewriting y in terms of x and the remaining trig function is the standard route to eliminating the parameter."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Eliminate t",
+      "mathExpression": "y^2 = 4x^2\\cos^2 t = 4x^2(1 - \\sin^2 t) = 4x^2(1 - x^2)",
+      "explanation": "Squaring removes the sign of cos t, so the whole curve lies on the algebraic set y^2 = 4x^2(1 - x^2) with |x| <= 1.",
+      "why": "Squaring is necessary here because one value of x corresponds to two values of cos t, which is precisely why the curve doubles back on itself."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Read the shape and symmetry",
+      "mathExpression": "(x, y) \\to (-x, -y), \\qquad y_{\\max} = 1 \\text{ at } x = \\tfrac{\\sqrt{2}}{2}",
+      "explanation": "Replacing t by t + pi sends (x, y) to (-x, -y), giving origin symmetry, and the relation is unchanged when x or y alone is negated, so the plot is a figure-eight crossing itself at the origin (t = 0, pi, 2*pi).",
+      "why": "Symmetry checks let you plot only part of the curve and confirm that the software's output is not distorted."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Pick the window",
+      "mathExpression": "[-1.5, 1.5] \\times [-1.5, 1.5]",
+      "explanation": "Since |x| <= 1 and |y| <= 1, a slightly padded square window with equal scaling captures both lobes and keeps the crossing at the origin visible.",
+      "why": "A non-square aspect ratio would visually stretch one lobe and hide the balanced eight shape."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(2*sin(x)*cos(x))**2",
+    "expected": "4*sin(x)**2*cos(x)**2",
+    "variable": "x"
+  }
+}

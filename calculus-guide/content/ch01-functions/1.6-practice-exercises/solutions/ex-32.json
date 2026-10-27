@@ -1,0 +1,55 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-32",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Horizontal Shrink: y = f(2x)",
+  "exerciseReference": "Section 1.6, Exercise 32",
+  "originalTopic": "Graph Transformations",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "transformation",
+    "scaling"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Explain how the graph of y=f(2x) is obtained from the graph of y=f(x), and identify the point corresponding to a feature originally at x=4.",
+  "finalAnswer": "\\text{horizontal shrink by factor } \\tfrac12:\\ (a,b)\\mapsto(\\tfrac{a}{2},b)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Match Function Values",
+      "mathExpression": "f(2x)=f(a)\\ \\text{when}\\ x=\\frac{a}{2}",
+      "explanation": "The new curve reaches the old value f(a) halfway to where the old curve reached it.",
+      "why": "Solving 2x=a gives x=a/2."
+    },
+    {
+      "stepNumber": 2,
+      "title": "State the Scaling",
+      "mathExpression": "(a,b)\\mapsto\\left(\\frac{a}{2},b\\right)",
+      "explanation": "Every point keeps its height but its distance from the y-axis is halved: a horizontal shrink toward the y-axis by a factor of 1/2.",
+      "why": "Multiplying the input by k > 1 compresses the graph horizontally by 1/k."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Locate the Shifted Feature",
+      "mathExpression": "x=4 \\text{ moves to } x=2",
+      "explanation": "A feature (say an intercept or peak) at horizontal position 4 now appears at position 2, since 2x=4 requires x=2.",
+      "why": "Applying the map a -> a/2 with a=4."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Describe the Sketch",
+      "mathExpression": "\\text{squeezed horizontally}",
+      "explanation": "The curve looks the same but pinched toward the y-axis; points on the y-axis (x=0) remain fixed.",
+      "why": "x=0 is the only input satisfying x=x/2, so that column is stationary."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "f(2*x)",
+    "expected": "f(2*x)",
+    "variable": "x"
+  }
+}

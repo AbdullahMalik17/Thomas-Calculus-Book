@@ -1,0 +1,55 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-12",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Range of the Absolute Value Function",
+  "exerciseReference": "Section 1.6, Exercise 12",
+  "originalTopic": "Range of a Function",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "range",
+    "absolute-value"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine the range of f(x)=|x| over all real inputs.",
+  "finalAnswer": "[0,\\infty)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Use Nonnegativity of |x|",
+      "mathExpression": "|x|\\ge 0",
+      "explanation": "Distance from zero is never negative by definition of absolute value.",
+      "why": "The absolute value outputs max(x, -x), which is always >= 0."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Check Zero Is Attained",
+      "mathExpression": "f(0)=0",
+      "explanation": "The input x=0 produces the smallest possible output 0, so the endpoint is included.",
+      "why": "Range membership requires an actual preimage, and 0 has one."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Check All Positives Occur",
+      "mathExpression": "|a|=a \\text{ for every } a>0",
+      "explanation": "Any positive target a is reached at x=a, and arbitrarily large outputs arise from large inputs.",
+      "why": "Every nonnegative value is its own absolute value, so nothing above 0 is missed."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Conclude",
+      "mathExpression": "[0,\\infty)",
+      "explanation": "The outputs are precisely the nonnegative reals.",
+      "why": "Combining the lower bound with attainment of every value above it gives the closed ray."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "Abs(x)",
+    "expected": "Abs(x)",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-11",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Range of the Reciprocal Function",
+  "exerciseReference": "Section 1.6, Exercise 11",
+  "originalTopic": "Range of a Function",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "range",
+    "reciprocal"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "On its natural domain, describe the range of f(x)=1/x.",
+  "finalAnswer": "(-\\infty,0)\\cup(0,\\infty)\\ \\text{(all nonzero reals)}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Observe Zero Is Impossible",
+      "mathExpression": "\\frac{1}{x}\\neq 0 \\text{ for all } x",
+      "explanation": "No matter how large |x| gets, 1/x stays a nonzero fraction; it merely approaches 0.",
+      "why": "A fraction 1/x equals zero only if 1=0, which never happens."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Show Every Nonzero Value Is Hit",
+      "mathExpression": "x=\\frac{1}{y} \\;\\Rightarrow\\; f(x)=y",
+      "explanation": "Given any y != 0, the input x=1/y is legal and satisfies 1/x = y.",
+      "why": "The reciprocal map is its own inverse, so it reaches every nonzero target."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State the Range",
+      "mathExpression": "(-\\infty,0)\\cup(0,\\infty)",
+      "explanation": "The function takes all positive and all negative values but never zero.",
+      "why": "Removing the single unattainable output 0 splits the line into two open rays."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1/x",
+    "expected": "1/x",
+    "variable": "x"
+  }
+}

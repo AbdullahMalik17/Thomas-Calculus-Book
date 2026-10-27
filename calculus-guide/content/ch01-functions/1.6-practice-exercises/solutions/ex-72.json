@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-72",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Line Data from a Point and a Slope",
+  "exerciseReference": "Section 1.6, Exercise 72",
+  "originalTopic": "Chapter 1 Practice: Mathematical Modeling",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "modeling",
+    "linear-functions"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A line crosses the $y$-axis at $(0,3)$ and falls at a constant rate of $2$ units per unit of $x$. Write its equation and locate where the line meets the $x$-axis.",
+  "finalAnswer": "y=-2x+3, \\qquad x\\text{-intercept}=\\frac{3}{2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Assemble the Slope-Intercept Form",
+      "explanation": "The point $(0,3)$ makes the $y$-intercept $b=3$, and the falling rate gives slope $m=-2$.",
+      "why": "Slope-intercept form reads directly off the given geometric data.",
+      "mathExpression": "y=mx+b,\\quad m=-2,\\ b=3"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Write the Equation",
+      "explanation": "Combining the parameters yields the linear model $y=-2x+3$.",
+      "why": "Every unit step right drops the line by two units.",
+      "mathExpression": "y=-2x+3"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Solve for the x-Intercept",
+      "explanation": "Setting $y=0$ and solving gives $x=3/2$, so the line crosses the horizontal axis at $(3/2,0)$.",
+      "why": "On the $x$-axis the output must vanish, which converts the problem to solving a linear equation.",
+      "mathExpression": "0=-2x+3 \\implies x=\\frac{3}{2}"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "-2*Rational(3, 2) + 3",
+    "expected": "0",
+    "variable": "x"
+  }
+}

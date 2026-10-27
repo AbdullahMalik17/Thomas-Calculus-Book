@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-24",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Cosine Is an Even Function",
+  "exerciseReference": "Section 1.6, Exercise 24",
+  "originalTopic": "Even and Odd Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "even-odd",
+    "trigonometric"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Using the unit circle, decide whether f(x)=cos x is even, odd, or neither.",
+  "finalAnswer": "\\text{even}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Negate the Angle on the Unit Circle",
+      "mathExpression": "(\\cos(-x),\\sin(-x)) \\text{ is the mirror of } (\\cos x,\\sin x)",
+      "explanation": "Reversing the angle reflects the circle point across the x-axis, which preserves the horizontal coordinate.",
+      "why": "The x-coordinate of the unit-circle point is the cosine value."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Read Off the Identity",
+      "mathExpression": "\\cos(-x)=\\cos x",
+      "explanation": "Because the horizontal coordinate is untouched by the reflection, cosine of a negated angle equals cosine of the angle.",
+      "why": "Reflection across the x-axis changes only the vertical coordinate."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Classify",
+      "mathExpression": "f(-x)=f(x)\\Rightarrow\\text{even}",
+      "explanation": "The identity holds for every real x, so cosine is an even function; its graph mirrors across the y-axis.",
+      "why": "Meeting the definition f(-x)=f(x) globally is exactly evenness."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "cos(-x)",
+    "expected": "cos(x)",
+    "variable": "x"
+  }
+}

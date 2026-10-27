@@ -1,0 +1,44 @@
+{
+  "id": "ch01-functions/1.5-questions-to-guide-your-review/solutions/ex-04",
+  "chapter": "ch01",
+  "section": "1.5",
+  "type": "solution",
+  "title": "Natural Domains of Three Formulas",
+  "exerciseReference": "Section 1.5, Exercise 4",
+  "originalTopic": "Domain: Natural Domain Computation",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["review", "concepts", "domain"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Define what a natural domain is, then find the natural domains of f(x) = sqrt(x), g(x) = 1/(x^2 - 4), and h(x) = x/(x^2 + 1).",
+  "finalAnswer": "Natural domains: $\\sqrt{x}$ on $[0, \\infty)$; $\\dfrac{1}{x^2-4}$ on $\\{x : x \\ne \\pm 2\\}$; $\\dfrac{x}{x^2+1}$ on $(-\\infty, \\infty)$.",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Define the Natural Domain",
+      "mathExpression": "D_{\\text{natural}} = \\{x \\in \\mathbb{R} : f(x) \\text{ is defined by the formula}\\}",
+      "explanation": "When a function is given only by a formula with no domain stated, we assume the largest set of real numbers on which the formula makes sense. Two usual culprits restrict this set: even roots of negative quantities and division by zero.",
+      "why": "The definition tells you exactly which algebraic checks to run."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Rule Out Negative Radicands",
+      "mathExpression": "\\sqrt{x} \\text{ defined} \\iff x \\ge 0",
+      "explanation": "For f(x) = sqrt(x), the square root requires a nonnegative radicand, so the natural domain is [0, infinity).",
+      "why": "Even roots of negative numbers are undefined in the real number system."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Rule Out Zero Denominators",
+      "mathExpression": "x^2 - 4 = (x-2)(x+2) = 0 \\implies x = \\pm 2",
+      "explanation": "For g(x) = 1/(x^2 - 4), the denominator vanishes at x = 2 and x = -2, so the natural domain is all reals except ±2. For h(x) = x/(x^2 + 1), the denominator satisfies x^2 + 1 >= 1 and never vanishes, so the natural domain is all real numbers.",
+      "why": "Factorizing the denominator exposes exactly which points must be removed, while a strictly positive denominator removes none."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1/(x**2 - 4)",
+    "expected": "1/((x - 2)*(x + 2))",
+    "variable": "x"
+  }
+}

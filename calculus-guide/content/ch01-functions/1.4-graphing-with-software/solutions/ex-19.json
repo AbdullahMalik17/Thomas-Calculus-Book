@@ -1,0 +1,44 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-19",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "Extrema of a Quartic W-shaped Curve",
+  "exerciseReference": "Section 1.4, Exercise 19",
+  "originalTopic": "Finding all local extrema of a quartic",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["graphing-software", "extrema", "quartic", "second-derivative-test"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A quartic like f(x) = x^4 - 4x^2 + 2 has three turning points, and a coarse window can make the middle one disappear. Locate all local maxima and local minima and state their values.",
+  "finalAnswer": "\\text{Local maximum } f(0) = 2; \\quad \\text{local minima } f(\\pm\\sqrt{2}) = -2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Differentiate and factor",
+      "mathExpression": "f'(x) = 4x^3 - 8x = 4x(x^2 - 2) = 0 \\ \\Rightarrow \\ x = 0, \\pm\\sqrt{2}",
+      "explanation": "The three critical numbers are 0 and approximately plus or minus 1.414, matching the W shape of the quartic.",
+      "why": "A degree-four polynomial has at most three turning points, so finding three critical numbers means none are missing."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Classify with the second derivative",
+      "mathExpression": "f''(x) = 12x^2 - 8, \\qquad f''(0) = -8 < 0, \\quad f''(\\pm\\sqrt{2}) = 16 > 0",
+      "explanation": "The negative value at x = 0 makes it a local maximum; the positive values at x = plus or minus sqrt(2) make those local minima.",
+      "why": "Concavity decides the type of each turning point, which a picture alone can suggest but not guarantee."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate the extrema",
+      "mathExpression": "f(0) = 2, \\qquad f(\\pm\\sqrt{2}) = 4 - 8 + 2 = -2",
+      "explanation": "The peak sits at (0, 2) and the two valleys at (sqrt(2), -2) and (-sqrt(2), -2), so a window such as [-2.5, 2.5] by [-3, 4] shows the complete W.",
+      "why": "The three extreme values determine the vertical span needed, and equal depths of the two valleys confirm the even symmetry of the quartic."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "4*x**3 - 8*x",
+    "expected": "4*x*(x**2 - 2)",
+    "variable": "x"
+  }
+}

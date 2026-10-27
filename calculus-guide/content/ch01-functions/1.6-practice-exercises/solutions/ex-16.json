@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-16",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Difference Quotient of the Reciprocal Function",
+  "exerciseReference": "Section 1.6, Exercise 16",
+  "originalTopic": "Difference Quotient",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "difference-quotient",
+    "rational-function"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For f(x)=1/x, simplify the difference quotient (f(x+h)-f(x))/h with h != 0.",
+  "finalAnswer": "-\\frac{1}{x(x+h)}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Write the Numerator as Fraction Difference",
+      "mathExpression": "\\frac{1}{x+h}-\\frac{1}{x}",
+      "explanation": "Substituting x+h and x into the reciprocal rule gives two fractions whose difference is the numerator.",
+      "why": "The quotient's numerator is f(x+h)-f(x)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Combine Over a Common Denominator",
+      "mathExpression": "\\frac{x-(x+h)}{x(x+h)}=\\frac{-h}{x(x+h)}",
+      "explanation": "The common denominator is x(x+h); the numerators combine to x-(x+h) = -h.",
+      "why": "Subtracting fractions requires a shared denominator."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Divide by h and Cancel",
+      "mathExpression": "\\frac{1}{h}\\cdot\\frac{-h}{x(x+h)}=-\\frac{1}{x(x+h)}",
+      "explanation": "Dividing by h cancels the factor h in the numerator, leaving the simplified result.",
+      "why": "h != 0 justifies the cancellation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(1/(x+h) - 1/x)/h",
+    "expected": "-1/(x*(x+h))",
+    "variable": "x"
+  }
+}

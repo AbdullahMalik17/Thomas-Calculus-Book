@@ -1,0 +1,52 @@
+{
+  "id": "ch01-functions/1.7-additional-and-advanced-exercises/solutions/ex-15",
+  "chapter": "ch01",
+  "section": "1.7",
+  "type": "solution",
+  "title": "Maximum-Area Rectangle Inscribed in a Circle",
+  "exerciseReference": "Section 1.7, Exercise 15",
+  "originalTopic": "Optimization with Geometry",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["optimization", "rectangle", "circle", "extremum"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Among all rectangles inscribed in a circle of radius 1, find the dimensions that maximize the area and compute that maximum area.",
+  "finalAnswer": "\\text{square of side } \\sqrt{2}, \\qquad A_{\\max} = 2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Translate Inscribing into a Constraint",
+      "mathExpression": "w^2 + h^2 = (2 \\cdot 1)^2 = 4",
+      "explanation": "The diagonal of an inscribed rectangle is a diameter of the circle, so the Pythagorean theorem links width w and height h to the diameter 2.",
+      "why": "A rectangle is cyclic with its center at the circle's center; the diagonal must therefore span the full diameter 2r = 2."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Square the Objective",
+      "mathExpression": "A = wh, \\qquad A^2 = w^2 h^2",
+      "explanation": "Maximizing positive A is equivalent to maximizing A^2, which is a product of the squared sides u = w^2 and v = h^2 subject to u + v = 4.",
+      "why": "Squaring is an increasing map on positive areas, so it preserves the location of the maximum while linearizing the constraint."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Apply the Fixed-Sum Product Principle",
+      "mathExpression": "uv \\le \\left(\\frac{u+v}{2}\\right)^2 = 4 \\;\\Rightarrow\\; A^2 \\le 4, \\; A \\le 2",
+      "explanation": "For a fixed sum, the product uv is largest when u = v = 2 (AM-GM, or completing the square on u(4-u)); this caps the area at 2.",
+      "why": "The parabola u(4 - u) opens downward with vertex at u = 2, so the equal-split configuration is the unique maximizer."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Recover the Dimensions and Verify Attainability",
+      "mathExpression": "w^2 = h^2 = 2 \\;\\Rightarrow\\; w = h = \\sqrt{2}, \\quad (\\sqrt{2})^2 + (\\sqrt{2})^2 = 4 \\;\\checkmark",
+      "explanation": "Both squared sides equal 2, giving the square of side sqrt(2); it satisfies the diagonal constraint and attains area sqrt(2) * sqrt(2) = 2, so the bound is sharp.",
+      "why": "An upper bound proven from the constraint and achieved by a concrete feasible rectangle is by definition the maximum."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "sqrt(2)*sqrt(2)",
+    "expected": "2",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-23",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "The Fixed Point Reached by Repeatedly Taking Cosines",
+  "exerciseReference": "Section 1.4, Exercise 23",
+  "originalTopic": "Fixed-point iteration and convergence to the Dottie number",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": ["graphing-software", "iteration", "fixed-point", "transcendental-equation"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Starting with x_0 = 1 and repeatedly pressing the cosine key (radians), the display settles to a single number. Explain why the iteration x_{n+1} = cos(x_n) converges, identify the equation its limit satisfies, and give the limiting value.",
+  "finalAnswer": "x \\approx 0.739085 \\quad (\\text{the unique solution of } x = \\cos x)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Run the iteration and watch it settle",
+      "mathExpression": "x_0 = 1,\\ x_1 = 0.5403,\\ x_2 = 0.8577,\\ x_3 = 0.6543,\\ x_4 = 0.7935,\\ \\dots",
+      "explanation": "Successive values oscillate with shrinking amplitude and by the tenth iterate already agree with 0.739 to several decimals.",
+      "why": "Numerical iteration is often the only way to see a fixed point, since x = cos x has no closed-form algebraic solution."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Show the fixed point is unique",
+      "mathExpression": "g(x) = \\cos x - x, \\qquad g'(x) = -\\sin x - 1 \\le 0, \\quad g' < 0 \\ \\text{except at isolated points}",
+      "explanation": "The function g is strictly decreasing, and since g(0) = 1 > 0 while g(1) = cos(1) - 1 approx -0.4597 < 0, it crosses zero exactly once.",
+      "why": "Monotonicity plus a sign change proves the calculator is converging to the one and only solution, not to one of several."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Explain convergence with the slope at the fixed point",
+      "mathExpression": "\\left|\\frac{d}{dx}\\cos x\\right|_{x = x^*} = |{-\\sin x^*}| = \\sin(0.739085) \\approx 0.6736 < 1",
+      "explanation": "Near the limit the error is multiplied by about 0.67 each step, so the iteration is a contraction and the errors decay geometrically.",
+      "why": "A fixed-point iteration converges precisely when the absolute derivative of the iterating function is less than 1 at the fixed point."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Read the answer graphically",
+      "mathExpression": "y = \\cos x \\quad \\text{and} \\quad y = x",
+      "explanation": "Plotting both curves on [-1, 2] by [-1, 2] shows a single crossing at x approximately 0.739085, and the staircase of iterates drawn between the curves spirals into that point.",
+      "why": "The cobweb picture connects the calculator's numeric behavior to the geometric meaning of a fixed point as an intersection with y = x."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "cos(x) - x",
+    "expected": "cos(x) - x",
+    "variable": "x"
+  }
+}

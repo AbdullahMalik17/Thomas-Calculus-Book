@@ -1,0 +1,52 @@
+{
+  "id": "ch01-functions/1.7-additional-and-advanced-exercises/solutions/ex-10",
+  "chapter": "ch01",
+  "section": "1.7",
+  "type": "solution",
+  "title": "A Self-Inverse Rational Function: f(f(x)) = x",
+  "exerciseReference": "Section 1.7, Exercise 10",
+  "originalTopic": "Composition of Functions",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": ["advanced", "proof", "composition", "inverse-function"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Let f(x) = 2x/(x - 2) on its natural domain. Show that f composed with itself returns the input, f(f(x)) = x, for every admissible x, and identify where the composition is defined.",
+  "finalAnswer": "f(f(x)) = \\frac{4x}{x-2} \\cdot \\frac{x-2}{4} = x \\quad (x \\ne 2)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Substitute f into Itself",
+      "mathExpression": "f(f(x)) = \\frac{2\\,f(x)}{f(x) - 2} = \\frac{2 \\cdot \\frac{2x}{x-2}}{\\frac{2x}{x-2} - 2}",
+      "explanation": "Every occurrence of the input in the rule f = 2*(input)/(input - 2) is replaced by the whole fraction 2x/(x - 2).",
+      "why": "Composition means feeding the output of the inner copy into the outer rule; the substitution is purely mechanical."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Clear the Complex Fraction",
+      "mathExpression": "\\text{numerator} = \\frac{4x}{x-2}, \\qquad \\text{denominator} = \\frac{2x - 2(x-2)}{x-2} = \\frac{4}{x-2}",
+      "explanation": "The top doubles to 4x/(x-2); the bottom combines over the common denominator x-2, where the 2x terms cancel and leave the constant 4.",
+      "why": "Writing both tiers over the shared denominator x-2 exposes identical denominators that will cancel in the next division."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Divide and Recover x",
+      "mathExpression": "f(f(x)) = \\frac{4x/(x-2)}{4/(x-2)} = \\frac{4x}{4} = x",
+      "explanation": "Dividing the two tiers cancels the factor 4/(x-2) entirely, collapsing the composition to the identity map.",
+      "why": "For x != 2 the denominator 4/(x-2) is nonzero, so the division and cancellation are legitimate."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Audit the Admissible Inputs",
+      "mathExpression": "x \\ne 2, \\qquad f(x) = 2 \\iff 2x = 2(x-2) \\iff 0 = -4 \\;\\text{(impossible)}",
+      "explanation": "The inner f requires x != 2; the outer f additionally requires f(x) != 2, but that equation has no solution at all, so x = 2 is the only exclusion. (Checking the coefficient: f(f(x)) = x fails for the similar rule 2x/(x-1), whose composition gives 4x/(x+1).)",
+      "why": "A double composition of a Mobius map is the identity precisely when its coefficient matrix squares to a scalar multiple of the identity; the domain audit confirms the identity holds everywhere it is defined."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "2*(2*x/(x - 2))/(2*x/(x - 2) - 2)",
+    "expected": "x",
+    "variable": "x"
+  }
+}

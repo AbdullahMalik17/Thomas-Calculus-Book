@@ -1,0 +1,55 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-06",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Domain of a Semicircle Function",
+  "exerciseReference": "Section 1.6, Exercise 6",
+  "originalTopic": "Domain of a Function",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "domain",
+    "square-root"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "The graph of y=sqrt(4-x^2) is the upper half of a circle of radius 2 centered at the origin. Find its natural domain algebraically.",
+  "finalAnswer": "[-2,2]",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Impose the Radicand Condition",
+      "mathExpression": "4-x^2\\ge 0",
+      "explanation": "An even square root requires its contents to be nonnegative.",
+      "why": "sqrt(u) is real only for u >= 0."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Rearrange the Inequality",
+      "mathExpression": "x^2\\le 4",
+      "explanation": "Moving x^2 to the other side of 4-x^2 >= 0 gives x^2 <= 4.",
+      "why": "Adding x^2 to both sides preserves the inequality."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Convert to an Absolute-Value Bound",
+      "mathExpression": "|x|\\le 2",
+      "explanation": "The inequality x^2 <= 4 holds exactly when the distance of x from 0 is at most 2.",
+      "why": "For real x, x^2 <= a^2 is equivalent to |x| <= a."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Write the Interval",
+      "mathExpression": "[-2,2]",
+      "explanation": "Both endpoints satisfy 4-x^2=0, and sqrt(0)=0 is valid, so they are included.",
+      "why": "Closed brackets record that the boundary inputs are allowed."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(4 - x**2)",
+    "expected": "sqrt(4 - x**2)",
+    "variable": "x"
+  }
+}

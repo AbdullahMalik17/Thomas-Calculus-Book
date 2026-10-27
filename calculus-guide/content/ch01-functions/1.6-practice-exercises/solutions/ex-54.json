@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-54",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Period Halved by an Interior Coefficient",
+  "exerciseReference": "Section 1.6, Exercise 54",
+  "originalTopic": "Chapter 1 Practice: Trigonometric Graph Properties",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "trigonometry",
+    "graphs"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Identify the amplitude and period of $y=\\sin 2x$ and describe how the factor $2$ reshapes the usual sine wave.",
+  "finalAnswer": "\\text{Amplitude}=1,\\quad \\text{Period}=\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Match the Standard Form",
+      "explanation": "No multiplier stands outside, so $A=1$; the argument $2x$ gives $B=2$.",
+      "why": "Coefficients outside the sine control height while coefficients inside control speed.",
+      "mathExpression": "y=A\\sin(Bx),\\quad A=1,\\ B=2"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Record the Amplitude",
+      "explanation": "The peaks and troughs stay at $\\pm 1$; the vertical size is unchanged from the parent sine.",
+      "why": "Amplitude depends only on the outer multiplier.",
+      "mathExpression": "|A|=1"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute the Compressed Period",
+      "explanation": "The argument runs at double speed, so a full cycle completes in $\\pi$ instead of $2\\pi$.",
+      "why": "Doubling $B$ squeezes the wave horizontally by a factor of two.",
+      "mathExpression": "T=\\frac{2\\pi}{|B|}=\\frac{2\\pi}{2}=\\pi"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sin(2*x)",
+    "expected": "sin(2*x)",
+    "variable": "x"
+  }
+}

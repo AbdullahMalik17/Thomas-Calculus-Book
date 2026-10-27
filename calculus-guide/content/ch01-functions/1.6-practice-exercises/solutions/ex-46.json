@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-46",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Exact Cosine of pi over Three",
+  "exerciseReference": "Section 1.6, Exercise 46",
+  "originalTopic": "Chapter 1 Practice: Exact Trigonometric Values",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "trigonometry",
+    "exact-values"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine the exact value of $\\cos\\left(\\dfrac{\\pi}{3}\\right)$ by reasoning with the unit circle rather than a calculator.",
+  "finalAnswer": "\\cos\\left(\\frac{\\pi}{3}\\right)=\\frac{1}{2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Locate the Angle",
+      "explanation": "The terminal side of $\\pi/3$ lies in the first quadrant, $60^{\\circ}$ from the positive $x$-axis.",
+      "why": "Quadrant position fixes the signs of all trig functions.",
+      "mathExpression": "\\frac{\\pi}{3}=60^{\\circ}"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply the Equilateral-Triangle Ratio",
+      "explanation": "Bisecting a unit equilateral triangle shows the adjacent leg is half the hypotenuse at $60^{\\circ}$.",
+      "why": "The $60^{\\circ}$-$60^{\\circ}$-$60^{\\circ}$ construction is the source of these exact values.",
+      "mathExpression": "\\cos 60^{\\circ}=\\frac{\\text{adjacent}}{\\text{hypotenuse}}=\\frac{1}{2}"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Read the Unit-Circle Coordinate",
+      "explanation": "At $\\pi/3$ the point on the unit circle has $x$-coordinate $1/2$, and cosine equals that $x$-coordinate.",
+      "why": "Cosine is defined as the horizontal coordinate on the unit circle.",
+      "mathExpression": "\\left(\\frac{1}{2},\\ \\frac{\\sqrt{3}}{2}\\right)"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "cos(pi/3)",
+    "expected": "Rational(1, 2)",
+    "variable": "x"
+  }
+}

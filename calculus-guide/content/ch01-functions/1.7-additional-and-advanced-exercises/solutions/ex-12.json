@@ -1,0 +1,52 @@
+{
+  "id": "ch01-functions/1.7-additional-and-advanced-exercises/solutions/ex-12",
+  "chapter": "ch01",
+  "section": "1.7",
+  "type": "solution",
+  "title": "Range of a Rational Function via Inversion",
+  "exerciseReference": "Section 1.7, Exercise 12",
+  "originalTopic": "Ranges of Rational Functions",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": ["advanced", "range", "rational-function", "inverse-image"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the range of the function r(x) = (x^2 - 1)/(x^2 + 1) by solving y = r(x) for x^2 and determining for which y-values a real preimage exists.",
+  "finalAnswer": "\\operatorname{range}(r) = [-1, 1)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Solve the Output Equation for x^2",
+      "mathExpression": "y(x^2 + 1) = x^2 - 1 \\;\\Rightarrow\\; x^2 (y - 1) = -(1 + y) \\;\\Rightarrow\\; x^2 = \\frac{1 + y}{1 - y}",
+      "explanation": "Treating the equation as linear in the unknown x^2 and collecting terms isolates x^2 as a rational expression in y.",
+      "why": "y = 1 would force 0 = -2, so y = 1 can never occur and dividing by (1 - y) is safe for every candidate output."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Impose the Nonnegativity of a Square",
+      "mathExpression": "\\frac{1 + y}{1 - y} \\ge 0",
+      "explanation": "A real x with x^2 equal to that fraction exists exactly when the fraction is nonnegative, turning the range question into a sign-chart problem.",
+      "why": "Squares of real numbers are never negative, and conversely every nonnegative number is a square of some real."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Run the Sign Chart",
+      "mathExpression": "\\text{critical levels } y = -1, \\; y = 1 \\;\\Rightarrow\\; -1 \\le y < 1",
+      "explanation": "The numerator 1 + y vanishes at y = -1 and the denominator 1 - y at y = 1; between them both factors are positive, below -1 both are negative in the wrong combination, and above 1 the fraction is negative.",
+      "why": "A quotient of linear factors changes sign only at its zeros and pole, so testing the three intervals they create is exhaustive."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Settle the Endpoint Inclusion",
+      "mathExpression": "y = -1: x = 0 \\;\\checkmark, \\qquad y = 1: \\text{no solution}",
+      "explanation": "r(0) = -1 attains the lower endpoint, while r(x) = 1 would require -1 = 1; also |r(x)| stays below 1 since x^2 - 1 < x^2 + 1 always.",
+      "why": "The numerator trails the denominator by the fixed gap 2, so the ratio can approach 1 as x grows but never touch it; the bracket closes at -1 and opens at 1."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "((1 + y)/(1 - y) - 1)/((1 + y)/(1 - y) + 1)",
+    "expected": "y",
+    "variable": "y"
+  }
+}

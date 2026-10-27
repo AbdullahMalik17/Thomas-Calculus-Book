@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-20",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Difference Quotient of a Shifted Reciprocal",
+  "exerciseReference": "Section 1.6, Exercise 20",
+  "originalTopic": "Difference Quotient",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "difference-quotient",
+    "rational-function"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For f(x)=1/(x+1), simplify the difference quotient (f(x+h)-f(x))/h, h != 0.",
+  "finalAnswer": "-\\frac{1}{(x+1)(x+1+h)}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Write the Two Values",
+      "mathExpression": "f(x+h)=\\frac{1}{x+1+h},\\quad f(x)=\\frac{1}{x+1}",
+      "explanation": "Replacing x by x+h shifts the denominator from x+1 to x+1+h.",
+      "why": "The increment h enters the linear denominator directly."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Subtract Over a Common Denominator",
+      "mathExpression": "\\frac{(x+1)-(x+1+h)}{(x+1)(x+1+h)}=\\frac{-h}{(x+1)(x+1+h)}",
+      "explanation": "Cross-combining the fractions makes the numerator collapse to -h.",
+      "why": "The difference of reciprocals 1/B - 1/A equals (A-B)/(AB)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Divide by h and Cancel",
+      "mathExpression": "\\frac{1}{h}\\cdot\\frac{-h}{(x+1)(x+1+h)}=-\\frac{1}{(x+1)(x+1+h)}",
+      "explanation": "Canceling h (allowed since h != 0) produces the simplified quotient.",
+      "why": "The leftover factor h in the numerator is designed to cancel the outer division."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(1/(x+1+h) - 1/(x+1))/h",
+    "expected": "-1/((x+1)*(x+1+h))",
+    "variable": "x"
+  }
+}

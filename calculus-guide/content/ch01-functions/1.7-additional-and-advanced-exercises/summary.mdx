@@ -1,0 +1,68 @@
+# Section 1.7: Additional and Advanced Exercises
+
+Authored by **Muhammad Abdullah Athar** ([GitHub Profile](https://github.com/AbdullahMalik17)), this module collects the **proof-oriented and parameter-driven problems** of *Section 1.7* in *Thomas' Calculus (14th Edition)*, Chapter 1 on Functions.
+
+These exercises are less about graphing and more about **argumentation**: proving a symmetry, extracting a range, controlling a parameter, or forcing a conclusion out of a functional equation. Below are the recurring proof strategies that crack nearly all of them.
+
+---
+
+## 1. Parity and Symmetry Arguments
+
+The reflection $x \mapsto -x$ is the cheapest tool in the box. To classify a function, compute $f(-x)$ and compare with $\pm f(x)$; to *decompose* any function, average and differ the two copies:
+
+$$f(x) = \underbrace{\frac{f(x)+f(-x)}{2}}_{\text{even}} + \underbrace{\frac{f(x)-f(-x)}{2}}_{\text{odd}}$$
+
+The identity is mechanical (the $f(-x)$ terms cancel), evenness follows from commutativity of addition, oddness from $b - a = -(a - b)$. Uniqueness comes from solving the $2\times 2$ system formed by $f(x)$ and $f(-x)$. For $p(x) = x + 1/x$, one line settles it: $p(-x) = -x - 1/x = -p(x)$, so the graph is origin-symmetric. Always check the domain is symmetric ($x$ present $\Rightarrow$ $-x$ present) before claiming parity.
+
+---
+
+## 2. Completing the Square: Ranges and Inequalities in One Move
+
+Rewriting a quadratic as a shifted square turns both range questions and inequality proofs into the axiom $t^2 \ge 0$:
+
+$$x^2 - 6x + 11 = (x-3)^2 + 2 \ge 2 \quad\Longrightarrow\quad \text{range} = [2, \infty)$$
+
+The same reflex proves the fundamental estimate $x^2 + y^2 \ge 2xy$: move everything left and recognize $(x-y)^2 \ge 0$, with equality iff $x = y$. This single device underlies the AM-GM inequality and the "fixed sum, maximal product" principle used in the inscribed-rectangle problem: with $w^2 + h^2 = 4$, the product $wh$ peaks at $w = h = \sqrt{2}$, giving the square of area $2$.
+
+For rational functions like $r(x) = \frac{x^2-1}{x^2+1}$, invert instead: $y = r(x) \iff x^2 = \frac{1+y}{1-y}$, and demand the right side be a nonnegative square. The sign chart yields $-1 \le y < 1$, i.e. range $[-1, 1)$.
+
+---
+
+## 3. Discriminants and Tangency Conditions
+
+When a curve must *graze* the $x$-axis, the quadratic's root count is the whole story. For $y = x^2 + bx + c$:
+
+$$\text{tangent to the } x\text{-axis} \iff b^2 - 4c = 0 \iff c = \frac{b^2}{4}$$
+
+The parabola then collapses to the perfect square $\left(x + \tfrac{b}{2}\right)^2$ and touches the axis exactly at the vertex $x = -b/2$. The pattern generalizes: geometric borderline conditions (tangency, double contact, extremal parameter values) translate into algebraic **degeneracy of the discriminant**.
+
+---
+
+## 4. Functional Equations: Plug in the Right Values
+
+For $f(x+y) = f(x)f(y)$ with $f(1) = 3$, the equation is attacked by *strategic substitutions*, not formulas. Setting $x = y = 0$ gives $f(0) = f(0)^2 \in \{0, 1\}$; the branch $f(0) = 0$ would annihilate every value ($f(x) = f(x)f(0)$), contradicting $f(1) = 3$, so $f(0) = 1$. Then $f(2) = f(1+1) = f(1)^2 = 9$. The moral: addition in the input becomes multiplication in the output — the signature of exponential behavior — and degenerate branches must always be excluded explicitly.
+
+Composition problems reward the same patience. For $f(x) = \frac{2x}{x-2}$, clearing the complex fraction in $f(f(x))$ leaves $\frac{4x}{x-2} \cdot \frac{x-2}{4} = x$: the function is its own inverse on $x \ne 2$. (Similar-looking rules like $\frac{2x}{x-1}$ fail this test — always recompute rather than trust appearances.)
+
+---
+
+## 5. Case Analysis, Iteration, and Growth Proofs
+
+Absolute values force region-by-region logic: solving $|x-3| + |x+1| = 6$ means splitting the line at $-1$ and $3$. Between the markers the sum is pinned at the constant $4$ (the distance between them), so only the outer rays contribute $x = -2$ and $x = 4$.
+
+Iteration questions ask for *growth control*. The orbit $x_{n+1} = x_n^2 + 1$ from $x_0 = 2$ runs $2, 5, 26, 677, 458330, \dots$ Rigor comes from two inequalities: monotonicity, since $x_{n+1} - x_n = (x_n - \tfrac12)^2 + \tfrac34 > 0$, and doubling, since $x_{n+1} - 2x_n = (x_n - 1)^2 \ge 0$ for $x_n \ge 2$. Hence $x_n \ge 2^{n+1} \to \infty$. Completing the square again does the heavy lifting — a fitting theme for this section.
+
+---
+
+## 6. Quick-Reference Strategy Map
+
+| Problem Signal | Tool | Section Examples |
+| :--- | :--- | :--- |
+| "Prove even/odd" or symmetry claim | Compute $f(-x)$, compare to $\pm f(x)$ | Ex. 1, 3 |
+| Range of quadratic or rational form | Complete the square / invert and sign-analyze | Ex. 8, 12 |
+| "Tangent", "touches exactly once" | Discriminant $= 0$ | Ex. 18 |
+| $f(x+y) = f(x)f(y)$-type claims | Substitute $0, 1, 2$; kill degenerate branches | Ex. 9, 10 |
+| Sum of absolute values | Case split at each modulus zero | Ex. 11 |
+| Iteration diverges? | Bound below by geometric growth | Ex. 17 |
+
+**Study tip:** for every problem in this section, write the *why* of each deduction before the algebra — graders of proof problems reward the logical chain, not the computation.

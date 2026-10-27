@@ -1,0 +1,44 @@
+{
+  "id": "ch01-functions/1.5-questions-to-guide-your-review/solutions/ex-05",
+  "chapter": "ch01",
+  "section": "1.5",
+  "type": "solution",
+  "title": "Reading the Range from a Graph",
+  "exerciseReference": "Section 1.5, Exercise 5",
+  "originalTopic": "Range Determination from Graphs",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["review", "concepts", "range"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Explain how the range of a function can be determined directly from its graph, and illustrate with a simple example.",
+  "finalAnswer": "Project the graph onto the $y$-axis: the range is the set of all $y$-values covered, i.e. $\\{y : (x, y) \\text{ lies on the graph for some } x\\}$.",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Swap the Direction of Attention",
+      "mathExpression": "\\text{Domain} \\to x\\text{-axis projection}, \\qquad \\text{Range} \\to y\\text{-axis projection}",
+      "explanation": "Domain questions ask which vertical slices of the plane the graph occupies; range questions ask which horizontal slices it occupies. Scanning left-to-right gives the domain, scanning bottom-to-top gives the range.",
+      "why": "Framing both as projections makes the pair of ideas symmetric and easy to recall."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Track Extremes and Gaps",
+      "mathExpression": "y_{\\min} \\le f(x) \\le y_{\\max} \\implies \\text{range} = [y_{\\min}, y_{\\max}] \\text{ (if continuous)}",
+      "explanation": "Find the lowest and highest points of the graph, watching carefully for holes, asymptotes, or jumps that punch gaps into the vertical coverage. For f(x) = x^2 the vertex at (0, 0) and upward opening give range [0, infinity); for f(x) = 1/x the graph never touches y = 0, so the range is all nonzero reals.",
+      "why": "Endpoints included versus excluded, and gaps between branches, are where range answers usually go wrong."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Cross-Check Algebraically",
+      "mathExpression": "\\sqrt{x} \\ge 0 \\implies \\text{range of } \\sqrt{x} = [0, \\infty)",
+      "explanation": "A quick sign or bound argument should agree with the picture. If the graph suggests range [0, 4] but a formula check shows values above 4 are possible, one of the two readings needs revising.",
+      "why": "Matching visual and algebraic evidence turns a guess into a verified answer."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(x)",
+    "expected": "sqrt(x)",
+    "variable": "x"
+  }
+}

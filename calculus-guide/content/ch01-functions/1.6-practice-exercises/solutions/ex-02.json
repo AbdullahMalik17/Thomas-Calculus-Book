@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-02",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Domain of a Square-Root Function",
+  "exerciseReference": "Section 1.6, Exercise 2",
+  "originalTopic": "Domain of a Function",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "domain",
+    "square-root"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the natural domain of g(t)=sqrt(t-3), the set of all real t for which the square root yields a real number.",
+  "finalAnswer": "[3,\\infty)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Require the Even Root to Be Nonnegative",
+      "mathExpression": "t-3\\ge 0",
+      "explanation": "The principal square root sqrt(u) is real only when its radicand u is nonnegative, so we need t-3 >= 0.",
+      "why": "Even roots of negative numbers are not real, so the radicand condition is the only restriction."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve the Inequality",
+      "mathExpression": "t\\ge 3",
+      "explanation": "Adding 3 to both sides of t-3 >= 0 gives t >= 3.",
+      "why": "A linear inequality is solved by isolating the variable."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Write the Domain in Interval Form",
+      "mathExpression": "[3,\\infty)",
+      "explanation": "The admissible inputs are all t from 3 upward, including 3 itself because sqrt(0)=0 is valid.",
+      "why": "Bracket at 3 because the endpoint is allowed; the interval is unbounded above."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(t-3)",
+    "expected": "sqrt(t-3)",
+    "variable": "t"
+  }
+}

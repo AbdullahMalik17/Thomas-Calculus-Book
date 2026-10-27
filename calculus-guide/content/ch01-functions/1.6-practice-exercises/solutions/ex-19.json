@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-19",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Difference Quotient of a Linear Function",
+  "exerciseReference": "Section 1.6, Exercise 19",
+  "originalTopic": "Difference Quotient",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "difference-quotient",
+    "linear"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For f(x)=3x+1, evaluate the difference quotient (f(x+h)-f(x))/h, h != 0, and interpret the constant result.",
+  "finalAnswer": "3",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute f(x+h)",
+      "mathExpression": "f(x+h)=3(x+h)+1=3x+3h+1",
+      "explanation": "Distribute the 3 across the incremented input.",
+      "why": "Linearity means the increment simply adds 3h."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Subtract f(x)",
+      "mathExpression": "(3x+3h+1)-(3x+1)=3h",
+      "explanation": "Both the 3x and the +1 cancel, leaving only 3h.",
+      "why": "For a linear rule, the change is proportional to the increment."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Divide by h",
+      "mathExpression": "\\frac{3h}{h}=3",
+      "explanation": "Canceling h yields the constant 3, independent of x and h.",
+      "why": "The difference quotient of a linear function is its slope, here 3."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(3*(x+h) + 1 - (3*x + 1))/h",
+    "expected": "3",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-55",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "A Stretched Cosine Wave",
+  "exerciseReference": "Section 1.6, Exercise 55",
+  "originalTopic": "Chapter 1 Practice: Trigonometric Graph Properties",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "trigonometry",
+    "graphs"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the amplitude and period of $y=\\cos\\left(\\dfrac{x}{2}\\right)$, explaining why this wave takes longer than the standard cosine to repeat.",
+  "finalAnswer": "\\text{Amplitude}=1,\\quad \\text{Period}=4\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Read Off the Coefficients",
+      "explanation": "The argument $x/2$ means $B=1/2$, and nothing scales the output vertically.",
+      "why": "Recognizing $B$ inside the argument is the key step for period questions.",
+      "mathExpression": "y=A\\cos(Bx),\\quad A=1,\\ B=\\frac{1}{2}"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Confirm the Amplitude",
+      "explanation": "Output values still reach exactly $\\pm 1$, so the amplitude remains one.",
+      "why": "Horizontal stretching does not alter vertical extent.",
+      "mathExpression": "|A|=1"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute the Stretched Period",
+      "explanation": "Dividing by the half doubles the base period, so the wave needs $4\\pi$ to finish one cycle.",
+      "why": "A coefficient below one in the argument stretches the graph horizontally.",
+      "mathExpression": "T=\\frac{2\\pi}{|B|}=\\frac{2\\pi}{1/2}=4\\pi"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "cos(x/2)",
+    "expected": "cos(x/2)",
+    "variable": "x"
+  }
+}

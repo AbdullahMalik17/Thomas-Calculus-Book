@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-17",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Difference Quotient of a Cubic",
+  "exerciseReference": "Section 1.6, Exercise 17",
+  "originalTopic": "Difference Quotient",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "difference-quotient",
+    "polynomial"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For f(x)=x^3, expand (x+h)^3 and simplify the difference quotient (f(x+h)-f(x))/h, h != 0.",
+  "finalAnswer": "3x^2+3xh+h^2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Expand the Cube",
+      "mathExpression": "(x+h)^3=x^3+3x^2h+3xh^2+h^3",
+      "explanation": "Apply the binomial formula to the incremented input.",
+      "why": "The cubic expansion is the standard trinomial-plus-h^3 identity."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Subtract f(x)",
+      "mathExpression": "(x+h)^3-x^3=3x^2h+3xh^2+h^3",
+      "explanation": "The x^3 terms cancel, leaving only powers of h in the numerator.",
+      "why": "Subtracting the original value isolates the change produced by h."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Factor and Divide by h",
+      "mathExpression": "\\frac{h(3x^2+3xh+h^2)}{h}=3x^2+3xh+h^2",
+      "explanation": "Every remaining term contains h, so factoring it out and cancelling with the denominator finishes the simplification.",
+      "why": "h != 0 allows the cancellation, leaving a polynomial in x and h."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "((x+h)**3 - x**3)/h",
+    "expected": "3*x**2 + 3*x*h + h**2",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,83 @@
+# Section 1.6: Chapter 1 Practice Exercises
+
+Authored by **Muhammad Abdullah Athar** ([GitHub Profile](https://github.com/AbdullahMalik17)), this module provides a complete worked set of **Section 1.6** practice exercises for *Thomas' Calculus (14th Edition), Chapter 1: Functions*.
+
+This is the chapter's mastery workout: 72 exercises that weave together domains, ranges, difference quotients, symmetry, transformations, composition, trigonometry, and modeling. Work them in order — each block builds on the one before it.
+
+---
+
+## 1. How This Exercise Set Is Organized
+
+| Exercises | Theme | Core skill |
+|-----------|-------|------------|
+| 1–8 | Natural domains | Collect restrictions from roots and denominators |
+| 9–14 | Ranges | Read outputs from structure or graph |
+| 15–20 | Difference quotients | Expand, subtract, factor out $h$, cancel |
+| 21–28 | Even / odd / neither | Test $f(-x)$ term by term |
+| 29–36 | Transformations | Shift, stretch, reflect — outside honest, inside opposite |
+| 37–44 | Composition | Restrict the domain before simplifying |
+| 45–58 | Trigonometry | Exact values, amplitude, period |
+| 59–64 | Piecewise functions | Respect branch boundaries |
+| 65–72 | Modeling | Turn words into formulas with a stated domain |
+
+---
+
+## 2. The Domain Checklist
+
+For any formula, scan in this order and intersect the survivors:
+
+1. **Even roots**: the radicand must be $\ge 0$.
+2. **Denominators**: never zero.
+3. **Roots inside denominators**: radicand strictly $>0$.
+4. **Nothing else** — polynomials, odd roots, and expressions like $x^{2/3}$ accept every real number.
+
+For example, $y=\dfrac{\sqrt{x}}{x-1}$ passes requirement 1 when $x\ge 0$ and requirement 2 when $x\ne 1$, so
+
+$$\operatorname{dom}(y)=[0,1)\cup(1,\infty).$$
+
+---
+
+## 3. Difference Quotient Discipline
+
+The single most repeated algebra in this set is
+
+$$\frac{f(x+h)-f(x)}{h}.$$
+
+Three habits prevent almost all errors:
+
+- **Parenthesize** $f(x+h)$ fully before expanding.
+- Expect every term **without** an $h$ factor to cancel — leftovers signal a mistake.
+- For $f(x)=\sqrt{x}$, multiply numerator and denominator by the conjugate $\sqrt{x+h}+\sqrt{x}$ to obtain $\dfrac{1}{\sqrt{x+h}+\sqrt{x}}$.
+
+If your simplified answer still has $h$ in the denominator after canceling, redo the expansion.
+
+---
+
+## 4. Symmetry and Transformation Shortcuts
+
+For polynomials, parity is instant: **only even powers** $\Rightarrow$ even function; **only odd powers** $\Rightarrow$ odd function; a mixture $\Rightarrow$ neither.
+
+For transformations, remember the golden rule: changes **outside** $f$ act as written ($+c$ up, $-f$ flips over the $x$-axis), while changes **inside** the argument act opposite ($f(x+3)$ shifts **left**). A vertical stretch $2f(x)$ doubles heights; a horizontal shrink $f(2x)$ halves widths — the two are genuinely different operations.
+
+---
+
+## 5. Composition: Domain First, Algebra Second
+
+Given $f(x)=\sqrt{x}$ and $g(x)=\dfrac{1}{x-1}$, the composition is $(f\circ g)(x)=\sqrt{\dfrac{1}{x-1}}$. Before simplifying anything, demand
+
+$$x\ne 1 \quad\text{(from } g\text{)} \qquad\text{and}\qquad \frac{1}{x-1}\ge 0 \quad\text{(from } f\text{)},$$
+
+and the second condition already forces $x>1$. So $\operatorname{dom}(f\circ g)=(1,\infty)$.
+
+---
+
+## 6. Modeling Exercises: Four Verifiable Steps
+
+For word problems (rectangles, boxes, revenue, motion):
+
+1. **Name the variable** and state what it measures.
+2. **Write the formula** using the constraint (perimeter, volume, demand law).
+3. **State the physical domain** — lengths must be positive, so a box cut from a $12\times 12$ sheet has $0<x<6$.
+4. **Sanity-check endpoints**: the model should predict zero area or volume at the boundaries.
+
+A model without its domain is only half an answer — every modeling solution in this section states both.

@@ -1,0 +1,52 @@
+{
+  "id": "ch01-functions/1.7-additional-and-advanced-exercises/solutions/ex-14",
+  "chapter": "ch01",
+  "section": "1.7",
+  "type": "solution",
+  "title": "Domain of the Composite sqrt(1/(x - 1))",
+  "exerciseReference": "Section 1.7, Exercise 14",
+  "originalTopic": "Composition and Domains",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": ["advanced", "composition", "domain", "radical", "sign-analysis"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Given f(x) = sqrt(x) and g(x) = 1/(x - 1), find the domain of the composite f o g and explain how the constraints from both the inner and outer functions combine.",
+  "finalAnswer": "\\operatorname{dom}(f \\circ g) = (1, \\infty)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Write the Composite Explicitly",
+      "mathExpression": "(f \\circ g)(x) = f(g(x)) = \\sqrt{\\frac{1}{x - 1}}",
+      "explanation": "Applying g first and feeding its output into f produces the single radical expression whose domain is sought.",
+      "why": "Domain questions for compositions are best answered on the explicit formula, tracking every restriction at once."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Collect the Inner Restriction",
+      "mathExpression": "g \\text{ defined} \\iff x - 1 \\ne 0 \\iff x \\ne 1",
+      "explanation": "The reciprocal g has a denominator that cannot vanish, so x = 1 is excluded before the outer function is even consulted.",
+      "why": "Composition requires the inner function to produce a value at all; an undefined inner output makes the whole composite undefined."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Collect the Outer Restriction",
+      "mathExpression": "f(g(x)) \\text{ real} \\iff g(x) \\ge 0 \\iff \\frac{1}{x-1} \\ge 0",
+      "explanation": "The square root accepts only nonnegative inputs, so the sign of the fraction must be checked: its numerator is the positive constant 1.",
+      "why": "A fraction with a strictly positive numerator is nonnegative exactly when its denominator is positive, i.e. x - 1 > 0."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Intersect the Constraints",
+      "mathExpression": "\\{x \\ne 1\\} \\;\\cap\\; \\{x > 1\\} = (1, \\infty)",
+      "explanation": "The sign condition x > 1 already rules out x = 1 and is stricter than x != 1, so the intersection is simply the open ray (1, infinity).",
+      "why": "The domain of a composite is where every stage is legal simultaneously; here the outer radical condition dominates the inner one."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "1/(Rational(3, 2) - 1)",
+    "expected": "2",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "id": "ch01-functions/1.5-questions-to-guide-your-review/definitions",
+  "chapter": "ch01",
+  "section": "1.5",
+  "title": "Core Definitions: Questions to Guide Your Review",
+  "author": "Muhammad Abdullah Athar",
+  "definitions": [
+    {
+      "id": "def-function",
+      "title": "Function, Domain, Codomain, and Range",
+      "category": "definition",
+      "latex": "f: D \\to C, \\qquad \\text{Range}(f) = \\{f(x) : x \\in D\\}",
+      "statement": "A function f from a set D (the domain) to a set C (the codomain) is a rule that assigns to each element x in D exactly one element f(x) in C. The range is the subset of the codomain consisting of the outputs actually attained.",
+      "conditions": [
+        "Every input in the domain must be assigned a value",
+        "The assigned value must be unique: one input, one output",
+        "Distinct inputs are permitted to share the same output"
+      ],
+      "explanation": "Think of the function as a machine: dropping in x can never produce two disagreeing answers. The uniqueness requirement is the property the Vertical Line Test checks visually, and the range may be strictly smaller than the codomain, as with x^2 whose outputs never go below zero.",
+      "keyTakeaway": "A function is a single-valued rule: each input has exactly one output."
+    },
+    {
+      "id": "def-natural-domain",
+      "title": "Natural Domain",
+      "category": "definition",
+      "latex": "D_{\\text{natural}} = \\{x \\in \\mathbb{R} : \\text{the formula for } f(x) \\text{ produces a real number}\\}",
+      "statement": "When a function is given by a formula without an explicitly stated domain, its natural domain is the largest set of real numbers for which the formula makes sense.",
+      "conditions": [
+        "Even roots require a nonnegative radicand: sqrt(x) needs x >= 0",
+        "Denominators must not vanish: 1/q(x) needs q(x) != 0",
+        "Logarithms require strictly positive arguments"
+      ],
+      "explanation": "For sqrt(x) the natural domain is [0, infinity); for 1/(x^2 - 4) it is all reals except x = ±2; for x/(x^2 + 1) the denominator never vanishes, so the natural domain is the entire real line. Real-world modeling problems may impose an even smaller domain chosen by context.",
+      "keyTakeaway": "Scan the formula for forbidden operations; whatever survives is the natural domain."
+    },
+    {
+      "id": "def-even-odd",
+      "title": "Even and Odd Functions",
+      "category": "definition",
+      "latex": "f(-x) = f(x) \\ (\\text{even}); \\qquad f(-x) = -f(x) \\ (\\text{odd})",
+      "statement": "A function with a domain symmetric about the origin is even if f(-x) = f(x) for every x in the domain, which makes its graph symmetric about the y-axis; it is odd if f(-x) = -f(x) for every x, which makes its graph symmetric about the origin.",
+      "conditions": [
+        "The domain must satisfy x in D implies -x in D",
+        "The parity identity must hold for all x, not merely at sample points",
+        "Most functions, such as x^2 + x, are neither even nor odd"
+      ],
+      "explanation": "Typical examples are x^2, cos x, and |x| (even) versus x^3, sin x, and 1/x (odd). Every function on a symmetric domain splits uniquely into an even part [f(x)+f(-x)]/2 plus an odd part [f(x)-f(-x)]/2.",
+      "keyTakeaway": "Even mirrors across the y-axis; odd survives a half-turn rotation about the origin."
+    },
+    {
+      "id": "def-periodicity",
+      "title": "Periodic Function and Period",
+      "category": "definition",
+      "latex": "f(x + T) = f(x) \\ \\forall x \\in D, \\quad T > 0",
+      "statement": "A function f is periodic if there exists a positive number T such that f(x + T) = f(x) holds for every x in its domain. If a smallest such T exists, it is called the period; sin x and cos x have period 2*pi and tan x has period pi.",
+      "conditions": [
+        "The same T must work for every input simultaneously",
+        "Any integer multiple of a period is also a period",
+        "Amplitude |a| and coefficient b give a sin(bx) the period 2*pi/|b|"
+      ],
+      "explanation": "Periodicity means the graph copies itself horizontally forever. Oscillation alone is not enough: sin(x^2) waves back and forth, yet its zero crossings at sqrt(n*pi) crowd ever closer together, so no fixed shift can reproduce the graph and the function is not periodic.",
+      "keyTakeaway": "Periodic means an exact repeating window of fixed width, verified algebraically rather than by eye."
+    },
+    {
+      "id": "def-invertibility",
+      "title": "One-to-One Functions and Invertibility",
+      "category": "theorem",
+      "latex": "f(x_1) = f(x_2) \\implies x_1 = x_2 \\qquad f^{-1}(f(x)) = x, \\quad f(f^{-1}(x)) = x",
+      "statement": "A function has an inverse function if and only if it is one-to-one: distinct inputs produce distinct outputs. Graphically, this is the Horizontal Line Test, requiring that no horizontal line intersect the graph more than once.",
+      "conditions": [
+        "A periodic function on all of R can never be one-to-one",
+        "Restricting the domain can restore invertibility, e.g. x^2 on [0, infinity)",
+        "The graphs of f and f inverse are mirror images across the line y = x"
+      ],
+      "explanation": "The inverse undoes f, so it must send each output back to the single input that created it. If two inputs shared one output, the reverse rule would be ambiguous and fail the definition of a function. For f(x) = 2x - 1, solving for x gives the inverse f inverse (x) = (x + 1)/2.",
+      "keyTakeaway": "Invertibility is uniqueness run backwards: one output must trace back to exactly one input."
+    }
+  ]
+}

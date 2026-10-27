@@ -1,0 +1,44 @@
+{
+  "id": "ch01-functions/1.5-questions-to-guide-your-review/solutions/ex-07",
+  "chapter": "ch01",
+  "section": "1.5",
+  "type": "solution",
+  "title": "Evaluating a Piecewise Function",
+  "exerciseReference": "Section 1.5, Exercise 7",
+  "originalTopic": "Piecewise-Defined Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["review", "concepts", "piecewise"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Explain what a piecewise function is, then evaluate f(x), where f(x) = x + 2 for x < 0 and f(x) = x^2 for x >= 0, at x = -1 and x = 2.",
+  "finalAnswer": "$f(-1) = -1 + 2 = 1$ and $f(2) = 2^2 = 4$.",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Understand the Piecewise Idea",
+      "mathExpression": "f(x) = \\begin{cases} x + 2, & x < 0 \\\\ x^2, & x \\ge 0 \\end{cases}",
+      "explanation": "A piecewise function applies different formulas on different parts of its domain. It is still one function because each input falls in exactly one branch and therefore receives exactly one output.",
+      "why": "The uniqueness requirement survives as long as the branch conditions never overlap for a single input."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Choose the Branch for x = -1",
+      "mathExpression": "-1 < 0 \\implies f(-1) = (-1) + 2 = 1",
+      "explanation": "Since -1 satisfies the condition x < 0, we use the first formula x + 2 and obtain 1.",
+      "why": "Always test the inequality condition first; picking the wrong branch is the only way to get these problems wrong."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Choose the Branch for x = 2 and Mind the Boundary",
+      "mathExpression": "2 \\ge 0 \\implies f(2) = 2^2 = 4; \\qquad f(0) = 0^2 = 0",
+      "explanation": "The input 2 satisfies x >= 0, so the second formula gives 4. At the boundary x = 0 only the second branch applies (0 >= 0), giving f(0) = 0; here the two branches would not agree at the join, so the function has a jump-like mismatch approaching from the left (limit 2 versus value 0).",
+      "why": "Boundary points with strict versus non-strict inequalities are where piecewise definitions are most delicate."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(-1) + 2",
+    "expected": "1",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-01",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Domain of a Polynomial Function",
+  "exerciseReference": "Section 1.6, Exercise 1",
+  "originalTopic": "Domain of a Function",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "domain",
+    "polynomial"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Without using a calculator, state the natural domain of the polynomial function f(x)=3x^2-2x+1: for which real inputs x does the formula produce a real output?",
+  "finalAnswer": "(-\\infty,\\infty)\\ \\text{(all real numbers)}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "List the Usual Domain Restrictions",
+      "mathExpression": "\\text{check: even roots, denominators, logarithms}",
+      "explanation": "A formula can lose real inputs only through an even root of a negative number, division by zero, or a logarithm of a non-positive quantity.",
+      "why": "These are exactly the operations that are not defined for every real number."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Inspect the Given Formula",
+      "mathExpression": "f(x)=3x^2-2x+1",
+      "explanation": "The expression is a polynomial: it only squares, multiplies by constants, and adds numbers, so every real x can be plugged in safely.",
+      "why": "Polynomials involve no roots, denominators, or logs, so no input is excluded."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State the Domain",
+      "mathExpression": "x\\in(-\\infty,\\infty)",
+      "explanation": "Since no restriction applies, the natural domain is the entire real line.",
+      "why": "Every real input yields a real output, which is precisely the definition of domain equal to all reals."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "3*x**2 - 2*x + 1",
+    "expected": "3*x**2 - 2*x + 1",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-42",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Scaling a Reciprocal through Composition",
+  "exerciseReference": "Section 1.6, Exercise 42",
+  "originalTopic": "Chapter 1 Practice: Function Composition",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "composition",
+    "domain"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Using $f(x)=\\dfrac{1}{x}$ together with $g(x)=2x+1$, find $(g\\circ f)(x)$ as a simplified expression and give its domain restriction.",
+  "finalAnswer": "(g\\circ f)(x)=\\frac{2}{x}+1, \\quad x\\ne 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compose in the Given Order",
+      "explanation": "Now the reciprocal rule runs first, and its output is doubled and shifted by $g(u)=2u+1$.",
+      "why": "Reading the composition from the inside out prevents swapping the two functions.",
+      "mathExpression": "(g\\circ f)(x) = g\\big(f(x)\\big) = 2f(x)+1"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute the Reciprocal",
+      "explanation": "Inserting $f(x)=1/x$ into $2u+1$ gives $2/x+1$.",
+      "why": "Multiplying $1/x$ by $2$ scales the reciprocal cleanly.",
+      "mathExpression": "2\\cdot\\frac{1}{x}+1 = \\frac{2}{x}+1"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Locate the Failure Point",
+      "explanation": "The chain stops when $f(x)=1/x$ is undefined, which happens exactly at $x=0$; every other real input works.",
+      "why": "Inputs rejected by the inner function are automatically rejected by the composite.",
+      "mathExpression": "x=0 \\notin \\text{dom}(f)"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2/x + 1",
+    "expected": "2/x + 1",
+    "variable": "x"
+  }
+}

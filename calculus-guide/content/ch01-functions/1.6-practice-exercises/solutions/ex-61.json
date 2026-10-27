@@ -1,0 +1,47 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-61",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Evaluating the Nonlinear Branch at a Positive Input",
+  "exerciseReference": "Section 1.6, Exercise 61",
+  "originalTopic": "Chapter 1 Practice: Piecewise Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "piecewise-functions"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "With $f(x)=x+2$ on $x<0$ and $f(x)=x^{2}$ on $x\\ge 0$, compute $f(2)$. Would using $x+2$ give the correct value?",
+  "finalAnswer": "f(2) = 4",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Select the Active Piece",
+      "explanation": "The input $2$ satisfies the second condition, so the quadratic branch applies.",
+      "why": "Every real input satisfies exactly one condition of this piecewise definition.",
+      "mathExpression": "2 \\ge 0 \\implies f(x)=x^{2}"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate the Quadratic Rule",
+      "explanation": "Squaring $2$ yields $4$.",
+      "why": "Once the correct branch is chosen the evaluation is direct substitution.",
+      "mathExpression": "f(2) = 2^{2} = 4"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Reject the Wrong-Branch Computation",
+      "explanation": "Feeding $2$ into $x+2$ also produces $4$, but that computation is invalid because the linear branch only accepts negative inputs; the agreement is accidental.",
+      "why": "Matching answers via the wrong piece can hide a conceptual error that other inputs would expose.",
+      "mathExpression": "2+2=4 \\text{ is coincidence, not the rule}"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "Piecewise((x + 2, x < 0), (x**2, True))",
+    "expected": "Piecewise((x + 2, x < 0), (x**2, True))",
+    "variable": "x"
+  }
+}

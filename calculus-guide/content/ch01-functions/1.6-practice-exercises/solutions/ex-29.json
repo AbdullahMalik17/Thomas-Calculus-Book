@@ -1,0 +1,55 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-29",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Reflecting a Graph Across the x-Axis: y = -f(x)",
+  "exerciseReference": "Section 1.6, Exercise 29",
+  "originalTopic": "Graph Transformations",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "transformation",
+    "reflection"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Given the graph of y=f(x), describe precisely how the graph of y=-f(x) is obtained and what happens to a typical point (a,b) on the original curve.",
+  "finalAnswer": "\\text{reflection across the } x\\text{-axis: } (a,b)\\mapsto(a,-b)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Interpret the Formula",
+      "mathExpression": "y_{new}(x)=-f(x)",
+      "explanation": "At every input x the new output is the negative of the old output; inputs are untouched.",
+      "why": "Negation is applied to the whole function value, which is a vertical operation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Track a Typical Point",
+      "mathExpression": "(a,f(a))\\mapsto(a,-f(a))",
+      "explanation": "A point at height b above the axis moves to depth b below it, keeping the same x-coordinate.",
+      "why": "Vertical flip about the horizontal axis preserves abscissas and reverses signs of ordinates."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Describe the Sketch",
+      "mathExpression": "\\text{mirror image across the } x\\text{-axis}",
+      "explanation": "The new curve is the mirror image of the old one seen in the x-axis: parts above dip below and vice versa; points where f=0 stay put.",
+      "why": "Fixed points of the transformation are exactly the x-intercepts of f."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Summarize the Rule",
+      "mathExpression": "(a,b)\\mapsto(a,-b)",
+      "explanation": "Every point of y=f(x) is reflected straight across the x-axis, producing y=-f(x).",
+      "why": "This is the standard vertical reflection transformation."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "-(f(x))",
+    "expected": "-(f(x))",
+    "variable": "x"
+  }
+}

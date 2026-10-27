@@ -1,0 +1,52 @@
+{
+  "id": "ch01-functions/1.7-additional-and-advanced-exercises/solutions/ex-05",
+  "chapter": "ch01",
+  "section": "1.7",
+  "type": "solution",
+  "title": "Constant Areal Rate in Uniform Circular Motion",
+  "exerciseReference": "Section 1.7, Exercise 5",
+  "originalTopic": "Circular Motion and Swept Area",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": ["advanced", "proof", "circular-motion", "modeling"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A point moves around a circle of radius r with constant period T, completing one revolution in time T. Modeling the swept sector area as a function of time, show that equal time intervals sweep equal areas, and determine the areal rate.",
+  "finalAnswer": "\\frac{dA}{dt} = \\frac{\\pi r^2}{T} \\;\\text{(constant)}, \\quad A(t) = \\frac{\\pi r^2}{T}\\, t",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Write the Angular Position Law",
+      "mathExpression": "\\theta(t) = \\frac{2\\pi}{T}\\, t",
+      "explanation": "Uniform motion means the angle advances linearly: over time t the fraction t/T of a full turn 2*pi has been completed.",
+      "why": "Constant period and no speed variation force a linear angle law with angular speed omega = 2*pi/T."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Convert Angle to Swept Sector Area",
+      "mathExpression": "A(t) = \\tfrac{1}{2} r^2 \\theta(t) = \\frac{\\pi r^2}{T}\\, t",
+      "explanation": "The area of a circular sector with radian angle theta is (1/2) r^2 theta; substituting the linear angle law makes A a linear function of time.",
+      "why": "Sector area is proportional to its central angle, and proportionality composed with linearity in t stays linear in t."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Read Off the Constant Areal Rate",
+      "mathExpression": "\\frac{\\Delta A}{\\Delta t} = \\frac{\\pi r^2}{T} \\quad \\text{for every interval}",
+      "explanation": "Because A(t) is a linear function, the area swept over any interval of length delta-t equals (pi r^2/T) times delta-t, independent of where the interval starts.",
+      "why": "Linearity of A guarantees equal inputs produce equal outputs: this is the exact statement of 'equal areas in equal times'."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Sanity-Check Against the Whole Disk",
+      "mathExpression": "A(T) = \\frac{\\pi r^2}{T} \\cdot T = \\pi r^2",
+      "explanation": "One full period must sweep the entire disk of area pi*r^2, and the formula reproduces this total exactly.",
+      "why": "A correct areal-rate law must integrate over a period to the full circle area; the check confirms no missing factor."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "pi*r**2/T",
+    "expected": "(2*pi*r)**2/(4*pi*T)",
+    "variable": "r"
+  }
+}

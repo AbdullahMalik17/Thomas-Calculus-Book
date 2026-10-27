@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-56",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Reflected Cosine with Negative Amplitude Coefficient",
+  "exerciseReference": "Section 1.6, Exercise 56",
+  "originalTopic": "Chapter 1 Practice: Trigonometric Graph Properties",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "trigonometry",
+    "graphs"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For $y=-2\\cos x$, give the amplitude and period and describe the geometric effect of the negative sign.",
+  "finalAnswer": "\\text{Amplitude}=2,\\quad \\text{Period}=2\\pi,\\ \\text{graph reflected in the } x\\text{-axis}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Match the Standard Form",
+      "explanation": "The outer coefficient is $-2$ and the argument $x$ leaves $B=1$.",
+      "why": "Keeping track of the sign separately from the magnitude avoids mis-stating amplitude.",
+      "mathExpression": "y=A\\cos(Bx),\\quad A=-2,\\ B=1"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Take the Absolute Amplitude",
+      "explanation": "Amplitude measures distance from the midline, so it is $2$ even though the multiplier is negative.",
+      "why": "Amplitude is by definition non-negative.",
+      "mathExpression": "|A|=|-2|=2"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Interpret the Reflection and Period",
+      "explanation": "The minus sign flips the wave: it starts at $y=-2$ at $x=0$ instead of $y=2$, i.e. a reflection across the $x$-axis, while the period stays $2\\\\pi$.",
+      "why": "Negating a function reflects its graph across the horizontal axis without changing cycle length.",
+      "mathExpression": "T=\\frac{2\\pi}{1}=2\\pi"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "-2*cos(x)",
+    "expected": "-2*cos(x)",
+    "variable": "x"
+  }
+}

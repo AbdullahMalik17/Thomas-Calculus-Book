@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-48",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Exact Sine of an obtuse Standard Angle",
+  "exerciseReference": "Section 1.6, Exercise 48",
+  "originalTopic": "Chapter 1 Practice: Exact Trigonometric Values",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "trigonometry",
+    "exact-values"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Using a reference angle, evaluate $\\sin\\left(\\dfrac{2\\pi}{3}\\right)$ exactly and justify its sign.",
+  "finalAnswer": "\\sin\\left(\\frac{2\\pi}{3}\\right)=\\frac{\\sqrt{3}}{2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify the Quadrant",
+      "explanation": "The angle lies between $\\pi/2$ and $\\pi$, so its terminal side is in the second quadrant.",
+      "why": "Quadrant membership determines whether the trig value is positive or negative.",
+      "mathExpression": "\\frac{\\pi}{2}<\\frac{2\\pi}{3}<\\pi \\implies \\text{Quadrant II}"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute the Reference Angle",
+      "explanation": "The acute angle made with the $x$-axis is $\\pi/3$, so the magnitude equals $\\sin(\\pi/3)=\\sqrt{3}/2$.",
+      "why": "Reference angles reduce any standard angle to a memorized special value.",
+      "mathExpression": "\\pi-\\frac{2\\pi}{3}=\\frac{\\pi}{3}"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Apply the Quadrant Sign",
+      "explanation": "Sine is the $y$-coordinate, which stays positive in Quadrant II, so the value keeps the plus sign.",
+      "why": "ASTC sign rules: only sine (and cosecant) are positive in the second quadrant.",
+      "mathExpression": "\\sin\\frac{2\\pi}{3}=+\\frac{\\sqrt{3}}{2}"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sin(2*pi/3)",
+    "expected": "sqrt(3)/2",
+    "variable": "x"
+  }
+}

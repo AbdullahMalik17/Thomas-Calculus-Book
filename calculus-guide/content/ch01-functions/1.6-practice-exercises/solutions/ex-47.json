@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-47",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Exact Tangent of pi over Four",
+  "exerciseReference": "Section 1.6, Exercise 47",
+  "originalTopic": "Chapter 1 Practice: Exact Trigonometric Values",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "trigonometry",
+    "exact-values"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the exact value of $\\tan\\left(\\dfrac{\\pi}{4}\\right)$ using the quotient identity and known special-angle values.",
+  "finalAnswer": "\\tan\\left(\\frac{\\pi}{4}\\right)=1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Invoke the Quotient Identity",
+      "explanation": "Tangent is the ratio of sine to cosine, so both special-angle values are needed.",
+      "why": "The identity $\\tan\\theta=\\sin\\theta/\\cos\\theta$ works whenever $\\cos\\theta\\ne 0$.",
+      "mathExpression": "\\tan\\frac{\\pi}{4}=\\frac{\\sin(\\pi/4)}{\\cos(\\pi/4)}"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Insert the 45-45-90 Values",
+      "explanation": "At $\\pi/4=45^{\\circ}$ the legs of the isosceles right triangle are equal, giving $\\sin(\\pi/4)=\\cos(\\pi/4)=\\sqrt{2}/2$.",
+      "why": "Equal legs are the geometric reason sine and cosine agree at $45^{\\circ}$.",
+      "mathExpression": "\\frac{\\sqrt{2}/2}{\\sqrt{2}/2}"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Reduce the Ratio",
+      "explanation": "A nonzero quantity divided by itself equals $1$, so $\tan(\\pi/4)=1$.",
+      "why": "The identical numerator and denominator cancel exactly.",
+      "mathExpression": "=1"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "tan(pi/4)",
+    "expected": "1",
+    "variable": "x"
+  }
+}

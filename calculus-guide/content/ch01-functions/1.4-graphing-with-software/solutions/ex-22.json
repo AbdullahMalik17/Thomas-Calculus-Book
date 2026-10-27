@@ -1,0 +1,51 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-22",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "Graphing Artifact: False Vertical Risers in the Step Function",
+  "exerciseReference": "Section 1.4, Exercise 22",
+  "originalTopic": "Connecting-mode artifacts when plotting discontinuous functions",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": ["graphing-software", "artifacts", "step-function", "discontinuity"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "When y = floor(x), the greatest-integer function, is plotted in the usual connected-line mode, the screen shows vertical line segments at every integer in addition to horizontal steps. Explain what those segments are, and describe the true graph.",
+  "finalAnswer": "\\lfloor x \\rfloor = n \\ \\text{for } n \\le x < n + 1; \\quad \\text{the true graph is a staircase with no vertical segments}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Write the function piece by piece",
+      "mathExpression": "f(x) = n \\quad \\text{on} \\quad [n, n+1), \\qquad f(n) = n, \\quad \\lim_{x \\to n^-} f(x) = n - 1",
+      "explanation": "On each half-open interval of length 1 the output is constant, and at each integer the value jumps up by exactly 1.",
+      "why": "The definition itself says the function never takes the intermediate values between n - 1 and n, so no vertical piece can belong to the graph."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify the source of the artifact",
+      "mathExpression": "(n - 1,\\, n - 1) \\longrightarrow (n,\\, n) \\ \\text{joined by the plotter}",
+      "explanation": "Sampling at or near consecutive integers produces two points whose y-values differ by 1; the connecting mode draws a straight segment between them, which appears as a riser at x = n plus a slanted trace.",
+      "why": "Graphing software interpolates linearly between adjacent samples and does not test whether the function is continuous there, so the segment is a rendering choice, not a mathematical fact."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Correct the display",
+      "mathExpression": "\\text{unplug mode / separate segments } y = n \\text{ on } [n, n+1) \\text{ with closed left, open right endpoint}",
+      "explanation": "Switching to point mode, plotting each constant piece separately, or restricting the domain to a single interval removes the risers and leaves horizontal treads with a filled dot at the left end and an open dot at the right end.",
+      "why": "Only endpoint conventions can express the jump, because a single connected stroke cannot represent a function with jump discontinuities."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Generalize the lesson",
+      "mathExpression": "\\text{sampling rate} \\propto \\frac{1}{\\text{pixels across the window}}",
+      "explanation": "The apparent thickness and slope of the false risers change with the window size and sample count, while the genuine staircase never changes.",
+      "why": "A feature that varies with plotting settings but not with the function is diagnostic of an artifact rather than mathematics."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "floor(x)",
+    "expected": "floor(x)",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-28",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "What Happens When You Zoom Into sin(1/x)?",
+  "exerciseReference": "Section 1.4, Exercise 28",
+  "originalTopic": "Zoom behavior, nonexistence of a limit, and aliasing artifacts",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": ["graphing-software", "artifacts", "oscillation", "limits"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Zoom repeatedly toward the origin on the graph of y = sin(1/x). Describe what happens to the number of visible oscillations, whether the curve seems to approach a single value, and why the picture at extreme zoom cannot be trusted.",
+  "finalAnswer": "\\text{Infinitely many oscillations in every window about } x = 0; \\quad \\lim_{x \\to 0} \\sin(1/x) \\text{ does not exist}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Locate the zeros",
+      "mathExpression": "\\sin(1/x) = 0 \\iff \\frac{1}{x} = n\\pi \\iff x = \\frac{1}{n\\pi}, \\qquad n = \\pm 1, \\pm 2, \\dots",
+      "explanation": "The crossings pile up toward 0 with spacing about 1/(n*pi) which shrinks without bound.",
+      "why": "Explicit zeros prove the graph keeps crossing the axis no matter how far you zoom, so the zooming never stabilizes."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Count oscillations inside a window",
+      "mathExpression": "x \\in (-\\varepsilon, \\varepsilon) \\Rightarrow \\frac{1}{x} \\in (-\\infty, -1/\\varepsilon) \\cup (1/\\varepsilon, \\infty)",
+      "explanation": "Any interval around 0, however small, corresponds to an unbounded range of the angle 1/x, so it contains infinitely many full periods, and the peaks stay at plus or minus 1.",
+      "why": "Because the amplitude never shrinks while the frequency grows without bound, no single value can be the limit at 0."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Explain the aliasing artifact",
+      "mathExpression": "\\text{sample spacing } \\Delta x \\gg \\frac{1}{n\\pi} \\Rightarrow \\text{missing or invented crests}",
+      "explanation": "A plotter evaluates only a few hundred or thousand equally spaced x-values. Once oscillations are finer than that spacing, the render collapses into a filled band, a few smooth false curves, or an apparently solid block between y = -1 and y = 1.",
+      "why": "Under-sampling a high-frequency signal produces aliasing, so beyond some zoom level the screen depicts the sampling grid rather than the function."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Practical reading strategy",
+      "mathExpression": "\\text{compare windows } [-1, 1] \\times [-1.5, 1.5] \\text{ and } [-0.05, 0.05] \\times [-1.5, 1.5]",
+      "explanation": "Doubling the sample count and zooming again shows that the band between -1 and 1 is always filled, which is the honest mathematical conclusion; the specific squiggles inside it are not.",
+      "why": "Distinguishing stable features from sample-dependent ones is the core skill of reading computer-generated graphs critically."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sin(1/x)",
+    "expected": "sin(1/x)",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-21",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "Graphing the Absolute Value of a Quadratic",
+  "exerciseReference": "Section 1.4, Exercise 21",
+  "originalTopic": "Piecewise rewriting of |x^2 - 4|",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["graphing-software", "absolute-value", "piecewise", "transformations"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Describe the graph of y = |x^2 - 4| by writing it without absolute value bars, and identify its zeros, its local maximum, and the behavior of its arms.",
+  "finalAnswer": "y = \\begin{cases} x^2 - 4, & |x| \\ge 2 \\\\ 4 - x^2, & |x| < 2 \\end{cases} \\quad \\text{zeros at } x = \\pm 2,\\ \\text{local max at } (0, 4)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Split at the sign change of the inside",
+      "mathExpression": "x^2 - 4 \\ge 0 \\iff |x| \\ge 2, \\qquad x^2 - 4 < 0 \\iff |x| < 2",
+      "explanation": "Outside the roots the quadratic is already nonnegative, so the bars do nothing; between -2 and 2 the quadratic is negative, so the graph there is the flipped parabola 4 - x^2.",
+      "why": "Absolute value acts as the identity on nonnegative output and as a reflection on negative output, which is the whole transformation rule."
+    },
+    {
+      "stepNumber": 2,
+      "title": "List the visible features",
+      "mathExpression": "(\\pm 2, 0), \\qquad (0, 4), \\qquad y \\to \\infty \\text{ as } x \\to \\pm\\infty",
+      "explanation": "The curve touches the axis at x = -2 and x = 2, rises to a hump with peak (0, 4) between them, and leaves as two upward arms like the original parabola.",
+      "why": "The reflected hump creates a local maximum that does not exist for y = x^2 - 4, which is why the picture changes qualitatively."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Check corners and choose a window",
+      "mathExpression": "y' = 2x \\ (|x| > 2), \\qquad y' = -2x \\ (|x| < 2), \\qquad \\text{at } x = 2: \\text{ slopes } 4 \\text{ and } -4",
+      "explanation": "The two pieces meet at x = plus or minus 2 with one-sided slopes of opposite sign, so the joined curve has sharp corners there; the window [-4, 4] by [-1, 12] shows the hump plus the start of both arms.",
+      "why": "Knowing the corners are non-differentiable explains why the curve looks kinked there even in a smooth software render."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "Abs(x**2 - 4)",
+    "expected": "Abs(x**2 - 4)",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-18",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Rationalized Difference Quotient of the Square Root",
+  "exerciseReference": "Section 1.6, Exercise 18",
+  "originalTopic": "Difference Quotient",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "difference-quotient",
+    "square-root"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For f(x)=sqrt(x), simplify the difference quotient (f(x+h)-f(x))/h, h != 0, by rationalizing the numerator.",
+  "finalAnswer": "\\frac{1}{\\sqrt{x+h}+\\sqrt{x}}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up the Quotient",
+      "mathExpression": "\\frac{\\sqrt{x+h}-\\sqrt{x}}{h}",
+      "explanation": "Substituting the rule into the difference quotient leaves a difference of roots on top.",
+      "why": "Direct cancellation of h is impossible because h appears only inside the roots."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Multiply by the Conjugate",
+      "mathExpression": "\\frac{(\\sqrt{x+h}-\\sqrt{x})(\\sqrt{x+h}+\\sqrt{x})}{h(\\sqrt{x+h}+\\sqrt{x})}",
+      "explanation": "Rationalize by multiplying numerator and denominator by the conjugate sqrt(x+h)+sqrt(x).",
+      "why": "Conjugate multiplication removes radicals from the numerator."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Use the Difference of Squares",
+      "mathExpression": "\\frac{(x+h)-x}{h(\\sqrt{x+h}+\\sqrt{x})}=\\frac{h}{h(\\sqrt{x+h}+\\sqrt{x})}",
+      "explanation": "The numerator becomes (x+h)-x = h, a clean linear expression.",
+      "why": "(a-b)(a+b)=a^2-b^2 with a=sqrt(x+h), b=sqrt(x)."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Cancel h",
+      "mathExpression": "\\frac{1}{\\sqrt{x+h}+\\sqrt{x}}",
+      "explanation": "Cancel the factor h between numerator and denominator (h != 0) to obtain the final form.",
+      "why": "The canceled h is exactly what made the quotient finite as h tends to 0."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(sqrt(x+h) - sqrt(x))/h",
+    "expected": "1/(sqrt(x+h) + sqrt(x))",
+    "variable": "x"
+  }
+}

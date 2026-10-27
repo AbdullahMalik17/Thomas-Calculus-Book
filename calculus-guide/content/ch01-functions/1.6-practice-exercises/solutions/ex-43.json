@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-43",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Decomposing a Power of a Linear Expression",
+  "exerciseReference": "Section 1.6, Exercise 43",
+  "originalTopic": "Chapter 1 Practice: Function Composition",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "composition",
+    "decomposition"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Express $y=(5x-7)^{3}$ as a composite $y=f(g(x))$ of a linear inner function and a power outer function, then verify the decomposition.",
+  "finalAnswer": "g(x)=5x-7,\\quad f(u)=u^{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Spot the Inner Operation",
+      "explanation": "The expression $5x-7$ is computed first inside the parentheses, so it is the natural inner function.",
+      "why": "Decomposition starts by peeling off the operation performed on $x$ before anything else.",
+      "mathExpression": "g(x)=5x-7"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Spot the Outer Operation",
+      "explanation": "After the linear quantity exists, the only remaining action is cubing it, which defines the outer rule $f$.",
+      "why": "The outer function captures the last operation applied in the evaluation order.",
+      "mathExpression": "f(u)=u^{3}"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Verify by Recomposing",
+      "explanation": "Substituting $g$ into $f$ rebuilds $y$ exactly, so the pair $\\big(f,g\\big)$ is a valid decomposition.",
+      "why": "Any proposed decomposition must reproduce the original formula when recomposed.",
+      "mathExpression": "f\\big(g(x)\\big) = (5x-7)^{3} = y"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(5*x - 7)**3",
+    "expected": "(5*x - 7)**3",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-62",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Solving an Equation Defined Piecewise",
+  "exerciseReference": "Section 1.6, Exercise 62",
+  "originalTopic": "Chapter 1 Practice: Piecewise Functions",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "piecewise-functions",
+    "equations"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For $f(x)=x+2$ when $x<0$ and $f(x)=x^{2}$ when $x\\ge 0$, find every real $x$ satisfying $f(x)=1$.",
+  "finalAnswer": "x=-1 \\text{ and } x=1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Solve Inside the Negative Branch",
+      "explanation": "On $x<0$ set the linear formula equal to $1$, obtaining $x=-1$.",
+      "why": "Each branch generates its own candidate solution set.",
+      "mathExpression": "x+2=1 \\implies x=-1"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Validate the First Candidate",
+      "explanation": "The candidate $-1$ lies in the branch's stated domain, so it is a genuine solution.",
+      "why": "Solutions found on a branch must be tested against that branch's restriction.",
+      "mathExpression": "-1<0 \\implies x=-1 \\text{ is admissible}"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Solve Inside the Quadratic Branch",
+      "explanation": "On $x\\\\ge 0$ the equation becomes $x^2=1$, whose algebraic roots are $1$ and $-1$.",
+      "why": "A quadratic target produces two roots before domain filtering.",
+      "mathExpression": "x^{2}=1 \\implies x=\\pm 1"
+    },
+    {
+      "stepNumber": 4,
+      "title": "Filter by the Branch Domain",
+      "explanation": "Only $x=1$ satisfies $x\\\\ge 0$; the root $-1$ falls outside this branch and is discarded (it is already accounted for by the first branch).",
+      "why": "The solution set of a piecewise equation is the union of branch solutions that pass their own domain tests.",
+      "mathExpression": "x=1\\ge0\\ \\checkmark;\\quad x=-1<0\\ \\times"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "Piecewise((x + 2, x < 0), (x**2, True))",
+    "expected": "Piecewise((x + 2, x < 0), (x**2, True))",
+    "variable": "x"
+  }
+}

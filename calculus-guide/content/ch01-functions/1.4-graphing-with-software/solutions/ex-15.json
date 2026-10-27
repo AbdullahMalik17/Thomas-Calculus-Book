@@ -1,0 +1,44 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-15",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "Recognizing the Unit Circle from a Parametric Plot",
+  "exerciseReference": "Section 1.4, Exercise 15",
+  "originalTopic": "Identifying a parametric curve and its Cartesian equation",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["graphing-software", "parametric-curves", "circle", "identity"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Plot the parametric equations x = cos t, y = sin t for 0 <= t <= 2*pi. Identify the curve, write a Cartesian equation for it, and state the direction in which it is traced.",
+  "finalAnswer": "x^2 + y^2 = 1 \\quad (\\text{unit circle, traced once counterclockwise from } (1, 0))",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Eliminate the parameter",
+      "mathExpression": "x^2 + y^2 = \\cos^2 t + \\sin^2 t = 1",
+      "explanation": "Squaring and adding the two coordinate equations removes t and leaves x^2 + y^2 = 1, the circle of radius 1 centered at the origin.",
+      "why": "The Pythagorean identity holds for every t, so every plotted point satisfies the same single equation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Track the starting point and direction",
+      "mathExpression": "t = 0: (1, 0), \\quad t = \\frac{\\pi}{2}: (0, 1), \\quad t = \\pi: (-1, 0)",
+      "explanation": "The curve begins at (1, 0) and moves upward into the first quadrant, sweeping counterclockwise and returning to the start when t = 2*pi.",
+      "why": "Knowing orientation distinguishes a correct tracing from a mirror image and confirms the interval covers exactly one revolution."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Set the display window",
+      "mathExpression": "[-2, 2] \\times [-2, 2] \\text{ with equal scale on both axes}",
+      "explanation": "A window of [-2, 2] by [-2, 2] with a 1:1 aspect ratio shows the full circle; a mismatched aspect makes it look like a tilted ellipse.",
+      "why": "Circle recognition depends on equal unit lengths on the two axes, which graphing software does not enforce by default."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "cos(t)**2 + sin(t)**2",
+    "expected": "1",
+    "variable": "t"
+  }
+}

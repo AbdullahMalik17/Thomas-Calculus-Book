@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-44",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Iterating a Linear Function with Itself",
+  "exerciseReference": "Section 1.6, Exercise 44",
+  "originalTopic": "Chapter 1 Practice: Function Composition",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "composition",
+    "linear"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Let $f(x)=2x-3$. Compute the self-composite $(f\\circ f)(x)$ and simplify it to the form $ax+b$.",
+  "finalAnswer": "(f\\circ f)(x) = 4x-9",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Write the Self-Composition",
+      "explanation": "Apply the rule $f(u)=2u-3$ to the input $u=f(x)$.",
+      "why": "A function composed with itself still follows the inside-out evaluation order.",
+      "mathExpression": "(f\\circ f)(x) = f\\big(f(x)\\big) = 2f(x)-3"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute the Inner Formula",
+      "explanation": "Replace $f(x)$ inside the outer copy with $2x-3$, keeping the parentheses.",
+      "why": "Parentheses prevent the factor of $2$ from being distributed incorrectly.",
+      "mathExpression": "2(2x-3)-3"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Expand and Combine Constants",
+      "explanation": "Distributing gives $4x-6$, and subtracting the final $3$ yields $4x-9$.",
+      "why": "Collecting like terms puts the composite back in linear form.",
+      "mathExpression": "4x-6-3 = 4x-9"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2*(2*x - 3) - 3",
+    "expected": "4*x - 9",
+    "variable": "x"
+  }
+}

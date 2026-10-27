@@ -1,0 +1,52 @@
+{
+  "id": "ch01-functions/1.7-additional-and-advanced-exercises/solutions/ex-06",
+  "chapter": "ch01",
+  "section": "1.7",
+  "type": "solution",
+  "title": "Intercept Form of a Line",
+  "exerciseReference": "Section 1.7, Exercise 6",
+  "originalTopic": "Equations of Lines",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": ["lines", "intercepts", "coordinate-geometry"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A line has a nonzero x-intercept a and a nonzero y-intercept b. Derive the equation of the line in the symmetric intercept form and verify it passes through both intercept points.",
+  "finalAnswer": "\\frac{x}{a} + \\frac{y}{b} = 1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify the Two Defining Points",
+      "mathExpression": "(a, 0) \\;\\text{and}\\; (0, b)",
+      "explanation": "The x-intercept a means the line meets the x-axis at (a, 0); the y-intercept b means it meets the y-axis at (0, b). Two distinct points determine the line.",
+      "why": "A nonzero condition on a and b keeps the two points distinct and off the origin overlap, so the slope is well defined."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compute the Slope",
+      "mathExpression": "m = \\frac{b - 0}{0 - a} = -\\frac{b}{a}",
+      "explanation": "Rise over run between the intercept points gives the slope -b/a.",
+      "why": "The slope formula applied to (a, 0) and (0, b) directly yields the negative ratio of the intercepts."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Rearrange into Intercept Form",
+      "mathExpression": "y - 0 = -\\frac{b}{a}(x - a) \\;\\Rightarrow\\; \\frac{x}{a} + \\frac{y}{b} = 1",
+      "explanation": "Point-slope form through (a, 0) expands to y = b - (b/a)x; dividing by b and collecting terms produces the symmetric equation.",
+      "why": "Algebraic normalization by b turns the two-intercept data into a single scale-free identity in x/a and y/b."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Verify Both Intercepts",
+      "mathExpression": "x = a, y = 0:\\; 1 + 0 = 1; \\qquad x = 0, y = b:\\; 0 + 1 = 1",
+      "explanation": "Substituting either intercept point into x/a + y/b makes exactly one fraction equal to 1 and the other equal to 0, satisfying the equation.",
+      "why": "Direct substitution is the definitive membership test for a point and its candidate line."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "a/a + 0/b + 0/a + b/b",
+    "expected": "2",
+    "variable": "a"
+  }
+}

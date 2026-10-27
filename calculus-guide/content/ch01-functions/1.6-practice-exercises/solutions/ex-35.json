@@ -1,0 +1,55 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-35",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Graphing y = |x+1| - 2 by Transformations",
+  "exerciseReference": "Section 1.6, Exercise 35",
+  "originalTopic": "Graph Transformations",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "transformation",
+    "absolute-value"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Build the graph of y=|x+1|-2 from the V-shaped graph of y=|x|, locating its vertex and intercepts.",
+  "finalAnswer": "\\text{shift left } 1 \\text{ and down } 2;\\ \\text{vertex } (-1,-2)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Start with the Parent V",
+      "mathExpression": "y=|x|:\\ \\text{vertex }(0,0),\\ \\text{slopes } \\pm1",
+      "explanation": "The absolute-value graph is a V with its apex at the origin, slope 1 on the right branch and -1 on the left.",
+      "why": "Piecewise: |x| = x for x >= 0 and -x for x < 0."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply the Inner Shift",
+      "mathExpression": "y=|x+1|:\\ \\text{vertex }(-1,0)",
+      "explanation": "Replacing x by x+1 slides the V one unit to the left, because x+1=0 at x=-1.",
+      "why": "Horizontal translations act opposite to the inner sign."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Apply the Outer Shift",
+      "mathExpression": "y=|x+1|-2:\\ \\text{vertex }(-1,-2)",
+      "explanation": "Subtracting 2 outside the absolute value lowers every height by 2, moving the apex to (-1,-2).",
+      "why": "Vertical translations act in the direction of the sign."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Sketch and Check Intercepts",
+      "mathExpression": "y\\text{-intercept } (0,-1);\\ x\\text{-intercepts } (-3,0),(1,0)",
+      "explanation": "Draw the V with apex (-1,-2) and slopes -1 and +1: setting |x+1|-2=0 gives x=1 or x=-3 on the axis, and x=0 gives y=-1.",
+      "why": "Solving |x+1|=2 confirms the two x-intercepts, and direct substitution gives the y-intercept |0+1|-2=-1."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "Abs(x+1) - 2",
+    "expected": "Abs(x+1) - 2",
+    "variable": "x"
+  }
+}

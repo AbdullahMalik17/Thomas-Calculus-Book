@@ -1,0 +1,44 @@
+{
+  "id": "ch01-functions/1.4-graphing-with-software/solutions/ex-16",
+  "chapter": "ch01",
+  "section": "1.4",
+  "type": "solution",
+  "title": "From Parametric Sines and Cosines to an Ellipse Equation",
+  "exerciseReference": "Section 1.4, Exercise 16",
+  "originalTopic": "Parametric ellipse and axis scaling",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["graphing-software", "parametric-curves", "ellipse", "scaling"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Graph x = 3 cos t, y = 2 sin t over one full period. Find the Cartesian equation of the curve, name its semi-axes, and comment on how the plot compares with the unit circle parametrization.",
+  "finalAnswer": "\\frac{x^2}{9} + \\frac{y^2}{4} = 1 \\quad (\\text{ellipse: semi-major } 3 \\text{ horizontal, semi-minor } 2 \\text{ vertical})",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Isolate the trig functions and eliminate t",
+      "mathExpression": "\\cos t = \\frac{x}{3}, \\quad \\sin t = \\frac{y}{2} \\quad \\Rightarrow \\quad \\frac{x^2}{9} + \\frac{y^2}{4} = \\cos^2 t + \\sin^2 t = 1",
+      "explanation": "Dividing each coordinate by its amplitude and squaring produces the standard ellipse equation centered at the origin.",
+      "why": "Every parametrization of the form (a cos t, b sin t) collapses to the same identity, so the elimination is exact rather than an approximation read off the screen."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Read off the geometry",
+      "mathExpression": "x\\text{-intercepts } (\\pm 3, 0), \\qquad y\\text{-intercepts } (0, \\pm 2)",
+      "explanation": "The horizontal semi-axis is 3 and the vertical semi-axis is 2, so the curve is the unit circle stretched by 3 horizontally and 2 vertically.",
+      "why": "Amplitudes in a parametrization act as scale factors, which is exactly the shifting-and-scaling idea applied to parametric plots."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Choose a window that preserves the shape",
+      "mathExpression": "[-4, 4] \\times [-3, 3], \\ \\text{equal aspect ratio}",
+      "explanation": "The window clears both intercept sets with a small margin, and with a locked 1:1 scale the ellipse looks correctly flattened rather than circular or stretched.",
+      "why": "Unequal axis scaling can make an ellipse of axes 3 and 2 appear nearly round, misleading the reader about the actual ratio."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(3*cos(x))**2/9 + (2*sin(x))**2/4",
+    "expected": "1",
+    "variable": "x"
+  }
+}

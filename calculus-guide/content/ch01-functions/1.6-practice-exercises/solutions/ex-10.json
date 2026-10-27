@@ -1,0 +1,55 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-10",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Range of a Square-Root Function",
+  "exerciseReference": "Section 1.6, Exercise 10",
+  "originalTopic": "Range of a Function",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "range",
+    "square-root"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For the natural domain of f(x)=sqrt(x-1), determine the set of all output values.",
+  "finalAnswer": "[0,\\infty)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Note the Radicand Range",
+      "mathExpression": "x-1 \\text{ takes all values in } [0,\\infty)",
+      "explanation": "On the natural domain x >= 1, the inner quantity x-1 sweeps out every nonnegative number.",
+      "why": "Shifting the domain [1, infinity) left by 1 produces [0, infinity)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply the Principal Root",
+      "mathExpression": "\\sqrt{u}\\ge 0 \\text{ for } u\\ge 0",
+      "explanation": "The principal square root returns only nonnegative values, starting at sqrt(0)=0.",
+      "why": "By convention sqrt denotes the nonnegative root."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Confirm Surjectivity onto [0, infinity)",
+      "mathExpression": "u=y^2 \\text{ solves } \\sqrt{u}=y",
+      "explanation": "Any desired output y >= 0 is produced by choosing x=y^2+1, so no nonnegative value is missed.",
+      "why": "Solving sqrt(x-1)=y for x exhibits a preimage for every candidate output."
+    },
+    {
+      "stepNumber": 4,
+      "title": "State the Range",
+      "mathExpression": "[0,\\infty)",
+      "explanation": "The outputs are exactly the nonnegative reals, including 0 at x=1.",
+      "why": "Zero is attained, negative values are impossible, and all positives are hit."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(x-1)",
+    "expected": "sqrt(x-1)",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-07",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Domain of a Function Mixing a Radical and a Denominator",
+  "exerciseReference": "Section 1.6, Exercise 7",
+  "originalTopic": "Domain of a Function",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "domain",
+    "square-root",
+    "rational-function"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the natural domain of y=sqrt(x)/(x-1), combining the restrictions from the numerator's square root and the denominator.",
+  "finalAnswer": "[0,1)\\cup(1,\\infty)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Restrict the Square Root",
+      "mathExpression": "x\\ge 0",
+      "explanation": "The numerator sqrt(x) is real only for nonnegative x.",
+      "why": "Even roots demand a nonnegative radicand."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Restrict the Denominator",
+      "mathExpression": "x-1\\neq 0 \\;\\Rightarrow\\; x\\neq 1",
+      "explanation": "The fraction is undefined at the single point x=1.",
+      "why": "Division by zero is never allowed."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Combine Both Conditions",
+      "mathExpression": "x\\ge 0 \\;\\text{and}\\; x\\neq 1",
+      "explanation": "The domain must satisfy the radical and denominator conditions simultaneously, keeping x >= 0 but deleting x = 1.",
+      "why": "A natural domain is the intersection of all individual restriction sets."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Express as Intervals",
+      "mathExpression": "[0,1)\\cup(1,\\infty)",
+      "explanation": "Removing 1 from the half-line [0, infinity) splits it into two intervals; 0 stays included.",
+      "why": "The puncture at 1 is open, while the endpoint 0 is legal since sqrt(0)/(0-1)=0."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(x)/(x-1)",
+    "expected": "sqrt(x)/(x-1)",
+    "variable": "x"
+  }
+}

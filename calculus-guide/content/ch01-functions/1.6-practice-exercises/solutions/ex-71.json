@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-71",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Inverting the Celsius-to-Fahrenheit Formula",
+  "exerciseReference": "Section 1.6, Exercise 71",
+  "originalTopic": "Chapter 1 Practice: Mathematical Modeling",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "modeling",
+    "inverse-functions"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Temperature conversion obeys $F=\\frac{9}{5}C+32$. Solve this relation for $C$ as a function of $F$, then use your formula to convert $68^{\\circ}$F to degrees Celsius.",
+  "finalAnswer": "C(F)=\\frac{5}{9}(F-32), \\qquad C(68)=20",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Undo the Constant Term",
+      "explanation": "Subtract $32$ from both sides to isolate the term carrying $C$.",
+      "why": "Solving a linear relation peels operations off in reverse order.",
+      "mathExpression": "F-32=\\frac{9}{5}C"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Undo the Scaling Factor",
+      "explanation": "Multiplying by $5/9$, the reciprocal of $9/5$, yields $C$ as a function of $F$.",
+      "why": "The conversion formulas are inverses of each other because each undoes the other's operations.",
+      "mathExpression": "C=\\frac{5}{9}(F-32)"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Convert the Specific Reading",
+      "explanation": "$68^{\\circ}$F corresponds to $20^{\\circ}$C, a mild room temperature worth memorizing as a reference point.",
+      "why": "Substitution into the inverse formula completes the conversion.",
+      "mathExpression": "C(68)=\\frac{5}{9}(68-32)=\\frac{5}{9}\\cdot 36=20"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "Rational(5, 9)*(68 - 32)",
+    "expected": "20",
+    "variable": "x"
+  }
+}

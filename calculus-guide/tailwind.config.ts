@@ -10,6 +10,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        paper: {
+          page: '#fdfbf6',
+          shade: '#f6f1e7',
+          edge: '#e5dcc9',
+          ink: '#292018',
+          muted: '#6d6357',
+        },
         math: {
           primary: '#1e3a8a',
           accent: '#0284c7',
@@ -21,6 +28,16 @@ const config: Config = {
         },
       },
       fontFamily: {
+        reading: [
+          'Charter',
+          '"Bitstream Charter"',
+          '"Iowan Old Style"',
+          'Georgia',
+          '"Palatino Linotype"',
+          '"Book Antiqua"',
+          '"Times New Roman"',
+          'serif',
+        ],
         sans: [
           'Inter',
           '-apple-system',

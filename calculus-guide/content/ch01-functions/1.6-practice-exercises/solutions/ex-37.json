@@ -1,0 +1,47 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-37",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Quadratic Composed with a Linear Function",
+  "exerciseReference": "Section 1.6, Exercise 37",
+  "originalTopic": "Chapter 1 Practice: Function Composition",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "composition"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Let $f(x)=x^{2}$ and $g(x)=2x+1$. Find a formula for the composite $(f\\circ g)(x)$ and write the result as an expanded polynomial.",
+  "finalAnswer": "(f\\circ g)(x) = 4x^{2}+4x+1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Unfold the Definition of Composition",
+      "explanation": "The composite $f\\circ g$ means the linear function $g$ runs first, and the squaring function $f$ is applied to its output.",
+      "why": "Composition is always evaluated from the inside function outward.",
+      "mathExpression": "(f\\circ g)(x) = f\\big(g(x)\\big) = \\big(2x+1\\big)^{2}"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Square the Binomial",
+      "explanation": "Apply the identity $(a+b)^2 = a^2 + 2ab + b^2$ with $a=2x$ and $b=1$.",
+      "why": "Expanding the perfect square converts the composed formula into standard polynomial form.",
+      "mathExpression": "(2x+1)^{2} = (2x)^{2} + 2(2x)(1) + 1^{2}"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Collect Terms for the Final Formula",
+      "explanation": "Carrying out each product gives $4x^2$, $4x$, and $1$, so $(f\\circ g)(x)=4x^2+4x+1$ for every real $x$.",
+      "why": "No domain restrictions arise because both $f$ and $g$ are defined on all of $\\mathbb{R}$.",
+      "mathExpression": "4x^{2}+4x+1"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(2*x+1)**2",
+    "expected": "4*x**2 + 4*x + 1",
+    "variable": "x"
+  }
+}

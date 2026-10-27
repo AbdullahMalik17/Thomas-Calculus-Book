@@ -1,0 +1,52 @@
+{
+  "id": "ch01-functions/1.7-additional-and-advanced-exercises/solutions/ex-01",
+  "chapter": "ch01",
+  "section": "1.7",
+  "type": "solution",
+  "title": "Every Function Splits into an Even Part and an Odd Part",
+  "exerciseReference": "Section 1.7, Exercise 1",
+  "originalTopic": "Even and Odd Functions",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": ["advanced", "proof", "parity", "function-decomposition"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Let f be any function whose domain is symmetric about the origin. Define E(x) = [f(x) + f(-x)]/2 and O(x) = [f(x) - f(-x)]/2. Prove that f(x) = E(x) + O(x), that E is even, that O is odd, and that this decomposition is unique.",
+  "finalAnswer": "f(x) = \\frac{f(x)+f(-x)}{2} + \\frac{f(x)-f(-x)}{2}, \\quad E(-x) = E(x), \\quad O(-x) = -O(x)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Verify the Decomposition Identity",
+      "mathExpression": "E(x) + O(x) = \\frac{f(x)+f(-x)}{2} + \\frac{f(x)-f(-x)}{2} = \\frac{2f(x)}{2} = f(x)",
+      "explanation": "Adding the two definitions term by term, the f(-x) contributions appear with opposite signs and cancel, leaving exactly f(x).",
+      "why": "The plus/minus pairing is engineered so that the reflected terms annihilate; only 2*f(x)/2 survives."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Show E is Even",
+      "mathExpression": "E(-x) = \\frac{f(-x)+f(x)}{2} = E(x)",
+      "explanation": "Replace x by -x in the definition of E: the two summands simply exchange places, so the value is unchanged.",
+      "why": "Addition is commutative, so f(-x)+f(x) equals f(x)+f(-x); this is precisely the condition E(-x) = E(x) for evenness."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Show O is Odd",
+      "mathExpression": "O(-x) = \\frac{f(-x)-f(x)}{2} = -\\frac{f(x)-f(-x)}{2} = -O(x)",
+      "explanation": "Substituting -x into O swaps the order of the subtraction, which flips the overall sign of the expression.",
+      "why": "Reversing a difference negates it: b - a = -(a - b); hence O(-x) = -O(x), the defining property of an odd function."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Prove Uniqueness of the Split",
+      "mathExpression": "f(-x) = E(x) - O(x) \\;\\Rightarrow\\; E = \\frac{f(x)+f(-x)}{2},\\; O = \\frac{f(x)-f(-x)}{2}",
+      "explanation": "If f = E1 + O1 for any even E1 and odd O1, then f(-x) = E1(x) - O1(x). Adding and subtracting the two equations forces E1 and O1 to be exactly the E and O constructed above.",
+      "why": "The pair of equations in the unknowns E1(x) and O1(x) is a 2-by-2 linear system with a unique solution, so no other even-odd split can exist."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(f(x) + f(-x))/2 + (f(x) - f(-x))/2",
+    "expected": "f(x)",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-60",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Which Branch Owns the Boundary Point",
+  "exerciseReference": "Section 1.6, Exercise 60",
+  "originalTopic": "Chapter 1 Practice: Piecewise Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "piecewise-functions"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For the same piecewise function ($x+2$ for $x<0$, $x^{2}$ for $x\\ge 0$), evaluate $f(0)$ and explain how the boundary input is assigned.",
+  "finalAnswer": "f(0) = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Inspect the Inequalities at Zero",
+      "explanation": "The strict condition excludes $0$, while the non-strict condition includes it.",
+      "why": "Boundary points belong to whichever branch carries the equality sign.",
+      "mathExpression": "x<0 \\text{ fails at } 0;\\quad x\\ge 0 \\text{ holds at } 0"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply the Quadratic Branch",
+      "explanation": "Using $f(x)=x^2$ at $x=0$ produces $0$.",
+      "why": "The inequality tag decides the formula, so no averaging of the two branches is allowed.",
+      "mathExpression": "f(0) = 0^{2} = 0"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Check the Other Branch's Limit Value",
+      "explanation": "Approaching from the left the linear branch tends to $2$, but the function's actual value is set by the branch that claims $x=0$.",
+      "why": "Function values at a boundary are independent of nearby branch behavior.",
+      "mathExpression": "\\lim_{x\\to 0^-}(x+2)=2 \\ne 0"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "Piecewise((x + 2, x < 0), (x**2, True))",
+    "expected": "Piecewise((x + 2, x < 0), (x**2, True))",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "ch01-functions/1.5-questions-to-guide-your-review/solutions/ex-12",
+  "chapter": "ch01",
+  "section": "1.5",
+  "type": "solution",
+  "title": "One-to-One Functions and the Horizontal Line Test",
+  "exerciseReference": "Section 1.5, Exercise 12",
+  "originalTopic": "Inverse Functions",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": ["review", "concepts", "inverse-functions"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Explain when a function possesses an inverse function, describe the Horizontal Line Test, and illustrate by finding the inverse of f(x) = 2x - 1.",
+  "finalAnswer": "$f^{-1}$ exists exactly when $f$ is one-to-one ($f(x_1) = f(x_2) \\implies x_1 = x_2$); the Horizontal Line Test screens this, and for $f(x) = 2x - 1$ the inverse is $f^{-1}(x) = \\dfrac{x+1}{2}$.",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Require Reversibility",
+      "mathExpression": "f(x_1) = f(x_2) \\implies x_1 = x_2",
+      "explanation": "An inverse must send each output back to the unique input that produced it. If two different inputs share an output, the reverse rule would have to return two answers for one input, breaking the definition of a function.",
+      "why": "Invertibility is exactly the uniqueness requirement applied to the reverse direction."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply the Horizontal Line Test",
+      "mathExpression": "\\text{no horizontal line meets the graph twice} \\iff f \\text{ is one-to-one}",
+      "explanation": "A horizontal line y = c collects all inputs mapped to the same output c. If every such line hits the graph at most once, no output is duplicated and an inverse exists. The parabola y = x^2 fails (both x = 2 and x = -2 give 4), which is why we restrict its domain to [0, infinity) before writing sqrt as its inverse.",
+      "why": "The horizontal test mirrors the vertical test: one checks outputs, the other checks inputs."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Construct and Verify an Inverse",
+      "mathExpression": "y = 2x - 1 \\implies x = \\frac{y+1}{2} \\implies f^{-1}(x) = \\frac{x+1}{2}",
+      "explanation": "Solve y = 2x - 1 for x and rename. Verification: f(f^{-1}(x)) = 2((x+1)/2) - 1 = x and f^{-1}(f(x)) = (2x-1+1)/2 = x, the round-trip property that certifies a true inverse. The graphs of f and f inverse are mirror images across the line y = x.",
+      "why": "Checking both round trips is the algebraic proof that the candidate inverse really works."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2*((x + 1)/2) - 1",
+    "expected": "x",
+    "variable": "x"
+  }
+}

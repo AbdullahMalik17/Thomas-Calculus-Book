@@ -1,0 +1,99 @@
+# Section 1.5: Questions to Guide Your Review
+
+Authored by **Muhammad Abdullah Athar** ([GitHub Profile](https://github.com/AbdullahMalik17)), this module turns the sixteen conceptual review questions that close Chapter 1 into a complete answer-writing playbook. Nothing here is a computation drill: every question asks *what a concept means and why it holds*, which is exactly the register of exam theory questions, oral defenses, and the justification parts of proof problems.
+
+---
+
+## 1. How to Use These Review Questions
+
+Conceptual questions reward **three-part answers**: a plain-words statement, the symbolic identity, and a picture or example. Aim to produce all three for each question.
+
+| Answer ingredient | Example for "What is a function?" |
+|---|---|
+| Words | A rule assigning each input exactly one output |
+| Symbols | $f: D \to C$, $\;x \mapsto f(x)$ |
+| Picture or example | Any graph passing the Vertical Line Test, e.g. $y = x^2$ |
+
+Work through the sixteen questions in the order the solutions file lists them: definition of a function (Q1), representations and tests (Q2–Q3), domain and range (Q4–Q5), symmetry (Q6, Q16), piecewise and transformation mechanics (Q7, Q10), trigonometry (Q8–Q9, Q14), composition and inverses (Q11–Q12), rational functions (Q13), and modeling (Q15).
+
+---
+
+## 2. The Vocabulary Chain: Function, Domain, Range
+
+Everything in Chapter 1 hangs from one sentence: **a function assigns each element of its domain exactly one element of its codomain**. Two ideas flow directly from it.
+
+- The **natural domain** is the largest real set on which a formula makes sense. Block only two things by default: even roots of negatives and division by zero. So $\sqrt{x}$ lives on $[0, \infty)$, $\frac{1}{x^2-4}$ lives on $\{x : x \neq \pm 2\}$, and $\frac{x}{x^2+1}$ lives everywhere because $x^2 + 1 \geq 1$.
+- The **range** is what the graph covers when projected onto the $y$-axis, just as the domain is its projection onto the $x$-axis.
+
+$$
+\text{Domain} \longleftrightarrow \text{left-right coverage}, \qquad \text{Range} \longleftrightarrow \text{up-down coverage}
+$$
+
+When the question asks "how do you read the range from a graph", answer with the projection language and mention watching for holes, asymptotes, and endpoints that decide whether bounds are included.
+
+---
+
+## 3. Answering with Tests: Vertical, Horizontal, Symmetry
+
+Two line tests encode the chapter's two uniqueness ideas:
+
+1. **Vertical Line Test** — a curve fails to be a function's graph when some vertical line crosses it twice, because one input would own two outputs.
+2. **Horizontal Line Test** — a function fails to be invertible when some horizontal line crosses its graph twice, because one output would come back from two inputs.
+
+Note the mirror structure and use it in your answers: invertibility is the function requirement applied in reverse. Restricting a domain, such as replacing $x^2$ on $\mathbb{R}$ by $x^2$ on $[0,\infty)$, repairs invertibility — this is why inverse trig functions carry restricted domains.
+
+For symmetry, memorize the parity identities together with their geometry:
+
+$$
+f(-x) = f(x) \iff y\text{-axis mirror (e.g. } x^2,\ \cos x), \qquad
+f(-x) = -f(x) \iff \text{origin rotation (e.g. } x^3,\ \sin x)
+$$
+
+and the decomposition that any function on a symmetric domain satisfies:
+
+$$
+f(x) = \underbrace{\frac{f(x)+f(-x)}{2}}_{\text{even part}} + \underbrace{\frac{f(x)-f(-x)}{2}}_{\text{odd part}}
+$$
+
+---
+
+## 4. Trig Concepts in Review Language
+
+Three trig questions appear because calculus leans on them hard:
+
+- **Radians** are arc-to-radius ratios: $s = r\theta$. They are mandatory in calculus because $\lim_{\theta\to 0} \frac{\sin\theta}{\theta} = 1$ — and therefore $\frac{d}{dx}\sin x = \cos x$ — is true only in radian measure. Degrees smuggle in a factor $\pi/180$ at every differentiation.
+- **Amplitude and period** of $y = a\sin(bx)$ or $y = a\cos(bx)$ are $|a|$ and $\frac{2\pi}{|b|}$. Amplitude measures the swing from midline; period measures one self-copy of the wave.
+- **Periodicity** demands a single $T > 0$ with $f(x+T) = f(x)$ for every $x$. Be ready to say why $\sin(x^2)$ oscillates yet is *not* periodic: its zeros sit at $\sqrt{n\pi}$ and the gaps between them shrink, so no fixed-width window ever repeats.
+
+---
+
+## 5. Transformations and Composition Recipes
+
+Transformation answers should state direction *and* reason in one breath:
+
+- $f(x) + c$: up $c$ (output changes act as they look).
+- $f(x + c)$: left $c$ (the input must compensate before $f$ sees it).
+- $-f(x)$: reflect over the $x$-axis; $f(-x)$: reflect over the $y$-axis.
+
+For composition, define $(f \circ g)(x) = f(g(x))$ — the inner machine runs first — and always demonstrate with $f(x) = x^2$, $g(x) = 2x + 1$:
+
+$$
+(f \circ g)(x) = (2x+1)^2, \qquad (g \circ f)(x) = 2x^2 + 1
+$$
+
+Then close with the conceptual punchline: the two results differ, so **composition is not commutative**, unlike multiplying numbers.
+
+---
+
+## 6. Modeling Questions and Self-Check Routine
+
+Question 15 asks for a process, so answer in numbered steps: (1) name the variables and their units, (2) choose a realistic domain from the physical constraints, (3) write the rule relating them, (4) validate against data or limiting cases. For a rectangle with perimeter $40$, area $A(w) = w(20-w)$ on $0 < w < 20$ passes the sanity checks: the square $w = 10$ maximizes area and swapping sides leaves $A$ unchanged.
+
+Before finalizing any review answer, run this self-check:
+
+1. Did I state the definition in words *and* symbols?
+2. Did I include one example and one non-example ($\sqrt{x}$ vs. the circle $x^2+y^2=1$)?
+3. Did I name the geometric picture behind the algebra?
+4. Would my answer survive a "why?" follow-up — for instance, *why* radians, *why* does cancellation move a vertical asymptote to a hole?
+
+Answering yes to all four turns review questions from a chore into the cheapest marks on the exam.

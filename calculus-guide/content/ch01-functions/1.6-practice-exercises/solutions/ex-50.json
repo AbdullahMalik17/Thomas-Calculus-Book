@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-50",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Exact Tangent of pi over Three",
+  "exerciseReference": "Section 1.6, Exercise 50",
+  "originalTopic": "Chapter 1 Practice: Exact Trigonometric Values",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "trigonometry",
+    "exact-values"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Compute $\\tan\\left(\\dfrac{\\pi}{3}\\right)$ exactly by dividing the known sine and cosine values for this angle.",
+  "finalAnswer": "\\tan\\left(\\frac{\\pi}{3}\\right)=\\sqrt{3}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Recall the Component Values",
+      "explanation": "The $30^{\\circ}$-$60^{\\circ}$-$90^{\\circ}$ triangle supplies both special-angle values.",
+      "why": "Tangent can be built from sine and cosine of the same angle.",
+      "mathExpression": "\\sin\\frac{\\pi}{3}=\\frac{\\sqrt{3}}{2},\\qquad \\cos\\frac{\\pi}{3}=\\frac{1}{2}"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Form the Quotient",
+      "explanation": "Divide the sine value by the cosine value using the identity $\\tan\\\\theta=\\\\sin\\\\theta/\\\\cos\\\\theta$.",
+      "why": "The denominator $\\cos(\\pi/3)=1/2$ is nonzero, so the quotient identity applies.",
+      "mathExpression": "\\tan\\frac{\\pi}{3}=\\frac{\\sqrt{3}/2}{1/2}"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Simplify the Complex Fraction",
+      "explanation": "Multiplying by the reciprocal of $1/2$ cancels the twos and leaves $\\sqrt{3}$.",
+      "why": "Clearing nested fractions yields the exact final value.",
+      "mathExpression": "\\frac{\\sqrt{3}}{2}\\cdot\\frac{2}{1}=\\sqrt{3}"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "tan(pi/3)",
+    "expected": "sqrt(3)",
+    "variable": "x"
+  }
+}

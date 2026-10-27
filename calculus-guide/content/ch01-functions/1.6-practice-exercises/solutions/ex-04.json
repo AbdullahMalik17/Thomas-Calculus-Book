@@ -1,0 +1,55 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-04",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Domain of a Fractional-Power Function",
+  "exerciseReference": "Section 1.6, Exercise 4",
+  "originalTopic": "Domain of a Function",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "domain",
+    "fractional-power"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "The function F(x)=x^(2/3) can be read as the square of the cube root of x. Find its natural domain.",
+  "finalAnswer": "(-\\infty,\\infty)\\ \\text{(all real numbers)}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Rewrite Using Radical Notation",
+      "mathExpression": "x^{2/3}=\\left(\\sqrt[3]{x}\\right)^{2}",
+      "explanation": "The 2/3 power means: take the cube root first (denominator 3), then square (numerator 2).",
+      "why": "For rational exponents m/n, x^(m/n) = (n-th root of x)^m whenever the root exists."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Check the Cube Root",
+      "mathExpression": "\\sqrt[3]{x}\\ \\text{exists for every real } x",
+      "explanation": "Odd roots are defined for negative, zero, and positive inputs, so the cube root step never fails.",
+      "why": "Unlike even roots, odd roots of negative numbers are real (e.g. cube root of -8 is -2)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Check the Squaring Step",
+      "mathExpression": "\\left(\\sqrt[3]{x}\\right)^2\\in\\mathbb{R}",
+      "explanation": "Squaring any real number produces a real number, so the outer operation also imposes no restriction.",
+      "why": "Powers with positive integer exponents are defined everywhere on the reals."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Conclude the Domain",
+      "mathExpression": "(-\\infty,\\infty)",
+      "explanation": "Both stages work for every real x, so nothing must be excluded.",
+      "why": "No even root, denominator, or logarithm appears, hence the full real line is the domain."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "cbrt(x)**2",
+    "expected": "cbrt(x)**2",
+    "variable": "x"
+  }
+}

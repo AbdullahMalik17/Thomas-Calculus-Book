@@ -1,0 +1,51 @@
+{
+  "id": "ch01-functions/1.5-questions-to-guide-your-review/solutions/ex-15",
+  "chapter": "ch01",
+  "section": "1.5",
+  "type": "solution",
+  "title": "Modeling a Real-World Quantity with a Function",
+  "exerciseReference": "Section 1.5, Exercise 15",
+  "originalTopic": "Mathematical Modeling",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": ["review", "concepts", "modeling"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Outline the steps for modeling a real-world quantity with a function, then demonstrate them on a rectangle with fixed perimeter 40 whose area depends on its width.",
+  "finalAnswer": "Steps: identify variables, choose the domain, express the rule, then validate against data. For the rectangle: $A(w) = w(20 - w)$ with natural modeling domain $0 < w < 20$.",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify the Variables",
+      "mathExpression": "w = \\text{width}, \\quad \\ell = \\text{length}, \\quad A = \\text{area}",
+      "explanation": "Decide which quantity varies freely (the independent variable) and which one you want to predict (the dependent variable). Naming and units matter: width in meters, area in square meters.",
+      "why": "Every model begins by separating the input you control from the output you want."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Choose a Realistic Domain",
+      "mathExpression": "2w + 2\\ell = 40, \\ \\ell = 20 - w > 0 \\implies 0 < w < 20",
+      "explanation": "The physical constraints shrink the natural algebraic domain: widths at or beyond 20 force a nonpositive length, which describes no rectangle. Modeling domains are chosen by the situation, not only by the formula.",
+      "why": "A formula without its meaningful domain answers the wrong question."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Express the Rule",
+      "mathExpression": "A(w) = w \\ell = w(20 - w) = 20w - w^2",
+      "explanation": "Combine the geometric relations into one formula for the dependent variable in terms of the independent one. Here the perimeter constraint eliminates the length, leaving the quadratic area model A(w) = 20w - w^2.",
+      "why": "Reducing everything to a single-variable rule is what makes the function usable for optimization later."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Validate with Data and Interpret",
+      "mathExpression": "A(10) = 100 \\ (\\text{square case, maximum}); \\quad A(5) = A(15) = 75",
+      "explanation": "Test endpoints of Reason: the 10 by 10 square should give the largest area, and swapping width with length should not change the area, which the symmetry A(5) = A(15) reflects. Compare predictions with measured examples before trusting the model.",
+      "why": "Validation separates a plausible model from a decorative formula."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "w*(20 - w)",
+    "expected": "20*w - w**2",
+    "variable": "w"
+  }
+}

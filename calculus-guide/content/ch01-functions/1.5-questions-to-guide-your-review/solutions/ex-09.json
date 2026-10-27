@@ -1,0 +1,44 @@
+{
+  "id": "ch01-functions/1.5-questions-to-guide-your-review/solutions/ex-09",
+  "chapter": "ch01",
+  "section": "1.5",
+  "type": "solution",
+  "title": "Amplitude and Period of a sin(bx) and a cos(bx)",
+  "exerciseReference": "Section 1.5, Exercise 9",
+  "originalTopic": "Trigonometric Graphs: Amplitude and Period",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": ["review", "concepts", "amplitude", "period"],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "State the amplitude and period of y = a sin(bx) and y = a cos(bx), and explain what each parameter changes on the graph.",
+  "finalAnswer": "Both curves have amplitude $|a|$ and period $\\dfrac{2\\pi}{|b|}$; $a$ scales the height and $b$ compresses or stretches the wave horizontally.",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify the Amplitude",
+      "mathExpression": "\\text{Amplitude} = \\frac{y_{\\max} - y_{\\min}}{2} = |a|",
+      "explanation": "Since sin and cos oscillate between -1 and 1, multiplying by a makes the wave swing between -|a| and |a|. The amplitude measures the height of one swing from the midline, so it is always nonnegative.",
+      "why": "Using |a| rather than a guards against the sign of a being mistaken for a size."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Derive the Period",
+      "mathExpression": "b x + \\phi = 2\\pi \\implies \\text{one cycle spans } x = \\frac{2\\pi}{|b|}",
+      "explanation": "The parent wave completes a cycle when its angle grows by 2*pi. For y = a sin(bx), the angle bx grows by 2*pi when x grows by 2*pi/|b|, so that quotient is the period. Larger |b| packs more cycles into the same interval.",
+      "why": "Tracking when the inner angle advances by 2*pi gives the period without memorization."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Check with Concrete Values",
+      "mathExpression": "y = 3\\sin(2x): \\text{ amplitude } 3, \\text{ period } \\pi",
+      "explanation": "For y = 3 sin(2x), the graph peaks at 3 and repeats every pi units. For y = -cos(4x), the amplitude is |-1| = 1 and the period is 2*pi/4 = pi/2; the negative sign flips the wave but changes neither measure.",
+      "why": "Testing one sine and one reflected cosine confirms the formulas apply to both curves identically."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2*pi/abs(2)",
+    "expected": "pi",
+    "variable": "x"
+  }
+}

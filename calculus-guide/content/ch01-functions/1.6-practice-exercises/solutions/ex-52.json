@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-52",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Cosine at an Axis Angle",
+  "exerciseReference": "Section 1.6, Exercise 52",
+  "originalTopic": "Chapter 1 Practice: Exact Trigonometric Values",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "trigonometry",
+    "exact-values"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine $\\cos\\left(\\dfrac{3\\pi}{2}\\right)$ exactly by locating the terminal side of the angle on the unit circle.",
+  "finalAnswer": "\\cos\\left(\\frac{3\\pi}{2}\\right)=0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Locate the Terminal Side",
+      "explanation": "Three quarter-turns place the terminal side straight down along the negative $y$-axis.",
+      "why": "Axis angles land on coordinate axes, where one coordinate vanishes.",
+      "mathExpression": "\\frac{3\\pi}{2}=270^{\\circ} \\implies \\text{negative } y\\text{-axis}"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Read the Unit-Circle Point",
+      "explanation": "The intersection of that ray with the unit circle is the point $(0,-1)$.",
+      "why": "Every angle's trig values come from its unit-circle point.",
+      "mathExpression": "(x,y)=\\left(0,\\,-1\\right)"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Extract the Cosine",
+      "explanation": "Cosine is the $x$-coordinate of the point, which is $0$ here.",
+      "why": "Points on the $y$-axis have zero horizontal coordinate by definition.",
+      "mathExpression": "\\cos\\frac{3\\pi}{2}=x=0"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "cos(3*pi/2)",
+    "expected": "0",
+    "variable": "x"
+  }
+}

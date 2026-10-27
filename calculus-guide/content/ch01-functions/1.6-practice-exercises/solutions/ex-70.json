@@ -1,0 +1,55 @@
+{
+  "id": "ch01-functions/1.6-practice-exercises/solutions/ex-70",
+  "chapter": "ch01",
+  "section": "1.6",
+  "type": "solution",
+  "title": "Distance Traveled by a Runner Who Stops to Rest",
+  "exerciseReference": "Section 1.6, Exercise 70",
+  "originalTopic": "Chapter 1 Practice: Mathematical Modeling",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "practice",
+    "modeling",
+    "piecewise-functions"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A runner jogs at a steady $8$ miles per hour for the first half hour and then rests completely. Model total distance $d(t)$ after $t$ hours as a piecewise function and find $d(0.4)$ and $d(1)$.",
+  "finalAnswer": "d(t)=\\begin{cases}8t, & 0\\le t\\le 0.5\\\\[2pt] 4, & t>0.5\\end{cases} \\qquad d(0.4)=3.2,\\ d(1)=4",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Model the Moving Phase",
+      "explanation": "During the first half hour, distance equals rate times time, the line $d=8t$ rising from $0$ to $4$ miles.",
+      "why": "Constant speed produces a linear distance function through the origin.",
+      "mathExpression": "0\\le t\\le 0.5:\\ d(t)=8t"
+    },
+    {
+      "stepNumber": 2,
+      "title": "Model the Resting Phase",
+      "explanation": "After stopping, no new ground is covered, so the distance freezes at the $8(0.5)=4$ miles accumulated so far.",
+      "why": "Zero speed means the distance function becomes constant, not zero.",
+      "mathExpression": "t>0.5:\\ d(t)=4"
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Inside the Moving Piece",
+      "explanation": "The time $t=0.4$ lies in $[0,0.5]$, so the linear branch gives $3.2$ miles.",
+      "why": "Choosing the correct branch comes down to interval membership of $t$.",
+      "mathExpression": "d(0.4)=8(0.4)=3.2\\ \\text{miles}"
+    },
+    {
+      "stepNumber": 4,
+      "title": "Evaluate Inside the Constant Piece",
+      "explanation": "Since $t=1>0.5$, the runner is resting and the total stays at $4$ miles.",
+      "why": "The flat branch reflects that resting adds no distance no matter how long it lasts.",
+      "mathExpression": "d(1)=4\\ \\text{miles}"
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "Piecewise((8*x, x <= 0.5), (4, True))",
+    "expected": "Piecewise((8*x, x <= 0.5), (4, True))",
+    "variable": "x"
+  }
+}
