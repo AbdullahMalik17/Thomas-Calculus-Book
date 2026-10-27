@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-16",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Natural Domain and Graph of a Downward-Opening Parabola",
+  "exerciseReference": "Section 1.1, Exercise 16",
+  "originalTopic": "Functions and Graphs: Domain and Graphing",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "domain",
+    "quadratic",
+    "parabola",
+    "completing-the-square"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the natural domain and describe the graph of the quadratic function f(x) = 1 - 2x - x^2.",
+  "finalAnswer": "\\text{Domain: } (-\\infty, \\infty); \\quad \\text{Parabola opening downward with vertex } (-1, 2)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine the Natural Domain",
+      "mathExpression": "\\text{Domain} = (-\\infty, \\infty)",
+      "explanation": "As a quadratic polynomial, f(x) = 1 - 2x - x^2 involves only multiplication and addition/subtraction, so its natural domain is (-inf, inf).",
+      "why": "Every polynomial function has natural domain equal to the set of all real numbers."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Complete the Square to Locate the Vertex",
+      "mathExpression": "f(x) = -(x^2 + 2x + 1) + 1 + 1 = 2 - (x + 1)^2",
+      "explanation": "Factor -1 from the x^2 and x terms, add and subtract 1 to complete the square (x + 1)^2, and rewrite f(x) in vertex form as 2 - (x + 1)^2.",
+      "why": "Vertex form a(x - h)^2 + k immediately reveals the vertex (h, k) and axis of symmetry x = h."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Identify Intercepts and Sketch the Parabola",
+      "mathExpression": "\\text{Vertex: } (-1, 2), \\quad y\\text{-intercept: } (0, 1), \\quad x\\text{-intercepts: } (-1 \\pm \\sqrt{2}, 0)",
+      "explanation": "The graph is a downward-opening parabola with maximum at its vertex (-1, 2), symmetric about the vertical line x = -1, crossing the y-axis at (0, 1) and the x-axis at x = -1 - sqrt(2) and x = -1 + sqrt(2).",
+      "why": "Because the leading coefficient a = -1 is negative, the parabola opens downward from its vertex."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1 - 2*x - x**2",
+    "expected": "2 - (x + 1)**2",
+    "variable": "x"
+  }
+}

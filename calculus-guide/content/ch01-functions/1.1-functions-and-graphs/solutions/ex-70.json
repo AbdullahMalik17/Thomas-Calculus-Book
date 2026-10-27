@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-70",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Matching Linear, Exponential, and Quintic Functions y = 5x, y = 5^x, y = x^5 to Their Graphs",
+  "exerciseReference": "Section 1.1, Exercise 70",
+  "originalTopic": "Theory and Examples: Function Families Comparison",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "linear-functions",
+    "exponential-functions",
+    "power-functions",
+    "graphs"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Match each equation (a) y = 5x, (b) y = 5^x, and (c) y = x^5 with its corresponding graph (f, g, or h), where g is a straight line through the origin, f is a strictly positive curve passing through (0, 1), and h is an S-shaped curve passing through the origin in Quadrants I and III.",
+  "finalAnswer": "\\text{(a) } y = 5x \\to g; \\quad \\text{(b) } y = 5^x \\to f; \\quad \\text{(c) } y = x^5 \\to h",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify the Linear Function y = 5x",
+      "mathExpression": "y = 5x \\implies \\text{Straight line through } (0, 0) \\text{ with slope } 5 \\to \\text{Graph } g",
+      "explanation": "The equation y = 5x is a linear function whose graph is a straight line passing through the origin, which uniquely matches line g.",
+      "why": "Only a first-degree polynomial has a constant slope everywhere."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify the Exponential Function y = 5^x",
+      "mathExpression": "y = 5^x > 0 \\quad \\forall x \\in \\mathbb{R}, \\quad 5^0 = 1 \\to \\text{Graph } f",
+      "explanation": "The exponential function y = 5^x is strictly positive for all real x, passes through the y-intercept (0, 1), and approaches 0 as x -> -infinity. This uniquely matches curve f.",
+      "why": "An exponential function b^x (with b > 1) never crosses the x-axis and always passes through (0, 1)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Identify the Quintic Power Function y = x^5",
+      "mathExpression": "y = x^5 \\implies \\text{Odd power curve through } (0, 0) \\text{ in Quadrants I and III} \\to \\text{Graph } h",
+      "explanation": "The fifth-degree power function y = x^5 is an odd function that passes through the origin (0, 0) with a flat inflection tangent and extends into Quadrants I and III, matching curve h.",
+      "why": "Odd power functions x^n (n > 1) are nonlinear curves symmetric about the origin."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "x**5",
+    "expected": "odd",
+    "variable": "x"
+  }
+}

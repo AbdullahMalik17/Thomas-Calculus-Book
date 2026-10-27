@@ -3,43 +3,48 @@
   "chapter": "ch01",
   "section": "1.2",
   "type": "solution",
-  "title": "Subtle Domain Restrictions in Radical Compositions",
-  "exerciseReference": "Section 1.2, Exercise 7",
-  "originalTopic": "Composite Functions: Domain Constraints",
-  "difficulty": "tier2",
+  "title": "Domains and Ranges of Radical Quotients",
+  "exerciseReference": "Section 1.2, Exercise 4",
+  "originalTopic": "Algebraic Combinations",
+  "difficulty": "tier1",
   "status": "verified",
-  "tags": ["composite-functions", "domain", "radical", "pitfall"],
+  "tags": [
+    "combining-functions",
+    "domain",
+    "range",
+    "quotient",
+    "radical"
+  ],
   "author": "Muhammad Abdullah Athar",
-  "problemStatement": "Let u(x) = x^2 and v(x) = sqrt(x). Form the composition (u o v)(x) and determine its natural domain, contrasting it with the domain of the simplified formula.",
-  "finalAnswer": "(u \\circ v)(x) = x \\quad \\text{for } x \\in [0, \\infty); \\quad \\text{Domain: } [0, \\infty)",
+  "problemStatement": "Let f(x) = 1 and g(x) = 1 + sqrt(x). Determine the natural domains and ranges of f, g, the quotient f / g, and the quotient g / f.",
+  "finalAnswer": "D_f = (-\\infty, \\infty),\\ R_f = \\{1\\};\\quad D_g = [0, \\infty),\\ R_g = [1, \\infty);\\quad D_{f/g} = [0, \\infty),\\ R_{f/g} = (0, 1];\\quad D_{g/f} = [0, \\infty),\\ R_{g/f} = [1, \\infty)",
   "steps": [
     {
       "stepNumber": 1,
-      "title": "Find the Domain of the Inner Function",
-      "mathExpression": "v(x) = \\sqrt{x} \\implies D(v) = [0, \\infty)",
-      "explanation": "Any input x to the composite function u(v(x)) must first be eligible to enter the inner function v. Because the square root requires non-negative radicands, x must satisfy x >= 0.",
-      "why": "The input to a composite function must lie in the domain of the first function evaluated."
+      "title": "Find the Domains and Ranges of f and g",
+      "mathExpression": "D_f = (-\\infty, \\infty),\\ R_f = \\{1\\}; \\quad D_g = [0, \\infty),\\ R_g = [1, \\infty)",
+      "explanation": "The constant function f(x) = 1 has domain (-infinity, infinity) and range {1}. For g(x) = 1 + sqrt(x), the square root requires x >= 0, and since sqrt(x) >= 0 takes all values in [0, infinity), adding 1 shifts the range to [1, infinity).",
+      "why": "The principal square root has domain [0, infinity) and range [0, infinity), so 1 + sqrt(x) has range [1, infinity)."
     },
     {
       "stepNumber": 2,
-      "title": "Evaluate the Composition Expression",
-      "mathExpression": "(u \\circ v)(x) = u(v(x)) = (\\sqrt{x})^2 = x",
-      "explanation": "For any non-negative number x, squaring the principal square root returns x.",
-      "why": "Definition of the principal square root function for non-negative real numbers."
+      "title": "Determine the Domain and Range of f / g",
+      "mathExpression": "\\left(\\frac{f}{g}\\right)(x) = \\frac{1}{1 + \\sqrt{x}}, \\quad D_{f/g} = [0, \\infty), \\quad R_{f/g} = (0, 1]",
+      "explanation": "The intersection D_f cap D_g is [0, infinity), and on this interval g(x) = 1 + sqrt(x) >= 1 != 0, so D_{f/g} = [0, infinity). As 1 + sqrt(x) increases continuously from 1 (at x = 0) to infinity, its reciprocal 1/(1 + sqrt(x)) decreases continuously from 1 toward 0 (without reaching 0), giving range (0, 1].",
+      "why": "The reciprocal map u -> 1/u maps [1, infinity) bijectively onto (0, 1]."
     },
     {
       "stepNumber": 3,
-      "title": "Establish the True Composite Domain",
-      "mathExpression": "D(u \\circ v) = \\{x \\in [0, \\infty) : \\sqrt{x} \\in (-\\infty, \\infty)\\} = [0, \\infty)",
-      "explanation": "Although the simplified formula y = x appears defined on all of R, the composite function cannot accept negative numbers because v(x) would fail to evaluate in the real number system.",
-      "why": "Domain constraints established by inner functions cannot be erased by subsequent algebraic cancellation."
+      "title": "Determine the Domain and Range of g / f",
+      "mathExpression": "\\left(\\frac{g}{f}\\right)(x) = \\frac{1 + \\sqrt{x}}{1} = 1 + \\sqrt{x}, \\quad D_{g/f} = [0, \\infty), \\quad R_{g/f} = [1, \\infty)",
+      "explanation": "Since f(x) = 1 is never zero, dividing g(x) by f(x) leaves 1 + sqrt(x) unchanged on D_f cap D_g = [0, infinity). Consequently, D_{g/f} = [0, infinity) and R_{g/f} = [1, infinity).",
+      "why": "Dividing by the constant 1 preserves both the domain intersection and the output values of g."
     }
   ],
   "sympyVerification": {
-    "operation": "algebraic_equivalence",
-    "type": "algebraic_equivalence",
-    "expression": "sqrt(x)**2",
-    "expected": "x",
+    "operation": "domain",
+    "expression": "1 / (1 + sqrt(x))",
+    "expected": "[0, oo)",
     "variable": "x"
   }
 }

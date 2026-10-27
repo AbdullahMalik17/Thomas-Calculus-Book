@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-73",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Why a Curve Symmetric About the x-Axis Cannot Be a Non-Zero Function",
+  "exerciseReference": "Section 1.1, Exercise 73",
+  "originalTopic": "Theory and Examples: Symmetry and Function Definition",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "symmetry",
+    "vertical-line-test",
+    "proofs"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A curve in the xy-plane is symmetric about the x-axis if and only if whenever (x, y) lies on the curve, (x, -y) also lies on the curve. Explain why a curve that is symmetric about the x-axis cannot be the graph of a function of x, unless the function is identically y = 0.",
+  "finalAnswer": "\\text{Any point } (x_0, y_0) \\text{ with } y_0 \\ne 0 \\text{ yields two distinct outputs } y_0 \\text{ and } -y_0 \\text{ for } x_0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Suppose the Curve Contains a Point with y_0 != 0",
+      "mathExpression": "(x_0, y_0) \\in \\text{Curve with } y_0 \\ne 0 \\implies (x_0, -y_0) \\in \\text{Curve}",
+      "explanation": "Assume a curve symmetric about the x-axis contains at least one point (x_0, y_0) where y_0 != 0. By definition of x-axis symmetry, the reflected point (x_0, -y_0) must also lie on the curve.",
+      "why": "Symmetry across the x-axis pairs every point (x, y) on the curve with (x, -y)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Show That the Uniqueness Condition of a Function Is Violated",
+      "mathExpression": "y_0 \\ne 0 \\implies y_0 \\ne -y_0",
+      "explanation": "Because y_0 != 0, the numbers y_0 and -y_0 are distinct. Thus the single input x_0 corresponds to two distinct outputs y_0 and -y_0, meaning the vertical line x = x_0 intersects the curve at least twice.",
+      "why": "A real number equals its own negation (y = -y) if and only if y = 0."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude the Exception y = 0",
+      "mathExpression": "y = -y \\quad \\forall x \\in \\text{Domain} \\iff y = 0",
+      "explanation": "Consequently, for a curve symmetric about the x-axis to pass the Vertical Line Test, every point (x, y) on the curve must satisfy y = -y, which forces y = 0 for all x in the domain.",
+      "why": "Only points lying directly on the x-axis (y = 0) remain fixed under reflection across the x-axis."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "y - (-y)",
+    "expected": "2*y",
+    "variable": "y"
+  }
+}

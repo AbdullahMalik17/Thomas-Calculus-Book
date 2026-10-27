@@ -1,0 +1,51 @@
+{
+  "id": "ch01-functions/1.3-trigonometric-functions/solutions/ex-66",
+  "chapter": "ch01",
+  "section": "1.3",
+  "type": "solution",
+  "title": "Small-Angle Approximation sin x approx x in Radian Mode vs. Degree Mode",
+  "exerciseReference": "Section 1.3, Exercise 66",
+  "originalTopic": "Theory and Examples",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "small-angle-approximation",
+    "radians",
+    "degrees",
+    "graphing"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "When x is measured in radians, \\sin x \\approx x for numerically small values of x (with error less than 1 in 5000 for |x| < 0.1). (a) Graph y = \\sin x and y = x together in radian mode near the origin and describe what happens as x approaches 0. (b) Graph y = \\sin x and y = x together in degree mode near the origin and explain why the picture differs from radian mode.",
+  "finalAnswer": "\\text{(a) } y = \\sin x \\text{ and } y = x \\text{ coalesce with slope } 1 \\text{ at } x = 0; \\quad \\text{(b) in degrees, } \\sin(x^\\circ) = \\sin\\left(\\frac{\\pi x}{180}\\right) \\approx \\frac{\\pi}{180}x \\text{ has slope } \\frac{\\pi}{180} \\approx 0.0175 \\ne 1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Analyze Part (a): Behavior Near the Origin in Radian Mode",
+      "mathExpression": "\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1 \\implies \\sin x \\approx x \\quad (x \\text{ in radians})",
+      "explanation": "In radian mode, as x approaches 0, the curve y = sin x and the line y = x become visually indistinguishable because y = x is the tangent line to y = sin x at (0, 0) with slope 1.",
+      "why": "On a unit circle, the chord/height sin x and the arc length x have ratio approaching 1 as the radian angle x approaches 0."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Analyze Part (b): Analytical Formula of Sine in Degree Mode",
+      "mathExpression": "\\sin(x^\\circ) = \\sin\\left(\\frac{\\pi x}{180}\\right)",
+      "explanation": "When a grapher is set to degree mode, an input x is interpreted as x degrees, which equals pi*x/180 radians.",
+      "why": "Converting x degrees to radians multiplies x by pi/180."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compare the Slopes Near the Origin in Degree Mode",
+      "mathExpression": "\\sin(x^\\circ) = \\sin\\left(\\frac{\\pi x}{180}\\right) \\approx \\frac{\\pi}{180}x \\approx 0.01745x \\ll x",
+      "explanation": "Near the origin in degree mode, y = sin(x^circ) behaves like a very flat line of slope pi/180 approx 0.01745, whereas y = x has slope 1. Thus the two graphs cross at a sharp angle at (0, 0) rather than merging.",
+      "why": "Scaling the horizontal axis by 180/pi compresses the slope of the sine curve by pi/180."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(pi/180) * (180/pi) * x",
+    "expected": "x",
+    "variable": "x"
+  }
+}

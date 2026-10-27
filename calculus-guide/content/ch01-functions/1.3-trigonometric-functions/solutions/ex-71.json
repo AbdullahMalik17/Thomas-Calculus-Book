@@ -1,0 +1,51 @@
+{
+  "id": "ch01-functions/1.3-trigonometric-functions/solutions/ex-71",
+  "chapter": "ch01",
+  "section": "1.3",
+  "type": "solution",
+  "title": "Graphical Exploration of the Period Parameter B in the General Sine Function",
+  "exerciseReference": "Section 1.3, Exercise 71",
+  "originalTopic": "Computer Explorations",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "sinusoid",
+    "period",
+    "transformations",
+    "reflection"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Consider f(x) = A\\sin\\left(\\frac{2\\pi}{B}(x - C)\\right) + D with A = 3 and C = D = 0, so f(x) = 3\\sin(2\\pi x / B). (a) Describe what happens to the graph of f(x) on [-4\\pi, 4\\pi] as B increases through positive values B = 1, 3, 2\\pi, 5\\pi. (b) Explain what happens to the graph for negative values of B, such as B = -3 and B = -2\\pi.",
+  "finalAnswer": "\\text{(a) Increasing } B > 0 \\text{ stretches the wave horizontally (longer wavelength, fewer cycles)}; \\quad \\text{(b) } B < 0 \\text{ has period } |B| \\text{ and reflects the graph across the } x\\text{-axis}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Write the Simplified Function for A = 3, C = D = 0",
+      "mathExpression": "f(x) = 3\\sin\\left(\\frac{2\\pi}{B}x\\right), \\quad \\text{Period} = |B|",
+      "explanation": "Substituting A = 3, C = 0, and D = 0 yields a sine wave centered at the origin with amplitude 3 and fundamental period |B|.",
+      "why": "The distance required for (2*pi/|B|)*x to advance by 2*pi is |B|."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Part (a): Effect of Increasing Positive Values of B",
+      "mathExpression": "B = 1 < 3 < 2\\pi < 5\\pi \\implies \\text{number of cycles on } [-4\\pi, 4\\pi] = \\frac{8\\pi}{B} \\text{ decreases}",
+      "explanation": "As B increases from 1 to 3, 2*pi, and 5*pi, each oscillation takes a longer horizontal distance B to complete. Visually, the wave stretches horizontally away from the y-axis, and the number of complete waves visible in [-4*pi, 4*pi] decreases.",
+      "why": "Increasing B decreases the angular frequency 2*pi/B, which stretches the graph horizontally by factor B/(2*pi)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Part (b): Effect of Negative Values of B",
+      "mathExpression": "f_{-|B|}(x) = 3\\sin\\left(\\frac{2\\pi}{-|B|}x\\right) = -3\\sin\\left(\\frac{2\\pi}{|B|}x\\right) = -f_{|B|}(x)",
+      "explanation": "Because sine is an odd function (sin(-u) = -sin(u)), replacing B = 3 or 2*pi with B = -3 or -2*pi keeps the period equal to |B| (3 or 2*pi) while reflecting the entire graph across the x-axis (or equivalently across the y-axis).",
+      "why": "By the odd symmetry of sine, negating the frequency coefficient negates the output of the function."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "3*sin(2*pi*x / (-3))",
+    "expected": "-3*sin(2*pi*x / 3)",
+    "variable": "x"
+  }
+}

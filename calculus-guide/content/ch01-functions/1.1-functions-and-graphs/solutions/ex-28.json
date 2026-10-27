@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-28",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Graphing a Piecewise Reciprocal and Linear Function",
+  "exerciseReference": "Section 1.1, Exercise 28",
+  "originalTopic": "Piecewise-Defined Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "piecewise",
+    "rational-functions",
+    "graphs"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Analyze and describe the graph of the piecewise-defined function G(x) = 1/x for x < 0, and G(x) = x for x >= 0.",
+  "finalAnswer": "\\text{Third-quadrant hyperbola branch } y = 1/x \\text{ for } x < 0, \\text{ and first-quadrant ray } y = x \\text{ for } x \\ge 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Analyze the Negative Branch (x < 0)",
+      "mathExpression": "G(x) = \\frac{1}{x}, \\quad x < 0",
+      "explanation": "For x < 0, the graph is the third-quadrant branch of the hyperbola y = 1/x passing through (-1, -1), approaching 0^- as x -> -infinity and plunging toward -infinity as x -> 0^-.",
+      "why": "On (-inf, 0), the reciprocal 1/x is strictly negative and has asymptotes y = 0 and x = 0."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Analyze the Non-Negative Branch (x >= 0)",
+      "mathExpression": "G(x) = x, \\quad x \\ge 0",
+      "explanation": "For x >= 0, the graph is the ray y = x starting at the closed point (0, 0) and rising with slope 1 through (1, 1) in the first quadrant.",
+      "why": "The second rule applies at x = 0, placing a solid point at the origin (0, 0)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State the Domain and Range",
+      "mathExpression": "\\text{Domain} = (-\\infty, \\infty), \\quad \\text{Range} = (-\\infty, \\infty)",
+      "explanation": "The negative branch covers all negative outputs (-inf, 0), while the non-negative branch covers [0, inf), so the overall range is (-inf, inf) with an infinite discontinuity at x = 0.",
+      "why": "The union of (-inf, 0) and [0, inf) is the entire real line (-inf, inf)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "expression": "x",
+    "expected": "(-oo, oo)",
+    "variable": "x"
+  }
+}

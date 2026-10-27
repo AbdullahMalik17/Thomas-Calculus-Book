@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-53",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Parity of the Rational Function g(x) = 1 / (x^2 - 1)",
+  "exerciseReference": "Section 1.1, Exercise 53",
+  "originalTopic": "Even and Odd Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "symmetry",
+    "even-functions",
+    "rational-functions",
+    "parity"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether the rational function g(x) = 1 / (x^2 - 1) is even, odd, or neither, and explain your reasoning.",
+  "finalAnswer": "\\text{Even}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Check Domain Symmetry and Substitute -x",
+      "mathExpression": "x \\ne \\pm 1, \\quad g(-x) = \\frac{1}{(-x)^2 - 1}",
+      "explanation": "The domain R \\ {-1, 1} is symmetric about the origin. Substituting -x into the formula gives 1 / ((-x)^2 - 1).",
+      "why": "A symmetric domain ensures that whenever g(x) is defined, g(-x) is also defined."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Simplify the Denominator",
+      "mathExpression": "g(-x) = \\frac{1}{x^2 - 1} = g(x)",
+      "explanation": "Since (-x)^2 = x^2, the denominator (-x)^2 - 1 equals x^2 - 1, so g(-x) = g(x).",
+      "why": "Both the numerator 1 and denominator x^2 - 1 are invariant under x -> -x."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude Function Parity",
+      "mathExpression": "g(-x) = g(x) \\implies \\text{Even}",
+      "explanation": "Because g(-x) = g(x) for all x != +/-1, g(x) = 1 / (x^2 - 1) is an even function.",
+      "why": "The quotient of two even functions is an even function on its domain."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "1/(x**2 - 1)",
+    "expected": "even",
+    "variable": "x"
+  }
+}

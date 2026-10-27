@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-48",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Parity of the Negative Odd Power Function f(x) = x^(-5)",
+  "exerciseReference": "Section 1.1, Exercise 48",
+  "originalTopic": "Even and Odd Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "symmetry",
+    "odd-functions",
+    "power-functions",
+    "parity"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether the function f(x) = x^(-5) is even, odd, or neither, and give reasons for your answer.",
+  "finalAnswer": "\\text{Odd}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Write the Negative Exponent as a Reciprocal",
+      "mathExpression": "f(x) = x^{-5} = \\frac{1}{x^5}, \\quad x \\ne 0",
+      "explanation": "Express x^(-5) as 1 / x^5 on its symmetric domain (-inf, 0) U (0, inf).",
+      "why": "By definition of negative exponents, x^(-n) = 1 / x^n for x != 0."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate f(-x)",
+      "mathExpression": "f(-x) = (-x)^{-5} = \\frac{1}{(-x)^5} = \\frac{1}{-x^5} = -\\frac{1}{x^5} = -f(x)",
+      "explanation": "Raising -x to the odd power 5 produces (-x)^5 = -x^5, so f(-x) = -x^(-5) = -f(x).",
+      "why": "An odd power of a negative quantity retains the negative sign: (-1)^5 = -1."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude Function Parity",
+      "mathExpression": "f(-x) = -f(x) \\implies \\text{Odd}",
+      "explanation": "Because f(-x) = -f(x) for all x != 0, f(x) = x^(-5) is an odd function.",
+      "why": "Satisfying f(-x) = -f(x) throughout a symmetric domain defines an odd function."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "x**(-5)",
+    "expected": "odd",
+    "variable": "x"
+  }
+}

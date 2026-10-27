@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-38",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Symmetry and Monotonicity of y = -1 / x^2",
+  "exerciseReference": "Section 1.1, Exercise 38",
+  "originalTopic": "Increasing and Decreasing Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "increasing-decreasing",
+    "symmetry",
+    "rational-functions",
+    "even-functions"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Describe the graph of y = -1 / x^2, identify any symmetry of the graph, and specify the intervals on which the function is increasing and decreasing.",
+  "finalAnswer": "\\text{Symmetric about the } y\\text{-axis; Decreasing on } (-\\infty, 0); \\text{ Increasing on } (0, \\infty)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine the Domain and Symmetry",
+      "mathExpression": "\\text{Domain} = (-\\infty, 0) \\cup (0, \\infty), \\quad f(-x) = -\\frac{1}{(-x)^2} = -\\frac{1}{x^2} = f(x)",
+      "explanation": "The function is defined for all x != 0. Since (-x)^2 = x^2, f(-x) = f(x), so the function is even and its graph is symmetric about the y-axis.",
+      "why": "Even functions have graphs that are mirror images across the y-axis."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Analyze Monotonicity on (0, inf)",
+      "mathExpression": "0 < x_1 < x_2 \\implies x_1^2 < x_2^2 \\implies \\frac{1}{x_1^2} > \\frac{1}{x_2^2} \\implies -\\frac{1}{x_1^2} < -\\frac{1}{x_2^2}",
+      "explanation": "For positive x, as x increases, x^2 increases, 1/x^2 decreases toward 0, and therefore -1/x^2 increases from -infinity toward 0.",
+      "why": "Negating a positive decreasing function on (0, inf) turns it into a negative increasing function."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Analyze Monotonicity on (-inf, 0)",
+      "mathExpression": "x_1 < x_2 < 0 \\implies x_1^2 > x_2^2 > 0 \\implies -\\frac{1}{x_1^2} > -\\frac{1}{x_2^2}",
+      "explanation": "By y-axis symmetry (or direct inequality check), as x increases from -infinity toward 0^-, x^2 decreases toward 0^+, so -1/x^2 decreases from 0^- toward -infinity. Thus f is decreasing on (-inf, 0) and increasing on (0, inf).",
+      "why": "An even function that is increasing on (0, inf) is necessarily decreasing on (-inf, 0)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "-1/x**2",
+    "expected": "even",
+    "variable": "x"
+  }
+}

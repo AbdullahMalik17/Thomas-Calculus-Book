@@ -3,43 +3,48 @@
   "chapter": "ch01",
   "section": "1.3",
   "type": "solution",
-  "title": "Double-Angle Computations in Quadrant II",
-  "exerciseReference": "Section 1.3, Exercise 37",
-  "originalTopic": "Double-Angle Formulas: Quadrant Analysis",
-  "difficulty": "tier2",
+  "title": "Finding Sine and Cosine from Tangent in Quadrant I",
+  "exerciseReference": "Section 1.3, Exercise 8",
+  "originalTopic": "Evaluating Trigonometric Functions",
+  "difficulty": "tier1",
   "status": "verified",
-  "tags": ["trigonometry", "double-angle", "quadrants", "pythagorean"],
+  "tags": [
+    "trigonometry",
+    "pythagorean-identity",
+    "quadrants",
+    "evaluation"
+  ],
   "author": "Muhammad Abdullah Athar",
-  "problemStatement": "Suppose sin(theta) = 3/5 with theta in Quadrant II (pi/2 < theta < pi). Calculate the exact values of sin(2*theta) and cos(2*theta).",
-  "finalAnswer": "\\sin(2\\theta) = -\\frac{24}{25}, \\quad \\cos(2\\theta) = \\frac{7}{25}",
+  "problemStatement": "Given that \\tan x = 2 and x \\in [0, \\pi/2], find the exact values of \\sin x and \\cos x.",
+  "finalAnswer": "\\sin x = \\frac{2}{\\sqrt{5}} = \\frac{2\\sqrt{5}}{5}, \\quad \\cos x = \\frac{1}{\\sqrt{5}} = \\frac{\\sqrt{5}}{5}",
   "steps": [
     {
       "stepNumber": 1,
-      "title": "Find cos(theta) via Pythagorean Identity",
-      "mathExpression": "\\cos^2\\theta = 1 - \\sin^2\\theta = 1 - \\left(\\frac{3}{5}\\right)^2 = 1 - \\frac{9}{25} = \\frac{16}{25} \\implies \\cos\\theta = -\\frac{4}{5}",
-      "explanation": "Because theta is in Quadrant II, cosine is negative, so select the negative square root cos(theta) = -4/5.",
-      "why": "Pythagorean identity and negative horizontal coordinate in Quadrant II."
+      "title": "Use the Secant-Tangent Pythagorean Identity",
+      "mathExpression": "\\sec^2 x = 1 + \\tan^2 x = 1 + 2^2 = 5",
+      "explanation": "Substitute tan x = 2 into the identity 1 + tan^2 x = sec^2 x to find sec^2 x = 5.",
+      "why": "Dividing sin^2 x + cos^2 x = 1 by cos^2 x yields 1 + tan^2 x = sec^2 x."
     },
     {
       "stepNumber": 2,
-      "title": "Evaluate sin(2*theta)",
-      "mathExpression": "\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta = 2\\left(\\frac{3}{5}\\right)\\left(-\\frac{4}{5}\\right) = -\\frac{24}{25}",
-      "explanation": "Substitute the sine and cosine values into the double-angle formula for sine.",
-      "why": "Fundamental double-angle identity sin(2*theta) = 2*sin(theta)*cos(theta)."
+      "title": "Determine Cosine in Quadrant I",
+      "mathExpression": "x \\in \\left[0, \\frac{\\pi}{2}\\right] \\implies \\sec x = \\sqrt{5} \\implies \\cos x = \\frac{1}{\\sqrt{5}} = \\frac{\\sqrt{5}}{5}",
+      "explanation": "In Quadrant I, all trigonometric functions are positive, so sec x = sqrt(5) and its reciprocal is cos x = 1/sqrt(5).",
+      "why": "Cosine is strictly positive on [0, pi/2)."
     },
     {
       "stepNumber": 3,
-      "title": "Evaluate cos(2*theta)",
-      "mathExpression": "\\cos(2\\theta) = \\cos^2\\theta - \\sin^2\\theta = \\left(-\\frac{4}{5}\\right)^2 - \\left(\\frac{3}{5}\\right)^2 = \\frac{16}{25} - \\frac{9}{25} = \\frac{7}{25}",
-      "explanation": "Substitute into the double-angle cosine formula.",
-      "why": "Fundamental double-angle identity cos(2*theta) = cos^2(theta) - sin^2(theta)."
+      "title": "Determine Sine Using Tangent and Cosine",
+      "mathExpression": "\\sin x = \\tan x \\cos x = 2 \\cdot \\frac{1}{\\sqrt{5}} = \\frac{2}{\\sqrt{5}} = \\frac{2\\sqrt{5}}{5}",
+      "explanation": "Multiply tan x = 2 by cos x = 1/sqrt(5) to obtain sin x = 2/sqrt(5).",
+      "why": "Since tan x = sin x / cos x, multiplying both sides by cos x gives sin x = tan x cos x."
     }
   ],
   "sympyVerification": {
     "operation": "algebraic_equivalence",
     "type": "algebraic_equivalence",
-    "expression": "2*(3/5)*(-4/5)",
-    "expected": "-24/25",
+    "expression": "2 / sqrt(1 + 2**2)",
+    "expected": "2*sqrt(5)/5",
     "variable": "x"
   }
 }

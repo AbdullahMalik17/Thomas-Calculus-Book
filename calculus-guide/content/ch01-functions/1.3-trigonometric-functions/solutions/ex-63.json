@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.3-trigonometric-functions/solutions/ex-63",
+  "chapter": "ch01",
+  "section": "1.3",
+  "type": "solution",
+  "title": "Finding Side a of a Triangle Using the Law of Sines",
+  "exerciseReference": "Section 1.3, Exercise 63",
+  "originalTopic": "Theory and Examples",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "law-of-sines",
+    "triangles",
+    "exact-values"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A triangle has side c = 2 and angles A = \\pi/4 and B = \\pi/3. Find the length a of the side opposite angle A.",
+  "finalAnswer": "a = 2(\\sqrt{3} - 1) \\approx 1.464",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find the Third Angle C",
+      "mathExpression": "C = \\pi - (A + B) = \\pi - \\left(\\frac{\\pi}{4} + \\frac{\\pi}{3}\\right) = \\pi - \\frac{7\\pi}{12} = \\frac{5\\pi}{12}",
+      "explanation": "Use the triangle angle-sum theorem A + B + C = pi to find C = 5*pi/12.",
+      "why": "The interior angles of any Euclidean triangle sum to pi radians (180 degrees)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply the Law of Sines to Solve for a",
+      "mathExpression": "\\frac{a}{\\sin A} = \\frac{c}{\\sin C} \\implies a = \\frac{c\\sin A}{\\sin C} = \\frac{2\\sin(\\pi/4)}{\\sin(5\\pi/12)}",
+      "explanation": "Express side a in terms of c = 2, sin(pi/4), and sin(5*pi/12).",
+      "why": "By the Law of Sines, a/sin A = c/sin C."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Substitute Exact Radical Values and Simplify",
+      "mathExpression": "a = \\frac{2(\\sqrt{2}/2)}{(\\sqrt{6} + \\sqrt{2})/4} = \\frac{4\\sqrt{2}}{\\sqrt{2}(\\sqrt{3} + 1)} = \\frac{4}{\\sqrt{3} + 1} = 2(\\sqrt{3} - 1) \\approx 1.464",
+      "explanation": "Substitute sin(pi/4) = sqrt(2)/2 and sin(5*pi/12) = (sqrt(6) + sqrt(2))/4 (from Exercise 46), cancel sqrt(2), and rationalize the denominator by multiplying by (sqrt(3) - 1)/(sqrt(3) - 1).",
+      "why": "4 / (sqrt(3) + 1) = 4(sqrt(3) - 1) / (3 - 1) = 2(sqrt(3) - 1) approx 1.4641."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "2 * sin(pi/4) / sin(5*pi/12)",
+    "expected": "2*(sqrt(3) - 1)",
+    "variable": "x"
+  }
+}

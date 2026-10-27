@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-29",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Finding Piecewise Formulas for a Triangular Wave and a Step Function",
+  "exerciseReference": "Section 1.1, Exercise 29",
+  "originalTopic": "Piecewise-Defined Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "piecewise",
+    "linear-equations",
+    "step-functions"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find a piecewise formula for each graphed function: (a) a graph consisting of a line segment from (0, 0) to (1, 1) and a line segment from (1, 1) to (2, 0); (b) a step graph on [0, 4] that equals 2 on [0, 1) and [2, 3), and equals 0 on [1, 2) and [3, 4].",
+  "finalAnswer": "\\text{(a) } f(x) = \\begin{cases} x, & 0 \\le x \\le 1 \\\\ -x + 2, & 1 < x \\le 2 \\end{cases}; \\quad \\text{(b) } f(t) = \\begin{cases} 2, & 0 \\le t < 1 \\text{ or } 2 \\le t < 3 \\\\ 0, & 1 \\le t < 2 \\text{ or } 3 \\le t \\le 4 \\end{cases}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine the Two Linear Equations for Graph (a)",
+      "mathExpression": "m_1 = \\frac{1 - 0}{1 - 0} = 1 \\implies y = x; \\quad m_2 = \\frac{0 - 1}{2 - 1} = -1 \\implies y - 1 = -1(x - 1) \\implies y = -x + 2",
+      "explanation": "In graph (a), the first segment joins (0, 0) to (1, 1), giving slope 1 and equation y = x on [0, 1]. The second segment joins (1, 1) to (2, 0), giving slope -1 and equation y = -x + 2 on (1, 2].",
+      "why": "The point-slope formula y - y_1 = m(x - x_1) determines the equation of each linear segment from its endpoints."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify the Constant Pieces for Graph (b)",
+      "mathExpression": "f(t) = 2 \\text{ on } [0, 1) \\cup [2, 3), \\quad f(t) = 0 \\text{ on } [1, 2) \\cup [3, 4]",
+      "explanation": "In graph (b), each horizontal segment has a solid dot at its left endpoint and an open circle at its right endpoint (except at t = 4, which has a solid dot at (4, 0)).",
+      "why": "Solid dots denote inclusion (<=) of the endpoint in that branch, whereas open circles denote strict inequality (<)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Assemble the Complete Piecewise Formulas",
+      "mathExpression": "f(x) = \\begin{cases} x, & 0 \\le x \\le 1 \\\\ -x + 2, & 1 < x \\le 2 \\end{cases}, \\qquad f(t) = \\begin{cases} 2, & 0 \\le t < 1 \\\\ 0, & 1 \\le t < 2 \\\\ 2, & 2 \\le t < 3 \\\\ 0, & 3 \\le t \\le 4 \\end{cases}",
+      "explanation": "Combine the branch formulas with their respective subintervals to obtain the complete piecewise definitions for (a) and (b).",
+      "why": "A piecewise function is uniquely specified by listing its formula on each disjoint subinterval of its domain."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1 - 1*(x - 1)",
+    "expected": "-x + 2",
+    "variable": "x"
+  }
+}

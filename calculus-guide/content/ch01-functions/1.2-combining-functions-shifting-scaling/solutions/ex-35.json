@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-35",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Shifting the Reciprocal Hyperbola Up and Right",
+  "exerciseReference": "Section 1.2, Exercise 35",
+  "originalTopic": "Shifting Graphs",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "shifting-graphs",
+    "reciprocal",
+    "hyperbola",
+    "asymptotes"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "The graph of y = 1 / x is to be shifted up 1 unit and right 1 unit. Give an equation for the shifted graph and describe its asymptotes and intercepts.",
+  "finalAnswer": "y - 1 = \\frac{1}{x - 1} \\quad \\left(\\text{or } y = \\frac{1}{x - 1} + 1 = \\frac{x}{x - 1}\\right)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply the Horizontal Shift (Right 1 Unit)",
+      "mathExpression": "y = \\frac{1}{x - 1}",
+      "explanation": "Replace x with x - 1 in y = 1/x to shift the hyperbola 1 unit to the right.",
+      "why": "Horizontal translation right by 1 unit moves the vertical asymptote from x = 0 to x = 1."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply the Vertical Shift (Up 1 Unit)",
+      "mathExpression": "y - 1 = \\frac{1}{x - 1} \\iff y = \\frac{1}{x - 1} + 1 = \\frac{x}{x - 1}",
+      "explanation": "Add 1 to the right-hand side (or replace y with y - 1) to shift the hyperbola 1 unit upward.",
+      "why": "Vertical translation upward by 1 unit moves the horizontal asymptote from y = 0 to y = 1."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Describe the Asymptotes and Intercepts",
+      "mathExpression": "\\text{Vertical Asymptote: } x = 1, \\quad \\text{Horizontal Asymptote: } y = 1, \\quad \\text{Intercept: } (0, 0)",
+      "explanation": "The original hyperbola y = 1/x has asymptotes x = 0 and y = 0. The shifted hyperbola has vertical asymptote x = 1, horizontal asymptote y = 1, and passes through the origin (0, 0) and (2, 2).",
+      "why": "Both coordinate-axis asymptotes translate by the shift vector (1, 1)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "expression": "1 / (x - 1) + 1",
+    "expected": "(-oo, 1) U (1, oo)",
+    "variable": "x"
+  }
+}

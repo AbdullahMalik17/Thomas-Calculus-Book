@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-13",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Distance from a Point on a Line to the Origin as a Function of x",
+  "exerciseReference": "Section 1.1, Exercise 13",
+  "originalTopic": "Finding Formulas for Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "distance-formula",
+    "linear-equations",
+    "modeling"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Consider a point (x, y) lying on the line 2x + 4y = 5. Let L be the Euclidean distance from the point (x, y) to the origin (0, 0). Express L as a function of x.",
+  "finalAnswer": "L(x) = \\frac{\\sqrt{20x^2 - 20x + 25}}{4}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Write the Distance Formula from (x, y) to the Origin",
+      "mathExpression": "L = \\sqrt{(x - 0)^2 + (y - 0)^2} = \\sqrt{x^2 + y^2}",
+      "explanation": "By the Euclidean distance formula in the plane, the distance L from (x, y) to (0, 0) is sqrt(x^2 + y^2).",
+      "why": "The distance between (x, y) and (0, 0) is the hypotenuse of a right triangle with legs |x| and |y|."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve the Line Equation for y in Terms of x",
+      "mathExpression": "2x + 4y = 5 \\implies 4y = 5 - 2x \\implies y = \\frac{5 - 2x}{4}",
+      "explanation": "Isolate y in the linear constraint 2x + 4y = 5 so that y can be eliminated from the distance formula.",
+      "why": "Every point (x, y) on the line must satisfy y = (5 - 2x)/4."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Substitute y and Simplify Under a Common Denominator",
+      "mathExpression": "L(x) = \\sqrt{x^2 + \\left(\\frac{5 - 2x}{4}\\right)^2} = \\sqrt{\\frac{16x^2 + (25 - 20x + 4x^2)}{16}} = \\frac{\\sqrt{20x^2 - 20x + 25}}{4}",
+      "explanation": "Substitute y = (5 - 2x)/4 into L = sqrt(x^2 + y^2), expand (5 - 2x)^2 = 25 - 20x + 4x^2, combine over the common denominator 16, and take sqrt(16) = 4 out of the denominator.",
+      "why": "Combining fractions under the radical allows factoring 1/sqrt(16) = 1/4 out of the square root."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(x**2 + ((5 - 2*x)/4)**2)",
+    "expected": "sqrt(20*x**2 - 20*x + 25)/4",
+    "variable": "x"
+  }
+}

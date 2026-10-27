@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.3-trigonometric-functions/solutions/ex-11",
+  "chapter": "ch01",
+  "section": "1.3",
+  "type": "solution",
+  "title": "Finding Sine and Cosine from Tangent in Quadrant III",
+  "exerciseReference": "Section 1.3, Exercise 11",
+  "originalTopic": "Evaluating Trigonometric Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "pythagorean-identity",
+    "quadrants",
+    "evaluation"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Given that \\tan x = 1/2 and x \\in [\\pi, 3\\pi/2], find the exact values of \\sin x and \\cos x.",
+  "finalAnswer": "\\sin x = -\\frac{1}{\\sqrt{5}} = -\\frac{\\sqrt{5}}{5}, \\quad \\cos x = -\\frac{2}{\\sqrt{5}} = -\\frac{2\\sqrt{5}}{5}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find Secant Squared Using the Pythagorean Identity",
+      "mathExpression": "\\sec^2 x = 1 + \\tan^2 x = 1 + \\left(\\frac{1}{2}\\right)^2 = \\frac{5}{4}",
+      "explanation": "Substitute tan x = 1/2 into 1 + tan^2 x = sec^2 x to get sec^2 x = 5/4.",
+      "why": "The identity 1 + tan^2 x = sec^2 x holds wherever cos x != 0."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Determine Cosine in Quadrant III",
+      "mathExpression": "x \\in \\left[\\pi, \\frac{3\\pi}{2}\\right] \\implies \\sec x = -\\frac{\\sqrt{5}}{2} \\implies \\cos x = -\\frac{2}{\\sqrt{5}}",
+      "explanation": "In Quadrant III, both cosine and secant are negative, so sec x = -sqrt(5)/2 and cos x = -2/sqrt(5).",
+      "why": "Points on the unit circle in the third quadrant have negative x-coordinates."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Determine Sine Using Tangent and Cosine",
+      "mathExpression": "\\sin x = \\tan x \\cos x = \\frac{1}{2} \\cdot \\left(-\\frac{2}{\\sqrt{5}}\\right) = -\\frac{1}{\\sqrt{5}}",
+      "explanation": "Multiply tan x = 1/2 by cos x = -2/sqrt(5) to obtain sin x = -1/sqrt(5).",
+      "why": "The product tan x * cos x equals sin x."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(1/2) * (-2/sqrt(5))",
+    "expected": "-sqrt(5)/5",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-82",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Analyzing and Graphing Compositions of f(x) = x - 7 and g(x) = x^2",
+  "exerciseReference": "Section 1.2, Exercise 82",
+  "originalTopic": "Combining Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "composition",
+    "graphing",
+    "shifting-graphs",
+    "parabola"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Let f(x) = x - 7 and g(x) = x^2. Find explicit formulas for the composite functions f o g and g o f, and describe the graphs of f, g, f o g, and g o f.",
+  "finalAnswer": "(f \\circ g)(x) = x^2 - 7 \\text{ (vertex } (0, -7)\\text{)}, \\qquad (g \\circ f)(x) = (x - 7)^2 \\text{ (vertex } (7, 0)\\text{)}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute the Composite Formulas (f o g)(x) and (g o f)(x)",
+      "mathExpression": "(f \\circ g)(x) = f(g(x)) = x^2 - 7, \\qquad (g \\circ f)(x) = g(f(x)) = (x - 7)^2 = x^2 - 14x + 49",
+      "explanation": "Substitute g(x) = x^2 into f(x) = x - 7 to obtain (f o g)(x) = x^2 - 7. Substitute f(x) = x - 7 into g(x) = x^2 to obtain (g o f)(x) = (x - 7)^2.",
+      "why": "Composing in opposite orders applies the shift -7 either after squaring (vertical shift) or before squaring (horizontal shift)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Describe the Component Graphs f and g",
+      "mathExpression": "f(x) = x - 7 \\text{ (line, slope } 1\\text{, intercepts } (7, 0), (0, -7)\\text{)}; \\quad g(x) = x^2 \\text{ (parabola, vertex } (0, 0)\\text{)}",
+      "explanation": "The graph of f is a straight line with slope 1 shifted down 7 units from y = x. The graph of g is the standard upward-opening parabola with vertex at the origin (0, 0).",
+      "why": "Standard linear and quadratic parent curves."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compare the Shifted Parabola Graphs of f o g and g o f",
+      "mathExpression": "\\begin{aligned} (f \\circ g)(x) &= x^2 - 7 &&: \\text{Parabola } y = x^2 \\text{ shifted down } 7\\text{, vertex } (0, -7),\\text{ x-intercepts } (\\pm\\sqrt{7}, 0) \\\\ (g \\circ f)(x) &= (x - 7)^2 &&: \\text{Parabola } y = x^2 \\text{ shifted right } 7\\text{, vertex } (7, 0),\\text{ y-intercept } (0, 49) \\end{aligned}",
+      "explanation": "Both composite graphs are parabolas congruent to y = x^2: f o g shifts y = x^2 vertically downward by 7 units to vertex (0, -7) with range [-7, infinity), whereas g o f shifts y = x^2 horizontally right by 7 units to vertex (7, 0) with range [0, infinity).",
+      "why": "Post-composing with x - 7 produces a vertical shift down 7, whereas pre-composing with x - 7 produces a horizontal shift right 7."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(x - 7)**2 - (x**2 - 7)",
+    "expected": "-14*x + 56",
+    "variable": "x"
+  }
+}

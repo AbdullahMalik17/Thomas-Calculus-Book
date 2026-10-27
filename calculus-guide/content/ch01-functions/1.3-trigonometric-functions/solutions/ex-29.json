@@ -1,0 +1,52 @@
+{
+  "id": "ch01-functions/1.3-trigonometric-functions/solutions/ex-29",
+  "chapter": "ch01",
+  "section": "1.3",
+  "type": "solution",
+  "title": "Domain, Range, and Graph of the Greatest Integer Floor of Sine",
+  "exerciseReference": "Section 1.3, Exercise 29",
+  "originalTopic": "Graphing Trigonometric Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "floor-function",
+    "greatest-integer",
+    "domain",
+    "range"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Graph y = \\sin x and the greatest integer function y = \\lfloor \\sin x \\rfloor together. Determine the domain and range of \\lfloor \\sin x \\rfloor.",
+  "finalAnswer": "\\text{Domain} = (-\\infty, \\infty), \\quad \\text{Range} = \\{-1, 0, 1\\}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine the Natural Domain",
+      "mathExpression": "\\text{Domain} = (-\\infty, \\infty)",
+      "explanation": "Both y = sin x and the floor function are defined for all real numbers, so the composite function y = floor(sin x) has domain (-infinity, infinity).",
+      "why": "Every real number x produces a real output sin x, which has a unique greatest integer <= sin x."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Analyze Possible Output Values of sin x",
+      "mathExpression": "-1 \\le \\sin x \\le 1 \\quad \\forall x \\in \\mathbb{R}",
+      "explanation": "As x ranges over R, sin x takes values strictly within the closed interval [-1, 1].",
+      "why": "The unit circle bounds the vertical coordinate sin x between -1 and 1."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate the Floor Function Across [-1, 1] to Find the Range",
+      "mathExpression": "\\lfloor \\sin x \\rfloor = \\begin{cases} -1, & -1 \\le \\sin x < 0 \\\\ 0, & 0 \\le \\sin x < 1 \\\\ 1, & \\sin x = 1 \\end{cases} \\implies \\text{Range} = \\{-1, 0, 1\\}",
+      "explanation": "When sin x is in [-1, 0), floor(sin x) = -1; when sin x is in [0, 1), floor(sin x) = 0; and at the isolated peaks x = pi/2 + 2k*pi where sin x = 1, floor(sin x) = 1. Thus the range is the three-element set {-1, 0, 1}.",
+      "why": "By definition, floor(u) is the greatest integer less than or equal to u."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "type": "domain",
+    "expression": "sin(x)",
+    "expected": "(-oo, oo)",
+    "variable": "x",
+    "expected_domain": "(-oo, oo)"
+  }
+}

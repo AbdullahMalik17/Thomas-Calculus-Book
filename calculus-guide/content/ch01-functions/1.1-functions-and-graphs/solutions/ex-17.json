@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-17",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Natural Domain and Graph of the Square Root of Absolute Value",
+  "exerciseReference": "Section 1.1, Exercise 17",
+  "originalTopic": "Functions and Graphs: Domain and Graphing",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "domain",
+    "absolute-value",
+    "radicals",
+    "symmetry"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the natural domain and describe the graph of the function g(x) = sqrt(|x|).",
+  "finalAnswer": "\\text{Domain: } (-\\infty, \\infty); \\quad \\text{Even graph with cusp at } (0, 0)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine the Natural Domain",
+      "mathExpression": "|x| \\ge 0 \\quad \\forall x \\in \\mathbb{R} \\implies \\text{Domain} = (-\\infty, \\infty)",
+      "explanation": "Because the absolute value |x| is non-negative for every real number x, the square root sqrt(|x|) is always a well-defined real number.",
+      "why": "The absolute value function maps (-inf, inf) into [0, inf), where the principal square root is defined."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Express Piecewise and Check Symmetry",
+      "mathExpression": "g(-x) = \\sqrt{|-x|} = \\sqrt{|x|} = g(x), \\quad g(x) = \\begin{cases} \\sqrt{x}, & x \\ge 0 \\\\ \\sqrt{-x}, & x < 0 \\end{cases}",
+      "explanation": "Since g(-x) = g(x), the function is even and its graph is symmetric across the y-axis.",
+      "why": "Replacing x with -x leaves |x| unchanged, producing mirror symmetry about the y-axis."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Describe the Graph Geometry",
+      "mathExpression": "\\text{Passes through } (0, 0), (\\pm 1, 1), (\\pm 4, 2)",
+      "explanation": "In the first quadrant, the graph is the standard square root curve y = sqrt(x) starting at (0, 0); in the second quadrant, it is the reflected curve y = sqrt(-x), meeting at a sharp corner/cusp at the origin (0, 0).",
+      "why": "Reflecting the right branch y = sqrt(x) across the y-axis generates the left branch y = sqrt(-x)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "sqrt(Abs(x))",
+    "expected": "even",
+    "variable": "x"
+  }
+}

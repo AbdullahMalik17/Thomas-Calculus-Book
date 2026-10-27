@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-75",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Total Fencing Cost of an Isosceles Right Triangular Pen as a Function of Hypotenuse",
+  "exerciseReference": "Section 1.1, Exercise 75",
+  "originalTopic": "Theory and Examples: Applied Function Modeling",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "cost-function",
+    "geometry",
+    "right-triangle",
+    "modeling"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A pen in the shape of an isosceles right triangle with legs of length x ft and hypotenuse of length h ft is to be built. If fencing costs $5/ft for the two legs and $10/ft for the hypotenuse, write the total construction cost C as a function of h.",
+  "finalAnswer": "C(h) = 5(2 + \\sqrt{2})h",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Express Total Cost in Terms of x and h",
+      "mathExpression": "C = 5(2x) + 10h = 10x + 10h",
+      "explanation": "The triangle has two legs of length x ft costing $5/ft each (totaling 5(2x) = 10x dollars) and one hypotenuse of length h ft costing $10/ft (totaling 10h dollars).",
+      "why": "Total fencing cost is the sum of the lengths of each boundary segment weighted by its unit cost per foot."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Relate Leg Length x to Hypotenuse Length h",
+      "mathExpression": "x^2 + x^2 = h^2 \\implies 2x^2 = h^2 \\implies x = \\frac{h}{\\sqrt{2}} = \\frac{\\sqrt{2}}{2}h",
+      "explanation": "By the Pythagorean theorem for an isosceles right triangle, 2x^2 = h^2, so x = (sqrt(2)/2)h.",
+      "why": "The legs of an isosceles right triangle are equal in length and meet at a 90-degree angle."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Substitute x into the Cost Equation and Factor",
+      "mathExpression": "C(h) = 10\\left(\\frac{\\sqrt{2}}{2}h\\right) + 10h = 5\\sqrt{2}h + 10h = 5(2 + \\sqrt{2})h",
+      "explanation": "Replace x with (sqrt(2)/2)h in C = 10x + 10h and factor out 5h to obtain C(h) = 5(2 + sqrt(2))h dollars.",
+      "why": "Eliminating x expresses the total construction cost as a direct linear function of h alone."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "10*(h/sqrt(2)) + 10*h",
+    "expected": "5*(2 + sqrt(2))*h",
+    "variable": "h"
+  }
+}

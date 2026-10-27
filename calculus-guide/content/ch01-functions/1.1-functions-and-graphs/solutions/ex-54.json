@@ -3,51 +3,48 @@
   "chapter": "ch01",
   "section": "1.1",
   "type": "solution",
-  "title": "Symmetry and Parity of a Rational Function",
+  "title": "Symmetry and Parity of the Rational Function g(x) = x / (x^2 - 1)",
   "exerciseReference": "Section 1.1, Exercise 54",
-  "originalTopic": "Functions and Graphs: Symmetry and Parity",
+  "originalTopic": "Even and Odd Functions",
   "difficulty": "tier1",
   "status": "verified",
-  "tags": ["functions", "symmetry", "odd-functions", "rational-functions", "parity"],
+  "tags": [
+    "functions",
+    "symmetry",
+    "odd-functions",
+    "rational-functions",
+    "parity"
+  ],
   "author": "Muhammad Abdullah Athar",
-  "problemStatement": "Test the function g(x) = \\frac{x}{x^2 - 1} algebraically for even and odd symmetry, and describe the geometric symmetry of its graph.",
-  "finalAnswer": "Odd function; symmetric with respect to the origin",
+  "problemStatement": "Test the function g(x) = x / (x^2 - 1) algebraically for even and odd symmetry, and justify your answer.",
+  "finalAnswer": "\\text{Odd}",
   "steps": [
     {
       "stepNumber": 1,
       "title": "Substitute -x into the Formula",
       "mathExpression": "g(-x) = \\frac{-x}{(-x)^2 - 1}",
-      "explanation": "Replace every occurrence of x in the rational formula with -x to evaluate the reflected output.",
-      "why": "Testing for function parity begins by computing the response of the rule to the negated input -x."
+      "explanation": "Replace every occurrence of x in the rational formula with -x on the symmetric domain x != +/-1.",
+      "why": "Testing for function parity begins by computing the output for the negated input -x."
     },
     {
       "stepNumber": 2,
-      "title": "Simplify the Exponents",
+      "title": "Simplify the Denominator",
       "mathExpression": "(-x)^2 - 1 = x^2 - 1 \\implies g(-x) = \\frac{-x}{x^2 - 1}",
       "explanation": "Because squaring a negative number yields a positive result, (-x)^2 = x^2, leaving the denominator unchanged while the numerator is negated.",
       "why": "Even powers of real numbers are invariant under negation: (-x)^2 = x^2."
     },
     {
       "stepNumber": 3,
-      "title": "Compare with -g(x)",
-      "mathExpression": "\\frac{-x}{x^2 - 1} = -\\left(\\frac{x}{x^2 - 1}\\right) = -g(x)",
-      "explanation": "Moving the negative sign in the numerator to the front of the entire fraction establishes that g(-x) = -g(x) for all x in the domain (x != 1 and x != -1).",
+      "title": "Compare with -g(x) and Conclude",
+      "mathExpression": "g(-x) = -\\left(\\frac{x}{x^2 - 1}\\right) = -g(x) \\implies \\text{Odd}",
+      "explanation": "Factoring the minus sign in front of the fraction establishes that g(-x) = -g(x) for all x != +/-1, so g is an odd function.",
       "why": "The quotient of an odd function (numerator x) and an even function (denominator x^2 - 1) is an odd function."
-    },
-    {
-      "stepNumber": 4,
-      "title": "Conclude Symmetry",
-      "mathExpression": "g(-x) = -g(x) \\implies \\text{Symmetry with respect to the origin}",
-      "explanation": "Since g(-x) = -g(x), the function is odd. The graph is invariant under a 180-degree rotation about the origin.",
-      "why": "Origin symmetry is the characteristic geometric manifestation of every odd function."
     }
   ],
   "sympyVerification": {
     "operation": "symmetry",
-    "type": "symmetry",
     "expression": "x/(x**2 - 1)",
     "expected": "odd",
-    "expected_symmetry": "odd",
     "variable": "x"
   }
 }

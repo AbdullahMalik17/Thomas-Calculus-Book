@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-55",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Graphing an Upward-Shifted Inverse-Square Function",
+  "exerciseReference": "Section 1.2, Exercise 55",
+  "originalTopic": "Shifting Graphs",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "graphing",
+    "shifting-graphs",
+    "rational",
+    "asymptotes"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Analyze and describe the graph of y = 1/x^2 + 1 by identifying its parent function, shift, asymptotes, domain, range, and intercepts.",
+  "finalAnswer": "\\text{Parent } y = \\frac{1}{x^2} \\text{ shifted up } 1;\\quad \\text{VA: } x = 0,\\quad \\text{HA: } y = 1,\\quad \\text{Domain: } (-\\infty, 0) \\cup (0, \\infty),\\quad \\text{Range: } (1, \\infty),\\quad \\text{Intercepts: none}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify the Parent Function and Vertical Shift",
+      "mathExpression": "y = \\frac{1}{x^2} + 1",
+      "explanation": "Adding 1 to the parent function y = 1/x^2 shifts its graph 1 unit upward.",
+      "why": "Adding 1 increases every output of 1/x^2 by 1."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Determine the Asymptotes, Domain, and Range",
+      "mathExpression": "\\text{VA: } x = 0, \\quad \\text{HA: } y = 1, \\quad \\text{Domain: } (-\\infty, 0) \\cup (0, \\infty), \\quad \\text{Range: } (1, \\infty)",
+      "explanation": "The vertical asymptote is x = 0, and the horizontal asymptote shifts up to y = 1. Because 1/x^2 > 0 for all x != 0, 1/x^2 + 1 > 1, giving range (1, infinity).",
+      "why": "Shifting the range (0, infinity) upward by 1 yields (1, infinity)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Verify Intercepts and Symmetry",
+      "mathExpression": "\\text{Even symmetry: } f(-x) = f(x); \\quad \\text{Points: } (-1, 2),\\ (1, 2); \\quad \\text{No intercepts}",
+      "explanation": "Because x != 0 and y > 1 everywhere, the graph never intersects either coordinate axis. Both branches lie above y = 1, symmetric about the y-axis and passing through (+/-1, 2).",
+      "why": "Since 1/x^2 + 1 >= 1 > 0, y can never equal 0, and x = 0 is excluded from the domain."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "1 / x**2 + 1",
+    "expected": "even",
+    "variable": "x"
+  }
+}

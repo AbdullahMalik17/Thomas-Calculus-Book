@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-20",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Natural Domain and Graph of G(t) = 1 / |t|",
+  "exerciseReference": "Section 1.1, Exercise 20",
+  "originalTopic": "Functions and Graphs: Domain and Graphing",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "domain",
+    "absolute-value",
+    "rational-functions",
+    "asymptotes"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the natural domain and describe the graph of the function G(t) = 1 / |t|.",
+  "finalAnswer": "\\text{Domain: } (-\\infty, 0) \\cup (0, \\infty); \\quad \\text{Even graph in Quadrants I and II with asymptotes } t = 0, y = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine the Natural Domain",
+      "mathExpression": "|t| \\ne 0 \\implies t \\ne 0 \\implies \\text{Domain} = (-\\infty, 0) \\cup (0, \\infty)",
+      "explanation": "Because the denominator |t| vanishes only at t = 0, the natural domain is the set of all non-zero real numbers.",
+      "why": "A rational expression is defined everywhere its denominator is non-zero."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Write in Piecewise Form and Analyze Symmetry",
+      "mathExpression": "G(t) = \\begin{cases} 1/t, & t > 0 \\\\ -1/t, & t < 0 \\end{cases}, \\quad G(-t) = \\frac{1}{|-t|} = G(t)",
+      "explanation": "Since G(-t) = G(t), the function is even and symmetric about the vertical y-axis, taking strictly positive values for all t != 0.",
+      "why": "The absolute value in the denominator reflects the negative left branch of 1/t above the horizontal axis."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Describe Asymptotic Behavior and Graph",
+      "mathExpression": "\\lim_{t \\to 0} G(t) = +\\infty, \\quad \\lim_{t \\to \\pm\\infty} G(t) = 0",
+      "explanation": "The graph consists of two symmetric hyperbolic branches in the first and second quadrants passing through (1, 1) and (-1, 1), rising toward +infinity along the vertical asymptote t = 0 and decaying toward the horizontal asymptote y = 0 as |t| -> infinity.",
+      "why": "As |t| approaches 0, its reciprocal 1/|t| grows without bound; as |t| grows without bound, 1/|t| approaches 0."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "expression": "1/Abs(t)",
+    "expected": "(-oo, 0) U (0, oo)",
+    "variable": "t"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.3-trigonometric-functions/solutions/ex-48",
+  "chapter": "ch01",
+  "section": "1.3",
+  "type": "solution",
+  "title": "Evaluating cos^2(5*pi/12) via the Half-Angle Formula",
+  "exerciseReference": "Section 1.3, Exercise 48",
+  "originalTopic": "Using the Half-Angle Formulas",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "half-angle-formulas",
+    "exact-values"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Use a half-angle identity to find the exact value of \\cos^2(5\\pi/12).",
+  "finalAnswer": "\\frac{2 - \\sqrt{3}}{4}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply the Half-Angle Formula for Cosine Squared",
+      "mathExpression": "\\cos^2\\left(\\frac{5\\pi}{12}\\right) = \\frac{1 + \\cos(2 \\cdot 5\\pi/12)}{2} = \\frac{1 + \\cos(5\\pi/6)}{2}",
+      "explanation": "Apply cos^2(theta) = (1 + cos(2*theta))/2 with theta = 5*pi/12, so 2*theta = 5*pi/6.",
+      "why": "Doubling 5*pi/12 simplifies the fraction to the special Quadrant II angle 5*pi/6."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate cos(5*pi/6)",
+      "mathExpression": "\\cos\\left(\\frac{5\\pi}{6}\\right) = -\\frac{\\sqrt{3}}{2}",
+      "explanation": "Since 5*pi/6 is in Quadrant II with reference angle pi/6, its cosine is -cos(pi/6) = -sqrt(3)/2.",
+      "why": "cos(pi - alpha) = -cos(alpha) for any angle alpha."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Simplify the Fraction",
+      "mathExpression": "\\cos^2\\left(\\frac{5\\pi}{12}\\right) = \\frac{1 - \\sqrt{3}/2}{2} = \\frac{2 - \\sqrt{3}}{4}",
+      "explanation": "Multiply numerator and denominator by 2 to obtain (2 - sqrt(3))/4.",
+      "why": "Scaling numerator and denominator by 2 clears the compound fraction."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(1 + cos(5*pi/6))/2",
+    "expected": "(2 - sqrt(3))/4",
+    "variable": "x"
+  }
+}

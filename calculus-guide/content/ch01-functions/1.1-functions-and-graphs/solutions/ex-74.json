@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-74",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Modeling Book Sales Revenue as a Function of Price Increases",
+  "exerciseReference": "Section 1.1, Exercise 74",
+  "originalTopic": "Theory and Examples: Applied Function Modeling",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "revenue",
+    "modeling",
+    "quadratic",
+    "economics"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Three hundred books sell for $40 each, generating a revenue of (300)($40) = $12,000. For each $5 increase in the unit price, 25 fewer books are sold. Express the total revenue R as a function of the number x of $5 price increases.",
+  "finalAnswer": "R(x) = (300 - 25x)(40 + 5x) = 12000 + 500x - 125x^2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Express the New Unit Price as a Function of x",
+      "mathExpression": "p(x) = 40 + 5x",
+      "explanation": "Starting from the base price of $40 per book, each of the x price increases adds $5 to the price, giving p(x) = 40 + 5x dollars per book.",
+      "why": "The unit price increases linearly by $5 per increment x."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Express the Quantity Sold as a Function of x",
+      "mathExpression": "q(x) = 300 - 25x",
+      "explanation": "Starting from 300 books sold, each $5 increase reduces the number of books sold by 25, leaving q(x) = 300 - 25x books sold.",
+      "why": "Demand decreases linearly by 25 units per $5 price increase."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Multiply Price and Quantity to Obtain Revenue R(x)",
+      "mathExpression": "R(x) = q(x) \\cdot p(x) = (300 - 25x)(40 + 5x) = 12000 + 500x - 125x^2",
+      "explanation": "Total revenue equals the number of books sold multiplied by the price per book: R(x) = (300 - 25x)(40 + 5x) = 12,000 + 500x - 125x^2.",
+      "why": "Total revenue is defined as the product of quantity sold and unit selling price."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(300 - 25*x)*(40 + 5*x)",
+    "expected": "12000 + 500*x - 125*x**2",
+    "variable": "x"
+  }
+}

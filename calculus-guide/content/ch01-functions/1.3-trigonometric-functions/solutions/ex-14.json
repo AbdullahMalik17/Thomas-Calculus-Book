@@ -1,0 +1,51 @@
+{
+  "id": "ch01-functions/1.3-trigonometric-functions/solutions/ex-14",
+  "chapter": "ch01",
+  "section": "1.3",
+  "type": "solution",
+  "title": "Period and Graph of y = sin(x/2)",
+  "exerciseReference": "Section 1.3, Exercise 14",
+  "originalTopic": "Graphing Trigonometric Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "graphing",
+    "period",
+    "sine",
+    "horizontal-scaling"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the fundamental period of the function y = \\sin(x/2) and describe the key points of its graph over one complete cycle.",
+  "finalAnswer": "\\text{Period} = 4\\pi",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Calculate the Fundamental Period",
+      "mathExpression": "B = \\frac{2\\pi}{1/2} = 4\\pi",
+      "explanation": "In y = sin((1/2)x), the angular frequency is omega = 1/2, which stretches the standard period 2*pi by a factor of 2 to B = 4*pi.",
+      "why": "The function completes one full oscillation as x/2 ranges from 0 to 2*pi, i.e., as x ranges from 0 to 4*pi."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Determine Amplitude and Range",
+      "mathExpression": "|A| = 1, \\quad \\text{Range} = [-1, 1]",
+      "explanation": "The amplitude is 1, so the graph oscillates vertically between -1 and 1.",
+      "why": "Horizontal scaling alters the period without changing the vertical range [-1, 1]."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Identify Quarter-Period Landmarks on [0, 4*pi]",
+      "mathExpression": "(0, 0), \\; (\\pi, 1), \\; (2\\pi, 0), \\; (3\\pi, -1), \\; (4\\pi, 0)",
+      "explanation": "The quarter-period step is 4*pi/4 = pi, yielding zeros at 0, 2*pi, 4*pi, a peak of 1 at x = pi, and a trough of -1 at x = 3*pi.",
+      "why": "Evaluating sin(x/2) at multiples of pi maps directly to the quadrantal angles 0, pi/2, pi, 3*pi/2, and 2*pi."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "sin((x + 4*pi)/2)",
+    "expected": "sin(x/2)",
+    "variable": "x"
+  }
+}

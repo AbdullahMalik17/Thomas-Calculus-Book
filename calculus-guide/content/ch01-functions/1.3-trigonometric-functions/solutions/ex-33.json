@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.3-trigonometric-functions/solutions/ex-33",
+  "chapter": "ch01",
+  "section": "1.3",
+  "type": "solution",
+  "title": "Deriving the Identity sin(x + pi/2) = cos x",
+  "exerciseReference": "Section 1.3, Exercise 33",
+  "originalTopic": "Using the Addition Formulas",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "addition-formulas",
+    "identities",
+    "proof"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Use the trigonometric addition formulas to derive the identity \\sin(x + \\pi/2) = \\cos x.",
+  "finalAnswer": "\\sin\\left(x + \\frac{\\pi}{2}\\right) = \\cos x",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply the Sine Addition Formula",
+      "mathExpression": "\\sin\\left(x + \\frac{\\pi}{2}\\right) = \\sin x \\cos\\left(\\frac{\\pi}{2}\\right) + \\cos x \\sin\\left(\\frac{\\pi}{2}\\right)",
+      "explanation": "Expand sin(x + pi/2) using the identity sin(A + B) = sin A cos B + cos A sin B with A = x and B = pi/2.",
+      "why": "The sine addition formula holds for all real numbers A and B."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute Exact Values at pi/2",
+      "mathExpression": "\\cos\\left(\\frac{\\pi}{2}\\right) = 0, \\quad \\sin\\left(\\frac{\\pi}{2}\\right) = 1",
+      "explanation": "Use the unit circle values cos(pi/2) = 0 and sin(pi/2) = 1.",
+      "why": "An angle of pi/2 radians terminates at (0, 1) on the unit circle."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Simplify to Obtain cos x",
+      "mathExpression": "\\sin x \\cdot (0) + \\cos x \\cdot (1) = \\cos x",
+      "explanation": "The first product vanishes and the second equals cos x, completing the derivation.",
+      "why": "0 + cos x simplifies identically to cos x."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "sin(x + pi/2)",
+    "expected": "cos(x)",
+    "variable": "x"
+  }
+}

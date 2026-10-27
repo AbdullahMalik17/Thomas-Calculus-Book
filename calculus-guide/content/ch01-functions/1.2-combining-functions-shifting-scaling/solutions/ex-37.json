@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-37",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Graphing a Horizontally Shifted Square Root Function",
+  "exerciseReference": "Section 1.2, Exercise 37",
+  "originalTopic": "Shifting Graphs",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "graphing",
+    "shifting-graphs",
+    "radical",
+    "domain",
+    "range"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Analyze and describe the graph of y = sqrt(x + 4) by identifying its parent function, transformation, natural domain, range, and intercepts.",
+  "finalAnswer": "\\text{Parent } y = \\sqrt{x} \\text{ shifted left } 4;\\quad \\text{Domain: } [-4, \\infty),\\quad \\text{Range: } [0, \\infty),\\quad \\text{Endpoint: } (-4, 0),\\quad \\text{y-intercept: } (0, 2)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify the Parent Function and Transformation",
+      "mathExpression": "y = f(x + 4) = \\sqrt{x + 4}, \\quad \\text{where } f(x) = \\sqrt{x}",
+      "explanation": "The function y = sqrt(x + 4) is obtained from the standard square root graph y = sqrt(x) by replacing x with x + 4, which shifts the graph 4 units to the left.",
+      "why": "Replacing x with x + c (c > 0) translates a graph horizontally to the left by c units."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Determine the Domain and Range",
+      "mathExpression": "x + 4 \\ge 0 \\iff x \\ge -4 \\implies \\text{Domain: } [-4, \\infty), \\quad \\text{Range: } [0, \\infty)",
+      "explanation": "The radicand x + 4 must be non-negative, giving domain [-4, infinity). Since the horizontal shift does not affect vertical outputs, the range remains [0, infinity).",
+      "why": "Horizontal translations shift the domain interval while leaving the range unchanged."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Locate Key Points and Intercepts",
+      "mathExpression": "\\text{Left endpoint / x-intercept: } (-4, 0), \\quad \\text{y-intercept: } (0, \\sqrt{4}) = (0, 2), \\quad \\text{Point: } (5, 3)",
+      "explanation": "The curve starts at (-4, 0), crosses the y-axis at (0, 2), and rises concavely to the right through (5, 3).",
+      "why": "Evaluating y(-4) = 0 and y(0) = 2 anchors the starting endpoint and y-axis crossing."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "expression": "sqrt(x + 4)",
+    "expected": "[-4, oo)",
+    "variable": "x"
+  }
+}

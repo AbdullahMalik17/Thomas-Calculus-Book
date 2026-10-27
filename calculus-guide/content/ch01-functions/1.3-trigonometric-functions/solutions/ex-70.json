@@ -1,0 +1,51 @@
+{
+  "id": "ch01-functions/1.3-trigonometric-functions/solutions/ex-70",
+  "chapter": "ch01",
+  "section": "1.3",
+  "type": "solution",
+  "title": "Parameters A, B, C, D and Graph of y = (L/(2*pi))*sin(2*pi*t/L)",
+  "exerciseReference": "Section 1.3, Exercise 70",
+  "originalTopic": "General Sine Curves",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "sinusoid",
+    "amplitude",
+    "period",
+    "parameters"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "For the general sine function f(t) = A\\sin\\left(\\frac{2\\pi}{B}(t - C)\\right) + D, identify the constants A, B, C, and D for y = \\frac{L}{2\\pi}\\sin\\left(\\frac{2\\pi t}{L}\\right) (where L > 0) and describe its graph.",
+  "finalAnswer": "A = \\frac{L}{2\\pi}, \\quad B = L, \\quad C = 0, \\quad D = 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compare Directly with the Standard Sinusoid Formula",
+      "mathExpression": "y = \\frac{L}{2\\pi}\\sin\\left(\\frac{2\\pi}{L}(t - 0)\\right) + 0",
+      "explanation": "Rewrite the given formula in the exact form A*sin((2*pi/B)*(t - C)) + D.",
+      "why": "The argument (2*pi*t)/L is already in the form (2*pi/B)*(t - 0) with B = L."
+    },
+    {
+      "stepNumber": 2,
+      "title": "State A, B, C, and D",
+      "mathExpression": "A = \\frac{L}{2\\pi}, \\quad B = L, \\quad C = 0, \\quad D = 0",
+      "explanation": "Since L > 0, the amplitude is A = L/(2*pi), the period is B = L, the horizontal shift is C = 0, and the vertical shift is D = 0.",
+      "why": "Each parameter is read directly from the standard form."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Describe Key Landmarks Over One Period [0, L]",
+      "mathExpression": "(0, 0), \\; \\left(\\frac{L}{4}, \\frac{L}{2\\pi}\\right), \\; \\left(\\frac{L}{2}, 0\\right), \\; \\left(\\frac{3L}{4}, -\\frac{L}{2\\pi}\\right), \\; (L, 0)",
+      "explanation": "Over [0, L], the sine wave starts at the origin, peaks at (L/4, L/(2*pi)), crosses zero at L/2, reaches its minimum at (3L/4, -L/(2*pi)), and completes the cycle at (L, 0).",
+      "why": "Dividing the period L into quarters gives the standard quadrantal points of the sine wave."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(L/(2*pi))*sin((2*pi/L)*(t + L))",
+    "expected": "(L/(2*pi))*sin(2*pi*t/L)",
+    "variable": "t"
+  }
+}

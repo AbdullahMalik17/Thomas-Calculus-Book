@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-34",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Solving the Equation floor(x) = ceiling(x)",
+  "exerciseReference": "Section 1.1, Exercise 34",
+  "originalTopic": "The Greatest and Least Integer Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "floor-function",
+    "ceiling-function",
+    "integers"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine all real numbers x that satisfy the equation floor(x) = ceiling(x).",
+  "finalAnswer": "x \\in \\mathbb{Z} \\quad (\\text{all integers } x = 0, \\pm 1, \\pm 2, \\dots)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Test Integer Values of x",
+      "mathExpression": "x = n \\in \\mathbb{Z} \\implies \\lfloor n \\rfloor = n = \\lceil n \\rceil",
+      "explanation": "If x = n is an integer, the greatest integer less than or equal to n is n itself, and the least integer greater than or equal to n is also n. Thus floor(x) = ceiling(x) for every integer.",
+      "why": "Every integer is both <= itself and >= itself."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Test Non-Integer Values of x",
+      "mathExpression": "x \\notin \\mathbb{Z} \\implies \\exists n \\in \\mathbb{Z} \\text{ such that } n < x < n + 1",
+      "explanation": "If x is not an integer, x lies strictly between two consecutive integers n and n + 1. Then floor(x) = n while ceiling(x) = n + 1, so ceiling(x) - floor(x) = 1 != 0.",
+      "why": "For any non-integer real number, the floor and ceiling always differ by 1."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude the Solution Set",
+      "mathExpression": "\\lfloor x \\rfloor = \\lceil x \\rceil \\iff x \\in \\mathbb{Z}",
+      "explanation": "The equation floor(x) = ceiling(x) holds if and only if x is an integer.",
+      "why": "Combining the two exhaustive cases (x in Z and x not in Z) proves that Z is the complete solution set."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(n + 1) - n",
+    "expected": "1",
+    "variable": "n"
+  }
+}

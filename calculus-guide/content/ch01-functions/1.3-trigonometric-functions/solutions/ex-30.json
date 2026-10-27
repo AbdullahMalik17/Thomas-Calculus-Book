@@ -1,0 +1,52 @@
+{
+  "id": "ch01-functions/1.3-trigonometric-functions/solutions/ex-30",
+  "chapter": "ch01",
+  "section": "1.3",
+  "type": "solution",
+  "title": "Domain, Range, and Graph of the Least Integer Ceiling of Sine",
+  "exerciseReference": "Section 1.3, Exercise 30",
+  "originalTopic": "Graphing Trigonometric Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "ceiling-function",
+    "least-integer",
+    "domain",
+    "range"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Graph y = \\sin x and the least integer function y = \\lceil \\sin x \\rceil together. Determine the domain and range of \\lceil \\sin x \\rceil.",
+  "finalAnswer": "\\text{Domain} = (-\\infty, \\infty), \\quad \\text{Range} = \\{-1, 0, 1\\}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine the Natural Domain",
+      "mathExpression": "\\text{Domain} = (-\\infty, \\infty)",
+      "explanation": "Since sin x is defined for all real x and the ceiling function is defined for all real inputs, the domain of ceiling(sin x) is (-infinity, infinity).",
+      "why": "Composing two functions whose domains are all real numbers yields a function defined on (-infinity, infinity)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Partition the Values of sin x in [-1, 1]",
+      "mathExpression": "\\lceil \\sin x \\rceil = \\begin{cases} -1, & \\sin x = -1 \\\\ 0, & -1 < \\sin x \\le 0 \\\\ 1, & 0 < \\sin x \\le 1 \\end{cases}",
+      "explanation": "At the troughs x = 3*pi/2 + 2k*pi where sin x = -1, ceiling(sin x) = -1; on (-1, 0], ceiling(sin x) = 0; and on (0, 1], ceiling(sin x) = 1.",
+      "why": "By definition, ceiling(u) is the smallest integer greater than or equal to u."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State the Range",
+      "mathExpression": "\\text{Range} = \\{-1, 0, 1\\}",
+      "explanation": "Collecting the three possible integer outputs gives the range {-1, 0, 1}.",
+      "why": "The only integers that are ceilings of numbers in [-1, 1] are -1, 0, and 1."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "type": "domain",
+    "expression": "sin(x)",
+    "expected": "(-oo, oo)",
+    "variable": "x",
+    "expected_domain": "(-oo, oo)"
+  }
+}

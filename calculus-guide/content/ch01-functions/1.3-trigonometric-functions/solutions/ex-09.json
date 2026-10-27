@@ -3,43 +3,48 @@
   "chapter": "ch01",
   "section": "1.3",
   "type": "solution",
-  "title": "Applying the Law of Cosines to Oblique Triangles",
-  "exerciseReference": "Section 1.3, Exercise 43",
-  "originalTopic": "Triangles and Geometry: Law of Cosines",
-  "difficulty": "tier2",
+  "title": "Finding Sine and Tangent from Cosine in Quadrant IV",
+  "exerciseReference": "Section 1.3, Exercise 9",
+  "originalTopic": "Evaluating Trigonometric Functions",
+  "difficulty": "tier1",
   "status": "verified",
-  "tags": ["trigonometry", "law-of-cosines", "geometry", "triangles"],
+  "tags": [
+    "trigonometry",
+    "pythagorean-identity",
+    "quadrants",
+    "evaluation"
+  ],
   "author": "Muhammad Abdullah Athar",
-  "problemStatement": "In a triangle with side lengths a = 5 and b = 8, and included angle C = pi/3 (60 degrees), compute the exact length of the third side c.",
-  "finalAnswer": "c = 7",
+  "problemStatement": "Given that \\cos x = 1/3 and x \\in [-\\pi/2, 0], find the exact values of \\sin x and \\tan x.",
+  "finalAnswer": "\\sin x = -\\frac{\\sqrt{8}}{3} = -\\frac{2\\sqrt{2}}{3}, \\quad \\tan x = -\\sqrt{8} = -2\\sqrt{2}",
   "steps": [
     {
       "stepNumber": 1,
-      "title": "State the Law of Cosines",
-      "mathExpression": "c^2 = a^2 + b^2 - 2ab\\cos C",
-      "explanation": "Identify the formula relating three sides of an oblique triangle and one included angle.",
-      "why": "The Law of Cosines generalizes the Pythagorean theorem for non-right triangles."
+      "title": "Compute Sine Squared via the Pythagorean Identity",
+      "mathExpression": "\\sin^2 x = 1 - \\cos^2 x = 1 - \\left(\\frac{1}{3}\\right)^2 = \\frac{8}{9}",
+      "explanation": "Substitute cos x = 1/3 into sin^2 x = 1 - cos^2 x to get 8/9.",
+      "why": "The unit circle identity sin^2 x + cos^2 x = 1 relates sine and cosine for every angle."
     },
     {
       "stepNumber": 2,
-      "title": "Substitute the Given Values",
-      "mathExpression": "c^2 = 5^2 + 8^2 - 2(5)(8)\\cos\\left(\\frac{\\pi}{3}\\right) = 25 + 64 - 80\\left(\\frac{1}{2}\\right)",
-      "explanation": "Substitute a = 5, b = 8, and the exact special angle value cos(pi/3) = 1/2.",
-      "why": "Standard cosine evaluation at pi/3 rad (60 degrees)."
+      "title": "Determine the Sign of Sine in Quadrant IV",
+      "mathExpression": "x \\in \\left[-\\frac{\\pi}{2}, 0\\right] \\implies \\sin x = -\\sqrt{\\frac{8}{9}} = -\\frac{\\sqrt{8}}{3} = -\\frac{2\\sqrt{2}}{3}",
+      "explanation": "Since x lies in Quadrant IV ([-pi/2, 0]), sin x is negative, giving sin x = -sqrt(8)/3.",
+      "why": "The y-coordinate on the unit circle is negative in the fourth quadrant."
     },
     {
       "stepNumber": 3,
-      "title": "Solve for Side Length c",
-      "mathExpression": "c^2 = 89 - 40 = 49 \\implies c = \\sqrt{49} = 7",
-      "explanation": "Taking the positive square root gives the exact geometric side length c = 7.",
-      "why": "Geometric lengths must be strictly positive real quantities."
+      "title": "Evaluate the Tangent Ratio",
+      "mathExpression": "\\tan x = \\frac{\\sin x}{\\cos x} = \\frac{-\\sqrt{8}/3}{1/3} = -\\sqrt{8} = -2\\sqrt{2}",
+      "explanation": "Divide sin x = -sqrt(8)/3 by cos x = 1/3 to find tan x = -sqrt(8) = -2*sqrt(2).",
+      "why": "The quotient identity tan x = sin x / cos x cancels the common denominator 3."
     }
   ],
   "sympyVerification": {
     "operation": "algebraic_equivalence",
     "type": "algebraic_equivalence",
-    "expression": "sqrt(5**2 + 8**2 - 2*5*8*cos(pi/3))",
-    "expected": "7",
+    "expression": "(-sqrt(1 - (1/3)**2)) / (1/3)",
+    "expected": "-2*sqrt(2)",
     "variable": "x"
   }
 }

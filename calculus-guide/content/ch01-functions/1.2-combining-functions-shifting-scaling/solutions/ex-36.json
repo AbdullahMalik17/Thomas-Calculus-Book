@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-36",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Shifting the Inverse-Square Graph Left and Down",
+  "exerciseReference": "Section 1.2, Exercise 36",
+  "originalTopic": "Shifting Graphs",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "shifting-graphs",
+    "rational",
+    "asymptotes",
+    "translations"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "The graph of y = 1 / x^2 is to be shifted left 2 units and down 1 unit. Give an equation for the shifted graph and describe its asymptotes and intercepts.",
+  "finalAnswer": "y + 1 = \\frac{1}{(x + 2)^2} \\quad \\left(\\text{or } y = \\frac{1}{(x + 2)^2} - 1\\right)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply the Horizontal Shift (Left 2 Units)",
+      "mathExpression": "y = \\frac{1}{(x + 2)^2}",
+      "explanation": "Replace x with x + 2 in y = 1/x^2 to shift the graph 2 units to the left.",
+      "why": "Replacing x with x + 2 moves the vertical asymptote from x = 0 to x = -2."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply the Vertical Shift (Down 1 Unit)",
+      "mathExpression": "y + 1 = \\frac{1}{(x + 2)^2} \\iff y = \\frac{1}{(x + 2)^2} - 1",
+      "explanation": "Subtract 1 from the right-hand side (or replace y with y + 1) to shift the graph 1 unit downward.",
+      "why": "Subtracting 1 moves the horizontal asymptote from y = 0 to y = -1."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Identify the Shifted Asymptotes and Intercepts",
+      "mathExpression": "\\text{VA: } x = -2,\\quad \\text{HA: } y = -1,\\quad \\text{x-intercepts: } (-3, 0), (-1, 0),\\quad \\text{y-intercept: } (0, -3/4)",
+      "explanation": "Setting y = 0 gives (x + 2)^2 = 1, so x = -3 and x = -1 are the x-intercepts. Setting x = 0 gives y = 1/4 - 1 = -3/4 as the y-intercept.",
+      "why": "Solving y = 0 and evaluating y(0) locates the exact axis crossings of the translated curve."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "expression": "1 / (x + 2)**2 - 1",
+    "expected": "(-oo, -2) U (-2, oo)",
+    "variable": "x"
+  }
+}

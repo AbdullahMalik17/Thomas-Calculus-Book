@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-11",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Edge Length, Surface Area, and Volume of a Cube from Its Space Diagonal",
+  "exerciseReference": "Section 1.1, Exercise 11",
+  "originalTopic": "Finding Formulas for Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "geometry",
+    "cube",
+    "surface-area",
+    "volume"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Express the edge length x of a cube as a function of the cube's space diagonal length d. Then express the total surface area A and volume V of the cube as functions of d.",
+  "finalAnswer": "x(d) = \\frac{d}{\\sqrt{3}}, \\quad A(d) = 2d^2, \\quad V(d) = \\frac{d^3}{3\\sqrt{3}}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Relate Edge Length x to Space Diagonal d",
+      "mathExpression": "x^2 + x^2 + x^2 = d^2 \\implies 3x^2 = d^2 \\implies x(d) = \\frac{d}{\\sqrt{3}}",
+      "explanation": "A face diagonal of a cube of edge x has length sqrt(x^2 + x^2) = sqrt(2)x. Applying the Pythagorean theorem to the right triangle formed by an edge x, a face diagonal sqrt(2)x, and the space diagonal d gives 3x^2 = d^2, so x = d / sqrt(3).",
+      "why": "By the three-dimensional Pythagorean theorem, the squared space diagonal of a rectangular box equals the sum of the squares of its three orthogonal dimensions."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Express the Surface Area A as a Function of d",
+      "mathExpression": "A(d) = 6x^2 = 6\\left(\\frac{d}{\\sqrt{3}}\\right)^2 = 6\\left(\\frac{d^2}{3}\\right) = 2d^2",
+      "explanation": "A cube has 6 congruent square faces, each of area x^2. Substituting x^2 = d^2 / 3 into A = 6x^2 simplifies to A(d) = 2d^2.",
+      "why": "Total surface area is the sum of the areas of all six square faces."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Express the Volume V as a Function of d",
+      "mathExpression": "V(d) = x^3 = \\left(\\frac{d}{\\sqrt{3}}\\right)^3 = \\frac{d^3}{3\\sqrt{3}} = \\frac{\\sqrt{3}}{9}d^3",
+      "explanation": "The volume of a cube of edge x is V = x^3. Substituting x = d / sqrt(3) and cubing numerator and denominator yields V(d) = d^3 / (3*sqrt(3)).",
+      "why": "Cubing a quotient raises both the numerator and denominator to the third power, with (sqrt(3))^3 = 3*sqrt(3)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(d/sqrt(3))**3",
+    "expected": "d**3/(3*sqrt(3))",
+    "variable": "d"
+  }
+}

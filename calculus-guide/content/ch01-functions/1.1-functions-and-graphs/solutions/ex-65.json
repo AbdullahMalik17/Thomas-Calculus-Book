@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-65",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Inverse Proportionality Between Variables r and s",
+  "exerciseReference": "Section 1.1, Exercise 65",
+  "originalTopic": "Theory and Examples: Proportionality",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "proportionality",
+    "inverse-variation",
+    "rational-functions"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "The variables r and s are inversely proportional, and r = 6 when s = 4. Determine s when r = 10.",
+  "finalAnswer": "s = \\frac{12}{5} = 2.4",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Write the Inverse Proportionality Relation",
+      "mathExpression": "s = \\frac{k}{r} \\iff rs = k",
+      "explanation": "Two variables r and s are inversely proportional if their product is a non-zero constant k, so s = k / r.",
+      "why": "Inverse proportionality means one variable varies directly with the reciprocal of the other."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve for the Constant k",
+      "mathExpression": "k = r \\cdot s = 6 \\times 4 = 24",
+      "explanation": "Substitute the given values r = 6 and s = 4 to obtain k = 24, giving the formula s = 24 / r.",
+      "why": "The product rs remains invariant across all corresponding pairs (r, s)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate s When r = 10",
+      "mathExpression": "s = \\frac{24}{10} = \\frac{12}{5} = 2.4",
+      "explanation": "Substitute r = 10 into s = 24 / r to find s = 2.4.",
+      "why": "Dividing the invariant product 24 by r = 10 yields the corresponding value of s."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(6 * 4) / 10",
+    "expected": "12/5",
+    "variable": "x"
+  }
+}

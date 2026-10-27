@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-56",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Graphing a Left-Shifted Inverse-Square Function",
+  "exerciseReference": "Section 1.2, Exercise 56",
+  "originalTopic": "Shifting Graphs",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "graphing",
+    "shifting-graphs",
+    "rational",
+    "asymptotes"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Analyze and describe the graph of y = 1 / (x + 1)^2 by identifying its parent function, shift, asymptotes, domain, range, and intercepts.",
+  "finalAnswer": "\\text{Parent } y = \\frac{1}{x^2} \\text{ shifted left } 1;\\quad \\text{VA: } x = -1,\\quad \\text{HA: } y = 0,\\quad \\text{Domain: } (-\\infty, -1) \\cup (-1, \\infty),\\quad \\text{Range: } (0, \\infty),\\quad \\text{y-intercept: } (0, 1)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify the Parent Function and Horizontal Shift",
+      "mathExpression": "y = \\frac{1}{(x + 1)^2}",
+      "explanation": "Replacing x with x + 1 in the parent function y = 1/x^2 shifts the graph 1 unit to the left.",
+      "why": "Replacing x with x + 1 translates the graph horizontally by h = -1."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Determine the Asymptotes, Domain, and Range",
+      "mathExpression": "\\text{VA: } x = -1, \\quad \\text{HA: } y = 0, \\quad \\text{Domain: } (-\\infty, -1) \\cup (-1, \\infty), \\quad \\text{Range: } (0, \\infty)",
+      "explanation": "The vertical asymptote moves from x = 0 to x = -1, while the horizontal asymptote remains y = 0 and the range remains (0, infinity).",
+      "why": "The denominator (x + 1)^2 vanishes at x = -1 and is strictly positive everywhere else."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Locate the y-Intercept and Symmetric Points",
+      "mathExpression": "y(0) = \\frac{1}{(0 + 1)^2} = 1 \\implies \\text{y-intercept: } (0, 1), \\quad \\text{Symmetric point: } (-2, 1)",
+      "explanation": "The curve is symmetric about the line x = -1, rising to +infinity on both sides of x = -1 and passing through (-2, 1) and the y-intercept (0, 1).",
+      "why": "Evaluating at x = 0 gives y = 1, and symmetry across x = -1 gives (-2, 1)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "expression": "1 / (x + 1)**2",
+    "expected": "(-oo, -1) U (-1, oo)",
+    "variable": "x"
+  }
+}

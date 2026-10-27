@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-52",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Graphing a Left-Shifted Reciprocal Hyperbola",
+  "exerciseReference": "Section 1.2, Exercise 52",
+  "originalTopic": "Shifting Graphs",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "graphing",
+    "shifting-graphs",
+    "reciprocal",
+    "asymptotes"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Analyze and describe the graph of y = 1 / (x + 2) by identifying its parent function, shift, asymptotes, domain, range, and intercepts.",
+  "finalAnswer": "\\text{Parent } y = \\frac{1}{x} \\text{ shifted left } 2;\\quad \\text{VA: } x = -2,\\quad \\text{HA: } y = 0,\\quad \\text{Domain: } (-\\infty, -2) \\cup (-2, \\infty),\\quad \\text{Range: } (-\\infty, 0) \\cup (0, \\infty),\\quad \\text{y-intercept: } (0, 1/2)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify the Parent Function and Horizontal Shift",
+      "mathExpression": "y = \\frac{1}{x + 2} = \\frac{1}{x - (-2)}",
+      "explanation": "Replacing x with x + 2 in y = 1/x shifts the hyperbola 2 units to the left.",
+      "why": "Replacing x with x + 2 translates the graph horizontally by h = -2."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Determine the Asymptotes, Domain, and Range",
+      "mathExpression": "\\text{VA: } x = -2, \\quad \\text{HA: } y = 0, \\quad \\text{Domain: } (-\\infty, -2) \\cup (-2, \\infty), \\quad \\text{Range: } (-\\infty, 0) \\cup (0, \\infty)",
+      "explanation": "The denominator vanishes at x = -2, giving a vertical asymptote at x = -2, while the horizontal asymptote remains y = 0.",
+      "why": "Exclusion of x = -2 splits the real line into (-infinity, -2) U (-2, infinity)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Find the y-Intercept and Key Points",
+      "mathExpression": "y(0) = \\frac{1}{2} \\implies \\text{y-intercept: } \\left(0, \\frac{1}{2}\\right), \\quad \\text{Points: } (-3, -1),\\ (-1, 1)",
+      "explanation": "The left branch lies in the third quadrant passing through (-3, -1); the right branch lies above the x-axis passing through (-1, 1) and the y-intercept (0, 1/2).",
+      "why": "Evaluating at x = -3, -1, 0 gives reference points on each branch."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "expression": "1 / (x + 2)",
+    "expected": "(-oo, -2) U (-2, oo)",
+    "variable": "x"
+  }
+}

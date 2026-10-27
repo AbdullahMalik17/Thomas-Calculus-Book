@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-15",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Evaluating Compositions from a Table of Function Values",
+  "exerciseReference": "Section 1.2, Exercise 15",
+  "originalTopic": "Compositions of Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "composition",
+    "table-of-values",
+    "function-evaluation"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Given the table of values for x in {-2, -1, 0, 1, 2} where f(-2) = 1, f(-1) = 0, f(0) = -2, f(1) = 1, f(2) = 2 and g(-2) = 2, g(-1) = 1, g(0) = 0, g(1) = -1, g(2) = 0, evaluate: (a) f(g(-1)), (b) g(f(0)), (c) f(f(-1)), (d) g(g(2)), (e) g(f(-2)), and (f) f(g(1)).",
+  "finalAnswer": "\\text{(a) } 1,\\quad \\text{(b) } 2,\\quad \\text{(c) } -2,\\quad \\text{(d) } 0,\\quad \\text{(e) } -1,\\quad \\text{(f) } 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate Parts (a) and (b) by Two-Stage Table Lookup",
+      "mathExpression": "\\begin{aligned} \\text{(a) } f(g(-1)) &= f(1) = 1 \\\\ \\text{(b) } g(f(0)) &= g(-2) = 2 \\end{aligned}",
+      "explanation": "For (a), locate x = -1 in the table to find g(-1) = 1, then look up f(1) = 1. For (b), locate x = 0 to find f(0) = -2, then look up g(-2) = 2.",
+      "why": "In a composite evaluation u(v(a)), the output v(a) from the first lookup becomes the input column x for the second lookup."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate the Self-Compositions in Parts (c) and (d)",
+      "mathExpression": "\\begin{aligned} \\text{(c) } f(f(-1)) &= f(0) = -2 \\\\ \\text{(d) } g(g(2)) &= g(0) = 0 \\end{aligned}",
+      "explanation": "For (c), f(-1) = 0 and then f(0) = -2. For (d), g(2) = 0 and then g(0) = 0.",
+      "why": "Iterated lookup in the same row evaluates self-compositions f(f(x)) and g(g(x))."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Parts (e) and (f)",
+      "mathExpression": "\\begin{aligned} \\text{(e) } g(f(-2)) &= g(1) = -1 \\\\ \\text{(f) } f(g(1)) &= f(-1) = 0 \\end{aligned}",
+      "explanation": "For (e), f(-2) = 1 gives g(1) = -1. For (f), g(1) = -1 gives f(-1) = 0.",
+      "why": "Each inner output lies within {-2, -1, 0, 1, 2}, allowing the outer lookup to be completed from the table."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1 + 2 - 2 + 0 - 1 + 0",
+    "expected": "0",
+    "variable": "x"
+  }
+}

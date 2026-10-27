@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-68",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Area of a Rectangle Inscribed in an Isosceles Right Triangle",
+  "exerciseReference": "Section 1.1, Exercise 68",
+  "originalTopic": "Theory and Examples: Geometric Modeling",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "geometry",
+    "inscribed-figures",
+    "area",
+    "quadratic"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A rectangle is inscribed in an isosceles right triangle whose hypotenuse of length 2 lies along the x-axis from (-1, 0) to A(1, 0) and whose right-angled apex is at B(0, 1) on the y-axis. The upper-right vertex of the rectangle is P(x, y) on the segment AB. (a) Express the y-coordinate of P in terms of x. (b) Express the area A of the rectangle in terms of x.",
+  "finalAnswer": "\\text{(a) } y = 1 - x; \\quad \\text{(b) } A(x) = 2x(1 - x) = 2x - 2x^2, \\quad 0 < x < 1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find the Equation of Line Segment AB for Part (a)",
+      "mathExpression": "m_{AB} = \\frac{0 - 1}{1 - 0} = -1 \\implies y = 1 - x",
+      "explanation": "The vertices of the right side of the triangle are B(0, 1) and A(1, 0). The line passing through B(0, 1) and A(1, 0) has slope -1 and y-intercept 1, so its equation is y = 1 - x. Since P(x, y) lies on AB, its y-coordinate is y = 1 - x.",
+      "why": "In an isosceles right triangle with hypotenuse on [-1, 1], the apex on the positive y-axis has height 1."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Determine the Base Width and Height of the Inscribed Rectangle",
+      "mathExpression": "\\text{width} = x - (-x) = 2x, \\quad \\text{height} = y = 1 - x",
+      "explanation": "By symmetry across the y-axis, the rectangle's base extends from -x to x along the x-axis, giving a width of 2x, while its height is the y-coordinate of P, 1 - x.",
+      "why": "Inscribing the rectangle symmetrically in the triangle places its left and right vertical sides at -x and x."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Write the Area Function A(x) for Part (b)",
+      "mathExpression": "A(x) = \\text{width} \\times \\text{height} = 2x(1 - x) = 2x - 2x^2, \\quad 0 < x < 1",
+      "explanation": "Multiply the width 2x by the height 1 - x to obtain the area function A(x) = 2x(1 - x) = 2x - 2x^2 for 0 < x < 1.",
+      "why": "The area of a rectangle equals the product of its base width and altitude."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2*x*(1 - x)",
+    "expected": "2*x - 2*x**2",
+    "variable": "x"
+  }
+}

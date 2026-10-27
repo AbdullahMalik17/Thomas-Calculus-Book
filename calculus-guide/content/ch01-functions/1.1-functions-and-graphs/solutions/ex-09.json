@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-09",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Area and Perimeter of an Equilateral Triangle as Functions of Side Length",
+  "exerciseReference": "Section 1.1, Exercise 9",
+  "originalTopic": "Finding Formulas for Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "geometry",
+    "equilateral-triangle",
+    "area",
+    "perimeter"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Express the area A and perimeter p of an equilateral triangle as functions of the triangle's side length x.",
+  "finalAnswer": "A(x) = \\frac{\\sqrt{3}}{4}x^2, \\quad p(x) = 3x",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Express the Perimeter in Terms of x",
+      "mathExpression": "p(x) = x + x + x = 3x",
+      "explanation": "An equilateral triangle has three sides of equal length x, so its perimeter p is the sum of the three sides, 3x.",
+      "why": "The perimeter of any polygon is the sum of the lengths of its boundary edges."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find the Altitude Using the Pythagorean Theorem",
+      "mathExpression": "h^2 + \\left(\\frac{x}{2}\\right)^2 = x^2 \\implies h = \\sqrt{x^2 - \\frac{x^2}{4}} = \\frac{\\sqrt{3}}{2}x",
+      "explanation": "Dropping an altitude of length h from one vertex to the opposite side bisects that side into two segments of length x/2. Applying the Pythagorean theorem to one of the resulting right triangles yields h = (sqrt(3)/2)x.",
+      "why": "In an equilateral triangle, the altitude to the base is also the perpendicular bisector of the base."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute the Area Function A(x)",
+      "mathExpression": "A(x) = \\frac{1}{2} \\cdot \\text{base} \\cdot \\text{height} = \\frac{1}{2}(x)\\left(\\frac{\\sqrt{3}}{2}x\\right) = \\frac{\\sqrt{3}}{4}x^2",
+      "explanation": "Substitute the base x and height (sqrt(3)/2)x into the standard triangle area formula A = (1/2)bh to obtain A(x) = (sqrt(3)/4)x^2.",
+      "why": "The area of any triangle equals half the product of its base length and corresponding altitude."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(1/2)*x*(sqrt(3)/2*x)",
+    "expected": "sqrt(3)*x**2/4",
+    "variable": "x"
+  }
+}

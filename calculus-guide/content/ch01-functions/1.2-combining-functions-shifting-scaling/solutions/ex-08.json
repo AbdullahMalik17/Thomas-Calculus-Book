@@ -3,51 +3,46 @@
   "chapter": "ch01",
   "section": "1.2",
   "type": "solution",
-  "title": "Deconstructing Multi-Step Geometric Transformations",
-  "exerciseReference": "Section 1.2, Exercise 29",
-  "originalTopic": "Graph Transformations: Scaling, Reflecting, and Shifting",
-  "difficulty": "tier2",
+  "title": "Three-Fold Composition of Linear and Quadratic Functions",
+  "exerciseReference": "Section 1.2, Exercise 8",
+  "originalTopic": "Compositions of Functions",
+  "difficulty": "tier1",
   "status": "verified",
-  "tags": ["graph-transformations", "reflection", "scaling", "radical"],
+  "tags": [
+    "composition",
+    "polynomial",
+    "three-fold-composition"
+  ],
   "author": "Muhammad Abdullah Athar",
-  "problemStatement": "Describe how the graph of y = 1 - 2*sqrt(x + 3) is obtained from the standard base graph of y = sqrt(x) through a sequence of geometric transformations.",
-  "finalAnswer": "Shift left 3 units, stretch vertically by factor 2, reflect across x-axis, shift up 1 unit.",
+  "problemStatement": "Write a simplified formula for the three-fold composition (f o g o h)(x), given f(x) = 3x + 4, g(x) = 2x - 1, and h(x) = x^2.",
+  "finalAnswer": "(f \\circ g \\circ h)(x) = 6x^2 + 1",
   "steps": [
     {
       "stepNumber": 1,
-      "title": "Start with the Elementary Function",
-      "mathExpression": "y_0 = \\sqrt{x}",
-      "explanation": "Identify the base parent function y_0 = sqrt(x), which has endpoint at (0,0) and domain [0, inf).",
-      "why": "All transformation sequences begin by identifying the elementary parent curve."
+      "title": "Express the Three-Fold Composition in Nested Form",
+      "mathExpression": "(f \\circ g \\circ h)(x) = f(g(h(x)))",
+      "explanation": "Write the composite function as nested evaluations starting from the innermost function h(x) = x^2.",
+      "why": "Definition of iterated function composition."
     },
     {
       "stepNumber": 2,
-      "title": "Apply Horizontal Shift",
-      "mathExpression": "y_1 = \\sqrt{x + 3}",
-      "explanation": "Replacing x with x + 3 translates the graph 3 units to the left, shifting the starting endpoint to (-3, 0).",
-      "why": "f(x + c) shifts the graph leftward by c units for c > 0."
+      "title": "Evaluate the Inner Composition g(h(x))",
+      "mathExpression": "g(h(x)) = g(x^2) = 2x^2 - 1",
+      "explanation": "Substitute h(x) = x^2 for x in g(x) = 2x - 1.",
+      "why": "Symbolic substitution of the inner function into the middle function."
     },
     {
       "stepNumber": 3,
-      "title": "Apply Vertical Stretch and Reflection",
-      "mathExpression": "y_2 = 2\\sqrt{x + 3} \\implies y_3 = -2\\sqrt{x + 3}",
-      "explanation": "Multiplying by 2 stretches the graph vertically away from the x-axis by a factor of 2. The negative sign reflects the curve across the x-axis, causing it to open downward.",
-      "why": "-c*f(x) stretches by c and reflects over the horizontal axis."
-    },
-    {
-      "stepNumber": 4,
-      "title": "Apply Vertical Shift",
-      "mathExpression": "y = -2\\sqrt{x + 3} + 1 = 1 - 2\\sqrt{x + 3}",
-      "explanation": "Adding 1 shifts the entire curve upward by 1 unit, placing the new endpoint at (-3, 1). The range becomes (-inf, 1].",
-      "why": "Adding a constant to the outer expression shifts the curve vertically."
+      "title": "Evaluate the Outer Composition f(g(h(x)))",
+      "mathExpression": "f(g(h(x))) = f(2x^2 - 1) = 3(2x^2 - 1) + 4 = 6x^2 - 3 + 4 = 6x^2 + 1",
+      "explanation": "Substitute 2x^2 - 1 for x in f(x) = 3x + 4, distribute 3, and combine the constants -3 and 4.",
+      "why": "Distributing and collecting like terms simplifies the polynomial composition."
     }
   ],
   "sympyVerification": {
-    "operation": "domain",
-    "type": "domain",
-    "expression": "1 - 2*sqrt(x + 3)",
-    "expected": "[-3, oo)",
-    "expected_domain": "[-3, oo)",
+    "operation": "algebraic_equivalence",
+    "expression": "3*(2*x**2 - 1) + 4",
+    "expected": "6*x**2 + 1",
     "variable": "x"
   }
 }

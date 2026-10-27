@@ -27,14 +27,14 @@ function runNavigationTests(): void {
     throw new Error(`Expected 16 chapters, found ${chapterKeys.length}`);
   }
   const allSections = getAllSections();
-  if (allSections.length !== 116) {
-    throw new Error(`Expected 116 sections in total, found ${allSections.length}`);
+  if (allSections.length !== 119) {
+    throw new Error(`Expected 119 sections in total, found ${allSections.length}`);
   }
   const totalSolutions = allSections.reduce((sum, s) => sum + s.solutionsCount, 0);
-  if (totalSolutions !== 598) {
-    throw new Error(`Expected 598 total solutions across sections, found ${totalSolutions}`);
+  if (totalSolutions !== 934) {
+    throw new Error(`Expected 934 total solutions across sections, found ${totalSolutions}`);
   }
-  console.log(`    PASS: 16 Chapters, 116 Sections, ${totalSolutions} Solutions registered.`);
+  console.log(`    PASS: 16 Chapters, 119 Sections, ${totalSolutions} Solutions registered.`);
 
   // Test 2: Slug normalization
   console.log('[2] Testing Slug Normalization...');
@@ -89,8 +89,8 @@ function runNavigationTests(): void {
   // Test 3: Directory and Content Loader with normalized and raw slugs
   console.log('[3] Testing Content Loader across chapters with raw numbers & ch prefixes...');
   const sampleSlugs = [
-    { ch: '1', sec: '1.1', expectedSolutions: 8, expectedChKey: 'ch01' },
-    { ch: 'ch01-functions', sec: '1-1', expectedSolutions: 8, expectedChKey: 'ch01' },
+    { ch: '1', sec: '1.1', expectedSolutions: 76, expectedChKey: 'ch01' },
+    { ch: 'ch01-functions', sec: '1-1', expectedSolutions: 76, expectedChKey: 'ch01' },
     { ch: '2', sec: '2.1', expectedSolutions: 5, expectedChKey: 'ch02' },
     { ch: 'ch2', sec: '2.1-rates-of-change-and-tangents-to-curves', expectedSolutions: 5, expectedChKey: 'ch02' },
     { ch: 'ch02-limits-continuity', sec: '2-1', expectedSolutions: 5, expectedChKey: 'ch02' },
@@ -153,13 +153,13 @@ function runNavigationTests(): void {
     throw new Error('Section 1.1 next should be Section 1.2');
   }
 
-  // Cross-chapter boundary 1.4 -> 2.1
-  const boundary14 = getAdjacentSections('ch01', '1.4-graphing-with-software');
-  if (!boundary14.prev || boundary14.prev.number !== '1.3') {
-    throw new Error('Section 1.4 prev should be 1.3');
+  // Cross-chapter boundary 1.7 -> 2.1
+  const boundary17 = getAdjacentSections('ch01', '1.7-additional-and-advanced-exercises');
+  if (!boundary17.prev || boundary17.prev.number !== '1.6') {
+    throw new Error('Section 1.7 prev should be 1.6');
   }
-  if (!boundary14.next || boundary14.next.number !== '2.1') {
-    throw new Error('Section 1.4 next should transition to Section 2.1');
+  if (!boundary17.next || boundary17.next.number !== '2.1') {
+    throw new Error('Section 1.7 next should transition to Section 2.1');
   }
 
   // Cross-chapter boundary 2.6 -> 3.1

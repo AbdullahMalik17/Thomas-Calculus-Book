@@ -14,13 +14,16 @@
 - [/dashboard](/dashboard): Student mastery and SymPy verification engine status dashboard tracking all 116 sections.
 - [/about](/about): Platform mission, attribution to Muhammad Abdullah Athar, and copyright safeguards.
 
-## Complete Curriculum & Section Directory (116 Sections, 598 Solutions)
+## Complete Curriculum & Section Directory (119 Sections, 934 Solutions)
 
-### Chapter 1: Functions (4 Sections, 38 Solutions)
-- Section 1.1: Functions and Their Graphs - Natural domains, ranges, piecewise functions, symmetry criteria, difference quotients (8 solutions).
-- Section 1.2: Combining Functions; Shifting and Scaling Graphs - Algebra of functions, composition, horizontal/vertical shifts, scaling, reflection (10 solutions).
-- Section 1.3: Trigonometric Functions - Radian measure, circular functions, identities, transformations (10 solutions).
-- Section 1.4: Graphing with Software - Viewing windows, graphing technology, parametric equations, graph artifacts (10 solutions).
+### Chapter 1: Functions (7 Sections, 374 Solutions)
+- Section 1.1: Functions and Their Graphs - Natural domains, ranges, piecewise functions, symmetry criteria, difference quotients (76 solutions).
+- Section 1.2: Combining Functions; Shifting and Scaling Graphs - Algebra of functions, composition, horizontal/vertical shifts, scaling, reflection (82 solutions).
+- Section 1.3: Trigonometric Functions - Radian measure, circular functions, identities, transformations (74 solutions).
+- Section 1.4: Graphing with Software - Viewing windows, graphing technology, parametric equations, graph artifacts (36 solutions).
+- Section 1.5: Questions to Guide Your Review - Conceptual synthesis of functions, domains, compositions, transformations, and trigonometry (16 solutions).
+- Section 1.6: Chapter 1 Practice Exercises - End-of-chapter mastery problems spanning geometric modeling, symmetry, piecewise functions, compositions, and trigonometry (72 solutions).
+- Section 1.7: Additional and Advanced Exercises - Theoretical proofs, even-odd decompositions, Heron's formula, Kepler equal-area geometry, and parameter analysis (18 solutions).
 
 ### Chapter 2: Limits and Continuity (6 Sections, 30 Solutions)
 - Section 2.1: Rates of Change and Tangents to Curves - Average rates of change, secant slopes, instantaneous rates (5 solutions).

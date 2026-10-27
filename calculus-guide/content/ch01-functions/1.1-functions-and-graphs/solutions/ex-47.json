@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-47",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Parity of a Constant Function f(x) = 3",
+  "exerciseReference": "Section 1.1, Exercise 47",
+  "originalTopic": "Even and Odd Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "symmetry",
+    "even-functions",
+    "constant-functions",
+    "parity"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether the constant function f(x) = 3 is even, odd, or neither, and justify your answer.",
+  "finalAnswer": "\\text{Even}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Recall the Definitions of Even and Odd Functions",
+      "mathExpression": "\\text{Even: } f(-x) = f(x); \\qquad \\text{Odd: } f(-x) = -f(x)",
+      "explanation": "A function f on a symmetric domain is even if f(-x) = f(x) for all x, and odd if f(-x) = -f(x) for all x.",
+      "why": "Parity classifies how a function transforms under reflection of its input across x = 0."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate f(-x)",
+      "mathExpression": "f(-x) = 3 = f(x)",
+      "explanation": "Because f assigns the constant value 3 to every real input, evaluating at -x yields f(-x) = 3, which equals f(x).",
+      "why": "A constant function is independent of the sign or value of the input variable x."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State the Parity Conclusion",
+      "mathExpression": "f(-x) = f(x) \\implies f(x) = 3 \\text{ is an even function}",
+      "explanation": "Since f(-x) = f(x) for all real numbers x, f(x) = 3 is an even function (its horizontal line graph y = 3 is symmetric across the y-axis).",
+      "why": "Note that a constant function can be seen as 3*x^0, where the exponent 0 is an even integer."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "3 + 0*x",
+    "expected": "even",
+    "variable": "x"
+  }
+}

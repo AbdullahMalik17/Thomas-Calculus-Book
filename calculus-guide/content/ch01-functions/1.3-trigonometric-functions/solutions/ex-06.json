@@ -3,43 +3,48 @@
   "chapter": "ch01",
   "section": "1.3",
   "type": "solution",
-  "title": "Verifying a Rational Trigonometric Identity",
-  "exerciseReference": "Section 1.3, Exercise 27",
-  "originalTopic": "Trigonometric Identities: Common Denominators and Pythagorean Reductions",
-  "difficulty": "tier2",
+  "title": "Exact Values of the Six Trigonometric Functions at Standard Angles (Table II)",
+  "exerciseReference": "Section 1.3, Exercise 6",
+  "originalTopic": "Evaluating Trigonometric Functions",
+  "difficulty": "tier1",
   "status": "verified",
-  "tags": ["trigonometry", "identities", "pythagorean", "rational-simplification"],
+  "tags": [
+    "trigonometry",
+    "unit-circle",
+    "exact-values",
+    "special-angles"
+  ],
   "author": "Muhammad Abdullah Athar",
-  "problemStatement": "Verify the trigonometric identity by simplifying the left-hand side: cos(x)/(1 - sin(x)) - cos(x)/(1 + sin(x)) = 2*tan(x).",
-  "finalAnswer": "\\frac{\\cos x}{1 - \\sin x} - \\frac{\\cos x}{1 + \\sin x} = 2\\tan x",
+  "problemStatement": "Without using a calculator, evaluate \\sin\\theta, \\cos\\theta, \\tan\\theta, \\cot\\theta, \\sec\\theta, and \\csc\\theta at each of the angles \\theta = -3\\pi/2, -\\pi/3, -\\pi/6, \\pi/4, and 5\\pi/6. State 'UND' wherever a function is undefined.",
+  "finalAnswer": "\\begin{array}{c|ccccc} \\theta & -3\\pi/2 & -\\pi/3 & -\\pi/6 & \\pi/4 & 5\\pi/6 \\\\ \\hline \\sin\\theta & 1 & -\\sqrt{3}/2 & -1/2 & 1/\\sqrt{2} & 1/2 \\\\ \\cos\\theta & 0 & 1/2 & \\sqrt{3}/2 & 1/\\sqrt{2} & -\\sqrt{3}/2 \\\\ \\tan\\theta & \\text{UND} & -\\sqrt{3} & -1/\\sqrt{3} & 1 & -1/\\sqrt{3} \\\\ \\cot\\theta & 0 & -1/\\sqrt{3} & -\\sqrt{3} & 1 & -\\sqrt{3} \\\\ \\sec\\theta & \\text{UND} & 2 & 2/\\sqrt{3} & \\sqrt{2} & -2/\\sqrt{3} \\\\ \\csc\\theta & 1 & -2/\\sqrt{3} & -2 & \\sqrt{2} & 2 \\end{array}",
   "steps": [
     {
       "stepNumber": 1,
-      "title": "Combine Fractions over a Common Denominator",
-      "mathExpression": "\\frac{\\cos x(1 + \\sin x) - \\cos x(1 - \\sin x)}{(1 - \\sin x)(1 + \\sin x)}",
-      "explanation": "Find a common denominator by multiplying the conjugate binomial denominators (1 - sin x)(1 + sin x).",
-      "why": "Standard algebraic fraction subtraction requires a common denominator."
+      "title": "Evaluate Sine and Cosine at Each Angle",
+      "mathExpression": "(\\cos\\theta, \\sin\\theta) = \\begin{cases} (0, 1), & \\theta = -3\\pi/2 \\\\ (1/2, -\\sqrt{3}/2), & \\theta = -\\pi/3 \\\\ (\\sqrt{3}/2, -1/2), & \\theta = -\\pi/6 \\\\ (1/\\sqrt{2}, 1/\\sqrt{2}), & \\theta = \\pi/4 \\\\ (-\\sqrt{3}/2, 1/2), & \\theta = 5\\pi/6 \\end{cases}",
+      "explanation": "Note that -3*pi/2 is coterminal with pi/2, -pi/3 and -pi/6 lie in Quadrant IV, pi/4 lies in Quadrant I, and 5*pi/6 lies in Quadrant II with reference angle pi/6.",
+      "why": "Unit circle coordinates follow from special 30-60-90 and 45-45-90 triangles together with quadrant sign rules."
     },
     {
       "stepNumber": 2,
-      "title": "Expand and Simplify Numerator and Denominator",
-      "mathExpression": "\\frac{\\cos x + \\cos x\\sin x - \\cos x + \\cos x\\sin x}{1 - \\sin^2 x} = \\frac{2\\cos x\\sin x}{1 - \\sin^2 x}",
-      "explanation": "The linear terms cos(x) cancel in the numerator, combining the cross-terms into 2*cos(x)*sin(x). The denominator forms a difference of squares 1 - sin^2(x).",
-      "why": "Expansion of conjugate products produces difference of squares (1 - sin^2 x)."
+      "title": "Compute Tangent and Cotangent Values",
+      "mathExpression": "\\tan\\theta: \\; \\text{UND}, -\\sqrt{3}, -\\frac{1}{\\sqrt{3}}, 1, -\\frac{1}{\\sqrt{3}}; \\qquad \\cot\\theta: \\; 0, -\\frac{1}{\\sqrt{3}}, -\\sqrt{3}, 1, -\\sqrt{3}",
+      "explanation": "Evaluate tan theta = sin theta / cos theta and cot theta = cos theta / sin theta. At theta = -3*pi/2, cos theta = 0 so tan(-3*pi/2) is undefined and cot(-3*pi/2) = 0.",
+      "why": "Division by zero occurs in tan theta when cos theta = 0, whereas 0/1 = 0 for cot(-3*pi/2)."
     },
     {
       "stepNumber": 3,
-      "title": "Apply Pythagorean Identity and Reduce",
-      "mathExpression": "\\frac{2\\cos x\\sin x}{\\cos^2 x} = 2\\frac{\\sin x}{\\cos x} = 2\\tan x",
-      "explanation": "Substitute the Pythagorean identity 1 - sin^2(x) = cos^2(x) into the denominator and cancel one power of cos(x). The quotient sin(x)/cos(x) evaluates to tan(x).",
-      "why": "Pythagorean identity 1 - sin^2(x) = cos^2(x) and definition of tangent as sin/cos."
+      "title": "Compute Secant and Cosecant Values",
+      "mathExpression": "\\sec\\theta: \\; \\text{UND}, 2, \\frac{2}{\\sqrt{3}}, \\sqrt{2}, -\\frac{2}{\\sqrt{3}}; \\qquad \\csc\\theta: \\; 1, -\\frac{2}{\\sqrt{3}}, -2, \\sqrt{2}, 2",
+      "explanation": "Invert the cosine values to obtain sec theta (undefined at -3*pi/2) and invert the sine values to obtain csc theta.",
+      "why": "By definition, sec theta = 1/cos theta and csc theta = 1/sin theta."
     }
   ],
   "sympyVerification": {
     "operation": "algebraic_equivalence",
     "type": "algebraic_equivalence",
-    "expression": "cos(x)/(1 - sin(x)) - cos(x)/(1 + sin(x))",
-    "expected": "2*tan(x)",
+    "expression": "sin(5*pi/6) / cos(5*pi/6)",
+    "expected": "-1/sqrt(3)",
     "variable": "x"
   }
 }

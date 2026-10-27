@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-30",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Shifting a Fractional-Power Curve Right and Down",
+  "exerciseReference": "Section 1.2, Exercise 30",
+  "originalTopic": "Shifting Graphs",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "shifting-graphs",
+    "power-function",
+    "cusp",
+    "translations"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "The graph of y = x^(2/3) is to be shifted right 1 unit and down 1 unit. Give an equation for the shifted graph and describe the original and shifted curves.",
+  "finalAnswer": "y = (x - 1)^{2/3} - 1 \\quad (\\text{or } y + 1 = (x - 1)^{2/3})",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply the Horizontal Shift (Right 1 Unit)",
+      "mathExpression": "y = (x - 1)^{2/3}",
+      "explanation": "Replace x with x - 1 in y = x^(2/3) to shift the graph 1 unit to the right.",
+      "why": "Horizontal translation to the right by 1 unit replaces x with x - 1."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply the Vertical Shift (Down 1 Unit)",
+      "mathExpression": "y + 1 = (x - 1)^{2/3} \\iff y = (x - 1)^{2/3} - 1",
+      "explanation": "Subtract 1 from the expression (or replace y with y + 1) to shift the curve 1 unit downward.",
+      "why": "Vertical translation downward by 1 unit subtracts 1 from the function output."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Identify Key Graphical Landmarks",
+      "mathExpression": "\\text{Cusp: } (0, 0) \\longrightarrow (1, -1), \\quad \\text{Intercepts: } (0, 0) \\text{ and } (2, 0)",
+      "explanation": "The parent curve y = x^(2/3) is symmetric about the y-axis with a sharp cusp at (0, 0). The shifted curve y = (x - 1)^(2/3) - 1 has its cusp at (1, -1), is symmetric about x = 1, and crosses the x-axis at (0, 0) and (2, 0).",
+      "why": "Translating by (1, -1) moves the cusp from (0, 0) to (1, -1) and the axis of symmetry from x = 0 to x = 1."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "expression": "(x - 1)**(2/3) - 1",
+    "expected": "(-oo, oo)",
+    "variable": "x"
+  }
+}

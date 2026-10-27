@@ -1,0 +1,51 @@
+{
+  "id": "ch01-functions/1.3-trigonometric-functions/solutions/ex-28",
+  "chapter": "ch01",
+  "section": "1.3",
+  "type": "solution",
+  "title": "Comparing the Graphs and Behavior of y = tan x and y = cot x",
+  "exerciseReference": "Section 1.3, Exercise 28",
+  "originalTopic": "Graphing Trigonometric Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "tangent",
+    "cotangent",
+    "reciprocal-functions",
+    "asymptotes"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Graph y = \\tan x and y = \\cot x together over the interval -7 \\le x \\le 7. Explain how the behavior of \\cot x relates to the signs, zeros, asymptotes, and monotonicity of \\tan x.",
+  "finalAnswer": "\\cot x = \\frac{1}{\\tan x} \\text{ shares the sign of } \\tan x, \\text{ turns zeros of } \\tan x \\text{ into asymptotes (and vice versa), and decreases where } \\tan x \\text{ increases}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compare Signs and Intersection Points",
+      "mathExpression": "\\cot x = \\frac{1}{\\tan x}, \\quad \\tan x = \\cot x \\iff \\tan^2 x = 1 \\iff x = \\frac{\\pi}{4} + \\frac{k\\pi}{2}",
+      "explanation": "Because cot x = 1/tan x, both functions have the exact same sign in every quadrant. Their graphs intersect wherever tan x = cot x = +/-1, which occurs at odd multiples of pi/4.",
+      "why": "A nonzero number and its reciprocal have the same sign and are equal if and only if the number is 1 or -1."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compare Zeros and Vertical Asymptotes",
+      "mathExpression": "\\tan(k\\pi) = 0 \\iff x = k\\pi \\text{ is a vertical asymptote of } \\cot x; \\quad \\cot\\left(\\frac{\\pi}{2} + k\\pi\\right) = 0 \\iff x = \\frac{\\pi}{2} + k\\pi \\text{ is an asymptote of } \\tan x",
+      "explanation": "At every x-intercept of tan x (x = 0, +/-pi, +/-2*pi inside [-7, 7]), cot x has a vertical asymptote. Conversely, at every vertical asymptote of tan x (x = +/-pi/2, +/-3*pi/2), cot x crosses the x-axis at 0.",
+      "why": "Since tan x = sin x / cos x and cot x = cos x / sin x, the zeros of the numerator of one are the zeros of the denominator of the other."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compare Monotonicity and Cofunction Shift",
+      "mathExpression": "\\cot x = \\tan\\left(\\frac{\\pi}{2} - x\\right) = -\\tan\\left(x - \\frac{\\pi}{2}\\right)",
+      "explanation": "While tan x is strictly increasing on each open interval between its asymptotes, its reciprocal cot x is strictly decreasing on each open interval between its asymptotes.",
+      "why": "If a positive or negative function u(x) is strictly increasing, its reciprocal 1/u(x) is strictly decreasing on the same interval."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "tan(pi/2 - x)",
+    "expected": "cot(x)",
+    "variable": "x"
+  }
+}

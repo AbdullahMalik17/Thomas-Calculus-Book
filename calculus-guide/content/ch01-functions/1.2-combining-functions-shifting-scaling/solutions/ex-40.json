@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-40",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Graphing a Shifted Absolute Value Function",
+  "exerciseReference": "Section 1.2, Exercise 40",
+  "originalTopic": "Shifting Graphs",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "graphing",
+    "shifting-graphs",
+    "absolute-value"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Analyze and describe the graph of y = |1 - x| - 1 by rewriting it in standard vertex form and finding its vertex, domain, range, and intercepts.",
+  "finalAnswer": "y = |x - 1| - 1;\\quad \\text{Vertex: } (1, -1),\\quad \\text{Domain: } (-\\infty, \\infty),\\quad \\text{Range: } [-1, \\infty),\\quad \\text{Intercepts: } (0, 0),\\ (2, 0)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Rewrite Using Symmetry of Absolute Value",
+      "mathExpression": "y = |1 - x| - 1 = |-(x - 1)| - 1 = |x - 1| - 1",
+      "explanation": "Because |-u| = |u| for all real u, |1 - x| is identical to |x - 1|. Thus the graph is obtained by shifting y = |x| right 1 unit and down 1 unit.",
+      "why": "The absolute value property |-u| = |u| simplifies |1 - x| to standard horizontal shift form |x - 1|."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify the Vertex, Domain, and Range",
+      "mathExpression": "\\text{Vertex: } (1, -1), \\quad \\text{Domain: } (-\\infty, \\infty), \\quad \\text{Range: } [-1, \\infty)",
+      "explanation": "Since |x - 1| >= 0 with equality at x = 1, the minimum value is y = -1 at the vertex (1, -1), and the range is [-1, infinity).",
+      "why": "Subtracting 1 from the non-negative quantity |x - 1| shifts the minimum output from 0 to -1."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Determine the x- and y-Intercepts",
+      "mathExpression": "|x - 1| - 1 = 0 \\iff |x - 1| = 1 \\iff x = 0 \\text{ or } x = 2",
+      "explanation": "The V-shaped graph crosses the origin (0, 0) and (2, 0) with slopes -1 for x < 1 and +1 for x > 1.",
+      "why": "Solving |x - 1| = 1 yields the two points at distance 1 from x = 1."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "Abs(1 - x) - 1",
+    "expected": "Abs(x - 1) - 1",
+    "variable": "x"
+  }
+}

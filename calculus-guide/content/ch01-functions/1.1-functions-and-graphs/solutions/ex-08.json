@@ -1,0 +1,56 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-08",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Testing S-Shaped and Closed Loop Curves with the Vertical Line Test",
+  "exerciseReference": "Section 1.1, Exercise 8",
+  "originalTopic": "Functions and Graphs: Vertical Line Test",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "vertical-line-test",
+    "graphs",
+    "closed-curves"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Examine two curves in the first quadrant: (a) a curve shaped like the numeral 2 that arches up, slants diagonally backward to the left, and then extends horizontally to the right; (b) a closed oval loop lying entirely in the first quadrant. Determine whether either curve is the graph of a function of x.",
+  "finalAnswer": "\\text{(a) Not a function of } x; \\quad \\text{(b) Not a function of } x",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Recall the Uniqueness Condition for Functions",
+      "mathExpression": "(x, y_1) \\in \\text{Graph and } (x, y_2) \\in \\text{Graph} \\implies y_1 = y_2",
+      "explanation": "For a curve to represent a function y = f(x), each x-value in the domain must correspond to a single y-value, meaning no vertical line can intersect the curve at two or more distinct points.",
+      "why": "A relation that assigns multiple outputs to a single input is a multi-valued relation, not a function."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Analyze Curve (a)",
+      "mathExpression": "x = c \\text{ intersects curve (a) up to } 3 \\text{ times}",
+      "explanation": "In curve (a), the middle diagonal segment slants backward from right to left underneath the upper arch and above the lower horizontal segment. A vertical line through this central region intersects the curve at three distinct y-values.",
+      "why": "Any curve that reverses horizontal direction and overlaps its x-interval fails the Vertical Line Test."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Analyze Curve (b)",
+      "mathExpression": "x = c \\text{ intersects the closed loop (b) in } 2 \\text{ points}",
+      "explanation": "In curve (b), the graph forms a closed oval loop. Any vertical line passing through the interior of the loop intersects both the top boundary and the bottom boundary, giving two distinct y-values for each x.",
+      "why": "Every closed loop in the plane encloses an open interval of x-values where each vertical line crosses the boundary at least twice."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Summarize Findings",
+      "mathExpression": "\\text{Neither (a) nor (b) is the graph of a function of } x",
+      "explanation": "Both graphs fail the Vertical Line Test because vertical lines intersect graph (a) up to three times and graph (b) twice.",
+      "why": "Failing the Vertical Line Test on any subinterval disqualifies the entire curve from being a function of x."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "x",
+    "expected": "x",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "ch01-functions/1.3-trigonometric-functions/solutions/ex-23",
+  "chapter": "ch01",
+  "section": "1.3",
+  "type": "solution",
+  "title": "Period, Symmetry, and Graph of s = cot(2t)",
+  "exerciseReference": "Section 1.3, Exercise 23",
+  "originalTopic": "Graphing Trigonometric Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "cotangent",
+    "period",
+    "symmetry",
+    "odd-function"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Graph the function s = \\cot 2t in the ts-plane (with t horizontal and s vertical). State the fundamental period of the function and identify the symmetry of its graph.",
+  "finalAnswer": "\\text{Period} = \\frac{\\pi}{2}, \\quad \\text{symmetric about the origin}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine the Fundamental Period",
+      "mathExpression": "\\text{Period} = \\frac{\\pi}{2}",
+      "explanation": "Because the base cotangent function cot(t) has period pi, replacing t with 2t compresses the graph horizontally by a factor of 2, giving period pi/2.",
+      "why": "cot(2(t + pi/2)) = cot(2t + pi) = cot(2t) for all t in the domain."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Locate Vertical Asymptotes and Zeros",
+      "mathExpression": "\\text{Asymptotes: } t = \\frac{k\\pi}{2}; \\quad \\text{Zeros: } t = \\frac{\\pi}{4} + \\frac{k\\pi}{2} \\quad (k \\in \\mathbb{Z})",
+      "explanation": "Since cot(2t) = cos(2t)/sin(2t), vertical asymptotes occur where sin(2t) = 0 (t = k*pi/2), and t-intercepts occur where cos(2t) = 0 (t = pi/4 + k*pi/2).",
+      "why": "Rational trigonometric ratios have vertical asymptotes at the zeros of their denominators."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Test for Algebraic Symmetry",
+      "mathExpression": "s(-t) = \\cot(2(-t)) = \\cot(-2t) = -\\cot 2t = -s(t)",
+      "explanation": "Replacing t with -t negates the output value, proving that s = cot(2t) is an odd function whose graph is symmetric about the origin.",
+      "why": "A function satisfying f(-t) = -f(t) is odd and exhibits rotational symmetry of 180 degrees about the origin."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "type": "symmetry",
+    "expression": "cot(2*t)",
+    "expected": "odd",
+    "variable": "t",
+    "expected_symmetry": "odd"
+  }
+}

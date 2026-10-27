@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-68",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Horizontal Stretch of a Cubic Polynomial",
+  "exerciseReference": "Section 1.2, Exercise 68",
+  "originalTopic": "Vertical and Horizontal Scaling",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "scaling-graphs",
+    "horizontal-stretch",
+    "cubic"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Give an equation for the graph of y = 1 - x^3 after it is stretched horizontally by a factor of 2.",
+  "finalAnswer": "y = 1 - \\frac{x^3}{8}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Recall the Horizontal Stretch Rule",
+      "mathExpression": "y = f\\left(\\frac{x}{c}\\right) \\quad (c > 1)",
+      "explanation": "To stretch the graph of y = f(x) horizontally by a factor of c > 1, replace x with x / c.",
+      "why": "Replacing x with x/c multiplies every x-coordinate by c."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute x / 2 for x in y = 1 - x^3",
+      "mathExpression": "y = 1 - \\left(\\frac{x}{2}\\right)^3",
+      "explanation": "With horizontal stretch factor c = 2, replace x with x / 2.",
+      "why": "Direct substitution of x/2 for x."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Simplify the Cubed Fraction",
+      "mathExpression": "y = 1 - \\frac{x^3}{8}",
+      "explanation": "Cubing x/2 gives x^3 / 8, so the stretched equation is y = 1 - x^3 / 8 (stretching the x-intercept from (1, 0) to (2, 0)).",
+      "why": "By exponent laws, (x/2)^3 = x^3 / 2^3 = x^3 / 8."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "1 - (x / 2)**3",
+    "expected": "1 - x**3 / 8",
+    "variable": "x"
+  }
+}

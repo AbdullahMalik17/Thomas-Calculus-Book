@@ -1,0 +1,51 @@
+{
+  "id": "ch01-functions/1.3-trigonometric-functions/solutions/ex-72",
+  "chapter": "ch01",
+  "section": "1.3",
+  "type": "solution",
+  "title": "Graphical Exploration of the Horizontal Shift Parameter C",
+  "exerciseReference": "Section 1.3, Exercise 72",
+  "originalTopic": "Computer Explorations",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "sinusoid",
+    "phase-shift",
+    "periodicity",
+    "transformations"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Consider f(x) = A\\sin\\left(\\frac{2\\pi}{B}(x - C)\\right) + D with A = 3, B = 6, and D = 0, so f(x) = 3\\sin\\left(\\frac{\\pi}{3}(x - C)\\right). (a) Describe what happens to the graph on [-4\\pi, 4\\pi] as C increases through positive values C = 0, 1, 2. (b) What happens for negative values of C? (c) What smallest positive value of C produces a graph with no net horizontal shift relative to C = 0?",
+  "finalAnswer": "\\text{(a) Shifts right by } C; \\quad \\text{(b) shifts left by } |C|; \\quad \\text{(c) } C = 6",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Part (a): Effect of Increasing Positive C",
+      "mathExpression": "f(x) = 3\\sin\\left(\\frac{\\pi}{3}(x - C)\\right) = g(x - C), \\quad g(x) = 3\\sin\\left(\\frac{\\pi}{3}x\\right)",
+      "explanation": "As C increases through positive values (C = 0, 1, 2), the entire sine wave translates rigidly to the right by C units without changing its amplitude 3 or period 6.",
+      "why": "Replacing x with x - C in any function g(x) shifts its graph C units to the right when C > 0."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Part (b): Effect of Negative Values of C",
+      "mathExpression": "C < 0 \\implies x - C = x + |C|",
+      "explanation": "For negative values of C, the graph translates horizontally to the left by |C| units.",
+      "why": "Replacing x with x + |C| shifts a graph to the left by |C| units."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Part (c): Smallest Positive C Producing No Net Horizontal Shift",
+      "mathExpression": "3\\sin\\left(\\frac{\\pi}{3}(x - 6)\\right) = 3\\sin\\left(\\frac{\\pi}{3}x - 2\\pi\\right) = 3\\sin\\left(\\frac{\\pi}{3}x\\right) \\implies C = B = 6",
+      "explanation": "Because the fundamental period of the wave is B = 6, shifting the graph horizontally by one full period C = 6 maps every peak, trough, and zero onto the next cycle, leaving the graph identical to the unshifted C = 0 curve.",
+      "why": "The smallest positive period of sin((pi/3)*x) is B = 2*pi/(pi/3) = 6."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "3*sin((pi/3)*(x - 6))",
+    "expected": "3*sin((pi/3)*x)",
+    "variable": "x"
+  }
+}

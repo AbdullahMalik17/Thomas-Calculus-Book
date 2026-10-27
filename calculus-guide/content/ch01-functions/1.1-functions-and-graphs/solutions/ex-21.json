@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-21",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Domain of a Rational Function Containing a Radical in the Denominator",
+  "exerciseReference": "Section 1.1, Exercise 21",
+  "originalTopic": "Functions and Graphs: Natural Domain and Range",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "domain",
+    "radicals",
+    "rational-functions",
+    "inequalities"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the natural domain of the function defined by y = (x + 3) / (4 - sqrt(x^2 - 9)).",
+  "finalAnswer": "(-\\infty, -5) \\cup (-5, -3] \\cup [3, 5) \\cup (5, \\infty)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Enforce Non-Negativity of the Radicand",
+      "mathExpression": "x^2 - 9 \\ge 0 \\iff (x - 3)(x + 3) \\ge 0 \\iff x \\in (-\\infty, -3] \\cup [3, \\infty)",
+      "explanation": "For the square root sqrt(x^2 - 9) to be real, we require x^2 - 9 >= 0, which holds when |x| >= 3, i.e., x <= -3 or x >= 3.",
+      "why": "Even-indexed radicals are defined in the real numbers only where their radicands are non-negative."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Exclude Zeros of the Denominator",
+      "mathExpression": "4 - \\sqrt{x^2 - 9} \\ne 0 \\iff \\sqrt{x^2 - 9} \\ne 4 \\iff x^2 - 9 \\ne 16 \\iff x^2 \\ne 25 \\iff x \\ne \\pm 5",
+      "explanation": "Set the denominator not equal to zero: sqrt(x^2 - 9) != 4. Squaring both sides gives x^2 - 9 != 16, or x^2 != 25, which excludes x = -5 and x = 5.",
+      "why": "Division by zero is undefined, so any input that makes the denominator equal zero must be removed from the domain."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Intersect Both Conditions",
+      "mathExpression": "\\text{Domain} = (-\\infty, -5) \\cup (-5, -3] \\cup [3, 5) \\cup (5, \\infty)",
+      "explanation": "Removing the points x = -5 and x = 5 from (-inf, -3] U [3, inf) splits each half-line into two intervals, yielding the union of four intervals.",
+      "why": "The natural domain of a compound expression is the intersection of the domains of all its constituent operations."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "expression": "(x + 3)/(4 - sqrt(x**2 - 9))",
+    "expected": "(-oo, -5) U (-5, -3] U [3, 5) U (5, oo)",
+    "variable": "x"
+  }
+}

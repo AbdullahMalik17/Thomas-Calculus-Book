@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-19",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Finding a Right-Inverse Function Under Composition",
+  "exerciseReference": "Section 1.2, Exercise 19",
+  "originalTopic": "Compositions of Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "composition",
+    "inverse-relationship",
+    "rational"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Let f(x) = x / (x - 2). Find a function y = g(x) so that the composite function satisfies (f o g)(x) = x.",
+  "finalAnswer": "g(x) = \\frac{2x}{x - 1}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up the Composition Equation f(g(x)) = x",
+      "mathExpression": "(f \\circ g)(x) = \\frac{g(x)}{g(x) - 2} = x",
+      "explanation": "Replace x in the formula for f(x) with the unknown function g(x) and equate the resulting expression to x.",
+      "why": "By definition of function composition, (f o g)(x) = x means f(g(x)) = x."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Clear the Denominator and Group Terms in g(x)",
+      "mathExpression": "g(x) = x(g(x) - 2) = x\\,g(x) - 2x \\implies 2x = x\\,g(x) - g(x) = (x - 1)g(x)",
+      "explanation": "Multiply both sides by g(x) - 2, expand the right-hand side, and collect all terms containing g(x) on one side of the equation.",
+      "why": "Linearly isolating g(x) allows us to solve explicitly for g(x) in terms of x."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Solve for g(x) and Verify the Composition",
+      "mathExpression": "g(x) = \\frac{2x}{x - 1}, \\qquad f(g(x)) = \\frac{\\frac{2x}{x - 1}}{\\frac{2x}{x - 1} - 2} = \\frac{2x}{2x - 2(x - 1)} = \\frac{2x}{2} = x",
+      "explanation": "Divide by x - 1 (for x != 1) to obtain g(x) = 2x / (x - 1), and substitute back into f to verify that f(g(x)) simplifies identically to x.",
+      "why": "Direct substitution confirms that g(x) = 2x/(x - 1) satisfies (f o g)(x) = x."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(2*x / (x - 1)) / (2*x / (x - 1) - 2)",
+    "expected": "x",
+    "variable": "x"
+  }
+}

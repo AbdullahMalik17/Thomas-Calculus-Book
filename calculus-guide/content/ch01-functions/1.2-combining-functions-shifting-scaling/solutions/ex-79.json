@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-79",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Parity (Even or Odd) of Products, Quotients, and Compositions",
+  "exerciseReference": "Section 1.2, Exercise 79",
+  "originalTopic": "Combining Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "even-odd-functions",
+    "symmetry",
+    "combining-functions",
+    "composition"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Assume that f is an even function, g is an odd function, and both f and g are defined on the entire real line (-infinity, infinity). Determine whether each of the following functions (where defined) is even or odd: (a) f*g, (b) f/g, (c) g/f, (d) f^2 = f*f, (e) g^2 = g*g, (f) f o g, (g) g o f, (h) f o f, and (i) g o g.",
+  "finalAnswer": "\\text{(a) Odd},\\quad \\text{(b) Odd},\\quad \\text{(c) Odd},\\quad \\text{(d) Even},\\quad \\text{(e) Even},\\quad \\text{(f) Even},\\quad \\text{(g) Even},\\quad \\text{(h) Even},\\quad \\text{(i) Odd}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "State the Defining Parity Identities for f and g",
+      "mathExpression": "f(-x) = f(x) \\quad (\\text{even}), \\qquad g(-x) = -g(x) \\quad (\\text{odd})",
+      "explanation": "By hypothesis, replacing x with -x leaves f(x) unchanged and negates g(x) for all real x.",
+      "why": "Definitions of even and odd functions on (-infinity, infinity)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Test the Algebraic Products and Quotients in Parts (a)-(e)",
+      "mathExpression": "\\begin{aligned} \\text{(a) } (fg)(-x) &= f(-x)g(-x) = f(x)(-g(x)) = -(fg)(x) \\implies \\text{Odd} \\\\ \\text{(b) } (f/g)(-x) &= \\frac{f(-x)}{g(-x)} = \\frac{f(x)}{-g(x)} = -(f/g)(x) \\implies \\text{Odd} \\\\ \\text{(c) } (g/f)(-x) &= \\frac{g(-x)}{f(-x)} = \\frac{-g(x)}{f(x)} = -(g/f)(x) \\implies \\text{Odd} \\\\ \\text{(d) } f^2(-x) &= (f(-x))^2 = (f(x))^2 = f^2(x) \\implies \\text{Even} \\\\ \\text{(e) } g^2(-x) &= (g(-x))^2 = (-g(x))^2 = g^2(x) \\implies \\text{Even} \\end{aligned}",
+      "explanation": "Multiplying or dividing an even function and an odd function introduces a single minus sign, producing an odd function in (a), (b), and (c). Squaring either an even or an odd function squares the sign ((+/-1)^2 = +1), producing an even function in (d) and (e).",
+      "why": "Pointwise multiplication and division obey sign parity rules: (+)(-) = - (odd) and (-)(-) = + (even)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Test the Four Compositions in Parts (f)-(i)",
+      "mathExpression": "\\begin{aligned} \\text{(f) } (f \\circ g)(-x) &= f(g(-x)) = f(-g(x)) = f(g(x)) = (f \\circ g)(x) \\implies \\text{Even} \\\\ \\text{(g) } (g \\circ f)(-x) &= g(f(-x)) = g(f(x)) = (g \\circ f)(x) \\implies \\text{Even} \\\\ \\text{(h) } (f \\circ f)(-x) &= f(f(-x)) = f(f(x)) = (f \\circ f)(x) \\implies \\text{Even} \\\\ \\text{(i) } (g \\circ g)(-x) &= g(g(-x)) = g(-g(x)) = -g(g(x)) = -(g \\circ g)(x) \\implies \\text{Odd} \\end{aligned}",
+      "explanation": "In (f), the outer even function f absorbs the minus sign from g(-x) = -g(x). In (g) and (h), the inner even function f absorbs the minus sign immediately. Only in (i), where both inner and outer functions are odd, does the minus sign pass through both layers to yield -(g o g)(x).",
+      "why": "A composition of parity functions is even if at least one component is even, and odd if both components are odd."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "(x**2) * (x**3)",
+    "expected": "odd",
+    "variable": "x"
+  }
+}

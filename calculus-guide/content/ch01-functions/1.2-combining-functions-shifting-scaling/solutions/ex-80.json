@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-80",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Characterizing Functions That Are Simultaneously Even and Odd",
+  "exerciseReference": "Section 1.2, Exercise 80",
+  "originalTopic": "Combining Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "even-odd-functions",
+    "symmetry",
+    "proof"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Can a function be both even and odd? Give a mathematical proof justifying your answer.",
+  "finalAnswer": "\\text{Yes: the zero function } f(x) = 0 \\text{ (on any symmetric domain } D\\text{) is the unique function that is both even and odd.}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Write the Simultaneous Conditions for Evenness and Oddness",
+      "mathExpression": "f(-x) = f(x) \\quad \\text{and} \\quad f(-x) = -f(x) \\qquad (\\forall x \\in D)",
+      "explanation": "Suppose a function f defined on a symmetric domain D (where -x in D whenever x in D) is both even and odd. Then f(-x) must equal both f(x) and -f(x) for every x in D.",
+      "why": "Definitions of even and odd functions applied simultaneously."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Equate the Two Expressions for f(-x) and Solve for f(x)",
+      "mathExpression": "f(x) = -f(x) \\implies 2f(x) = 0 \\implies f(x) = 0 \\qquad (\\forall x \\in D)",
+      "explanation": "By transitivity of equality, f(x) = -f(x). Adding f(x) to both sides gives 2f(x) = 0, and dividing by 2 proves that f(x) = 0 for every x in D.",
+      "why": "Zero is the only real number equal to its own additive inverse."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Verify the Converse for f(x) = 0",
+      "mathExpression": "f(-x) = 0 = f(x) \\quad \\text{and} \\quad f(-x) = 0 = -0 = -f(x)",
+      "explanation": "Conversely, the constant zero function f(x) = 0 satisfies both f(-x) = f(x) and f(-x) = -f(x) everywhere on its symmetric domain (its graph, the x-axis, is symmetric about both the y-axis and the origin).",
+      "why": "The zero function satisfies both symmetry identities trivially."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "0*x",
+    "expected": "even",
+    "variable": "x"
+  }
+}

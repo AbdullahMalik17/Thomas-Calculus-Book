@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-16",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Evaluating Compositions Involving a Piecewise Function",
+  "exerciseReference": "Section 1.2, Exercise 16",
+  "originalTopic": "Compositions of Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "composition",
+    "piecewise-functions",
+    "function-evaluation"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Let f(x) = 2 - x and let g(x) be defined piecewise by g(x) = -x for -2 <= x < 0 and g(x) = x - 1 for 0 <= x <= 2. Evaluate: (a) f(g(0)), (b) g(f(3)), (c) g(g(-1)), (d) f(f(2)), (e) g(f(0)), and (f) f(g(1/2)).",
+  "finalAnswer": "\\text{(a) } 3,\\quad \\text{(b) } 1,\\quad \\text{(c) } 0,\\quad \\text{(d) } 2,\\quad \\text{(e) } 1,\\quad \\text{(f) } \\frac{5}{2}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate Parts (a) and (b) Using Branch Selection for g",
+      "mathExpression": "\\begin{aligned} \\text{(a) } g(0) &= 0 - 1 = -1 \\implies f(g(0)) = f(-1) = 2 - (-1) = 3 \\\\ \\text{(b) } f(3) &= 2 - 3 = -1 \\implies g(f(3)) = g(-1) = -(-1) = 1 \\end{aligned}",
+      "explanation": "In (a), x = 0 belongs to [0, 2], so use the second branch g(x) = x - 1 to get g(0) = -1, then f(-1) = 3. In (b), f(3) = -1 belongs to [-2, 0), so use the first branch g(x) = -x to get g(-1) = 1.",
+      "why": "Evaluating a piecewise function requires checking which subinterval contains the input before applying the formula."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Evaluate the Self-Compositions in Parts (c) and (d)",
+      "mathExpression": "\\begin{aligned} \\text{(c) } g(-1) &= -(-1) = 1 \\implies g(g(-1)) = g(1) = 1 - 1 = 0 \\\\ \\text{(d) } f(2) &= 2 - 2 = 0 \\implies f(f(2)) = f(0) = 2 - 0 = 2 \\end{aligned}",
+      "explanation": "In (c), x = -1 is in [-2, 0) so g(-1) = 1; then 1 is in [0, 2] so g(1) = 1 - 1 = 0. In (d), applying f(x) = 2 - x twice returns 2 - (2 - 2) = 2.",
+      "why": "Notice that g(-1) switches from the negative branch [-2, 0) to the non-negative branch [0, 2] on the second application."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Parts (e) and (f)",
+      "mathExpression": "\\begin{aligned} \\text{(e) } f(0) &= 2 - 0 = 2 \\implies g(f(0)) = g(2) = 2 - 1 = 1 \\\\ \\text{(f) } g(1/2) &= \\frac{1}{2} - 1 = -\\frac{1}{2} \\implies f(g(1/2)) = f\\left(-\\frac{1}{2}\\right) = 2 - \\left(-\\frac{1}{2}\\right) = \\frac{5}{2} \\end{aligned}",
+      "explanation": "In (e), f(0) = 2 lies in [0, 2], so g(2) = 2 - 1 = 1. In (f), 1/2 lies in [0, 2], so g(1/2) = -1/2, and then f(-1/2) = 2 - (-1/2) = 5/2.",
+      "why": "Careful tracking of signs and branch intervals ensures accurate piecewise composition."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 - (1/2 - 1)",
+    "expected": "5/2",
+    "variable": "x"
+  }
+}

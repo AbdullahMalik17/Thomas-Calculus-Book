@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-33",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Shifting a Line Vertically",
+  "exerciseReference": "Section 1.2, Exercise 33",
+  "originalTopic": "Shifting Graphs",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "shifting-graphs",
+    "linear",
+    "vertical-shift"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "The graph of the line y = 2x - 7 is to be shifted up 7 units. Give an equation for the shifted graph and describe the original and shifted lines.",
+  "finalAnswer": "y = 2x",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply the Upward Vertical Shift Rule",
+      "mathExpression": "y = (2x - 7) + 7",
+      "explanation": "To shift the graph of y = f(x) upward by 7 units, add 7 to the right-hand side of the equation.",
+      "why": "Vertical translation upward by k units transforms y = f(x) into y = f(x) + k."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Simplify the Shifted Linear Equation",
+      "mathExpression": "y = 2x",
+      "explanation": "The constant terms -7 and +7 cancel identically, leaving the proportional linear equation y = 2x.",
+      "why": "Additive inverse constants cancel (-7 + 7 = 0)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compare the Original and Shifted Lines",
+      "mathExpression": "\\text{Slope } m = 2; \\quad \\text{y-intercept: } (0, -7) \\longrightarrow (0, 0)",
+      "explanation": "Both lines are parallel with slope 2. The original line y = 2x - 7 has y-intercept (0, -7) and x-intercept (7/2, 0), whereas the shifted line y = 2x passes directly through the origin (0, 0).",
+      "why": "Translating a line produces a parallel line with identical slope and shifted intercepts."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(2*x - 7) + 7",
+    "expected": "2*x",
+    "variable": "x"
+  }
+}

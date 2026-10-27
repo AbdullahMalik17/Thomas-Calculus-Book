@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-64",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Kinetic Energy Proportional to Velocity Squared",
+  "exerciseReference": "Section 1.1, Exercise 64",
+  "originalTopic": "Theory and Examples: Proportionality",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "proportionality",
+    "kinetic-energy",
+    "physics",
+    "quadratic"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "The kinetic energy K of a moving mass is proportional to the square of its velocity v. If K = 12,960 joules when v = 18 m/sec, what is K when v = 10 m/sec?",
+  "finalAnswer": "K = 4000\\text{ joules}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate the Proportionality Model",
+      "mathExpression": "K = kv^2",
+      "explanation": "Since kinetic energy K is proportional to the square of velocity v, we write K = kv^2 for a constant k.",
+      "why": "In classical mechanics, K = (1/2)mv^2 has constant proportionality factor k = m/2 for a fixed mass."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find the Proportionality Constant k",
+      "mathExpression": "12960 = k(18)^2 = 324k \\implies k = \\frac{12960}{324} = 40",
+      "explanation": "Substitute K = 12,960 and v = 18 into K = kv^2. Since 18^2 = 324, dividing 12,960 by 324 gives k = 40 J/(m/s)^2.",
+      "why": "Dividing the known energy by the square of the known speed isolates the constant k."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate K at v = 10 m/sec",
+      "mathExpression": "K(10) = 40(10)^2 = 40(100) = 4000\\text{ joules}",
+      "explanation": "Substitute k = 40 and v = 10 into K = 40v^2 to obtain K = 4000 joules.",
+      "why": "Once k is known, the formula K = 40v^2 determines K for any velocity v."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(12960 / 18**2) * 10**2",
+    "expected": "4000",
+    "variable": "x"
+  }
+}

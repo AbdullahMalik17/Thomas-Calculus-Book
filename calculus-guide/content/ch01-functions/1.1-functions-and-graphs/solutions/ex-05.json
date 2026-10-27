@@ -3,51 +3,55 @@
   "chapter": "ch01",
   "section": "1.1",
   "type": "solution",
-  "title": "Natural Domain and Range of a Rational Fraction",
+  "title": "Natural Domain and Range of a Rational Function",
   "exerciseReference": "Section 1.1, Exercise 5",
   "originalTopic": "Functions and Graphs: Natural Domain and Range",
   "difficulty": "tier1",
   "status": "verified",
-  "tags": ["functions", "domain", "range", "rational-functions", "asymptotes"],
+  "tags": [
+    "functions",
+    "domain",
+    "range",
+    "rational-functions",
+    "asymptotes"
+  ],
   "author": "Muhammad Abdullah Athar",
-  "problemStatement": "Find the natural domain and range of the function defined by the formula f(t) = \\frac{4}{3 - t}.",
-  "finalAnswer": "Domain: $(-\\infty, 3) \\cup (3, \\infty)$, Range: $(-\\infty, 0) \\cup (0, \\infty)$",
+  "problemStatement": "Find the natural domain and range of the rational function defined by f(t) = 4 / (3 - t).",
+  "finalAnswer": "\\text{Domain: } (-\\infty, 3) \\cup (3, \\infty), \\quad \\text{Range: } (-\\infty, 0) \\cup (0, \\infty)",
   "steps": [
     {
       "stepNumber": 1,
       "title": "Identify Denominator Singularities",
-      "mathExpression": "3 - t \\ne 0",
-      "explanation": "In any rational function, division by zero is undefined. The denominator 3 - t must not equal zero, which requires t != 3.",
-      "why": "Division by zero does not represent a valid operation in the real number system."
+      "mathExpression": "3 - t \\ne 0 \\implies t \\ne 3",
+      "explanation": "In any rational function, division by zero is undefined. Setting the denominator 3 - t != 0 requires excluding t = 3.",
+      "why": "Division by zero is undefined in the real number system."
     },
     {
       "stepNumber": 2,
-      "title": "Formulate Domain in Interval Notation",
+      "title": "Formulate the Domain in Interval Notation",
       "mathExpression": "\\text{Domain} = (-\\infty, 3) \\cup (3, \\infty)",
-      "explanation": "Since there are no radical restrictions or other algebraic constraints, all real numbers except t = 3 are admissible.",
-      "why": "Excluding the single singularity t = 3 leaves the union of two open infinite intervals."
+      "explanation": "All real numbers t except t = 3 yield a valid quotient, partitioning the domain into two open intervals.",
+      "why": "Removing a single point from the real line leaves the union of two disjoint open rays."
     },
     {
       "stepNumber": 3,
-      "title": "Analyze the Range by Solving for the Input",
+      "title": "Invert the Relation to Find the Range",
       "mathExpression": "y = \\frac{4}{3 - t} \\iff 3 - t = \\frac{4}{y} \\iff t = 3 - \\frac{4}{y}",
-      "explanation": "Set y = 4/(3 - t) and solve for t in terms of y. This yields t = 3 - 4/y, which is well-defined for every real number y except y = 0.",
-      "why": "Expressing the independent variable in terms of the dependent variable exposes any restrictions on the output."
+      "explanation": "Set y = 4 / (3 - t) and solve for t in terms of y. The resulting expression t = 3 - 4/y produces a valid real number t != 3 for every real number y except y = 0.",
+      "why": "A value y belongs to the range if and only if the equation f(t) = y has at least one solution t in the domain."
     },
     {
       "stepNumber": 4,
-      "title": "State the Range",
+      "title": "State the Range in Interval Notation",
       "mathExpression": "\\text{Range} = (-\\infty, 0) \\cup (0, \\infty)",
-      "explanation": "A fraction with a non-zero numerator (here 4) can never equal zero. As t approaches 3 from either side, f(t) grows arbitrarily large in positive or negative magnitude, covering all non-zero real numbers.",
-      "why": "The horizontal asymptote y = 0 is never attained by 4/(3 - t) for any finite real input t."
+      "explanation": "Because the numerator 4 is non-zero, the fraction can never equal 0, while taking all other real values as t varies across (-inf, 3) U (3, inf).",
+      "why": "A fraction with a constant non-zero numerator never vanishes and approaches +/-infinity near its vertical asymptote."
     }
   ],
   "sympyVerification": {
     "operation": "domain",
-    "type": "domain",
     "expression": "4/(3 - t)",
     "expected": "(-oo, 3) U (3, oo)",
-    "expected_domain": "(-oo, 3) U (3, oo)",
     "variable": "t"
   }
 }

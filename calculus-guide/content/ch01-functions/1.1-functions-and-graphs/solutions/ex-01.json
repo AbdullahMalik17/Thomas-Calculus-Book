@@ -8,10 +8,16 @@
   "originalTopic": "Functions and Graphs: Natural Domain and Range",
   "difficulty": "tier1",
   "status": "verified",
-  "tags": ["functions", "domain", "range", "quadratic", "polynomial"],
+  "tags": [
+    "functions",
+    "domain",
+    "range",
+    "quadratic",
+    "polynomial"
+  ],
   "author": "Muhammad Abdullah Athar",
   "problemStatement": "Determine the natural domain and resulting range of the real-valued function defined by the formula f(x) = 1 + x^2.",
-  "finalAnswer": "Domain: $(-\\infty, \\infty)$, Range: $[1, \\infty)$",
+  "finalAnswer": "\\text{Domain: } (-\\infty, \\infty), \\quad \\text{Range: } [1, \\infty)",
   "steps": [
     {
       "stepNumber": 1,
@@ -22,32 +28,30 @@
     },
     {
       "stepNumber": 2,
-      "title": "Establish the Domain",
+      "title": "Establish the Natural Domain",
       "mathExpression": "\\text{Domain} = (-\\infty, \\infty)",
       "explanation": "Since squaring any real number and adding 1 is valid for all real numbers without restriction, the function is defined on the entire real line.",
       "why": "Polynomial functions are continuous and well-defined across all real numbers."
     },
     {
       "stepNumber": 3,
-      "title": "Analyze Output Values for Range",
+      "title": "Analyze Output Values for the Range",
       "mathExpression": "x^2 \\ge 0 \\implies 1 + x^2 \\ge 1",
-      "explanation": "For every real number x, the square x^2 is non-negative (x^2 >= 0). Adding 1 gives 1 + x^2 >= 1. The minimum output occurs at x = 0, giving f(0) = 1, and as x approaches positive or negative infinity, 1 + x^2 grows without bound.",
+      "explanation": "For every real number x, the square x^2 is non-negative (x^2 >= 0). Adding 1 to both sides gives 1 + x^2 >= 1. The minimum output occurs at x = 0, giving f(0) = 1, and as |x| grows without bound, 1 + x^2 grows without bound.",
       "why": "The square of any real number is non-negative, bounding the upward-opening parabola from below at its vertex."
     },
     {
       "stepNumber": 4,
-      "title": "State the Range",
+      "title": "State the Range in Interval Notation",
       "mathExpression": "\\text{Range} = [1, \\infty)",
-      "explanation": "Since the function is continuous on R and attains all values greater than or equal to 1, the range in interval notation is [1, inf).",
+      "explanation": "Since the function is continuous on (-inf, inf) and attains every value greater than or equal to 1, the range is [1, inf).",
       "why": "Continuous functions map connected intervals to connected intervals by the Intermediate Value Theorem."
     }
   ],
   "sympyVerification": {
     "operation": "domain",
-    "type": "domain",
     "expression": "1 + x**2",
     "expected": "(-oo, oo)",
-    "expected_domain": "(-oo, oo)",
     "variable": "x"
   }
 }

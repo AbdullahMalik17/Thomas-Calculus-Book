@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-49",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Parity of the Quadratic Polynomial f(x) = x^2 + 1",
+  "exerciseReference": "Section 1.1, Exercise 49",
+  "originalTopic": "Even and Odd Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "symmetry",
+    "even-functions",
+    "polynomials",
+    "parity"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether the function f(x) = x^2 + 1 is even, odd, or neither, and justify your answer.",
+  "finalAnswer": "\\text{Even}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Substitute -x into the Formula",
+      "mathExpression": "f(-x) = (-x)^2 + 1",
+      "explanation": "Replace x with -x in the polynomial f(x) = x^2 + 1.",
+      "why": "Parity is tested by comparing f(-x) with f(x)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Simplify the Squared Term",
+      "mathExpression": "(-x)^2 + 1 = x^2 + 1 = f(x)",
+      "explanation": "Since (-x)^2 = x^2 for all real numbers x, the expression simplifies back to x^2 + 1 = f(x).",
+      "why": "Even powers of real numbers are invariant under sign reversal."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude Function Parity",
+      "mathExpression": "f(-x) = f(x) \\implies \\text{Even}",
+      "explanation": "Because f(-x) = f(x) for all x in R, f(x) = x^2 + 1 is an even function.",
+      "why": "A polynomial containing only even powers of x (here x^2 and x^0) is always an even function."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "x**2 + 1",
+    "expected": "even",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.3-trigonometric-functions/solutions/ex-43",
+  "chapter": "ch01",
+  "section": "1.3",
+  "type": "solution",
+  "title": "Exact Evaluation of sin(7*pi/12) via the Sine Sum Formula",
+  "exerciseReference": "Section 1.3, Exercise 43",
+  "originalTopic": "Using the Addition Formulas",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "addition-formulas",
+    "exact-values"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Evaluate \\sin(7\\pi/12) exactly by writing it as \\sin(\\pi/4 + \\pi/3).",
+  "finalAnswer": "\\frac{\\sqrt{6} + \\sqrt{2}}{4}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply the Sine Addition Formula",
+      "mathExpression": "\\sin\\left(\\frac{7\\pi}{12}\\right) = \\sin\\left(\\frac{\\pi}{4} + \\frac{\\pi}{3}\\right) = \\sin\\frac{\\pi}{4}\\cos\\frac{\\pi}{3} + \\cos\\frac{\\pi}{4}\\sin\\frac{\\pi}{3}",
+      "explanation": "Note that pi/4 + pi/3 = 3*pi/12 + 4*pi/12 = 7*pi/12, and expand using sin(A + B) = sin A cos B + cos A sin B.",
+      "why": "Decomposing 7*pi/12 into special angles pi/4 and pi/3 allows exact radical evaluation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Substitute the Exact Values at pi/4 and pi/3",
+      "mathExpression": "= \\left(\\frac{\\sqrt{2}}{2}\\right)\\left(\\frac{1}{2}\\right) + \\left(\\frac{\\sqrt{2}}{2}\\right)\\left(\\frac{\\sqrt{3}}{2}\\right)",
+      "explanation": "Substitute sin(pi/4) = cos(pi/4) = sqrt(2)/2, cos(pi/3) = 1/2, and sin(pi/3) = sqrt(3)/2.",
+      "why": "These are the exact trigonometric values from 45-45-90 and 30-60-90 reference triangles."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Combine Over the Common Denominator",
+      "mathExpression": "= \\frac{\\sqrt{2}}{4} + \\frac{\\sqrt{6}}{4} = \\frac{\\sqrt{6} + \\sqrt{2}}{4}",
+      "explanation": "Multiply the radicals and combine the two fractions over the common denominator 4.",
+      "why": "sqrt(2)*sqrt(3) = sqrt(6) and both products have denominator 2*2 = 4."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "sin(pi/4 + pi/3)",
+    "expected": "(sqrt(6) + sqrt(2))/4",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-42",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Symmetry and Monotonicity of y = sqrt(-x)",
+  "exerciseReference": "Section 1.1, Exercise 42",
+  "originalTopic": "Increasing and Decreasing Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "increasing-decreasing",
+    "symmetry",
+    "radicals"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Describe the graph of y = sqrt(-x), state whether it has any symmetry, and specify the intervals where the function is increasing or decreasing.",
+  "finalAnswer": "\\text{No symmetry; Decreasing on } (-\\infty, 0]; \\text{ Increasing nowhere}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find the Domain and Check Symmetry",
+      "mathExpression": "-x \\ge 0 \\implies x \\le 0 \\implies \\text{Domain} = (-\\infty, 0]",
+      "explanation": "Because the domain (-inf, 0] is only a single half-line and is not symmetric about x = 0, the graph has no symmetry (neither y-axis, x-axis, nor origin symmetry).",
+      "why": "For a function to be even or odd, its domain must be symmetric about the origin (x in D implies -x in D)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Test Monotonicity on (-inf, 0]",
+      "mathExpression": "x_1 < x_2 \\le 0 \\implies -x_1 > -x_2 \\ge 0 \\implies \\sqrt{-x_1} > \\sqrt{-x_2}",
+      "explanation": "For any x_1 < x_2 <= 0, negating reverses the inequality to -x_1 > -x_2 >= 0, and taking the principal square root yields sqrt(-x_1) > sqrt(-x_2).",
+      "why": "Composing the strictly increasing function sqrt(u) with the strictly decreasing linear function u = -x produces a strictly decreasing function."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Summarize Graph and Intervals",
+      "mathExpression": "\\text{Decreasing on } (-\\infty, 0], \\quad \\text{Increasing: nowhere}",
+      "explanation": "The curve lies in Quadrant II and descends continuously from left to right, passing through (-4, 2) and (-1, 1) to terminate at (0, 0).",
+      "why": "Every increase in x on (-inf, 0] reduces the value of the radicand -x."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "expression": "sqrt(-x)",
+    "expected": "(-oo, 0]",
+    "variable": "x"
+  }
+}

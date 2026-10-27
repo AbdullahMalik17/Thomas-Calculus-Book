@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-44",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Symmetry and Monotonicity of y = -4*sqrt(x)",
+  "exerciseReference": "Section 1.1, Exercise 44",
+  "originalTopic": "Increasing and Decreasing Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "increasing-decreasing",
+    "symmetry",
+    "radicals"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Describe the graph of y = -4*sqrt(x), determine whether it has any symmetry, and specify the intervals where the function is increasing or decreasing.",
+  "finalAnswer": "\\text{No symmetry; Decreasing on } [0, \\infty); \\text{ Increasing nowhere}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify the Domain and Lack of Symmetry",
+      "mathExpression": "\\text{Domain} = [0, \\infty) \\implies \\text{No symmetry}",
+      "explanation": "The square root requires x >= 0. Because the domain [0, inf) contains no negative inputs and its outputs are all <= 0, the graph lies entirely in Quadrant IV (plus the origin) and has no symmetry.",
+      "why": "A graph confined to a single quadrant cannot be symmetric about either axis or the origin."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compare Function Values on [0, inf)",
+      "mathExpression": "0 \\le x_1 < x_2 \\implies \\sqrt{x_1} < \\sqrt{x_2} \\implies -4\\sqrt{x_1} > -4\\sqrt{x_2}",
+      "explanation": "Because sqrt(x) is strictly increasing on [0, inf), multiplying by the negative constant -4 reverses the inequality, making -4*sqrt(x) strictly decreasing on [0, inf).",
+      "why": "Multiplying a strictly increasing function by a negative scalar yields a strictly decreasing function."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Summarize Graph and Intervals",
+      "mathExpression": "\\text{Decreasing on } [0, \\infty), \\quad \\text{Increasing: nowhere}",
+      "explanation": "The graph starts at (0, 0) and falls through (1, -4) and (4, -8) in the fourth quadrant, decreasing on [0, inf).",
+      "why": "Every increase in x >= 0 produces a larger positive value of sqrt(x) and hence a more negative value of -4*sqrt(x)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "expression": "-4*sqrt(x)",
+    "expected": "[0, oo)",
+    "variable": "x"
+  }
+}

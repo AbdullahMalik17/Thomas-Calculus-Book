@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-41",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Symmetry and Monotonicity of y = sqrt(|x|)",
+  "exerciseReference": "Section 1.1, Exercise 41",
+  "originalTopic": "Increasing and Decreasing Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "increasing-decreasing",
+    "symmetry",
+    "radicals",
+    "absolute-value"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Describe the graph of y = sqrt(|x|), identify its symmetry, and specify the intervals where the function is increasing and where it is decreasing.",
+  "finalAnswer": "\\text{Symmetric about the } y\\text{-axis; Decreasing on } (-\\infty, 0]; \\text{ Increasing on } [0, \\infty)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Establish Even Symmetry",
+      "mathExpression": "f(-x) = \\sqrt{|-x|} = \\sqrt{|x|} = f(x) \\implies \\text{Symmetric about the } y\\text{-axis}",
+      "explanation": "The natural domain is (-inf, inf), and replacing x with -x leaves sqrt(|x|) unchanged, so the graph is symmetric across the y-axis.",
+      "why": "The composition of sqrt(u) with the even function u = |x| is an even function."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Determine Monotonicity on [0, inf)",
+      "mathExpression": "0 \\le x_1 < x_2 \\implies \\sqrt{x_1} < \\sqrt{x_2} \\implies \\text{Increasing on } [0, \\infty)",
+      "explanation": "For x >= 0, y = sqrt(x), which is strictly increasing on [0, inf) starting from (0, 0).",
+      "why": "The principal square root function is strictly increasing on [0, inf)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Determine Monotonicity on (-inf, 0]",
+      "mathExpression": "x_1 < x_2 \\le 0 \\implies -x_1 > -x_2 \\ge 0 \\implies \\sqrt{-x_1} > \\sqrt{-x_2} \\implies \\text{Decreasing on } (-\\infty, 0]",
+      "explanation": "For x <= 0, y = sqrt(-x). As x increases toward 0, -x decreases toward 0, so sqrt(-x) decreases to 0. Thus the function decreases on (-inf, 0] and increases on [0, inf).",
+      "why": "Mirror reflection across the y-axis reverses the direction of monotonicity on (-inf, 0]."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "sqrt(Abs(x))",
+    "expected": "even",
+    "variable": "x"
+  }
+}

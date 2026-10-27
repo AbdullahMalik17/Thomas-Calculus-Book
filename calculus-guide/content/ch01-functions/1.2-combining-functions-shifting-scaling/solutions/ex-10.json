@@ -3,43 +3,47 @@
   "chapter": "ch01",
   "section": "1.2",
   "type": "solution",
-  "title": "Scaling a Circle into an Ellipse",
-  "exerciseReference": "Section 1.2, Exercise 45",
-  "originalTopic": "Geometric Scaling: Ellipses",
+  "title": "Three-Fold Composition of Rational and Radical Functions",
+  "exerciseReference": "Section 1.2, Exercise 10",
+  "originalTopic": "Compositions of Functions",
   "difficulty": "tier2",
   "status": "verified",
-  "tags": ["scaling", "ellipse", "circle", "conics"],
+  "tags": [
+    "composition",
+    "rational",
+    "radical",
+    "three-fold-composition"
+  ],
   "author": "Muhammad Abdullah Athar",
-  "problemStatement": "Put the equation 9x^2 + 25y^2 = 225 into standard form, identify its semi-axes, and explain how it can be obtained by scaling the unit circle x^2 + y^2 = 1.",
-  "finalAnswer": "\\frac{x^2}{25} + \\frac{y^2}{9} = 1; \\quad a = 5, \\ b = 3; \\quad \\text{Scaled by 5 horizontally and 3 vertically}",
+  "problemStatement": "Write a simplified formula for (f o g o h)(x), given f(x) = (x + 2) / (3 - x), g(x) = x^2 / (x^2 + 1), and h(x) = sqrt(2 - x).",
+  "finalAnswer": "(f \\circ g \\circ h)(x) = \\frac{8 - 3x}{7 - 2x} \\quad (x \\le 2)",
   "steps": [
     {
       "stepNumber": 1,
-      "title": "Convert to Standard Form",
-      "mathExpression": "\\frac{9x^2}{225} + \\frac{25y^2}{225} = 1 \\implies \\frac{x^2}{25} + \\frac{y^2}{9} = 1",
-      "explanation": "Divide both sides of the equation by 225 to achieve the standard normalized form where the right-hand constant equals 1.",
-      "why": "Standard form for an ellipse centered at the origin requires a unit right-hand side."
+      "title": "Compute the Inner Composition g(h(x))",
+      "mathExpression": "g(h(x)) = \\frac{(\\sqrt{2 - x})^2}{(\\sqrt{2 - x})^2 + 1} = \\frac{2 - x}{(2 - x) + 1} = \\frac{2 - x}{3 - x} \\quad (x \\le 2)",
+      "explanation": "For x <= 2, h(x) = sqrt(2 - x) is real and (sqrt(2 - x))^2 = 2 - x. Substituting into g(x) = x^2 / (x^2 + 1) gives (2 - x) / (3 - x).",
+      "why": "Squaring a real principal square root recovers the non-negative radicand 2 - x."
     },
     {
       "stepNumber": 2,
-      "title": "Identify Semi-Axes Lengths",
-      "mathExpression": "a^2 = 25 \\implies a = 5; \\quad b^2 = 9 \\implies b = 3",
-      "explanation": "The semi-major axis along the x-axis has length a = 5, and the semi-minor axis along the y-axis has length b = 3. The x-intercepts are (+-5, 0) and y-intercepts are (0, +-3).",
-      "why": "The denominators in standard form represent the squares of the semi-axes."
+      "title": "Substitute g(h(x)) into the Outer Function f",
+      "mathExpression": "f(g(h(x))) = \\frac{\\frac{2 - x}{3 - x} + 2}{3 - \\frac{2 - x}{3 - x}}",
+      "explanation": "Replace x in f(x) = (x + 2) / (3 - x) with the rational expression g(h(x)) = (2 - x) / (3 - x).",
+      "why": "Direct substitution of the inner composite expression into f."
     },
     {
       "stepNumber": 3,
-      "title": "Explain the Transformation from the Unit Circle",
-      "mathExpression": "(x/5)^2 + (y/3)^2 = 1 \\iff X^2 + Y^2 = 1 \\text{ with } X = x/5, \\ Y = y/3",
-      "explanation": "Starting from the unit circle X^2 + Y^2 = 1, substituting X = x/5 stretches the circle horizontally by a factor of 5, and substituting Y = y/3 stretches it vertically by a factor of 3, generating the ellipse.",
-      "why": "Replacing coordinate variables with scaled fractions expands the geometry along the corresponding coordinate axes."
+      "title": "Clear the Complex Fraction and Simplify",
+      "mathExpression": "(f \\circ g \\circ h)(x) = \\frac{(2 - x) + 2(3 - x)}{3(3 - x) - (2 - x)} = \\frac{2 - x + 6 - 2x}{9 - 3x - 2 + x} = \\frac{8 - 3x}{7 - 2x} \\quad (x \\le 2)",
+      "explanation": "Multiply both numerator and denominator by (3 - x) (which is non-zero for all x <= 2), then distribute and collect like terms.",
+      "why": "Multiplying numerator and denominator by the common factor 3 - x preserves equivalence on x <= 2."
     }
   ],
   "sympyVerification": {
     "operation": "algebraic_equivalence",
-    "type": "algebraic_equivalence",
-    "expression": "9*x**2 + 25*y**2 - 225",
-    "expected": "225*(x**2/25 + y**2/9 - 1)",
+    "expression": "((2 - x)/(3 - x) + 2) / (3 - (2 - x)/(3 - x))",
+    "expected": "(8 - 3*x) / (7 - 2*x)",
     "variable": "x"
   }
 }

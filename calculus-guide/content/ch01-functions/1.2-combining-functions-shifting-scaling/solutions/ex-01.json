@@ -3,44 +3,56 @@
   "chapter": "ch01",
   "section": "1.2",
   "type": "solution",
-  "title": "Algebraic Combinations and Natural Domains",
+  "title": "Domains and Ranges of Sum and Product Functions",
   "exerciseReference": "Section 1.2, Exercise 1",
-  "originalTopic": "Combining Functions: Sums, Differences, and Products",
+  "originalTopic": "Algebraic Combinations",
   "difficulty": "tier1",
   "status": "verified",
-  "tags": ["combining-functions", "domain", "sum", "product"],
+  "tags": [
+    "combining-functions",
+    "domain",
+    "range",
+    "sum",
+    "product",
+    "radical"
+  ],
   "author": "Muhammad Abdullah Athar",
-  "problemStatement": "Let f(x) = x and g(x) = sqrt(x - 1). Determine formulas for (f + g)(x) and (f * g)(x), and specify their natural domains.",
-  "finalAnswer": "(f+g)(x) = x + \\sqrt{x-1}, \\quad (f \\cdot g)(x) = x\\sqrt{x-1}; \\quad \\text{Domain: } [1, \\infty)",
+  "problemStatement": "Given the real-valued functions f(x) = x and g(x) = sqrt(x - 1), determine the natural domains and ranges of f, g, the sum f + g, and the product f * g.",
+  "finalAnswer": "D_f = (-\\infty, \\infty),\\ R_f = (-\\infty, \\infty);\\quad D_g = [1, \\infty),\\ R_g = [0, \\infty);\\quad D_{f+g} = [1, \\infty),\\ R_{f+g} = [1, \\infty);\\quad D_{f\\cdot g} = [1, \\infty),\\ R_{f\\cdot g} = [0, \\infty)",
   "steps": [
     {
       "stepNumber": 1,
-      "title": "Find the Individual Domains",
-      "mathExpression": "D(f) = (-\\infty, \\infty), \\quad D(g) = [1, \\infty)",
-      "explanation": "The linear polynomial f(x) = x is defined for all real numbers. For g(x) = sqrt(x - 1), the square root requires the radicand to be non-negative: x - 1 >= 0, which yields x >= 1.",
-      "why": "The natural domain of an even radical requires non-negative radicands."
+      "title": "Determine the Domain and Range of Each Component Function",
+      "mathExpression": "D_f = (-\\infty, \\infty),\\ R_f = (-\\infty, \\infty); \\quad D_g = [1, \\infty),\\ R_g = [0, \\infty)",
+      "explanation": "The identity function f(x) = x is defined for all real numbers and takes every real value as an output. For g(x) = sqrt(x - 1), the radicand must be non-negative (x - 1 >= 0), giving x >= 1, and the principal square root yields all non-negative real numbers.",
+      "why": "Even-indexed radicals require non-negative radicands in the real number system, and the principal square root is non-negative and surjective onto [0, infinity)."
     },
     {
       "stepNumber": 2,
-      "title": "Intersect Individual Domains",
-      "mathExpression": "D(f + g) = D(f) \\cap D(g) = (-\\infty, \\infty) \\cap [1, \\infty) = [1, \\infty)",
-      "explanation": "By the definition of algebraic combinations, the sum and product functions are defined on the intersection of their individual domains.",
-      "why": "Both component functions must be simultaneously well-defined on the real line."
+      "title": "Find the Domains of f + g and f * g",
+      "mathExpression": "D_{f+g} = D_{f \\cdot g} = D_f \\cap D_g = (-\\infty, \\infty) \\cap [1, \\infty) = [1, \\infty)",
+      "explanation": "Both the sum (f + g)(x) = x + sqrt(x - 1) and the product (f * g)(x) = x * sqrt(x - 1) are defined wherever both f(x) and g(x) are simultaneously defined, which is the intersection of their individual domains.",
+      "why": "The domain of an algebraic sum or product of two functions is the intersection of their natural domains."
     },
     {
       "stepNumber": 3,
-      "title": "Write the Combined Formulas",
-      "mathExpression": "(f + g)(x) = x + \\sqrt{x - 1}, \\quad (f \\cdot g)(x) = x\\sqrt{x - 1}",
-      "explanation": "Add and multiply the expressions directly according to functional arithmetic.",
-      "why": "Standard definition of pointwise addition and multiplication of functions."
+      "title": "Determine the Range of the Sum f + g",
+      "mathExpression": "(f + g)(x) = x + \\sqrt{x - 1} \\ge 1 + 0 = 1 \\implies R_{f+g} = [1, \\infty)",
+      "explanation": "On [1, infinity), both x and sqrt(x - 1) are continuous and strictly increasing. At the left endpoint x = 1, (f + g)(1) = 1 + 0 = 1, and as x -> infinity, x + sqrt(x - 1) -> infinity, so the range is [1, infinity).",
+      "why": "The sum of two continuous increasing functions on [1, infinity) is continuous and increasing, mapping [1, infinity) onto [(f+g)(1), infinity)."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Determine the Range of the Product f * g",
+      "mathExpression": "(f \\cdot g)(x) = x\\sqrt{x - 1} \\ge 1 \\cdot 0 = 0 \\implies R_{f\\cdot g} = [0, \\infty)",
+      "explanation": "On [1, infinity), both factors x > 0 and sqrt(x - 1) >= 0 are continuous, non-negative, and increasing. At x = 1, (f * g)(1) = 1 * 0 = 0, and as x -> infinity, x * sqrt(x - 1) grows without bound, yielding the range [0, infinity).",
+      "why": "The product of two non-negative continuous increasing functions on [1, infinity) is continuous and increasing from its minimum value at x = 1 to infinity."
     }
   ],
   "sympyVerification": {
     "operation": "domain",
-    "type": "domain",
     "expression": "x + sqrt(x - 1)",
     "expected": "[1, oo)",
-    "expected_domain": "[1, oo)",
     "variable": "x"
   }
 }

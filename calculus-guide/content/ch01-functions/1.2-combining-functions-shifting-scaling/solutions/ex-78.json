@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-78",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Graphing the Square Root of the Absolute Value Function",
+  "exerciseReference": "Section 1.2, Exercise 78",
+  "originalTopic": "Graphing",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "graphing",
+    "absolute-value",
+    "radical",
+    "even-function",
+    "cusp"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Graph and analyze the function y = sqrt(|x|) by writing it in piecewise form and using symmetry.",
+  "finalAnswer": "y = \\begin{cases} \\sqrt{x}, & x \\ge 0 \\\\ \\sqrt{-x}, & x < 0 \\end{cases};\\quad \\text{Domain: } (-\\infty, \\infty),\\quad \\text{Range: } [0, \\infty),\\quad \\text{Cusp / intercept: } (0, 0)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Write y = sqrt(|x|) in Piecewise Form",
+      "mathExpression": "y = \\sqrt{|x|} = \\begin{cases} \\sqrt{x}, & x \\ge 0 \\\\ \\sqrt{-x}, & x < 0 \\end{cases}",
+      "explanation": "For x >= 0, |x| = x so y = sqrt(x). For x < 0, |x| = -x > 0 so y = sqrt(-x), which is the reflection of y = sqrt(x) across the y-axis.",
+      "why": "Splitting |x| at x = 0 decomposes y = sqrt(|x|) into two symmetric square root branches."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Determine the Domain, Range, and Even Symmetry",
+      "mathExpression": "\\text{Domain: } (-\\infty, \\infty), \\quad \\text{Range: } [0, \\infty), \\quad f(-x) = \\sqrt{|-x|} = \\sqrt{|x|} = f(x) \\text{ (even)}",
+      "explanation": "Because |x| >= 0 for all real x, the square root is defined on the entire real line (-infinity, infinity) with range [0, infinity) and even symmetry across the y-axis.",
+      "why": "The absolute value ensures a non-negative radicand for every real number x."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Describe the Cusp at the Origin and Key Points",
+      "mathExpression": "\\text{Cusp at origin: } (0, 0); \\quad \\text{Symmetric points: } (\\pm 1, 1),\\ (\\pm 4, 2),\\ (\\pm 9, 3)",
+      "explanation": "The two square root branches meet at a sharp vertical cusp at (0, 0) and rise concavely outward in the first and second quadrants through (+/-1, 1) and (+/-4, 2).",
+      "why": "Both branches have vertical tangents at x = 0, forming a symmetric cusp at the origin."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "sqrt(Abs(x))",
+    "expected": "even",
+    "variable": "x"
+  }
+}

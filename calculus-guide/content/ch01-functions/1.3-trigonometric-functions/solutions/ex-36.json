@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.3-trigonometric-functions/solutions/ex-36",
+  "chapter": "ch01",
+  "section": "1.3",
+  "type": "solution",
+  "title": "Deriving the Sine Difference Formula from the Sum Formula",
+  "exerciseReference": "Section 1.3, Exercise 36",
+  "originalTopic": "Using the Addition Formulas",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "addition-formulas",
+    "difference-formulas",
+    "proof"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Use the sine addition formula \\sin(A + B) = \\sin A \\cos B + \\cos A \\sin B together with even/odd identities to derive the difference formula \\sin(A - B) = \\sin A \\cos B - \\cos A \\sin B.",
+  "finalAnswer": "\\sin(A - B) = \\sin A \\cos B - \\cos A \\sin B",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Substitute -B for B in the Sine Addition Formula",
+      "mathExpression": "\\sin(A - B) = \\sin(A + (-B)) = \\sin A \\cos(-B) + \\cos A \\sin(-B)",
+      "explanation": "Write A - B as A + (-B) and expand using sin(A + B) = sin A cos B + cos A sin B.",
+      "why": "The sine addition identity applies to all real angles."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply Evenness of Cosine and Oddness of Sine",
+      "mathExpression": "\\cos(-B) = \\cos B, \\quad \\sin(-B) = -\\sin B",
+      "explanation": "Replace cos(-B) with cos B and sin(-B) with -sin B.",
+      "why": "Cosine is an even function and sine is an odd function."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Simplify the Resulting Expression",
+      "mathExpression": "\\sin(A - B) = \\sin A \\cos B + \\cos A (-\\sin B) = \\sin A \\cos B - \\cos A \\sin B",
+      "explanation": "Factor out the negative sign from the second term to complete the derivation.",
+      "why": "Adding cos A (-sin B) is algebraically equivalent to subtracting cos A sin B."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "sin(A - B)",
+    "expected": "sin(A)*cos(B) - cos(A)*sin(B)",
+    "variable": "A"
+  }
+}

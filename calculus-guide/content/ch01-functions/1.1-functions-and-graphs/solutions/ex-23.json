@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-23",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Analyzing Why |y| = x and y^2 = x^2 Are Not Functions of x",
+  "exerciseReference": "Section 1.1, Exercise 23",
+  "originalTopic": "Functions and Graphs: Vertical Line Test",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "vertical-line-test",
+    "implicit-relations",
+    "absolute-value"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Describe the graphs of the equations (a) |y| = x and (b) y^2 = x^2, and explain why neither equation defines y as a function of x.",
+  "finalAnswer": "\\text{(a) Two rays } y = \\pm x \\text{ for } x \\ge 0; \\quad \\text{(b) Two lines } y = \\pm x; \\quad \\text{Both fail the Vertical Line Test}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Solve Equation (a) for y and Describe Its Graph",
+      "mathExpression": "|y| = x \\iff y = \\pm x \\quad (x \\ge 0)",
+      "explanation": "For x < 0, |y| = x has no real solutions. For x = 0, y = 0. For each x > 0, there are two distinct solutions: y = x and y = -x. The graph consists of two rays meeting at the origin and opening to the right in Quadrants I and IV.",
+      "why": "By definition of absolute value, |y| = x (with x > 0) is satisfied by both y = x and y = -x."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Explain Why Equation (a) Is Not a Function of x",
+      "mathExpression": "x = 1 \\implies y = 1 \\text{ and } y = -1",
+      "explanation": "Every vertical line x = c with c > 0 intersects the graph of |y| = x twice, at (c, c) and (c, -c), violating the Vertical Line Test.",
+      "why": "A function cannot assign two distinct outputs to the same input x > 0."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Solve Equation (b) for y and Explain Why It Fails",
+      "mathExpression": "y^2 = x^2 \\iff |y| = |x| \\iff y = x \\text{ or } y = -x",
+      "explanation": "Taking square roots of both sides of y^2 = x^2 yields y = +/-x, whose graph is the pair of diagonal lines y = x and y = -x intersecting at the origin. For every x != 0, there are two distinct y-values (y = x and y = -x), so it fails the Vertical Line Test.",
+      "why": "Every vertical line x = c with c != 0 crosses both lines y = x and y = -x at distinct points."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "y**2 - x**2",
+    "expected": "(y - x)*(y + x)",
+    "variable": "x"
+  }
+}

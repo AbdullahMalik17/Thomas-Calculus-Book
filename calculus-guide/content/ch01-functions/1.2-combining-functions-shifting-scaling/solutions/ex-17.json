@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-17",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Formulas, Domains, and Ranges of Radical-Reciprocal Compositions",
+  "exerciseReference": "Section 1.2, Exercise 17",
+  "originalTopic": "Compositions of Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "composition",
+    "domain",
+    "range",
+    "radical",
+    "rational"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Let f(x) = sqrt(x + 1) and g(x) = 1 / x. (a) Write formulas for f o g and g o f, and find the (b) domain and (c) range of each composite function.",
+  "finalAnswer": "\\text{(a) } (f \\circ g)(x) = \\sqrt{\\frac{1}{x} + 1},\\ (g \\circ f)(x) = \\frac{1}{\\sqrt{x + 1}};\\quad \\text{(b) } D_{f\\circ g} = (-\\infty, -1] \\cup (0, \\infty),\\ D_{g\\circ f} = (-1, \\infty);\\quad \\text{(c) } R_{f\\circ g} = [0, 1) \\cup (1, \\infty),\\ R_{g\\circ f} = (0, \\infty)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Write the Composite Formulas in Part (a)",
+      "mathExpression": "(f \\circ g)(x) = f(g(x)) = \\sqrt{\\frac{1}{x} + 1}, \\qquad (g \\circ f)(x) = g(f(x)) = \\frac{1}{\\sqrt{x + 1}}",
+      "explanation": "Substitute g(x) = 1/x into f(x) = sqrt(x + 1) to obtain (f o g)(x), and substitute f(x) = sqrt(x + 1) into g(x) = 1/x to obtain (g o f)(x).",
+      "why": "Definition of function composition."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Determine the Domains of f o g and g o f in Part (b)",
+      "mathExpression": "\\begin{aligned} D_{f\\circ g} &= \\left\\{x \\ne 0 : \\frac{1}{x} + 1 = \\frac{x + 1}{x} \\ge 0\\right\\} = (-\\infty, -1] \\cup (0, \\infty) \\\\ D_{g\\circ f} &= \\{x \\ge -1 : \\sqrt{x + 1} \\ne 0\\} = (-1, \\infty) \\end{aligned}",
+      "explanation": "For f o g, we need x != 0 and (x + 1)/x >= 0; sign analysis shows (x + 1)/x >= 0 when x <= -1 or x > 0. For g o f, we need x >= -1 so sqrt(x + 1) is real, and x != -1 so the denominator sqrt(x + 1) is non-zero.",
+      "why": "The domain of u o v consists of all x in D_v such that v(x) belongs to D_u."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Determine the Ranges of f o g and g o f in Part (c)",
+      "mathExpression": "R_{f\\circ g} = [0, 1) \\cup (1, \\infty), \\qquad R_{g\\circ f} = (0, \\infty)",
+      "explanation": "For f o g: as x varies over (-infinity, -1], 1/x varies over [-1, 0), so 1/x + 1 varies over [0, 1) and its square root covers [0, 1); as x varies over (0, infinity), 1/x varies over (0, infinity), so 1/x + 1 varies over (1, infinity) and its square root covers (1, infinity). Note 1 is never attained because 1/x != 0. For g o f: on (-1, infinity), sqrt(x + 1) takes all values in (0, infinity), so its reciprocal also covers (0, infinity).",
+      "why": "Mapping the image of each domain interval through 1/x, adding 1, and taking the square root yields the exact range."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "expression": "1 / sqrt(x + 1)",
+    "expected": "(-1, oo)",
+    "variable": "x"
+  }
+}

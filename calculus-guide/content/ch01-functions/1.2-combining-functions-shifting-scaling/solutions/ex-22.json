@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-22",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Constructing Composite Graphs y = f(g(x)) from Component Graphs",
+  "exerciseReference": "Section 1.2, Exercise 22",
+  "originalTopic": "Compositions of Functions",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "composition",
+    "graphical-analysis",
+    "piecewise-linear"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Use the given graphs of f and g on [-4, 4] to determine the equations and key vertices for sketching the composite graph y = f(g(x)): (a) f is piecewise linear with vertices (-4, 2), (-2, 0), (0, 2), (4, -2), and g is piecewise linear with vertices (-4, -4), (-2, 0), (2, 0), (4, 4); (b) f is piecewise linear with vertices (-4, -4), (-1, 2), (1, 0), (3, 4), and g is a smooth curve passing through (-4, 2), (-2, 0), (0, -2), (1, -2.5), (4, 0).",
+  "finalAnswer": "\\text{(a) Piecewise linear through } (-4, 2), (-3, 0), (-2, 2), (2, 2), (3, 0), (4, -2);\\quad \\text{(b) Continuous curve passing through } (-4, 1), (-2, 1), (0, -1), (1, -2), (4, 1)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Write Piecewise Formulas for f and g in Part (a)",
+      "mathExpression": "f(u) = \\begin{cases} -u - 2, & -4 \\le u \\le -2 \\\\ u + 2, & -2 < u \\le 0 \\\\ 2 - u, & 0 < u \\le 4 \\end{cases}, \\qquad g(x) = \\begin{cases} 2x + 4, & -4 \\le x \\le -2 \\\\ 0, & -2 < x < 2 \\\\ 2x - 4, & 2 \\le x \\le 4 \\end{cases}",
+      "explanation": "From the vertices in Figure 22(a), derive the linear equations on each subinterval for both f(u) and g(x).",
+      "why": "Each straight segment between two vertices (x_1, y_1) and (x_2, y_2) is determined by its slope (y_2 - y_1)/(x_2 - x_1)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Trace the Composite Function y = f(g(x)) Across Subintervals in Part (a)",
+      "mathExpression": "f(g(x)) = \\begin{cases} -2x - 6, & -4 \\le x \\le -3 \\\\ 2x + 6, & -3 < x \\le -2 \\\\ 2, & -2 < x < 2 \\\\ 6 - 2x, & 2 \\le x \\le 4 \\end{cases}",
+      "explanation": "On [-4, -3], g(x) in [-4, -2] gives f(g(x)) = -(2x + 4) - 2 = -2x - 6 (from (-4, 2) to (-3, 0)). On [-3, -2], g(x) in [-2, 0] gives f(g(x)) = (2x + 4) + 2 = 2x + 6 (from (-3, 0) to (-2, 2)). On [-2, 2], g(x) = 0 gives f(0) = 2 (flat segment at y = 2). On [2, 4], g(x) in [0, 4] gives f(g(x)) = 2 - (2x - 4) = 6 - 2x (from (2, 2) through (3, 0) to (4, -2)).",
+      "why": "Splitting [-4, 4] at points where g(x) crosses the corner inputs u = -2 and u = 0 of f yields the exact piecewise linear vertices of f(g(x))."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate Key Point Mappings (x, g(x)) -> (x, f(g(x))) in Part (b)",
+      "mathExpression": "\\begin{aligned} x = -4 &: g(-4) \\approx 2 \\implies f(g(-4)) = f(2) = 2 \\\\ x = -2 &: g(-2) = 0 \\implies f(g(-2)) = f(0) = 1 \\\\ x = 0 &: g(0) = -2 \\implies f(g(0)) = f(-2) = 0 \\\\ x = 1 &: g(1) \\approx -2.5 \\implies f(g(1)) = f(-2.5) = -1 \\\\ x = 4 &: g(4) = 0 \\implies f(g(4)) = f(0) = 1 \\end{aligned}",
+      "explanation": "In Figure 22(b), f has slope 2 on [-4, -1] (so f(u) = 2u + 4), slope -1 on [-1, 1] (so f(u) = 1 - u), and slope 2 on [1, 3] (so f(u) = 2u - 2). Tracking g(x) at x = -4, -2, 0, 1, 4 and reading f at those heights gives the composite curve.",
+      "why": "Pointwise composition plots (x, f(g(x))) by using the vertical height g(x) on the first curve as the horizontal input to f."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "2 - (2*x - 4)",
+    "expected": "6 - 2*x",
+    "variable": "x"
+  }
+}

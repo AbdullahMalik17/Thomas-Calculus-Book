@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-58",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Parity of the Absolute Value Function h(t) = 2|t| + 1",
+  "exerciseReference": "Section 1.1, Exercise 58",
+  "originalTopic": "Even and Odd Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "symmetry",
+    "even-functions",
+    "absolute-value",
+    "parity"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether the function h(t) = 2|t| + 1 is even, odd, or neither, and justify your answer.",
+  "finalAnswer": "\\text{Even}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate h(-t)",
+      "mathExpression": "h(-t) = 2|-t| + 1",
+      "explanation": "Substitute -t for t in the formula h(t) = 2|t| + 1.",
+      "why": "Testing for symmetry requires evaluating the formula at the negated input -t."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Simplify Using |-t| = |t|",
+      "mathExpression": "2|-t| + 1 = 2|t| + 1 = h(t)",
+      "explanation": "Since |-t| = |t| for every real number t, the expression simplifies immediately to 2|t| + 1 = h(t).",
+      "why": "The absolute value function is invariant under sign negation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude Function Parity",
+      "mathExpression": "h(-t) = h(t) \\implies \\text{Even}",
+      "explanation": "Because h(-t) = h(t) for all t in R, h(t) = 2|t| + 1 is an even function whose V-shaped graph with vertex (0, 1) is symmetric about the vertical axis.",
+      "why": "Any linear combination of even functions (|t| and 1) is an even function."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "2*Abs(t) + 1",
+    "expected": "even",
+    "variable": "t"
+  }
+}

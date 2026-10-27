@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-59",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Parity of the Trigonometric Function f(x) = sin(2x)",
+  "exerciseReference": "Section 1.1, Exercise 59",
+  "originalTopic": "Even and Odd Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "symmetry",
+    "odd-functions",
+    "trigonometric",
+    "parity"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether the trigonometric function f(x) = sin(2x) is even, odd, or neither, and justify your answer.",
+  "finalAnswer": "\\text{Odd}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Substitute -x into the Function",
+      "mathExpression": "f(-x) = \\sin(2(-x)) = \\sin(-2x)",
+      "explanation": "Replace x with -x in the argument of the sine function.",
+      "why": "Parity is determined by comparing the value at -x with the value at x."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply the Odd Identity of the Sine Function",
+      "mathExpression": "\\sin(-2x) = -\\sin(2x) = -f(x)",
+      "explanation": "Because the sine function satisfies the fundamental trigonometric identity sin(-theta) = -sin(theta) for all real angles theta, setting theta = 2x gives sin(-2x) = -sin(2x).",
+      "why": "On the unit circle, reflecting an angle theta to -theta reflects the y-coordinate sin(theta) to -sin(theta)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude Function Parity",
+      "mathExpression": "f(-x) = -f(x) \\implies \\text{Odd}",
+      "explanation": "Since f(-x) = -f(x) for all real x, f(x) = sin(2x) is an odd function.",
+      "why": "Composing an odd function (sin u) with an odd linear scaling (u = 2x) yields an odd function."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "sin(2*x)",
+    "expected": "odd",
+    "variable": "x"
+  }
+}

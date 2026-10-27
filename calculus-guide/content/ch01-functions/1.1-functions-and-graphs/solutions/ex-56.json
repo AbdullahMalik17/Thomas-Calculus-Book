@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-56",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Parity of the Absolute Value of a Cubic Function h(t) = |t^3|",
+  "exerciseReference": "Section 1.1, Exercise 56",
+  "originalTopic": "Even and Odd Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "symmetry",
+    "even-functions",
+    "absolute-value",
+    "parity"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether the function h(t) = |t^3| is even, odd, or neither, and justify your answer.",
+  "finalAnswer": "\\text{Even}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Substitute -t into h(t)",
+      "mathExpression": "h(-t) = |(-t)^3| = |-t^3|",
+      "explanation": "Replace t with -t inside the absolute value bars and simplify (-t)^3 = -t^3.",
+      "why": "Cubing a negated variable negates the cube: (-t)^3 = -t^3."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply the Even Property of Absolute Value",
+      "mathExpression": "|-t^3| = |t^3| = h(t)",
+      "explanation": "Because |-u| = |u| for every real number u, |-t^3| simplifies to |t^3|, which equals h(t).",
+      "why": "The absolute value of any quantity equals the absolute value of its negation."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude Function Parity",
+      "mathExpression": "h(-t) = h(t) \\implies \\text{Even}",
+      "explanation": "Since h(-t) = h(t) for all real numbers t, h(t) = |t^3| is an even function.",
+      "why": "Taking the absolute value of an odd function always produces an even function."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "Abs(t**3)",
+    "expected": "even",
+    "variable": "t"
+  }
+}

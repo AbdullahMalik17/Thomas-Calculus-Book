@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-24",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Analyzing Why |x| + |y| = 1 and |x + y| = 1 Are Not Functions of x",
+  "exerciseReference": "Section 1.1, Exercise 24",
+  "originalTopic": "Functions and Graphs: Vertical Line Test",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "vertical-line-test",
+    "absolute-value",
+    "implicit-relations"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Describe the graphs of the equations (a) |x| + |y| = 1 and (b) |x + y| = 1, and explain why neither is the graph of a function of x.",
+  "finalAnswer": "\\text{(a) Diamond } y = \\pm(1 - |x|) \\text{ on } [-1, 1]; \\quad \\text{(b) Parallel lines } y = -x \\pm 1; \\quad \\text{Both fail the Vertical Line Test}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Analyze Equation (a): |x| + |y| = 1",
+      "mathExpression": "|y| = 1 - |x| \\iff y = \\pm(1 - |x|) \\quad (-1 \\le x \\le 1)",
+      "explanation": "Since |y| >= 0, solutions exist for |x| <= 1, i.e., -1 <= x <= 1. The graph is a diamond (a square tilted by 45 degrees) with vertices at (1, 0), (0, 1), (-1, 0), and (0, -1).",
+      "why": "In each of the four quadrants, |x| + |y| = 1 reduces to a linear segment connecting adjacent axes intercepts."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Show That Equation (a) Fails the Vertical Line Test",
+      "mathExpression": "x \\in (-1, 1) \\implies y = 1 - |x| \\text{ and } y = -(1 - |x|)",
+      "explanation": "For every x strictly between -1 and 1, 1 - |x| > 0, so there are two distinct y-values of opposite sign. Every vertical line in (-1, 1) intersects the diamond twice.",
+      "why": "Having two distinct y-values for each x in (-1, 1) violates the definition of a function of x."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Analyze Equation (b): |x + y| = 1 and Show Failure",
+      "mathExpression": "|x + y| = 1 \\iff x + y = 1 \\text{ or } x + y = -1 \\iff y = 1 - x \\text{ or } y = -1 - x",
+      "explanation": "The equation |x + y| = 1 splits into two parallel lines of slope -1: y = -x + 1 and y = -x - 1. For every real number x, a vertical line intersects both parallel lines, yielding two outputs y for each x.",
+      "why": "Every vertical line x = c intersects two distinct non-vertical parallel lines in two distinct points."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(x + y - 1)*(x + y + 1)",
+    "expected": "(x + y)**2 - 1",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-10",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Side Length and Area of a Square as Functions of Diagonal Length",
+  "exerciseReference": "Section 1.1, Exercise 10",
+  "originalTopic": "Finding Formulas for Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "geometry",
+    "square",
+    "diagonal",
+    "area"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Write the side length s of a square as a function of the length d of the square's diagonal. Then write the area A of the square as a function of the diagonal length d.",
+  "finalAnswer": "s(d) = \\frac{d}{\\sqrt{2}}, \\quad A(d) = \\frac{1}{2}d^2",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Relate Side Length s and Diagonal d via the Pythagorean Theorem",
+      "mathExpression": "s^2 + s^2 = d^2 \\implies 2s^2 = d^2",
+      "explanation": "A diagonal of length d divides a square of side length s into two congruent isosceles right triangles with legs of length s and hypotenuse d.",
+      "why": "The interior angles of a square are right angles, so the sides and diagonal satisfy the Pythagorean theorem."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve for the Side Length s(d)",
+      "mathExpression": "s(d) = \\frac{d}{\\sqrt{2}} = \\frac{\\sqrt{2}}{2}d",
+      "explanation": "Divide both sides of 2s^2 = d^2 by 2 and take the positive square root (since lengths are positive) to get s(d) = d / sqrt(2).",
+      "why": "Geometric lengths are positive quantities, selecting the principal square root."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Express the Area A as a Function of d",
+      "mathExpression": "A(d) = s^2 = \\left(\\frac{d}{\\sqrt{2}}\\right)^2 = \\frac{1}{2}d^2",
+      "explanation": "Since the area of a square is A = s^2 and 2s^2 = d^2, substituting s = d / sqrt(2) yields A(d) = d^2 / 2.",
+      "why": "Squaring s(d) eliminates the radical and expresses the area directly in terms of d."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(d/sqrt(2))**2",
+    "expected": "d**2/2",
+    "variable": "d"
+  }
+}

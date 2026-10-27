@@ -1,0 +1,51 @@
+{
+  "id": "ch01-functions/1.3-trigonometric-functions/solutions/ex-73",
+  "chapter": "ch01",
+  "section": "1.3",
+  "type": "solution",
+  "title": "Graphical Exploration of the Vertical Shift Parameter D",
+  "exerciseReference": "Section 1.3, Exercise 73",
+  "originalTopic": "Computer Explorations",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "sinusoid",
+    "vertical-shift",
+    "midline",
+    "transformations"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Consider f(x) = A\\sin\\left(\\frac{2\\pi}{B}(x - C)\\right) + D with A = 3, B = 6, and C = 0, so f(x) = 3\\sin(\\pi x / 3) + D. (a) Describe what happens to the graph on [-4\\pi, 4\\pi] as D increases through positive values D = 0, 1, 3. (b) What happens to the graph for negative values of D?",
+  "finalAnswer": "\\text{(a) Shifts vertically upward by } D \\text{ units}; \\quad \\text{(b) shifts vertically downward by } |D| \\text{ units}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify the Role of D in the Sinusoid Formula",
+      "mathExpression": "f(x) = 3\\sin\\left(\\frac{\\pi}{3}x\\right) + D, \\quad \\text{Midline: } y = D, \\quad \\text{Range: } [D - 3, D + 3]",
+      "explanation": "The constant D is added outside the sine function, setting the horizontal midline y = D about which the wave oscillates with amplitude 3.",
+      "why": "Since -3 <= 3*sin(pi*x/3) <= 3, adding D shifts the range to [D - 3, D + 3]."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Part (a): Effect of Increasing Positive Values of D",
+      "mathExpression": "D = 0, 1, 3 \\implies \\text{upward translation by } D \\text{ units}",
+      "explanation": "As D increases through positive values (0, 1, 3), the entire graph translates vertically upward by D units without altering its shape, period, or horizontal alignment.",
+      "why": "Adding a positive constant D to a function increases every y-coordinate by D."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Part (b): Effect of Negative Values of D",
+      "mathExpression": "D < 0 \\implies \\text{downward translation by } |D| \\text{ units}",
+      "explanation": "For negative values of D, the midline y = D lies below the x-axis and the entire graph shifts vertically downward by |D| units.",
+      "why": "Subtracting |D| from every output value translates the graph downward by |D| units."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "(3*sin(pi*x/3) + 3) - 3*sin(pi*x/3)",
+    "expected": "3",
+    "variable": "x"
+  }
+}

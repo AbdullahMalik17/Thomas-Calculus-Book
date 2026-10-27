@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-13",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Completing a Table of Function Compositions (Set I)",
+  "exerciseReference": "Section 1.2, Exercise 13",
+  "originalTopic": "Compositions of Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "composition",
+    "decomposition",
+    "rational",
+    "radical"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Complete the missing entries in the composition table for g(x), f(x), and (f o g)(x): (a) g(x) = x - 7, f(x) = sqrt(x), (f o g)(x) = ?; (b) g(x) = x + 2, f(x) = 3x, (f o g)(x) = ?; (c) g(x) = ?, f(x) = sqrt(x - 5), (f o g)(x) = sqrt(x^2 - 5); (d) g(x) = x/(x - 1), f(x) = x/(x - 1), (f o g)(x) = ?; (e) g(x) = ?, f(x) = 1 + 1/x, (f o g)(x) = x; (f) g(x) = 1/x, f(x) = ?, (f o g)(x) = x.",
+  "finalAnswer": "\\text{(a) } \\sqrt{x - 7},\\quad \\text{(b) } 3x + 6,\\quad \\text{(c) } g(x) = x^2,\\quad \\text{(d) } x,\\quad \\text{(e) } g(x) = \\frac{1}{x - 1},\\quad \\text{(f) } f(x) = \\frac{1}{x}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Solve Parts (a), (b), and (c) by Direct Substitution and Pattern Matching",
+      "mathExpression": "\\begin{aligned} \\text{(a) } (f \\circ g)(x) &= f(x - 7) = \\sqrt{x - 7} \\\\ \\text{(b) } (f \\circ g)(x) &= f(x + 2) = 3(x + 2) = 3x + 6 \\\\ \\text{(c) } f(g(x)) &= \\sqrt{g(x) - 5} = \\sqrt{x^2 - 5} \\implies g(x) = x^2 \\end{aligned}",
+      "explanation": "In (a) and (b), substitute g(x) directly into f(x). In (c), comparing sqrt(g(x) - 5) with sqrt(x^2 - 5) shows that g(x) = x^2.",
+      "why": "Matching the structure of f(g(x)) with the target composite expression determines the inner function g(x)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Simplify the Self-Inverse Rational Composition in Part (d)",
+      "mathExpression": "\\text{(d) } (f \\circ g)(x) = \\frac{\\frac{x}{x - 1}}{\\frac{x}{x - 1} - 1} = \\frac{x}{x - (x - 1)} = x \\quad (x \\ne 1)",
+      "explanation": "Substitute g(x) = x/(x - 1) into f(x) = x/(x - 1) and multiply numerator and denominator by (x - 1) to simplify to x.",
+      "why": "The function x / (x - 1) is an involution (its own inverse) on R \\ {1}."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Solve for the Unknown Component Functions in Parts (e) and (f)",
+      "mathExpression": "\\begin{aligned} \\text{(e) } 1 + \\frac{1}{g(x)} &= x \\implies \\frac{1}{g(x)} = x - 1 \\implies g(x) = \\frac{1}{x - 1} \\\\ \\text{(f) } f\\left(\\frac{1}{x}\\right) &= x = \\frac{1}{1/x} \\implies f(x) = \\frac{1}{x} \\end{aligned}",
+      "explanation": "In (e), solve the equation f(g(x)) = 1 + 1/g(x) = x algebraically for g(x). In (f), since applying f to 1/x returns its reciprocal x, f(x) must be the reciprocal function 1/x.",
+      "why": "Solving f(g(x)) = x finds the right-inverse g of f in (e) and the left-inverse f of g in (f)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(x / (x - 1)) / (x / (x - 1) - 1)",
+    "expected": "x",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-30",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Finding Piecewise Formulas for Discontinuous Two-Segment Graphs",
+  "exerciseReference": "Section 1.1, Exercise 30",
+  "originalTopic": "Piecewise-Defined Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "piecewise",
+    "linear-equations",
+    "slope-intercept"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find a piecewise formula for each graphed function: (a) a segment from (0, 2) (closed) to (2, 0) (closed), followed by a segment from (2, 1) (open) to (5, 0) (closed); (b) a segment from (-1, 0) (closed) to (0, -3) (open), followed by a segment from (0, 3) (closed) through (1, 1) to (2, -1) (closed).",
+  "finalAnswer": "\\text{(a) } f(x) = \\begin{cases} 2 - x, & 0 \\le x \\le 2 \\\\ -\\frac{1}{3}x + \\frac{5}{3}, & 2 < x \\le 5 \\end{cases}; \\quad \\text{(b) } f(x) = \\begin{cases} -3x - 3, & -1 \\le x < 0 \\\\ -2x + 3, & 0 \\le x \\le 2 \\end{cases}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Derive the Two Branches of Graph (a)",
+      "mathExpression": "m_1 = \\frac{0 - 2}{2 - 0} = -1 \\implies y = 2 - x; \\quad m_2 = \\frac{0 - 1}{5 - 2} = -\\frac{1}{3} \\implies y = -\\frac{1}{3}(x - 5) = -\\frac{1}{3}x + \\frac{5}{3}",
+      "explanation": "For graph (a), on 0 <= x <= 2 the segment from (0, 2) to (2, 0) has slope -1 and y-intercept 2, giving y = 2 - x. On 2 < x <= 5, the segment from the open circle (2, 1) to the closed dot (5, 0) has slope -1/3 and equation y = -x/3 + 5/3.",
+      "why": "The open circle at (2, 1) and closed dot at (2, 0) assign x = 2 to the first interval 0 <= x <= 2."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Derive the Two Branches of Graph (b)",
+      "mathExpression": "m_1 = \\frac{-3 - 0}{0 - (-1)} = -3 \\implies y = -3x - 3; \\quad m_2 = \\frac{-1 - 3}{2 - 0} = -2 \\implies y = -2x + 3",
+      "explanation": "For graph (b), on -1 <= x < 0 the segment from (-1, 0) to the open circle (0, -3) has slope -3 and y-intercept -3, giving y = -3x - 3. On 0 <= x <= 2, the segment from (0, 3) through (1, 1) to (2, -1) has slope -2 and y-intercept 3, giving y = -2x + 3.",
+      "why": "The closed dot at (0, 3) and open circle at (0, -3) place x = 0 in the second branch 0 <= x <= 2."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State Both Piecewise Formulas",
+      "mathExpression": "\\text{(a) } f(x) = \\begin{cases} 2 - x, & 0 \\le x \\le 2 \\\\ -\\frac{1}{3}x + \\frac{5}{3}, & 2 < x \\le 5 \\end{cases}, \\qquad \\text{(b) } f(x) = \\begin{cases} -3x - 3, & -1 \\le x < 0 \\\\ -2x + 3, & 0 \\le x \\le 2 \\end{cases}",
+      "explanation": "Combine the linear equations with their exact endpoint inclusion inequalities.",
+      "why": "Every point in the domain of each graph is accounted for by exactly one branch."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "-1/3*(x - 5)",
+    "expected": "-x/3 + 5/3",
+    "variable": "x"
+  }
+}

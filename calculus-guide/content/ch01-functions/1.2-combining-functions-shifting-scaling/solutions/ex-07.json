@@ -3,43 +3,46 @@
   "chapter": "ch01",
   "section": "1.2",
   "type": "solution",
-  "title": "Constructing Equations for Shifted Graphs",
-  "exerciseReference": "Section 1.2, Exercise 23",
-  "originalTopic": "Graph Shifting: Horizontal and Vertical Translations",
+  "title": "Three-Fold Composition of Linear Functions",
+  "exerciseReference": "Section 1.2, Exercise 7",
+  "originalTopic": "Compositions of Functions",
   "difficulty": "tier1",
   "status": "verified",
-  "tags": ["graph-transformations", "shifting", "parabola", "vertex-form"],
+  "tags": [
+    "composition",
+    "linear",
+    "three-fold-composition"
+  ],
   "author": "Muhammad Abdullah Athar",
-  "problemStatement": "Write a formula for the function obtained by translating the graph of y = x^2 rightward by 3 units and downward by 5 units.",
-  "finalAnswer": "y = (x - 3)^2 - 5",
+  "problemStatement": "Write a simplified formula for the three-fold composition (f o g o h)(x), given f(x) = x + 1, g(x) = 3x, and h(x) = 4 - x.",
+  "finalAnswer": "(f \\circ g \\circ h)(x) = 13 - 3x",
   "steps": [
     {
       "stepNumber": 1,
-      "title": "Apply Horizontal Translation",
-      "mathExpression": "y_1 = f(x - 3) = (x - 3)^2",
-      "explanation": "To translate a graph rightward by h = 3 units, replace each occurrence of the input variable x with (x - 3).",
-      "why": "Horizontal translations replace x with x - h to shift the point of origin rightward."
+      "title": "Unpack the Definition of Three-Fold Composition",
+      "mathExpression": "(f \\circ g \\circ h)(x) = f(g(h(x)))",
+      "explanation": "By definition, applying f o g o h to x means evaluating h(x) first, applying g to the result, and finally applying f.",
+      "why": "Function composition is associative and evaluates from right to left."
     },
     {
       "stepNumber": 2,
-      "title": "Apply Vertical Translation",
-      "mathExpression": "y = y_1 - 5 = (x - 3)^2 - 5",
-      "explanation": "To translate a graph downward by k = 5 units, subtract 5 from the output expression.",
-      "why": "Vertical translations add or subtract constants from the total function value."
+      "title": "Compose the Inner Two Functions g and h",
+      "mathExpression": "g(h(x)) = g(4 - x) = 3(4 - x) = 12 - 3x",
+      "explanation": "Substitute h(x) = 4 - x in place of x in g(x) = 3x and distribute the factor of 3.",
+      "why": "Replacing the argument of g with h(x) yields the intermediate composite function g o h."
     },
     {
       "stepNumber": 3,
-      "title": "Verify Vertex Coordinates",
-      "mathExpression": "\\text{Original vertex: } (0, 0) \\implies \\text{Shifted vertex: } (3, -5)",
-      "explanation": "Evaluating at x = 3 gives y = (3 - 3)^2 - 5 = -5, which matches the expected translation of the parabola's vertex from (0,0) to (3,-5).",
-      "why": "Feature point verification confirms the translation coordinates."
+      "title": "Apply the Outer Function f",
+      "mathExpression": "f(g(h(x))) = f(12 - 3x) = (12 - 3x) + 1 = 13 - 3x",
+      "explanation": "Substitute g(h(x)) = 12 - 3x into f(x) = x + 1 and combine constant terms to obtain 13 - 3x.",
+      "why": "Adding 1 completes the outermost evaluation in f(g(h(x)))."
     }
   ],
   "sympyVerification": {
     "operation": "algebraic_equivalence",
-    "type": "algebraic_equivalence",
-    "expression": "(x - 3)**2 - 5",
-    "expected": "x**2 - 6*x + 4",
+    "expression": "3*(4 - x) + 1",
+    "expected": "13 - 3*x",
     "variable": "x"
   }
 }

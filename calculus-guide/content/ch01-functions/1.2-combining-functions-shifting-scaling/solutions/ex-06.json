@@ -3,43 +3,46 @@
   "chapter": "ch01",
   "section": "1.2",
   "type": "solution",
-  "title": "Decomposition of Functions into Outer and Inner Components",
-  "exerciseReference": "Section 1.2, Exercise 17",
-  "originalTopic": "Composite Functions: Decomposition",
+  "title": "Evaluating and Simplifying Rational Compositions",
+  "exerciseReference": "Section 1.2, Exercise 6",
+  "originalTopic": "Compositions of Functions",
   "difficulty": "tier1",
   "status": "verified",
-  "tags": ["composite-functions", "decomposition", "chain-rule-prep"],
+  "tags": [
+    "composition",
+    "rational",
+    "function-evaluation"
+  ],
   "author": "Muhammad Abdullah Athar",
-  "problemStatement": "Express the function h(x) = (x^2 - 1)^4 as a composition of an outer function f(u) and an inner function g(x), so that h(x) = f(g(x)).",
-  "finalAnswer": "f(u) = u^4, \\quad g(x) = x^2 - 1",
+  "problemStatement": "Given f(x) = x - 1 and g(x) = 1 / (x + 1), find the following: (a) f(g(1/2)), (b) g(f(1/2)), (c) f(g(x)), (d) g(f(x)), (e) f(f(2)), (f) g(g(2)), (g) f(f(x)), and (h) g(g(x)).",
+  "finalAnswer": "\\text{(a) } -\\frac{1}{3},\\quad \\text{(b) } 2,\\quad \\text{(c) } \\frac{-x}{x + 1},\\quad \\text{(d) } \\frac{1}{x},\\quad \\text{(e) } 0,\\quad \\text{(f) } \\frac{3}{4},\\quad \\text{(g) } x - 2,\\quad \\text{(h) } \\frac{x + 1}{x + 2}",
   "steps": [
     {
       "stepNumber": 1,
-      "title": "Identify the Inner Sub-expression",
-      "mathExpression": "g(x) = x^2 - 1",
-      "explanation": "Look for the innermost operation acting directly on the independent variable x. The quantity inside the parentheses is the polynomial x^2 - 1.",
-      "why": "Functional decomposition identifies intermediate variables to simplify multi-step algebraic structures."
+      "title": "Evaluate Numerical Compositions in Parts (a), (b), (e), and (f)",
+      "mathExpression": "\\begin{aligned} \\text{(a) } f(g(1/2)) &= f\\left(\\frac{1}{1/2 + 1}\\right) = f\\left(\\frac{2}{3}\\right) = \\frac{2}{3} - 1 = -\\frac{1}{3} \\\\ \\text{(b) } g(f(1/2)) &= g\\left(-\\frac{1}{2}\\right) = \\frac{1}{-1/2 + 1} = 2 \\\\ \\text{(e) } f(f(2)) &= f(2 - 1) = f(1) = 1 - 1 = 0 \\\\ \\text{(f) } g(g(2)) &= g\\left(\\frac{1}{3}\\right) = \\frac{1}{1/3 + 1} = \\frac{3}{4} \\end{aligned}",
+      "explanation": "Evaluate the inner function at the specified numerical input first, then feed that output into the outer function.",
+      "why": "Nested function evaluations proceed from the innermost parentheses outward."
     },
     {
       "stepNumber": 2,
-      "title": "Define the Outer Function",
-      "mathExpression": "f(u) = u^4",
-      "explanation": "Let u = g(x) = x^2 - 1. The outermost operation performed on this intermediate quantity is raising it to the fourth power, producing f(u) = u^4.",
-      "why": "The outer function represents the final operation in the sequential calculation."
+      "title": "Compute Symbolic Cross-Compositions in Parts (c) and (d)",
+      "mathExpression": "\\begin{aligned} \\text{(c) } f(g(x)) &= \\frac{1}{x + 1} - 1 = \\frac{1 - (x + 1)}{x + 1} = \\frac{-x}{x + 1} \\quad (x \\ne -1) \\\\ \\text{(d) } g(f(x)) &= \\frac{1}{(x - 1) + 1} = \\frac{1}{x} \\quad (x \\ne 0) \\end{aligned}",
+      "explanation": "Substitute g(x) into f(x) and combine over the common denominator x + 1 for part (c). Substitute f(x) = x - 1 into g(x) and simplify the denominator for part (d).",
+      "why": "Rational expressions are simplified by combining terms over a common denominator."
     },
     {
       "stepNumber": 3,
-      "title": "Verify by Composition",
-      "mathExpression": "(f \\circ g)(x) = f(g(x)) = f(x^2 - 1) = (x^2 - 1)^4 = h(x)",
-      "explanation": "Evaluating f at g(x) recreates the original composite function h(x), confirming the decomposition is mathematically valid.",
-      "why": "Composition verification confirms that f(g(x)) is identical to h(x)."
+      "title": "Compute Symbolic Self-Compositions in Parts (g) and (h)",
+      "mathExpression": "\\begin{aligned} \\text{(g) } f(f(x)) &= (x - 1) - 1 = x - 2 \\\\ \\text{(h) } g(g(x)) &= \\frac{1}{\\frac{1}{x + 1} + 1} = \\frac{x + 1}{1 + (x + 1)} = \\frac{x + 1}{x + 2} \\quad (x \\ne -1, -2) \\end{aligned}",
+      "explanation": "For part (g), subtracting 1 twice gives x - 2. For part (h), multiply numerator and denominator of the complex fraction by x + 1 to obtain (x + 1)/(x + 2).",
+      "why": "Multiplying numerator and denominator by the inner denominator clears the complex fraction."
     }
   ],
   "sympyVerification": {
     "operation": "algebraic_equivalence",
-    "type": "algebraic_equivalence",
-    "expression": "(x**2 - 1)**4",
-    "expected": "(x**2 - 1)**4",
+    "expression": "1 / (1 / (x + 1) + 1)",
+    "expected": "(x + 1) / (x + 2)",
     "variable": "x"
   }
 }

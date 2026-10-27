@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-43",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Symmetry and Monotonicity of the Scaled Cubic y = x^3 / 8",
+  "exerciseReference": "Section 1.1, Exercise 43",
+  "originalTopic": "Increasing and Decreasing Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "increasing-decreasing",
+    "symmetry",
+    "cubic",
+    "odd-functions"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Describe the graph of y = x^3 / 8, identify its symmetry, and state the intervals on which the function is increasing and where it is decreasing.",
+  "finalAnswer": "\\text{Symmetric about the origin; Increasing on } (-\\infty, \\infty); \\text{ Decreasing nowhere}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Test for Origin Symmetry",
+      "mathExpression": "f(-x) = \\frac{(-x)^3}{8} = -\\frac{x^3}{8} = -f(x)",
+      "explanation": "Since f(-x) = -f(x) for all real numbers x, the function is odd and its graph is symmetric with respect to the origin.",
+      "why": "Odd integer powers preserve negation, making any constant multiple of x^3 an odd function."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Analyze Monotonicity Across (-inf, inf)",
+      "mathExpression": "x_1 < x_2 \\implies x_1^3 < x_2^3 \\implies \\frac{x_1^3}{8} < \\frac{x_2^3}{8}",
+      "explanation": "For any real numbers x_1 < x_2, we have x_1^3 < x_2^3, and dividing by the positive constant 8 preserves the strict inequality.",
+      "why": "Scaling a strictly increasing function by a positive constant preserves its strict monotonicity."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State the Monotonicity Intervals",
+      "mathExpression": "\\text{Increasing on } (-\\infty, \\infty), \\quad \\text{Decreasing: nowhere}",
+      "explanation": "The graph is a vertically compressed cubic curve passing through (-2, -1), (0, 0), and (2, 1), rising across the entire real line (-inf, inf).",
+      "why": "The function increases over its entire domain (-inf, inf) with a horizontal inflection point at the origin."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "x**3/8",
+    "expected": "odd",
+    "variable": "x"
+  }
+}

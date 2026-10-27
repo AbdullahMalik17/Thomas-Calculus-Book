@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-26",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Graphing a Piecewise Linear Sawtooth Function with a Jump",
+  "exerciseReference": "Section 1.1, Exercise 26",
+  "originalTopic": "Piecewise-Defined Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "piecewise",
+    "graphs",
+    "discontinuity"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Analyze and describe the graph of the piecewise-defined function g(x) = 1 - x for 0 <= x <= 1, and g(x) = 2 - x for 1 < x <= 2.",
+  "finalAnswer": "\\text{Two parallel segments of slope } -1: \\text{ from } (0, 1) \\text{ to } (1, 0), \\text{ and from } (1, 1) \\text{ (open) to } (2, 0)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Analyze the First Branch on [0, 1]",
+      "mathExpression": "g(x) = 1 - x, \\quad 0 \\le x \\le 1",
+      "explanation": "On [0, 1], g(x) = 1 - x is a line segment of slope -1 starting at (0, 1) (closed dot) and ending at (1, 0) (closed dot).",
+      "why": "Evaluating g(0) = 1 and g(1) = 0 fixes both included endpoints of the first linear piece."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Analyze the Second Branch on (1, 2]",
+      "mathExpression": "g(x) = 2 - x, \\quad 1 < x \\le 2",
+      "explanation": "On (1, 2], g(x) = 2 - x is a parallel line segment of slope -1 starting with an open circle at (1, 1) and descending to a closed dot at (2, 0).",
+      "why": "Because x = 1 is excluded from 1 < x <= 2, the point (1, 2 - 1) = (1, 1) is marked as an open circle."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Identify the Jump Discontinuity and Range",
+      "mathExpression": "\\text{Domain} = [0, 2], \\quad \\text{Range} = [0, 1]",
+      "explanation": "At x = 1, the graph jumps from g(1) = 0 up to the right-hand limit 1, forming two parallel sawtooth segments over [0, 2] with range [0, 1].",
+      "why": "A piecewise function has a jump discontinuity where the left-hand and right-hand limits at the boundary point are unequal."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(2 - x) - (1 - x)",
+    "expected": "1",
+    "variable": "x"
+  }
+}

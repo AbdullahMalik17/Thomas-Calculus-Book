@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-66",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Boyle's Law and Inverse Proportionality of Gas Volume and Pressure",
+  "exerciseReference": "Section 1.1, Exercise 66",
+  "originalTopic": "Theory and Examples: Proportionality",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "proportionality",
+    "boyles-law",
+    "physics",
+    "inverse-variation"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Boyle's Law states that the volume V of a gas at constant temperature is inversely proportional to its pressure P. If P = 14.7 lb/in^2 when V = 1000 in^3, what is the volume V when P = 23.4 lb/in^2?",
+  "finalAnswer": "V = \\frac{24500}{39}\\text{ in}^3 \\approx 628.21\\text{ in}^3",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "State Boyle's Law as an Inverse Variation Equation",
+      "mathExpression": "V = \\frac{k}{P} \\iff PV = k",
+      "explanation": "Because V and P are inversely proportional at constant temperature, their product PV equals a constant k.",
+      "why": "Inverse proportionality between V and P implies PV = k is constant during isothermal compression."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Calculate the Constant k",
+      "mathExpression": "k = (14.7)(1000) = 14700\\text{ lb}\\cdot\\text{in}",
+      "explanation": "Substitute P = 14.7 lb/in^2 and V = 1000 in^3 into k = PV to find k = 14,700.",
+      "why": "The initial state (P_1, V_1) fixes the isothermal constant k = P_1 V_1."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compute V When P = 23.4 lb/in^2",
+      "mathExpression": "V = \\frac{14700}{23.4} = \\frac{147000}{234} = \\frac{24500}{39} \\approx 628.21\\text{ in}^3",
+      "explanation": "Divide k = 14,700 by P = 23.4 to obtain V = 24,500 / 39 in^3, or approximately 628.21 in^3.",
+      "why": "Increasing the pressure from 14.7 to 23.4 lb/in^2 compresses the gas volume proportionally."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(147*100) / (234/10)",
+    "expected": "24500/39",
+    "variable": "x"
+  }
+}

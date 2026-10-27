@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-69",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Matching Higher-Degree Power Functions y = x^4, y = x^7, y = x^10 to Their Graphs",
+  "exerciseReference": "Section 1.1, Exercise 69",
+  "originalTopic": "Theory and Examples: Power Function Comparison",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "power-functions",
+    "graphs",
+    "symmetry",
+    "growth-rates"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Match each equation (a) y = x^4, (b) y = x^7, and (c) y = x^10 with its corresponding curve (f, g, or h), where curve f lies in Quadrants I and III, and curves g and h lie in Quadrants I and II with curve g flatter near 0 and steeper for |x| > 1 than curve h. Justify your reasoning without a graphing device.",
+  "finalAnswer": "\\text{(a) } y = x^4 \\to h; \\quad \\text{(b) } y = x^7 \\to f; \\quad \\text{(c) } y = x^{10} \\to g",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify the Odd Power Function by Quadrant Symmetry",
+      "mathExpression": "y = x^7 \\text{ is odd } \\implies \\text{Graph } f \\text{ (Quadrants I and III)}",
+      "explanation": "Among x^4, x^7, and x^10, only y = x^7 has an odd exponent, so it takes negative values for x < 0 and is symmetric about the origin. Therefore, (b) y = x^7 matches curve f.",
+      "why": "Odd powers preserve the sign of x, placing their graphs in Quadrants I and III."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compare the Even Power Functions y = x^4 and y = x^10",
+      "mathExpression": "0 < |x| < 1 \\implies x^{10} < x^4; \\qquad |x| > 1 \\implies x^{10} > x^4",
+      "explanation": "Both y = x^4 and y = x^10 are even functions symmetric about the y-axis, intersecting at (-1, 1), (0, 0), and (1, 1). On (-1, 1), raising a fraction to the 10th power makes it smaller than the 4th power, so y = x^10 lies below y = x^4; for |x| > 1, y = x^10 grows much faster and lies above y = x^4.",
+      "why": "Higher even exponents flatten the graph closer to 0 on (-1, 1) and steepen the graph on |x| > 1."
+    },
+    {
+      "stepNumber": 3,
+      "title": "State the Complete Matching",
+      "mathExpression": "\\text{(a) } y = x^4 \\leftrightarrow h, \\quad \\text{(b) } y = x^7 \\leftrightarrow f, \\quad \\text{(c) } y = x^{10} \\leftrightarrow g",
+      "explanation": "Curve h (higher on (-1, 1) and lower for |x| > 1) is (a) y = x^4, curve f is (b) y = x^7, and curve g (flatter on (-1, 1) and steeper for |x| > 1) is (c) y = x^10.",
+      "why": "Symmetry separates the odd power from the even powers, and relative magnitude on (0, 1) vs (1, inf) separates x^4 from x^10."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "x**7",
+    "expected": "odd",
+    "variable": "x"
+  }
+}

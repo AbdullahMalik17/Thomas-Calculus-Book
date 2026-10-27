@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-33",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Solving Floor and Ceiling Equations Equal to Zero",
+  "exerciseReference": "Section 1.1, Exercise 33",
+  "originalTopic": "The Greatest and Least Integer Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "floor-function",
+    "ceiling-function",
+    "step-functions",
+    "inequalities"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine all real values of x for which (a) floor(x) = 0 and (b) ceiling(x) = 0.",
+  "finalAnswer": "\\text{(a) } 0 \\le x < 1 \\text{ (or } [0, 1)\\text{)}; \\quad \\text{(b) } -1 < x \\le 0 \\text{ (or } (-1, 0]\\text{)}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Recall the Definition of the Floor Function for Part (a)",
+      "mathExpression": "\\lfloor x \\rfloor = n \\iff n \\le x < n + 1 \\quad (n \\in \\mathbb{Z})",
+      "explanation": "The greatest integer function floor(x) denotes the largest integer less than or equal to x. Setting n = 0 gives the exact condition for floor(x) = 0.",
+      "why": "An integer n is the greatest integer <= x if and only if n <= x < n + 1."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve floor(x) = 0",
+      "mathExpression": "\\lfloor x \\rfloor = 0 \\iff 0 \\le x < 1 \\iff x \\in [0, 1)",
+      "explanation": "Every real number in [0, 1) is at least 0 and strictly less than 1, so its greatest integer is 0.",
+      "why": "Numbers below 0 have floor <= -1, and numbers >= 1 have floor >= 1."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Recall the Ceiling Definition and Solve ceiling(x) = 0 for Part (b)",
+      "mathExpression": "\\lceil x \\rceil = n \\iff n - 1 < x \\le n \\implies \\lceil x \\rceil = 0 \\iff -1 < x \\le 0",
+      "explanation": "The least integer function ceiling(x) denotes the smallest integer greater than or equal to x. Setting n = 0 gives -1 < x <= 0, or (-1, 0].",
+      "why": "An integer n is the least integer >= x if and only if n - 1 < x <= n."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "x",
+    "expected": "x",
+    "variable": "x"
+  }
+}

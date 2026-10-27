@@ -3,58 +3,55 @@
   "chapter": "ch01",
   "section": "1.1",
   "type": "solution",
-  "title": "Natural Domain and Range of a Rational Difference of Squares",
+  "title": "Natural Domain and Range of an Even Rational Function",
   "exerciseReference": "Section 1.1, Exercise 6",
   "originalTopic": "Functions and Graphs: Natural Domain and Range",
   "difficulty": "tier1",
   "status": "verified",
-  "tags": ["functions", "domain", "range", "rational-functions", "quadratic-denominator"],
+  "tags": [
+    "functions",
+    "domain",
+    "range",
+    "rational-functions",
+    "quadratic-denominator"
+  ],
   "author": "Muhammad Abdullah Athar",
-  "problemStatement": "Find the natural domain and range of the real-valued function G(t) = \\frac{2}{t^2 - 16}.",
-  "finalAnswer": "Domain: $(-\\infty, -4) \\cup (-4, 4) \\cup (4, \\infty)$, Range: $(-\\infty, -1/8] \\cup (0, \\infty)$",
+  "problemStatement": "Find the natural domain and range of the real-valued function G(t) = 2 / (t^2 - 16).",
+  "finalAnswer": "\\text{Domain: } (-\\infty, -4) \\cup (-4, 4) \\cup (4, \\infty), \\quad \\text{Range: } \\left(-\\infty, -\\frac{1}{8}\\right] \\cup (0, \\infty)",
   "steps": [
     {
       "stepNumber": 1,
       "title": "Identify Denominator Singularities",
-      "mathExpression": "t^2 - 16 \\ne 0 \\iff (t - 4)(t + 4) \\ne 0",
-      "explanation": "The denominator cannot equal zero, which occurs when t^2 = 16, or t = 4 and t = -4.",
-      "why": "A rational expression is undefined at the roots of its denominator."
+      "mathExpression": "t^2 - 16 \\ne 0 \\iff (t - 4)(t + 4) \\ne 0 \\iff t \\ne \\pm 4",
+      "explanation": "Factor the denominator as a difference of squares to find the excluded values t = -4 and t = 4 where division by zero occurs.",
+      "why": "A rational expression is undefined at the real roots of its denominator."
     },
     {
       "stepNumber": 2,
       "title": "State the Natural Domain",
       "mathExpression": "\\text{Domain} = (-\\infty, -4) \\cup (-4, 4) \\cup (4, \\infty)",
-      "explanation": "Excluding the two vertical asymptote locations t = -4 and t = 4 leaves the union of three disjoint open intervals.",
-      "why": "The real line punctured at two isolated points splits into three open components."
+      "explanation": "Excluding t = -4 and t = 4 divides the real number line into three open intervals.",
+      "why": "Puncturing the real line at two points produces three connected open intervals."
     },
     {
       "stepNumber": 3,
-      "title": "Analyze Range for Exterior Inputs",
+      "title": "Analyze the Range on the Exterior Intervals",
       "mathExpression": "|t| > 4 \\implies t^2 - 16 > 0 \\implies G(t) \\in (0, \\infty)",
-      "explanation": "When |t| > 4, the denominator t^2 - 16 is strictly positive. As |t| approaches 4 from the outside, G(t) grows arbitrarily large toward positive infinity. As |t| approaches infinity, G(t) decays toward 0 from above, covering (0, inf).",
-      "why": "Continuous positive rational functions approaching vertical and horizontal asymptotes cover all values in (0, inf)."
+      "explanation": "When |t| > 4, t^2 - 16 takes all positive values in (0, inf). Consequently, G(t) = 2 / (t^2 - 16) takes all positive real values in (0, inf).",
+      "why": "The reciprocal of an expression that ranges continuously over (0, inf) also ranges over (0, inf)."
     },
     {
       "stepNumber": 4,
-      "title": "Analyze Range for Interior Inputs",
-      "mathExpression": "|t| < 4 \\implies 0 \\le t^2 < 16 \\implies -16 \\le t^2 - 16 < 0",
-      "explanation": "When |t| < 4, the denominator is negative, taking values in [-16, 0). At t = 0, G(0) = 2/(-16) = -1/8, which is the maximum output on this interval. As |t| approaches 4 from inside, G(t) approaches negative infinity, covering (-inf, -1/8].",
-      "why": "The denominator achieves its most negative value at t = 0, bounding the negative branch from above at y = -1/8."
-    },
-    {
-      "stepNumber": 5,
-      "title": "Combine the Range Components",
-      "mathExpression": "\\text{Range} = (-\\infty, -1/8] \\cup (0, \\infty)",
-      "explanation": "Combining the output sets from both exterior and interior inputs produces the complete range: (-inf, -1/8] U (0, inf).",
-      "why": "The range of a function is the union of the images of all connected components of its domain."
+      "title": "Analyze the Range on the Interior Interval and Combine",
+      "mathExpression": "|t| < 4 \\implies -16 \\le t^2 - 16 < 0 \\implies G(t) \\in \\left(-\\infty, -\\frac{1}{8}\\right]",
+      "explanation": "When |t| < 4, t^2 - 16 lies in [-16, 0), achieving its minimum -16 at t = 0 where G(0) = -2/16 = -1/8. As |t| -> 4^-, G(t) -> -infinity. Combining both branches gives Range = (-inf, -1/8] U (0, inf).",
+      "why": "The union of the images of all domain components forms the complete range of the function."
     }
   ],
   "sympyVerification": {
     "operation": "domain",
-    "type": "domain",
     "expression": "2/(t**2 - 16)",
     "expected": "(-oo, -4) U (-4, 4) U (4, oo)",
-    "expected_domain": "(-oo, -4) U (-4, 4) U (4, oo)",
     "variable": "t"
   }
 }

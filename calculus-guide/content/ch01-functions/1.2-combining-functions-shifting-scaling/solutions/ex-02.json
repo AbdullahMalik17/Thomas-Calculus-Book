@@ -3,44 +3,56 @@
   "chapter": "ch01",
   "section": "1.2",
   "type": "solution",
-  "title": "Quotient Functions and Denominator Exclusions",
+  "title": "Domains and Ranges of Radical Sum and Product Functions",
   "exerciseReference": "Section 1.2, Exercise 2",
-  "originalTopic": "Combining Functions: Quotients",
-  "difficulty": "tier1",
+  "originalTopic": "Algebraic Combinations",
+  "difficulty": "tier2",
   "status": "verified",
-  "tags": ["combining-functions", "quotient", "domain", "radical"],
+  "tags": [
+    "combining-functions",
+    "domain",
+    "range",
+    "sum",
+    "product",
+    "radical"
+  ],
   "author": "Muhammad Abdullah Athar",
-  "problemStatement": "Given f(x) = sqrt(x + 1) and g(x) = sqrt(x - 1), determine the formula and natural domain for the quotient function (f / g)(x).",
-  "finalAnswer": "\\left(\\frac{f}{g}\\right)(x) = \\frac{\\sqrt{x+1}}{\\sqrt{x-1}} = \\sqrt{\\frac{x+1}{x-1}}; \\quad \\text{Domain: } (1, \\infty)",
+  "problemStatement": "Given the radical functions f(x) = sqrt(x + 1) and g(x) = sqrt(x - 1), find the natural domains and ranges of f, g, the sum f + g, and the product f * g.",
+  "finalAnswer": "D_f = [-1, \\infty),\\ R_f = [0, \\infty);\\quad D_g = [1, \\infty),\\ R_g = [0, \\infty);\\quad D_{f+g} = [1, \\infty),\\ R_{f+g} = [\\sqrt{2}, \\infty);\\quad D_{f\\cdot g} = [1, \\infty),\\ R_{f\\cdot g} = [0, \\infty)",
   "steps": [
     {
       "stepNumber": 1,
-      "title": "Determine Individual Domains",
-      "mathExpression": "D(f) = [-1, \\infty), \\quad D(g) = [1, \\infty)",
-      "explanation": "f(x) requires x + 1 >= 0, so x >= -1. g(x) requires x - 1 >= 0, so x >= 1.",
-      "why": "Even roots must have non-negative radicands to evaluate to real numbers."
+      "title": "Find the Domains and Ranges of f and g Individually",
+      "mathExpression": "D_f = [-1, \\infty),\\ R_f = [0, \\infty); \\quad D_g = [1, \\infty),\\ R_g = [0, \\infty)",
+      "explanation": "For f(x) = sqrt(x + 1), we require x + 1 >= 0, so x >= -1; as x varies over [-1, infinity), sqrt(x + 1) covers [0, infinity). For g(x) = sqrt(x - 1), we require x - 1 >= 0, so x >= 1, and sqrt(x - 1) also covers [0, infinity).",
+      "why": "A square root function sqrt(x - c) has natural domain [c, infinity) and range [0, infinity)."
     },
     {
       "stepNumber": 2,
-      "title": "Identify Denominator Zeroes",
-      "mathExpression": "g(x) = 0 \\iff \\sqrt{x - 1} = 0 \\iff x = 1",
-      "explanation": "Division by zero is undefined, so any root of the denominator equation must be removed from the domain.",
-      "why": "Quotients f/g are undefined where the denominator function vanishes."
+      "title": "Compute the Common Domain of f + g and f * g",
+      "mathExpression": "D_{f+g} = D_{f \\cdot g} = D_f \\cap D_g = [-1, \\infty) \\cap [1, \\infty) = [1, \\infty)",
+      "explanation": "Intersecting the domain [-1, infinity) of f with the domain [1, infinity) of g gives [1, infinity). Note that even though sqrt(x^2 - 1) is real for x <= -1, the product (f * g)(x) = sqrt(x + 1) * sqrt(x - 1) is only defined where both f(x) and g(x) are individually defined.",
+      "why": "By definition of pointwise function operations, the domain of f + g and f * g is the intersection D_f cap D_g."
     },
     {
       "stepNumber": 3,
-      "title": "Form the Intersection Domain",
-      "mathExpression": "D(f/g) = \\{x \\in [-1, \\infty) \\cap [1, \\infty) : x \\neq 1\\} = (1, \\infty)",
-      "explanation": "Intersecting [-1, inf) and [1, inf) yields [1, inf). Removing x = 1 leaves the open interval (1, inf).",
-      "why": "Definition of quotient domain requires simultaneous validity and non-zero denominator."
+      "title": "Determine the Range of the Sum f + g",
+      "mathExpression": "(f + g)(x) = \\sqrt{x + 1} + \\sqrt{x - 1},\\quad (f + g)(1) = \\sqrt{2} + 0 = \\sqrt{2} \\implies R_{f+g} = [\\sqrt{2}, \\infty)",
+      "explanation": "On [1, infinity), both sqrt(x + 1) and sqrt(x - 1) are continuous and strictly increasing. Thus (f + g)(x) attains its minimum at x = 1 with value sqrt(2), and increases without bound as x -> infinity.",
+      "why": "A continuous strictly increasing function on [1, infinity) that is unbounded above has range [f(1), infinity)."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Determine the Range of the Product f * g",
+      "mathExpression": "(f \\cdot g)(x) = \\sqrt{x + 1}\\sqrt{x - 1} = \\sqrt{x^2 - 1} \\quad (x \\ge 1) \\implies R_{f\\cdot g} = [0, \\infty)",
+      "explanation": "For x >= 1, (f * g)(x) = sqrt(x^2 - 1) is continuous and strictly increasing. At x = 1, (f * g)(1) = 0, and as x -> infinity, sqrt(x^2 - 1) -> infinity, giving the range [0, infinity).",
+      "why": "As x ranges over [1, infinity), x^2 - 1 ranges over [0, infinity), so its principal square root ranges over [0, infinity)."
     }
   ],
   "sympyVerification": {
     "operation": "domain",
-    "type": "domain",
-    "expression": "sqrt(x + 1) / sqrt(x - 1)",
-    "expected": "(1, oo)",
-    "expected_domain": "(1, oo)",
+    "expression": "sqrt(x + 1) + sqrt(x - 1)",
+    "expected": "[1, oo)",
     "variable": "x"
   }
 }

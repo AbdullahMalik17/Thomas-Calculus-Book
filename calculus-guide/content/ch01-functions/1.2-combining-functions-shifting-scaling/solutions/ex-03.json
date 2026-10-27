@@ -3,43 +3,48 @@
   "chapter": "ch01",
   "section": "1.2",
   "type": "solution",
-  "title": "Composition of Linear and Quadratic Functions",
-  "exerciseReference": "Section 1.2, Exercise 5",
-  "originalTopic": "Composite Functions: Evaluation and Commutativity",
+  "title": "Domains and Ranges of Reciprocal Quotients",
+  "exerciseReference": "Section 1.2, Exercise 3",
+  "originalTopic": "Algebraic Combinations",
   "difficulty": "tier1",
   "status": "verified",
-  "tags": ["composite-functions", "polynomial", "domain"],
+  "tags": [
+    "combining-functions",
+    "domain",
+    "range",
+    "quotient",
+    "rational"
+  ],
   "author": "Muhammad Abdullah Athar",
-  "problemStatement": "Let f(x) = 2x - 3 and g(x) = x^2 + 1. Find explicit formulas and natural domains for (f o g)(x) and (g o f)(x).",
-  "finalAnswer": "(f \\circ g)(x) = 2x^2 - 1, \\quad (g \\circ f)(x) = 4x^2 - 12x + 10; \\quad \\text{Domain of both: } (-\\infty, \\infty)",
+  "problemStatement": "Let f(x) = 2 and g(x) = x^2 + 1. Find the natural domains and ranges of f, g, the quotient f / g, and the quotient g / f.",
+  "finalAnswer": "D_f = (-\\infty, \\infty),\\ R_f = \\{2\\};\\quad D_g = (-\\infty, \\infty),\\ R_g = [1, \\infty);\\quad D_{f/g} = (-\\infty, \\infty),\\ R_{f/g} = (0, 2];\\quad D_{g/f} = (-\\infty, \\infty),\\ R_{g/f} = \\left[\\frac{1}{2}, \\infty\\right)",
   "steps": [
     {
       "stepNumber": 1,
-      "title": "Evaluate (f o g)(x)",
-      "mathExpression": "(f \\circ g)(x) = f(g(x)) = f(x^2 + 1) = 2(x^2 + 1) - 3 = 2x^2 + 2 - 3 = 2x^2 - 1",
-      "explanation": "Substitute the entire formula of g(x) in place of x in f(x) and simplify algebraically.",
-      "why": "Definition of functional composition as outer function applied to inner output."
+      "title": "Find the Domains and Ranges of f and g",
+      "mathExpression": "D_f = (-\\infty, \\infty),\\ R_f = \\{2\\}; \\quad D_g = (-\\infty, \\infty),\\ R_g = [1, \\infty)",
+      "explanation": "The constant function f(x) = 2 is defined for all real x and outputs only 2. The quadratic function g(x) = x^2 + 1 is defined for all real x, and since x^2 >= 0, we have x^2 + 1 >= 1, giving range [1, infinity).",
+      "why": "Polynomials have domain (-infinity, infinity), and x^2 >= 0 bounds x^2 + 1 below by 1."
     },
     {
       "stepNumber": 2,
-      "title": "Evaluate (g o f)(x)",
-      "mathExpression": "(g \\circ f)(x) = g(f(x)) = g(2x - 3) = (2x - 3)^2 + 1 = 4x^2 - 12x + 9 + 1 = 4x^2 - 12x + 10",
-      "explanation": "Substitute the formula of f(x) in place of x in g(x), expand the binomial, and combine constant terms.",
-      "why": "Composition in reverse order applies g to the output of f."
+      "title": "Analyze the Domain and Range of f / g",
+      "mathExpression": "\\left(\\frac{f}{g}\\right)(x) = \\frac{2}{x^2 + 1}, \\quad D_{f/g} = (-\\infty, \\infty), \\quad R_{f/g} = (0, 2]",
+      "explanation": "Since g(x) = x^2 + 1 >= 1 > 0 for all real x, the denominator never vanishes, so D_{f/g} = (-infinity, infinity). Because x^2 + 1 takes all values in [1, infinity), its reciprocal 1/(x^2 + 1) takes all values in (0, 1], and multiplying by 2 yields (0, 2].",
+      "why": "Taking the reciprocal of an interval [1, infinity) reverses the inequality to (0, 1], and scaling by 2 maps (0, 1] to (0, 2]."
     },
     {
       "stepNumber": 3,
-      "title": "Determine Domains and Compare",
-      "mathExpression": "D(f \\circ g) = (-\\infty, \\infty), \\quad D(g \\circ f) = (-\\infty, \\infty)",
-      "explanation": "Since both f and g are polynomials defined everywhere on R, their compositions are also defined on all of R. Notice that 2x^2 - 1 != 4x^2 - 12x + 10, demonstrating that composition is non-commutative.",
-      "why": "Polynomials have unrestricted real domains and composition does not commute."
+      "title": "Analyze the Domain and Range of g / f",
+      "mathExpression": "\\left(\\frac{g}{f}\\right)(x) = \\frac{x^2 + 1}{2}, \\quad D_{g/f} = (-\\infty, \\infty), \\quad R_{g/f} = \\left[\\frac{1}{2}, \\infty\\right)",
+      "explanation": "Since the constant denominator f(x) = 2 is never zero, D_{g/f} = (-infinity, infinity). Dividing each value in the range [1, infinity) of g by 2 gives the range [1/2, infinity).",
+      "why": "Scaling a function with range [1, infinity) by the positive constant 1/2 scales the range to [1/2, infinity)."
     }
   ],
   "sympyVerification": {
-    "operation": "algebraic_equivalence",
-    "type": "algebraic_equivalence",
-    "expression": "2*(x**2 + 1) - 3",
-    "expected": "2*x**2 - 1",
+    "operation": "domain",
+    "expression": "2 / (x**2 + 1)",
+    "expected": "(-oo, oo)",
     "variable": "x"
   }
 }

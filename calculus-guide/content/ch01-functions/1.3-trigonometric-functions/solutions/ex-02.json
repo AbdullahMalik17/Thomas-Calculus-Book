@@ -3,43 +3,49 @@
   "chapter": "ch01",
   "section": "1.3",
   "type": "solution",
-  "title": "Exact Evaluation of Trigonometric Functions on the Unit Circle",
-  "exerciseReference": "Section 1.3, Exercise 5",
-  "originalTopic": "Unit Circle Evaluation and Reference Angles",
+  "title": "Radian and Degree Measures of a Subtended Central Angle",
+  "exerciseReference": "Section 1.3, Exercise 2",
+  "originalTopic": "Radians and Degrees",
   "difficulty": "tier1",
   "status": "verified",
-  "tags": ["trigonometry", "unit-circle", "reference-angles", "exact-values"],
+  "tags": [
+    "trigonometry",
+    "radians",
+    "degrees",
+    "arc-length",
+    "central-angle"
+  ],
   "author": "Muhammad Abdullah Athar",
-  "problemStatement": "Find the reference angle and determine the exact values of sin(5*pi/6), cos(5*pi/6), and tan(5*pi/6).",
-  "finalAnswer": "\\sin(5\\pi/6) = \\frac{1}{2}, \\quad \\cos(5\\pi/6) = -\\frac{\\sqrt{3}}{2}, \\quad \\tan(5\\pi/6) = -\\frac{1}{\\sqrt{3}}",
+  "problemStatement": "An arc of length s = 10\\pi along a circle of radius r = 8 subtends a central angle \\theta. Find both the radian measure and the degree measure of \\theta.",
+  "finalAnswer": "\\theta = \\frac{5\\pi}{4}\\text{ rad} = 225^\\circ",
   "steps": [
     {
       "stepNumber": 1,
-      "title": "Identify Quadrant and Reference Angle",
-      "mathExpression": "\\theta = \\frac{5\\pi}{6} \\in \\text{Quadrant II}, \\quad \\theta' = \\pi - \\frac{5\\pi}{6} = \\frac{\\pi}{6}",
-      "explanation": "Since pi/2 < 5*pi/6 < pi, the terminal ray lies in the second quadrant. The reference angle formed with the negative x-axis is pi - 5*pi/6 = pi/6 (or 30 degrees).",
-      "why": "Reference angles to the horizontal axis determine trigonometric magnitudes."
+      "title": "Express the Central Angle in Radians Using Arc Length and Radius",
+      "mathExpression": "\\theta = \\frac{s}{r}",
+      "explanation": "Solve the arc length formula s = r*theta for the central angle theta in radians.",
+      "why": "The radian measure of a central angle is defined as the ratio of subtended arc length to radius."
     },
     {
       "stepNumber": 2,
-      "title": "Determine Algebraic Signs in Quadrant II",
-      "mathExpression": "x < 0 \\implies \\cos \\theta < 0, \\quad y > 0 \\implies \\sin \\theta > 0, \\quad \\frac{y}{x} < 0 \\implies \\tan \\theta < 0",
-      "explanation": "In Quadrant II, the x-coordinate is negative and the y-coordinate is positive. Therefore, sine is positive, while cosine and tangent are negative.",
-      "why": "Cartesian signs of coordinate points on the unit circle define trigonometric signs."
+      "title": "Substitute Given Values to Find Radian Measure",
+      "mathExpression": "\\theta = \\frac{10\\pi}{8} = \\frac{5\\pi}{4}\\text{ rad}",
+      "explanation": "Substitute s = 10*pi and r = 8 into the ratio and reduce the fraction by a factor of 2.",
+      "why": "Dividing numerator and denominator by their greatest common divisor 2 simplifies the exact radian measure."
     },
     {
       "stepNumber": 3,
-      "title": "Calculate Exact Values",
-      "mathExpression": "\\sin(5\\pi/6) = \\sin(\\pi/6) = \\frac{1}{2}, \\quad \\cos(5\\pi/6) = -\\cos(\\pi/6) = -\\frac{\\sqrt{3}}{2}, \\quad \\tan(5\\pi/6) = -\\frac{1/2}{\\sqrt{3}/2} = -\\frac{1}{\\sqrt{3}}",
-      "explanation": "Apply the standard special triangle values for pi/6 combined with the respective quadrant signs.",
-      "why": "Evaluation via reference angles and quadrant sign rules produces exact values."
+      "title": "Convert the Radian Measure to Degrees",
+      "mathExpression": "\\theta^\\circ = \\frac{5\\pi}{4} \\cdot \\frac{180^\\circ}{\\pi} = 5 \\cdot 45^\\circ = 225^\\circ",
+      "explanation": "Multiply the radian measure 5*pi/4 by the conversion factor 180^circ/pi. Cancel pi and evaluate 5 * 45^circ = 225^circ.",
+      "why": "One radian equals 180/pi degrees because pi radians equal 180 degrees."
     }
   ],
   "sympyVerification": {
     "operation": "algebraic_equivalence",
     "type": "algebraic_equivalence",
-    "expression": "sin(5*pi/6)",
-    "expected": "1/2",
+    "expression": "(10*pi/8) * (180/pi)",
+    "expected": "225",
     "variable": "x"
   }
 }

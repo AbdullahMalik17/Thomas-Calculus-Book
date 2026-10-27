@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-48",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Graphing a Shifted Three-Halves Power Function",
+  "exerciseReference": "Section 1.2, Exercise 48",
+  "originalTopic": "Shifting Graphs",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "graphing",
+    "shifting-graphs",
+    "power-function",
+    "domain",
+    "range"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Analyze and describe the graph of y = (x + 2)^(3/2) + 1 by identifying its parent function, shifts, endpoint, domain, range, and y-intercept.",
+  "finalAnswer": "\\text{Parent } y = x^{3/2} \\text{ shifted left } 2 \\text{ and up } 1;\\quad \\text{Endpoint: } (-2, 1),\\quad \\text{Domain: } [-2, \\infty),\\quad \\text{Range: } [1, \\infty),\\quad \\text{y-intercept: } (0, 2\\sqrt{2} + 1)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify the Parent Function and Translations",
+      "mathExpression": "y = (x + 2)^{3/2} + 1 = (\\sqrt{x + 2})^3 + 1",
+      "explanation": "The parent function is y = x^(3/2) on [0, infinity). Replacing x with x + 2 shifts the graph 2 units to the left, and adding 1 shifts it 1 unit upward.",
+      "why": "The translation vector (-2, 1) maps the origin endpoint (0, 0) of y = x^(3/2) to (-2, 1)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Determine the Domain and Range",
+      "mathExpression": "x + 2 \\ge 0 \\implies \\text{Domain: } [-2, \\infty); \\qquad (x + 2)^{3/2} \\ge 0 \\implies \\text{Range: } [1, \\infty)",
+      "explanation": "The square root in (x + 2)^(3/2) requires x + 2 >= 0, so x >= -2. Since (x + 2)^(3/2) covers [0, infinity), adding 1 yields the range [1, infinity).",
+      "why": "Even-indexed roots require a non-negative base, and adding 1 shifts the minimum output from 0 to 1."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Locate Key Points and the y-Intercept",
+      "mathExpression": "\\text{Left endpoint: } (-2, 1), \\quad (-1, 2), \\quad \\text{y-intercept: } (0, 2^{3/2} + 1) = (0, 2\\sqrt{2} + 1), \\quad (2, 9)",
+      "explanation": "The curve starts at (-2, 1) with a horizontal tangent and curves upward increasingly steeply through (-1, 2), (0, 2*sqrt(2) + 1), and (2, 9).",
+      "why": "Evaluating at x = -2, -1, 0, 2 provides exact coordinates along the curve."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "expression": "(x + 2)**(3/2) + 1",
+    "expected": "[-2, oo)",
+    "variable": "x"
+  }
+}

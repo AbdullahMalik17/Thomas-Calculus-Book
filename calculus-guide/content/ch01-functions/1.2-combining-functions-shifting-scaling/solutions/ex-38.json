@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-38",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Graphing a Reflected and Shifted Square Root Function",
+  "exerciseReference": "Section 1.2, Exercise 38",
+  "originalTopic": "Shifting Graphs",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "graphing",
+    "shifting-graphs",
+    "reflection",
+    "radical",
+    "domain"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Analyze and describe the graph of y = sqrt(9 - x) by identifying its parent function, transformation sequence, natural domain, range, and intercepts.",
+  "finalAnswer": "\\text{Parent } y = \\sqrt{x} \\text{ reflected across y-axis and shifted right } 9;\\quad \\text{Domain: } (-\\infty, 9],\\quad \\text{Range: } [0, \\infty),\\quad \\text{Endpoint: } (9, 0),\\quad \\text{y-intercept: } (0, 3)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Factor the Radicand to Reveal the Transformation Sequence",
+      "mathExpression": "y = \\sqrt{9 - x} = \\sqrt{-(x - 9)}",
+      "explanation": "Factoring out -1 inside the radical expresses y = sqrt(9 - x) as taking y = sqrt(x), reflecting across the y-axis to get y = sqrt(-x), and then shifting 9 units to the right by replacing x with x - 9.",
+      "why": "Writing f(9 - x) = f(-(x - 9)) separates the y-axis reflection from the horizontal translation."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Determine the Domain and Range",
+      "mathExpression": "9 - x \\ge 0 \\iff x \\le 9 \\implies \\text{Domain: } (-\\infty, 9], \\quad \\text{Range: } [0, \\infty)",
+      "explanation": "Requiring the radicand 9 - x >= 0 yields x <= 9, so the domain is (-infinity, 9]. The principal square root takes all non-negative real values [0, infinity).",
+      "why": "Even roots require non-negative radicands, and 9 - x covers [0, infinity) as x varies over (-infinity, 9]."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Find the Endpoint and Intercepts",
+      "mathExpression": "\\text{Right endpoint / x-intercept: } (9, 0), \\quad \\text{y-intercept: } (0, \\sqrt{9}) = (0, 3), \\quad \\text{Point: } (5, 2)",
+      "explanation": "The graph has its right endpoint at (9, 0) and rises to the left through (5, 2) and the y-intercept (0, 3).",
+      "why": "Setting x = 9 gives y = 0, and setting x = 0 gives y = 3."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "expression": "sqrt(9 - x)",
+    "expected": "(-oo, 9]",
+    "variable": "x"
+  }
+}

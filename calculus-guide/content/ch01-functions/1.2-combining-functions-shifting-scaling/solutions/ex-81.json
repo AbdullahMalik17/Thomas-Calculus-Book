@@ -1,0 +1,57 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-81",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Analyzing and Graphing Algebraic Combinations of f(x) = sqrt(x) and g(x) = sqrt(1 - x)",
+  "exerciseReference": "Section 1.2, Exercise 81",
+  "originalTopic": "Combining Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "combining-functions",
+    "graphing",
+    "domain",
+    "range",
+    "radical"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Consider the functions f(x) = sqrt(x) and g(x) = sqrt(1 - x). Find the formulas, domains, ranges, and key graphical features of their: (a) sum f + g, (b) product f * g, (c) two differences f - g and g - f, and (d) two quotients f / g and g / f.",
+  "finalAnswer": "\\text{(a) } \\sqrt{x}+\\sqrt{1-x} \\text{ on } [0,1];\\ \\text{(b) } \\sqrt{x(1-x)} \\text{ on } [0,1];\\ \\text{(c) } \\pm(\\sqrt{x}-\\sqrt{1-x}) \\text{ on } [0,1];\\ \\text{(d) } \\sqrt{\\frac{x}{1-x}} \\text{ on } [0,1),\\ \\sqrt{\\frac{1-x}{x}} \\text{ on } (0,1]",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine the Individual and Common Domains",
+      "mathExpression": "D_f = [0, \\infty), \\quad D_g = (-\\infty, 1] \\implies D_f \\cap D_g = [0, 1]",
+      "explanation": "f(x) = sqrt(x) requires x >= 0 and g(x) = sqrt(1 - x) requires 1 - x >= 0 (x <= 1). Their intersection is the closed interval [0, 1].",
+      "why": "All sums, differences, and products of f and g have natural domain D_f cap D_g = [0, 1]."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Analyze the Sum (a) and Product (b) on [0, 1]",
+      "mathExpression": "\\begin{aligned} \\text{(a) } (f + g)(x) &= \\sqrt{x} + \\sqrt{1 - x}, & D &= [0, 1], & R &= [1, \\sqrt{2}] \\\\ \\text{(b) } (f \\cdot g)(x) &= \\sqrt{x(1 - x)}, & D &= [0, 1], & R &= [0, 1/2] \\end{aligned}",
+      "explanation": "Both f + g and f * g are symmetric about x = 1/2. The sum equals 1 at x = 0 and x = 1 and peaks at x = 1/2 with value sqrt(1/2) + sqrt(1/2) = sqrt(2). The product y = sqrt(x - x^2) satisfies (x - 1/2)^2 + y^2 = (1/2)^2 (y >= 0), which is an upper semicircle of radius 1/2 centered at (1/2, 0) with maximum 1/2 at x = 1/2.",
+      "why": "Completing the square x(1 - x) = 1/4 - (x - 1/2)^2 identifies the product graph as a semicircle."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Analyze the Two Differences in Part (c)",
+      "mathExpression": "\\begin{aligned} (f - g)(x) &= \\sqrt{x} - \\sqrt{1 - x}, & D &= [0, 1], & R &= [-1, 1] \\\\ (g - f)(x) &= \\sqrt{1 - x} - \\sqrt{x}, & D &= [0, 1], & R &= [-1, 1] \\end{aligned}",
+      "explanation": "On [0, 1], f - g is strictly increasing from -1 (at x = 0) through 0 (at x = 1/2) to +1 (at x = 1). Its negation g - f = -(f - g) is the reflection of f - g across the x-axis, strictly decreasing from +1 to -1.",
+      "why": "Since sqrt(x) increases and -sqrt(1 - x) increases on [0, 1], their sum sqrt(x) - sqrt(1 - x) is strictly increasing."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Analyze the Two Quotients in Part (d)",
+      "mathExpression": "\\begin{aligned} (f/g)(x) &= \\sqrt{\\frac{x}{1 - x}}, & D_{f/g} &= [0, 1), & R_{f/g} &= [0, \\infty) \\\\ (g/f)(x) &= \\sqrt{\\frac{1 - x}{x}}, & D_{g/f} &= (0, 1], & R_{g/f} &= [0, \\infty) \\end{aligned}",
+      "explanation": "For f/g, exclude x = 1 where g(1) = 0; the graph starts at (0, 0), passes through (1/2, 1), and has a vertical asymptote at x = 1^-. For g/f, exclude x = 0 where f(0) = 0; the graph has a vertical asymptote at x = 0^+, passes through (1/2, 1), and ends at (1, 0).",
+      "why": "Quotient domains exclude points where the denominator vanishes, creating vertical asymptotes at those boundary points."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "expression": "sqrt(x) + sqrt(1 - x)",
+    "expected": "[0, 1]",
+    "variable": "x"
+  }
+}

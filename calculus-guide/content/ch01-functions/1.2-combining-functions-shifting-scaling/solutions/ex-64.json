@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-64",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Vertical Stretch of a Shifted Square Root Function",
+  "exerciseReference": "Section 1.2, Exercise 64",
+  "originalTopic": "Vertical and Horizontal Scaling",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "scaling-graphs",
+    "vertical-stretch",
+    "radical"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Give an equation for the graph of y = sqrt(x + 1) after it is stretched vertically by a factor of 3.",
+  "finalAnswer": "y = 3\\sqrt{x + 1}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Recall the Vertical Stretch Rule",
+      "mathExpression": "y = c\\,f(x) \\quad (c > 1)",
+      "explanation": "Stretching the graph of y = f(x) vertically by a factor of c > 1 multiplies the entire output f(x) by c.",
+      "why": "Multiplying f(x) by c scales all y-coordinates by a factor of c."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Multiply the Function by 3",
+      "mathExpression": "y = 3\\sqrt{x + 1}",
+      "explanation": "Multiplying sqrt(x + 1) by 3 gives the equation y = 3*sqrt(x + 1).",
+      "why": "Direct application of vertical stretching with c = 3."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Verify the Effect on Intercepts and Range",
+      "mathExpression": "\\text{x-intercept: } (-1, 0), \\quad \\text{y-intercept: } (0, 1) \\longrightarrow (0, 3), \\quad \\text{Range: } [0, \\infty)",
+      "explanation": "The x-intercept (-1, 0) remains unchanged on the x-axis, while the y-intercept is stretched from (0, 1) to (0, 3).",
+      "why": "Vertical scaling fixes points on the x-axis and multiplies the y-intercept by 3."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(3 * sqrt(x + 1))**2",
+    "expected": "9*x + 9",
+    "variable": "x"
+  }
+}

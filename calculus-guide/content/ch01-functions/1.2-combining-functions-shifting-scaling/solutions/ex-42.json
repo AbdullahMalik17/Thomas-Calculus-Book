@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-42",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Graphing a Reflected and Vertically Shifted Square Root",
+  "exerciseReference": "Section 1.2, Exercise 42",
+  "originalTopic": "Shifting Graphs",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "graphing",
+    "shifting-graphs",
+    "reflection",
+    "radical"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Analyze and describe the graph of y = 1 - sqrt(x) by identifying its parent function, transformations, domain, range, and intercepts.",
+  "finalAnswer": "\\text{Parent } y = \\sqrt{x} \\text{ reflected across x-axis and shifted up } 1;\\quad \\text{Domain: } [0, \\infty),\\quad \\text{Range: } (-\\infty, 1],\\quad \\text{Intercepts: } (0, 1),\\ (1, 0)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Decompose the Transformations from y = sqrt(x)",
+      "mathExpression": "y = -\\sqrt{x} + 1",
+      "explanation": "Start with y = sqrt(x), reflect across the x-axis by multiplying by -1 to get y = -sqrt(x), and then shift upward by 1 unit to get y = 1 - sqrt(x).",
+      "why": "Negating a function reflects its graph across the x-axis, and adding 1 translates it vertically upward."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find the Domain and Range",
+      "mathExpression": "\\text{Domain: } [0, \\infty), \\qquad \\text{Range: } (-\\infty, 1]",
+      "explanation": "The square root is defined for x >= 0. Since -sqrt(x) <= 0 takes all values in (-infinity, 0], adding 1 yields the range (-infinity, 1].",
+      "why": "Reflecting [0, infinity) to (-infinity, 0] and adding 1 produces the interval (-infinity, 1]."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Determine the Endpoint and Intercepts",
+      "mathExpression": "\\text{Left endpoint / y-intercept: } (0, 1), \\quad \\text{x-intercept: } (1, 0), \\quad \\text{Point: } (4, -1)",
+      "explanation": "The graph begins at the y-intercept (0, 1), crosses the x-axis at (1, 0), and continues decreasing into the fourth quadrant through (4, -1) and (9, -2).",
+      "why": "Setting x = 0 gives y = 1, and solving 1 - sqrt(x) = 0 gives sqrt(x) = 1, or x = 1."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "expression": "1 - sqrt(x)",
+    "expected": "[0, oo)",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-34",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Shifting a Linear Graph Down and Right",
+  "exerciseReference": "Section 1.2, Exercise 34",
+  "originalTopic": "Shifting Graphs",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "shifting-graphs",
+    "linear",
+    "translations"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "The graph of y = (1/2)(x + 1) + 5 is to be shifted down 5 units and right 1 unit. Give a simplified equation for the shifted graph.",
+  "finalAnswer": "y = \\frac{1}{2}x",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Apply the Horizontal Shift (Right 1 Unit)",
+      "mathExpression": "y = \\frac{1}{2}((x - 1) + 1) + 5 = \\frac{1}{2}x + 5",
+      "explanation": "Replace x with x - 1 to shift the graph 1 unit to the right; inside the parentheses, (x - 1) + 1 simplifies to x.",
+      "why": "Replacing x with x - 1 undoes the +1 horizontal offset inside (x + 1)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply the Vertical Shift (Down 5 Units)",
+      "mathExpression": "y = \\left(\\frac{1}{2}x + 5\\right) - 5 = \\frac{1}{2}x",
+      "explanation": "Subtract 5 from the output to shift the graph 5 units downward, canceling the +5 constant term.",
+      "why": "Subtracting 5 undoes the +5 vertical offset."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Compare the Original and Shifted Lines",
+      "mathExpression": "\\text{Original: } y = \\frac{1}{2}x + \\frac{11}{2}, \\qquad \\text{Shifted: } y = \\frac{1}{2}x",
+      "explanation": "The original line passes through (-1, 5) with slope 1/2 (y-intercept (0, 11/2)). Shifting right 1 and down 5 moves the point (-1, 5) to the origin (0, 0), giving the parallel line y = (1/2)x.",
+      "why": "Translating the point (-1, 5) by (+1, -5) maps it to (0, 0) while preserving slope 1/2."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(1/2)*((x - 1) + 1) + 5 - 5",
+    "expected": "x / 2",
+    "variable": "x"
+  }
+}

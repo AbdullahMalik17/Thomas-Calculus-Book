@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-54",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Graphing a Downward-Shifted Inverse-Square Function",
+  "exerciseReference": "Section 1.2, Exercise 54",
+  "originalTopic": "Shifting Graphs",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "graphing",
+    "shifting-graphs",
+    "rational",
+    "asymptotes"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Analyze and describe the graph of y = 1/x^2 - 1 by identifying its parent function, shift, asymptotes, domain, range, and intercepts.",
+  "finalAnswer": "\\text{Parent } y = \\frac{1}{x^2} \\text{ shifted down } 1;\\quad \\text{VA: } x = 0,\\quad \\text{HA: } y = -1,\\quad \\text{Domain: } (-\\infty, 0) \\cup (0, \\infty),\\quad \\text{Range: } (-1, \\infty),\\quad \\text{x-intercepts: } (\\pm 1, 0)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Identify the Parent Function and Vertical Shift",
+      "mathExpression": "y = \\frac{1}{x^2} - 1",
+      "explanation": "Subtracting 1 from the parent function y = 1/x^2 shifts its graph 1 unit downward.",
+      "why": "Subtracting 1 translates every point on y = 1/x^2 vertically downward by 1 unit."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Determine the Asymptotes, Domain, and Range",
+      "mathExpression": "\\text{VA: } x = 0, \\quad \\text{HA: } y = -1, \\quad \\text{Domain: } (-\\infty, 0) \\cup (0, \\infty), \\quad \\text{Range: } (-1, \\infty)",
+      "explanation": "The vertical asymptote is the y-axis x = 0, and the horizontal asymptote shifts down to y = -1. Since 1/x^2 > 0 for all x != 0, we have 1/x^2 - 1 > -1, so the range is (-1, infinity).",
+      "why": "Shifting the range (0, infinity) of 1/x^2 down by 1 produces (-1, infinity)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Locate the x-Intercepts",
+      "mathExpression": "\\frac{1}{x^2} - 1 = 0 \\iff x^2 = 1 \\iff x = \\pm 1 \\implies \\text{x-intercepts: } (-1, 0),\\ (1, 0)",
+      "explanation": "The even graph is symmetric about the y-axis, crossing the x-axis at (-1, 0) and (1, 0) and approaching y = -1 from above as x -> +/-infinity.",
+      "why": "Solving 1/x^2 = 1 gives x = +/-1."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "1 / x**2 - 1",
+    "expected": "even",
+    "variable": "x"
+  }
+}

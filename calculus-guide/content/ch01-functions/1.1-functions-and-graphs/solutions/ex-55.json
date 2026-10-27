@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-55",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Parity of a Shifted Reciprocal Function h(t) = 1 / (t - 1)",
+  "exerciseReference": "Section 1.1, Exercise 55",
+  "originalTopic": "Even and Odd Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "symmetry",
+    "rational-functions",
+    "parity"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether the function h(t) = 1 / (t - 1) is even, odd, or neither, and justify your answer.",
+  "finalAnswer": "\\text{Neither}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Inspect the Domain and Evaluate h(-t)",
+      "mathExpression": "\\text{Domain} = \\mathbb{R} \\setminus \\{1\\}, \\quad h(-t) = \\frac{1}{-t - 1} = -\\frac{1}{t + 1}",
+      "explanation": "First observe that the domain t != 1 is not symmetric about 0 (since t = -1 is in the domain while t = 1 is not). Furthermore, substituting -t gives h(-t) = -1 / (t + 1).",
+      "why": "A shifted vertical asymptote at t = 1 breaks both y-axis and origin symmetry."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Compare h(-t) with h(t) and -h(t)",
+      "mathExpression": "h(2) = \\frac{1}{2 - 1} = 1, \\quad h(-2) = \\frac{1}{-2 - 1} = -\\frac{1}{3} \\ne \\pm 1",
+      "explanation": "Evaluating at t = 2 gives h(2) = 1, whereas at t = -2 we get h(-2) = -1/3, which equals neither h(2) nor -h(2).",
+      "why": "If a function is even or odd, |h(-t)| must equal |h(t)| for all t in the domain."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude Function Parity",
+      "mathExpression": "h(-t) \\ne h(t) \\text{ and } h(-t) \\ne -h(t) \\implies \\text{Neither}",
+      "explanation": "Because neither symmetry condition holds, h(t) = 1 / (t - 1) is neither even nor odd.",
+      "why": "Horizontal translation of 1/t by 1 unit to the right destroys its origin symmetry."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "1/(t - 1)",
+    "expected": "neither",
+    "variable": "t"
+  }
+}

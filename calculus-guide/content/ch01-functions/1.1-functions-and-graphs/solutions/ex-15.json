@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-15",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Natural Domain and Graph of a Linear Function",
+  "exerciseReference": "Section 1.1, Exercise 15",
+  "originalTopic": "Functions and Graphs: Domain and Graphing",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "domain",
+    "linear-functions",
+    "graphs"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find the natural domain and describe the graph of the linear function f(x) = 5 - 2x.",
+  "finalAnswer": "\\text{Domain: } (-\\infty, \\infty); \\quad \\text{Line with slope } -2 \\text{ and } y\\text{-intercept } (0, 5)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine the Natural Domain",
+      "mathExpression": "\\text{Domain} = (-\\infty, \\infty)",
+      "explanation": "The formula f(x) = 5 - 2x is a first-degree polynomial with no denominators or radicals, so it is defined for all real numbers x.",
+      "why": "Linear polynomials are well-defined on the entire real number line."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Find the Axes Intercepts",
+      "mathExpression": "f(0) = 5 \\implies (0, 5); \\quad 5 - 2x = 0 \\implies x = \\frac{5}{2} \\implies \\left(\\frac{5}{2}, 0\\right)",
+      "explanation": "Evaluating at x = 0 gives the y-intercept (0, 5). Setting f(x) = 0 gives 2x = 5, so the x-intercept is (5/2, 0).",
+      "why": "Two distinct points uniquely determine the graph of a straight line."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Characterize the Graph",
+      "mathExpression": "y = -2x + 5, \\quad m = -2",
+      "explanation": "The graph is a straight line with slope m = -2 passing through (0, 5) and (2.5, 0), falling 2 units vertically for every 1 unit of horizontal run to the right.",
+      "why": "In slope-intercept form y = mx + b, m represents the constant rate of change and b is the y-intercept."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "domain",
+    "expression": "5 - 2*x",
+    "expected": "(-oo, oo)",
+    "variable": "x"
+  }
+}

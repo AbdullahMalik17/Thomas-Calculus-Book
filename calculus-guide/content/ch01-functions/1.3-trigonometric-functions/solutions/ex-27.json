@@ -1,0 +1,51 @@
+{
+  "id": "ch01-functions/1.3-trigonometric-functions/solutions/ex-27",
+  "chapter": "ch01",
+  "section": "1.3",
+  "type": "solution",
+  "title": "Comparing Reciprocal Pair Graphs: Cosine/Secant and Sine/Cosecant",
+  "exerciseReference": "Section 1.3, Exercise 27",
+  "originalTopic": "Graphing Trigonometric Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "trigonometry",
+    "secant",
+    "cosecant",
+    "reciprocal-functions",
+    "asymptotes"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "(a) Graph y = \\cos x and y = \\sec x together on [-3\\pi/2, 3\\pi/2] and explain how the behavior of \\sec x relates to the signs and values of \\cos x. (b) Graph y = \\sin x and y = \\csc x together on [-\\pi, 2\\pi] and explain how \\csc x relates to the signs and values of \\sin x.",
+  "finalAnswer": "\\sec x = \\frac{1}{\\cos x} \\text{ and } \\csc x = \\frac{1}{\\sin x} \\text{ share signs with } \\cos x \\text{ and } \\sin x, \\text{ have vertical asymptotes at their zeros, and meet them at } y = \\pm 1",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Analyze Part (a): Sign Agreement and Asymptotes of sec x = 1/cos x",
+      "mathExpression": "\\cos x = 0 \\iff x = \\pm\\frac{\\pi}{2}, \\pm\\frac{3\\pi}{2} \\implies \\lim_{x \\to (\\pm\\pi/2)} |\\sec x| = \\infty",
+      "explanation": "On [-3*pi/2, 3*pi/2], sec x has the exact same sign as cos x on every open interval: positive on (-pi/2, pi/2) and negative on [-3*pi/2, -pi/2) and (pi/2, 3*pi/2]. Wherever cos x = 0, sec x has a vertical asymptote.",
+      "why": "A reciprocal 1/u preserves the sign of u and diverges to infinity as u approaches 0."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Analyze Part (a): Extrema Duality Between cos x and sec x",
+      "mathExpression": "\\cos 0 = 1 = \\sec 0, \\quad \\cos(\\pm\\pi) = -1 = \\sec(\\pm\\pi), \\quad |\\sec x| \\ge 1",
+      "explanation": "Where cos x attains its local maximum of 1 (at x = 0), sec x attains a local minimum of 1; where cos x attains its local minimum of -1 (at x = +/-pi), sec x attains a local maximum of -1. Whenever cos x decreases in magnitude toward 0, |sec x| increases toward infinity.",
+      "why": "Since |cos x| <= 1, its reciprocal satisfies |sec x| = 1/|cos x| >= 1, reversing increasing and decreasing behavior."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Analyze Part (b): Sign Agreement, Asymptotes, and Extrema of csc x = 1/sin x",
+      "mathExpression": "\\sin x = 0 \\iff x = -\\pi, 0, \\pi, 2\\pi; \\quad \\sin\\left(\\frac{\\pi}{2}\\right) = \\csc\\left(\\frac{\\pi}{2}\\right) = 1; \\quad \\sin\\left(-\\frac{\\pi}{2}\\right) = \\sin\\left(\\frac{3\\pi}{2}\\right) = -1",
+      "explanation": "On [-pi, 2*pi], csc x and sin x have the same sign: positive on (0, pi) and negative on (-pi, 0) and (pi, 2*pi). Vertical asymptotes of csc x occur at the zeros x = -pi, 0, pi, 2*pi of sin x, while the curves touch at (pi/2, 1) (max of sin, min of csc) and at (-pi/2, -1) and (3*pi/2, -1) (min of sin, max of csc).",
+      "why": "By the reciprocal relation csc x = 1/sin x, zeros of sin x become vertical asymptotes of csc x and unit extrema coincide."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "type": "algebraic_equivalence",
+    "expression": "cos(x) * sec(x) + sin(x) * csc(x)",
+    "expected": "2",
+    "variable": "x"
+  }
+}

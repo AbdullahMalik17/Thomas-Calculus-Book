@@ -1,0 +1,56 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-07",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Applying the Vertical Line Test to First-Quadrant Curves",
+  "exerciseReference": "Section 1.1, Exercise 7",
+  "originalTopic": "Functions and Graphs: Vertical Line Test",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "vertical-line-test",
+    "graphs",
+    "relations"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Consider two curves in the first quadrant: (a) a curve that starts on the positive y-axis, bends to reach a leftmost tangent point on the y-axis, and curves back to the right toward the positive x-axis; (b) a wave-like curve that progresses strictly from left to right with a single peak and valley. Determine which graph represents a function of x and justify your answer.",
+  "finalAnswer": "\\text{(a) Not a function of } x; \\quad \\text{(b) Function of } x",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "State the Vertical Line Test Criterion",
+      "mathExpression": "x = c \\text{ intersects the graph at most once}",
+      "explanation": "By definition, a curve in the xy-plane is the graph of a function of x if and only if no vertical line x = c intersects the curve more than once.",
+      "why": "A function assigns to each input x in its domain at most one output value y = f(x)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Test Graph (a) with Vertical Lines",
+      "mathExpression": "x = c > 0 \\implies \\text{two intersection points } (c, y_1) \\text{ and } (c, y_2)",
+      "explanation": "In graph (a), because the curve doubles back horizontally in the first quadrant, vertical lines x = c for positive values of c pass through both an upper branch and a lower branch of the curve.",
+      "why": "Multiple y-values for a single x-value violate the uniqueness requirement of a function."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Test Graph (b) with Vertical Lines",
+      "mathExpression": "\\forall c \\in \\text{Domain}, \\quad \\text{at most one point } (c, y)",
+      "explanation": "In graph (b), as x increases from left to right, the curve never folds back over itself; every vertical line intersects the curve at most once.",
+      "why": "Each x-coordinate in the domain corresponds to a unique y-coordinate on the curve."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Formulate the Final Conclusion",
+      "mathExpression": "\\text{(a) Not a function of } x; \\quad \\text{(b) Function of } x",
+      "explanation": "Graph (a) fails the Vertical Line Test and is not the graph of a function of x, whereas graph (b) passes the Vertical Line Test and defines y as a function of x.",
+      "why": "The Vertical Line Test is a necessary and sufficient geometric condition for a plane curve to represent a function y = f(x)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "x",
+    "expected": "x",
+    "variable": "x"
+  }
+}

@@ -3,43 +3,48 @@
   "chapter": "ch01",
   "section": "1.3",
   "type": "solution",
-  "title": "Solving Quadratic Trigonometric Equations",
-  "exerciseReference": "Section 1.3, Exercise 19",
-  "originalTopic": "Trigonometric Equations: Factoring Techniques",
-  "difficulty": "tier2",
+  "title": "Exact Values of the Six Trigonometric Functions at Standard Angles (Table I)",
+  "exerciseReference": "Section 1.3, Exercise 5",
+  "originalTopic": "Evaluating Trigonometric Functions",
+  "difficulty": "tier1",
   "status": "verified",
-  "tags": ["trigonometry", "equations", "factoring", "periodic-solutions"],
+  "tags": [
+    "trigonometry",
+    "unit-circle",
+    "exact-values",
+    "special-angles"
+  ],
   "author": "Muhammad Abdullah Athar",
-  "problemStatement": "Solve the trigonometric equation 2*cos^2(x) - cos(x) - 1 = 0 for all solutions in the interval [0, 2*pi).",
-  "finalAnswer": "x = 0, \\quad x = \\frac{2\\pi}{3}, \\quad x = \\frac{4\\pi}{3}",
+  "problemStatement": "Without using a calculator, evaluate \\sin\\theta, \\cos\\theta, \\tan\\theta, \\cot\\theta, \\sec\\theta, and \\csc\\theta at each of the angles \\theta = -\\pi, -2\\pi/3, 0, \\pi/2, and 3\\pi/4. State 'UND' wherever a function is undefined.",
+  "finalAnswer": "\\begin{array}{c|ccccc} \\theta & -\\pi & -2\\pi/3 & 0 & \\pi/2 & 3\\pi/4 \\\\ \\hline \\sin\\theta & 0 & -\\sqrt{3}/2 & 0 & 1 & 1/\\sqrt{2} \\\\ \\cos\\theta & -1 & -1/2 & 1 & 0 & -1/\\sqrt{2} \\\\ \\tan\\theta & 0 & \\sqrt{3} & 0 & \\text{UND} & -1 \\\\ \\cot\\theta & \\text{UND} & 1/\\sqrt{3} & \\text{UND} & 0 & -1 \\\\ \\sec\\theta & -1 & -2 & 1 & \\text{UND} & -\\sqrt{2} \\\\ \\csc\\theta & \\text{UND} & -2/\\sqrt{3} & \\text{UND} & 1 & \\sqrt{2} \\end{array}",
   "steps": [
     {
       "stepNumber": 1,
-      "title": "Treat as a Quadratic in cos(x)",
-      "mathExpression": "2u^2 - u - 1 = 0 \\quad \\text{with } u = \\cos x",
-      "explanation": "Substitute u = cos(x) to recognize the equation as a standard quadratic trinomial.",
-      "why": "Algebraic substitution reveals the underlying polynomial structure of trigonometric equations."
+      "title": "Evaluate Sine and Cosine Using the Unit Circle",
+      "mathExpression": "(\\cos\\theta, \\sin\\theta) = \\begin{cases} (-1, 0), & \\theta = -\\pi \\\\ (-1/2, -\\sqrt{3}/2), & \\theta = -2\\pi/3 \\\\ (1, 0), & \\theta = 0 \\\\ (0, 1), & \\theta = \\pi/2 \\\\ (-1/\\sqrt{2}, 1/\\sqrt{2}), & \\theta = 3\\pi/4 \\end{cases}",
+      "explanation": "Locate the terminal point (x, y) = (cos theta, sin theta) on the unit circle for each given angle using reference angles pi/3 and pi/4 and quadrant signs.",
+      "why": "On the unit circle x^2 + y^2 = 1, cos theta is the x-coordinate and sin theta is the y-coordinate."
     },
     {
       "stepNumber": 2,
-      "title": "Factor the Quadratic",
-      "mathExpression": "(2u + 1)(u - 1) = 0 \\implies (2\\cos x + 1)(\\cos x - 1) = 0",
-      "explanation": "Factoring gives two distinct linear factors: 2*cos(x) + 1 = 0 or cos(x) - 1 = 0.",
-      "why": "The Zero Product Property requires at least one factor to vanish."
+      "title": "Compute Tangent and Cotangent Ratios",
+      "mathExpression": "\\tan\\theta = \\frac{\\sin\\theta}{\\cos\\theta}: \\; 0, \\sqrt{3}, 0, \\text{UND}, -1; \\qquad \\cot\\theta = \\frac{\\cos\\theta}{\\sin\\theta}: \\; \\text{UND}, \\frac{1}{\\sqrt{3}}, \\text{UND}, 0, -1",
+      "explanation": "Divide sin theta by cos theta to get tan theta (which is undefined at theta = pi/2 where cos theta = 0) and divide cos theta by sin theta to get cot theta (which is undefined at theta = -pi and 0 where sin theta = 0).",
+      "why": "Quotient identities define tan theta = sin theta / cos theta and cot theta = cos theta / sin theta whenever the denominator is nonzero."
     },
     {
       "stepNumber": 3,
-      "title": "Solve Each Branch on [0, 2*pi)",
-      "mathExpression": "\\cos x = 1 \\implies x = 0; \\qquad \\cos x = -\\frac{1}{2} \\implies x = \\frac{2\\pi}{3}, \\ x = \\frac{4\\pi}{3}",
-      "explanation": "On the interval [0, 2*pi), cos(x) = 1 only at x = 0. Cosine equals -1/2 in Quadrants II and III at the reference angle pi/3, yielding x = pi - pi/3 = 2*pi/3 and x = pi + pi/3 = 4*pi/3.",
-      "why": "Unit circle symmetry yields two solutions for negative cosine in Quadrants II and III."
+      "title": "Compute Secant and Cosecant Reciprocals",
+      "mathExpression": "\\sec\\theta = \\frac{1}{\\cos\\theta}: \\; -1, -2, 1, \\text{UND}, -\\sqrt{2}; \\qquad \\csc\\theta = \\frac{1}{\\sin\\theta}: \\; \\text{UND}, -\\frac{2}{\\sqrt{3}}, \\text{UND}, 1, \\sqrt{2}",
+      "explanation": "Take the reciprocals of cos theta and sin theta for each angle, marking 'UND' whenever the denominator equals zero.",
+      "why": "Reciprocal identities define sec theta = 1/cos theta and csc theta = 1/sin theta."
     }
   ],
   "sympyVerification": {
     "operation": "algebraic_equivalence",
     "type": "algebraic_equivalence",
-    "expression": "2*cos(x)**2 - cos(x) - 1",
-    "expected": "(2*cos(x) + 1)*(cos(x) - 1)",
+    "expression": "sin(-2*pi/3) / cos(-2*pi/3)",
+    "expected": "sqrt(3)",
     "variable": "x"
   }
 }

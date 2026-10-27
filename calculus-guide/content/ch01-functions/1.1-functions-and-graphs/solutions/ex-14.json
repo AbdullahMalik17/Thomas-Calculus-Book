@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-14",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Distance from a Point on a Radical Curve to a Fixed Point as a Function of y",
+  "exerciseReference": "Section 1.1, Exercise 14",
+  "originalTopic": "Finding Formulas for Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "distance-formula",
+    "radicals",
+    "modeling"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Consider a point (x, y) lying on the graph of y = sqrt(x - 3). Let L be the distance between the points (x, y) and (4, 0). Write L as a function of y.",
+  "finalAnswer": "L(y) = \\sqrt{y^4 - y^2 + 1}, \\quad y \\ge 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Set Up the Distance Formula Between (x, y) and (4, 0)",
+      "mathExpression": "L = \\sqrt{(x - 4)^2 + (y - 0)^2} = \\sqrt{(x - 4)^2 + y^2}",
+      "explanation": "Use the two-point distance formula to express the distance L from (x, y) to (4, 0).",
+      "why": "The Euclidean distance between (x_1, y_1) and (x_2, y_2) is sqrt((x_1 - x_2)^2 + (y_1 - y_2)^2)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Express x in Terms of y Using the Curve Equation",
+      "mathExpression": "y = \\sqrt{x - 3} \\implies y^2 = x - 3 \\implies x = y^2 + 3 \\quad (y \\ge 0)",
+      "explanation": "Square both sides of y = sqrt(x - 3) (noting that y >= 0 since it is the output of a principal square root) and add 3 to obtain x = y^2 + 3.",
+      "why": "To write L as a function of y alone, the coordinate x must be expressed in terms of y."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Substitute x = y^2 + 3 and Expand",
+      "mathExpression": "L(y) = \\sqrt{((y^2 + 3) - 4)^2 + y^2} = \\sqrt{(y^2 - 1)^2 + y^2} = \\sqrt{y^4 - y^2 + 1}",
+      "explanation": "Replace x - 4 with y^2 - 1, expand (y^2 - 1)^2 = y^4 - 2y^2 + 1, and add y^2 to obtain L(y) = sqrt(y^4 - y^2 + 1) for y >= 0.",
+      "why": "Combining the like terms -2y^2 and +y^2 simplifies the polynomial radicand to y^4 - y^2 + 1."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(((y**2 + 3) - 4)**2 + y**2)",
+    "expected": "sqrt(y**4 - y**2 + 1)",
+    "variable": "y"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-21",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Modeling Balloon Volume as a Composite Function of Time",
+  "exerciseReference": "Section 1.2, Exercise 21",
+  "originalTopic": "Compositions of Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "composition",
+    "word-problem",
+    "modeling",
+    "quadratic"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A weather balloon's volume V (in cm^3) depends on the ambient temperature s (in degrees Celsius) according to V(s) = s^2 + 2s + 3. The ambient temperature at time t minutes is given by s(t) = 2t - 3 degrees Celsius. Express the balloon's volume V as a function of time t.",
+  "finalAnswer": "V(t) = 4t^2 - 8t + 6",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Formulate the Composite Function V(s(t))",
+      "mathExpression": "V(t) = (V \\circ s)(t) = (s(t))^2 + 2s(t) + 3 = (2t - 3)^2 + 2(2t - 3) + 3",
+      "explanation": "Substitute the temperature-time relation s(t) = 2t - 3 in place of s throughout the volume formula V(s) = s^2 + 2s + 3.",
+      "why": "Chaining a physical quantity V(s) with time dependence s(t) is modeled by the composition (V o s)(t)."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Expand the Binomial Square and Linear Term",
+      "mathExpression": "V(t) = (4t^2 - 12t + 9) + (4t - 6) + 3",
+      "explanation": "Expand (2t - 3)^2 = 4t^2 - 12t + 9 and distribute 2 across (2t - 3) to get 4t - 6.",
+      "why": "Applying the binomial square identity (a - b)^2 = a^2 - 2ab + b^2 and distributive law."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Combine Like Terms in Powers of t",
+      "mathExpression": "V(t) = 4t^2 + (-12t + 4t) + (9 - 6 + 3) = 4t^2 - 8t + 6\\text{ cm}^3",
+      "explanation": "Combine the linear terms -12t + 4t = -8t and the constant terms 9 - 6 + 3 = 6 to obtain V(t) = 4t^2 - 8t + 6.",
+      "why": "Collecting like powers of t puts the quadratic polynomial in standard form."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(2*t - 3)**2 + 2*(2*t - 3) + 3",
+    "expected": "4*t**2 - 8*t + 6",
+    "variable": "t"
+  }
+}

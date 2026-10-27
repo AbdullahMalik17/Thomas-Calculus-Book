@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-40",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Symmetry and Monotonicity of y = 1 / |x|",
+  "exerciseReference": "Section 1.1, Exercise 40",
+  "originalTopic": "Increasing and Decreasing Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "increasing-decreasing",
+    "symmetry",
+    "absolute-value",
+    "even-functions"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Describe the graph of y = 1 / |x|, state its symmetry, and find the intervals on which the function is increasing and decreasing.",
+  "finalAnswer": "\\text{Symmetric about the } y\\text{-axis; Increasing on } (-\\infty, 0); \\text{ Decreasing on } (0, \\infty)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Determine Domain and Even Symmetry",
+      "mathExpression": "\\text{Domain} = (-\\infty, 0) \\cup (0, \\infty), \\quad f(-x) = \\frac{1}{|-x|} = \\frac{1}{|x|} = f(x)",
+      "explanation": "The function is defined for all x != 0, and since |-x| = |x|, it is an even function whose graph is symmetric about the y-axis.",
+      "why": "Absolute value is an even function, so its reciprocal 1/|x| is also even."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Analyze Behavior on (0, inf)",
+      "mathExpression": "0 < x_1 < x_2 \\implies \\frac{1}{x_1} > \\frac{1}{x_2} \\implies \\text{Decreasing on } (0, \\infty)",
+      "explanation": "For x > 0, y = 1/x decreases from +infinity toward 0 as x increases.",
+      "why": "The reciprocal of a positive increasing variable is strictly decreasing."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Analyze Behavior on (-inf, 0)",
+      "mathExpression": "x_1 < x_2 < 0 \\implies |x_1| > |x_2| > 0 \\implies \\frac{1}{|x_1|} < \\frac{1}{|x_2|} \\implies \\text{Increasing on } (-\\infty, 0)",
+      "explanation": "For x < 0, as x increases toward 0^-, |x| = -x decreases toward 0^+, so 1/|x| increases from 0^+ toward +infinity. Thus the function increases on (-inf, 0) and decreases on (0, inf).",
+      "why": "By y-axis symmetry, a function that decreases on (0, inf) must increase on (-inf, 0)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "1/Abs(x)",
+    "expected": "even",
+    "variable": "x"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-12",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Coordinates of a Point on a Square Root Curve as Functions of Secant Slope",
+  "exerciseReference": "Section 1.1, Exercise 12",
+  "originalTopic": "Finding Formulas for Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "slope",
+    "coordinates",
+    "parametric-relations",
+    "radicals"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A point P in the first quadrant lies on the graph of the function f(x) = sqrt(x). Express the coordinates of P as functions of the slope m of the line joining P to the origin.",
+  "finalAnswer": "P(m) = \\left(\\frac{1}{m^2}, \\frac{1}{m}\\right), \\quad m > 0",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Represent Point P and the Slope m to the Origin",
+      "mathExpression": "P = (x, \\sqrt{x}), \\quad m = \\frac{\\sqrt{x} - 0}{x - 0} = \\frac{\\sqrt{x}}{x} = \\frac{1}{\\sqrt{x}}",
+      "explanation": "Since P lies on f(x) = sqrt(x) in the first quadrant, its coordinates are (x, sqrt(x)) with x > 0. The slope m of the line through (0, 0) and (x, sqrt(x)) is sqrt(x)/x = 1/sqrt(x).",
+      "why": "The slope of a line passing through the origin and (x, y) is m = y / x."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Solve for the x-Coordinate in Terms of m",
+      "mathExpression": "\\sqrt{x} = \\frac{1}{m} \\implies x(m) = \\frac{1}{m^2}",
+      "explanation": "Take the reciprocal of m = 1/sqrt(x) to get sqrt(x) = 1/m, and square both sides to express x as a function of m: x(m) = 1/m^2.",
+      "why": "Squaring both sides of a positive equality preserves equivalence."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Find the y-Coordinate in Terms of m",
+      "mathExpression": "y(m) = \\sqrt{x(m)} = \\frac{1}{m}",
+      "explanation": "Since y = sqrt(x) and we already found sqrt(x) = 1/m (with m > 0 in the first quadrant), the y-coordinate of P is y(m) = 1/m. Thus P = (1/m^2, 1/m).",
+      "why": "Substituting sqrt(x) = 1/m directly gives the ordinate y on the curve y = sqrt(x)."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "sqrt(1/m**2)",
+    "expected": "1/Abs(m)",
+    "variable": "m"
+  }
+}

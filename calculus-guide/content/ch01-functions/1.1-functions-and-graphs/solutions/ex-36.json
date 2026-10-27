@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-36",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Graphing and Interpreting the Integer Part (Truncation) Function",
+  "exerciseReference": "Section 1.1, Exercise 36",
+  "originalTopic": "The Greatest and Least Integer Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "floor-function",
+    "ceiling-function",
+    "piecewise",
+    "truncation"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Describe the graph of the piecewise function f(x) = floor(x) for x >= 0 and f(x) = ceiling(x) for x < 0. Explain why f(x) is called the integer part of x.",
+  "finalAnswer": "f(x) = \\text{trunc}(x), \\text{ which rounds } x \\text{ toward } 0 \\text{ and equals } 0 \\text{ on } (-1, 1)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Evaluate f(x) on Positive and Negative Unit Intervals",
+      "mathExpression": "f(x) = \\begin{cases} \\vdots \\\\ -2, & -3 < x \\le -2 \\\\ -1, & -2 < x \\le -1 \\\\ 0, & -1 < x < 1 \\\\ 1, & 1 \\le x < 2 \\\\ 2, & 2 \\le x < 3 \\\\ \\vdots \\end{cases}",
+      "explanation": "For x >= 0, f(x) = floor(x) rounds down toward 0 (so f(x) = 0 on [0, 1), 1 on [1, 2), etc.). For x < 0, f(x) = ceiling(x) rounds up toward 0 (so f(x) = 0 on (-1, 0), -1 on (-2, -1], etc.).",
+      "why": "Combining (-1, 0) and [0, 1) produces a double-width zero step on (-1, 1) and unit steps everywhere else."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Analyze the Symmetry of the Staircase Graph",
+      "mathExpression": "f(-x) = \\lceil -x \\rceil = -\\lfloor x \\rfloor = -f(x) \\quad (x > 0)",
+      "explanation": "By the identity ceiling(-x) = -floor(x), f(-x) = -f(x) for all x in R, meaning f is an odd function whose staircase graph is symmetric about the origin.",
+      "why": "Rounding toward zero treats positive and negative numbers symmetrically with respect to the origin."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Explain the Name 'Integer Part of x'",
+      "mathExpression": "x = \\pm(n + r) \\text{ with } n \\in \\mathbb{Z}_{\\ge 0}, \\; 0 \\le r < 1 \\implies f(x) = \\pm n",
+      "explanation": "When any real number x is written in standard decimal notation, f(x) simply discards the fractional part after the decimal point and retains the signed integer before the decimal point (e.g., f(3.78) = 3 and f(-3.78) = -3).",
+      "why": "Rounding toward zero removes the fractional magnitude r in [0, 1) while preserving the sign and integer magnitude n."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(n + r) - r",
+    "expected": "n",
+    "variable": "n"
+  }
+}

@@ -3,44 +3,46 @@
   "chapter": "ch01",
   "section": "1.2",
   "type": "solution",
-  "title": "Reciprocal and Radical Composition Analysis",
-  "exerciseReference": "Section 1.2, Exercise 9",
-  "originalTopic": "Composite Functions: Reciprocal Transformations",
-  "difficulty": "tier2",
+  "title": "Evaluating and Simplifying Polynomial Compositions",
+  "exerciseReference": "Section 1.2, Exercise 5",
+  "originalTopic": "Compositions of Functions",
+  "difficulty": "tier1",
   "status": "verified",
-  "tags": ["composite-functions", "reciprocal", "domain", "rational"],
+  "tags": [
+    "composition",
+    "polynomial",
+    "function-evaluation"
+  ],
   "author": "Muhammad Abdullah Athar",
-  "problemStatement": "Let f(x) = 1/x and g(x) = 1 + sqrt(x). Find formulas and natural domains for (f o g)(x) and (g o f)(x).",
-  "finalAnswer": "(f \\circ g)(x) = \\frac{1}{1 + \\sqrt{x}} \\text{ on } [0, \\infty); \\quad (g \\circ f)(x) = 1 + \\frac{1}{\\sqrt{x}} \\text{ on } (0, \\infty)",
+  "problemStatement": "Given f(x) = x + 5 and g(x) = x^2 - 3, find the following values and expressions: (a) f(g(0)), (b) g(f(0)), (c) f(g(x)), (d) g(f(x)), (e) f(f(-5)), (f) g(g(2)), (g) f(f(x)), and (h) g(g(x)).",
+  "finalAnswer": "\\text{(a) } 2,\\quad \\text{(b) } 22,\\quad \\text{(c) } x^2 + 2,\\quad \\text{(d) } x^2 + 10x + 22,\\quad \\text{(e) } 5,\\quad \\text{(f) } -2,\\quad \\text{(g) } x + 10,\\quad \\text{(h) } x^4 - 6x^2 + 6",
   "steps": [
     {
       "stepNumber": 1,
-      "title": "Evaluate (f o g)(x) and Its Domain",
-      "mathExpression": "(f \\circ g)(x) = f(g(x)) = \\frac{1}{1 + \\sqrt{x}}",
-      "explanation": "Inner function g requires x >= 0. The outer function f requires its denominator 1 + sqrt(x) != 0. Since sqrt(x) >= 0 for all x >= 0, 1 + sqrt(x) >= 1 > 0, so the denominator is never zero on [0, inf).",
-      "why": "A sum of 1 and a non-negative real radical is strictly positive, creating no real zeroes."
+      "title": "Evaluate Numerical Compositions in Parts (a), (b), (e), and (f)",
+      "mathExpression": "\\begin{aligned} \\text{(a) } f(g(0)) &= f(0^2 - 3) = f(-3) = -3 + 5 = 2 \\\\ \\text{(b) } g(f(0)) &= g(0 + 5) = g(5) = 5^2 - 3 = 22 \\\\ \\text{(e) } f(f(-5)) &= f(-5 + 5) = f(0) = 0 + 5 = 5 \\\\ \\text{(f) } g(g(2)) &= g(2^2 - 3) = g(1) = 1^2 - 3 = -2 \\end{aligned}",
+      "explanation": "To evaluate a nested composition at a number, first evaluate the inner function at the given input, and then substitute that numerical result into the outer function.",
+      "why": "Function composition (u o v)(a) is defined by sequential evaluation u(v(a)) from inside out."
     },
     {
       "stepNumber": 2,
-      "title": "Evaluate (g o f)(x) and Its Domain",
-      "mathExpression": "(g \\circ f)(x) = g(f(x)) = 1 + \\sqrt{\\frac{1}{x}} = 1 + \\frac{1}{\\sqrt{x}}",
-      "explanation": "Inner function f requires x != 0. The outer function g requires its radicand 1/x >= 0. The fraction 1/x is non-negative and defined precisely when x > 0.",
-      "why": "The quotient of positive numerator 1 and variable x is positive if and only if x is positive."
+      "title": "Find Symbolic Cross-Compositions in Parts (c) and (d)",
+      "mathExpression": "\\begin{aligned} \\text{(c) } f(g(x)) &= g(x) + 5 = (x^2 - 3) + 5 = x^2 + 2 \\\\ \\text{(d) } g(f(x)) &= (f(x))^2 - 3 = (x + 5)^2 - 3 = x^2 + 10x + 22 \\end{aligned}",
+      "explanation": "For f(g(x)), replace x in f(x) = x + 5 with g(x) = x^2 - 3. For g(f(x)), replace x in g(x) = x^2 - 3 with f(x) = x + 5 and expand the binomial square.",
+      "why": "Symbolic composition replaces every occurrence of the independent variable in the outer formula with the entire inner formula."
     },
     {
       "stepNumber": 3,
-      "title": "Summarize the Distinct Domains",
-      "mathExpression": "D(f \\circ g) = [0, \\infty), \\quad D(g \\circ f) = (0, \\infty)",
-      "explanation": "Notice the boundary behavior: x = 0 is included in D(f o g) because g(0) = 1 and f(1) = 1, but x = 0 is strictly excluded from D(g o f) due to division by zero in f.",
-      "why": "Boundary inclusion depends strictly on whether the inner function evaluates safely at the endpoint."
+      "title": "Find Symbolic Self-Compositions in Parts (g) and (h)",
+      "mathExpression": "\\begin{aligned} \\text{(g) } f(f(x)) &= (x + 5) + 5 = x + 10 \\\\ \\text{(h) } g(g(x)) &= (x^2 - 3)^2 - 3 = (x^4 - 6x^2 + 9) - 3 = x^4 - 6x^2 + 6 \\end{aligned}",
+      "explanation": "Substitute f(x) into f for part (g), and substitute g(x) into g for part (h), expanding (x^2 - 3)^2 = x^4 - 6x^2 + 9 before subtracting 3.",
+      "why": "Self-composition applies the same functional rule twice in succession."
     }
   ],
   "sympyVerification": {
-    "operation": "domain",
-    "type": "domain",
-    "expression": "1 / (1 + sqrt(x))",
-    "expected": "[0, oo)",
-    "expected_domain": "[0, oo)",
+    "operation": "algebraic_equivalence",
+    "expression": "(x**2 - 3)**2 - 3",
+    "expected": "x**4 - 6*x**2 + 6",
     "variable": "x"
   }
 }

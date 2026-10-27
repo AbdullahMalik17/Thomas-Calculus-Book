@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-32",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Finding Piecewise Formulas for Parametric Ramp and Square-Wave Signals",
+  "exerciseReference": "Section 1.1, Exercise 32",
+  "originalTopic": "Piecewise-Defined Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "piecewise",
+    "waveforms",
+    "square-wave",
+    "parameters"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Find a piecewise formula in terms of the positive constants T and A for each graphed signal: (a) a ramp signal on [0, T] that equals 0 on [0, T/2] and rises linearly from (T/2, 0) to (T, 1); (b) a square wave on [0, 2T] that alternates between +A on [0, T/2) and [T, 3T/2) and -A on [T/2, T) and [3T/2, 2T].",
+  "finalAnswer": "\\text{(a) } f(x) = \\begin{cases} 0, & 0 \\le x \\le T/2 \\\\ \\frac{2}{T}x - 1, & T/2 < x \\le T \\end{cases}; \\quad \\text{(b) } f(t) = \\begin{cases} A, & 0 \\le t < T/2 \\text{ or } T \\le t < 3T/2 \\\\ -A, & T/2 \\le t < T \\text{ or } 3T/2 \\le t \\le 2T \\end{cases}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Find the Ramp Equation for Signal (a)",
+      "mathExpression": "m = \\frac{1 - 0}{T - T/2} = \\frac{1}{T/2} = \\frac{2}{T} \\implies y = \\frac{2}{T}\\left(x - \\frac{T}{2}\\right) = \\frac{2}{T}x - 1",
+      "explanation": "On [0, T/2], the graph lies on the x-axis, so f(x) = 0. On (T/2, T], the segment joins (T/2, 0) to (T, 1) with slope 2/T, giving f(x) = (2/T)x - 1.",
+      "why": "Using point-slope form at the x-intercept (T/2, 0) immediately yields y = (2/T)(x - T/2) = (2/T)x - 1."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Identify the Alternating Constant Branches for Signal (b)",
+      "mathExpression": "f(t) = \\begin{cases} A, & 0 \\le t < \\frac{T}{2} \\\\ -A, & \\frac{T}{2} \\le t < T \\\\ A, & T \\le t < \\frac{3T}{2} \\\\ -A, & \\frac{3T}{2} \\le t \\le 2T \\end{cases}",
+      "explanation": "The square wave switches between +A and -A every half-period T/2, with solid dots on the left of each half-period step and open circles on the right (and a solid dot at the final endpoint t = 2T).",
+      "why": "A periodic square wave of period T and amplitude A takes constant values +A and -A on alternating half-periods of length T/2."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Verify Continuity and Boundary Values",
+      "mathExpression": "f(T/2) = \\frac{2}{T}\\left(\\frac{T}{2}\\right) - 1 = 0, \\quad f(T) = \\frac{2}{T}(T) - 1 = 1",
+      "explanation": "Checking the ramp formula at x = T/2 and x = T confirms that it matches the endpoints (T/2, 0) and (T, 1) in graph (a).",
+      "why": "Evaluating the linear formula at both endpoints verifies algebraic consistency with the geometric figure."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(2/T)*(x - T/2)",
+    "expected": "2*x/T - 1",
+    "variable": "x"
+  }
+}

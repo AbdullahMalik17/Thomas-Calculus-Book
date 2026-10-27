@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-59",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Vertical Stretch of a Parabola",
+  "exerciseReference": "Section 1.2, Exercise 59",
+  "originalTopic": "Vertical and Horizontal Scaling",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "scaling-graphs",
+    "vertical-stretch",
+    "parabola"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Give an equation for the graph of y = x^2 - 1 after it is stretched vertically by a factor of 3.",
+  "finalAnswer": "y = 3x^2 - 3",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Recall the Vertical Stretch Rule",
+      "mathExpression": "y = c\\,f(x) \\quad (c > 1)",
+      "explanation": "To stretch the graph of y = f(x) vertically by a factor of c > 1, multiply the entire right-hand side f(x) by c.",
+      "why": "Multiplying every output by c scales the vertical distance of every point from the x-axis by a factor of c."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply the Vertical Stretch Factor c = 3",
+      "mathExpression": "y = 3(x^2 - 1)",
+      "explanation": "Multiply the expression x^2 - 1 by 3.",
+      "why": "Setting c = 3 stretches the graph vertically away from the x-axis by a factor of 3."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Distribute to Obtain Standard Form",
+      "mathExpression": "y = 3x^2 - 3",
+      "explanation": "Distributing 3 across x^2 - 1 yields y = 3x^2 - 3, whose vertex is stretched from (0, -1) to (0, -3) while its x-intercepts remain at (+/-1, 0).",
+      "why": "Vertical scaling leaves x-intercepts (where y = 0) fixed and multiplies the y-intercept by 3."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "3*(x**2 - 1)",
+    "expected": "3*x**2 - 3",
+    "variable": "x"
+  }
+}

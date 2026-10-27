@@ -3,43 +3,56 @@
   "chapter": "ch01",
   "section": "1.3",
   "type": "solution",
-  "title": "Arc Length and Radian-to-Degree Conversions",
+  "title": "Arc Length for Central Angles in Radians and Degrees",
   "exerciseReference": "Section 1.3, Exercise 1",
-  "originalTopic": "Radian Measure and Arc Length",
+  "originalTopic": "Radians and Degrees",
   "difficulty": "tier1",
   "status": "verified",
-  "tags": ["trigonometry", "radians", "arc-length", "circle"],
+  "tags": [
+    "trigonometry",
+    "radians",
+    "degrees",
+    "arc-length",
+    "circle"
+  ],
   "author": "Muhammad Abdullah Athar",
-  "problemStatement": "Convert theta = 3*pi/4 radians to degrees, and calculate the arc length s subtended by this angle along the circumference of a circle with radius r = 8 cm.",
-  "finalAnswer": "\\theta = 135^\\circ, \\quad s = 6\\pi \\text{ cm} \\approx 18.85 \\text{ cm}",
+  "problemStatement": "Consider a circle of radius r = 10 m. Determine the length of the circular arc subtended by a central angle of (a) 4\\pi/5 radians and (b) 110^\\circ.",
+  "finalAnswer": "\\text{(a) } 8\\pi\\text{ m}, \\quad \\text{(b) } \\frac{55\\pi}{9}\\text{ m}",
   "steps": [
     {
       "stepNumber": 1,
-      "title": "Convert Radians to Degrees",
-      "mathExpression": "\\theta = \\frac{3\\pi}{4} \\times \\frac{180^\\circ}{\\pi} = 3 \\times 45^\\circ = 135^\\circ",
-      "explanation": "Multiply the angle in radians by the standard conversion factor 180 degrees per pi radians. The pi symbols cancel, leaving the degree measure.",
-      "why": "Conversion ratio between radians and degrees derived from 2*pi rad = 360 degrees."
+      "title": "Recall the Circular Arc Length Relation",
+      "mathExpression": "s = r\\theta \\quad (\\theta \\text{ in radians})",
+      "explanation": "The arc length s subtended by a central angle theta on a circle of radius r is given by the product of the radius and the radian measure of the angle.",
+      "why": "By definition of radian measure, the ratio s/r equals the central angle in radians."
     },
     {
       "stepNumber": 2,
-      "title": "Apply the Arc Length Formula",
-      "mathExpression": "s = r\\theta = 8 \\times \\frac{3\\pi}{4} = 6\\pi \\text{ cm}",
-      "explanation": "Substitute the radius r = 8 cm and the angle theta = 3*pi/4 radians directly into the circular arc length formula s = r*theta.",
-      "why": "Arc length equals radius multiplied by angle strictly when angle is measured in radians."
+      "title": "Compute Arc Length for Part (a)",
+      "mathExpression": "s_a = 10 \\cdot \\frac{4\\pi}{5} = 8\\pi\\text{ m}",
+      "explanation": "For part (a), the central angle is already given in radians as theta = 4*pi/5. Multiplying by the radius r = 10 m yields s = 8*pi m.",
+      "why": "Direct substitution of r = 10 and theta = 4*pi/5 into s = r*theta."
     },
     {
       "stepNumber": 3,
-      "title": "State the Numerical and Exact Results",
-      "mathExpression": "s = 6\\pi \\approx 18.8496 \\text{ cm}",
-      "explanation": "State the exact expression in terms of pi and compute the decimal approximation.",
-      "why": "Standard mathematical reporting gives exact analytic answers with decimal context."
+      "title": "Convert the Angle in Part (b) from Degrees to Radians",
+      "mathExpression": "\\theta_b = 110^\\circ \\cdot \\frac{\\pi\\text{ rad}}{180^\\circ} = \\frac{11\\pi}{18}\\text{ rad}",
+      "explanation": "Before applying s = r*theta to part (b), convert 110 degrees into radians by multiplying by pi/180.",
+      "why": "A half-turn of 180 degrees corresponds to exactly pi radians."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Compute Arc Length for Part (b)",
+      "mathExpression": "s_b = 10 \\cdot \\frac{11\\pi}{18} = \\frac{55\\pi}{9}\\text{ m}",
+      "explanation": "Multiply the radius r = 10 m by the converted radian angle 11*pi/18 and simplify the fraction by dividing numerator and denominator by 2.",
+      "why": "Applying s = r*theta with radian measure produces the exact arc length in meters."
     }
   ],
   "sympyVerification": {
     "operation": "algebraic_equivalence",
     "type": "algebraic_equivalence",
-    "expression": "8 * (3*pi/4)",
-    "expected": "6*pi",
+    "expression": "10 * (11*pi/18)",
+    "expected": "55*pi/9",
     "variable": "x"
   }
 }

@@ -1,0 +1,57 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-76",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Industrial Cable-Laying Cost Function Across a River and Along Land",
+  "exerciseReference": "Section 1.1, Exercise 76",
+  "originalTopic": "Theory and Examples: Applied Function Modeling",
+  "difficulty": "tier3",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "cost-function",
+    "optimization-setup",
+    "pythagorean-theorem",
+    "modeling"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "A power plant sits on one bank of a river that is 800 ft wide. A new cable must be laid from the plant to a city located 2 mi (10,560 ft) downstream on the opposite bank. Laying cable costs $180 per foot across the river and $100 per foot along the land. (a) Suppose the cable goes from the plant to a point Q on the opposite bank that is x ft downstream from the point P directly opposite the plant, and then along the bank to the city. Write a function C(x) giving the total cost in terms of x. (b) Evaluate C(x) at representative values of x to determine whether the least expensive location for point Q is less than 2000 ft or greater than 2000 ft from point P.",
+  "finalAnswer": "\\text{(a) } C(x) = 180\\sqrt{800^2 + x^2} + 100(10560 - x); \\quad \\text{(b) Less than } 2000\\text{ ft from } P",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Compute the Underwater and Overland Cable Lengths",
+      "mathExpression": "L_{\\text{river}} = \\sqrt{800^2 + x^2} = \\sqrt{640000 + x^2}\\text{ ft}, \\qquad L_{\\text{land}} = 2(5280) - x = 10560 - x\\text{ ft}",
+      "explanation": "Convert 2 miles to feet: 2 * 5280 = 10,560 ft. The right triangle formed by the 800-ft river width and the x-ft downstream offset PQ has hypotenuse sqrt(800^2 + x^2) ft underwater. The remaining distance along the bank from Q to the city is (10,560 - x) ft.",
+      "why": "All lengths must be expressed in consistent units (feet) before applying the Pythagorean theorem and unit costs per foot."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Formulate the Total Cost Function C(x) for Part (a)",
+      "mathExpression": "C(x) = 180\\sqrt{800^2 + x^2} + 100(10560 - x) = 180\\sqrt{640000 + x^2} + 1056000 - 100x",
+      "explanation": "Multiply the underwater length by $180/ft and the overland length by $100/ft, and add the two costs together for 0 <= x <= 10,560.",
+      "why": "Total cost is the sum of the underwater cable cost and the overland cable cost."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Evaluate a Table of Values for Part (b)",
+      "mathExpression": "\\begin{aligned} C(0) &= \\$1,200,000, & C(500) &\\approx \\$1,175,812, & C(1000) &\\approx \\$1,186,512, \\\\ C(1500) &= \\$1,212,000, & C(2000) &\\approx \\$1,243,732, & C(2500) &\\approx \\$1,278,479 \\end{aligned}",
+      "explanation": "Evaluate C(x) at 500-ft increments from x = 0 to x = 2500 ft: C(0) = $1,200,000, C(500) ≈ $1,175,812, C(600) = $1,176,000, C(1000) ≈ $1,186,512, C(1500) = $1,212,000, and C(2000) ≈ $1,243,732.",
+      "why": "Tabulating C(x) across [0, 2500] reveals where the total cost decreases and where it begins to increase."
+    },
+    {
+      "stepNumber": 4,
+      "title": "Conclude the Optimal Location of Point Q",
+      "mathExpression": "x_{\\min} = \\frac{4000}{\\sqrt{56}} = \\frac{1000\\sqrt{14}}{7} \\approx 534.5\\text{ ft} < 2000\\text{ ft}",
+      "explanation": "The table shows that C(x) reaches its minimum value of approximately $1,175,726 near x ≈ 534.5 ft and increases steadily for all larger values of x. Therefore, the least expensive location for point Q is less than 2000 ft from point P.",
+      "why": "Since C(x) achieves its minimum around x ≈ 535 ft and increases monotonically thereafter, the optimal point Q lies well below 2000 ft from P."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "180*sqrt(800**2 + x**2) + 100*(10560 - x)",
+    "expected": "180*sqrt(x**2 + 640000) - 100*x + 1056000",
+    "variable": "x"
+  }
+}

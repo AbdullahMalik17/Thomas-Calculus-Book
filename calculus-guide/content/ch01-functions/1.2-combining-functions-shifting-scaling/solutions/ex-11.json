@@ -1,0 +1,48 @@
+{
+  "id": "ch01-functions/1.2-combining-functions-shifting-scaling/solutions/ex-11",
+  "chapter": "ch01",
+  "section": "1.2",
+  "type": "solution",
+  "title": "Decomposing Functions into Given Building Blocks (Set I)",
+  "exerciseReference": "Section 1.2, Exercise 11",
+  "originalTopic": "Compositions of Functions",
+  "difficulty": "tier2",
+  "status": "verified",
+  "tags": [
+    "composition",
+    "decomposition",
+    "algebraic-structure"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Let f(x) = x - 3, g(x) = sqrt(x), h(x) = x^3, and j(x) = 2x. Express each of the following functions as a composition involving one or more of f, g, h, and j: (a) y = sqrt(x) - 3, (b) y = 2*sqrt(x), (c) y = x^(1/4), (d) y = 4x, (e) y = sqrt((x - 3)^3), and (f) y = (2x - 6)^3.",
+  "finalAnswer": "\\text{(a) } (f \\circ g)(x),\\quad \\text{(b) } (j \\circ g)(x),\\quad \\text{(c) } (g \\circ g)(x),\\quad \\text{(d) } (j \\circ j)(x),\\quad \\text{(e) } (g \\circ h \\circ f)(x),\\quad \\text{(f) } (h \\circ j \\circ f)(x)",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Decompose the Two-Step Expressions in Parts (a) and (b)",
+      "mathExpression": "\\begin{aligned} \\text{(a) } y &= \\sqrt{x} - 3 = g(x) - 3 = f(g(x)) = (f \\circ g)(x) \\\\ \\text{(b) } y &= 2\\sqrt{x} = 2g(x) = j(g(x)) = (j \\circ g)(x) \\end{aligned}",
+      "explanation": "In (a), first take the square root via g(x) = sqrt(x), then subtract 3 via f. In (b), first take the square root via g(x) = sqrt(x), then double the result via j(x) = 2x.",
+      "why": "Identifying the order of operations (inner operation first, outer operation last) directly determines the composition order."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Decompose the Self-Compositions in Parts (c) and (d)",
+      "mathExpression": "\\begin{aligned} \\text{(c) } y &= x^{1/4} = \\sqrt{\\sqrt{x}} = g(g(x)) = (g \\circ g)(x) \\\\ \\text{(d) } y &= 4x = 2(2x) = j(j(x)) = (j \\circ j)(x) \\end{aligned}",
+      "explanation": "By exponent laws, x^(1/4) = (x^(1/2))^(1/2) is two successive square roots g(g(x)), while 4x = 2(2x) is two successive doublings j(j(x)).",
+      "why": "Repeated application of power or scaling functions multiplies their exponents or scale factors."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Decompose the Three-Step Expressions in Parts (e) and (f)",
+      "mathExpression": "\\begin{aligned} \\text{(e) } y &= \\sqrt{(x - 3)^3} = \\sqrt{h(f(x))} = g(h(f(x))) = (g \\circ h \\circ f)(x) \\\\ \\text{(f) } y &= (2x - 6)^3 = (2(x - 3))^3 = (j(f(x)))^3 = h(j(f(x))) = (h \\circ j \\circ f)(x) \\end{aligned}",
+      "explanation": "In (e), subtract 3 (f), cube the result (h), and take the square root (g). In (f), factor 2x - 6 as 2(x - 3) = j(f(x)) and then cube via h.",
+      "why": "Factoring 2x - 6 = 2(x - 3) expresses the inner linear map as the composition j o f."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "algebraic_equivalence",
+    "expression": "(2*(x - 3))**3",
+    "expected": "(2*x - 6)**3",
+    "variable": "x"
+  }
+}

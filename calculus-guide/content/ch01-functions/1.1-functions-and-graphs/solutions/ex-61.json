@@ -1,0 +1,50 @@
+{
+  "id": "ch01-functions/1.1-functions-and-graphs/solutions/ex-61",
+  "chapter": "ch01",
+  "section": "1.1",
+  "type": "solution",
+  "title": "Parity of the Cosine Function f(x) = cos(3x)",
+  "exerciseReference": "Section 1.1, Exercise 61",
+  "originalTopic": "Even and Odd Functions",
+  "difficulty": "tier1",
+  "status": "verified",
+  "tags": [
+    "functions",
+    "symmetry",
+    "even-functions",
+    "trigonometric",
+    "parity"
+  ],
+  "author": "Muhammad Abdullah Athar",
+  "problemStatement": "Determine whether the trigonometric function f(x) = cos(3x) is even, odd, or neither, and justify your answer.",
+  "finalAnswer": "\\text{Even}",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "title": "Substitute -x into the Function",
+      "mathExpression": "f(-x) = \\cos(3(-x)) = \\cos(-3x)",
+      "explanation": "Replace x with -x in the argument of cos(3x).",
+      "why": "Parity is tested by evaluating the function at -x."
+    },
+    {
+      "stepNumber": 2,
+      "title": "Apply the Even Identity of Cosine",
+      "mathExpression": "\\cos(-3x) = \\cos(3x) = f(x)",
+      "explanation": "By the fundamental cosine symmetry identity cos(-theta) = cos(theta) with theta = 3x, we have cos(-3x) = cos(3x) = f(x).",
+      "why": "On the unit circle, angles theta and -theta share the same x-coordinate cos(theta)."
+    },
+    {
+      "stepNumber": 3,
+      "title": "Conclude Function Parity",
+      "mathExpression": "f(-x) = f(x) \\implies \\text{Even}",
+      "explanation": "Because f(-x) = f(x) for all real numbers x, f(x) = cos(3x) is an even function.",
+      "why": "Horizontal scaling of an even function preserves its reflection symmetry across the y-axis."
+    }
+  ],
+  "sympyVerification": {
+    "operation": "symmetry",
+    "expression": "cos(3*x)",
+    "expected": "even",
+    "variable": "x"
+  }
+}
