@@ -15,6 +15,7 @@ import {
   X,
   Layers,
   ArrowRight,
+  GraduationCap,
 } from 'lucide-react';
 
 import { CHAPTER_METADATA } from '@/lib/content/curriculum';
@@ -230,6 +231,19 @@ export function Header() {
             </Link>
 
             <Link
+              href="/mids"
+              aria-current={pathname === '/mids' ? 'page' : undefined}
+              className={`flex items-center gap-1.5 px-3 py-2 text-sm font-semibold rounded-md transition-colors ${
+                pathname === '/mids'
+                  ? 'bg-emerald-50 text-[#176b63]'
+                  : 'text-[#174f4a] hover:text-[#176b63] hover:bg-emerald-50/70'
+              }`}
+            >
+              <GraduationCap className="w-4 h-4 text-[#176b63]" />
+              <span>Mids Exam</span>
+            </Link>
+
+            <Link
               href="/dashboard"
               className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-600 rounded-md hover:text-blue-700 hover:bg-slate-50 transition-colors"
             >
@@ -352,6 +366,15 @@ export function Header() {
             >
               <Award className="w-4 h-4 text-amber-600" />
               <span>Chapter Quizzes</span>
+            </Link>
+
+            <Link
+              href="/mids"
+              onClick={() => setMobileMenuOpen(false)}
+              className="min-h-11 flex items-center gap-2.5 px-3 py-2 text-sm font-semibold text-[#174f4a] bg-emerald-50/60 rounded-lg hover:bg-emerald-100/60"
+            >
+              <GraduationCap className="w-4 h-4 text-[#176b63]" />
+              <span>Midterm Exam Prep (65 MCQs)</span>
             </Link>
 
             <Link

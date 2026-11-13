@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { ArrowRight, BookOpen, CheckCircle2, Lightbulb, PencilLine } from 'lucide-react';
+import { ArrowRight, BookOpen, CheckCircle2, GraduationCap, Lightbulb, PencilLine } from 'lucide-react';
 import { CHAPTER_METADATA } from '@/lib/content/curriculum';
+import { MIDS_CHAPTERS, MIDS_EXAM_QUESTIONS } from '@/lib/content/mids-exam-data';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { MathBlock } from '@/components/math/MathBlock';
@@ -52,6 +53,10 @@ export default function HomePage() {
             <Button href="/chapters" size="lg" className="gap-2 bg-[#1e3a5f] hover:bg-[#142d4d]">
               Explore the curriculum <ArrowRight className="h-4 w-4" />
             </Button>
+            <Button href="/mids" variant="outline" size="lg" className="gap-2 border-[#176b63] text-[#174f4a] hover:bg-[#e8f1ef]">
+              <GraduationCap className="h-4 w-4" />
+              Midterm Exam Prep ({MIDS_EXAM_QUESTIONS.length} MCQs)
+            </Button>
             <Button href="/chapters/ch01/1.1-functions-and-graphs" variant="outline" size="lg">
               Start with Section 1.1
             </Button>
@@ -82,6 +87,45 @@ export default function HomePage() {
               <p className="mt-2 text-sm leading-relaxed text-slate-600">{description}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section aria-labelledby="midterm-prep-heading" className="rounded-3xl border border-[#b8d6d0] bg-gradient-to-br from-[#f2f8f7] via-white to-[#eef4fb] p-6 shadow-sm sm:p-10">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-2xl space-y-3">
+            <div className="flex flex-wrap items-center gap-2">
+              <Badge variant="success">Midterm Readiness</Badge>
+              <span className="text-xs font-semibold uppercase tracking-[0.1em] text-[#176b63]">
+                Chapters 1–3 · {MIDS_EXAM_QUESTIONS.length} Verified Questions
+              </span>
+            </div>
+            <h2 id="midterm-prep-heading" className="text-2xl font-bold text-[#172b43] sm:text-3xl">
+              Preparing for your Calculus Midterm?
+            </h2>
+            <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
+              Practice all {MIDS_EXAM_QUESTIONS.length} midterm MCQs across Functions, Limits &amp; Continuity, and Derivatives in Study Mode with instant misconception explanations, or launch a timed Mock Exam simulation.
+            </p>
+            <div className="flex flex-wrap gap-2 pt-1">
+              {MIDS_CHAPTERS.map((ch) => (
+                <span
+                  key={ch.key}
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700"
+                >
+                  <span className="text-[#176b63]">Ch {ch.chapter}</span>
+                  <span>&middot;</span>
+                  <span>{ch.questionCount} Qs</span>
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="shrink-0">
+            <Button href="/mids" size="lg" className="gap-2 bg-[#176b63] hover:bg-[#12554e]">
+              <GraduationCap className="h-5 w-5" />
+              Open Midterm Exam Hub
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+          </div>
         </div>
       </section>
 
