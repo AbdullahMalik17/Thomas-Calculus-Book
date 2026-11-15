@@ -16,6 +16,7 @@ import {
   Layers,
   ArrowRight,
   GraduationCap,
+  BookMarked,
 } from 'lucide-react';
 
 import { CHAPTER_METADATA } from '@/lib/content/curriculum';
@@ -244,6 +245,19 @@ export function Header() {
             </Link>
 
             <Link
+              href="/mids/definitions"
+              aria-current={pathname === '/mids/definitions' ? 'page' : undefined}
+              className={`flex items-center gap-1.5 px-3 py-2 text-sm font-semibold rounded-md transition-colors ${
+                pathname === '/mids/definitions'
+                  ? 'bg-sky-50 text-[#0284c7]'
+                  : 'text-[#174f4a] hover:text-[#0284c7] hover:bg-sky-50/70'
+              }`}
+            >
+              <BookMarked className="w-4 h-4 text-[#0284c7]" />
+              <span>Mids Definitions</span>
+            </Link>
+
+            <Link
               href="/dashboard"
               className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-600 rounded-md hover:text-blue-700 hover:bg-slate-50 transition-colors"
             >
@@ -375,6 +389,15 @@ export function Header() {
             >
               <GraduationCap className="w-4 h-4 text-[#176b63]" />
               <span>Midterm Exam Prep (65 MCQs)</span>
+            </Link>
+
+            <Link
+              href="/mids/definitions"
+              onClick={() => setMobileMenuOpen(false)}
+              className="min-h-11 flex items-center gap-2.5 px-3 py-2 text-sm font-semibold text-[#172b43] bg-sky-50/70 rounded-lg hover:bg-sky-100/70"
+            >
+              <BookMarked className="w-4 h-4 text-[#0284c7]" />
+              <span>Midterm Blocks &amp; Definitions (Ch 1–3)</span>
             </Link>
 
             <Link

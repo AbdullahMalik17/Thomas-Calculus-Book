@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, BookOpen, CheckCircle2, GraduationCap, Lightbulb, PencilLine } from 'lucide-react';
+import { ArrowRight, BookMarked, BookOpen, CheckCircle2, GraduationCap, Lightbulb, PencilLine } from 'lucide-react';
 import { CHAPTER_METADATA } from '@/lib/content/curriculum';
 import { MIDS_CHAPTERS, MIDS_EXAM_QUESTIONS } from '@/lib/content/mids-exam-data';
 import { Badge } from '@/components/ui/Badge';
@@ -119,11 +119,15 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="shrink-0">
+          <div className="flex flex-col gap-2.5 shrink-0 sm:flex-row lg:flex-col">
             <Button href="/mids" size="lg" className="gap-2 bg-[#176b63] hover:bg-[#12554e]">
               <GraduationCap className="h-5 w-5" />
               Open Midterm Exam Hub
               <ArrowRight className="h-4 w-4" />
+            </Button>
+            <Button href="/mids/definitions" variant="outline" size="lg" className="gap-2 border-[#1e3a5f] text-[#1e3a5f] hover:bg-slate-50">
+              <BookMarked className="h-4 w-4" />
+              Blocks &amp; Definitions (Ch 1–3)
             </Button>
           </div>
         </div>

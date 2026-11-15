@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { CheckCircle2, FileCheck2, Layers } from 'lucide-react';
+import { BookMarked, CheckCircle2, FileCheck2, FileText, GraduationCap, Layers } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 import { MidsExamHub } from '@/components/mids/MidsExamHub';
 import { MIDS_CHAPTERS, MIDS_EXAM_QUESTIONS } from '@/lib/content/mids-exam-data';
+import { MIDS_DEFINITION_BLOCKS } from '@/lib/content/mids-definitions-data';
 
 export const metadata: Metadata = {
   title: "Midterm Exam Preparation (Chapters 1–3) | Thomas' Calculus Guide",
@@ -22,6 +23,30 @@ export default function MidsExamPage() {
         <span>/</span>
         <span className="font-medium text-slate-800">Midterm Exam Prep</span>
       </nav>
+
+      {/* Midterm Companion Switcher Banner */}
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[#b8d6d0] bg-gradient-to-r from-[#f2f8f7] via-white to-[#eef4fb] px-4 py-3 sm:px-6">
+        <div className="flex items-center gap-2 text-xs font-semibold text-[#174f4a] sm:text-sm">
+          <BookMarked className="h-4 w-4 text-[#176b63] shrink-0" aria-hidden="true" />
+          <span>Midterm Prep Hub (Chapters 1–3):</span>
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
+          <Link
+            href="/mids/definitions"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3.5 py-1.5 text-xs font-semibold text-slate-700 hover:border-[#176b63] hover:text-[#174f4a] transition-colors"
+          >
+            <FileText className="h-3.5 w-3.5" aria-hidden="true" />
+            Blocks &amp; Definitions ({MIDS_DEFINITION_BLOCKS.length}) &rarr;
+          </Link>
+          <span
+            aria-current="page"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-[#176b63] px-3.5 py-1.5 text-xs font-semibold text-white shadow-sm"
+          >
+            <GraduationCap className="h-3.5 w-3.5" aria-hidden="true" />
+            {MIDS_EXAM_QUESTIONS.length} MCQs &amp; Mock Simulator
+          </span>
+        </div>
+      </div>
 
       {/* Hero Header */}
       <section className="relative overflow-hidden rounded-3xl border border-[#dbe2ea] bg-white px-5 py-8 shadow-sm sm:px-10 sm:py-10">
