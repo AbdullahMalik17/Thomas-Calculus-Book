@@ -1,9 +1,33 @@
 import React from 'react';
-import Link from 'next/link';
+import type { Metadata } from 'next';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
-import { ShieldCheck, Heart, Github, Award, Code2, BookOpen } from 'lucide-react';
+import { ShieldCheck, Github } from 'lucide-react';
+import { AUTHOR_NAME, AUTHOR_URL, SITE_NAME, SITE_URL } from '@/lib/seo';
+
+export const metadata: Metadata = {
+  title: 'About & Copyright Safeguards',
+  description: `Learn about the Thomas' Calculus Study Guide engineered by ${AUTHOR_NAME}, including its SymPy CAS verification pipeline, Zod schema guardrails, and copyright fair-use standards.`,
+  authors: [{ name: AUTHOR_NAME, url: AUTHOR_URL }],
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: `About & Attribution | ${SITE_NAME}`,
+    description: `Engineered by ${AUTHOR_NAME} (${AUTHOR_URL}) with SymPy symbolic math verification and strict copyright safeguards.`,
+    url: `${SITE_URL}/about`,
+    type: 'website',
+    siteName: SITE_NAME,
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `About Thomas' Calculus Study Guide | ${AUTHOR_NAME}`,
+    description: `Open, mathematically rigorous calculus study companion by ${AUTHOR_NAME}.`,
+    creator: '@AbdullahMalik17',
+  },
+};
 
 export default function AboutPage() {
   return (
@@ -131,7 +155,7 @@ export default function AboutPage() {
               AEO &amp; SEO Infrastructure
             </span>
             <p className="text-xs">
-              AI-aware <code>robots.txt</code>, machine-readable <code>llms.txt</code>, and JSON-LD structured educational metadata.
+              AI-aware <code>robots.txt</code>, machine-readable <code>llms.txt</code>, automated <code>sitemap.xml</code>, and JSON-LD structured educational metadata.
             </p>
           </div>
         </div>

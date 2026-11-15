@@ -82,7 +82,7 @@ class SectionValidator:
     def validate_section(self, section_dir: Union[str, Path]) -> SectionValidationReport:
         """Scan and validate all items in a section directory."""
         dir_path = Path(section_dir)
-        report = SectionValidationReport(section_path=str(dir_path))
+        report = SectionValidationReport(section_path=dir_path.as_posix())
 
         if not dir_path.exists():
             report.exists = False
@@ -90,7 +90,7 @@ class SectionValidator:
             return report
 
         # Discover all json files in section directory and subdirectories
-        json_files = list(dir_path.glob("**/*.json"))
+        json_files = sorted(dir_path.glob("**/*.json"))
         report.total_files = len(json_files)
 
         if not json_files:
@@ -105,18 +105,25 @@ class SectionValidator:
                 report.errors.append(f"JSON syntax error in {file_path.name}: {e}")
                 continue
 
-            rel_str = str(file_path.relative_to(dir_path)).replace("\\", "/")
-            item_id = data.get("id", file_path.stem)
+            if not isinstance(data, dict):
+                report.errors.append(
+                    f"Invalid JSON structure in {file_path.name}: expected object, got {type(data).__name__}"
+                )
+                continue
 
-            # Classify item by path or structure
-            is_mcq = "mcq" in rel_str or ("options" in data and "correctId" in data)
-            is_solution = "solutions" in rel_str or "exercise" in rel_str
-            is_practice = "practice" in rel_str
+            rel_str = file_path.relative_to(dir_path).as_posix()
+            item_type = str(data.get("type", "")).lower()
+
+            # Classify item by explicit type, path, or structure
+            is_mcq = item_type == "mcq" or "mcq" in rel_str or ("options" in data and "correctId" in data)
+            is_solution = item_type == "solution" or "solutions" in rel_str or "exercise" in rel_str
+            is_practice = item_type == "practice" or "practice" in rel_str
 
             if is_mcq:
                 report.mcq_count += 1
                 mcq_res = self.mcq_verifier.verify(data)
-                if mcq_res.valid:
+                payload_valid = self._validate_content_payloads(data, rel_str, report)
+                if mcq_res.valid and payload_valid:
                     report.mcq_passed += 1
                 else:
                     for err in mcq_res.errors:
@@ -135,7 +142,7 @@ class SectionValidator:
                     report.solution_passed += 1
 
             else:
-                # General content item with possible verification payload
+                # General content item (e.g. definitions.json) with possible verification payload
                 self._validate_content_payloads(data, rel_str, report)
 
         return report

@@ -128,8 +128,8 @@ function runNavigationTests(): void {
   }
   console.log(`    PASS: All sample slugs loaded content cleanly with expected solution counts and normalized chapterKey.`);
 
-  // Test 4: All 116 sections load without error
-  console.log('[4] Verifying all 116 sections load properly...');
+  // Test 4: All 119 sections load without error
+  console.log('[4] Verifying all 119 sections load properly...');
   for (const sec of allSections) {
     const loaded = loadSectionContent(sec.chapterKey, sec.id);
     if (!loaded) {
@@ -141,7 +141,7 @@ function runNavigationTests(): void {
       );
     }
   }
-  console.log('    PASS: All 116 sections verified to load their full solution sets.');
+  console.log('    PASS: All 119 sections verified to load their full solution sets.');
 
   // Test 5: Adjacent section navigation & cross-chapter transitions
   console.log('[5] Testing Adjacent Section Navigation...');

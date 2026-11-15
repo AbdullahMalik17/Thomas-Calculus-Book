@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/next';
 import 'katex/dist/katex.min.css';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
+import { AuthorMasthead } from '@/components/layout/AuthorMasthead';
 import { Footer } from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
@@ -25,6 +26,14 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: "Thomas' Calculus Guide",
+    images: [
+      {
+        url: '/og-calculus-guide.svg',
+        width: 1200,
+        height: 630,
+        alt: "Thomas' Calculus — Interactive Guide by Muhammad Abdullah Athar",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -69,15 +78,16 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-slate-50 text-slate-900 antialiased font-sans">
+      <body className="min-h-screen flex flex-col bg-surface-0 text-ink-primary antialiased font-sans">
         <a
           href="#main-content"
-          className="sr-only z-[100] rounded-md bg-white px-4 py-3 text-sm font-semibold text-slate-900 shadow focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+          className="sr-only z-[100] rounded-md border border-specular bg-surface-1 px-4 py-3 text-sm font-semibold text-ink-primary shadow focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
         >
           Skip to main content
         </a>
         <Header />
         <main id="main-content" tabIndex={-1} className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 outline-none">
+          <AuthorMasthead />
           {children}
         </main>
         <Footer />

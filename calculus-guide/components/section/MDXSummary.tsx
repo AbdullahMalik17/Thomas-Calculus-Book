@@ -11,11 +11,19 @@ const components: MDXComponents = {
 };
 
 export async function MDXSummary({ source }: { source: string }) {
-  const { default: Summary } = await evaluate(source, {
-    ...runtime,
-    remarkPlugins: [remarkMath],
-    rehypePlugins: [rehypeKatex],
-  });
+  try {
+    const { default: Summary } = await evaluate(source, {
+      ...runtime,
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [rehypeKatex],
+    });
 
-  return <Summary components={components} />;
+    return <Summary components={components} />;
+  } catch (err) {
+    return (
+      <div className="whitespace-pre-wrap text-sm text-[#4a4234]">
+        {source}
+      </div>
+    );
+  }
 }

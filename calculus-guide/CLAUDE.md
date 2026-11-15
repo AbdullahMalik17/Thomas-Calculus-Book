@@ -3,9 +3,9 @@
 ## Creator & Attribution Mandate
 - **Author & Architect**: Muhammad Abdullah Athar
 - **GitHub Profile**: `https://github.com/AbdullahMalik17`
-- **Persistent Attribution**: Every page must render a persistent global footer containing:
-  `"Made by Muhammad Abdullah Athar"` linking to `https://github.com/AbdullahMalik17`.
-- **Structured Data**: Root layout must export page metadata and embed JSON-LD (`EducationalWebSite` / `Person`) attributing Muhammad Abdullah Athar.
+- **Start-of-Page Attribution**: Every page must render the persistent top `<AuthorMasthead />` (at the start of `<main id="main-content">` before `{children}`) and sticky `<Header />` subtitle (`by Muhammad Abdullah Athar`) attributing `"Muhammad Abdullah Athar"` (`https://github.com/AbdullahMalik17`), as well as explicit top-level bylines (`By Muhammad Abdullah Athar · SymPy Verified`) in `app/page.tsx` and `components/section/BookSectionReader.tsx`.
+- **End-of-Page Attribution**: Every page must render the persistent global `<Footer />` containing `"Made by Muhammad Abdullah Athar"` linking to `https://github.com/AbdullahMalik17`.
+- **Structured Data**: Root layout and `<AuthorMasthead />` must export page metadata, embed JSON-LD (`EducationalWebSite` / `Person`), and include `https://schema.org/Person` microdata attributing Muhammad Abdullah Athar.
 
 ---
 
@@ -66,6 +66,9 @@ npm run content:validate
 
 # Generate content metrics and misconception report
 npm run content:stats
+
+# Verify top-of-page & end-of-page creator attribution
+npm run attribution:verify
 
 # Run SymPy math verification CLI
 python tools/verify/verify.py

@@ -15,6 +15,8 @@
     "content:validate": "tsx scripts/validate-content.ts",
     "content:stats": "tsx scripts/content-stats.ts",
     "navigation:verify": "tsx scripts/verify-navigation.ts",
+    "style:verify": "tsx scripts/verify-styling.ts",
+    "attribution:verify": "tsx scripts/verify-attribution.ts",
     "math:verify": "python tools/verify/verify.py",
     "test": "tsx scripts/test-e2e.ts",
     "test:e2e": "tsx scripts/test-e2e.ts"

@@ -1,34 +1,77 @@
-# AI-Aware robots.txt for Thomas' Calculus Study Guide
+# AI-Aware & Technical SEO robots.txt for Thomas' Calculus Study Guide (14th Edition)
 # Author: Muhammad Abdullah Athar (https://github.com/AbdullahMalik17)
+# Repository: https://github.com/AbdullahMalik17/Thomas-Calculus-Book
 
-# Search Engine Crawlers
+# --- Traditional Search Engine Crawlers ---
 User-agent: Googlebot
 Allow: /
+Disallow: /api/
 
 User-agent: Bingbot
 Allow: /
+Disallow: /api/
 
-# AI Search-Augmented & Citation Crawlers
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /api/
+
+User-agent: Applebot
+Allow: /
+Disallow: /api/
+
+# --- AI Search-Augmented, Answer Engine & Citation Crawlers (GEO / AEO) ---
 User-agent: PerplexityBot
 Allow: /
+Allow: /llms.txt
+
+User-agent: OAI-SearchBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /llms.txt
 
 User-agent: GPTBot
 Allow: /
+Allow: /llms.txt
 
 User-agent: ClaudeBot
 Allow: /
+Allow: /llms.txt
+
+User-agent: Claude-Web
+Allow: /
+Allow: /llms.txt
+
+User-agent: anthropic-ai
+Allow: /
+Allow: /llms.txt
 
 User-agent: Google-Extended
 Allow: /
+Allow: /llms.txt
 
 User-agent: Applebot-Extended
 Allow: /
+Allow: /llms.txt
 
-# Default crawler rules
+User-agent: CCBot
+Allow: /
+Allow: /llms.txt
+
+# --- Unwanted / Aggressive Scrapers ---
+User-agent: Bytespider
+Disallow: /
+
+# --- Default Crawler Policy ---
 User-agent: *
 Allow: /
+Allow: /llms.txt
+Allow: /sitemap.xml
 Disallow: /api/
 Disallow: /_next/
 
-# Machine-Readable Discovery
-# LLMs discovery: /llms.txt
+# --- XML Sitemap & Machine-Readable AI Discovery ---
+Sitemap: https://thomas-calculus-guide.vercel.app/sitemap.xml
+# LLMs & Generative Engine Discovery: /llms.txt

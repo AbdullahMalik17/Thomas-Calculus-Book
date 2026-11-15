@@ -5,11 +5,31 @@ import { Badge } from '@/components/ui/Badge';
 import { MidsExamHub } from '@/components/mids/MidsExamHub';
 import { MIDS_CHAPTERS, MIDS_EXAM_QUESTIONS } from '@/lib/content/mids-exam-data';
 import { MIDS_DEFINITION_BLOCKS } from '@/lib/content/mids-definitions-data';
+import { AUTHOR_NAME, AUTHOR_URL, SITE_NAME, SITE_URL } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: "Midterm Exam Preparation (Chapters 1–3) | Thomas' Calculus Guide",
+  title: "Midterm Exam Preparation (Chapters 1–3) | 65 Verified MCQs & Mock Simulator",
   description:
-    'Dedicated midterm exam practice bank and timed mock exam simulator covering Chapter 1 (Functions), Chapter 2 (Limits & Continuity), and Chapter 3 (Derivatives).',
+    'Dedicated midterm exam practice bank and timed mock exam simulator covering Chapter 1 (Functions), Chapter 2 (Limits & Continuity), and Chapter 3 (Derivatives) with distractor misconception diagnostics.',
+  authors: [{ name: AUTHOR_NAME, url: AUTHOR_URL }],
+  alternates: {
+    canonical: '/mids',
+  },
+  openGraph: {
+    title: `Midterm Exam Preparation (Chapters 1–3) | ${SITE_NAME}`,
+    description:
+      'Practice 65 verified midterm MCQs across Functions, Limits & Continuity, and Derivatives in Study Mode or Timed Mock Exam Mode.',
+    url: `${SITE_URL}/mids`,
+    type: 'website',
+    siteName: SITE_NAME,
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Midterm Exam Preparation (Chapters 1–3) | Thomas' Calculus",
+    description: '65 verified midterm MCQs with distractor misconception explanations and timed mock simulator.',
+    creator: '@AbdullahMalik17',
+  },
 };
 
 export default function MidsExamPage() {

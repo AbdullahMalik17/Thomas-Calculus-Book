@@ -19,7 +19,7 @@ import {
 export const metadata = {
   title: "Complete Curriculum & Solutions Index | Thomas' Calculus (14th Ed)",
   description:
-    "Comprehensive curriculum table of contents for Thomas' Calculus (14th Edition). Access all 16 chapters, 116 sections, and 598 SymPy CAS-verified worked exercise solutions.",
+    "Comprehensive curriculum table of contents for Thomas' Calculus (14th Edition). Access all 16 chapters, 119 sections, and 934 SymPy CAS-verified worked exercise solutions.",
 };
 
 export default function ChaptersIndexPage() {

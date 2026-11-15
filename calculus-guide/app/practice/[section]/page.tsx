@@ -1,8 +1,17 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/Badge';
 import { Layers, ShieldCheck } from 'lucide-react';
 import { PracticeProblemCard } from '@/components/practice/PracticeProblemCard';
+import { getAllSections, type FlattenedSection } from '@/lib/content/curriculum';
+import {
+  AUTHOR_NAME,
+  AUTHOR_PERSON_JSON_LD,
+  AUTHOR_URL,
+  SITE_NAME,
+  SITE_URL,
+} from '@/lib/seo';
 
 interface PracticePageProps {
   params: {
@@ -10,11 +19,79 @@ interface PracticePageProps {
   };
 }
 
+function resolveSection(rawSection: string): FlattenedSection | undefined {
+  const all = getAllSections();
+  const clean = rawSection.toLowerCase();
+  const cleanDot = clean.replace(/[-_]/g, '.');
+  return all.find(
+    (s) =>
+      s.id.toLowerCase() === clean ||
+      s.number.toLowerCase() === clean ||
+      s.number.toLowerCase() === cleanDot ||
+      clean.startsWith(s.number.toLowerCase() + '-')
+  );
+}
+
+export function generateMetadata({ params }: PracticePageProps): Metadata {
+  const matched = resolveSection(params.section);
+  const sectionNumber = matched?.number || params.section.split('-')[0] || params.section;
+  const sectionTitle = matched?.title || `Section ${sectionNumber}`;
+  const canonicalId = matched?.id || params.section;
+  const canonicalPath = `/practice/${canonicalId}`;
+  const chapterTitle = matched?.chapterTitle || `Chapter ${sectionNumber.split('.')[0] || '1'}`;
+  const practiceCount = matched?.practiceCount && matched.practiceCount > 0 ? matched.practiceCount : 8;
+
+  const title = `Section ${sectionNumber}: ${sectionTitle} — Interactive Practice (${practiceCount} Problems)`;
+  const description = `Work through ${practiceCount} tiered calculus practice problems for Section ${sectionNumber} (${sectionTitle}) in ${chapterTitle} of Thomas' Calculus (14th Edition). Includes progressive hints and SymPy-verified step-by-step solutions by ${AUTHOR_NAME}.`;
+
+  return {
+    title,
+    description,
+    keywords: [
+      `Section ${sectionNumber} Practice`,
+      sectionTitle,
+      chapterTitle,
+      "Thomas' Calculus Practice Problems",
+      'SymPy Verified Solutions',
+      AUTHOR_NAME,
+    ],
+    authors: [{ name: AUTHOR_NAME, url: AUTHOR_URL }],
+    creator: AUTHOR_NAME,
+    publisher: AUTHOR_NAME,
+    alternates: {
+      canonical: canonicalPath,
+    },
+    openGraph: {
+      title: `${title} | ${SITE_NAME}`,
+      description,
+      url: `${SITE_URL}${canonicalPath}`,
+      type: 'website',
+      siteName: SITE_NAME,
+      locale: 'en_US',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${title} | Thomas' Calculus`,
+      description,
+      creator: '@AbdullahMalik17',
+    },
+  };
+}
+
+export function generateStaticParams() {
+  const all = getAllSections();
+  return all.map((s) => ({ section: s.id }));
+}
+
 export default function PracticePage({ params }: PracticePageProps) {
   const { section } = params;
-  const sectionNumber = section.split('-')[0] || section;
-  const chapterNumber = sectionNumber.split('.')[0] || '1';
-  const chapterKey = `ch${chapterNumber.padStart(2, '0')}`;
+  const matched = resolveSection(section);
+  const sectionNumber = matched?.number || section.split('-')[0] || section;
+  const sectionTitle = matched?.title || 'Functions and Their Graphs';
+  const chapterNumber = matched ? String(matched.chapterNum) : sectionNumber.split('.')[0] || '1';
+  const chapterKey = matched?.chapterKey || `ch${chapterNumber.padStart(2, '0')}`;
+  const canonicalId = matched?.id || section;
+  const practiceUrl = `${SITE_URL}/practice/${canonicalId}`;
 
   const samplePracticeProblems = [
     {
@@ -64,15 +141,77 @@ export default function PracticePage({ params }: PracticePageProps) {
     },
   ];
 
+  const practiceJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      AUTHOR_PERSON_JSON_LD,
+      {
+        '@type': 'LearningResource',
+        '@id': `${practiceUrl}#learning-resource`,
+        name: `Section ${sectionNumber}: ${sectionTitle} — Interactive Practice Problems`,
+        url: practiceUrl,
+        description: `Interactive 3-tier practice problems with progressive hints and SymPy-verified solutions for Section ${sectionNumber}: ${sectionTitle}.`,
+        learningResourceType: 'Practice Problem Set',
+        educationalLevel: 'Undergraduate',
+        educationalUse: ['Practice', 'Self-Assessment', 'Problem Solving'],
+        inLanguage: 'en-US',
+        isAccessibleForFree: true,
+        author: AUTHOR_PERSON_JSON_LD,
+        creator: AUTHOR_PERSON_JSON_LD,
+        isPartOf: {
+          '@type': 'Course',
+          '@id': `${SITE_URL}/chapters/${chapterKey}#course`,
+          name: matched?.chapterTitle || `Chapter ${chapterNumber}`,
+          url: `${SITE_URL}/chapters/${chapterKey}`,
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${practiceUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: SITE_URL,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: `Chapter ${chapterNumber}`,
+            item: `${SITE_URL}/chapters/${chapterKey}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: `Section ${sectionNumber}: ${sectionTitle}`,
+            item: `${SITE_URL}/chapters/${chapterKey}/${canonicalId}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 4,
+            name: 'Practice Problems',
+            item: practiceUrl,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="space-y-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(practiceJsonLd) }}
+      />
+
       {/* Breadcrumbs */}
       <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-slate-600">
         <Link href="/" className="hover:text-blue-700">Home</Link>
         <span>/</span>
         <Link href={`/chapters/${chapterKey}`} className="hover:text-blue-700">Chapter {chapterNumber}</Link>
         <span>/</span>
-        <Link href={`/chapters/${chapterKey}/${section}`} className="hover:text-blue-700">Section Guide</Link>
+        <Link href={`/chapters/${chapterKey}/${canonicalId}`} className="hover:text-blue-700">Section Guide</Link>
         <span>/</span>
         <span className="text-slate-800 font-medium">Practice</span>
       </nav>
@@ -86,7 +225,7 @@ export default function PracticePage({ params }: PracticePageProps) {
         </div>
 
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#172b43]">
-          Section {sectionNumber} Practice Problems
+          Section {sectionNumber} Practice Problems: {sectionTitle}
         </h1>
 
         <p className="reading-copy text-slate-600">

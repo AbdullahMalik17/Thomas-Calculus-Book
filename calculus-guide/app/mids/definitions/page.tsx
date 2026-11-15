@@ -4,11 +4,31 @@ import { BookMarked, CheckCircle2, FileText, GraduationCap, Layers } from 'lucid
 import { Badge } from '@/components/ui/Badge';
 import { MidsDefinitionsHub } from '@/components/mids/MidsDefinitionsHub';
 import { MIDS_DEF_CHAPTERS, MIDS_DEFINITION_BLOCKS } from '@/lib/content/mids-definitions-data';
+import { AUTHOR_NAME, AUTHOR_URL, SITE_NAME, SITE_URL } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: "Midterm Definitions & Textbook Blocks (Chapters 1–3) | Thomas' Calculus Guide",
+  title: "Midterm Definitions & Textbook Blocks (Chapters 1–3)",
   description:
     'Clear, two-level explanations of every key Definition, Theorem, Rule, and Test in Chapters 1–3 of Thomas’ Calculus (Functions, Limits & Continuity, Derivatives) for both foundation and advanced students.',
+  authors: [{ name: AUTHOR_NAME, url: AUTHOR_URL }],
+  alternates: {
+    canonical: '/mids/definitions',
+  },
+  openGraph: {
+    title: `Midterm Definitions & Textbook Blocks (Chapters 1–3) | ${SITE_NAME}`,
+    description:
+      'Two-level intuition, quick examples, interactive diagrams, and subtle exam traps for all core Definitions, Theorems, and Rules in Chapters 1–3.',
+    url: `${SITE_URL}/mids/definitions`,
+    type: 'website',
+    siteName: SITE_NAME,
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Midterm Definitions & Textbook Blocks (Ch 1–3) | Thomas' Calculus",
+    description: 'Two-level explanations, geometric diagrams, and exam traps for Chapters 1–3.',
+    creator: '@AbdullahMalik17',
+  },
 };
 
 export default function MidsDefinitionsPage() {

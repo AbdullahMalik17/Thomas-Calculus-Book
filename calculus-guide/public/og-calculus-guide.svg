@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="og-title og-desc">
+  <title id="og-title">Thomas' Calculus — Interactive Guide</title>
+  <desc id="og-desc">Open Graph banner featuring golden ratio geometric grid lines, calculus curves, tangent slope, Riemann integral shading, and attribution to Muhammad Abdullah Athar.</desc>
+
+  <defs>
+    <!-- Deep Academic Navy & Teal Mesh Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071120" />
+      <stop offset="52%" stop-color="#0f213c" />
+      <stop offset="100%" stop-color="#0b2f35" />
+    </linearGradient>
+
+    <!-- Golden Ratio Accent Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#fde68a" />
+    </linearGradient>
+
+    <!-- Curve & Integral Fill Gradient -->
+    <linearGradient id="areaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.32" />
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.03" />
+    </linearGradient>
+
+    <!-- Emblem Badge Gradient -->
+    <linearGradient id="emblemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#176b63" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <!-- Subtle Spotlight Glow -->
+    <radialGradient id="glowRight" cx="76%" cy="46%" r="44%">
+      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.22" />
+      <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#071120" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Architectural Coordinate Pattern -->
+    <pattern id="minorGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <!-- 1. Canvas Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+  <rect width="1200" height="630" fill="url(#glowRight)" />
+  <rect width="1200" height="630" fill="url(#minorGrid)" />
+
+  <!-- 2. Golden Ratio (φ = 1.618) Geometric Construction Grid Lines -->
+  <g stroke="#fbbf24" stroke-opacity="0.18" stroke-width="1" fill="none">
+    <!-- Outer Safe Frame (1080 x 510) -->
+    <rect x="60" y="60" width="1080" height="510" rx="16" stroke-opacity="0.24" />
+    <!-- Primary Golden Vertical Split: 60 + 1080 / 1.618 = 727.5 -->
+    <line x1="727.5" y1="60" x2="727.5" y2="570" stroke-dasharray="6 4" />
+    <!-- Secondary Golden Horizontal Split: 60 + 510 / 1.618 = 375.2 -->
+    <line x1="727.5" y1="375.2" x2="1140" y2="375.2" stroke-dasharray="6 4" />
+    <!-- Tertiary Golden Subdivisions -->
+    <line x1="885.1" y1="375.2" x2="885.1" y2="570" stroke-dasharray="4 4" />
+    <line x1="727.5" y1="449.6" x2="885.1" y2="449.6" stroke-dasharray="4 4" />
+    <!-- Golden Ratio Quarter-Circle Arcs (Fibonacci Spiral Skeleton) -->
+    <path d="M 727.5 570 A 412.5 412.5 0 0 1 1140 157.5" stroke="#fbbf24" stroke-opacity="0.22" stroke-width="1.4" />
+    <path d="M 1140 375.2 A 194.8 194.8 0 0 1 945.2 570" stroke="#fbbf24" stroke-opacity="0.22" stroke-width="1.2" />
+    <circle cx="727.5" cy="375.2" r="4" fill="#fbbf24" fill-opacity="0.55" />
+  </g>
+
+  <!-- 3. Right Visual Showcase: Mathematical Curves, Riemann Sums & Secant/Tangent Geometry -->
+  <g transform="translate(690, 95)">
+    <!-- Glassmorphic Plot Card -->
+    <rect x="0" y="0" width="420" height="440" rx="20" fill="#09192f" fill-opacity="0.82" stroke="#2dd4bf" stroke-opacity="0.35" stroke-width="1.5" />
+
+    <!-- Coordinate Axes inside Card -->
+    <line x1="42" y1="360" x2="392" y2="360" stroke="#64748b" stroke-width="1.5" />
+    <line x1="56" y1="44" x2="56" y2="378" stroke="#64748b" stroke-width="1.5" />
+
+    <!-- Epsilon-Delta Target Band Highlight -->
+    <rect x="56" y="138" width="336" height="58" fill="#38bdf8" fill-opacity="0.1" />
+    <line x1="56" y1="138" x2="392" y2="138" stroke="#38bdf8" stroke-opacity="0.45" stroke-dasharray="4 4" />
+    <line x1="56" y1="196" x2="392" y2="196" stroke="#38bdf8" stroke-opacity="0.45" stroke-dasharray="4 4" />
+
+    <!-- Riemann Sum Partition Rectangles under Curve -->
+    <g fill="#2dd4bf" fill-opacity="0.16" stroke="#2dd4bf" stroke-opacity="0.55" stroke-width="1.2">
+      <rect x="86" y="292" width="38" height="68" rx="2" />
+      <rect x="124" y="256" width="38" height="104" rx="2" />
+      <rect x="162" y="214" width="38" height="146" rx="2" />
+      <rect x="200" y="167" width="38" height="193" rx="2" />
+      <rect x="238" y="122" width="38" height="238" rx="2" />
+      <rect x="276" y="86" width="38" height="274" rx="2" />
+    </g>
+
+    <!-- Shaded Integral Area under Smooth Calculus Curve -->
+    <path d="M 56 320 C 120 308, 175 230, 238 152 C 285 92, 332 68, 378 56 L 378 360 L 56 360 Z" fill="url(#areaGrad)" />
+
+    <!-- Primary Smooth Curve y = f(x) -->
+    <path d="M 56 320 C 120 308, 175 230, 238 152 C 285 92, 332 68, 378 56" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" />
+
+    <!-- Tangent Line at P(219, 167) -->
+    <line x1="95" y1="312" x2="355" y2="10" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="7 4" />
+
+    <!-- Anchor Point P & Limit Point Q -->
+    <circle cx="219" cy="167" r="7" fill="#09192f" stroke="#fbbf24" stroke-width="3.5" />
+    <circle cx="295" cy="96" r="5.5" fill="#2dd4bf" stroke="#09192f" stroke-width="2" />
+
+    <!-- Mathematical Callout Labels in Plot -->
+    <text x="204" y="152" text-anchor="end" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#fde68a">
+      f'(x₀) = dy/dx
+    </text>
+    <text x="372" y="346" text-anchor="end" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#2dd4bf">
+      ∫ f(x) dx = F(b) − F(a)
+    </text>
+    <text x="70" y="72" font-family="ui-monospace, monospace" font-size="12" font-weight="700" fill="#94a3b8">
+      φ = 1.618 · GOLDEN RATIO GRID
+    </text>
+
+    <!-- Bottom Formula Readout Strip -->
+    <rect x="24" y="384" width="372" height="36" rx="8" fill="#0f2542" stroke="#1e3a5f" />
+    <text x="210" y="407" text-anchor="middle" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#e2e8f0">
+      lim(h→0) [f(x+h) − f(x)] / h  ·  0 &lt; |x−c| &lt; δ ⇒ |f(x)−L| &lt; ε
+    </text>
+  </g>
+
+  <!-- 4. Left Column: Brand Emblem, Title, Value Prop & Attribution (Inside Safe Zone) -->
+  <g transform="translate(96, 102)">
+    <!-- Brand Emblem Lockup -->
+    <rect x="0" y="0" width="64" height="64" rx="16" fill="url(#emblemGrad)" stroke="#5eead4" stroke-opacity="0.5" stroke-width="1.5" />
+    <text x="32" y="43" text-anchor="middle" font-family="Georgia, serif" font-size="30" font-weight="700" fill="#ffffff">
+      ∫dx
+    </text>
+
+    <rect x="80" y="14" width="290" height="36" rx="18" fill="#112a45" stroke="#2dd4bf" stroke-opacity="0.45" />
+    <text x="225" y="37" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5" fill="#5eead4">
+      14TH EDITION COMPANION
+    </text>
+
+    <!-- Main Headline: "Thomas' Calculus — Interactive Guide" -->
+    <text x="0" y="138" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="52" font-weight="800" letter-spacing="-1.2" fill="#f8fafc">
+      Thomas' Calculus —
+    </text>
+    <text x="0" y="200" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="52" font-weight="800" letter-spacing="-1.2" fill="url(#goldGrad)">
+      Interactive Guide
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="252" font-family="system-ui, -apple-system, sans-serif" font-size="21" font-weight="400" fill="#cbd5e1">
+      Step-by-step SymPy-verified solutions, live ε–δ &amp; Riemann
+    </text>
+    <text x="0" y="282" font-family="system-ui, -apple-system, sans-serif" font-size="21" font-weight="400" fill="#cbd5e1">
+      visualizers, textbook blocks, and midterm mock exam simulator.
+    </text>
+
+    <!-- Feature Pills -->
+    <g transform="translate(0, 314)" font-family="ui-monospace, monospace" font-size="13" font-weight="700">
+      <rect x="0" y="0" width="172" height="36" rx="8" fill="#0f2942" stroke="#38bdf8" stroke-opacity="0.5" />
+      <text x="86" y="23" text-anchor="middle" fill="#38bdf8">16 Chapters · CAS</text>
+
+      <rect x="186" y="0" width="184" height="36" rx="8" fill="#0f2d38" stroke="#2dd4bf" stroke-opacity="0.5" />
+      <text x="278" y="23" text-anchor="middle" fill="#2dd4bf">Live SVG Explorers</text>
+
+      <rect x="384" y="0" width="172" height="36" rx="8" fill="#2a2415" stroke="#fbbf24" stroke-opacity="0.5" />
+      <text x="470" y="23" text-anchor="middle" fill="#fbbf24">65 Midterm MCQs</text>
+    </g>
+
+    <!-- Author Attribution Footer -->
+    <g transform="translate(0, 386)">
+      <line x1="0" y1="0" x2="556" y2="0" stroke="#334155" stroke-width="1.5" />
+      <circle cx="18" cy="32" r="18" fill="#176b63" stroke="#fbbf24" stroke-width="1.5" />
+      <text x="18" y="37" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#ffffff">
+        MA
+      </text>
+      <text x="48" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="0.8" fill="#94a3b8">
+        CREATED &amp; ENGINEERED BY
+      </text>
+      <text x="48" y="48" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#f8fafc">
+        Muhammad Abdullah Athar
+      </text>
+    </g>
+  </g>
+</svg>

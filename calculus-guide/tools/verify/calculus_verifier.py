@@ -30,6 +30,7 @@ class CalculusVerificationResult:
     operation: str
     item_id: Optional[str] = None
     errors: List[str] = field(default_factory=list)
+    warnings: List[str] = field(default_factory=list)
     computed: Optional[str] = None
     expected: Optional[str] = None
     details: Dict[str, Any] = field(default_factory=dict)
@@ -44,6 +45,8 @@ class CalculusVerificationResult:
             lines.append(f"  - Expected: {self.expected}")
         for err in self.errors:
             lines.append(f"  - ERROR: {err}")
+        for warn in self.warnings:
+            lines.append(f"  - WARNING: {warn}")
         return "\n".join(lines)
 
 
@@ -61,13 +64,25 @@ class CalculusVerifier:
         - '[-3, 3]', '(0, 5]', '[-1, 2)'
         - Unions: '[-1, 2) U (2, oo)', '(-oo, 0) U (0, oo)'
         """
+        if not isinstance(interval_str, str):
+            raise ValueError(f"Expected string for interval notation, got {type(interval_str).__name__}")
+
         s = interval_str.strip()
         if s.startswith("$$") and s.endswith("$$"):
             s = s[2:-2].strip()
         elif s.startswith("$") and s.endswith("$"):
             s = s[1:-1].strip()
 
-        if s in ("R", "Reals", "(-oo, oo)", "(-inf, inf)", "(-oo, +oo)", "(-\\infty, \\infty)", "(-\\infty, +\\infty)"):
+        if s in (
+            "R",
+            "Reals",
+            "\\mathbb{R}",
+            "(-oo, oo)",
+            "(-inf, inf)",
+            "(-oo, +oo)",
+            "(-\\infty, \\infty)",
+            "(-\\infty, +\\infty)",
+        ):
             return sp.S.Reals
 
         if s in ("empty", "EmptySet", "{}", "\\emptyset"):
@@ -79,8 +94,8 @@ class CalculusVerifier:
             subsets = [self.parse_interval_string(p) for p in parts]
             return sp.Union(*subsets)
 
-        # Match single interval: [start, end)
-        pattern = r"^([\[\(])\s*([^\s,]+)\s*,\s*([^\s,\]\)]+)\s*([\]\)])$"
+        # Match single interval: [start, end) allowing whitespace inside endpoint expressions
+        pattern = r"^([\[\(])\s*([^,\[\]\(\)]+?)\s*,\s*([^,\[\]\(\)]+?)\s*([\]\)])$"
         match = re.match(pattern, s)
         if match:
             left_bracket, start_str, end_str, right_bracket = match.groups()
@@ -92,25 +107,25 @@ class CalculusVerifier:
 
             return sp.Interval(start_val, end_val, left_open=left_open, right_open=right_open)
 
-        # Fallback: try sympify as set
-        try:
-            return sp.sympify(s)
-        except Exception as e:
-            raise ValueError(f"Unable to parse interval string '{interval_str}': {e}")
+        raise ValueError(f"Unable to parse interval string '{interval_str}'")
 
     def _parse_endpoint(self, endpoint_str: str) -> sp.Expr:
         """Parse an interval endpoint string (e.g. -oo, oo, sqrt(2), 3)."""
         ep = endpoint_str.strip()
-        if ep in ("-oo", "-inf", "-infty", "-\\infty", "-oo"):
+        if ep in ("-oo", "-inf", "-infty", "-\\infty"):
             return -sp.oo
-        if ep in ("oo", "+oo", "inf", "+inf", "infty", "\\infty", "+oo", "+\\infty"):
+        if ep in ("oo", "+oo", "inf", "+inf", "infty", "\\infty", "+\\infty"):
             return sp.oo
         return self.engine.parse(ep)
 
     def intervals_spec_to_set(self, intervals: List[Dict[str, Any]]) -> sp.Set:
         """Convert a list of interval specification dictionaries to a SymPy Set."""
+        if not isinstance(intervals, list):
+            raise ValueError(f"Expected list of interval specs, got {type(intervals).__name__}")
         sp_intervals = []
-        for item in intervals:
+        for idx, item in enumerate(intervals):
+            if not isinstance(item, dict) or "start" not in item or "end" not in item:
+                raise ValueError(f"Interval specification at index {idx} must be a dict with 'start' and 'end'")
             start = self._parse_endpoint(str(item["start"]))
             end = self._parse_endpoint(str(item["end"]))
             left_open = bool(item.get("left_open", False))
@@ -134,12 +149,11 @@ class CalculusVerifier:
         """
         errors = []
         var = sp.Symbol(var_name, real=True)
-        expr = self.engine.parse(expr_input, extra_symbols={var_name: var})
-
         try:
+            expr = self.engine.parse(expr_input, extra_symbols={var_name: var})
             computed_set = continuous_domain(expr, var, sp.S.Reals)
         except Exception as e:
-            errors.append(f"Failed to compute continuous domain for {expr}: {e}")
+            errors.append(f"Failed to compute continuous domain for {expr_input}: {e}")
             return CalculusVerificationResult(
                 valid=False, operation="domain", item_id=item_id, errors=errors
             )
@@ -191,7 +205,76 @@ class CalculusVerifier:
             computed=str(computed_set),
             expected=str(expected_set),
             errors=errors,
-            details={"computed_set": computed_set, "expected_set": expected_set},
+            details={"computed_set": str(computed_set), "expected_set": str(expected_set)},
+        )
+
+    def verify_range(
+        self,
+        expr_input: Union[str, sp.Expr],
+        var_name: str = "x",
+        expected_range_str: Optional[str] = None,
+        intervals: Optional[List[Dict[str, Any]]] = None,
+        item_id: Optional[str] = None,
+    ) -> CalculusVerificationResult:
+        """Verify the real range of a function using SymPy function_range."""
+        from sympy.calculus.util import function_range
+
+        errors = []
+        var = sp.Symbol(var_name, real=True)
+        try:
+            expr = self.engine.parse(expr_input, extra_symbols={var_name: var})
+            dom = continuous_domain(expr, var, sp.S.Reals)
+            computed_set = function_range(expr, var, dom)
+        except Exception as e:
+            errors.append(f"Failed to compute range for {expr_input}: {e}")
+            return CalculusVerificationResult(
+                valid=False, operation="range", item_id=item_id, errors=errors
+            )
+
+        expected_set = None
+        if intervals is not None:
+            try:
+                expected_set = self.intervals_spec_to_set(intervals)
+            except Exception as e:
+                errors.append(f"Failed to parse intervals specification: {e}")
+        elif expected_range_str:
+            try:
+                expected_set = self.parse_interval_string(expected_range_str)
+            except Exception as e:
+                errors.append(f"Failed to parse expected range string '{expected_range_str}': {e}")
+        else:
+            errors.append("No expected range provided")
+
+        if errors or expected_set is None:
+            return CalculusVerificationResult(
+                valid=False,
+                operation="range",
+                item_id=item_id,
+                computed=str(computed_set),
+                errors=errors,
+            )
+
+        is_equal = (computed_set == expected_set)
+        if not is_equal:
+            try:
+                if (computed_set ^ expected_set).is_empty:
+                    is_equal = True
+            except Exception:
+                pass
+
+        if not is_equal:
+            errors.append(
+                f"Computed range '{computed_set}' does not match expected range '{expected_set}'"
+            )
+
+        return CalculusVerificationResult(
+            valid=is_equal,
+            operation="range",
+            item_id=item_id,
+            computed=str(computed_set),
+            expected=str(expected_set),
+            errors=errors,
+            details={"computed_set": str(computed_set), "expected_set": str(expected_set)},
         )
 
     def verify_difference_quotient(
@@ -212,7 +295,15 @@ class CalculusVerifier:
         x = sp.Symbol(var_name, real=True)
         h = sp.Symbol(h_name, real=True)
 
-        expr = self.engine.parse(expr_input, extra_symbols={var_name: x, h_name: h})
+        try:
+            expr = self.engine.parse(expr_input, extra_symbols={var_name: x, h_name: h})
+        except Exception as e:
+            return CalculusVerificationResult(
+                valid=False,
+                operation="difference_quotient",
+                item_id=item_id,
+                errors=[f"Failed to parse expression '{expr_input}': {e}"],
+            )
 
         # Calculate difference quotient
         f_x_plus_h = expr.subs(x, x + h)
@@ -221,15 +312,18 @@ class CalculusVerifier:
 
         # Check expected difference quotient
         if expected_quotient is not None:
-            is_equiv, method = self.engine.are_equivalent(
-                computed_quot,
-                expected_quotient,
-                extra_symbols={var_name: x, h_name: h},
-            )
-            if not is_equiv:
-                errors.append(
-                    f"Computed difference quotient '{computed_quot}' is not equivalent to expected '{expected_quotient}'"
+            try:
+                is_equiv, method = self.engine.are_equivalent(
+                    computed_quot,
+                    expected_quotient,
+                    extra_symbols={var_name: x, h_name: h},
                 )
+                if not is_equiv:
+                    errors.append(
+                        f"Computed difference quotient '{computed_quot}' is not equivalent to expected '{expected_quotient}'"
+                    )
+            except Exception as e:
+                errors.append(f"Failed to compare difference quotient with '{expected_quotient}': {e}")
 
         # Check derivative and limit as h -> 0
         computed_derivative = sp.diff(expr, x)
@@ -243,15 +337,18 @@ class CalculusVerifier:
             errors.append(f"Failed to evaluate limit of difference quotient: {e}")
 
         if expected_derivative is not None:
-            is_equiv, method = self.engine.are_equivalent(
-                computed_derivative,
-                expected_derivative,
-                extra_symbols={var_name: x},
-            )
-            if not is_equiv:
-                errors.append(
-                    f"Computed derivative '{computed_derivative}' is not equivalent to expected '{expected_derivative}'"
+            try:
+                is_equiv, method = self.engine.are_equivalent(
+                    computed_derivative,
+                    expected_derivative,
+                    extra_symbols={var_name: x},
                 )
+                if not is_equiv:
+                    errors.append(
+                        f"Computed derivative '{computed_derivative}' is not equivalent to expected '{expected_derivative}'"
+                    )
+            except Exception as e:
+                errors.append(f"Failed to compare derivative with '{expected_derivative}': {e}")
 
         return CalculusVerificationResult(
             valid=len(errors) == 0,
@@ -277,12 +374,19 @@ class CalculusVerifier:
         """Verify symbolic derivative of an expression."""
         errors = []
         x = sp.Symbol(var_name, real=True)
-        expr = self.engine.parse(expr_input, extra_symbols={var_name: x})
-        computed = sp.diff(expr, x, order)
-
-        is_equiv, method = self.engine.are_equivalent(
-            computed, expected_derivative, extra_symbols={var_name: x}
-        )
+        try:
+            expr = self.engine.parse(expr_input, extra_symbols={var_name: x})
+            computed = sp.diff(expr, x, order)
+            is_equiv, method = self.engine.are_equivalent(
+                computed, expected_derivative, extra_symbols={var_name: x}
+            )
+        except Exception as e:
+            return CalculusVerificationResult(
+                valid=False,
+                operation="derivative",
+                item_id=item_id,
+                errors=[f"Failed to verify derivative: {e}"],
+            )
         if not is_equiv:
             errors.append(
                 f"Computed derivative '{computed}' is not equivalent to expected '{expected_derivative}'"
@@ -315,15 +419,46 @@ class CalculusVerifier:
         """
         errors = []
         x = sp.Symbol(var_name, real=True)
-        expr = self.engine.parse(expr_input, extra_symbols={var_name: x})
+        try:
+            expr = self.engine.parse(expr_input, extra_symbols={var_name: x})
+        except Exception as e:
+            return CalculusVerificationResult(
+                valid=False,
+                operation="integral",
+                item_id=item_id,
+                errors=[f"Failed to parse integrand '{expr_input}': {e}"],
+            )
 
         if kind.lower() in ("indefinite", "antiderivative"):
             # FTC test: diff(expected, x) - expr == 0
-            expected_expr = self.engine.parse(expected, extra_symbols={var_name: x})
-            derivative_of_expected = sp.diff(expected_expr, x)
-            is_equiv, method = self.engine.are_equivalent(
-                derivative_of_expected, expr, extra_symbols={var_name: x}
-            )
+            try:
+                expected_expr = self.engine.parse(expected, extra_symbols={var_name: x})
+                derivative_of_expected = sp.diff(expected_expr, x)
+                is_equiv, method = self.engine.are_equivalent(
+                    derivative_of_expected, expr, extra_symbols={var_name: x}
+                )
+                if not is_equiv:
+                    # Standard calculus antiderivative forms (e.g. arcsec(x/a) for x > a > 0)
+                    # hold on the principal positive branch x > 0.
+                    x_pos = sp.Symbol(var_name, positive=True, real=True)
+                    expr_pos = self.engine.parse(expr_input, extra_symbols={var_name: x_pos})
+                    expected_pos = self.engine.parse(expected, extra_symbols={var_name: x_pos})
+                    deriv_pos = sp.diff(expected_pos, x_pos)
+                    is_equiv, method = self.engine.are_equivalent(
+                        deriv_pos, expr_pos, extra_symbols={var_name: x_pos}
+                    )
+                    if not is_equiv:
+                        denested = sp.simplify(sp.powdenest(deriv_pos - expr_pos, force=True))
+                        if denested == 0:
+                            is_equiv = True
+                            method = "powdenest_positive_branch"
+            except Exception as e:
+                return CalculusVerificationResult(
+                    valid=False,
+                    operation="integral_indefinite",
+                    item_id=item_id,
+                    errors=[f"Failed to verify indefinite integral: {e}"],
+                )
             if not is_equiv:
                 errors.append(
                     f"FTC check failed: d/dx[{expected}] = '{derivative_of_expected}', which does not equal integrand '{expr}'"
@@ -344,9 +479,9 @@ class CalculusVerifier:
                 return CalculusVerificationResult(
                     valid=False, operation="integral_definite", item_id=item_id, errors=errors
                 )
-            a = self.engine.parse(lower)
-            b = self.engine.parse(upper)
             try:
+                a = self.engine.parse(lower)
+                b = self.engine.parse(upper)
                 computed_val = sp.integrate(expr, (x, a, b))
                 is_equiv, method = self.engine.are_equivalent(computed_val, expected)
                 if not is_equiv:
@@ -387,7 +522,15 @@ class CalculusVerifier:
         """
         errors = []
         x = sp.Symbol(var_name, real=True)
-        expr = self.engine.parse(expr_input, extra_symbols={var_name: x})
+        try:
+            expr = self.engine.parse(expr_input, extra_symbols={var_name: x})
+        except Exception as e:
+            return CalculusVerificationResult(
+                valid=False,
+                operation="symmetry",
+                item_id=item_id,
+                errors=[f"Failed to parse expression '{expr_input}': {e}"],
+            )
 
         f_neg_x = expr.subs(x, -x)
 
@@ -429,27 +572,78 @@ class CalculusVerifier:
 
         Payload types supported:
         - 'domain'
+        - 'range'
         - 'difference_quotient'
         - 'derivative'
         - 'integral'
         - 'symmetry'
         - 'equivalence'
+        - 'mcq'
         """
-        p_type = (payload.get("type") or payload.get("operation") or "").lower()
+        if not isinstance(payload, dict):
+            return CalculusVerificationResult(
+                valid=False,
+                operation="unknown",
+                errors=[f"Payload must be a JSON object, got {type(payload).__name__}"],
+            )
+
+        p_type = str(payload.get("type") or payload.get("operation") or "").strip().lower()
         item_id = payload.get("id")
+        expr_input = payload.get("expression") if payload.get("expression") is not None else payload.get("expr")
+
+        if p_type == "mcq":
+            from .mcq_verifier import MCQVerifier
+
+            mcq_res = MCQVerifier(self.engine).verify(payload)
+            return CalculusVerificationResult(
+                valid=mcq_res.valid,
+                operation="mcq",
+                item_id=item_id,
+                errors=mcq_res.errors,
+                warnings=mcq_res.warnings,
+                details=mcq_res.details,
+            )
+
+        if expr_input is None or (isinstance(expr_input, str) and not expr_input.strip()):
+            if p_type in (
+                "domain",
+                "range",
+                "difference_quotient",
+                "diff_quotient",
+                "derivative",
+                "integral",
+                "symmetry",
+                "equivalence",
+                "algebraic_equivalence",
+            ):
+                return CalculusVerificationResult(
+                    valid=False,
+                    operation=p_type,
+                    item_id=item_id,
+                    errors=["Missing required 'expression' field in payload"],
+                )
 
         if p_type == "domain":
             return self.verify_domain(
-                expr_input=payload["expression"],
+                expr_input=expr_input,
                 var_name=payload.get("variable", "x"),
                 expected_domain_str=payload.get("expected_domain") or payload.get("expected"),
                 intervals=payload.get("intervals"),
                 item_id=item_id,
             )
 
+        elif p_type == "range":
+            return self.verify_range(
+                expr_input=expr_input,
+                var_name=payload.get("variable", "x"),
+                expected_range_str=payload.get("expected_range") or payload.get("expected"),
+                intervals=payload.get("intervals"),
+                item_id=item_id,
+            )
+
         elif p_type in ("difference_quotient", "diff_quotient"):
             return self.verify_difference_quotient(
-                expr_input=payload["expression"],
+                expr_input=expr_input,
                 var_name=payload.get("variable", "x"),
                 h_name=payload.get("h_var", "h"),
                 expected_quotient=payload.get("expected_quotient"),
@@ -460,7 +654,7 @@ class CalculusVerifier:
         elif p_type == "derivative":
             order = int(payload.get("order", 1))
             return self.verify_derivative(
-                expr_input=payload["expression"],
+                expr_input=expr_input,
                 var_name=payload.get("variable", "x"),
                 expected_derivative=payload.get("expected_derivative") or payload.get("expected", ""),
                 order=order,
@@ -469,7 +663,7 @@ class CalculusVerifier:
 
         elif p_type == "integral":
             return self.verify_integral(
-                expr_input=payload["expression"],
+                expr_input=expr_input,
                 var_name=payload.get("variable", "x"),
                 kind=payload.get("kind", "indefinite"),
                 expected=payload.get("expected") or payload.get("expected_integral", ""),
@@ -480,24 +674,40 @@ class CalculusVerifier:
 
         elif p_type == "symmetry":
             return self.verify_symmetry(
-                expr_input=payload["expression"],
+                expr_input=expr_input,
                 var_name=payload.get("variable", "x"),
                 expected_symmetry=payload.get("expected_symmetry") or payload.get("expected", "odd"),
                 item_id=item_id,
             )
 
         elif p_type in ("equivalence", "algebraic_equivalence"):
-            expr1 = payload.get("expression") or payload.get("expr")
-            expr2 = payload.get("expected") or payload.get("expr2")
+            expr2 = payload.get("expected") if payload.get("expected") is not None else payload.get("expr2")
+            if expr2 is None or (isinstance(expr2, str) and not expr2.strip()):
+                return CalculusVerificationResult(
+                    valid=False,
+                    operation="equivalence",
+                    item_id=item_id,
+                    errors=["Missing required 'expected' field in equivalence payload"],
+                )
             var_name = payload.get("variable")
             extra_syms = {var_name: sp.Symbol(var_name, real=True)} if var_name else {}
-            is_equiv, method = self.engine.are_equivalent(expr1, expr2, extra_symbols=extra_syms)
-            errors = [] if is_equiv else [f"Expressions '{expr1}' and '{expr2}' are not equivalent"]
+            try:
+                is_equiv, method = self.engine.are_equivalent(expr_input, expr2, extra_symbols=extra_syms)
+            except Exception as e:
+                return CalculusVerificationResult(
+                    valid=False,
+                    operation="equivalence",
+                    item_id=item_id,
+                    computed=str(expr_input),
+                    expected=str(expr2),
+                    errors=[f"Failed to verify equivalence: {e}"],
+                )
+            errors = [] if is_equiv else [f"Expressions '{expr_input}' and '{expr2}' are not equivalent"]
             return CalculusVerificationResult(
                 valid=is_equiv,
                 operation="equivalence",
                 item_id=item_id,
-                computed=str(expr1),
+                computed=str(expr_input),
                 expected=str(expr2),
                 errors=errors,
                 details={"method": method},

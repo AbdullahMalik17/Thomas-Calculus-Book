@@ -58,30 +58,71 @@ class MCQVerifier:
         # Fallback to stringifying option
         return str(opt)
 
-    def _are_options_equivalent(self, val1: str, val2: str) -> Tuple[bool, str]:
+    _EQUATION_PREFIX_RE = re.compile(
+        r"^(?:[a-zA-Z]\s*'*\s*\([a-zA-Z0-9_,\s]+\)|[yYzZ]|\\frac\{d[a-zA-Z]\}\{d[a-zA-Z]\})\s*=\s*(.+)$"
+    )
+    _INTERVAL_KEYWORDS = {"R", "Reals", "\\mathbb{R}", "empty", "EmptySet", "{}", "\\emptyset"}
+
+    def _strip_delimiters(self, text: str) -> str:
+        s = text.strip()
+        if s.startswith("$$") and s.endswith("$$") and len(s) >= 4:
+            return s[2:-2].strip()
+        if s.startswith("$") and s.endswith("$") and len(s) >= 2:
+            return s[1:-1].strip()
+        return s
+
+    def _extract_rhs_if_function_def(self, text: str) -> Tuple[Optional[str], str]:
+        """
+        If text is of the form 'f(x) = expr' or 'y = expr', return (lhs_normalized, rhs).
+        Otherwise return (None, text).
+        """
+        clean = self._strip_delimiters(text)
+        m = self._EQUATION_PREFIX_RE.match(clean)
+        if m and "=" not in m.group(1):
+            lhs = clean[: clean.find("=")].strip().replace(" ", "")
+            return lhs, m.group(1).strip()
+        return None, clean
+
+    def _are_options_equivalent(
+        self, val1: str, val2: str, allow_prefix_strip: bool = False
+    ) -> Tuple[bool, str]:
         """
         Check whether two option values are equivalent.
-        Attempts symbolic equivalence first; falls back to normalized string equality if unparseable.
+        Attempts symbolic equivalence first; falls back to interval set equality
+        and normalized string equality if unparseable.
         """
-        s1 = val1.strip()
-        s2 = val2.strip()
+        s1 = self._strip_delimiters(val1)
+        s2 = self._strip_delimiters(val2)
 
         # Direct string equality
         if s1 == s2 or s1.lower() == s2.lower():
             return True, "text_identical"
 
-        # Try symbolic equivalence
-        try:
-            equiv, method = self.engine.are_equivalent(s1, s2)
-            if equiv:
-                return True, f"symbolic_{method}"
-        except Exception:
-            pass
+        lhs1, rhs1 = self._extract_rhs_if_function_def(s1)
+        lhs2, rhs2 = self._extract_rhs_if_function_def(s2)
 
-        # Try interval set equivalence if values look like interval notations
-        if any(c in s1 for c in ("[", "(")) and any(c in s2 for c in ("[", "(")):
+        # Candidate pairs to test symbolically
+        candidate_pairs = [(s1, s2)]
+        if lhs1 and lhs2 and lhs1 == lhs2:
+            candidate_pairs.append((rhs1, rhs2))
+        elif allow_prefix_strip and (lhs1 or lhs2):
+            candidate_pairs.append((rhs1, rhs2))
+
+        for expr_a, expr_b in candidate_pairs:
+            try:
+                equiv, method = self.engine.are_equivalent(expr_a, expr_b)
+                if equiv:
+                    return True, f"symbolic_{method}"
+            except Exception:
+                pass
+
+        # Try interval set equivalence if values look like interval or set notations
+        looks_like_set_1 = any(c in s1 for c in ("[", "(")) or s1 in self._INTERVAL_KEYWORDS
+        looks_like_set_2 = any(c in s2 for c in ("[", "(")) or s2 in self._INTERVAL_KEYWORDS
+        if looks_like_set_1 and looks_like_set_2:
             try:
                 from .calculus_verifier import CalculusVerifier
+
                 calc = CalculusVerifier(self.engine)
                 set1 = calc.parse_interval_string(s1)
                 set2 = calc.parse_interval_string(s2)
@@ -163,11 +204,17 @@ class MCQVerifier:
         elif correct_id not in opt_dict:
             errors.append(f"correctId '{correct_id}' does not correspond to any provided option")
 
-        # 3. Check expected solution if provided
-        expected = mcq_data.get("expectedSolution") or mcq_data.get("expectedAnswer") or mcq_data.get("expected")
-        if expected and correct_id and correct_id in opt_dict:
+        # 3. Check expected solution if provided (handle numeric 0 properly)
+        expected = None
+        for exp_key in ("expectedSolution", "expectedAnswer", "expected"):
+            if exp_key in mcq_data and mcq_data[exp_key] is not None and str(mcq_data[exp_key]).strip() != "":
+                expected = mcq_data[exp_key]
+                break
+        if expected is not None and correct_id and correct_id in opt_dict:
             correct_val = self._extract_option_value(opt_dict[correct_id])
-            equiv, method = self._are_options_equivalent(correct_val, str(expected))
+            equiv, method = self._are_options_equivalent(
+                correct_val, str(expected), allow_prefix_strip=True
+            )
             if not equiv:
                 errors.append(
                     f"Option '{correct_id}' ({correct_val}) does not evaluate to expected solution '{expected}'"

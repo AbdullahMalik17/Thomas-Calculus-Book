@@ -29,37 +29,57 @@ export interface SectionContentData {
 }
 
 export function getSectionDirectory(ch: string, section: string): string | null {
-  const chapterDirs = fs.existsSync(CONTENT_DIR) ? fs.readdirSync(CONTENT_DIR) : [];
+  if (!ch || !section) return null;
+  // Guard against path traversal characters in dynamic route params
+  if (/[\\/\0]|\.\./.test(ch) || /[\\/\0]|\.\./.test(section)) {
+    return null;
+  }
+
+  const chapterDirs = fs.existsSync(CONTENT_DIR)
+    ? fs
+        .readdirSync(CONTENT_DIR, { withFileTypes: true })
+        .filter((d) => d.isDirectory())
+        .map((d) => d.name)
+        .sort()
+    : [];
+
+  const chLower = ch.trim().toLowerCase();
   const normalizedCh = normalizeChapterKey(ch);
   const matchedCh = chapterDirs.find((d) => {
     const dLower = d.toLowerCase();
     return (
-      dLower === ch.toLowerCase() ||
+      dLower === chLower ||
       dLower === normalizedCh ||
-      dLower.startsWith(normalizedCh + '-') ||
-      dLower.startsWith(normalizedCh) ||
-      dLower.startsWith(ch.toLowerCase())
+      dLower.startsWith(normalizedCh + '-')
     );
   });
   if (!matchedCh) return null;
 
-  const chPath = path.join(CONTENT_DIR, matchedCh);
-  const sectionDirs = fs.readdirSync(chPath);
-  const cleanSection = section.toLowerCase();
+  const chPath = path.resolve(CONTENT_DIR, matchedCh);
+  if (!chPath.startsWith(CONTENT_DIR + path.sep)) return null;
+
+  const sectionDirs = fs
+    .readdirSync(chPath, { withFileTypes: true })
+    .filter((s) => s.isDirectory())
+    .map((s) => s.name)
+    .sort();
+
+  const cleanSection = section.trim().toLowerCase();
   const cleanSectionWithDot = cleanSection.replace(/[-_]/g, '.');
   const matchedSection = sectionDirs.find((s) => {
     const sLower = s.toLowerCase();
     return (
       sLower === cleanSection ||
+      sLower === cleanSectionWithDot ||
       sLower.startsWith(cleanSection + '-') ||
-      sLower.startsWith(cleanSection) ||
-      sLower.includes(cleanSection) ||
       sLower.startsWith(cleanSectionWithDot + '-')
     );
   });
 
   if (!matchedSection) return null;
-  return path.join(chPath, matchedSection);
+  const resolvedSectionPath = path.resolve(chPath, matchedSection);
+  if (!resolvedSectionPath.startsWith(chPath + path.sep)) return null;
+  return resolvedSectionPath;
 }
 
 export function loadSectionContent(ch: string, section: string): SectionContentData | null {

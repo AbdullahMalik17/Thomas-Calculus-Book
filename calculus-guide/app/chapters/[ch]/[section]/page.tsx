@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { loadSectionContent } from '@/lib/content/loader';
 import {
@@ -10,6 +11,13 @@ import {
 import { BookSectionReader } from '@/components/section/BookSectionReader';
 import { MDXSummary } from '@/components/section/MDXSummary';
 import { Card } from '@/components/ui/Card';
+import {
+  AUTHOR_NAME,
+  AUTHOR_PERSON_JSON_LD,
+  AUTHOR_URL,
+  SITE_NAME,
+  SITE_URL,
+} from '@/lib/seo';
 
 interface SectionPageProps {
   params: {
@@ -21,7 +29,7 @@ interface SectionPageProps {
   };
 }
 
-export function generateMetadata({ params, searchParams }: SectionPageProps) {
+export function generateMetadata({ params, searchParams }: SectionPageProps): Metadata {
   const normalizedCh = normalizeChapterKey(params.ch);
   const chapterMeta = CHAPTER_METADATA[normalizedCh];
   const sectionData = loadSectionContent(normalizedCh, params.section);
@@ -29,14 +37,43 @@ export function generateMetadata({ params, searchParams }: SectionPageProps) {
     return {
       title: `Section ${params.section} | Thomas' Calculus`,
       description: `Curriculum study guide for Section ${params.section}.`,
+      alternates: {
+        canonical: `/chapters/${normalizedCh}/${params.section}`,
+      },
     };
   }
+  const canonicalPath = `/chapters/${normalizedCh}/${sectionData.sectionKey}`;
   const isSolutions = searchParams?.tab === 'solutions';
   const title = isSolutions
-    ? `Section ${sectionData.sectionNumber}: ${sectionData.title} - Worked Solutions (${sectionData.solutions.length}) | Thomas' Calculus`
-    : `Section ${sectionData.sectionNumber}: ${sectionData.title} | Thomas' Calculus Study Guide`;
-  const description = `Interactive study guide with ${sectionData.solutions.length} SymPy CAS-verified solutions for Section ${sectionData.sectionNumber}: ${sectionData.title} in Chapter ${chapterMeta?.num || ''}.`;
-  return { title, description };
+    ? `Section ${sectionData.sectionNumber}: ${sectionData.title} — Worked Solutions (${sectionData.solutions.length})`
+    : `Section ${sectionData.sectionNumber}: ${sectionData.title}`;
+  const description = `Interactive study guide with ${sectionData.solutions.length} SymPy CAS-verified solutions for Section ${sectionData.sectionNumber}: ${sectionData.title} in ${chapterMeta?.title || `Chapter ${normalizedCh.toUpperCase()}`} of Thomas' Calculus (14th Edition).`;
+
+  return {
+    title,
+    description,
+    authors: [{ name: AUTHOR_NAME, url: AUTHOR_URL }],
+    creator: AUTHOR_NAME,
+    publisher: AUTHOR_NAME,
+    alternates: {
+      canonical: canonicalPath,
+    },
+    openGraph: {
+      title: `${title} | ${SITE_NAME}`,
+      description,
+      url: `${SITE_URL}${canonicalPath}`,
+      type: 'article',
+      siteName: SITE_NAME,
+      locale: 'en_US',
+      authors: [AUTHOR_NAME],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${title} | Thomas' Calculus`,
+      description,
+      creator: '@AbdullahMalik17',
+    },
+  };
 }
 
 export function generateStaticParams() {
@@ -79,9 +116,72 @@ export default async function SectionPage({ params }: SectionPageProps) {
   }
 
   const adjacent = getAdjacentSections(normalizedCh, sectionData.sectionKey);
+  const sectionUrl = `${SITE_URL}/chapters/${normalizedCh}/${sectionData.sectionKey}`;
+
+  const sectionJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      AUTHOR_PERSON_JSON_LD,
+      {
+        '@type': 'LearningResource',
+        '@id': `${sectionUrl}#learning-resource`,
+        name: `Section ${sectionData.sectionNumber}: ${sectionData.title} — Study Guide & ${sectionData.solutions.length} Solutions`,
+        url: sectionUrl,
+        description: `Comprehensive section notes, theorems, and ${sectionData.solutions.length} SymPy-verified step-by-step solutions for Section ${sectionData.sectionNumber}: ${sectionData.title} (${chapterMeta?.title || chapterDisplayName}).`,
+        learningResourceType: ['Section Study Guide', 'Worked Example', 'Mathematical Theorems'],
+        educationalLevel: 'Undergraduate',
+        inLanguage: 'en-US',
+        isAccessibleForFree: true,
+        author: AUTHOR_PERSON_JSON_LD,
+        creator: AUTHOR_PERSON_JSON_LD,
+        publisher: AUTHOR_PERSON_JSON_LD,
+        isPartOf: {
+          '@type': 'Course',
+          '@id': `${SITE_URL}/chapters/${normalizedCh}#course`,
+          name: chapterMeta?.title || chapterDisplayName,
+          url: `${SITE_URL}/chapters/${normalizedCh}`,
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${sectionUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: SITE_URL,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Chapters Curriculum',
+            item: `${SITE_URL}/chapters`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: chapterMeta?.title || chapterDisplayName,
+            item: `${SITE_URL}/chapters/${normalizedCh}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 4,
+            name: `Section ${sectionData.sectionNumber}: ${sectionData.title}`,
+            item: sectionUrl,
+          },
+        ],
+      },
+    ],
+  };
 
   return (
     <div className="mx-auto max-w-4xl space-y-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(sectionJsonLd) }}
+      />
+
       {/* Shelf marker */}
       <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-xs text-[#8a7a63]">
         <Link href="/chapters" className="hover:text-[#1f1a13]">Contents</Link>

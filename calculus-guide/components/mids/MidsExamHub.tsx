@@ -73,7 +73,6 @@ function buildExamQuestions(size: ExamSizeOption): MidsExamQuestion[] {
   const selected: MidsExamQuestion[] = [];
   for (const ch of [1, 2, 3] as const) {
     const chQuestions = MIDS_EXAM_QUESTIONS.filter((q) => q.chapter === ch);
-    // Deterministic even spread across the chapter so all topic areas are sampled
     const step = chQuestions.length / perChapter;
     for (let i = 0; i < perChapter; i++) {
       const idx = Math.min(chQuestions.length - 1, Math.floor(i * step));
@@ -220,21 +219,25 @@ export function MidsExamHub() {
   return (
     <div className="space-y-8">
       {/* Mode Switcher & Overview Stats Bar */}
-      <div className="rounded-2xl border border-[#dbe2ea] bg-white p-4 sm:p-6 shadow-sm space-y-5">
+      <div className="surface-grain rounded-2xl border border-specular bg-surface-1 p-4 sm:p-6 shadow-sm space-y-5">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <div className="inline-flex rounded-xl bg-slate-100 p-1 w-full sm:w-auto" role="tablist" aria-label="Midterm preparation mode">
+          <div
+            className="inline-flex rounded-xl border border-hairline bg-surface-2 p-1 w-full sm:w-auto"
+            role="tablist"
+            aria-label="Midterm preparation mode"
+          >
             <button
               type="button"
               role="tab"
               aria-selected={mode === 'study'}
               onClick={() => setMode('study')}
-              className={`flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition-all ${
+              className={`cursor-pointer flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition-all ${
                 mode === 'study'
-                  ? 'bg-white text-[#172b43] shadow-sm'
-                  : 'text-slate-600 hover:text-slate-900'
+                  ? 'bg-surface-1 text-ink-primary border border-specular shadow-sm'
+                  : 'text-ink-secondary hover:text-ink-primary'
               }`}
             >
-              <BookOpen className="h-4 w-4 text-[#176b63]" aria-hidden="true" />
+              <BookOpen className="h-4 w-4 text-brand-accent" aria-hidden="true" />
               <span>Study &amp; Review Mode</span>
             </button>
             <button
@@ -242,13 +245,13 @@ export function MidsExamHub() {
               role="tab"
               aria-selected={mode === 'mock'}
               onClick={() => setMode('mock')}
-              className={`flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition-all ${
+              className={`cursor-pointer flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition-all ${
                 mode === 'mock'
-                  ? 'bg-white text-[#172b43] shadow-sm'
-                  : 'text-slate-600 hover:text-slate-900'
+                  ? 'bg-surface-1 text-ink-primary border border-specular shadow-sm'
+                  : 'text-ink-secondary hover:text-ink-primary'
               }`}
             >
-              <GraduationCap className="h-4 w-4 text-blue-700" aria-hidden="true" />
+              <GraduationCap className="h-4 w-4 text-brand-primary" aria-hidden="true" />
               <span>Mock Exam Mode</span>
             </button>
           </div>
@@ -258,12 +261,12 @@ export function MidsExamHub() {
             {studyStats.byChapter.map((ch) => (
               <div
                 key={ch.key}
-                className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-medium text-slate-700"
+                className="inline-flex items-center gap-2 rounded-lg border border-specular bg-surface-2 px-3 py-1.5 font-mono text-xs font-medium text-ink-secondary tabular-nums"
               >
-                <span className="font-bold text-[#172b43]">Ch {ch.chapter}</span>
-                <span className="text-slate-500">{ch.questionCount} Qs</span>
+                <span className="font-bold text-ink-primary">Ch {ch.chapter}</span>
+                <span className="text-ink-muted">{ch.questionCount} Qs</span>
                 {mode === 'study' && ch.answered > 0 && (
-                  <span className="rounded bg-emerald-100 px-1.5 py-0.5 font-semibold text-emerald-800">
+                  <span className="rounded border border-specular bg-callout-theorem-bg px-1.5 py-0.5 font-mono font-semibold text-callout-theorem-ink tabular-nums">
                     {ch.correct}/{ch.answered}
                   </span>
                 )}
@@ -274,25 +277,31 @@ export function MidsExamHub() {
 
         {/* Study Mode Progress Bar */}
         {mode === 'study' && (
-          <div className="space-y-2 border-t border-slate-100 pt-4">
+          <div className="space-y-2 border-t border-hairline pt-4">
             <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm">
-              <span className="font-medium text-slate-700">
-                Study Progress: <strong className="text-[#172b43]">{studyStats.answeredCount}</strong> of{' '}
-                <strong>{MIDS_EXAM_QUESTIONS.length}</strong> questions answered
+              <span className="font-medium text-ink-secondary">
+                Study Progress:{' '}
+                <strong className="font-mono text-ink-primary tabular-nums">{studyStats.answeredCount}</strong> of{' '}
+                <strong className="font-mono text-ink-primary tabular-nums">{MIDS_EXAM_QUESTIONS.length}</strong>{' '}
+                questions answered
               </span>
               <div className="flex items-center gap-4">
-                <span className="text-slate-600">
+                <span className="text-ink-secondary">
                   Accuracy:{' '}
-                  <strong className={studyStats.accuracy >= 70 ? 'text-emerald-700' : 'text-[#172b43]'}>
+                  <strong
+                    className={`font-mono tabular-nums ${
+                      studyStats.accuracy >= 70 ? 'text-brand-accent' : 'text-ink-primary'
+                    }`}
+                  >
                     {studyStats.answeredCount > 0 ? `${studyStats.accuracy}%` : '—'}
                   </strong>{' '}
-                  ({studyStats.correctCount} correct)
+                  <span className="font-mono tabular-nums">({studyStats.correctCount} correct)</span>
                 </span>
                 {studyStats.answeredCount > 0 && (
                   <button
                     type="button"
                     onClick={() => setStudyAnswers({})}
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-slate-600 hover:text-red-700 transition-colors"
+                    className="cursor-pointer inline-flex items-center gap-1 text-xs font-semibold text-ink-secondary hover:text-callout-misconception-ink transition-colors"
                   >
                     <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
                     Reset
@@ -300,9 +309,9 @@ export function MidsExamHub() {
                 )}
               </div>
             </div>
-            <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100">
+            <div className="h-2 w-full overflow-hidden rounded-full bg-surface-2">
               <div
-                className="h-full rounded-full bg-[#176b63] transition-all duration-300"
+                className="h-full rounded-full bg-brand-accent transition-all duration-300"
                 style={{ width: `${(studyStats.answeredCount / MIDS_EXAM_QUESTIONS.length) * 100}%` }}
               />
             </div>
@@ -316,15 +325,15 @@ export function MidsExamHub() {
       {mode === 'study' && (
         <div className="space-y-6">
           {/* Chapter Tabs & Filters */}
-          <div className="rounded-2xl border border-[#dbe2ea] bg-white p-4 sm:p-5 shadow-sm space-y-4">
+          <div className="rounded-2xl border border-specular bg-surface-1 p-4 sm:p-5 shadow-sm space-y-4">
             <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by chapter">
               <button
                 type="button"
                 onClick={() => setChapterFilter('all')}
-                className={`rounded-lg px-3.5 py-2 text-xs sm:text-sm font-semibold transition-colors ${
+                className={`cursor-pointer rounded-lg px-3.5 py-2 font-mono text-xs sm:text-sm font-semibold tabular-nums transition-colors ${
                   chapterFilter === 'all'
-                    ? 'bg-[#172b43] text-white'
-                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                    ? 'bg-brand-primary text-ink-inverse'
+                    : 'bg-surface-2 text-ink-secondary hover:bg-paper-edge'
                 }`}
               >
                 All Chapters ({MIDS_EXAM_QUESTIONS.length})
@@ -334,10 +343,10 @@ export function MidsExamHub() {
                   key={ch.key}
                   type="button"
                   onClick={() => setChapterFilter(ch.chapter)}
-                  className={`rounded-lg px-3.5 py-2 text-xs sm:text-sm font-semibold transition-colors ${
+                  className={`cursor-pointer rounded-lg px-3.5 py-2 font-mono text-xs sm:text-sm font-semibold tabular-nums transition-colors ${
                     chapterFilter === ch.chapter
-                      ? 'bg-[#176b63] text-white'
-                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                      ? 'bg-brand-accent text-ink-inverse'
+                      : 'bg-surface-2 text-ink-secondary hover:bg-paper-edge'
                   }`}
                 >
                   {ch.title} ({ch.questionCount})
@@ -347,24 +356,27 @@ export function MidsExamHub() {
 
             <div className="grid gap-3 sm:grid-cols-12">
               <div className="relative sm:col-span-7">
-                <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" aria-hidden="true" />
+                <Search
+                  className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-muted"
+                  aria-hidden="true"
+                />
                 <input
                   type="search"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search by topic or keyword (e.g., chain rule, domain, limit, continuity)..."
                   aria-label="Search midterm questions"
-                  className="w-full rounded-lg border border-slate-300 bg-white py-2.5 pl-9 pr-3 text-sm text-slate-800 placeholder:text-slate-400 focus:border-[#176b63] focus:outline-none focus:ring-2 focus:ring-[#176b63]/20"
+                  className="w-full rounded-lg border border-specular bg-surface-1 py-2.5 pl-9 pr-3 text-sm text-ink-primary placeholder:text-ink-muted focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/20"
                 />
               </div>
 
               <div className="flex items-center gap-2 sm:col-span-5">
-                <Filter className="h-4 w-4 shrink-0 text-slate-500" aria-hidden="true" />
+                <Filter className="h-4 w-4 shrink-0 text-ink-muted" aria-hidden="true" />
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value as StatusFilter)}
                   aria-label="Filter by completion status"
-                  className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm font-medium text-slate-700 focus:border-[#176b63] focus:outline-none focus:ring-2 focus:ring-[#176b63]/20"
+                  className="w-full rounded-lg border border-specular bg-surface-1 px-3 py-2.5 text-sm font-medium text-ink-primary focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/20"
                 >
                   <option value="all">All Questions</option>
                   <option value="unanswered">Unanswered Only</option>
@@ -378,8 +390,12 @@ export function MidsExamHub() {
           {/* Question List */}
           {filteredStudyQuestions.length === 0 ? (
             <Card className="text-center py-12">
-              <p className="text-base font-semibold text-slate-800">No questions match your current filters.</p>
-              <p className="mt-1 text-sm text-slate-500">Try clearing the search term or switching the status filter.</p>
+              <p className="font-reading text-base font-bold text-ink-primary">
+                No questions match your current filters.
+              </p>
+              <p className="mt-1 text-sm text-ink-muted">
+                Try clearing the search term or switching the status filter.
+              </p>
               <div className="mt-4">
                 <Button
                   variant="outline"
@@ -402,31 +418,37 @@ export function MidsExamHub() {
                 const feedbackId = `${q.id}-study-feedback`;
 
                 return (
-                  <Card key={q.id} className="border-t-4 border-t-[#176b63]">
+                  <Card key={q.id} className="border-t-4 border-t-brand-accent">
                     <article aria-labelledby={`${q.id}-title`} className="space-y-4">
-                      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
+                      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-hairline pb-3">
                         <div className="flex flex-wrap items-center gap-2">
-                          <Badge variant="primary">
+                          <Badge variant="primary" className="font-mono tabular-nums">
                             Ch {q.chapter} &middot; Q{q.questionNumber}
                           </Badge>
-                          <span className="text-xs font-medium text-slate-500">
+                          <span className="font-mono text-xs font-medium text-ink-muted tabular-nums">
                             Question #{q.globalNumber} of {MIDS_EXAM_QUESTIONS.length}
                           </span>
                         </div>
                         <Badge variant="secondary">{q.topic}</Badge>
                       </div>
 
-                      <h2 id={`${q.id}-title`} className="text-base sm:text-lg font-bold leading-relaxed text-[#172b43]">
+                      <h2
+                        id={`${q.id}-title`}
+                        className="max-w-[68ch] font-reading text-base sm:text-lg font-bold leading-relaxed tracking-display text-ink-primary"
+                      >
                         <FormattedMathText text={q.question} />
                       </h2>
 
                       {q.math && (
-                        <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 sm:p-4">
+                        <div className="overflow-x-auto rounded-xl border border-specular bg-surface-2 p-3 sm:p-4">
                           <MathBlock math={q.math} />
                         </div>
                       )}
 
-                      <fieldset aria-describedby={selectedId ? feedbackId : undefined} className="grid gap-3 sm:grid-cols-2">
+                      <fieldset
+                        aria-describedby={selectedId ? feedbackId : undefined}
+                        className="grid gap-3 sm:grid-cols-2"
+                      >
                         <legend className="sr-only">Options for {q.id}</legend>
                         {q.options.map((opt) => {
                           const checked = selectedId === opt.id;
@@ -439,11 +461,11 @@ export function MidsExamHub() {
                               className={`flex min-h-14 cursor-pointer items-start gap-3 rounded-xl border p-3.5 transition-colors ${
                                 checked
                                   ? optionIsCorrect
-                                    ? 'border-emerald-500 bg-emerald-50'
-                                    : 'border-amber-500 bg-amber-50'
+                                    ? 'border-specular bg-callout-theorem-bg text-callout-theorem-ink'
+                                    : 'border-specular bg-callout-misconception-bg text-callout-misconception-ink'
                                   : showCorrectHighlight
-                                  ? 'border-emerald-300 bg-emerald-50/50'
-                                  : 'border-slate-200 bg-white hover:border-slate-400'
+                                  ? 'border-specular bg-callout-theorem-bg/60'
+                                  : 'border-hairline bg-surface-1 hover:border-specular hover:bg-surface-2/60'
                               }`}
                             >
                               <input
@@ -457,13 +479,15 @@ export function MidsExamHub() {
                                     [q.id]: opt.id,
                                   }))
                                 }
-                                className="mt-1 h-4 w-4 shrink-0 accent-[#176b63]"
+                                className="mt-1 h-4 w-4 shrink-0 accent-brand-accent"
                               />
-                              <span className="min-w-0 flex-1 text-sm leading-relaxed text-slate-800">
-                                <span className="mr-2 font-bold text-[#174f4a]">{opt.id}.</span>
-                                <FormattedMathText text={opt.text} />
+                              <span className="min-w-0 flex-1 text-sm leading-relaxed text-ink-primary">
+                                <span className="mr-2 inline-flex rounded border border-specular bg-surface-2 px-1.5 py-0.5 font-mono text-xs font-bold text-brand-primary tabular-nums">
+                                  {opt.id}
+                                </span>
+                                <FormattedMathText text={opt.text} className="font-reading" />
                                 {showCorrectHighlight && !checked && (
-                                  <span className="mt-1 block text-xs font-semibold text-emerald-800">
+                                  <span className="mt-1 block font-mono text-xs font-semibold text-callout-theorem-ink tabular-nums">
                                     Correct answer
                                   </span>
                                 )}
@@ -478,34 +502,35 @@ export function MidsExamHub() {
                           id={feedbackId}
                           role="status"
                           aria-live="polite"
-                          className={`rounded-xl border p-4 space-y-2 ${
-                            isCorrect
-                              ? 'border-emerald-300 bg-emerald-50 text-emerald-950'
-                              : 'border-amber-300 bg-amber-50 text-amber-950'
+                          className={`rounded-xl border border-specular p-4 space-y-2 ${
+                            isCorrect ? 'callout-theorem' : 'callout-misconception'
                           }`}
                         >
-                          <div className="flex items-center gap-2 font-bold">
+                          <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider tabular-nums">
                             {isCorrect ? (
-                              <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-700" aria-hidden="true" />
+                              <CheckCircle2 className="h-4 w-4 shrink-0 text-brand-accent" aria-hidden="true" />
                             ) : (
-                              <XCircle className="h-5 w-5 shrink-0 text-amber-700" aria-hidden="true" />
+                              <XCircle
+                                className="h-4 w-4 shrink-0 text-callout-misconception-ink"
+                                aria-hidden="true"
+                              />
                             )}
                             <span>
-                              {isCorrect
-                                ? 'Correct!'
-                                : `Not quite — option ${q.correctId} is correct.`}
+                              {isCorrect ? 'Verified Correct' : `Diagnostic Alert — Option ${q.correctId} is correct`}
                             </span>
                           </div>
 
                           {!isCorrect && selectedOpt?.misconception && (
-                            <p className="text-sm leading-relaxed">
-                              <strong>Common misconception: </strong>
+                            <p className="max-w-[68ch] rounded-lg border border-specular bg-surface-1/85 p-3 font-reading text-sm leading-relaxed text-ink-primary">
+                              <strong className="font-mono text-xs uppercase tracking-wider text-callout-misconception-ink">
+                                Common misconception:{' '}
+                              </strong>
                               <FormattedMathText text={selectedOpt.misconception} />
                             </p>
                           )}
 
-                          <p className="text-sm leading-relaxed">
-                            <strong>Solution: </strong>
+                          <p className="max-w-[68ch] font-reading text-sm leading-relaxed">
+                            <strong className="font-mono text-xs uppercase tracking-wider">Solution: </strong>
                             <FormattedMathText text={q.explanation} />
                           </p>
                         </div>
@@ -526,21 +551,24 @@ export function MidsExamHub() {
         <div className="space-y-6">
           {/* Phase 1: Exam Setup */}
           {examPhase === 'setup' && (
-            <Card className="border-t-4 border-t-blue-700">
+            <Card className="border-t-4 border-t-brand-primary">
               <div className="space-y-6">
                 <div className="space-y-2">
                   <Badge variant="primary">Exam Simulator</Badge>
-                  <h2 className="text-2xl font-bold text-[#172b43]">Configure Your Midterm Mock Exam</h2>
-                  <p className="text-sm leading-relaxed text-slate-600 max-w-2xl">
-                    Simulate real midterm exam conditions covering Chapter 1 (Functions), Chapter 2 (Limits &amp; Continuity),
-                    and Chapter 3 (Derivatives). Answers and step-by-step solutions remain hidden until you submit.
+                  <h2 className="font-reading text-2xl font-bold tracking-display text-ink-primary">
+                    Configure Your Midterm Mock Exam
+                  </h2>
+                  <p className="max-w-[68ch] text-sm leading-relaxed text-ink-secondary">
+                    Simulate real midterm exam conditions covering Chapter 1 (Functions), Chapter 2 (Limits &amp;
+                    Continuity), and Chapter 3 (Derivatives). Answers and step-by-step solutions remain hidden until you
+                    submit.
                   </p>
                 </div>
 
                 <div className="grid gap-6 md:grid-cols-2">
                   {/* Length Picker */}
                   <div className="space-y-3">
-                    <label className="block text-sm font-bold text-[#172b43]">
+                    <label className="block font-mono text-xs font-bold uppercase tracking-wider text-ink-primary">
                       1. Select Question Set
                     </label>
                     <div className="space-y-2">
@@ -565,14 +593,14 @@ export function MidsExamHub() {
                           key={opt.size}
                           type="button"
                           onClick={() => setExamSize(opt.size)}
-                          className={`w-full rounded-xl border p-3.5 text-left transition-colors ${
+                          className={`cursor-pointer w-full rounded-xl border p-3.5 text-left transition-colors ${
                             examSize === opt.size
-                              ? 'border-blue-700 bg-blue-50/70 ring-1 ring-blue-700'
-                              : 'border-slate-200 bg-white hover:border-slate-300'
+                              ? 'border-specular bg-callout-definition-bg ring-1 ring-brand-primary'
+                              : 'border-hairline bg-surface-1 hover:border-specular'
                           }`}
                         >
-                          <div className="text-sm font-bold text-[#172b43]">{opt.title}</div>
-                          <div className="text-xs text-slate-600 mt-0.5">{opt.desc}</div>
+                          <div className="font-mono text-sm font-bold text-ink-primary tabular-nums">{opt.title}</div>
+                          <div className="font-mono text-xs text-ink-secondary mt-0.5 tabular-nums">{opt.desc}</div>
                         </button>
                       ))}
                     </div>
@@ -580,7 +608,7 @@ export function MidsExamHub() {
 
                   {/* Timer Picker */}
                   <div className="space-y-3">
-                    <label className="block text-sm font-bold text-[#172b43]">
+                    <label className="block font-mono text-xs font-bold uppercase tracking-wider text-ink-primary">
                       2. Select Time Limit
                     </label>
                     <div className="grid grid-cols-2 gap-2.5">
@@ -594,29 +622,35 @@ export function MidsExamHub() {
                           key={t.mins}
                           type="button"
                           onClick={() => setTimerMinutes(t.mins)}
-                          className={`rounded-xl border p-3.5 text-left transition-colors ${
+                          className={`cursor-pointer rounded-xl border p-3.5 text-left transition-colors ${
                             timerMinutes === t.mins
-                              ? 'border-[#176b63] bg-emerald-50/60 ring-1 ring-[#176b63]'
-                              : 'border-slate-200 bg-white hover:border-slate-300'
+                              ? 'border-specular bg-callout-theorem-bg ring-1 ring-brand-accent'
+                              : 'border-hairline bg-surface-1 hover:border-specular'
                           }`}
                         >
-                          <div className="flex items-center gap-1.5 text-sm font-bold text-[#172b43]">
-                            <Timer className="h-4 w-4 text-[#176b63]" aria-hidden="true" />
+                          <div className="flex items-center gap-1.5 font-mono text-sm font-bold text-ink-primary tabular-nums">
+                            <Timer className="h-4 w-4 text-brand-accent" aria-hidden="true" />
                             <span>{t.label}</span>
                           </div>
-                          <div className="text-xs text-slate-600 mt-0.5">{t.sub}</div>
+                          <div className="text-xs text-ink-secondary mt-0.5">{t.sub}</div>
                         </button>
                       ))}
                     </div>
                   </div>
                 </div>
 
-                <div className="flex flex-wrap items-center justify-between gap-4 border-t border-slate-100 pt-4">
-                  <div className="text-xs text-slate-500">
-                    Selected: <strong>{examSize} questions</strong> &middot;{' '}
-                    <strong>{timerMinutes === 0 ? 'Untimed' : `${timerMinutes} minutes`}</strong>
+                <div className="flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-4">
+                  <div className="font-mono text-xs text-ink-muted tabular-nums">
+                    Selected: <strong className="text-ink-primary">{examSize} questions</strong> &middot;{' '}
+                    <strong className="text-ink-primary">
+                      {timerMinutes === 0 ? 'Untimed' : `${timerMinutes} minutes`}
+                    </strong>
                   </div>
-                  <Button size="lg" onClick={startMockExam} className="bg-[#1e3a5f] hover:bg-[#142d4d]">
+                  <Button
+                    size="lg"
+                    onClick={startMockExam}
+                    className="bg-brand-primary text-ink-inverse hover:bg-brand-primary-hover"
+                  >
                     Start Midterm Exam
                   </Button>
                 </div>
@@ -629,11 +663,11 @@ export function MidsExamHub() {
             <div className="grid gap-6 lg:grid-cols-12">
               {/* Main Active Question Card */}
               <div className="lg:col-span-8 space-y-4">
-                <Card className="border-t-4 border-t-blue-700">
+                <Card className="border-t-4 border-t-brand-primary">
                   <div className="space-y-5">
-                    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
+                    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-hairline pb-3">
                       <div className="flex items-center gap-2">
-                        <Badge variant="primary">
+                        <Badge variant="primary" className="font-mono tabular-nums">
                           Question {activeQuestionIdx + 1} of {examQuestions.length}
                         </Badge>
                         <Badge variant="secondary">{currentExamQuestion.chapterTitle}</Badge>
@@ -642,10 +676,10 @@ export function MidsExamHub() {
                       <button
                         type="button"
                         onClick={() => toggleFlag(currentExamQuestion.id)}
-                        className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors ${
+                        className={`cursor-pointer inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 font-mono text-xs font-semibold transition-colors ${
                           flaggedIds[currentExamQuestion.id]
-                            ? 'border-amber-400 bg-amber-50 text-amber-800'
-                            : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'
+                            ? 'border-specular bg-callout-misconception-bg text-callout-misconception-ink'
+                            : 'border-hairline bg-surface-1 text-ink-secondary hover:bg-surface-2'
                         }`}
                       >
                         <Flag className="h-3.5 w-3.5" aria-hidden="true" />
@@ -653,12 +687,12 @@ export function MidsExamHub() {
                       </button>
                     </div>
 
-                    <h2 className="text-lg font-bold leading-relaxed text-[#172b43]">
+                    <h2 className="max-w-[68ch] font-reading text-lg font-bold leading-relaxed tracking-display text-ink-primary">
                       <FormattedMathText text={currentExamQuestion.question} />
                     </h2>
 
                     {currentExamQuestion.math && (
-                      <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 sm:p-4">
+                      <div className="overflow-x-auto rounded-xl border border-specular bg-surface-2 p-3 sm:p-4">
                         <MathBlock math={currentExamQuestion.math} />
                       </div>
                     )}
@@ -672,8 +706,8 @@ export function MidsExamHub() {
                             key={opt.id}
                             className={`flex min-h-14 cursor-pointer items-start gap-3 rounded-xl border p-4 transition-colors ${
                               checked
-                                ? 'border-blue-700 bg-blue-50/80 ring-1 ring-blue-700'
-                                : 'border-slate-200 bg-white hover:border-slate-400'
+                                ? 'border-specular bg-callout-definition-bg ring-1 ring-brand-primary'
+                                : 'border-hairline bg-surface-1 hover:border-specular'
                             }`}
                           >
                             <input
@@ -687,18 +721,20 @@ export function MidsExamHub() {
                                   [currentExamQuestion.id]: opt.id,
                                 }))
                               }
-                              className="mt-1 h-4 w-4 shrink-0 accent-blue-700"
+                              className="mt-1 h-4 w-4 shrink-0 accent-brand-primary"
                             />
-                            <span className="min-w-0 flex-1 text-sm leading-relaxed text-slate-800">
-                              <span className="mr-2 font-bold text-[#172b43]">{opt.id}.</span>
-                              <FormattedMathText text={opt.text} />
+                            <span className="min-w-0 flex-1 text-sm leading-relaxed text-ink-primary">
+                              <span className="mr-2 inline-flex rounded border border-specular bg-surface-2 px-1.5 py-0.5 font-mono text-xs font-bold text-brand-primary tabular-nums">
+                                {opt.id}
+                              </span>
+                              <FormattedMathText text={opt.text} className="font-reading" />
                             </span>
                           </label>
                         );
                       })}
                     </fieldset>
 
-                    <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-4">
+                    <div className="flex flex-wrap items-center justify-between gap-3 border-t border-hairline pt-4">
                       <Button
                         variant="outline"
                         disabled={activeQuestionIdx === 0}
@@ -719,7 +755,7 @@ export function MidsExamHub() {
                         ) : (
                           <Button
                             onClick={submitMockExam}
-                            className="bg-[#176b63] hover:bg-[#12554e]"
+                            className="bg-brand-accent text-ink-inverse hover:bg-brand-accent-hover"
                           >
                             Submit Midterm Exam
                           </Button>
@@ -734,10 +770,10 @@ export function MidsExamHub() {
               <div className="lg:col-span-4 space-y-4">
                 <Card>
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                      <span className="text-sm font-bold text-[#172b43]">Exam Status</span>
-                      <div className="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 px-2.5 py-1 text-xs font-mono font-bold text-[#172b43]">
-                        <Clock className="h-3.5 w-3.5 text-[#176b63]" aria-hidden="true" />
+                    <div className="flex items-center justify-between border-b border-hairline pb-3">
+                      <span className="font-reading text-sm font-bold text-ink-primary">Exam Telemetry</span>
+                      <div className="inline-flex items-center gap-1.5 rounded-lg border border-specular bg-surface-2 px-2.5 py-1 font-mono text-xs font-bold text-ink-primary tabular-nums">
+                        <Clock className="h-3.5 w-3.5 text-brand-accent" aria-hidden="true" />
                         <span>
                           {timerMinutes > 0
                             ? formatDuration(secondsRemaining)
@@ -746,16 +782,16 @@ export function MidsExamHub() {
                       </div>
                     </div>
 
-                    <div className="text-xs text-slate-600 flex items-center justify-between">
+                    <div className="font-mono text-xs text-ink-secondary tabular-nums flex items-center justify-between">
                       <span>
                         Answered:{' '}
-                        <strong className="text-[#172b43]">
+                        <strong className="text-ink-primary">
                           {Object.keys(examAnswers).length}/{examQuestions.length}
                         </strong>
                       </span>
                       <span>
                         Flagged:{' '}
-                        <strong className="text-amber-700">
+                        <strong className="text-callout-misconception-ink">
                           {Object.values(flaggedIds).filter(Boolean).length}
                         </strong>
                       </span>
@@ -773,14 +809,14 @@ export function MidsExamHub() {
                             type="button"
                             onClick={() => setActiveQuestionIdx(idx)}
                             aria-label={`Jump to question ${idx + 1}`}
-                            className={`relative h-9 rounded-lg text-xs font-bold transition-all ${
+                            className={`cursor-pointer relative h-9 rounded-lg font-mono text-xs font-bold tabular-nums transition-all ${
                               isCurrent
-                                ? 'bg-[#172b43] text-white ring-2 ring-blue-400'
+                                ? 'bg-brand-primary text-ink-inverse ring-2 ring-brand-accent'
                                 : isFlagged
-                                ? 'bg-amber-100 text-amber-900 border border-amber-400'
+                                ? 'bg-callout-misconception-bg text-callout-misconception-ink border border-specular'
                                 : isAnswered
-                                ? 'bg-emerald-100 text-emerald-900 border border-emerald-300'
-                                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                                ? 'bg-callout-theorem-bg text-callout-theorem-ink border border-specular'
+                                : 'bg-surface-2 text-ink-secondary hover:bg-paper-edge'
                             }`}
                           >
                             {idx + 1}
@@ -789,10 +825,10 @@ export function MidsExamHub() {
                       })}
                     </div>
 
-                    <div className="pt-2 border-t border-slate-100 flex flex-col gap-2">
+                    <div className="pt-2 border-t border-hairline flex flex-col gap-2">
                       <Button
                         onClick={submitMockExam}
-                        className="w-full bg-[#176b63] hover:bg-[#12554e]"
+                        className="w-full bg-brand-accent text-ink-inverse hover:bg-brand-accent-hover"
                       >
                         Submit Exam Now
                       </Button>
@@ -813,20 +849,23 @@ export function MidsExamHub() {
           {/* Phase 3: Submitted Results & Detailed Review */}
           {examPhase === 'submitted' && (
             <div className="space-y-6">
-              <Card className="border-t-4 border-t-[#176b63]">
+              <Card className="border-t-4 border-t-brand-accent">
                 <div className="space-y-6">
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div className="space-y-1">
                       <div className="flex items-center gap-2">
-                        <Trophy className="h-5 w-5 text-amber-600" aria-hidden="true" />
-                        <span className="text-xs font-bold uppercase tracking-wider text-[#176b63]">
+                        <Trophy className="h-5 w-5 text-callout-example-ink" aria-hidden="true" />
+                        <span className="font-mono text-xs font-bold uppercase tracking-wider text-brand-accent">
                           Midterm Exam Results
                         </span>
                       </div>
-                      <h2 className="text-2xl sm:text-3xl font-bold text-[#172b43]">
-                        Score: {mockResults.correct} / {mockResults.total} ({mockResults.percent}%)
+                      <h2 className="font-reading text-2xl sm:text-3xl font-bold tracking-display text-ink-primary">
+                        Score:{' '}
+                        <span className="font-mono tabular-nums">
+                          {mockResults.correct} / {mockResults.total} ({mockResults.percent}%)
+                        </span>
                       </h2>
-                      <p className="text-sm text-slate-600">
+                      <p className="font-mono text-xs text-ink-secondary tabular-nums">
                         Answered {mockResults.answered} of {mockResults.total} questions &middot; Time elapsed:{' '}
                         <strong>{formatDuration(elapsedSeconds)}</strong>
                       </p>
@@ -847,19 +886,23 @@ export function MidsExamHub() {
                   </div>
 
                   {/* Per-Chapter Mastery Breakdown */}
-                  <div className="grid gap-4 md:grid-cols-3 border-t border-slate-100 pt-5">
+                  <div className="grid gap-4 md:grid-cols-3 border-t border-hairline pt-5">
                     {mockResults.perChapter.map((ch) => (
-                      <div key={ch.key} className="rounded-xl border border-slate-200 bg-slate-50 p-4 space-y-2">
-                        <div className="flex items-center justify-between text-xs font-bold text-[#172b43]">
+                      <div key={ch.key} className="rounded-xl border border-specular bg-surface-2 p-4 space-y-2">
+                        <div className="flex items-center justify-between font-mono text-xs font-bold text-ink-primary tabular-nums">
                           <span>{ch.shortTitle}</span>
                           <span>
                             {ch.correct}/{ch.total} ({ch.percent}%)
                           </span>
                         </div>
-                        <div className="h-2 w-full overflow-hidden rounded-full bg-slate-200">
+                        <div className="h-2 w-full overflow-hidden rounded-full bg-surface-1">
                           <div
                             className={`h-full rounded-full ${
-                              ch.percent >= 75 ? 'bg-emerald-600' : ch.percent >= 50 ? 'bg-amber-500' : 'bg-rose-500'
+                              ch.percent >= 75
+                                ? 'bg-brand-accent'
+                                : ch.percent >= 50
+                                ? 'bg-brand-primary'
+                                : 'bg-callout-misconception-border'
                             }`}
                             style={{ width: `${ch.percent}%` }}
                           />
@@ -872,13 +915,15 @@ export function MidsExamHub() {
 
               {/* Review Controls */}
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <h3 className="text-xl font-bold text-[#172b43]">Detailed Answer Review</h3>
-                <label className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-2 text-sm font-medium text-slate-700">
+                <h3 className="font-reading text-xl font-bold tracking-display text-ink-primary">
+                  Detailed Answer Review
+                </h3>
+                <label className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-specular bg-surface-1 px-3.5 py-2 text-sm font-medium text-ink-primary">
                   <input
                     type="checkbox"
                     checked={showMissedOnly}
                     onChange={(e) => setShowMissedOnly(e.target.checked)}
-                    className="h-4 w-4 accent-[#176b63]"
+                    className="h-4 w-4 accent-brand-accent"
                   />
                   <span>Show missed &amp; unanswered only</span>
                 </label>
@@ -896,7 +941,9 @@ export function MidsExamHub() {
                     return (
                       <Card
                         key={q.id}
-                        className={`border-l-4 ${isRight ? 'border-l-emerald-500' : 'border-l-amber-500'}`}
+                        className={`border-l-4 ${
+                          isRight ? 'border-l-brand-accent' : 'border-l-callout-misconception-border'
+                        }`}
                       >
                         <div className="space-y-3">
                           <div className="flex flex-wrap items-center justify-between gap-2">
@@ -904,34 +951,35 @@ export function MidsExamHub() {
                               <Badge variant={isRight ? 'success' : 'warning'}>
                                 {isRight ? 'Correct' : userChoice ? 'Incorrect' : 'Unanswered'}
                               </Badge>
-                              <span className="text-xs font-semibold text-slate-500">
+                              <span className="font-mono text-xs font-semibold text-ink-muted tabular-nums">
                                 {q.chapterTitle} &middot; {q.topic}
                               </span>
                             </div>
                           </div>
 
-                          <h4 className="text-base font-bold text-[#172b43]">
+                          <h4 className="max-w-[68ch] font-reading text-base font-bold text-ink-primary">
                             <FormattedMathText text={q.question} />
                           </h4>
 
                           {q.math && (
-                            <div className="rounded-lg border border-slate-200 bg-slate-50 p-2.5">
+                            <div className="overflow-x-auto rounded-lg border border-specular bg-surface-2 p-2.5">
                               <MathBlock math={q.math} />
                             </div>
                           )}
 
                           <div className="grid gap-2 sm:grid-cols-2 text-sm">
                             <div
-                              className={`rounded-lg border p-3 ${
-                                isRight
-                                  ? 'border-emerald-300 bg-emerald-50 text-emerald-950'
-                                  : 'border-amber-300 bg-amber-50 text-amber-950'
+                              className={`rounded-lg border border-specular p-3 ${
+                                isRight ? 'callout-theorem' : 'callout-misconception'
                               }`}
                             >
-                              <span className="font-bold">Your answer: </span>
+                              <span className="font-mono text-xs font-bold uppercase tracking-wider">
+                                Your answer:{' '}
+                              </span>
                               {chosenOpt ? (
                                 <>
-                                  {chosenOpt.id}. <FormattedMathText text={chosenOpt.text} />
+                                  <span className="font-mono font-bold tabular-nums">{chosenOpt.id}.</span>{' '}
+                                  <FormattedMathText text={chosenOpt.text} className="font-reading" />
                                 </>
                               ) : (
                                 <span className="inline-flex items-center gap-1 italic">
@@ -940,21 +988,28 @@ export function MidsExamHub() {
                               )}
                             </div>
 
-                            <div className="rounded-lg border border-emerald-300 bg-emerald-50 p-3 text-emerald-950">
-                              <span className="font-bold">Correct answer: </span>
-                              {correctOpt?.id}. <FormattedMathText text={correctOpt?.text ?? ''} />
+                            <div className="callout-theorem rounded-lg border border-specular p-3">
+                              <span className="font-mono text-xs font-bold uppercase tracking-wider">
+                                Correct answer:{' '}
+                              </span>
+                              <span className="font-mono font-bold tabular-nums">{correctOpt?.id}.</span>{' '}
+                              <FormattedMathText text={correctOpt?.text ?? ''} className="font-reading" />
                             </div>
                           </div>
 
                           {!isRight && chosenOpt?.misconception && (
-                            <p className="text-sm text-amber-900 bg-amber-50/70 rounded-lg p-3 border border-amber-200">
-                              <strong>Why that distractor traps students: </strong>
+                            <p className="callout-misconception max-w-[68ch] rounded-lg border border-specular p-3 font-reading text-sm">
+                              <strong className="font-mono text-xs uppercase tracking-wider">
+                                Why that distractor traps students:{' '}
+                              </strong>
                               <FormattedMathText text={chosenOpt.misconception} />
                             </p>
                           )}
 
-                          <p className="text-sm leading-relaxed text-slate-700">
-                            <strong className="text-[#172b43]">Explanation: </strong>
+                          <p className="max-w-[68ch] font-reading text-sm leading-relaxed text-ink-secondary">
+                            <strong className="font-mono text-xs uppercase tracking-wider text-ink-primary">
+                              Explanation:{' '}
+                            </strong>
                             <FormattedMathText text={q.explanation} />
                           </p>
                         </div>

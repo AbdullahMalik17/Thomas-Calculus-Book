@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thomas' Calculus (14e) — Midterm Lecture &amp; Interactive Visual Review (Chapters 1–4)</title>
+  <meta name="description" content="Self-contained 10-slide interactive HTML presentation covering Functions (Ch 1), Limits &amp; Continuity (Ch 2), Derivatives (Ch 3), and Applications of Derivatives (Ch 4) for Thomas' Calculus 14th Edition." />
+  <meta name="author" content="Muhammad Abdullah Athar" />
+
+  <!-- KaTeX CSS & JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <!-- Chart.js 4 -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <style>
+    /* =========================================================================
+       3-Layer Design Token System (Primitives -> Semantic -> Component)
+       ========================================================================= */
+    :root {
+      color-scheme: dark;
+      --primitive-navy-950: #070d19;
+      --primitive-navy-900: #0c1629;
+      --primitive-navy-800: #13233f;
+      --primitive-slate-700: #253858;
+      --primitive-slate-400: #94a3b8;
+      --primitive-slate-200: #e2e8f0;
+      --primitive-white: #f8fafc;
+      --primitive-teal-400: #2dd4bf;
+      --primitive-teal-500: #14b8a6;
+      --primitive-sky-400: #38bdf8;
+      --primitive-amber-400: #fbbf24;
+      --primitive-rose-400: #fb7185;
+      --primitive-gold-400: #e5c158;
+
+      --slide-bg: var(--primitive-navy-950);
+      --color-background: var(--primitive-navy-950);
+      --color-surface: var(--primitive-navy-900);
+      --color-surface-elevated: var(--primitive-navy-800);
+      --color-border: var(--primitive-slate-700);
+      --color-primary: var(--primitive-teal-400);
+      --color-secondary: var(--primitive-sky-400);
+      --color-accent: var(--primitive-amber-400);
+      --color-danger: var(--primitive-rose-400);
+      --color-gold: var(--primitive-gold-400);
+      --color-text: var(--primitive-white);
+      --color-text-muted: var(--primitive-slate-400);
+      --color-text-secondary: var(--primitive-slate-200);
+      --primitive-gradient-primary: linear-gradient(135deg, var(--primitive-white) 0%, var(--primitive-teal-400) 55%, var(--primitive-sky-400) 100%);
+      --typography-font-heading: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --typography-font-body: 'Inter', system-ui, -apple-system, sans-serif;
+      --typography-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      --brand-color: var(--primitive-teal-400);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--slide-bg);
+      color: var(--color-text);
+      font-family: var(--typography-font-body);
+      accent-color: var(--brand-color);
+      overflow: hidden;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .visually-hidden:where(:not(:focus-within, :active)) {
+      position: absolute !important;
+      clip-path: inset(50%) !important;
+      overflow: hidden !important;
+      width: 1px !important;
+      height: 1px !important;
+      margin: -1px !important;
+      padding: 0 !important;
+      border: 0 !important;
+      white-space: nowrap !important;
+    }
+
+    /* Progress Bar */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+      transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      z-index: 1000;
+    }
+
+    /* Top Bar */
+    .deck-topbar {
+      position: fixed;
+      top: 12px;
+      left: 24px;
+      right: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 950;
+      pointer-events: none;
+    }
+
+    .deck-brand,
+    .deck-backlink {
+      pointer-events: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: 6px 14px;
+      border-radius: 999px;
+    }
+
+    .deck-backlink:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    /* 16:9 Slide Deck Container */
+    .slide-deck {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    @media (min-width: 769px) {
+      .slide-deck {
+        max-width: calc(100vh * 16 / 9);
+        max-height: calc(100vw * 9 / 16);
+        margin: auto;
+        position: absolute;
+        inset: 0;
+      }
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      padding: 58px 56px 76px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--slide-bg);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(14px);
+      transition: opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1), transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+      overflow: hidden;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .slide-content {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    h1, h2, h3 {
+      font-family: var(--typography-font-heading);
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      text-wrap: balance;
+    }
+
+    .slide-title {
+      font-size: clamp(2.1rem, 3.8vw, 3.4rem);
+      background: var(--primitive-gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .slide-heading {
+      font-size: clamp(1.65rem, 2.8vw, 2.45rem);
+      color: var(--color-text);
+    }
+
+    .slide-subtitle {
+      font-size: clamp(0.95rem, 1.35vw, 1.15rem);
+      color: var(--color-text-secondary);
+      line-height: 1.55;
+      max-width: 68ch;
+    }
+
+    .slide-split {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .slide-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .slide-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .card-elevated {
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 18px 20px;
+    }
+
+    .kpi-value {
+      font-family: var(--typography-font-heading);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      color: var(--color-primary);
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+
+    .kpi-label {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+      font-weight: 600;
+    }
+
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 20px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--color-text-secondary);
+    }
+
+    .bullet-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+
+    .math-pill {
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 0.96rem;
+      color: var(--color-text);
+    }
+
+    .interactive-control {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 10px 14px;
+    }
+
+    .interactive-control label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--color-secondary);
+    }
+
+    .tabular-readout {
+      font-family: var(--typography-font-mono);
+      font-variant-numeric: tabular-nums;
+      color: var(--color-primary);
+    }
+
+    .svg-stage {
+      width: 100%;
+      height: auto;
+      max-height: 250px;
+      border-radius: 12px;
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border);
+    }
+
+    .chart-box {
+      position: relative;
+      width: 100%;
+      height: 230px;
+    }
+
+    /* Bottom Navigation */
+    .nav-controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: 6px 16px;
+      border-radius: 999px;
+      z-index: 1000;
+    }
+
+    .nav-btn {
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-border);
+      color: var(--color-text);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .nav-btn:hover,
+    .nav-btn:focus-visible {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      outline: none;
+    }
+
+    .slide-counter {
+      font-family: var(--typography-font-mono);
+      font-variant-numeric: tabular-nums;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-text-secondary);
+      min-width: 68px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .slide {
+        padding: 56px 20px 74px;
+      }
+      .slide-split,
+      .slide-features,
+      .slide-metrics {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+
+    @media print {
+      body {
+        overflow: visible;
+      }
+      .slide-deck {
+        position: static;
+        max-width: none;
+        max-height: none;
+        height: auto;
+      }
+      .slide {
+        position: relative;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        page-break-after: always;
+        height: 100vh;
+      }
+      .nav-controls,
+      .progress-bar,
+      .deck-topbar {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-bar" id="progressBar" role="progressbar" aria-label="Slide deck progress" aria-valuemin="1" aria-valuemax="10" aria-valuenow="1"></div>
+
+  <header class="deck-topbar">
+    <div class="deck-brand">
+      <span>∫dx</span>
+      <span>Thomas' Calculus (14e) · Midterm Review Lecture</span>
+    </div>
+    <a class="deck-backlink" href="/mids">← Back to Midterm Hub</a>
+  </header>
+
+  <main class="slide-deck" id="slideDeck" aria-live="polite">
+    <!-- ===================================================================
+         SLIDE 01: TITLE & SYLLABUS OVERVIEW
+         =================================================================== -->
+    <section class="slide active" aria-label="Slide 1 of 10: Title and Syllabus Overview">
+      <div class="slide-content">
+        <p class="eyebrow">Thomas' Calculus · 14th Edition · Interactive Lecture Deck</p>
+        <h1 class="slide-title">Calculus Midterm Review: Functions, Limits &amp; Derivatives</h1>
+        <p class="slide-subtitle">
+          A high-yield geometric and analytical review across Chapters 1–4. Use <strong>Arrow Keys (← / →)</strong>, <strong>Space</strong>, or touch swipe to navigate—and interact directly with the embedded mathematical sliders.
+        </p>
+
+        <div class="slide-metrics">
+          <div class="card">
+            <span class="eyebrow">Chapter 01</span>
+            <div class="kpi-value">374</div>
+            <p class="kpi-label">Functions, Symmetries &amp; Shifts Solutions</p>
+          </div>
+          <div class="card">
+            <span class="eyebrow">Chapter 02</span>
+            <div class="kpi-value">ε–δ</div>
+            <p class="kpi-label">Limits, Continuity, Squeeze &amp; IVT</p>
+          </div>
+          <div class="card">
+            <span class="eyebrow">Chapter 03</span>
+            <div class="kpi-value">dy/dx</div>
+            <p class="kpi-label">Chain Rule, Implicit &amp; Related Rates</p>
+          </div>
+          <div class="card">
+            <span class="eyebrow">Chapter 04</span>
+            <div class="kpi-value">MVT</div>
+            <p class="kpi-label">Extrema, L'Hôpital &amp; Optimization</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 02: CHAPTER 1 — FUNCTIONS, DOMAINS & SYMMETRY
+         =================================================================== -->
+    <section class="slide" aria-label="Slide 2 of 10: Chapter 1 Functions, Domains, and Symmetry">
+      <div class="slide-content">
+        <p class="eyebrow">Chapter 1 · Sections 1.1 – 1.2 · Core Foundations</p>
+        <h2 class="slide-heading">Natural Domains, Vertical Line Test &amp; Parity Symmetry</h2>
+
+        <div class="slide-split">
+          <div class="card">
+            <ul class="bullet-list">
+              <li><strong>Natural Domain Trap:</strong> Exclude division by zero ($g(x)=0$), negative even roots ($u(x) &lt; 0$), and non-positive logarithms ($u(x) \le 0$). Note: $\sqrt{x^2} = |x|$, never $\pm x$.</li>
+              <li><strong>Even Symmetry ($y$-axis mirror):</strong> $f(-x) = f(x)$ for all $x \in D$ (e.g. $x^2, \cos x, |x|$).</li>
+              <li><strong>Odd Symmetry ($180^\circ$ origin spin):</strong> $f(-x) = -f(x)$ for all $x \in D$ (e.g. $x^3, \sin x, \tan x$). Note: $f(x) = x^3 + 1$ is <em>neither</em>!</li>
+            </ul>
+            <div class="math-pill">
+              $$f(-x) = f(x) \iff \text{Even}, \qquad f(-x) = -f(x) \iff \text{Odd}$$
+            </div>
+          </div>
+
+          <div class="card">
+            <svg viewBox="0 0 420 220" class="svg-stage" role="img" aria-label="Even function y-axis mirror vs Odd function origin rotation">
+              <title>Even vs Odd Symmetry Diagram</title>
+              <!-- Even Panel -->
+              <rect x="12" y="12" width="190" height="196" rx="10" fill="#070d19" stroke="#253858" />
+              <text x="107" y="34" text-anchor="middle" font-size="12" font-weight="700" fill="#38bdf8">EVEN: f(-x) = f(x)</text>
+              <line x1="28" y1="162" x2="186" y2="162" stroke="#253858" />
+              <line x1="107" y1="46" x2="107" y2="188" stroke="#38bdf8" stroke-dasharray="4 3" />
+              <path d="M 42 66 Q 107 238 172 66" fill="none" stroke="#2dd4bf" stroke-width="3" />
+              <circle cx="65" cy="105" r="4.5" fill="#fbbf24" />
+              <circle cx="149" cy="105" r="4.5" fill="#fbbf24" />
+              <line x1="65" y1="105" x2="149" y2="105" stroke="#fbbf24" stroke-dasharray="3 3" />
+              <text x="60" y="96" text-anchor="end" font-size="10" fill="#fbbf24">(-x, y)</text>
+              <text x="154" y="96" text-anchor="start" font-size="10" fill="#fbbf24">(x, y)</text>
+
+              <!-- Odd Panel -->
+              <rect x="218" y="12" width="190" height="196" rx="10" fill="#070d19" stroke="#253858" />
+              <text x="313" y="34" text-anchor="middle" font-size="12" font-weight="700" fill="#2dd4bf">ODD: f(-x) = -f(x)</text>
+              <line x1="234" y1="120" x2="392" y2="120" stroke="#253858" />
+              <line x1="313" y1="46" x2="313" y2="188" stroke="#253858" />
+              <path d="M 248 178 C 285 174, 298 124, 313 120 C 328 116, 341 66, 378 62" fill="none" stroke="#38bdf8" stroke-width="3" />
+              <line x1="268" y1="162" x2="358" y2="78" stroke="#fbbf24" stroke-dasharray="3 3" />
+              <circle cx="268" cy="162" r="4.5" fill="#fbbf24" />
+              <circle cx="358" cy="78" r="4.5" fill="#fbbf24" />
+              <text x="268" y="180" text-anchor="middle" font-size="10" fill="#fbbf24">(-x, -y)</text>
+              <text x="358" y="68" text-anchor="middle" font-size="10" fill="#fbbf24">(x, y)</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 03: CHAPTER 1 — COMPOSITIONS, TRANSFORMATIONS & TRIGONOMETRY
+         =================================================================== -->
+    <section class="slide" aria-label="Slide 3 of 10: Function Transformations and Trigonometry">
+      <div class="slide-content">
+        <p class="eyebrow">Chapter 1 · Sections 1.2 – 1.3 · Algebraic &amp; Trig Mastery</p>
+        <h2 class="slide-heading">Composite Domains, Graph Shifts &amp; Radian Calculus</h2>
+
+        <div class="slide-features">
+          <div class="card">
+            <span class="eyebrow">1. Composite Domain Law</span>
+            <h3>$(f \circ g)(x) = f(g(x))$</h3>
+            <p class="slide-subtitle">
+              Never inspect only the simplified formula! Input $x$ must satisfy <strong>both</strong> $x \in \text{Dom}(g)$ and $g(x) \in \text{Dom}(f)$.
+            </p>
+            <div class="math-pill">
+              $$f(u)=u^2,\; g(x)=\sqrt{x} \implies x \ge 0$$
+            </div>
+          </div>
+
+          <div class="card">
+            <span class="eyebrow">2. Shifting &amp; Scaling</span>
+            <h3>Inside $x$ = Opposite</h3>
+            <p class="slide-subtitle">
+              $y = f(x - h) + k$ shifts <strong>right by $h$</strong> and <strong>up by $k$</strong>. $y = f(cx)$ compresses horizontally by factor $c$.
+            </p>
+            <div class="math-pill">
+              $$y = a\,f(b(x - h)) + k$$
+            </div>
+          </div>
+
+          <div class="card">
+            <span class="eyebrow">3. Radian Requirement</span>
+            <h3>Why Radians Are Mandatory</h3>
+            <p class="slide-subtitle">
+              All calculus derivative formulas ($\frac{d}{dx}\sin x = \cos x$) require $x$ in radians ($s = r\theta$). In degrees, an extra $\frac{\pi}{180}$ factor appears!
+            </p>
+            <div class="math-pill">
+              $$\sin^2\theta + \cos^2\theta = 1$$
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 04: CHAPTER 2 — LIMIT LAWS & SQUEEZE THEOREM
+         =================================================================== -->
+    <section class="slide" aria-label="Slide 4 of 10: Chapter 2 Limit Laws and Squeeze Theorem">
+      <div class="slide-content">
+        <p class="eyebrow">Chapter 2 · Sections 2.2 &amp; 2.4 · Analytical Limits</p>
+        <h2 class="slide-heading">Resolving $0/0$ Indeterminate Forms &amp; The Squeeze Theorem</h2>
+
+        <div class="slide-split">
+          <div class="card">
+            <ul class="bullet-list">
+              <li><strong>Punctured Neighborhood Principle:</strong> $\lim_{x \to c} f(x) = L$ depends ONLY on values near $c$, never on $f(c)$ itself.</li>
+              <li><strong>Three $0/0$ Weapons:</strong> Factoring &amp; canceling, multiplying by radical conjugates ($\sqrt{a}\pm\sqrt{b}$), or using the fundamental trig limit.</li>
+              <li><strong>Sandwich (Squeeze) Theorem:</strong> If $g(x) \le f(x) \le h(x)$ near $c$ and $\lim_{x\to c} g(x) = \lim_{x\to c} h(x) = L$, then $\lim_{x\to c} f(x) = L$.</li>
+            </ul>
+            <div class="math-pill">
+              $$\lim_{\theta \to 0} \frac{\sin\theta}{\theta} = 1, \qquad \lim_{\theta \to 0} \frac{1 - \cos\theta}{\theta} = 0$$
+            </div>
+          </div>
+
+          <div class="card">
+            <svg viewBox="0 0 420 220" class="svg-stage" role="img" aria-label="Sandwich Theorem squeezing oscillating curve f(x) between upper x^2 and lower -x^2 at origin">
+              <title>Squeeze Theorem: -x² ≤ x² sin(1/x) ≤ x²</title>
+              <rect x="14" y="12" width="392" height="196" rx="10" fill="#070d19" stroke="#253858" />
+              <line x1="30" y1="110" x2="390" y2="110" stroke="#253858" />
+              <line x1="210" y1="24" x2="210" y2="196" stroke="#253858" stroke-dasharray="4 3" />
+              <!-- Upper Parabola h(x) = x^2 -->
+              <path d="M 50 28 Q 210 192 370 28" fill="none" stroke="#38bdf8" stroke-width="2.4" />
+              <!-- Lower Parabola g(x) = -x^2 -->
+              <path d="M 50 192 Q 210 28 370 192" fill="none" stroke="#2dd4bf" stroke-width="2.4" />
+              <!-- Squeezed Oscillating Curve -->
+              <path d="M 60 45 C 95 168, 120 55, 148 142 C 170 78, 188 128, 210 110 C 232 92, 250 142, 272 78 C 300 165, 325 52, 360 175" fill="none" stroke="#fbbf24" stroke-width="2.2" />
+              <circle cx="210" cy="110" r="5" fill="#f8fafc" stroke="#2dd4bf" stroke-width="2.5" />
+              <text x="72" y="42" font-size="11" font-weight="700" fill="#38bdf8">h(x) = +x²</text>
+              <text x="72" y="186" font-size="11" font-weight="700" fill="#2dd4bf">g(x) = -x²</text>
+              <text x="295" y="102" font-size="11" font-weight="700" fill="#fbbf24">f(x) = x² sin(1/x)</text>
+              <text x="220" y="100" font-size="11" font-weight="700" fill="#f8fafc">(0, 0) Limit = 0</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 05: CHAPTER 2 — INTERACTIVE EPSILON-DELTA EXPLORER
+         =================================================================== -->
+    <section class="slide" aria-label="Slide 5 of 10: Interactive Epsilon-Delta Definition">
+      <div class="slide-content">
+        <p class="eyebrow">Chapter 2 · Section 2.3 · Interactive Simulation</p>
+        <h2 class="slide-heading">The Precise $\varepsilon$–$\delta$ Definition of a Limit</h2>
+
+        <div class="slide-split">
+          <div class="card">
+            <p class="slide-subtitle">
+              For every target tolerance $\varepsilon &gt; 0$, there exists a radius $\delta &gt; 0$ such that:
+            </p>
+            <div class="math-pill">
+              $$0 &lt; |x - c| &lt; \delta \implies |f(x) - L| &lt; \varepsilon$$
+            </div>
+
+            <div class="interactive-control" onclick="event.stopPropagation()">
+              <label for="slideEpsSlider">
+                <span>Drag Tolerance ε (around L = 3.0)</span>
+                <output id="slideEpsOut" for="slideEpsSlider" class="tabular-readout">ε = 0.60 → δ = 0.377</output>
+              </label>
+              <input id="slideEpsSlider" type="range" min="0.15" max="1.15" step="0.05" value="0.60" aria-label="Adjust epsilon tolerance band on slide 5" />
+            </div>
+
+            <ul class="bullet-list">
+              <li><strong>Asymmetric Rule:</strong> Compute distances $\delta_- = c - x_{\text{left}}$ and $\delta_+ = x_{\text{right}} - c$, then pick $\delta = \min(\delta_-, \delta_+)$.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <svg id="slideEpsSvg" viewBox="0 0 420 220" class="svg-stage" role="img" aria-label="Interactive Epsilon-Delta Band Plot">
+              <title>Interactive Epsilon-Delta Target Window</title>
+              <rect x="44" y="16" width="356" height="174" fill="#070d19" stroke="#253858" />
+              <rect id="s5EpsBand" x="44" y="64" width="356" height="68" fill="#38bdf8" fill-opacity="0.18" />
+              <rect id="s5DeltaBand" x="182" y="16" width="76" height="174" fill="#2dd4bf" fill-opacity="0.2" />
+              <path d="M 60 172 Q 210 120 375 28" fill="none" stroke="#f8fafc" stroke-width="3" />
+              <circle cx="220" cy="98" r="5" fill="#070d19" stroke="#2dd4bf" stroke-width="2.5" />
+              <text id="s5LabelTop" x="40" y="68" text-anchor="end" font-size="10" fill="#38bdf8">L+ε</text>
+              <text x="40" y="102" text-anchor="end" font-size="10.5" font-weight="700" fill="#f8fafc">L=3</text>
+              <text id="s5LabelBot" x="40" y="136" text-anchor="end" font-size="10" fill="#38bdf8">L-ε</text>
+              <text id="s5DeltaLabel" x="220" y="206" text-anchor="middle" font-size="11" font-weight="700" fill="#2dd4bf">c = 2 (δ = 0.377)</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 06: CHAPTER 2 — CONTINUITY, DISCONTINUITIES & IVT
+         =================================================================== -->
+    <section class="slide" aria-label="Slide 6 of 10: Continuity and Intermediate Value Theorem">
+      <div class="slide-content">
+        <p class="eyebrow">Chapter 2 · Sections 2.5 – 2.6 · Continuity &amp; Asymptotes</p>
+        <h2 class="slide-heading">The 3-Part Continuity Test &amp; Intermediate Value Theorem</h2>
+
+        <div class="slide-split">
+          <div class="card">
+            <ul class="bullet-list">
+              <li><strong>Continuity Checklist at $x = c$:</strong> (1) $f(c)$ is defined, (2) $\lim_{x \to c} f(x)$ exists ($L^- = L^+$), and (3) $\lim_{x \to c} f(x) = f(c)$.</li>
+              <li><strong>3 Discontinuity Types:</strong> <em>Removable</em> (hole where limit exists), <em>Jump</em> ($L^- \ne L^+$), and <em>Infinite</em> (vertical asymptote $x = c$).</li>
+              <li><strong>Intermediate Value Theorem (IVT):</strong> If $f$ is continuous on $[a,b]$ and $f(a)\cdot f(b) &lt; 0$, then $f(c) = 0$ for at least one root $c \in (a,b)$.</li>
+            </ul>
+            <div class="math-pill">
+              $$\text{Continuous on } [a,b] \implies \text{No jumps, holes, or vertical asymptotes}$$
+            </div>
+          </div>
+
+          <div class="card">
+            <svg viewBox="0 0 420 220" class="svg-stage" role="img" aria-label="Intermediate Value Theorem continuous root crossing between a and b">
+              <title>Intermediate Value Theorem Root Guarantee</title>
+              <rect x="16" y="14" width="388" height="192" rx="10" fill="#070d19" stroke="#253858" />
+              <line x1="46" y1="115" x2="384" y2="115" stroke="#fbbf24" stroke-width="1.8" stroke-dasharray="5 4" />
+              <line x1="46" y1="26" x2="46" y2="192" stroke="#253858" />
+              <path d="M 82 168 C 145 160, 178 60, 232 115 C 276 155, 310 52, 354 44" fill="none" stroke="#38bdf8" stroke-width="3" />
+              <circle cx="82" cy="168" r="4.5" fill="#fb7185" />
+              <circle cx="232" cy="115" r="5.5" fill="#2dd4bf" />
+              <circle cx="354" cy="44" r="4.5" fill="#38bdf8" />
+              <text x="82" y="188" text-anchor="middle" font-size="11" fill="#fb7185">a (f(a) &lt; 0)</text>
+              <text x="232" y="100" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2dd4bf">Root c: f(c) = y₀</text>
+              <text x="345" y="34" text-anchor="middle" font-size="11" fill="#38bdf8">b (f(b) &gt; 0)</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 07: CHAPTER 3 — INTERACTIVE SECANT-TO-TANGENT DERIVATIVE
+         =================================================================== -->
+    <section class="slide" aria-label="Slide 7 of 10: Chapter 3 Interactive Secant-to-Tangent Explorer">
+      <div class="slide-content">
+        <p class="eyebrow">Chapter 3 · Sections 3.1 – 3.2 · Interactive Derivative Lab</p>
+        <h2 class="slide-heading">Secant-to-Tangent Convergence &amp; Differentiability</h2>
+
+        <div class="slide-split">
+          <div class="card">
+            <div class="math-pill">
+              $$f'(x_0) = \lim_{h \to 0} \frac{f(x_0+h) - f(x_0)}{h}$$
+            </div>
+
+            <div class="interactive-control" onclick="event.stopPropagation()">
+              <label for="slideHSlider">
+                <span>Drag Secant Step h (toward 0)</span>
+                <output id="slideHOut" for="slideHSlider" class="tabular-readout">h = +1.00 → m_sec = 1.000 (f'=0.750)</output>
+              </label>
+              <input id="slideHSlider" type="range" min="0.05" max="1.60" step="0.05" value="1.00" aria-label="Adjust secant step h on slide 7" />
+            </div>
+
+            <ul class="bullet-list">
+              <li><strong>Differentiable $\implies$ Continuous:</strong> Always true! Converse is <strong>false</strong> ($|x|$ at $0$ is continuous but has a sharp corner).</li>
+              <li><strong>3 Failure Modes:</strong> Corners ($|x|$), Cusps ($x^{2/3}$), Vertical Tangents ($x^{1/3}$), or any Discontinuity.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <svg id="slideSecantSvg" viewBox="0 0 420 220" class="svg-stage" role="img" aria-label="Interactive Secant Line Approaching Tangent Line">
+              <title>Interactive Secant-to-Tangent Plot</title>
+              <rect x="36" y="14" width="364" height="184" fill="#070d19" stroke="#253858" />
+              <path d="M 50 182 Q 190 165 375 26" fill="none" stroke="#f8fafc" stroke-width="3" />
+              <!-- Fixed Tangent Line at P(150, 146) -->
+              <line x1="60" y1="184" x2="360" y2="58" stroke="#2dd4bf" stroke-width="2.2" />
+              <!-- Dynamic Secant Line -->
+              <line id="s7SecantLine" x1="60" y1="194" x2="365" y2="34" stroke="#fbbf24" stroke-width="2.2" stroke-dasharray="6 4" />
+              <circle cx="150" cy="146" r="5.5" fill="#2dd4bf" />
+              <circle id="s7PointQ" cx="285" cy="76" r="5.5" fill="#fbbf24" />
+              <text x="142" y="136" text-anchor="end" font-size="11" font-weight="700" fill="#2dd4bf">P(x₀, f(x₀))</text>
+              <text id="s7LabelQ" x="293" y="72" font-size="11" font-weight="700" fill="#fbbf24">Q(x₀+h, f(x₀+h))</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 08: CHAPTER 3 — DIFFERENTIATION RULES, CHAIN & IMPLICIT
+         =================================================================== -->
+    <section class="slide" aria-label="Slide 8 of 10: Chapter 3 Differentiation Rules and Chain Rule">
+      <div class="slide-content">
+        <p class="eyebrow">Chapter 3 · Sections 3.3 – 3.8 · Differentiation Engine</p>
+        <h2 class="slide-heading">Product, Quotient, Chain Rule &amp; Implicit Differentiation</h2>
+
+        <div class="slide-features">
+          <div class="card">
+            <span class="eyebrow">1. Product &amp; Quotient</span>
+            <h3>Never Multiply Derivatives!</h3>
+            <p class="slide-subtitle">
+              $(uv)' = u'v + uv'$ and $\left(\frac{u}{v}\right)' = \frac{v u' - u v'}{v^2}$ (Low d-High minus High d-Low).
+            </p>
+            <div class="math-pill">
+              $$\frac{d}{dx}[\tan x] = \sec^2 x$$
+            </div>
+          </div>
+
+          <div class="card">
+            <span class="eyebrow">2. The Chain Rule</span>
+            <h3>Outside-In Peeling</h3>
+            <p class="slide-subtitle">
+              Differentiate the outer shell evaluated at the untouched inner core $g(x)$, then multiply by $g'(x)$.
+            </p>
+            <div class="math-pill">
+              $$\frac{d}{dx}[f(g(x))] = f'(g(x))\cdot g'(x)$$
+            </div>
+          </div>
+
+          <div class="card">
+            <span class="eyebrow">3. Implicit &amp; Related Rates</span>
+            <h3>Treat $y = y(x)$</h3>
+            <p class="slide-subtitle">
+              Every $y$-term differentiated with respect to $x$ picks up a $\frac{dy}{dx}$ factor. Substitute numbers <em>only after</em> differentiating!
+            </p>
+            <div class="math-pill">
+              $$\frac{d}{dx}[y^n] = n y^{n-1} \frac{dy}{dx}$$
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 09: CHAPTER 4 — EXTREMA, MEAN VALUE THEOREM & CONCAVITY
+         =================================================================== -->
+    <section class="slide" aria-label="Slide 9 of 10: Chapter 4 Extrema, Mean Value Theorem, and Concavity">
+      <div class="slide-content">
+        <p class="eyebrow">Chapter 4 · Sections 4.1 – 4.4 · Analytical Applications</p>
+        <h2 class="slide-heading">Extreme Value Theorem, Mean Value Theorem &amp; Curve Sketching</h2>
+
+        <div class="slide-split">
+          <div class="card">
+            <ul class="bullet-list">
+              <li><strong>Closed Interval Method (§4.1):</strong> Evaluate $f$ at critical points ($f'(c)=0$ or undefined) AND endpoints $a, b$.</li>
+              <li><strong>Mean Value Theorem (§4.2):</strong> If $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then $\exists c \in (a,b)$ where instantaneous slope equals average secant slope.</li>
+              <li><strong>Concavity &amp; Inflection (§4.4):</strong> $f''(x) &gt; 0$ is concave up; inflection points require $f''$ to actually <strong>change sign</strong> ($y=x^4$ at $0$ is NOT an inflection point).</li>
+            </ul>
+            <div class="math-pill">
+              $$f'(c) = \frac{f(b) - f(a)}{b - a}$$
+            </div>
+          </div>
+
+          <div class="card">
+            <svg viewBox="0 0 420 220" class="svg-stage" role="img" aria-label="Mean Value Theorem parallel tangent and secant lines">
+              <title>Mean Value Theorem Geometric Parallelism</title>
+              <rect x="16" y="14" width="388" height="192" rx="10" fill="#070d19" stroke="#253858" />
+              <!-- Secant line AB -->
+              <line x1="70" y1="168" x2="350" y2="64" stroke="#fbbf24" stroke-width="2" stroke-dasharray="6 4" />
+              <!-- Parallel Tangent at c -->
+              <line x1="88" y1="114" x2="328" y2="25" stroke="#2dd4bf" stroke-width="2.4" />
+              <!-- Curve -->
+              <path d="M 70 168 Q 185 18 350 64" fill="none" stroke="#38bdf8" stroke-width="3" />
+              <circle cx="70" cy="168" r="4.5" fill="#fbbf24" />
+              <circle cx="350" cy="64" r="4.5" fill="#fbbf24" />
+              <circle cx="204" cy="71" r="5.5" fill="#2dd4bf" />
+              <line x1="204" y1="71" x2="204" y2="190" stroke="#2dd4bf" stroke-dasharray="3 3" />
+              <text x="204" y="202" text-anchor="middle" font-size="11" font-weight="700" fill="#2dd4bf">c ∈ (a, b): Parallel Slopes</text>
+              <text x="205" y="48" text-anchor="middle" font-size="11" font-weight="700" fill="#2dd4bf">Tangent f'(c)</text>
+              <text x="255" y="125" text-anchor="middle" font-size="11" font-weight="700" fill="#fbbf24">Secant (f(b)-f(a))/(b-a)</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SLIDE 10: CHAPTER 4 & EXAM MASTERY — LINEARIZATION, L'HÔPITAL & CHART
+         =================================================================== -->
+    <section class="slide" aria-label="Slide 10 of 10: Linearization, L'Hopital's Rule, and Error Convergence">
+      <div class="slide-content">
+        <p class="eyebrow">Chapters 3.9 &amp; 4.5–4.7 · Approximation &amp; Exam Readiness</p>
+        <h2 class="slide-heading">Linearization, L'Hôpital's Rule &amp; Approximation Accuracy</h2>
+
+        <div class="slide-split">
+          <div class="card">
+            <ul class="bullet-list">
+              <li><strong>Linearization (§3.9):</strong> $L(x) = f(a) + f'(a)(x - a)$ with differential $dy = f'(a)\,dx$. Concave down ($f'' &lt; 0$) guarantees $L(x)$ is an <strong>overestimate</strong>.</li>
+              <li><strong>L'Hôpital's Rule (§4.5):</strong> Verify $0/0$ or $\infty/\infty$ FIRST, then differentiate numerator and denominator <em>separately</em> ($\lim \frac{f'(x)}{g'(x)}$, NOT Quotient Rule!).</li>
+              <li><strong>Newton's Method (§4.7):</strong> $x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$ doubles accurate digits per step.</li>
+            </ul>
+            <div class="math-pill">
+              $$L(x) = f(a) + f'(a)(x-a), \qquad x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$$
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="chart-box">
+              <canvas id="convergenceChart" aria-label="Chart comparing Exact Sqrt(1+x) vs Tangent Linearization L(x) = 1 + x/2"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Navigation Controls -->
+  <nav class="nav-controls" aria-label="Slide Deck Navigation">
+    <button type="button" class="nav-btn" id="prevBtn" aria-label="Previous slide" onclick="prevSlide()">←</button>
+    <span class="slide-counter"><span id="current">01</span> / <span id="total">10</span></span>
+    <button type="button" class="nav-btn" id="nextBtn" aria-label="Next slide" onclick="nextSlide()">→</button>
+  </nav>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const total = slides.length;
+    let current = 1;
+
+    document.getElementById('total').textContent = String(total).padStart(2, '0');
+
+    function showSlide(n) {
+      if (n < 1) n = 1;
+      if (n > total) n = total;
+      current = n;
+      slides.forEach((s, idx) => {
+        s.classList.toggle('active', idx === n - 1);
+      });
+      document.getElementById('current').textContent = String(n).padStart(2, '0');
+      const bar = document.getElementById('progressBar');
+      bar.style.width = ((n / total) * 100).toFixed(1) + '%';
+      bar.setAttribute('aria-valuenow', String(n));
+    }
+
+    function nextSlide() {
+      showSlide(current + 1);
+    }
+
+    function prevSlide() {
+      showSlide(current - 1);
+    }
+
+    // Keyboard Navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT')) return;
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        showSlide(1);
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        showSlide(total);
+      }
+    });
+
+    // Touch Swipe Navigation
+    let touchStartX = 0;
+    let touchStartY = 0;
+    document.addEventListener('touchstart', (e) => {
+      if (e.target && e.target.closest('.interactive-control')) return;
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    document.addEventListener('touchend', (e) => {
+      if (e.target && e.target.closest('.interactive-control')) return;
+      const dx = e.changedTouches[0].screenX - touchStartX;
+      const dy = e.changedTouches[0].screenY - touchStartY;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+        if (dx < 0) nextSlide();
+        else prevSlide();
+      }
+    }, { passive: true });
+
+    // Slide 05 Interactive Epsilon-Delta Slider
+    const epsSlider = document.getElementById('slideEpsSlider');
+    const epsOut = document.getElementById('slideEpsOut');
+    const s5EpsBand = document.getElementById('s5EpsBand');
+    const s5DeltaBand = document.getElementById('s5DeltaBand');
+    const s5LabelTop = document.getElementById('s5LabelTop');
+    const s5LabelBot = document.getElementById('s5LabelBot');
+    const s5DeltaLabel = document.getElementById('s5DeltaLabel');
+
+    if (epsSlider) {
+      epsSlider.addEventListener('input', (e) => {
+        const eps = parseFloat(e.target.value);
+        // For f(x) = 0.25x^2 + 0.5x + 1 at c=2, L=3:
+        const xRight = -1 + 2 * Math.sqrt(Math.max(0.1, 3 + eps - 0.75));
+        const delta = Math.max(0.05, xRight - 2);
+        epsOut.textContent = `ε = ${eps.toFixed(2)} → δ = ${delta.toFixed(3)}`;
+
+        const halfH = eps * 56;
+        const yTop = Math.max(20, 98 - halfH);
+        const yBot = Math.min(186, 98 + halfH);
+        s5EpsBand.setAttribute('y', yTop.toFixed(1));
+        s5EpsBand.setAttribute('height', (yBot - yTop).toFixed(1));
+
+        const halfW = delta * 98;
+        s5DeltaBand.setAttribute('x', (220 - halfW).toFixed(1));
+        s5DeltaBand.setAttribute('width', (halfW * 2).toFixed(1));
+
+        s5LabelTop.setAttribute('y', (yTop + 4).toFixed(1));
+        s5LabelBot.setAttribute('y', (yBot + 4).toFixed(1));
+        s5DeltaLabel.textContent = `c = 2 (δ = ${delta.toFixed(3)})`;
+      });
+    }
+
+    // Slide 07 Interactive Secant-to-Tangent Slider
+    const hSlider = document.getElementById('slideHSlider');
+    const hOut = document.getElementById('slideHOut');
+    const s7SecantLine = document.getElementById('s7SecantLine');
+    const s7PointQ = document.getElementById('s7PointQ');
+    const s7LabelQ = document.getElementById('s7LabelQ');
+
+    if (hSlider) {
+      hSlider.addEventListener('input', (e) => {
+        const h = parseFloat(e.target.value);
+        const x0 = 1.5;
+        const y0 = 0.25 * x0 * x0 + 0.5;
+        const x1 = x0 + h;
+        const y1 = 0.25 * x1 * x1 + 0.5;
+        const mSec = (y1 - y0) / h;
+        hOut.textContent = `h = +${h.toFixed(2)} → m_sec = ${mSec.toFixed(3)} (f'=0.750)`;
+
+        // Map to SVG coordinates around P(150, 146)
+        const qx = 150 + h * 135;
+        const qy = 146 - (y1 - y0) * 70;
+        s7PointQ.setAttribute('cx', qx.toFixed(1));
+        s7PointQ.setAttribute('cy', qy.toFixed(1));
+        s7LabelQ.setAttribute('x', (qx + 8).toFixed(1));
+        s7LabelQ.setAttribute('y', (qy - 6).toFixed(1));
+
+        const slopeSvg = (qy - 146) / (qx - 150);
+        const yAt60 = 146 + slopeSvg * (60 - 150);
+        const yAt365 = 146 + slopeSvg * (365 - 150);
+        s7SecantLine.setAttribute('y1', yAt60.toFixed(1));
+        s7SecantLine.setAttribute('y2', yAt365.toFixed(1));
+      });
+    }
+
+    // Slide 10 Chart.js 4 Visualization: Exact sqrt(1+x) vs Linearization L(x) = 1 + x/2
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.renderMathInElement) {
+        window.renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false },
+          ],
+          throwOnError: false,
+        });
+      }
+
+      const ctx = document.getElementById('convergenceChart');
+      if (ctx && window.Chart) {
+        const xLabels = ['-0.6', '-0.3', '0.0', '0.3', '0.6', '0.9', '1.2'];
+        const exactVals = [-0.6, -0.3, 0, 0.3, 0.6, 0.9, 1.2].map((x) => Number(Math.sqrt(1 + x).toFixed(4)));
+        const linVals = [-0.6, -0.3, 0, 0.3, 0.6, 0.9, 1.2].map((x) => Number((1 + 0.5 * x).toFixed(4)));
+
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: xLabels,
+            datasets: [
+              {
+                label: 'Linearization L(x) = 1 + 0.5x (Overestimate)',
+                data: linVals,
+                borderColor: '#2dd4bf',
+                backgroundColor: 'rgba(45, 212, 191, 0.12)',
+                borderWidth: 2.5,
+                borderDash: [6, 4],
+                tension: 0.2,
+              },
+              {
+                label: 'Exact Curve f(x) = √(1 + x)',
+                data: exactVals,
+                borderColor: '#38bdf8',
+                backgroundColor: 'rgba(56, 189, 248, 0.14)',
+                borderWidth: 3,
+                fill: true,
+                tension: 0.35,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                labels: { color: '#e2e8f0', font: { size: 11 } },
+              },
+            },
+            scales: {
+              x: {
+                title: { display: true, text: 'Input Offset x (around a = 0)', color: '#94a3b8' },
+                grid: { color: 'rgba(255,255,255,0.06)' },
+                ticks: { color: '#94a3b8' },
+              },
+              y: {
+                title: { display: true, text: 'Function Value y', color: '#94a3b8' },
+                grid: { color: 'rgba(255,255,255,0.06)' },
+                ticks: { color: '#94a3b8' },
+              },
+            },
+          },
+        });
+      }
+    });
+
+    showSlide(1);
+  </script>
+</body>
+</html>

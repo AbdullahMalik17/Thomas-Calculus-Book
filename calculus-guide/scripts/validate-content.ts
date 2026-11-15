@@ -70,25 +70,32 @@ function getExpectedId(filePath: string): string {
 
 function validateMDXFile(filePath: string): void {
   mdxCount++;
+  const relFile = normalizePosix(path.relative(CONTENT_DIR, filePath));
   const content = fs.readFileSync(filePath, 'utf-8');
   if (content.trim().length === 0) {
-    errors.push({ file: filePath, message: 'MDX file is empty' });
+    errors.push({ file: relFile, message: 'MDX file is empty' });
     return;
   }
-  // Check balanced dollar signs for KaTeX inline math
-  const singleDollarMatches = (content.match(/(?<!\$)\$(?!\$)/g) || []).length;
+  // Check balanced dollar signs for KaTeX inline math (ignoring escaped \$)
+  const singleDollarMatches = (content.match(/(?<!\\|\$)\$(?!\$)/g) || []).length;
   if (singleDollarMatches % 2 !== 0) {
-    warnings.push(`Warning: Potential unclosed inline math delimiter '$' in ${filePath}`);
+    warnings.push(`Warning: Potential unclosed inline math delimiter '$' in ${relFile}`);
   }
 }
 
 function validateJSONContent(filePath: string): void {
+  const relFile = normalizePosix(path.relative(CONTENT_DIR, filePath));
   const raw = fs.readFileSync(filePath, 'utf-8');
   let data: any;
   try {
     data = JSON.parse(raw);
   } catch (err: any) {
-    errors.push({ file: filePath, message: `Invalid JSON syntax: ${err.message}` });
+    errors.push({ file: relFile, message: `Invalid JSON syntax: ${err.message}` });
+    return;
+  }
+
+  if (!data || typeof data !== 'object' || Array.isArray(data)) {
+    errors.push({ file: relFile, message: 'JSON root must be an object' });
     return;
   }
 
@@ -96,7 +103,7 @@ function validateJSONContent(filePath: string): void {
   const expectedId = getExpectedId(filePath);
   if (data.id !== expectedId) {
     errors.push({
-      file: filePath,
+      file: relFile,
       field: 'id',
       message: `ID mismatch: Expected "${expectedId}" based on file path, but found "${data.id}"`,
     });
@@ -105,22 +112,22 @@ function validateJSONContent(filePath: string): void {
   // 2. Assertion: No duplicate IDs across files
   if (idRegistry.has(data.id)) {
     errors.push({
-      file: filePath,
+      file: relFile,
       field: 'id',
       message: `Duplicate ID collision: "${data.id}" was already declared in ${idRegistry.get(data.id)}`,
     });
   } else if (data.id) {
-    idRegistry.set(data.id, filePath);
+    idRegistry.set(data.id, relFile);
   }
 
   // 3. Schema validation based on item type
-  if (filePath.endsWith('definitions.json') || data.type === 'definitions') {
+  if (path.basename(filePath) === 'definitions.json' || data.type === 'definitions') {
     definitionsCount++;
     const result = DefinitionsFileSchema.safeParse(data);
     if (!result.success) {
       for (const issue of result.error.issues) {
         errors.push({
-          file: filePath,
+          file: relFile,
           field: issue.path.join('.'),
           message: issue.message,
         });
@@ -132,7 +139,7 @@ function validateJSONContent(filePath: string): void {
     if (!result.success) {
       for (const issue of result.error.issues) {
         errors.push({
-          file: filePath,
+          file: relFile,
           field: issue.path.join('.'),
           message: issue.message,
         });
@@ -144,7 +151,7 @@ function validateJSONContent(filePath: string): void {
     if (!result.success) {
       for (const issue of result.error.issues) {
         errors.push({
-          file: filePath,
+          file: relFile,
           field: issue.path.join('.'),
           message: issue.message,
         });
@@ -156,7 +163,7 @@ function validateJSONContent(filePath: string): void {
     if (!result.success) {
       for (const issue of result.error.issues) {
         errors.push({
-          file: filePath,
+          file: relFile,
           field: issue.path.join('.'),
           message: issue.message,
         });
@@ -164,7 +171,7 @@ function validateJSONContent(filePath: string): void {
     }
   } else {
     errors.push({
-      file: filePath,
+      file: relFile,
       field: 'type',
       message: `Unknown or missing content type "${data.type}". Expected 'solution', 'mcq', 'practice', or definitions.json`,
     });
@@ -172,6 +179,16 @@ function validateJSONContent(filePath: string): void {
 }
 
 export function runValidation(): { errorCount: number; warningCount: number } {
+  // Reset mutable module state so repeated runs are idempotent
+  errors.length = 0;
+  warnings.length = 0;
+  idRegistry.clear();
+  solutionsCount = 0;
+  practiceCount = 0;
+  mcqCount = 0;
+  mdxCount = 0;
+  definitionsCount = 0;
+
   console.log('\n\x1b[1m\x1b[36m======================================================\x1b[0m');
   console.log('\x1b[1m\x1b[36m    CALCULUS-GUIDE CONTENT VALIDATION PIPELINE       \x1b[0m');
   console.log('\x1b[1m\x1b[36m======================================================\x1b[0m\n');

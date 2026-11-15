@@ -1,173 +1,318 @@
-# Thomas' Calculus Study Guide
+# Thomas' Calculus Study Guide (14th Edition) — Interactive & SymPy CAS Verified
 
-> Interactive Next.js study platform for Thomas' Calculus (14th Edition) with verifiable math, automated validation pipelines, and verified Golden Examples. Engineered and authored by Muhammad Abdullah Athar.
+> Open, mathematically rigorous Next.js study platform for Thomas' Calculus (14th Edition) covering all 16 chapters and 119 sections with 934 SymPy CAS-verified step-by-step exercise solutions, 65 Midterm Exam MCQs, 31 interactive textbook definition/theorem blocks, 3-tier progressive practice sets, and 100% distractor misconception diagnostics. Authored and engineered by Muhammad Abdullah Athar.
 
 ## Creator & Attribution
-- Author: Muhammad Abdullah Athar
-- GitHub: https://github.com/AbdullahMalik17
-- Repository: https://github.com/AbdullahMalik17/Thomas-Calculus-Book
+- **Author & Architect**: Muhammad Abdullah Athar
+- **GitHub Profile**: https://github.com/AbdullahMalik17
+- **Source Repository**: https://github.com/AbdullahMalik17/Thomas-Calculus-Book
+- **Canonical Production URL**: https://thomas-calculus-guide.vercel.app
+- **XML Sitemap**: [/sitemap.xml](/sitemap.xml)
+- **AI Crawler Policy**: [/robots.txt](/robots.txt) (Explicitly allows `PerplexityBot`, `OAI-SearchBot`, `ChatGPT-User`, `GPTBot`, `ClaudeBot`, `Google-Extended`, `Applebot-Extended`)
 
-## Core Pages
-- [/](/): Platform overview, curriculum roadmap, and SymPy verification feature highlights.
-- [/chapters](/chapters): Complete Curriculum Directory and Table of Contents covering all 16 chapters, 116 sections, and 598 worked solutions.
-- [/chapters/ch01](/chapters/ch01) through [/chapters/ch16](/chapters/ch16): Overview, key theorems, and section directories for Chapters 1 through 16.
-- [/dashboard](/dashboard): Student mastery and SymPy verification engine status dashboard tracking all 116 sections.
-- [/about](/about): Platform mission, attribution to Muhammad Abdullah Athar, and copyright safeguards.
+## Core Platform & Exam Preparation Hubs
+- [/](/): Platform overview, interactive study workflow ("Understand the idea -> Follow worked examples -> Practice with purpose"), and curriculum entry points.
+- [/chapters](/chapters): Complete Curriculum & Solutions Directory indexing all 16 chapters, 119 sections, and 934 SymPy CAS-verified worked exercise solutions.
+- [/mids](/mids): Midterm Exam Preparation Hub & Timed Mock Exam Simulator featuring 65 verified multiple-choice questions across Chapter 1 (Functions, 21 Qs), Chapter 2 (Limits & Continuity, 20 Qs), and Chapter 3 (Derivatives, 24 Qs) with instant misconception diagnostics.
+- [/mids/definitions](/mids/definitions): Midterm Textbook Blocks, Definitions, Theorems, Rules & Tests (Chapters 1–3) with two-level explanations (plain-English foundation intuition + advanced exam traps and edge cases) and interactive SVG geometric diagrams.
+- [/dashboard](/dashboard): Real-time Student Mastery & SymPy Verification Engine Telemetry Dashboard tracking 119 sections, 934 solutions, 1,069 Zod-validated JSON content items (+ 119 MDX summaries), and 100% distractor misconception coverage.
+- [/about](/about): Platform mission, attribution to Muhammad Abdullah Athar, technical architecture, and strict copyright/fair-use safeguards.
+- `/chapters/[ch]`: Chapter Frontispiece, Guiding Mathematical Theorems, and Section Table of Contents (`/chapters/ch01` through `/chapters/ch16`).
+- `/chapters/[ch]/[section]`: Section Concept Notes (MDX + KaTeX), Formal Definitions & Theorems (`definitions.json`), and Step-by-Step Worked Solutions (`?tab=solutions`).
+- `/practice/[section]`: Interactive 3-Tier Practice Problems (`Tier 1 Foundational`, `Tier 2 Intermediate`, `Tier 3 Advanced/Proof`) with progressive hint reveals and SymPy-checked solutions.
+- `/quiz/[chapter]`: Chapter Diagnostic & Conceptual MCQ Quizzes (`/quiz/ch01` through `/quiz/ch16`) with targeted distractor misconception feedback.
 
-## Complete Curriculum & Section Directory (119 Sections, 934 Solutions)
+---
+
+## Complete Curriculum & Section Directory (16 Chapters, 119 Sections, 934 Solutions)
 
 ### Chapter 1: Functions (7 Sections, 374 Solutions)
-- Section 1.1: Functions and Their Graphs - Natural domains, ranges, piecewise functions, symmetry criteria, difference quotients (76 solutions).
-- Section 1.2: Combining Functions; Shifting and Scaling Graphs - Algebra of functions, composition, horizontal/vertical shifts, scaling, reflection (82 solutions).
-- Section 1.3: Trigonometric Functions - Radian measure, circular functions, identities, transformations (74 solutions).
-- Section 1.4: Graphing with Software - Viewing windows, graphing technology, parametric equations, graph artifacts (36 solutions).
-- Section 1.5: Questions to Guide Your Review - Conceptual synthesis of functions, domains, compositions, transformations, and trigonometry (16 solutions).
-- Section 1.6: Chapter 1 Practice Exercises - End-of-chapter mastery problems spanning geometric modeling, symmetry, piecewise functions, compositions, and trigonometry (72 solutions).
-- Section 1.7: Additional and Advanced Exercises - Theoretical proofs, even-odd decompositions, Heron's formula, Kepler equal-area geometry, and parameter analysis (18 solutions).
+- **Routes**: [Chapter 1 Overview](/chapters/ch01) | [Chapter 1 Quiz](/quiz/ch01) | [Midterm Prep](/mids)
+- **Guiding Theorem (Symmetry Criterion)**: Even Function `f(-x) = f(x)` (y-axis reflection) | Odd Function `f(-x) = -f(x)` (origin rotational symmetry)
+- Section 1.1: Functions and Their Graphs - [Study Guide](/chapters/ch01/1.1-functions-and-graphs) | [Solutions (76)](/chapters/ch01/1.1-functions-and-graphs?tab=solutions) | [Practice (8)](/practice/1.1-functions-and-graphs) — Natural domains, ranges, piecewise functions, vertical line test, even and odd symmetry, difference quotients (76 solutions, 8 practice problems, 8 conceptual MCQs).
+- Section 1.2: Combining Functions; Shifting and Scaling Graphs - [Study Guide](/chapters/ch01/1.2-combining-functions-shifting-scaling) | [Solutions (82)](/chapters/ch01/1.2-combining-functions-shifting-scaling?tab=solutions) | [Practice](/practice/1.2-combining-functions-shifting-scaling) — Algebra of functions, composition `f(g(x))`, domain of composites, horizontal/vertical shifts, scaling, reflections (82 solutions).
+- Section 1.3: Trigonometric Functions - [Study Guide](/chapters/ch01/1.3-trigonometric-functions) | [Solutions (74)](/chapters/ch01/1.3-trigonometric-functions?tab=solutions) | [Practice](/practice/1.3-trigonometric-functions) — Radian measure, arc length, circular functions, periodicity, Pythagorean/addition/double-angle/half-angle identities, law of cosines, sinusoidal transformations (74 solutions).
+- Section 1.4: Graphing with Software - [Study Guide](/chapters/ch01/1.4-graphing-with-software) | [Solutions (36)](/chapters/ch01/1.4-graphing-with-software?tab=solutions) | [Practice](/practice/1.4-graphing-with-software) — Viewing windows, aspect ratios, pixel aliasing, vertical asymptote false segments, hidden oscillations, empirical regression (36 solutions).
+- Section 1.5: Questions to Guide Your Review - [Study Guide](/chapters/ch01/1.5-questions-to-guide-your-review) | [Solutions (16)](/chapters/ch01/1.5-questions-to-guide-your-review?tab=solutions) | [Practice](/practice/1.5-questions-to-guide-your-review) — Comprehensive conceptual synthesis of functions, domains, compositions, geometric transformations, and trigonometry (16 solutions).
+- Section 1.6: Chapter 1 Practice Exercises - [Study Guide](/chapters/ch01/1.6-practice-exercises) | [Solutions (72)](/chapters/ch01/1.6-practice-exercises?tab=solutions) | [Practice](/practice/1.6-practice-exercises) — End-of-chapter mastery problems spanning geometric modeling, symmetry, piecewise functions, compositions, and trigonometry (72 solutions).
+- Section 1.7: Additional and Advanced Exercises - [Study Guide](/chapters/ch01/1.7-additional-and-advanced-exercises) | [Solutions (18)](/chapters/ch01/1.7-additional-and-advanced-exercises?tab=solutions) | [Practice](/practice/1.7-additional-and-advanced-exercises) — Theoretical proofs, unique even-odd decompositions, Heron's formula, Kepler equal-area geometry, and parameter analysis (18 solutions).
 
 ### Chapter 2: Limits and Continuity (6 Sections, 30 Solutions)
-- Section 2.1: Rates of Change and Tangents to Curves - Average rates of change, secant slopes, instantaneous rates (5 solutions).
-- Section 2.2: Limit of a Function and Limit Laws - Limit laws, 0/0 indeterminate forms, conjugate rationalization, Sandwich Theorem (5 solutions).
-- Section 2.3: The Precise Definition of a Limit - Epsilon-delta definitions, delta calculations, formal proofs (5 solutions).
-- Section 2.4: One-Sided Limits - Right-hand and left-hand limits, absolute values, floor function, trig limits (5 solutions).
-- Section 2.5: Continuity - Three continuity conditions, classification of discontinuities, Intermediate Value Theorem (5 solutions).
-- Section 2.6: Limits Involving Infinity; Asymptotes of Graphs - Horizontal, vertical, and oblique asymptotes, infinite limits (5 solutions).
+- **Routes**: [Chapter 2 Overview](/chapters/ch02) | [Chapter 2 Quiz](/quiz/ch02) | [Midterm Prep](/mids)
+- **Guiding Theorem (Limit & Continuity Principles)**: Two-Sided Limit `\lim_{x \to c} f(x) = L \iff \lim_{x \to c^+} f(x) = \lim_{x \to c^-} f(x) = L` | Continuity at a Point `\lim_{x \to c} f(x) = f(c)`
+- Section 2.1: Rates of Change and Tangents to Curves - [Study Guide](/chapters/ch02/2.1-rates-of-change-and-tangents-to-curves) | [Practice](/practice/2.1-rates-of-change-and-tangents-to-curves) — Average rates of change, secant slopes, instantaneous rates of change, curve tangent slopes (5 solutions).
+- Section 2.2: Limit of a Function and Limit Laws - [Study Guide](/chapters/ch02/2.2-limit-of-a-function-and-limit-laws) | [Practice](/practice/2.2-limit-of-a-function-and-limit-laws) — Limit laws, algebraic cancellation of `0/0` indeterminate forms, conjugate rationalization, Sandwich (Squeeze) Theorem (5 solutions).
+- Section 2.3: The Precise Definition of a Limit - [Study Guide](/chapters/ch02/2.3-the-precise-definition-of-a-limit) | [Practice](/practice/2.3-the-precise-definition-of-a-limit) — Rigorous `\varepsilon`-`\delta` definition, finding `\delta(\varepsilon)` for linear, quadratic, and radical functions, formal limit proofs (5 solutions).
+- Section 2.4: One-Sided Limits - [Study Guide](/chapters/ch02/2.4-one-sided-limits) | [Practice](/practice/2.4-one-sided-limits) — Right-hand and left-hand limits, jump discontinuities, floor/ceiling functions, fundamental trig limit `\lim_{\theta \to 0} (\sin \theta)/\theta = 1` (5 solutions).
+- Section 2.5: Continuity - [Study Guide](/chapters/ch02/2.5-continuity) | [Practice](/practice/2.5-continuity) — Three continuity conditions, removable/jump/infinite/oscillating discontinuities, continuous extensions, Intermediate Value Theorem (IVT) root location (5 solutions).
+- Section 2.6: Limits Involving Infinity; Asymptotes of Graphs - [Study Guide](/chapters/ch02/2.6-limits-involving-infinity-asymptotes-of-graphs) | [Practice](/practice/2.6-limits-involving-infinity-asymptotes-of-graphs) — Horizontal, vertical, and oblique (slant) asymptotes via polynomial long division, dominant term analysis at `\pm\infty` (5 solutions).
 
 ### Chapter 3: Derivatives (9 Sections, 45 Solutions)
-- Section 3.1: Tangents and the Derivative at a Point - Difference quotients, tangent slopes, normal line equations (5 solutions).
-- Section 3.2: The Derivative as a Function - First principles differentiation, differentiability implies continuity (5 solutions).
-- Section 3.3: Differentiation Rules - Power rule, product rule, quotient rule, higher-order derivatives (5 solutions).
-- Section 3.4: The Derivative as a Rate of Change - Motion, velocity, acceleration, jerk, economics marginal cost (5 solutions).
-- Section 3.5: Derivatives of Trigonometric Functions - Sine, cosine, tangent, secant derivatives, 4-cycle periodicity (5 solutions).
-- Section 3.6: The Chain Rule - Composite functions, generalized power rule, nested differentiation (5 solutions).
-- Section 3.7: Implicit Differentiation - Implicit curves, circle/ellipse tangents, second derivatives implicitly (5 solutions).
-- Section 3.8: Related Rates - Time derivatives of geometric relations, expanding balloons, sliding ladders, conical tanks (5 solutions).
-- Section 3.9: Linearization and Differentials - Tangent line approximations, standard linear formulas, differentials (5 solutions).
+- **Routes**: [Chapter 3 Overview](/chapters/ch03) | [Chapter 3 Quiz](/quiz/ch03) | [Midterm Prep](/mids)
+- **Guiding Theorem (Differential Calculus Foundations)**: Chain Rule `\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)` | Product Rule `\frac{d}{dx}[u \cdot v] = u'v + uv'`
+- Section 3.1: Tangents and the Derivative at a Point - [Study Guide](/chapters/ch03/3.1-tangents-and-the-derivative-at-a-point) | [Practice](/practice/3.1-tangents-and-the-derivative-at-a-point) — Difference quotients at `x = x_0`, tangent slopes, tangent and normal line equations (5 solutions).
+- Section 3.2: The Derivative as a Function - [Study Guide](/chapters/ch03/3.2-the-derivative-as-a-function) | [Practice](/practice/3.2-the-derivative-as-a-function) — First principles differentiation, differentiability implies continuity, failure modes (corners, cusps, vertical tangents, discontinuities) (5 solutions).
+- Section 3.3: Differentiation Rules - [Study Guide](/chapters/ch03/3.3-differentiation-rules) | [Practice](/practice/3.3-differentiation-rules) — Power rule, linearity, product rule, quotient rule, second and higher-order derivatives (5 solutions).
+- Section 3.4: The Derivative as a Rate of Change - [Study Guide](/chapters/ch03/3.4-the-derivative-as-a-rate-of-change) | [Practice](/practice/3.4-the-derivative-as-a-rate-of-change) — Rectilinear kinematics (displacement, velocity, speed, acceleration, jerk), free-fall motion, marginal cost/revenue in economics (5 solutions).
+- Section 3.5: Derivatives of Trigonometric Functions - [Study Guide](/chapters/ch03/3.5-derivatives-of-trigonometric-functions) | [Practice](/practice/3.5-derivatives-of-trigonometric-functions) — Derivatives of `\sin x, \cos x, \tan x, \sec x, \cot x, \csc x`, simple harmonic motion, 4-cycle periodicity (5 solutions).
+- Section 3.6: The Chain Rule - [Study Guide](/chapters/ch03/3.6-the-chain-rule) | [Practice](/practice/3.6-the-chain-rule) — Composite function differentiation, generalized power rule, multi-layer nested Chain Rule, parametric slope introductions (5 solutions).
+- Section 3.7: Implicit Differentiation - [Study Guide](/chapters/ch03/3.7-implicit-differentiation) | [Practice](/practice/3.7-implicit-differentiation) — Differentiating implicit algebraic curves (circles, ellipses, Folium of Descartes), implicit second derivatives `d^2y/dx^2`, normal lines (5 solutions).
+- Section 3.8: Related Rates - [Study Guide](/chapters/ch03/3.8-related-rates) | [Practice](/practice/3.8-related-rates) — Time derivatives of coupled geometric constraints: expanding spheres, sliding ladders, draining conical tanks, tracking angles (5 solutions).
+- Section 3.9: Linearization and Differentials - [Study Guide](/chapters/ch03/3.9-linearization-and-differentials) | [Practice](/practice/3.9-linearization-and-differentials) — Tangent line linearization `L(x) = f(a) + f'(a)(x - a)`, differential `dy = f'(x)\,dx`, relative and percentage error propagation (5 solutions).
 
 ### Chapter 4: Applications of Derivatives (8 Sections, 40 Solutions)
-- Section 4.1: Extreme Values of Functions on Closed Intervals - Absolute and local extrema, critical points, Extreme Value Theorem (5 solutions).
-- Section 4.2: The Mean Value Theorem - Rolle's Theorem, Mean Value Theorem, constant derivative corollaries, root uniqueness (5 solutions).
-- Section 4.3: Monotonic Functions and the First Derivative Test - Increasing/decreasing tests, First Derivative Test (5 solutions).
-- Section 4.4: Concavity and Curve Sketching - Concavity test, inflection points, Second Derivative Test, curve sketching (5 solutions).
-- Section 4.5: Indeterminate Forms and L'Hôpital's Rule - Forms 0/0 and inf/inf, products, differences, and powers (5 solutions).
-- Section 4.6: Applied Optimization - Geometric and physical optimization: box volume, pastures, cylinders, Snell's Law (5 solutions).
-- Section 4.7: Newton's Method - Newton-Raphson iteration, tangent line root approximations, failure modes (5 solutions).
-- Section 4.8: Antiderivatives - Indefinite integrals, power rule for integration, trigonometric antiderivatives, IVPs (5 solutions).
+- **Routes**: [Chapter 4 Overview](/chapters/ch04) | [Chapter 4 Quiz](/quiz/ch04)
+- **Guiding Theorem (Analytical Optimality & Existence)**: Mean Value Theorem `f'(c) = \frac{f(b) - f(a)}{b - a}` | Extreme Value Theorem `f \in C[a, b] \implies \exists \max / \min`
+- Section 4.1: Extreme Values of Functions on Closed Intervals - [Study Guide](/chapters/ch04/4.1-extreme-values-of-functions-on-closed-intervals) | [Practice](/practice/4.1-extreme-values-of-functions-on-closed-intervals) — Absolute and local extrema, critical points (`f'(c) = 0` or undefined), Extreme Value Theorem, Closed Interval Method (5 solutions).
+- Section 4.2: The Mean Value Theorem - [Study Guide](/chapters/ch04/4.2-the-mean-value-theorem) | [Practice](/practice/4.2-the-mean-value-theorem) — Rolle's Theorem, Mean Value Theorem, zero-derivative and constant-difference corollaries, uniqueness of real roots (5 solutions).
+- Section 4.3: Monotonic Functions and the First Derivative Test - [Study Guide](/chapters/ch04/4.3-monotonic-functions-and-the-first-derivative-test) | [Practice](/practice/4.3-monotonic-functions-and-the-first-derivative-test) — Increasing/decreasing intervals via `f'(x)` sign charts, First Derivative Test for local extrema (5 solutions).
+- Section 4.4: Concavity and Curve Sketching - [Study Guide](/chapters/ch04/4.4-concavity-and-curve-sketching) | [Practice](/practice/4.4-concavity-and-curve-sketching) — Concavity (`f''(x) > 0` vs `f''(x) < 0`), points of inflection, Second Derivative Test, global curve sketching synthesis (5 solutions).
+- Section 4.5: Indeterminate Forms and L'Hôpital's Rule - [Study Guide](/chapters/ch04/4.5-indeterminate-forms-and-lhospitals-rule) | [Practice](/practice/4.5-indeterminate-forms-and-lhospitals-rule) — Indeterminate forms `0/0`, `\infty/\infty`, `0 \cdot \infty`, `\infty - \infty`, `1^\infty`, `0^0`, `\infty^0` via L'Hôpital's Rule and logarithmic transforms (5 solutions).
+- Section 4.6: Applied Optimization - [Study Guide](/chapters/ch04/4.6-applied-optimization) | [Practice](/practice/4.6-applied-optimization) — Constrained geometric, physical, and economic optimization: maximum volume boxes, minimum surface cylinders, Fermat's principle / Snell's Law (5 solutions).
+- Section 4.7: Newton's Method - [Study Guide](/chapters/ch04/4.7-newtons-method) | [Practice](/practice/4.7-newtons-method) — Newton-Raphson root iteration `x_{n+1} = x_n - f(x_n)/f'(x_n)`, quadratic convergence, horizontal tangent failure modes (5 solutions).
+- Section 4.8: Antiderivatives - [Study Guide](/chapters/ch04/4.8-antiderivatives) | [Practice](/practice/4.8-antiderivatives) — General antiderivatives `F(x) + C`, indefinite integrals, power/trig antiderivative rules, Initial Value Problems (IVPs) (5 solutions).
 
 ### Chapter 5: Integrals (6 Sections, 30 Solutions)
-- Section 5.1: Area and Estimating with Finite Sums - Riemann approximation, lower and upper sums, error bounds (5 solutions).
-- Section 5.2: Sigma Notation and Limits of Finite Sums - Telescoping series, summation formulas, definite integral limits (5 solutions).
-- Section 5.3: The Definite Integral - Riemann sums, integrable functions, area under curves, mean value theorem for integrals (5 solutions).
-- Section 5.4: The Fundamental Theorem of Calculus - FTC Part 1 and Part 2, differentiation of integral functions, net change theorem (5 solutions).
-- Section 5.5: Indefinite Integrals and the Substitution Method - u-substitution, algebraic transforms, trigonometric integrals (5 solutions).
-- Section 5.6: Substitution and Area Between Curves - Definite integrals via substitution, area between intersecting curves (5 solutions).
+- **Routes**: [Chapter 5 Overview](/chapters/ch05) | [Chapter 5 Quiz](/quiz/ch05)
+- **Guiding Theorem (Fundamental Theorem of Calculus)**: FTC Part 1 `\frac{d}{dx}\int_a^x f(t)\,dt = f(x)` | FTC Part 2 `\int_a^b f(x)\,dx = F(b) - F(a)`
+- Section 5.1: Area and Estimating with Finite Sums - [Study Guide](/chapters/ch05/5.1-area-and-estimating-with-finite-sums) | [Practice](/practice/5.1-area-and-estimating-with-finite-sums) — Left, Right, and Midpoint rectangular approximations (LRAM, RRAM, MRAM), upper and lower sums, distance traveled from velocity (5 solutions).
+- Section 5.2: Sigma Notation and Limits of Finite Sums - [Study Guide](/chapters/ch05/5.2-sigma-notation-and-limits-of-finite-sums) | [Practice](/practice/5.2-sigma-notation-and-limits-of-finite-sums) — Summation algebra, closed-form power sums (`\sum k, \sum k^2, \sum k^3`), telescoping sums, Riemann sum limits as `n \to \infty` (5 solutions).
+- Section 5.3: The Definite Integral - [Study Guide](/chapters/ch05/5.3-the-definite-integral) | [Practice](/practice/5.3-the-definite-integral) — Formal Riemann integral definition, integrability of continuous functions, algebraic properties of definite integrals, average value of a function (5 solutions).
+- Section 5.4: The Fundamental Theorem of Calculus - [Study Guide](/chapters/ch05/5.4-the-fundamental-theorem-of-calculus) | [Practice](/practice/5.4-the-fundamental-theorem-of-calculus) — FTC Part 1 with Chain Rule (`\frac{d}{dx}\int_{u(x)}^{v(x)} f(t)\,dt`), FTC Part 2 evaluation, Net Change Theorem (5 solutions).
+- Section 5.5: Indefinite Integrals and the Substitution Method - [Study Guide](/chapters/ch05/5.5-indefinite-integrals-and-the-substitution-method) | [Practice](/practice/5.5-indefinite-integrals-and-the-substitution-method) — `u`-substitution (`\int f(g(x))g'(x)\,dx = \int f(u)\,du`), differential matching, algebraic and trigonometric integrals (5 solutions).
+- Section 5.6: Definite Integral Substitutions and the Area Between Curves - [Study Guide](/chapters/ch05/5.6-definite-integral-substitutions-and-the-area-between-curves) | [Practice](/practice/5.6-definite-integral-substitutions-and-the-area-between-curves) — Transforming limits of integration, even/odd symmetry on `[-a, a]`, area between intersecting curves with respect to `x` and `y` (5 solutions).
 
 ### Chapter 6: Applications of Definite Integrals (6 Sections, 30 Solutions)
-- Section 6.1: Volumes Using Cross-Sections - Slicing method, Cavalieri's principle, solids of revolution, disk and washer methods (5 solutions).
-- Section 6.2: Volumes Using Cylindrical Shells - Shell method around coordinate and displaced axes (5 solutions).
-- Section 6.3: Arc Length - Smooth curve lengths, parametric arc length, differential arc element (5 solutions).
-- Section 6.4: Areas of Surfaces of Revolution - Conical frustum, surface area of revolution about x- and y-axes (5 solutions).
-- Section 6.5: Work and Fluid Forces - Hooke's law springs, pumping liquids from tanks, hydrostatic pressure and fluid force on submerged plates (5 solutions).
-- Section 6.6: Moments and Centers of Mass - First moments, centroids of planar regions, center of mass, Pappus's centroid theorem (5 solutions).
+- **Routes**: [Chapter 6 Overview](/chapters/ch06) | [Chapter 6 Quiz](/quiz/ch06)
+- **Guiding Theorem (Disk & Washer Methods)**: Disk Method `V = \pi \int_a^b [R(x)]^2\,dx` | Washer Method `V = \pi \int_a^b ([R(x)]^2 - [r(x)]^2)\,dx`
+- Section 6.1: Volumes Using Cross-Sections - [Study Guide](/chapters/ch06/6.1-volumes-using-cross-sections) | [Practice](/practice/6.1-volumes-using-cross-sections) — General slicing `V = \int_a^b A(x)\,dx`, Cavalieri's principle, solids of revolution via disk and washer methods (5 solutions).
+- Section 6.2: Volumes Using Cylindrical Shells - [Study Guide](/chapters/ch06/6.2-volumes-using-cylindrical-shells) | [Practice](/practice/6.2-volumes-using-cylindrical-shells) — Cylindrical shells `V = 2\pi \int_a^b r(x) h(x)\,dx` about coordinate and shifted axes (5 solutions).
+- Section 6.3: Arc Length - [Study Guide](/chapters/ch06/6.3-arc-length) | [Practice](/practice/6.3-arc-length) — Arc length differential `ds = \sqrt{1 + (dy/dx)^2}\,dx`, smooth rectifiable curves (5 solutions).
+- Section 6.4: Areas of Surfaces of Revolution - [Study Guide](/chapters/ch06/6.4-areas-of-surfaces-of-revolution) | [Practice](/practice/6.4-areas-of-surfaces-of-revolution) — Conical frustum derivation, surface area `S = \int 2\pi r\,ds` about `x`- and `y`-axes (5 solutions).
+- Section 6.5: Work and Fluid Forces - [Study Guide](/chapters/ch06/6.5-work-and-fluid-forces) | [Practice](/practice/6.5-work-and-fluid-forces) — Variable force work `W = \int_a^b F(x)\,dx`, Hooke's law springs, pumping liquids from tanks, hydrostatic fluid force on submerged plates (5 solutions).
+- Section 6.6: Moments and Centers of Mass - [Study Guide](/chapters/ch06/6.6-moments-and-centers-of-mass) | [Practice](/practice/6.6-moments-and-centers-of-mass) — First moments `M_x, M_y`, planar lamina centroids `(\bar{x}, \bar{y})`, Theorems of Pappus for volume and surface area (5 solutions).
 
 ### Chapter 7: Transcendental Functions (8 Sections, 40 Solutions)
-- Section 7.1: Inverse Functions and Their Derivatives - One-to-one criteria, inverse function theorem, reflection across y = x (5 solutions).
-- Section 7.2: Natural Logarithms - Logarithm defined as integral, derivative, logarithmic differentiation, integrals yielding ln (5 solutions).
-- Section 7.3: Exponential Functions - Exponential as inverse of ln, derivative, general bases a^x, power rule for all real exponents (5 solutions).
-- Section 7.4: Exponential Change and Separable Differential Equations - Law of exponential growth and decay, half-life, radiocarbon dating, Newton cooling law (5 solutions).
-- Section 7.5: Indeterminate Forms and L'Hôpital's Rule - Evaluating 0/0, infinity/infinity, indeterminate products, differences, and powers (5 solutions).
-- Section 7.6: Inverse Trigonometric Functions - Domains and ranges of arcsin, arccos, arctan, derivatives and integrals yielding inverse trig (5 solutions).
-- Section 7.7: Hyperbolic Functions - Hyperbolic sine, cosine, tangent, identities, derivatives, integrals, and inverse hyperbolic functions (5 solutions).
-- Section 7.8: Relative Rates of Growth - Comparing growth of functions as x approaches infinity, little-oh and big-oh asymptotic notation (5 solutions).
+- **Routes**: [Chapter 7 Overview](/chapters/ch07) | [Chapter 7 Quiz](/quiz/ch07)
+- **Guiding Theorem (Logarithmic & Exponential Foundations)**: `\ln(x) = \int_1^x \frac{1}{t}\,dt \quad (x > 0)` | `\frac{d}{dx} e^x = e^x`
+- Section 7.1: Inverse Functions and Their Derivatives - [Study Guide](/chapters/ch07/7.1-inverse-functions-and-their-derivatives) | [Practice](/practice/7.1-inverse-functions-and-their-derivatives) — One-to-one criteria, horizontal line test, Inverse Function Derivative Theorem `(f^{-1})'(b) = 1 / f'(f^{-1}(b))` (5 solutions).
+- Section 7.2: Natural Logarithms - [Study Guide](/chapters/ch07/7.2-natural-logarithms) | [Practice](/practice/7.2-natural-logarithms) — Integral definition of `\ln x`, algebraic properties, logarithmic differentiation, integrals of `\tan x, \cot x, \sec x, \csc x` (5 solutions).
+- Section 7.3: Exponential Functions - [Study Guide](/chapters/ch07/7.3-exponential-functions) | [Practice](/practice/7.3-exponential-functions) — `e^x = \ln^{-1}(x)`, derivatives and integrals of `e^x` and `a^x`, general irrational power rule `\frac{d}{dx}x^r = r x^{r-1}` (5 solutions).
+- Section 7.4: Exponential Change and Separable Differential Equations - [Study Guide](/chapters/ch07/7.4-exponential-change-and-separable-differential-equations) | [Practice](/practice/7.4-exponential-change-and-separable-differential-equations) — Separable ODEs `dy/dx = g(x)h(y)`, exponential growth/decay `y = y_0 e^{kt}`, radioactive half-life, Newton's Law of Cooling (5 solutions).
+- Section 7.5: Indeterminate Forms and L'Hôpital's Rule - [Study Guide](/chapters/ch07/7.5-indeterminate-forms-and-lhospitals-rule) | [Practice](/practice/7.5-indeterminate-forms-and-lhospitals-rule) — Transcendental indeterminate forms `0/0, \infty/\infty, 1^\infty, 0^0, \infty^0` with logarithmic and exponential limits (5 solutions).
+- Section 7.6: Inverse Trigonometric Functions - [Study Guide](/chapters/ch07/7.6-inverse-trigonometric-functions) | [Practice](/practice/7.6-inverse-trigonometric-functions) — Principal domains/ranges and derivatives/integrals for `\arcsin x, \arccos x, \arctan x, \operatorname{arcsec} x` (5 solutions).
+- Section 7.7: Hyperbolic Functions - [Study Guide](/chapters/ch07/7.7-hyperbolic-functions) | [Practice](/practice/7.7-hyperbolic-functions) — Definitions of `\sinh x, \cosh x, \tanh x`, catenary identity `\cosh^2 x - \sinh^2 x = 1`, derivatives, integrals, and logarithmic inverse hyperbolic formulas (5 solutions).
+- Section 7.8: Relative Rates of Growth - [Study Guide](/chapters/ch07/7.8-relative-rates-of-growth) | [Practice](/practice/7.8-relative-rates-of-growth) — Asymptotic hierarchy `\ln x \ll x^p \ll a^x`, Big-Oh `f = O(g)` and Little-Oh `f = o(g)` growth classification (5 solutions).
 
 ### Chapter 8: Techniques of Integration (9 Sections, 45 Solutions)
-- Section 8.1: Using Basic Integration Formulas - Algebraic manipulation, completing the square, trigonometric identities to reduce to standard forms (5 solutions).
-- Section 8.2: Integration by Parts - Formula int u dv = uv - int v du, tabular integration by parts, cyclic integrals (5 solutions).
-- Section 8.3: Trigonometric Integrals - Products of powers of sine and cosine, tangent and secant, half-angle and reduction identities (5 solutions).
-- Section 8.4: Trigonometric Substitutions - Eliminating radicals via trigonometric substitutions (5 solutions).
-- Section 8.5: Integration of Rational Functions by Partial Fractions - Decomposition into linear and irreducible quadratic factors, polynomial long division (5 solutions).
-- Section 8.6: Integral Tables and Computer Algebra Systems - Using integral reference tables, reduction formulas, and symbolic CAS tools (5 solutions).
-- Section 8.7: Numerical Integration - Trapezoidal Rule, Simpson's 1/3 Rule, error bounds and error estimates (5 solutions).
-- Section 8.8: Improper Integrals - Type I infinite limit integrals, Type II discontinuous integrands, Comparison Tests (5 solutions).
-- Section 8.9: Probability - Continuous random variables, probability density functions, expected value, standard deviation (5 solutions).
+- **Routes**: [Chapter 8 Overview](/chapters/ch08) | [Chapter 8 Quiz](/quiz/ch08)
+- **Guiding Theorem (Integration by Parts)**: Indefinite `\int u\,dv = uv - \int v\,du` | Definite `\int_a^b u\,dv = [uv]_a^b - \int_a^b v\,du`
+- Section 8.1: Using Basic Integration Formulas - [Study Guide](/chapters/ch08/8.1-using-basic-integration-formulas) | [Practice](/practice/8.1-using-basic-integration-formulas) — Completing the square, splitting fractions, polynomial long division, and trigonometric algebraic reductions (5 solutions).
+- Section 8.2: Integration by Parts - [Study Guide](/chapters/ch08/8.2-integration-by-parts) | [Practice](/practice/8.2-integration-by-parts) — LIATE priority selection, tabular integration by parts, cyclic reduction for `\int e^{ax}\cos(bx)\,dx` and `\int \sec^3 x\,dx` (5 solutions).
+- Section 8.3: Trigonometric Integrals - [Study Guide](/chapters/ch08/8.3-trigonometric-integrals) | [Practice](/practice/8.3-trigonometric-integrals) — Integrals of `\sin^m x \cos^n x` and `\tan^m x \sec^n x`, half-angle power reduction, product-to-sum identities (5 solutions).
+- Section 8.4: Trigonometric Substitutions - [Study Guide](/chapters/ch08/8.4-trigonometric-substitutions) | [Practice](/practice/8.4-trigonometric-substitutions) — Radical substitutions `x = a\sin\theta` (`\sqrt{a^2 - x^2}`), `x = a\tan\theta` (`\sqrt{a^2 + x^2}`), `x = a\sec\theta` (`\sqrt{x^2 - a^2}`), right-triangle back-substitution (5 solutions).
+- Section 8.5: Integration of Rational Functions by Partial Fractions - [Study Guide](/chapters/ch08/8.5-integration-of-rational-functions-by-partial-fractions) | [Practice](/practice/8.5-integration-of-rational-functions-by-partial-fractions) — Distinct/repeated linear factors, irreducible quadratic factors, Heaviside cover-up method (5 solutions).
+- Section 8.6: Integral Tables and Computer Algebra Systems - [Study Guide](/chapters/ch08/8.6-integral-tables-and-computer-algebra-systems) | [Practice](/practice/8.6-integral-tables-and-computer-algebra-systems) — Reduction formulas, standard integral tables, symbolic CAS verification limitations and branch cuts (5 solutions).
+- Section 8.7: Numerical Integration - [Study Guide](/chapters/ch08/8.7-numerical-integration) | [Practice](/practice/8.7-numerical-integration) — Trapezoidal Rule, Simpson's `1/3` Rule, truncation error bounds `|E_T| \le \frac{M(b-a)^3}{12n^2}` and `|E_S| \le \frac{M(b-a)^5}{180n^4}` (5 solutions).
+- Section 8.8: Improper Integrals - [Study Guide](/chapters/ch08/8.8-improper-integrals) | [Practice](/practice/8.8-improper-integrals) — Type I (`\pm\infty` limits) and Type II (interior/endpoint vertical asymptotes), `p`-integral benchmark `\int_1^\infty x^{-p}\,dx`, Direct and Limit Comparison Tests (5 solutions).
+- Section 8.9: Probability - [Study Guide](/chapters/ch08/8.9-probability) | [Practice](/practice/8.9-probability) — Continuous probability density functions (PDFs), cumulative distribution functions (CDFs), expected value `\mu = \int_{-\infty}^\infty x f(x)\,dx`, variance, exponential and normal distributions (5 solutions).
 
 ### Chapter 9: First-Order Differential Equations (5 Sections, 25 Solutions)
-- Section 9.1: Solutions, Slope Fields, and Euler's Method - Direction fields, qualitative solution trajectories, Euler's numerical approximation scheme (5 solutions).
-- Section 9.2: First-Order Linear Equations - Standard form, integrating factor method, variation of parameters (5 solutions).
-- Section 9.3: Applications - Brine tank mixing models, RL electrical circuits, orthogonal trajectories (5 solutions).
-- Section 9.4: Graphical Solutions of Autonomous Equations - Equilibrium points, phase lines, asymptotic stability, logistic population growth model (5 solutions).
-- Section 9.5: Systems of Equations and Phase Planes - Coupled linear differential equations, Lotka-Volterra predator-prey systems, phase portraits (5 solutions).
+- **Routes**: [Chapter 9 Overview](/chapters/ch09) | [Chapter 9 Quiz](/quiz/ch09)
+- **Guiding Theorem (First-Order Linear Integrating Factor)**: `v(x) = e^{\int P(x)\,dx}` | `y(x) = \frac{1}{v(x)}\left[\int v(x)Q(x)\,dx + C\right]`
+- Section 9.1: Solutions, Slope Fields, and Euler's Method - [Study Guide](/chapters/ch09/9.1-solutions-slope-fields-and-eulers-method) | [Practice](/practice/9.1-solutions-slope-fields-and-eulers-method) — General/particular ODE solutions, direction fields, isoclines, Euler's numerical stepping `y_{n+1} = y_n + h f(x_n, y_n)` (5 solutions).
+- Section 9.2: First-Order Linear Equations - [Study Guide](/chapters/ch09/9.2-first-order-linear-equations) | [Practice](/practice/9.2-first-order-linear-equations) — Standard form `y' + P(x)y = Q(x)`, integrating factor derivation, initial value problems (5 solutions).
+- Section 9.3: Applications - [Study Guide](/chapters/ch09/9.3-applications) | [Practice](/practice/9.3-applications) — Multi-compartment brine mixing tanks, RL electrical circuits, air resistance terminal velocity, orthogonal trajectories (5 solutions).
+- Section 9.4: Graphical Solutions of Autonomous Equations - [Study Guide](/chapters/ch09/9.4-graphical-solutions-of-autonomous-equations) | [Practice](/practice/9.4-graphical-solutions-of-autonomous-equations) — Autonomous ODEs `dy/dt = g(y)`, equilibrium points, 1D phase lines, asymptotic stability, logistic growth with harvesting (5 solutions).
+- Section 9.5: Systems of Equations and Phase Planes - [Study Guide](/chapters/ch09/9.5-systems-of-equations-and-phase-planes) | [Practice](/practice/9.5-systems-of-equations-and-phase-planes) — Coupled autonomous systems, phase plane trajectories, Lotka-Volterra predator-prey and competitive species models (5 solutions).
 
 ### Chapter 10: Infinite Sequences and Series (10 Sections, 50 Solutions)
-- Section 10.1: Sequences - Sequence limits, Sandwich Theorem for sequences, Monotone Convergence Theorem (5 solutions).
-- Section 10.2: Infinite Series - Partial sums, geometric series, telescoping series, nth-Term Test for divergence (5 solutions).
-- Section 10.3: The Integral Test - Maclaurin-Cauchy Integral Test, p-series convergence theorem, remainder bounds (5 solutions).
-- Section 10.4: Comparison Tests - Direct Comparison Test and Limit Comparison Test with benchmark p-series (5 solutions).
-- Section 10.5: Absolute Convergence; The Ratio and Root Tests - Absolute vs conditional convergence, d'Alembert Ratio Test, Cauchy Root Test (5 solutions).
-- Section 10.6: Alternating Series and Conditional Convergence - Leibniz Alternating Series Test, alternating series estimation theorem, conditional convergence (5 solutions).
-- Section 10.7: Power Series - Radius and interval of convergence, term-by-term differentiation and integration (5 solutions).
-- Section 10.8: Taylor and Maclaurin Series - Taylor polynomial approximations, generating coefficients, standard Maclaurin series expansions (5 solutions).
-- Section 10.9: Convergence of Taylor Series - Taylor's Theorem with Lagrange remainder, bounding remainder, proving series representation (5 solutions).
-- Section 10.10: Applications of Taylor Series - Evaluating non-elementary integrals, indeterminate limits, Euler's formula e^(ix) = cos x + i sin x (5 solutions).
+- **Routes**: [Chapter 10 Overview](/chapters/ch10) | [Chapter 10 Quiz](/quiz/ch10)
+- **Guiding Theorem (Ratio Test)**: `\rho = \lim_{n \to \infty} |a_{n+1}/a_n|` | `\rho < 1 \implies \text{Absolute Convergence}`
+- Section 10.1: Sequences - [Study Guide](/chapters/ch10/10.1-sequences) | [Practice](/practice/10.1-sequences) — Convergence of sequences `\{a_n\}`, Sandwich Theorem for sequences, Monotone Convergence Theorem, recursive sequences (5 solutions).
+- Section 10.2: Infinite Series - [Study Guide](/chapters/ch10/10.2-infinite-series) | [Practice](/practice/10.2-infinite-series) — Partial sums `s_n`, geometric series `\sum ar^{n-1} = \frac{a}{1-r}` (`|r| < 1`), telescoping series, `n`th-Term Test for Divergence (5 solutions).
+- Section 10.3: The Integral Test - [Study Guide](/chapters/ch10/10.3-the-integral-test) | [Practice](/practice/10.3-the-integral-test) — Maclaurin-Cauchy Integral Test, `p`-series `\sum 1/n^p` (`p > 1`), integral remainder estimation bounds (5 solutions).
+- Section 10.4: Comparison Tests - [Study Guide](/chapters/ch10/10.4-comparison-tests) | [Practice](/practice/10.4-comparison-tests) — Direct Comparison Test (DCT) and Limit Comparison Test (LCT) against geometric and `p`-series benchmarks (5 solutions).
+- Section 10.5: Absolute Convergence; The Ratio and Root Tests - [Study Guide](/chapters/ch10/10.5-absolute-convergence-the-ratio-and-root-tests) | [Practice](/practice/10.5-absolute-convergence-the-ratio-and-root-tests) — Absolute convergence implies convergence, d'Alembert's Ratio Test, Cauchy's `n`th-Root Test (5 solutions).
+- Section 10.6: Alternating Series and Conditional Convergence - [Study Guide](/chapters/ch10/10.6-alternating-series-and-conditional-convergence) | [Practice](/practice/10.6-alternating-series-and-conditional-convergence) — Leibniz Alternating Series Test, Alternating Series Estimation Theorem (`|R_n| \le b_{n+1}`), absolute vs. conditional convergence, Riemann Rearrangement (5 solutions).
+- Section 10.7: Power Series - [Study Guide](/chapters/ch10/10.7-power-series) | [Practice](/practice/10.7-power-series) — Center `c`, radius of convergence `R`, endpoint testing for interval of convergence, term-by-term differentiation and integration (5 solutions).
+- Section 10.8: Taylor and Maclaurin Series - [Study Guide](/chapters/ch10/10.8-taylor-and-maclaurin-series) | [Practice](/practice/10.8-taylor-and-maclaurin-series) — Taylor coefficients `c_n = f^{(n)}(a)/n!`, Taylor polynomials `P_n(x)`, canonical Maclaurin expansions for `e^x, \sin x, \cos x, \ln(1+x), (1+x)^m` (5 solutions).
+- Section 10.9: Convergence of Taylor Series - [Study Guide](/chapters/ch10/10.9-convergence-of-taylor-series) | [Practice](/practice/10.9-convergence-of-taylor-series) — Taylor's Theorem with Lagrange Remainder `R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}`, Taylor's Inequality, proving `R_n(x) \to 0` (5 solutions).
+- Section 10.10: Applications of Taylor Series - [Study Guide](/chapters/ch10/10.10-applications-of-taylor-series) | [Practice](/practice/10.10-applications-of-taylor-series) — Binomial series, non-elementary integrals (`\int e^{-x^2}\,dx`, `\int \frac{\sin x}{x}\,dx`), high-order indeterminate limits, Euler's identity `e^{i\theta} = \cos\theta + i\sin\theta` (5 solutions).
 
 ### Chapter 11: Parametric Equations and Polar Coordinates (7 Sections, 35 Solutions)
-- Section 11.1: Parametrizations of Plane Curves - Parametric equations, eliminating parameter, projectile paths, cycloid generation (5 solutions).
-- Section 11.2: Calculus with Parametric Curves - Tangents, concavity, second derivatives, areas under curves, arc length of parametric curves (5 solutions).
-- Section 11.3: Polar Coordinates - Coordinate transformations x = r cos theta, y = r sin theta, polar graphing, converting equations (5 solutions).
-- Section 11.4: Graphing Polar Coordinate Equations - Symmetry tests in polar coordinates, cardioids, limacons, rose curves, lemniscates (5 solutions).
-- Section 11.5: Areas and Lengths in Polar Coordinates - Area of sector A = 1/2 int r^2 dtheta, area between polar curves, arc length in polar coordinates (5 solutions).
-- Section 11.6: Conic Sections - Geometric definitions, parabolas, ellipses, hyperbolas, eccentricity, focal properties (5 solutions).
-- Section 11.7: Conics in Polar Coordinates - Unified polar equation r = ed/(1 + e cos theta), eccentricity classification, Kepler orbits (5 solutions).
+- **Routes**: [Chapter 11 Overview](/chapters/ch11) | [Chapter 11 Quiz](/quiz/ch11)
+- **Guiding Theorem (Parametric Slope & Arc Length)**: `\frac{dy}{dx} = \frac{dy/dt}{dx/dt}` | `L = \int_a^b \sqrt{(x'(t))^2 + (y'(t))^2}\,dt`
+- Section 11.1: Parametrizations of Plane Curves - [Study Guide](/chapters/ch11/11.1-parametrizations-of-plane-curves) | [Practice](/practice/11.1-parametrizations-of-plane-curves) — Parametric curves `(x(t), y(t))`, eliminating parameters, orientation, cycloid and brachistochrone parametrizations (5 solutions).
+- Section 11.2: Calculus with Parametric Curves - [Study Guide](/chapters/ch11/11.2-calculus-with-parametric-curves) | [Practice](/practice/11.2-calculus-with-parametric-curves) — First derivative `dy/dx`, parametric concavity `\frac{d^2y}{dx^2} = \frac{d(dy/dx)/dt}{dx/dt}`, parametric area, arc length, and surface area of revolution (5 solutions).
+- Section 11.3: Polar Coordinates - [Study Guide](/chapters/ch11/11.3-polar-coordinates) | [Practice](/practice/11.3-polar-coordinates) — Polar transformations `x = r\cos\theta, y = r\sin\theta, r^2 = x^2 + y^2`, negative `r` conventions, Cartesian-to-polar equation conversion (5 solutions).
+- Section 11.4: Graphing Polar Coordinate Equations - [Study Guide](/chapters/ch11/11.4-graphing-polar-coordinate-equations) | [Practice](/practice/11.4-graphing-polar-coordinate-equations) — Polar symmetry tests, slope `dy/dx` of `r = f(\theta)`, tangents at the pole, cardioids, limaçons, rose curves, and lemniscates (5 solutions).
+- Section 11.5: Areas and Lengths in Polar Coordinates - [Study Guide](/chapters/ch11/11.5-areas-and-lengths-in-polar-coordinates) | [Practice](/practice/11.5-areas-and-lengths-in-polar-coordinates) — Sector area `A = \int_\alpha^\beta \frac{1}{2}r^2\,d\theta`, area between two polar curves, polar intersections, polar arc length `ds = \sqrt{r^2 + (dr/d\theta)^2}\,d\theta` (5 solutions).
+- Section 11.6: Conic Sections - [Study Guide](/chapters/ch11/11.6-conic-sections) | [Practice](/practice/11.6-conic-sections) — Focus-directrix geometry of parabolas, ellipses, and hyperbolas, eccentricity `e = c/a`, asymptotes, reflective properties (5 solutions).
+- Section 11.7: Conics in Polar Coordinates - [Study Guide](/chapters/ch11/11.7-conics-in-polar-coordinates) | [Practice](/practice/11.7-conics-in-polar-coordinates) — Unified polar conic equation `r = \frac{ed}{1 \pm e\cos\theta}`, perihelion and aphelion distances, Kepler's laws of planetary orbits (5 solutions).
 
 ### Chapter 12: Vectors and the Geometry of Space (6 Sections, 30 Solutions)
-- Section 12.1: Three-Dimensional Coordinate Systems - Cartesian coordinates in 3-space, distance formula, equations of spheres, midpoint formula (5 solutions).
-- Section 12.2: Vectors - Component form, vector magnitude, unit vectors, vector addition and scalar multiplication (5 solutions).
-- Section 12.3: The Dot Product - Angle between vectors, orthogonality criterion, vector projections, and physical work (5 solutions).
-- Section 12.4: The Cross Product - Determinant formula, orthogonal direction, areas of triangles/parallelograms, scalar triple product (5 solutions).
-- Section 12.5: Lines and Planes in Space - Vector and parametric equations of lines, standard equation of planes, distance from point to plane (5 solutions).
-- Section 12.6: Cylinders and Quadric Surfaces - Cylinders, ellipsoids, paraboloids, cones, hyperboloids of one and two sheets, trace analysis (5 solutions).
+- **Routes**: [Chapter 12 Overview](/chapters/ch12) | [Chapter 12 Quiz](/quiz/ch12)
+- **Guiding Theorem (Dot vs. Cross Product)**: `\mathbf{u} \cdot \mathbf{v} = |\mathbf{u}||\mathbf{v}|\cos\theta` | `|\mathbf{u} \times \mathbf{v}| = |\mathbf{u}||\mathbf{v}|\sin\theta`
+- Section 12.1: Three-Dimensional Coordinate Systems - [Study Guide](/chapters/ch12/12.1-three-dimensional-coordinate-systems) | [Practice](/practice/12.1-three-dimensional-coordinate-systems) — Right-handed 3D Cartesian axes, coordinate planes, Euclidean distance in `\mathbb{R}^3`, equations of spheres `(x-h)^2 + (y-k)^2 + (z-l)^2 = r^2` (5 solutions).
+- Section 12.2: Vectors - [Study Guide](/chapters/ch12/12.2-vectors) | [Practice](/practice/12.2-vectors) — Component vectors `\langle v_1, v_2, v_3 \rangle`, magnitude `|\mathbf{v}|`, standard basis `\mathbf{i}, \mathbf{j}, \mathbf{k}`, unit vectors, static force resultant problems (5 solutions).
+- Section 12.3: The Dot Product - [Study Guide](/chapters/ch12/12.3-the-dot-product) | [Practice](/practice/12.3-the-dot-product) — Algebraic/geometric dot product, angle between vectors, orthogonality `\mathbf{u}\cdot\mathbf{v} = 0`, vector projection `\operatorname{proj}_{\mathbf{v}}\mathbf{u}`, mechanical work (5 solutions).
+- Section 12.4: The Cross Product - [Study Guide](/chapters/ch12/12.4-the-cross-product) | [Practice](/practice/12.4-the-cross-product) — `3 \times 3` determinant expansion, right-hand rule normal vector, parallelogram/triangle area, torque, scalar triple product `(\mathbf{u}\times\mathbf{v})\cdot\mathbf{w}` parallelepiped volume (5 solutions).
+- Section 12.5: Lines and Planes in Space - [Study Guide](/chapters/ch12/12.5-lines-and-planes-in-space) | [Practice](/practice/12.5-lines-and-planes-in-space) — Vector and parametric line equations, skew vs. intersecting lines, normal plane equations `A(x-x_0)+B(y-y_0)+C(z-z_0)=0`, point-to-plane and point-to-line distances (5 solutions).
+- Section 12.6: Cylinders and Quadric Surfaces - [Study Guide](/chapters/ch12/12.6-cylinders-and-quadric-surfaces) | [Practice](/practice/12.6-cylinders-and-quadric-surfaces) — Trace cross-sections, cylinders, ellipsoids, elliptic and hyperbolic paraboloids (saddles), elliptic cones, hyperboloids of one and two sheets (5 solutions).
 
 ### Chapter 13: Vector-Valued Functions and Motion in Space (6 Sections, 30 Solutions)
-- Section 13.1: Curves in Space and Their Tangents - Vector functions, velocity and speed, unit tangent vector T, differentiation rules (5 solutions).
-- Section 13.2: Integrals of Vector Functions; Projectile Motion - Antiderivatives, initial value problems, classical projectile trajectory, range and maximum height (5 solutions).
-- Section 13.3: Arc Length in Space - Arc length formula, natural arc length parameter s(t), unit-speed reparametrizations (5 solutions).
-- Section 13.4: Curvature and Normal Vectors of a Curve - Curvature kappa, principal unit normal N, binormal vector B, Frenet-Serret TNB moving frame (5 solutions).
-- Section 13.5: Tangential and Normal Components of Acceleration - Decomposition a = a_T T + a_N N, osculating plane, constant speed circular motion (5 solutions).
-- Section 13.6: Velocity and Acceleration in Polar Coordinates - Polar unit vectors u_r and u_theta, Coriolis acceleration, Kepler laws of planetary motion (5 solutions).
+- **Routes**: [Chapter 13 Overview](/chapters/ch13) | [Chapter 13 Quiz](/quiz/ch13)
+- **Guiding Theorem (Frenet-Serret Acceleration Decomposition)**: `a_T = \frac{d}{dt}|\mathbf{v}| = \frac{\mathbf{v}\cdot\mathbf{a}}{|\mathbf{v}|}` | `a_N = \kappa|\mathbf{v}|^2 = \frac{|\mathbf{v}\times\mathbf{a}|}{|\mathbf{v}|}`
+- Section 13.1: Curves in Space and Their Tangents - [Study Guide](/chapters/ch13/13.1-curves-in-space-and-their-tangents) | [Practice](/practice/13.1-curves-in-space-and-their-tangents) — Space curves `\mathbf{r}(t)`, component-wise limits and derivatives, velocity `\mathbf{v}(t)`, speed `|\mathbf{v}(t)|`, unit tangent `\mathbf{T}(t)`, dot/cross product differentiation rules (5 solutions).
+- Section 13.2: Integrals of Vector Functions; Projectile Motion - [Study Guide](/chapters/ch13/13.2-integrals-of-vector-functions-projectile-motion) | [Practice](/practice/13.2-integrals-of-vector-functions-projectile-motion) — Component-wise integration, vector initial value problems, ideal projectile kinematics (time of flight, horizontal range, maximum altitude) (5 solutions).
+- Section 13.3: Arc Length in Space - [Study Guide](/chapters/ch13/13.3-arc-length-in-space) | [Practice](/practice/13.3-arc-length-in-space) — Space curve length `L = \int_a^b |\mathbf{v}(t)|\,dt`, arc length parameter `s(t)`, unit-speed reparametrization `\mathbf{r}(s)` (5 solutions).
+- Section 13.4: Curvature and Normal Vectors of a Curve - [Study Guide](/chapters/ch13/13.4-curvature-and-normal-vectors-of-a-curve) | [Practice](/practice/13.4-curvature-and-normal-vectors-of-a-curve) — Curvature `\kappa = |d\mathbf{T}/ds| = |\mathbf{v}\times\mathbf{a}|/|\mathbf{v}|^3`, radius of curvature, principal unit normal `\mathbf{N}`, binormal `\mathbf{B} = \mathbf{T}\times\mathbf{N}`, torsion `\tau`, Frenet-Serret frame (5 solutions).
+- Section 13.5: Tangential and Normal Components of Acceleration - [Study Guide](/chapters/ch13/13.5-tangential-and-normal-components-of-acceleration) | [Practice](/practice/13.5-tangential-and-normal-components-of-acceleration) — Decomposition `\mathbf{a} = a_T\mathbf{T} + a_N\mathbf{N}`, osculating/normal/rectifying planes, uniform circular motion (5 solutions).
+- Section 13.6: Velocity and Acceleration in Polar Coordinates - [Study Guide](/chapters/ch13/13.6-velocity-and-acceleration-in-polar-coordinates) | [Practice](/practice/13.6-velocity-and-acceleration-in-polar-coordinates) — Moving polar frame `\mathbf{u}_r, \mathbf{u}_\theta`, radial/transverse acceleration, conservation of angular momentum, proof of Kepler's Three Laws (5 solutions).
 
 ### Chapter 14: Partial Derivatives (10 Sections, 50 Solutions)
-- Section 14.1: Functions of Several Variables - Domain, range, graphs of surfaces, level curves and contour maps, level surfaces in 3D (5 solutions).
-- Section 14.2: Limits and Continuity in Higher Dimensions - Multivariable limits, Two-Path Test for non-existence, polar coordinate limits, continuity (5 solutions).
-- Section 14.3: Partial Derivatives - First partial derivatives, geometric tangent slopes, Clairaut theorem on mixed partials (5 solutions).
-- Section 14.4: The Chain Rule - Multivariable Chain Rule for one and several parameters, tree diagrams, implicit differentiation (5 solutions).
-- Section 14.5: Directional Derivatives and Gradient Vectors - Gradient vector, directional derivative formula, steepest ascent and descent, level set normal (5 solutions).
-- Section 14.6: Tangent Planes and Differentials - Tangent planes to explicit and implicit surfaces, linearization, total differentials, error analysis (5 solutions).
-- Section 14.7: Extreme Values and Saddle Points - Critical points, Second Derivative Test, Hessian discriminant D, absolute extrema on compact sets (5 solutions).
-- Section 14.8: Lagrange Multipliers - Constrained optimization, method of Lagrange multipliers with one and two constraints (5 solutions).
-- Section 14.9: Taylor's Formula for Two Variables - Bivariate Taylor polynomials, quadratic approximations, Hessian matrix, error bounds (5 solutions).
-- Section 14.10: Partial Derivatives with Constrained Variables - Dependent vs independent variable choice, constrained notation, thermodynamic cyclic rule (5 solutions).
+- **Routes**: [Chapter 14 Overview](/chapters/ch14) | [Chapter 14 Quiz](/quiz/ch14)
+- **Guiding Theorem (Gradient & Constrained Optimality)**: `D_{\mathbf{u}} f = \nabla f \cdot \mathbf{u} = |\nabla f|\cos\theta` | `\nabla f = \lambda \nabla g`
+- Section 14.1: Functions of Several Variables - [Study Guide](/chapters/ch14/14.1-functions-of-several-variables) | [Practice](/practice/14.1-functions-of-several-variables) — Multivariable domains and ranges, interior/boundary points, open/closed/bounded sets, level curves (contours) and level surfaces (5 solutions).
+- Section 14.2: Limits and Continuity in Higher Dimensions - [Study Guide](/chapters/ch14/14.2-limits-and-continuity-in-higher-dimensions) | [Practice](/practice/14.2-limits-and-continuity-in-higher-dimensions) — Multivariable limits, Two-Path Test for limit non-existence (lines `y = mx`, parabolas `y = kx^2`), polar squeeze proofs, multivariable continuity (5 solutions).
+- Section 14.3: Partial Derivatives - [Study Guide](/chapters/ch14/14.3-partial-derivatives) | [Practice](/practice/14.3-partial-derivatives) — First partials `f_x, f_y`, tangent cross-section slopes, higher-order partials, Clairaut's Mixed Derivative Theorem (`f_{xy} = f_{yx}`), Laplace/wave PDEs (5 solutions).
+- Section 14.4: The Chain Rule - [Study Guide](/chapters/ch14/14.4-the-chain-rule) | [Practice](/practice/14.4-the-chain-rule) — Multivariable Chain Rule for one and multiple independent parameters, dependency tree diagrams, implicit formula `dy/dx = -F_x / F_y` (5 solutions).
+- Section 14.5: Directional Derivatives and Gradient Vectors - [Study Guide](/chapters/ch14/14.5-directional-derivatives-and-gradient-vectors) | [Practice](/practice/14.5-directional-derivatives-and-gradient-vectors) — Gradient `\nabla f`, directional derivative `D_{\mathbf{u}}f = \nabla f \cdot \mathbf{u}`, directions of steepest ascent/descent and zero change, orthogonality of `\nabla f` to level sets (5 solutions).
+- Section 14.6: Tangent Planes and Differentials - [Study Guide](/chapters/ch14/14.6-tangent-planes-and-differentials) | [Practice](/practice/14.6-tangent-planes-and-differentials) — Tangent planes and normal lines to level surfaces `F(x,y,z) = c` and graphs `z = f(x,y)`, linearization `L(x,y)`, total differential `dz = f_x\,dx + f_y\,dy` (5 solutions).
+- Section 14.7: Extreme Values and Saddle Points - [Study Guide](/chapters/ch14/14.7-extreme-values-and-saddle-points) | [Practice](/practice/14.7-extreme-values-and-saddle-points) — Critical points (`\nabla f = \mathbf{0}`), Hessian discriminant `D = f_{xx}f_{yy} - (f_{xy})^2`, Second Derivative Test for local extrema and saddle points, absolute extrema on compact domains (5 solutions).
+- Section 14.8: Lagrange Multipliers - [Study Guide](/chapters/ch14/14.8-lagrange-multipliers) | [Practice](/practice/14.8-lagrange-multipliers) — Constrained optimization with one constraint (`\nabla f = \lambda \nabla g`) and two constraints (`\nabla f = \lambda \nabla g + \mu \nabla h`), geometric tangency of level sets (5 solutions).
+- Section 14.9: Taylor's Formula for Two Variables - [Study Guide](/chapters/ch14/14.9-taylors-formula-for-two-variables) | [Practice](/practice/14.9-taylors-formula-for-two-variables) — Bivariate linear and quadratic Taylor approximations, Hessian quadratic form, higher-order multivariable Taylor series and remainder bounds (5 solutions).
+- Section 14.10: Partial Derivatives with Constrained Variables - [Study Guide](/chapters/ch14/14.10-partial-derivatives-with-constrained-variables) | [Practice](/practice/14.10-partial-derivatives-with-constrained-variables) — Specifying independent vs. dependent variables, subscripted constrained partial notation `(\partial w / \partial x)_y`, thermodynamic state relations (5 solutions).
 
 ### Chapter 15: Multiple Integrals (8 Sections, 40 Solutions)
-- Section 15.1: Double and Iterated Integrals over Rectangles - Double integrals, Fubini theorem over rectangles, volumes of solids, average value (5 solutions).
-- Section 15.2: Double Integrals over General Regions - Type I and Type II regions, reversing the order of integration, integration limits (5 solutions).
-- Section 15.3: Area by Double Integration - Area as double integral of 1, average height, region decomposition (5 solutions).
-- Section 15.4: Double Integrals in Polar Form - Polar area element dA = r dr dtheta, integrating over disks and rose petals, Gaussian integral (5 solutions).
-- Section 15.5: Triple Integrals in Rectangular Coordinates - Triple integrals in 3-space, volume of tetrahedrons, reordering six integration permutations (5 solutions).
-- Section 15.6: Moments and Centers of Mass - Mass, first moments, center of mass in 2D and 3D, moments of inertia, radius of gyration (5 solutions).
-- Section 15.7: Triple Integrals in Cylindrical and Spherical Coordinates - Cylindrical coordinates dV = r dz dr dtheta, spherical coordinates dV = rho^2 sin phi drho dphi dtheta (5 solutions).
-- Section 15.8: Substitutions in Multiple Integrals - The Jacobian determinant, change of variables formula, transforming skewed and elliptical regions (5 solutions).
+- **Routes**: [Chapter 15 Overview](/chapters/ch15) | [Chapter 15 Quiz](/quiz/ch15)
+- **Guiding Theorem (Jacobian Coordinate Transformations)**: `dA = \left|\frac{\partial(x,y)}{\partial(u,v)}\right|\,du\,dv` | `dV = \rho^2\sin\phi\,d\rho\,d\phi\,d\theta`
+- Section 15.1: Double and Iterated Integrals over Rectangles - [Study Guide](/chapters/ch15/15.1-double-and-iterated-integrals-over-rectangles) | [Practice](/practice/15.1-double-and-iterated-integrals-over-rectangles) — Double Riemann sums, Fubini's Theorem (First Form) over rectangles `[a,b]\times[c,d]`, volume under `z = f(x,y)` (5 solutions).
+- Section 15.2: Double Integrals over General Regions - [Study Guide](/chapters/ch15/15.2-double-integrals-over-general-regions) | [Practice](/practice/15.2-double-integrals-over-general-regions) — Vertically simple (Type I) and horizontally simple (Type II) planar domains, Fubini's Theorem (Stronger Form), reversing the order of integration (5 solutions).
+- Section 15.3: Area by Double Integration - [Study Guide](/chapters/ch15/15.3-area-by-double-integration) | [Practice](/practice/15.3-area-by-double-integration) — Planar area `A = \iint_R dA`, average value of `f(x,y)` over `R` (5 solutions).
+- Section 15.4: Double Integrals in Polar Form - [Study Guide](/chapters/ch15/15.4-double-integrals-in-polar-form) | [Practice](/practice/15.4-double-integrals-in-polar-form) — Polar area element `dA = r\,dr\,d\theta`, radially simple polar regions, converting Cartesian integrals to polar, Gaussian integral `\int_{-\infty}^\infty e^{-x^2}\,dx = \sqrt{\pi}` (5 solutions).
+- Section 15.5: Triple Integrals in Rectangular Coordinates - [Study Guide](/chapters/ch15/15.5-triple-integrals-in-rectangular-coordinates) | [Practice](/practice/15.5-triple-integrals-in-rectangular-coordinates) — Triple integrals `\iiint_D F(x,y,z)\,dV`, volume `V = \iiint_D dV`, projecting 3D solids onto coordinate planes across all 6 integration orders (`dz\,dy\,dx`, etc.) (5 solutions).
+- Section 15.6: Moments and Centers of Mass - [Study Guide](/chapters/ch15/15.6-moments-and-centers-of-mass) | [Practice](/practice/15.6-moments-and-centers-of-mass) — Variable density `\delta(x,y,z)` mass, first moments, 2D and 3D centers of mass, moments of inertia `I_x, I_y, I_z, I_0` and radius of gyration (5 solutions).
+- Section 15.7: Triple Integrals in Cylindrical and Spherical Coordinates - [Study Guide](/chapters/ch15/15.7-triple-integrals-in-cylindrical-and-spherical-coordinates) | [Practice](/practice/15.7-triple-integrals-in-cylindrical-and-spherical-coordinates) — Cylindrical element `dV = r\,dz\,dr\,d\theta`, spherical coordinates `(\rho, \phi, \theta)` with volume element `dV = \rho^2\sin\phi\,d\rho\,d\phi\,d\theta`, ice-cream cone and spherical shell domains (5 solutions).
+- Section 15.8: Substitutions in Multiple Integrals - [Study Guide](/chapters/ch15/15.8-substitutions-in-multiple-integrals) | [Practice](/practice/15.8-substitutions-in-multiple-integrals) — Planar Jacobian `J(u,v) = \frac{\partial(x,y)}{\partial(u,v)}` and 3D Jacobian `J(u,v,w)`, change of variables theorem `\iint_R f(x,y)\,dx\,dy = \iint_G f(g,h)|J|\,du\,dv` (5 solutions).
 
 ### Chapter 16: Integrals and Vector Fields (8 Sections, 40 Solutions)
-- Section 16.1: Line Integrals - Scalar line integrals with respect to arc length, wire mass, center of mass of curved wire (5 solutions).
-- Section 16.2: Vector Fields and Line Integrals: Work, Circulation, and Flux - Vector fields, work line integrals, circulation around closed curves, flux across planar boundaries (5 solutions).
-- Section 16.3: Path Independence, Conservative Fields, and Potential Functions - Fundamental Theorem of Line Integrals, conservative fields F = grad f, component test, closed loop work (5 solutions).
-- Section 16.4: Green's Theorem in the Plane - Circulation-curl and flux-divergence forms of Green theorem, area by line integrals (5 solutions).
-- Section 16.5: Surfaces and Area - Parametric surfaces r(u, v), tangent planes and normal vectors, surface area formulas (5 solutions).
-- Section 16.6: Surface Integrals - Scalar surface integrals, flux of vector fields across oriented surfaces, Gauss law applications (5 solutions).
-- Section 16.7: Stokes' Theorem - Circulation equals flux of curl, right-hand rule orientation, independence of spanning surface (5 solutions).
-- Section 16.8: The Divergence Theorem and a Unified Theory - Outward flux equals volume integral of divergence, Gauss theorem, grand unified theory of calculus (5 solutions).
+- **Routes**: [Chapter 16 Overview](/chapters/ch16) | [Chapter 16 Quiz](/quiz/ch16)
+- **Guiding Theorem (Grand Unified Vector Calculus Theorems)**: Stokes' Theorem `\oint_C \mathbf{F}\cdot d\mathbf{r} = \iint_S (\nabla \times \mathbf{F})\cdot\mathbf{n}\,d\sigma` | Divergence Theorem `\iint_S \mathbf{F}\cdot\mathbf{n}\,d\sigma = \iiint_D (\nabla \cdot \mathbf{F})\,dV`
+- Section 16.1: Line Integrals - [Study Guide](/chapters/ch16/16.1-line-integrals) | [Practice](/practice/16.1-line-integrals) — Scalar line integrals `\int_C f(x,y,z)\,ds` with `ds = |\mathbf{v}(t)|\,dt`, piecewise smooth paths, mass and moments of thin space wires (5 solutions).
+- Section 16.2: Vector Fields and Line Integrals: Work, Circulation, and Flux - [Study Guide](/chapters/ch16/16.2-vector-fields-and-line-integrals-work-circulation-and-flux) | [Practice](/practice/16.2-vector-fields-and-line-integrals-work-circulation-and-flux) — Vector fields `\mathbf{F} = M\mathbf{i} + N\mathbf{j} + P\mathbf{k}`, work `\int_C \mathbf{F}\cdot d\mathbf{r}`, circulation around closed loops, 2D outward flux `\oint_C M\,dy - N\,dx` (5 solutions).
+- Section 16.3: Path Independence, Conservative Fields, and Potential Functions - [Study Guide](/chapters/ch16/16.3-path-independence-conservative-fields-and-potential-functions) | [Practice](/practice/16.3-path-independence-conservative-fields-and-potential-functions) — Fundamental Theorem of Line Integrals `\int_A^B \nabla f \cdot d\mathbf{r} = f(B) - f(A)`, conservative fields `\mathbf{F} = \nabla f`, curl-free component test (`\nabla \times \mathbf{F} = \mathbf{0}` on simply connected domains), reconstructing potential functions (5 solutions).
+- Section 16.4: Green's Theorem in the Plane - [Study Guide](/chapters/ch16/16.4-greens-theorem-in-the-plane) | [Practice](/practice/16.4-greens-theorem-in-the-plane) — Tangential/Circulation-Curl form `\oint_C M\,dx + N\,dy = \iint_R \left(\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}\right)\,dA`, Normal/Flux-Divergence form `\oint_C \mathbf{F}\cdot\mathbf{n}\,ds = \iint_R (\nabla\cdot\mathbf{F})\,dA`, planar area via `\frac{1}{2}\oint_C x\,dy - y\,dx` (5 solutions).
+- Section 16.5: Surfaces and Area - [Study Guide](/chapters/ch16/16.5-surfaces-and-area) | [Practice](/practice/16.5-surfaces-and-area) — Parametric surfaces `\mathbf{r}(u,v)`, tangent vectors `\mathbf{r}_u, \mathbf{r}_v`, surface area element `d\sigma = |\mathbf{r}_u \times \mathbf{r}_v|\,du\,dv`, implicit surface area `d\sigma = \frac{|\nabla F|}{|\nabla F \cdot \mathbf{p}|}\,dA` (5 solutions).
+- Section 16.6: Surface Integrals - [Study Guide](/chapters/ch16/16.6-surface-integrals) | [Practice](/practice/16.6-surface-integrals) — Scalar surface integrals `\iint_S G(x,y,z)\,d\sigma`, surface orientation, vector flux integrals `\iint_S \mathbf{F}\cdot\mathbf{n}\,d\sigma`, Gauss's Law applications (5 solutions).
+- Section 16.7: Stokes' Theorem - [Study Guide](/chapters/ch16/16.7-stokes-theorem) | [Practice](/practice/16.7-stokes-theorem) — 3D Curl `\nabla \times \mathbf{F}`, right-hand rule boundary compatibility, Stokes' Theorem `\oint_C \mathbf{F}\cdot d\mathbf{r} = \iint_S (\nabla\times\mathbf{F})\cdot\mathbf{n}\,d\sigma`, surface independence of curl flux (5 solutions).
+- Section 16.8: The Divergence Theorem and a Unified Theory - [Study Guide](/chapters/ch16/16.8-the-divergence-theorem-and-a-unified-theory) | [Practice](/practice/16.8-the-divergence-theorem-and-a-unified-theory) — 3D Divergence `\nabla\cdot\mathbf{F} = \frac{\partial M}{\partial x} + \frac{\partial N}{\partial y} + \frac{\partial P}{\partial z}`, Gauss's Divergence Theorem `\iint_S \mathbf{F}\cdot\mathbf{n}\,d\sigma = \iiint_D (\nabla\cdot\mathbf{F})\,dV`, unified generalized Stokes' synthesis `\int_{\partial\Omega}\omega = \int_\Omega d\omega` (5 solutions).
 
-## Mathematical Architecture & Verification Standards
-- SymPy Computer Algebra Engine: Symbolic algebraic equivalence checking via `simplify(expr - expected) == 0` for all 598 solutions.
-- Zod Content Schemas: Strict data validation enforcing 1-to-1 file path to ID mapping, non-empty step rationales, and distractor misconception feedback.
-- Copyright Safeguards: All textbook exercises are referenced strictly by identifier (e.g. "Section 1.1, Exercise 21") with paraphrased, original explanations. No verbatim reproduction of textbook problems or diagrams.
+---
+
+## Golden Examples (Canonical Worked Solutions & Progressive Practice Benchmarks)
+
+Every worked solution and practice problem in `calculus-guide` adheres to a strict pedagogical schema enforced by `lib/content/schema.ts`:
+- **Paraphrased Identifier Referencing**: Exercises cite their textbook identifier (e.g., `"Section 1.1, Exercise 1"`) with 100% original problem framing and derivation prose.
+- **Step-by-Step `why` Rationales**: Every derivation step requires `stepNumber`, `title`, `mathExpression`, `explanation`, and a dedicated `why` string (`>= 5` characters) explaining the underlying mathematical theorem or algebraic rule.
+- **Machine-Verifiable `sympyVerification` Block**: Every item embeds the symbolic assertion checked by `tools/verify/verify.py`.
+
+### Golden Example 1: Natural Domain and Range of a Radical-Rational Function
+- **Route**: [/chapters/ch01/1.1-functions-and-graphs](/chapters/ch01/1.1-functions-and-graphs) | [/practice/1.1-functions-and-graphs](/practice/1.1-functions-and-graphs)
+- **Problem**: Find the natural domain of `f(x) = \frac{\sqrt{x + 4}}{x - 3}`.
+- **Step 1 (Radicand Non-Negativity)**: Require `x + 4 \ge 0 \implies x \ge -4`. *Why*: Even-indexed roots of negative numbers are non-real in single-variable real calculus.
+- **Step 2 (Denominator Non-Zero)**: Require `x - 3 \ne 0 \implies x \ne 3`. *Why*: Division by zero is undefined in the field of real numbers.
+- **Step 3 (Set Intersection)**: Intersect `[-4, \infty)` and `\mathbb{R} \setminus \{3\}` to obtain `[-4, 3) \cup (3, \infty)`.
+- **SymPy Verification Payload**:
+  `{"operation": "domain", "expression": "sqrt(x + 4)/(x - 3)", "expected": "[-4, 3) U (3, oo)", "variable": "x"}`
+
+### Golden Example 2: Difference Quotient & Instantaneous Rate of Change
+- **Route**: [/chapters/ch02/2.1-rates-of-change-and-tangents-to-curves](/chapters/ch02/2.1-rates-of-change-and-tangents-to-curves) | [/chapters/ch03/3.1-tangents-and-the-derivative-at-a-point](/chapters/ch03/3.1-tangents-and-the-derivative-at-a-point)
+- **Problem**: Simplify the difference quotient `\frac{f(x+h) - f(x)}{h}` for `f(x) = x^2 - 3x` (`h \ne 0`) and evaluate the derivative `f'(x)`.
+- **Step 1 (Substitute `x + h`)**: `f(x+h) - f(x) = [(x+h)^2 - 3(x+h)] - [x^2 - 3x] = 2xh + h^2 - 3h`. *Why*: Binomial expansion isolates the perturbation terms proportional to `h`.
+- **Step 2 (Factor and Cancel `h \ne 0`)**: `\frac{h(2x + h - 3)}{h} = 2x + h - 3`. *Why*: Since `h \ne 0` in the difference quotient limit, canceling the removable factor `h/h = 1` preserves equivalence on the punctured neighborhood.
+- **Step 3 (Pass to the Limit `h \to 0`)**: `\lim_{h \to 0} (2x + h - 3) = 2x - 3`. *Why*: Polynomial expressions in `h` are continuous at `h = 0`, allowing direct substitution after removing the `0/0` indeterminacy.
+- **SymPy Verification Payload**:
+  `{"operation": "difference_quotient", "expression": "x**2 - 3*x", "expected": "2*x + h - 3", "variable": "x", "h": "h"}`
+
+### Golden Example 3: Unique Even-Odd Decomposition Theorem (Tier 3 Proof)
+- **Route**: [/chapters/ch01/1.7-additional-and-advanced-exercises](/chapters/ch01/1.7-additional-and-advanced-exercises) | [/practice/1.1-functions-and-graphs](/practice/1.1-functions-and-graphs)
+- **Theorem**: Every function `f` defined on a domain symmetric about `x = 0` decomposes uniquely as `f(x) = E(x) + O(x)`, where `E(x) = \frac{f(x) + f(-x)}{2}` is even and `O(x) = \frac{f(x) - f(-x)}{2}` is odd.
+- **Progressive Hint Scaffolding**:
+  1. *Hint 1*: Evaluate `E(-x)` using the commutativity of addition to verify reflection symmetry `E(-x) = E(x)`.
+  2. *Hint 2*: Evaluate `O(-x)` by factoring `-1` to verify origin rotational symmetry `O(-x) = -O(x)`.
+  3. *Hint 3*: Sum `E(x) + O(x)` to verify algebraic cancellation of `\pm f(-x)/2`.
+
+### Golden Example 4: Fundamental Theorem of Calculus with Chain Rule
+- **Route**: [/chapters/ch05/5.4-the-fundamental-theorem-of-calculus](/chapters/ch05/5.4-the-fundamental-theorem-of-calculus)
+- **Problem**: Differentiate `G(x) = \int_1^{x^3} \cos(t)\,dt` with respect to `x`.
+- **Derivation**: Let `u = x^3`. By FTC Part 1 and the Chain Rule, `\frac{dG}{dx} = \frac{dG}{du}\cdot\frac{du}{dx} = \cos(u)\cdot 3x^2 = 3x^2\cos(x^3)`.
+- **SymPy Verification Payload**:
+  `{"operation": "derivative", "expression": "sin(x**3) - sin(1)", "expected": "3*x**2*cos(x**3)", "variable": "x"}`
+
+### Golden Example 5: Stokes' Theorem & Divergence Theorem (Vector Calculus Synthesis)
+- **Route**: [/chapters/ch16/16.7-stokes-theorem](/chapters/ch16/16.7-stokes-theorem) | [/chapters/ch16/16.8-the-divergence-theorem-and-a-unified-theory](/chapters/ch16/16.8-the-divergence-theorem-and-a-unified-theory)
+- **Principle**: Converts boundary circulation `\oint_C \mathbf{F}\cdot d\mathbf{r}` into surface curl flux `\iint_S (\nabla\times\mathbf{F})\cdot\mathbf{n}\,d\sigma`, and closed-surface outward flux `\iint_S \mathbf{F}\cdot\mathbf{n}\,d\sigma` into triple volume integral `\iiint_D (\nabla\cdot\mathbf{F})\,dV`.
+
+---
+
+## MCQ Misconception Diagnostics Architecture (100% Distractor Coverage)
+
+Unlike conventional question banks that only report "Incorrect", every multiple-choice item in `calculus-guide` (across `/quiz/ch01`–`/quiz/ch16`, Section 1.1's `8 MCQs`, and `/mids`'s `65 Midterm Exam MCQs`) enforces a **Cognitive Misconception Diagnostic Contract**:
+
+1. **Structural & Schema Contract (`MCQSchema`)**:
+   - Exactly 4 options (`A`, `B`, `C`, `D`) and 1 `correctId`.
+   - Every distractor (`opt.id !== item.correctId`) MUST provide a non-empty `misconception` diagnostic (`length >= 10` characters) identifying the exact algebraic or conceptual error that leads a student to select that choice.
+   - Current repository audit (`npm run content:stats`): **100.0% misconception coverage** across all registered distractors (`24/24` in `content/` + `195/195` in `lib/content/mids-exam-data.ts`).
+
+2. **SymPy Pairwise Disjointness Verification (`tools/verify/mcq_verifier.py`)**:
+   - The `correctId` option is symbolically verified to be equivalent to `expected_answer`.
+   - All 3 distractors are verified to be symbolically non-equivalent to `expected_answer` AND pairwise non-equivalent to one another (`simplify(opt_i - opt_j) != 0`), preventing ambiguous duplicate choices.
+
+3. **Catalog of Diagnosed Calculus Misconception Archetypes**:
+   - **Pre-Domain Algebraic Cancellation**: Canceling `(x - 2)` in `f(x) = \frac{x^2 - 4}{x - 2}` before extracting the domain restriction `x \ne 2`, mistaking a removable discontinuity (hole) for a defined point.
+   - **Radical vs. Denominator Singularity Confusion**: Solving `x + 4 \ge 0` in `\frac{\sqrt{x+4}}{x-3}` while forgetting the denominator singularity `x \ne 3`, or enforcing strict inequality `x + 4 > 0` on a numerator radical.
+   - **Inequality Direction Reversal Error**: Solving `4 - 2x \ge 0` as `x \ge 2` instead of reversing the inequality sign to `x \le 2` when dividing by `-2`.
+   - **Parity Constant-Shift Fallacy**: Assuming `f(x) = x^3 + 1` is an odd function because `x^3` has an odd exponent, overlooking that `f(-x) = -x^3 + 1 \ne -(x^3 + 1)`.
+   - **Limit Existence vs. Point Evaluation Confusion**: Assuming `\lim_{x \to c} f(x)` requires `f(c)` to be defined or equal to the limit, confusing limit existence with continuity.
+   - **Converse of Differentiability-Implies-Continuity Trap**: Assuming every continuous function is differentiable (counterexample: `f(x) = |x|` at `x = 0` has a sharp corner where left slope `-1 \ne` right slope `+1`).
+   - **Chain Rule Inner-Derivative Omission**: Differentiating `\sin(x^2)` as `\cos(x^2)` without multiplying by the inner derivative `\frac{d}{dx}(x^2) = 2x`.
+   - **Implicit Differentiation `dy/dx` Omission**: Differentiating `y^2` with respect to `x` as `2y` instead of `2y \frac{dy}{dx}`.
+
+---
+
+## SymPy Mathematical Verification Standards & CLI Pipeline
+
+All mathematical content in `calculus-guide` is verified programmatically by the standalone Python Computer Algebra System (CAS) suite in `tools/verify/verify.py`.
+
+### 1. Seven-Stage Symbolic Equivalence Cascade (`tools/verify/engine.py`)
+When verifying whether `expr1` and `expr2` represent the same mathematical object, `SymPyEngine.are_equivalent(expr1, expr2)` executes:
+1. **Direct Identity Check**: `e1 == e2`
+2. **Difference Simplification**: `sympy.simplify(e1 - e2) == 0`
+3. **Polynomial Expansion**: `sympy.expand(e1 - e2) == 0`
+4. **Trigonometric Simplification**: `sympy.trigsimp(e1 - e2) == 0`
+5. **Radical Rationalization**: `sympy.radsimp(e1 - e2) == 0`
+6. **Logarithmic/Power Expansion**: `sympy.expand_log(sympy.powsimp(e1 - e2, force=True), force=True) == 0`
+7. **Rational Combination & Numeric Guard**: `sympy.simplify(sympy.together(e1 - e2)) == 0` with multi-point floating-point evaluation at transcendental test points (`x \in \{0.37, 1.23, 2.71, -0.83, 1.89\}`) to guard against false negatives.
+
+### 2. Specialized Calculus Verifiers (`tools/verify/calculus_verifier.py`)
+- **Domain Verification (`verify_domain`)**: Computes `sympy.calculus.util.continuous_domain(expr, var, S.Reals)` and asserts exact set-theoretic equality (`SymmetricDifference(computed, expected).is_empty`) against interval union notation (`[-4, 3) U (3, oo)`).
+- **Difference Quotient & Derivative Verification (`verify_difference_quotient`, `verify_derivative`)**: Symbolically simplifies `(f(x + h) - f(x)) / h` and `sympy.diff(f, x)` and asserts equivalence with the solution's final expression.
+- **Integral Verification via FTC (`verify_integral`)**: Differentiates the candidate antiderivative `F(x)` with respect to `x` and checks `simplify(diff(F, x) - integrand) == 0`.
+- **Symmetry Verification (`verify_symmetry`)**: Evaluates `simplify(f(-x) - f(x)) == 0` (`even`) and `simplify(f(-x) + f(x)) == 0` (`odd`).
+
+### 3. Complete Index of 24 Automated Mathematical Test Fixtures (`tools/verify/fixtures.py`)
+Running `python tools/verify/verify.py` executes 24 edge-case fixtures across 8 categories (100% pass requirement in E2E CI):
+1. **Factoring**: (1) Difference of Cubes `(x - 3)(x^2 + 3x + 9) == x^3 - 27`, (2) Quadratic Factoring `(2x + 5)(3x - 4) == 6x^2 + 7x - 20`.
+2. **Expansion**: (3) Binomial Cube `(x + 2)^3 == x^3 + 6x^2 + 12x + 8`, (4) Trinomial Square `(x + y + z)^2`.
+3. **Rational Functions**: (5) Common Denominator Addition, (6) Nested Complex Fraction Simplification, (7) Rational Factor Cancellation `(x^2 - 9)/(x - 3) == x + 3`.
+4. **Trigonometric Identities**: (8) Pythagorean `\sin^2 x + \cos^2 x == 1`, (9) Double-Angle Sine `\sin(2x) == 2\sin x\cos x`, (10) Double-Angle Cosine `\cos(2x) == \cos^2 x - \sin^2 x`, (11) Tangent Addition Formula.
+5. **Radical Expressions**: (12) Conjugate Rationalization `1/(\sqrt{x+1} - \sqrt{x}) == \sqrt{x+1} + \sqrt{x}`, (13) Positive-Symbol Radical Simplification `\sqrt{p^2} == p` (`p > 0`), (14) Fractional Exponent Algebra `p^{1/2} p^{1/3} == p^{5/6}`.
+6. **Logarithms & Exponentials**: (15) Log Product Rule `\ln(ab) == \ln a + \ln b` (`a, b > 0`), (16) Log Power/Quotient Rule `\ln(a^3/b^2) == 3\ln a - 2\ln b`, (17) Exponential Law `e^{x+y}/e^y == e^x`.
+7. **Calculus Operations**: (18) Difference Quotient of `x^2 + 3x`, (19) Continuous Domain of `\sqrt{x + 4}/(x - 2)` as `[-4, 2) \cup (2, \infty)`, (20) Odd Symmetry of `x^3 - 4x`.
+8. **MCQ Disjointness Validation**: (21) Valid 4-Choice Separation, (22) Rejection of Algebraically Equivalent Distractors, (23) Detection of Incorrect `correctId` Mapping, (24) Set-Equality Domain MCQ Verification.
+
+### 4. Copyright & Fair-Use Safeguards
+- **No Verbatim Reproduction**: Zero textbook problem statements, prose paragraphs, or figures are copied verbatim from Thomas' Calculus (14th Edition).
+- **Identifier Referencing Only**: Solutions reference problems strictly by section and exercise number (e.g., `"Section 1.1, Exercise 21"`) with original paraphrased explanations and independent SymPy proofs.

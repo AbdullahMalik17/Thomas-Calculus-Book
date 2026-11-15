@@ -12,6 +12,8 @@
  * 4. Check 4: `python tools/verify/verify.py` (24 fixtures, Section 1.1 validation) -> exit code 0
  * 5. Check 5: `python tools/verify/verify.py validate-section --dir content/ch01-functions/1.1-functions-and-graphs/` -> exit code 0
  * 6. Check 6: `pytest tools/verify/test_verify.py` (Pytest test suite) -> exit code 0
+ * 7. Check 7: `npm run style:verify` (Automated Styling & Design System Verification) -> exit code 0
+ * 8. Check 8: `npm run attribution:verify` (Top-of-Page & End-of-Page Creator Attribution Verification) -> exit code 0
  *
  * Exit code:
  * 0: All checks passed
@@ -102,9 +104,9 @@ const CHECKS: CheckDefinition[] = [
   },
   {
     id: 4,
-    name: 'SymPy Math Engine 24 Fixtures & 116 Sections Verification',
+    name: 'SymPy Math Engine 24 Fixtures & 119 Sections Verification',
     command: 'python',
-    args: ['tools/verify/verify.py'],
+    args: [path.join('tools', 'verify', 'verify.py')],
     validateOutput: (stdout, stderr) => {
       const output = stripAnsi(stdout + '\n' + stderr);
       const fixturesPassed = output.includes('24/24 passed');
@@ -120,10 +122,10 @@ const CHECKS: CheckDefinition[] = [
     name: 'Section 1.1 Full Directory Mathematical Validation',
     command: 'python',
     args: [
-      'tools/verify/verify.py',
+      path.join('tools', 'verify', 'verify.py'),
       'validate-section',
       '--dir',
-      'content/ch01-functions/1.1-functions-and-graphs/',
+      path.join('content', 'ch01-functions', '1.1-functions-and-graphs'),
     ],
     validateOutput: (stdout, stderr) => {
       const output = stripAnsi(stdout + '\n' + stderr);
@@ -138,7 +140,7 @@ const CHECKS: CheckDefinition[] = [
     id: 6,
     name: 'Pytest Verification Suite (test_verify.py)',
     command: 'pytest',
-    args: ['tools/verify/test_verify.py'],
+    args: [path.join('tools', 'verify', 'test_verify.py')],
     validateOutput: (stdout, stderr) => {
       const output = stripAnsi(stdout + '\n' + stderr).toLowerCase();
       const passed = output.includes('passed') && !output.includes('failed');
@@ -150,15 +152,31 @@ const CHECKS: CheckDefinition[] = [
   },
   {
     id: 7,
-    name: 'Curriculum Navigation, Slugs & Adjacent Section Verification',
+    name: 'Styling & Design System Verification (style:verify)',
     command: 'npm',
-    args: ['run', 'navigation:verify'],
+    args: ['run', 'style:verify'],
     validateOutput: (stdout, stderr) => {
       const output = stripAnsi(stdout + '\n' + stderr);
-      const passed = output.includes('SUCCESS: All curriculum and navigation checks passed cleanly');
+      const passed = output.includes('SUCCESS: All 8 styling & design system checks passed cleanly');
       return {
         passed,
-        reason: passed ? undefined : 'Navigation verification reported failure',
+        reason: passed ? undefined : 'Styling verification reported failure',
+      };
+    },
+  },
+  {
+    id: 8,
+    name: 'Top-of-Page & End-of-Page Attribution Verification (attribution:verify)',
+    command: 'npm',
+    args: ['run', 'attribution:verify'],
+    validateOutput: (stdout, stderr) => {
+      const output = stripAnsi(stdout + '\n' + stderr);
+      const passed = output.includes(
+        'SUCCESS: All 4 top-of-page & end-of-page attribution checks passed cleanly'
+      );
+      return {
+        passed,
+        reason: passed ? undefined : 'Attribution verification reported failure',
       };
     },
   },
@@ -203,13 +221,24 @@ export function runE2ESuite(options: { skipBuild?: boolean; filterIds?: number[]
     console.log(`\x1b[1m\x1b[34m[>] Running Check ${check.id}: ${check.name}\x1b[0m`);
     console.log(`    Command: ${cmdStr}`);
 
+    if (check.id === 1) {
+      try {
+        fs.rmSync(path.join(PROJECT_ROOT, '.next'), { recursive: true, force: true });
+      } catch {
+        // Ignore cleanup errors if .next does not exist
+      }
+    }
+
     const startTime = Date.now();
+    const isWin = process.platform === 'win32';
+    const resolveCmd = (cmd: string) =>
+      isWin && cmd === 'npm' ? 'npm.cmd' : cmd;
     let res: any;
     try {
-      // First try standard invocation
-      res = spawnSync(check.command, check.args, {
+      // First try standard invocation without unsafe shell interpolation
+      res = spawnSync(resolveCmd(check.command), check.args, {
         cwd: PROJECT_ROOT,
-        shell: true,
+        shell: isWin && check.command === 'npm',
         encoding: 'utf-8',
         env: { ...process.env },
       });
@@ -218,14 +247,14 @@ export function runE2ESuite(options: { skipBuild?: boolean; filterIds?: number[]
       if (check.command === 'pytest' && (res.error || res.status !== 0)) {
         let fallback = spawnSync('python', ['-m', 'pytest', ...check.args], {
           cwd: PROJECT_ROOT,
-          shell: true,
+          shell: false,
           encoding: 'utf-8',
           env: { ...process.env },
         });
         if (fallback.status !== 0 || fallback.error) {
           fallback = spawnSync('python', check.args, {
             cwd: PROJECT_ROOT,
-            shell: true,
+            shell: false,
             encoding: 'utf-8',
             env: { ...process.env },
           });

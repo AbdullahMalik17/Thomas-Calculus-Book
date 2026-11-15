@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-
 import { cn } from '@/lib/utils';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -18,7 +17,8 @@ export function Button({
   children,
   ...props
 }: ButtonProps) {
-  const baseStyles = 'inline-flex min-h-11 items-center justify-center font-semibold rounded-lg transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 disabled:pointer-events-none';
+  const baseStyles =
+    'inline-flex min-h-11 cursor-pointer items-center justify-center font-sans font-semibold rounded-lg transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 disabled:pointer-events-none';
 
   const sizeStyles = {
     sm: 'px-3 py-2 text-sm',
@@ -27,10 +27,14 @@ export function Button({
   };
 
   const variantStyles = {
-    primary: 'bg-blue-700 text-white hover:bg-blue-800 shadow-sm focus-visible:outline-blue-700',
-    secondary: 'bg-slate-100 text-slate-800 hover:bg-slate-200 focus-visible:outline-slate-500',
-    outline: 'border border-slate-300 text-slate-700 hover:bg-slate-50 focus-visible:outline-blue-700',
-    ghost: 'text-slate-600 hover:bg-slate-100 focus-visible:outline-slate-500',
+    primary:
+      'bg-brand-primary text-ink-inverse hover:bg-brand-primary-hover shadow-sm focus-visible:outline-brand-accent',
+    secondary:
+      'bg-surface-2 text-ink-primary border border-hairline hover:bg-paper-edge focus-visible:outline-brand-accent',
+    outline:
+      'border border-specular bg-surface-1 text-ink-primary hover:bg-surface-2 focus-visible:outline-brand-accent',
+    ghost:
+      'text-ink-secondary hover:bg-surface-2 hover:text-ink-primary focus-visible:outline-brand-accent',
   };
 
   const combinedClasses = cn(baseStyles, sizeStyles[size], variantStyles[variant], className);

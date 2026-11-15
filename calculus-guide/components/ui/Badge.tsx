@@ -1,4 +1,5 @@
 import React from 'react';
+import { cn } from '@/lib/utils';
 
 type BadgeVariant = 'default' | 'primary' | 'success' | 'warning' | 'info' | 'secondary';
 type BadgeSize = 'sm' | 'md' | 'lg';
@@ -10,16 +11,14 @@ interface BadgeProps {
   className?: string;
 }
 
-import { cn } from '@/lib/utils';
-
 export function Badge({ children, variant = 'default', size = 'md', className = '' }: BadgeProps) {
   const variantStyles: Record<BadgeVariant, string> = {
-    default: 'bg-slate-100 text-slate-800 border-slate-200',
-    secondary: 'bg-purple-50 text-purple-700 border-purple-200',
-    primary: 'bg-blue-50 text-blue-700 border-blue-200',
-    success: 'bg-emerald-50 text-emerald-700 border-emerald-200',
-    warning: 'bg-amber-50 text-amber-700 border-amber-200',
-    info: 'bg-sky-50 text-sky-700 border-sky-200',
+    default: 'bg-surface-2 text-ink-primary border-specular',
+    secondary: 'bg-callout-example-bg text-callout-example-ink border-specular',
+    primary: 'bg-callout-definition-bg text-callout-definition-ink border-specular',
+    success: 'bg-callout-theorem-bg text-callout-theorem-ink border-specular',
+    warning: 'bg-callout-misconception-bg text-callout-misconception-ink border-specular',
+    info: 'bg-brand-accent-subtle text-brand-accent border-specular',
   };
 
   const sizeStyles: Record<BadgeSize, string> = {
@@ -31,7 +30,7 @@ export function Badge({ children, variant = 'default', size = 'md', className = 
   return (
     <span
       className={cn(
-        'inline-flex items-center rounded-full font-semibold border',
+        'inline-flex items-center rounded-full font-sans font-semibold tabular-nums border',
         sizeStyles[size],
         variantStyles[variant],
         className

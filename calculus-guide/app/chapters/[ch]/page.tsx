@@ -130,20 +130,22 @@ export default function ChapterPage({ params }: ChapterPageProps) {
         <ol className="space-y-5">
           {chapterMeta.sections.map((sec) => (
             <li key={sec.id}>
-              <Link
-                href={`/chapters/${chapterMeta.key}/${sec.id}`}
-                className="group block"
-              >
-                <span className="toc-line">
-                  <span className="font-reading text-lg font-semibold text-[#1f1a13] group-hover:text-[#7c5c2e]">
-                    {sec.number}&ensp;{sec.title}
+              <div>
+                <Link
+                  href={`/chapters/${chapterMeta.key}/${sec.id}`}
+                  className="group block"
+                >
+                  <span className="toc-line">
+                    <span className="font-reading text-lg font-semibold text-[#1f1a13] group-hover:text-[#7c5c2e]">
+                      {sec.number}&ensp;{sec.title}
+                    </span>
+                    <span className="toc-dots" aria-hidden="true" />
+                    <span className="toc-folio">{sec.solutionsCount} examples</span>
                   </span>
-                  <span className="toc-dots" aria-hidden="true" />
-                  <span className="toc-folio">{sec.solutionsCount} examples</span>
-                </span>
-                <p className="mt-1 max-w-[64ch] font-reading text-sm italic leading-relaxed text-[#6d6357]">
-                  {sec.description}
-                </p>
+                  <p className="mt-1 max-w-[64ch] font-reading text-sm italic leading-relaxed text-[#6d6357]">
+                    {sec.description}
+                  </p>
+                </Link>
                 <p className="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 font-reading text-xs text-[#8a7a63]">
                   <span>{sec.status}</span>
                   {sec.practiceCount > 0 && (
@@ -164,7 +166,7 @@ export default function ChapterPage({ params }: ChapterPageProps) {
                     </>
                   )}
                 </p>
-              </Link>
+              </div>
             </li>
           ))}
         </ol>

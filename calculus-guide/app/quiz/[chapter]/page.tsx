@@ -1,8 +1,17 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/Badge';
 import { BrainCircuit } from 'lucide-react';
 import { QuizQuestion } from '@/components/quiz/QuizQuestion';
+import { CHAPTER_METADATA, normalizeChapterKey } from '@/lib/content/curriculum';
+import {
+  AUTHOR_NAME,
+  AUTHOR_PERSON_JSON_LD,
+  AUTHOR_URL,
+  SITE_NAME,
+  SITE_URL,
+} from '@/lib/seo';
 
 interface QuizPageProps {
   params: {
@@ -10,9 +19,63 @@ interface QuizPageProps {
   };
 }
 
+export function generateMetadata({ params }: QuizPageProps): Metadata {
+  const normalizedKey = normalizeChapterKey(params.chapter);
+  const chapterMeta = CHAPTER_METADATA[normalizedKey];
+  const chapterNumber = chapterMeta?.num || Number.parseInt(params.chapter.replace(/\D/g, ''), 10) || 1;
+  const canonicalKey = chapterMeta?.key || `ch${String(chapterNumber).padStart(2, '0')}`;
+  const canonicalPath = `/quiz/${canonicalKey}`;
+  const chapterTitle = chapterMeta?.title || `Chapter ${chapterNumber}`;
+  const subject = chapterTitle.replace(/^Chapter\s*\d+\s*[:—-]\s*/i, '');
+
+  const title = `${chapterTitle} — Diagnostic MCQ Quiz & Misconception Check`;
+  const description = `Interactive multiple-choice diagnostic quiz for ${chapterTitle} of Thomas' Calculus (14th Edition). Test conceptual understanding of ${subject} with instant distractor misconception explanations by ${AUTHOR_NAME}.`;
+
+  return {
+    title,
+    description,
+    keywords: [
+      `${chapterTitle} Quiz`,
+      `Thomas' Calculus Chapter ${chapterNumber} MCQs`,
+      `${subject} Calculus Quiz`,
+      'Calculus Misconception Diagnostics',
+      AUTHOR_NAME,
+    ],
+    authors: [{ name: AUTHOR_NAME, url: AUTHOR_URL }],
+    creator: AUTHOR_NAME,
+    publisher: AUTHOR_NAME,
+    alternates: {
+      canonical: canonicalPath,
+    },
+    openGraph: {
+      title: `${title} | ${SITE_NAME}`,
+      description,
+      url: `${SITE_URL}${canonicalPath}`,
+      type: 'website',
+      siteName: SITE_NAME,
+      locale: 'en_US',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${title} | Thomas' Calculus`,
+      description,
+      creator: '@AbdullahMalik17',
+    },
+  };
+}
+
+export function generateStaticParams() {
+  return Object.keys(CHAPTER_METADATA).map((key) => ({ chapter: key }));
+}
+
 export default function QuizPage({ params }: QuizPageProps) {
   const { chapter } = params;
-  const chapterNumber = Number.parseInt(chapter.replace(/\D/g, ''), 10) || 1;
+  const normalizedKey = normalizeChapterKey(chapter);
+  const chapterMeta = CHAPTER_METADATA[normalizedKey];
+  const chapterNumber = chapterMeta?.num || Number.parseInt(chapter.replace(/\D/g, ''), 10) || 1;
+  const canonicalKey = chapterMeta?.key || `ch${String(chapterNumber).padStart(2, '0')}`;
+  const chapterTitle = chapterMeta?.title || `Chapter ${chapterNumber}`;
+  const quizUrl = `${SITE_URL}/quiz/${canonicalKey}`;
 
   const sampleMCQs = [
     {
@@ -99,13 +162,69 @@ export default function QuizPage({ params }: QuizPageProps) {
     },
   ];
 
+  const quizJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      AUTHOR_PERSON_JSON_LD,
+      {
+        '@type': 'LearningResource',
+        '@id': `${quizUrl}#learning-resource`,
+        name: `${chapterTitle} — Diagnostic & Conceptual MCQ Quiz`,
+        url: quizUrl,
+        description: `Multiple-choice conceptual diagnostic quiz for ${chapterTitle} of Thomas' Calculus (14th Edition) with distractor misconception explanations.`,
+        learningResourceType: ['Quiz', 'Diagnostic Assessment'],
+        educationalLevel: 'Undergraduate',
+        educationalUse: ['Self-Assessment', 'Concept Check', 'Exam Preparation'],
+        inLanguage: 'en-US',
+        isAccessibleForFree: true,
+        author: AUTHOR_PERSON_JSON_LD,
+        creator: AUTHOR_PERSON_JSON_LD,
+        isPartOf: {
+          '@type': 'Course',
+          '@id': `${SITE_URL}/chapters/${canonicalKey}#course`,
+          name: chapterTitle,
+          url: `${SITE_URL}/chapters/${canonicalKey}`,
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${quizUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: SITE_URL,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: chapterTitle,
+            item: `${SITE_URL}/chapters/${canonicalKey}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: 'Diagnostic MCQ Quiz',
+            item: quizUrl,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="space-y-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(quizJsonLd) }}
+      />
+
       {/* Navigation */}
       <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-slate-600">
         <Link href="/" className="hover:text-blue-700">Home</Link>
         <span>/</span>
-        <Link href={`/chapters/ch${String(chapterNumber).padStart(2, '0')}`} className="hover:text-blue-700">Chapter {chapterNumber}</Link>
+        <Link href={`/chapters/${canonicalKey}`} className="hover:text-blue-700">{chapterTitle}</Link>
         <span>/</span>
         <span className="text-slate-800 font-medium">MCQ Quiz</span>
       </nav>
@@ -118,7 +237,7 @@ export default function QuizPage({ params }: QuizPageProps) {
         </div>
 
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#172b43]">
-          Chapter {chapterNumber} Diagnostic &amp; Conceptual Quiz
+          {chapterTitle} — Diagnostic &amp; Conceptual Quiz
         </h1>
 
         <p className="reading-copy text-slate-600">
